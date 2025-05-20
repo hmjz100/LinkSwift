@@ -3670,8 +3670,8 @@
 				let res;
 				if(page=="home"||page=="main"){
 					//我找的链接获取文件，1页100个，这个能获取文件夹所有文件我就直接用了
-					//TODO path属性被占用，原变量就请求下载时用一次，就 path 改成 _path
-					let url = `${config.$baidu.api.getFiles.home}&dir=${encodeURIComponent(file._path)}&access_token=${this.accessToken}`;
+					//TODO path属性被占用，原来设想的从选中文件夹开始的路径改成_path
+					let url = `${config.$baidu.api.getFiles.home}&dir=${encodeURIComponent(file.path)}&access_token=${this.accessToken}`;
 					res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink});
 				}else if(page=="share"){
 				}else{
@@ -3713,8 +3713,7 @@
 			}
 
 			//发送请求
-			let params={"_path":file._path};
-			res=await this.getFilesByOnce(file,params);
+			res=await this.getFilesByOnce(file,undefined);
 
 			//请求失败
 			if(res?.errno){
@@ -3730,12 +3729,11 @@
 			//节点 
 			let fileNode={
 				name:file.server_filename,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				_path:pNode.name === 'root' ? `` : `${pNode._path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
-			file._path=file.path;//TODO path属性被占用，原变量就请求下载时有用就 path 改成 _path
-			file.path=fileNode.path;
+			file._path=fileNode._path;//TODO path属性被占用，改成 _path
 
 			//判断是否文件夹
 			if (!file?.isdir) {//注意变量名
@@ -3977,7 +3975,7 @@
 
 				if (linkList.length) {
 					for (let i = 0; i < linkList.length; i++) {//重写下载路径
-						linkList[i].path = filesDict[linkList[i].fs_id].path;
+						linkList[i]._path = filesDict[linkList[i].fs_id]._path;
 					}
 					base.showMainDialog(config.base.dom.button[mode].title, this.generateDom(linkList), config.base.dom.button[mode].footer);
 				} else {
@@ -3999,7 +3997,7 @@
 				if (v.isdir === 1) return;
 				let filename = v.server_filename || v.filename;
 				let size = base.sizeFormat(v.size);
-				let dpath=v.path;
+				let dpath=v._path;//属性被占用
 				if (!v?.dlink || !v?.dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
