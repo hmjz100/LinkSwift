@@ -431,15 +431,17 @@
 		 * 生成 Aria2 下载命令
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description 将链接转换为 Aria2 格式命令，自动处理文件名特殊字符
 		 * @param {string} link - 下载链接
 		 * @param {string} filename - 文件名
+		 * @param {string} path - 下载路径
 		 * @param {string} [header] - 自定义请求头参数（可选）
 		 * @returns {string} 编码后的 aria2c 命令字符串
 		 */
-		convertLinkToAria(link, filename, header) {
+		convertLinkToAria(link, filename, path, header) {
 			filename = base.fixFilename(filename);
-			return encodeURIComponent(`aria2c "${link}" --out "${filename}"${header ? (" " + header) : ""}`);
+			return encodeURIComponent(`aria2c "${link}" --out "${path}/${filename}"${header ? (" " + header) : ""}`);
 		},
 
 		/**
@@ -461,16 +463,19 @@
 		 * 生成 cURL 下载命令
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description 根据终端类型生成对应 curl 命令，支持断点续传，自动处理文件名特殊字符
 		 * @param {string} link - 下载链接
 		 * @param {string} filename - 文件名
+		 * @param {string} path - 下载路径
 		 * @param {string} [header] - 自定义请求头参数（可选）
 		 * @returns {string} 编码后的 curl 命令字符串
 		 */
-		convertLinkToCurl(link, filename, header) {
+		convertLinkToCurl(link, filename,path, header) {
 			let terminal = base.getValue('setting_terminal_type');
 			filename = base.fixFilename(filename);
-			return encodeURIComponent(`${terminal !== 'wp' ? 'curl' : 'curl.exe'} -L -C - "${link}" -o "${filename}"${header ? (" " + header) : ""}`);
+			//TODO win11用curl命令，如果目录不存在会失败，所以加了创建目录的，但在命令行里测的，不知其它平台和下载器是否适用
+			return encodeURIComponent(`mkdir "${path}" ${(terminal !== 'wp' && terminal !== 'wc') ? '>/dev/null &&' : '2>nul &'} ${terminal !== 'wp' ? 'curl' : 'curl.exe'} -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
 		},
 
 		/**
@@ -3729,7 +3734,7 @@
 			//节点 
 			let fileNode={
 				name:file.server_filename,//注意变量名
-				_path:pNode.name === 'root' ? `` : `${pNode._path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				_path:pNode.name === 'root' ? `` : (pNode._path === '' ? pNode.name : `${pNode._path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -4008,7 +4013,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="不建议使用本功能，若使用后长时间没有弹出下载提示则代表请求失败，请换用“增强下载”<br/>基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-title="不建议使用本功能，在本网盘单独复制链接并粘贴下载可能会导致服务器回报 403 错误" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -4027,23 +4032,23 @@
 					}
 					let BDUSS = this.getBDUSS();
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "User-Agent: ${config.$baidu.api.ua.downloadLink}" --header "Cookie: BDUSS=${BDUSS}"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "User-Agent: ${config.$baidu.api.ua.downloadLink}" --header "Cookie: BDUSS=${BDUSS}"`);
 						if (typeof (alink) === 'object') {
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" target="_blank" href="${alink.link}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink.link}">${decodeURIComponent(alink.text)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						} else {
 							alinkAllText += alink + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						}
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
 											data-filename="${filename}" 
 											data-link="${dlink}" 
@@ -4058,16 +4063,16 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `-A "${config.$baidu.api.ua.downloadLink}" -b "BDUSS=${BDUSS}"`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `-A "${config.$baidu.api.ua.downloadLink}" -b "BDUSS=${BDUSS}"`);
 						if (typeof (alink) === 'object') {
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" target="_blank" href="${alink.link}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink.link}">${decodeURIComponent(alink.text)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						} else {
 							alinkAllText += alink + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						}
@@ -4077,13 +4082,13 @@
 						if (typeof (alink) === 'object') {
 							alinkAllText += decodeURIComponent(alink.text) + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" href="${decodeURIComponent(alink.link)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink.text)}<br/>下载 ${filename}</a>
 							</div>`;
 						} else {
 							alinkAllText += alink + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 							</div>`;
 						}
@@ -4701,7 +4706,7 @@
 			//节点 
 			let fileNode={
 				name:file.name,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -4848,7 +4853,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}" >${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-size="${v.size}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-index="${i}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-success listener-copy-filename" data-title="本网盘于下载高峰期时可能不会显示文件名称，这时需要手动复制文件名称到下载工具中" data-filename="${filename}">复制名称</button>
@@ -4867,10 +4872,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "Referer: https://${location.host}/"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "Referer: https://${location.host}/"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					} 
@@ -4892,10 +4897,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `&refer=${encodeURIComponent(`https://${location.host}/`)}`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `&refer=${encodeURIComponent(`https://${location.host}/`)}`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -4903,7 +4908,7 @@
 						let alink = base.convertLinkToBC(dlink, filename, `-e "https://${location.host}/"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -5469,7 +5474,7 @@
 			//节点 
 			let fileNode={
 				name:file.name,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -5603,7 +5608,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.contentSize || v.coSize}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -5620,10 +5625,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -5644,10 +5649,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -5655,7 +5660,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -6113,7 +6118,7 @@
 			//节点 这的节点树因为不怎么需要就没做完整
 			let fileNode={
 				name:file.name,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -6267,7 +6272,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -6284,10 +6289,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -6308,10 +6313,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -6319,7 +6324,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -6785,7 +6790,7 @@
 			//节点 
 			let fileNode={
 				name:file.name,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -6923,7 +6928,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，下载完成可自动命名，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<a class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，若服务器未回报文件名，此方式下载不会被 IDM 捕获下载链接，此时建议右键此按钮，选择 “使用 IDM 下载”" data-filename="${filename}" data-link="${dlink}" href="${dlink}">直接下载(基于浏览器链接)</a>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-success listener-copy-filename" data-title="本网盘下载时可能不会显示文件名称，这时需要手动复制文件名称到下载工具中" data-filename="${filename}">复制名称</button>
@@ -6941,10 +6946,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -6965,10 +6970,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -6976,7 +6981,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 							<button class="pl-btn-primary listener-link-bc-btn" data-dlink="${dlink}">复制镜像地址</div>
 						</div>`;
@@ -7441,7 +7446,7 @@
 			//节点
 			let fileNode={
 				name:file.file_name,
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode)
@@ -7564,7 +7569,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -7581,10 +7586,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "Cookie: ${document.cookie}"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "Cookie: ${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -7605,10 +7610,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `-b "${document.cookie}"`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `-b "${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -7616,7 +7621,7 @@
 						let alink = base.convertLinkToBC(dlink, filename, `cookie=${encodeURIComponent(document.cookie)}`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -8066,7 +8071,7 @@
 			//节点 
 			let fileNode={
 				name:file.file_name,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -8185,7 +8190,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -8202,10 +8207,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "Cookie: ${document.cookie}"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "Cookie: ${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -8226,10 +8231,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `-b "${document.cookie}"`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `-b "${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -8237,7 +8242,7 @@
 						let alink = base.convertLinkToBC(dlink, filename, `cookie=${encodeURIComponent(document.cookie)}`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -8733,7 +8738,7 @@
 			//节点 
 			let fileNode={
 				name:file.FileName,//注意变量名
-				path:pNode.name === 'root' ? `` : `${pNode.path}/${pNode.name}`,//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
 				children:[]
 			}
 			pNode.children.push(fileNode);
@@ -8904,7 +8909,7 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fileid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fileid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -8921,10 +8926,10 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -8945,10 +8950,10 @@
 								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -8956,7 +8961,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
