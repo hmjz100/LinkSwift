@@ -140,6 +140,7 @@
 		sicon = (scriptInfo?.icon || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="),
 		mhandler = GM_info.scriptHandler,
 		mversion = GM_info.version,
+		globalDirHandle=undefined,//TODO Blob下载要用，File System Access API下载要用户给个权限
 		globalSleep=500, //延时，统一在1个地方修改方便用，可以考虑做个接口给用户修改，做好限制，别让用户做死
 		globalSleepRandSeed=100,//延时随机种子，直接在上面的数值上加 
 		globalBatchsize=50;//每次处理批次的大小
@@ -474,8 +475,21 @@
 		convertLinkToCurl(link, filename,path, header) {
 			let terminal = base.getValue('setting_terminal_type');
 			filename = base.fixFilename(filename);
-			//TODO win11用curl命令，如果目录不存在会失败，所以加了创建目录的，但在命令行里测的，不知其它平台和下载器是否适用
-			return encodeURIComponent(`mkdir "${path}" ${(terminal !== 'wp' && terminal !== 'wc') ? '>/dev/null &&' : '2>nul &'} ${terminal !== 'wp' ? 'curl' : 'curl.exe'} -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+			//TODO 用curl命令，如果目录不存在会失败，所以加了创建目录，不知其它操作系统和下载器是否适用
+			//TODO 如果有 header 的话，我 win11 会提示'refer' 不是内部或外部命令，也不是可运行的程序，因为我不知道你测试环境，我不敢改。
+			switch (terminal){
+				case 'wc':
+					return encodeURIComponent(`mkdir "${path}" 2>nul & curl -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+				case 'wp':
+					return encodeURIComponent(`mkdir "${path}" -Force; curl.exe -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+				case 'lt':
+				case 'ls':
+				case 'mt'://TODO 我没有苹果电脑，只有armbian(linux)，虽然AI说都通用的，先这样写，你可能要实际测试下
+					return encodeURIComponent(`mkdir -p "${path}" >/dev/null; curl -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+				default:
+					console.log(`检测不到对应终端 ${terminal}.`);
+					break;
+			}
 		},
 
 		/**
@@ -825,6 +839,49 @@
 			}
 		},
 
+		
+		/**
+		 * Blob 文件嵌套文件夹下载
+		 * @author KanouAo
+		 * @description 通过创建临时链接实现嵌套文件夹下载，windows平台使用File System Access API创建文件夹。该API主要支持Chromium内核浏览器（Chrome/Edge），Firefox和Safari需检测API可用性。
+		 * @param {Blob} blob - 要下载的 Blob 对象
+		 * @param {string} filename - 下载时提示保存的文件名
+		 */
+		async fsBlobDownload(blob, filename, path) {
+			try {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					// 创建嵌套目录
+					async function createNestedDirectory(baseHandle,path) {
+						const parts = path.split('/').filter(Boolean);
+						let currentHandle = baseHandle;
+						for (const part of parts) {
+						  currentHandle = await currentHandle.getDirectoryHandle(part, { create: true });
+						}
+						return currentHandle;
+					}
+					const folderHandle = await createNestedDirectory(globalDirHandle, path);
+					
+					// 创建文件并写入
+					const fileHandle = await folderHandle.getFileHandle(filename, { create: true });
+					const writable = await fileHandle.createWritable();
+					await writable.write(blob);
+					await writable.close();
+					
+					return true;
+				}else{
+					// 降级到基础下载
+					this.blobDownload(blob, filename);
+					return true;
+				}
+			} catch (err) {
+			  console.error('文件夹操作失败:', err);
+			  // 降级到基础下载
+			  this.blobDownload(blob, filename);
+			  return false;
+			}
+		  },
+		  
+
 		/**
 		 * 可跨域 xmlhttpRequest 请求
 		 * @author hmjz100
@@ -907,6 +964,7 @@
 		 * 发送 GET 请求
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description 支持进度监控、文件下载和自动重试，可处理被下载工具捕获特殊逻辑
 		 * @param {string} url - 请求地址
 		 * @param {Object} headers - 请求头配置
@@ -931,7 +989,7 @@
 							}
 							if (type === 'blob') {
 								console.log('【LinkSwift】Get(load) Blob\n请求地址：' + url + '\n请求头部：', headers, '\n请求结果：', res);
-								res.status === 200 && base.blobDownload(res.response, extra.filename);
+								res.status === 200 && base.fsBlobDownload(res.response, extra.filename,extra.path);
 								resolve(res);
 							} else {
 								// 尝试格式化请求结果以方便调试
@@ -3195,11 +3253,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(o.link[0].dataset.link, { "User-Agent": config.$baidu.api.ua.downloadLink }, 'blob', { filename, index });
+				base.get(o.link[0].dataset.link, { "User-Agent": config.$baidu.api.ua.downloadLink }, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -3303,7 +3362,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -4014,7 +4076,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="不建议使用本功能，若使用后长时间没有弹出下载提示则代表请求失败，请换用“增强下载”<br/>基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-title="不建议使用本功能，在本网盘单独复制链接并粘贴下载可能会导致服务器回报 403 错误" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-tip" style="display: none"></div>
@@ -4408,11 +4470,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, { "Referer": `https://${location.host}/` }, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, { "Referer": `https://${location.host}/` }, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -4532,7 +4595,10 @@
 				$('.listener-link-rpc').click();
 				$(e.target).text('发送完成，发送结果见上方按钮哦~').animate({ opacity: '0.5' }, "slow");
 			});
-			doc.on('click', '.listener-download-all.blob', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {//TODO 这你原本写的是//.listener-download-all.blob，怕你写错改了下
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -4854,8 +4920,8 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-size="${v.size}" data-index="${i}">增强下载(基于浏览器文件流)</button>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-index="${i}">直接下载(基于浏览器链接)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-size="${v.size}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-success listener-copy-filename" data-title="本网盘于下载高峰期时可能不会显示文件名称，这时需要手动复制文件名称到下载工具中" data-filename="${filename}">复制名称</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-title="不建议使用本功能，在本网盘单独复制链接并粘贴下载可能会导致服务器回报 403 错误" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-tip" style="display: none"><span><span class="pl-ext"></span></span> <span class="listener-back">返回</span></div>
@@ -4880,7 +4946,7 @@
 						</div>`;
 					} 
 					if (mode === 'rpc') {
-						dlink=dlink.replace(' ', '%20')//TODO 阿里的为啥要加这个？
+						dlink=dlink.replace(' ', '%20')
 						content += `<div class="pl-item">
 									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
 									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
@@ -5058,11 +5124,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -5146,7 +5213,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -5446,7 +5516,7 @@
 				//随机停顿防反爬
 				this.cnt++;
 				if (this.cnt >= 50+Math.random()*10) {
-					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹（非全部）已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
 					await base.customSleep();
 					this.cnt = 0;
 				}
@@ -5609,7 +5679,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.contentSize || v.coSize}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.contentSize || v.coSize}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -5797,11 +5867,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -5885,7 +5956,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -6084,7 +6158,7 @@
 			let res;
 			let files=[];//文件数据列表
 			let folders=[];//文件夹数据列表
-			let path=`${file.path}/${file.name}`;
+			let path = file.path ? `${file.path}/${file.name}` : file.name;
 			// let pageCount=Math.ceil(file.fileCount/60);//总页数
 			let pageCount=1;//总页数，先设1，之后根据res返回的值修改//share没有file.fileCount，兼容适配
 			for (let pageNum=1;pageNum<=pageCount;pageNum++) {
@@ -6107,7 +6181,7 @@
 				if(pageCount==1)pageCount=Math.ceil(res.fileListAO.count/60);
 				files=files.concat(res.fileListAO.fileList);//注意别占用fileList的变量名字
 				folders=folders.concat(res.fileListAO.folderList);
-				this.fileCount+=files.length;
+				this.fileCount+=res.fileListAO.fileList.length;
 				files.forEach(f => {f.path=path;});
 			}
 			return {files,folders}; 
@@ -6273,7 +6347,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -6460,11 +6534,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -6548,7 +6623,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -6762,7 +6840,7 @@
 				//随机停顿防反爬
 				this.cnt++;
 				if (this.cnt >= 50+Math.random()*10) {
-					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹（非全部）已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
 					await base.customSleep();
 					this.cnt = 0;
 				}
@@ -6929,7 +7007,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，下载完成可自动命名，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，下载完成可自动命名，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<a class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，若服务器未回报文件名，此方式下载不会被 IDM 捕获下载链接，此时建议右键此按钮，选择 “使用 IDM 下载”" data-filename="${filename}" data-link="${dlink}" href="${dlink}">直接下载(基于浏览器链接)</a>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-success listener-copy-filename" data-title="本网盘下载时可能不会显示文件名称，这时需要手动复制文件名称到下载工具中" data-filename="${filename}">复制名称</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -7142,11 +7220,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -7230,7 +7309,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -7570,7 +7652,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -7779,11 +7861,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -7867,7 +7950,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -8046,7 +8132,7 @@
 				//随机停顿防反爬
 				this.cnt++;
 				if (this.cnt >= 50+Math.random()*10) {
-					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹（非全部）已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
 					await base.customSleep();
 					this.cnt = 0;
 				}
@@ -8191,7 +8277,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -8390,11 +8476,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -8478,7 +8565,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -8610,7 +8700,7 @@
 				let res;
 				params.driveId=0;//TODO 看起来是个变量，但我定值是0，也没细看这变量怎么产生的，以后出问题再看。
 				params.operateType=8;//文件夹初次打开拿第1页数据时是4，鼠标下滑增加数据是8
-				params.next=0;//如何是100以内不用拉数据的是0，超过100的是-1，都填0都适配
+				params.next=0;//如何文件100个以内不用拉数据的是0，超过100的是-1，都填0都适配
 				let time = Date.now();
 				if(page=="home"){
 					//TODO 这URL中间有XXX=时间戳-XXX-XXX的格式，我发觉那放3个随机数竟然也行，如果不合适你就找下。
@@ -8910,7 +9000,7 @@
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fileid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fileid}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fileid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
