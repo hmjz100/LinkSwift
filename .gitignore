@@ -1,0 +1,11 @@
+# 忽略所有文件
+!网盘直链下载助手.user.js # 保留这个文件
+!给开发者hmjz100的话.md
+
+/config/
+node_modules/
+package-lock.json
+*.json
+*.css
+LICENSE
+README.md

@@ -2,7 +2,7 @@
 // @name              LinkSwift
 // @namespace         github.com/hmjz100
 // @version           1.1.0.1
-// @author            Hmjz100、油小猴
+// @author            KanouAo、Hmjz100、油小猴
 // @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=
 // @description       《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具，基于【网盘直链下载助手】修改 | 支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 八大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
 // @description:zh-TW 《也許同類型中最好用？》系列 - 一個基於 JavaScript 的網盤檔案下載地址獲取工具，基於【網盤直鏈下載助手】改編 | 支援 百度網盤/阿里雲盤/中國移動雲盤/天翼雲盤/迅雷雲盤/夸克網盤/UC網盤/123雲盤 八大平台 | 開源・自用・除廣 | 改介面・擴功能・修Bug | 既超越原版，亦是同類中最好用版本！👋
@@ -108,10 +108,9 @@
  * @license AGPL-3.0-or-later
  * @see {@link https://github.com/hmjz100/LinkSwift/ Github 仓库}
  */
-(function linkSwift() {
+(function linkSwift() { 
 	// 严格模式，确保代码安全执行
 	'use strict';
-
 	// unsafeWindow 检测
 	if (typeof unsafeWindow === 'undefined') {
 		window.unsafeWindow = window;
@@ -140,7 +139,11 @@
 		sversion = (scriptInfo?.version?.toString() || "1.1.0.1"),
 		sicon = (scriptInfo?.icon || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="),
 		mhandler = GM_info.scriptHandler,
-		mversion = GM_info.version;
+		mversion = GM_info.version,
+		globalDirHandle=undefined,//TODO Blob下载要用，File System Access API下载要用户给个权限
+		globalSleep=500, //延时，统一在1个地方修改方便用，可以考虑做个接口给用户修改，做好限制，别让用户做死
+		globalSleepRandSeed=100,//延时随机种子，直接在上面的数值上加 
+		globalBatchsize=50;//每次处理批次的大小
 
 	/* 设置选项 */
 	// Shell类型（用于curl下载）
@@ -225,6 +228,7 @@
 	 * 基础配置集合
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	const config = {
 		base: {
@@ -270,8 +274,14 @@
 					downloadLink: "pan.baidu.com"
 				},
 				getAccessToken: "https://openapi.baidu.com/oauth/2.0/authorize?response_type=token&scope=basic,netdisk&client_id=IlLqBbU3GjQ0t46TRwFateTprHWl39zF&redirect_uri=oob&confirm_login=0",
-				getLink: "https://pan.baidu.com/rest/2.0/xpan/multimedia?method=filemetas&dlink=1",
-				getFiles: "https://pan.baidu.com/rest/2.0/xpan/file?method=list&showempty=1",
+				getLink:{
+					home:"https://pan.baidu.com/rest/2.0/xpan/multimedia?method=filemetas&dlink=1",
+					share:""
+				},
+				getFiles:{
+					home:"https://pan.baidu.com/rest/2.0/xpan/file?method=list&showempty=1",
+					share:""
+				},
 				getShareLink: "https://pan.baidu.com/api/sharedownload?channel=chunlei&clienttype=0&web=1&app_id=250528",
 				getShareInfo: "https://pan.baidu.com/share/tplconfig?fields=sign,timestamp&channel=chunlei&web=1&app_id=250528&clienttype=0",
 				getShareFiles: "https://pan.baidu.com/rest/2.0/xpan/share?method=list&showempty=1"
@@ -284,8 +294,14 @@
 		},
 		$aliyun: {
 			api: {
-				getLink: "https://api.aliyundrive.com/v2/file/get_download_url",
-				getShareLink: "https://api.aliyundrive.com/v2/file/get_share_link_download_url"
+				getLink:{
+					home:"https://api.aliyundrive.com/v2/file/get_download_url",
+					share:"https://api.aliyundrive.com/v2/file/get_share_link_download_url"
+				},
+				getFiles:{
+					home:"https://api.aliyundrive.com/adrive/v3/file/list?jsonmask=next_marker%2Citems(name%2Cfile_id%2Cdrive_id%2Ctype%2Csize%2Ccreated_at%2Cupdated_at%2Ccategory%2Cfile_extension%2Cparent_file_id%2Cmime_type%2Cstarred%2Cthumbnail%2Curl%2Cstreams_info%2Ccontent_hash%2Cuser_tags%2Cuser_meta%2Ctrashed%2Cvideo_media_metadata%2Cvideo_preview_metadata%2Csync_meta%2Csync_device_flag%2Csync_flag%2Cpunish_flag%2Cfrom_share_id)",
+					share:"https://api.aliyundrive.com/adrive/v2/file/list_by_share"
+				},
 			},
 			mount: {
 				home: "[class^=\"header--\"]>[class^=\"actions--\"]",
@@ -297,7 +313,14 @@
 		},
 		$mcloud: {
 			api: {
-				getLink: "https://personal-kd-njs.yun.139.com/hcy/file/getDownloadUrl"
+				getLink:{
+					home:"https://personal-kd-njs.yun.139.com/hcy/file/getDownloadUrl",
+					share:""
+				},
+				getFiles:{
+					home:"https://personal-kd-njs.yun.139.com/hcy/file/list",
+					share:""
+				},
 			},
 			mount: {
 				home: ".top_button",
@@ -307,7 +330,14 @@
 		$tcloud: {
 			api: {
 				getAccessToken: "https://api.cloud.189.cn/open/oauth2/ssoH5.action",
-				getLink: "https://api.cloud.189.cn/open/file/getFileDownloadUrl.action"
+				getLink:{
+					home:"https://api.cloud.189.cn/open/file/getFileDownloadUrl.action",
+					share:""
+				},
+				getFiles:{
+					home:"https://cloud.189.cn/api/open/file/listFiles.action",
+					share:"https://cloud.189.cn/api/open/share/listShareDir.action"
+				},
 			},
 			mount: {
 				home: "[class*=\"FileHead_file-head-left\"]",
@@ -319,7 +349,14 @@
 				mirror: [
 					"vod0007-h05-vip-lixian.xunlei.com", "vod0008-h05-vip-lixian.xunlei.com", "vod0009-h05-vip-lixian.xunlei.com", "vod0010-h05-vip-lixian.xunlei.com", "vod0011-h05-vip-lixian.xunlei.com", "vod0012-h05-vip-lixian.xunlei.com", "vod0013-h05-vip-lixian.xunlei.com", "vod0014-h05-vip-lixian.xunlei.com", "vod0067-aliyun08-vip-lixian.xunlei.com", "vod0254-aliyun08-vip-lixian.xunlei.com", "vod0255-aliyun08-vip-lixian.xunlei.com", "vod0256-aliyun08-vip-lixian.xunlei.com", "vod0257-aliyun08-vip-lixian.xunlei.com", "vod0258-aliyun08-vip-lixian.xunlei.com", "vod0259-aliyun08-vip-lixian.xunlei.com", "vod0260-aliyun08-vip-lixian.xunlei.com", "vod0261-aliyun08-vip-lixian.xunlei.com", "vod0262-aliyun08-vip-lixian.xunlei.com", "vod0263-aliyun08-vip-lixian.xunlei.com", "vod0264-aliyun08-vip-lixian.xunlei.com", "vod0265-aliyun08-vip-lixian.xunlei.com", "vod0266-aliyun08-vip-lixian.xunlei.com", "vod0267-aliyun08-vip-lixian.xunlei.com", "vod0554-aliyun06-vip-lixian.xunlei.com", "vod0555-aliyun06-vip-lixian.xunlei.com", "vod0556-aliyun06-vip-lixian.xunlei.com", "vod0680-aliyun08-vip-lixian.xunlei.com", "vod0681-aliyun08-vip-lixian.xunlei.com", "vod0682-aliyun08-vip-lixian.xunlei.com", "vod0683-aliyun08-vip-lixian.xunlei.com", "vod0684-aliyun08-vip-lixian.xunlei.com", "vod0685-aliyun08-vip-lixian.xunlei.com", "vod0686-aliyun08-vip-lixian.xunlei.com", "vod0687-aliyun08-vip-lixian.xunlei.com", "vod0688-aliyun08-vip-lixian.xunlei.com", "vod0689-aliyun08-vip-lixian.xunlei.com", "vod0690-aliyun08-vip-lixian.xunlei.com", "vod0724-aliyun08-vip-lixian.xunlei.com", "vod0725-aliyun08-vip-lixian.xunlei.com", "vod0726-aliyun08-vip-lixian.xunlei.com", "vod0727-aliyun08-vip-lixian.xunlei.com", "vod0728-aliyun08-vip-lixian.xunlei.com", "vod0075.aliyun06.vip.lixian.xunlei.com", "vod0076.aliyun06.vip.lixian.xunlei.com", "vod0077.aliyun06.vip.lixian.xunlei.com", "vod0779-aliyun04-vip-lixian.xunlei.com", "vod0078.aliyun06.vip.lixian.xunlei.com", "vod0780-aliyun04-vip-lixian.xunlei.com", "vod0781-aliyun04-vip-lixian.xunlei.com", "vod0079.aliyun06.vip.lixian.xunlei.com", "vod0080.aliyun06.vip.lixian.xunlei.com", "vod0117.aliyun04.vip.lixian.xunlei.com", "vod0118.aliyun04.vip.lixian.xunlei.com", "vod0119.aliyun04.vip.lixian.xunlei.com", "vod1284-aliyun06-vip-lixian.xunlei.com", "vod1285-aliyun06-vip-lixian.xunlei.com", "vod1363-aliyun06-vip-lixian.xunlei.com", "vod1371-aliyun06-vip-lixian.xunlei.com", "vod1372-aliyun06-vip-lixian.xunlei.com", "vod1426-aliyun06-vip-lixian.xunlei.com", "vod1427-aliyun06-vip-lixian.xunlei.com", "vod1428-aliyun06-vip-lixian.xunlei.com", "vod1429-aliyun06-vip-lixian.xunlei.com", "vod1442-aliyun06-vip-lixian.xunlei.com", "vod1443-aliyun06-vip-lixian.xunlei.com", "vod1444-aliyun06-vip-lixian.xunlei.com", "vod1445-aliyun06-vip-lixian.xunlei.com", "vod1446-aliyun06-vip-lixian.xunlei.com", "vod1447-aliyun06-vip-lixian.xunlei.com", "vod1469-aliyun06-vip-lixian.xunlei.com", "vod1470-aliyun06-vip-lixian.xunlei.com", "vod1471-aliyun06-vip-lixian.xunlei.com", "vod1489-aliyun06-vip-lixian.xunlei.com", "vod1490-aliyun06-vip-lixian.xunlei.com", "vod1491-aliyun06-vip-lixian.xunlei.com", "vod1492-aliyun06-vip-lixian.xunlei.com", "vod1493-aliyun06-vip-lixian.xunlei.com", "vod0215.aliyun06.vip.lixian.xunlei.com", "vod0216.aliyun06.vip.lixian.xunlei.com", "vod0217.aliyun06.vip.lixian.xunlei.com", "vod0218.aliyun06.vip.lixian.xunlei.com", "vod0219.aliyun06.vip.lixian.xunlei.com", "vod0220.aliyun06.vip.lixian.xunlei.com", "vod0241.aliyun08.vip.lixian.xunlei.com", "vod0244.aliyun08.vip.lixian.xunlei.com", "vod0251.aliyun08.vip.lixian.xunlei.com", "vod0252.aliyun08.vip.lixian.xunlei.com", "vod0253.aliyun08.vip.lixian.xunlei.com", "vod0254.aliyun08.vip.lixian.xunlei.com", "vod0255.aliyun08.vip.lixian.xunlei.com", "vod0256.aliyun08.vip.lixian.xunlei.com", "vod0257.aliyun08.vip.lixian.xunlei.com", "vod0260.aliyun08.vip.lixian.xunlei.com", "vod0261.aliyun08.vip.lixian.xunlei.com", "vod0262.aliyun08.vip.lixian.xunlei.com", "vod0263.aliyun08.vip.lixian.xunlei.com", "vod0264.aliyun08.vip.lixian.xunlei.com", "vod0265.aliyun08.vip.lixian.xunlei.com", "vod0266.aliyun08.vip.lixian.xunlei.com", "vod0267.aliyun08.vip.lixian.xunlei.com", "vod3379-aliyun04-vip-lixian.xunlei.com", "vod3380-aliyun04-vip-lixian.xunlei.com", "vod3429-aliyun04-vip-lixian.xunlei.com", "vod3458-aliyun04-vip-lixian.xunlei.com", "vod3459-aliyun04-vip-lixian.xunlei.com", "vod3496-aliyun04-vip-lixian.xunlei.com", "vod3497-aliyun04-vip-lixian.xunlei.com", "vod3498-aliyun04-vip-lixian.xunlei.com", "vod3499-aliyun04-vip-lixian.xunlei.com", "vod3500-aliyun04-vip-lixian.xunlei.com", "vod3501-aliyun04-vip-lixian.xunlei.com", "vod3522-aliyun04-vip-lixian.xunlei.com", "vod3523-aliyun04-vip-lixian.xunlei.com", "vod3533-aliyun04-vip-lixian.xunlei.com", "vod3534-aliyun04-vip-lixian.xunlei.com", "vod3535-aliyun04-vip-lixian.xunlei.com", "vod3536-aliyun04-vip-lixian.xunlei.com", "vod3549-aliyun04-vip-lixian.xunlei.com", "vod3550-aliyun04-vip-lixian.xunlei.com", "vod3551-aliyun04-vip-lixian.xunlei.com", "vod3552-aliyun04-vip-lixian.xunlei.com", "vod3553-aliyun04-vip-lixian.xunlei.com", "vod3554-aliyun04-vip-lixian.xunlei.com", "vod3555-aliyun04-vip-lixian.xunlei.com", "vod0551.aliyun06.vip.lixian.xunlei.com", "vod0552.aliyun06.vip.lixian.xunlei.com", "vod0553.aliyun06.vip.lixian.xunlei.com", "vod0554.aliyun06.vip.lixian.xunlei.com", "vod0555.aliyun06.vip.lixian.xunlei.com", "vod0556.aliyun06.vip.lixian.xunlei.com", "vod0686.aliyun08.vip.lixian.xunlei.com", "vod0687.aliyun08.vip.lixian.xunlei.com", "vod0688.aliyun08.vip.lixian.xunlei.com", "vod0689.aliyun08.vip.lixian.xunlei.com", "vod0724.aliyun08.vip.lixian.xunlei.com", "vod0725.aliyun08.vip.lixian.xunlei.com", "vod0726.aliyun08.vip.lixian.xunlei.com", "vod0727.aliyun08.vip.lixian.xunlei.com", "vod0728.aliyun08.vip.lixian.xunlei.com", "vod0759.aliyun04.vip.lixian.xunlei.com", "vod0760.aliyun04.vip.lixian.xunlei.com", "vod0769.aliyun04.vip.lixian.xunlei.com", "vod0770.aliyun04.vip.lixian.xunlei.com", "vod0771.aliyun04.vip.lixian.xunlei.com", "vod0772.aliyun04.vip.lixian.xunlei.com", "vod0773.aliyun04.vip.lixian.xunlei.com", "vod0774.aliyun04.vip.lixian.xunlei.com", "vod0775.aliyun04.vip.lixian.xunlei.com", "vod0776.aliyun04.vip.lixian.xunlei.com", "vod0777.aliyun04.vip.lixian.xunlei.com", "vod0778.aliyun04.vip.lixian.xunlei.com", "vod0779.aliyun04.vip.lixian.xunlei.com", "vod0780.aliyun04.vip.lixian.xunlei.com", "vod0781.aliyun04.vip.lixian.xunlei.com", "vod3522.aliyun04.vip.lixian.xunlei.com", "vod3523.aliyun04.vip.lixian.xunlei.com", "vod3533.aliyun04.vip.lixian.xunlei.com", "vod3535.aliyun04.vip.lixian.xunlei.com", "vod3550.aliyun04.vip.lixian.xunlei.com", "vod3551.aliyun04.vip.lixian.xunlei.com", "vod3552.aliyun04.vip.lixian.xunlei.com", "vod3553.aliyun04.vip.lixian.xunlei.com", "vod3554.aliyun04.vip.lixian.xunlei.com", "vod3555.aliyun04.vip.lixian.xunlei.com"
 				],
-				getLink: "https://api-pan.xunlei.com/drive/v1/files/"
+				getLink:{
+					home:"https://api-pan.xunlei.com/drive/v1/files/",
+					share:""
+				},
+				getFiles:{
+					home:"https://api-pan.xunlei.com/drive/v1/files?",
+					share:"https://api.aliyundrive.com/adrive/v2/file/list_by_share"
+				},
 			},
 			mount: {
 				home: "[class^=\"FileMenu__menu--\"]",
@@ -331,7 +368,14 @@
 				ua: {
 					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) quark-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_ch"
 				},
-				getLink: "https://drive.quark.cn/1/clouddrive/file/download?pr=ucpro&fr=pc"
+				getLink:{
+					home:"https://drive.quark.cn/1/clouddrive/file/download?pr=ucpro&fr=pc",
+					share:""
+				},
+				getFiles:{
+					home:"https://drive.quark.cn/1/clouddrive/file/sort?pr=ucpro&fr=pc",
+					share:""
+				}
 			},
 			mount: {
 				home: ".btn-operate .btn-main",
@@ -341,9 +385,18 @@
 		$uc: {
 			api: {
 				ua: {
-					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) uc-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_ch"
+					//TODO 为啥是夸克的？怕你写错改了下
+					// downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) uc-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_ch"
+					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
 				},
-				getLink: "https://pc-api.uc.cn/1/clouddrive/file/download?pr=UCBrowser&fr=pc"
+				getLink:{
+					home:"https://pc-api.uc.cn/1/clouddrive/file/download?pr=UCBrowser&fr=pc",
+					share:""
+				},
+				getFiles:{
+					home:"https://pc-api.uc.cn/1/clouddrive/file/sort",
+					share:""
+				},
 			},
 			mount: {
 				home: ".btn-operate .btn-main",
@@ -352,8 +405,14 @@
 		},
 		$123pan: {
 			api: {
-				getLink: "https://www.123pan.com/api/file/download_info",
-				getShareLink: "https://www.123pan.com/api/share/download/info"
+				getLink:{
+					home:"https://www.123pan.com/api/file/download_info",
+					share:"https://www.123pan.com/api/share/download/info"
+				},
+				getFiles:{
+					home:"https://www.123pan.com/b/api/file/list/new",
+					share:"https://www.123pan.com/b/api/share/get"
+				},
 			},
 			mount: {
 				home: "main.ant-layout-content .site-layout-background .homeClass .wenserh",
@@ -366,21 +425,24 @@
 	 * 基础工具集合
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let base = {
 		/**
 		 * 生成 Aria2 下载命令
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description 将链接转换为 Aria2 格式命令，自动处理文件名特殊字符
 		 * @param {string} link - 下载链接
 		 * @param {string} filename - 文件名
+		 * @param {string} path - 下载路径
 		 * @param {string} [header] - 自定义请求头参数（可选）
 		 * @returns {string} 编码后的 aria2c 命令字符串
 		 */
-		convertLinkToAria(link, filename, header) {
+		convertLinkToAria(link, filename, path, header) {
 			filename = base.fixFilename(filename);
-			return encodeURIComponent(`aria2c "${link}" --out "${filename}"${header ? (" " + header) : ""}`);
+			return encodeURIComponent(`aria2c "${link}" --out "${path}/${filename}"${header ? (" " + header) : ""}`);
 		},
 
 		/**
@@ -402,35 +464,53 @@
 		 * 生成 cURL 下载命令
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description 根据终端类型生成对应 curl 命令，支持断点续传，自动处理文件名特殊字符
 		 * @param {string} link - 下载链接
 		 * @param {string} filename - 文件名
+		 * @param {string} path - 下载路径
 		 * @param {string} [header] - 自定义请求头参数（可选）
 		 * @returns {string} 编码后的 curl 命令字符串
 		 */
-		convertLinkToCurl(link, filename, header) {
+		convertLinkToCurl(link, filename,path, header) {
 			let terminal = base.getValue('setting_terminal_type');
 			filename = base.fixFilename(filename);
-			return encodeURIComponent(`${terminal !== 'wp' ? 'curl' : 'curl.exe'} -L -C - "${link}" -o "${filename}"${header ? (" " + header) : ""}`);
+			//TODO 用curl命令，如果目录不存在会失败，所以加了创建目录，不知其它操作系统和下载器是否适用
+			//TODO 如果有 header 的话，我 win11 会提示'refer' 不是内部或外部命令，也不是可运行的程序，因为我不知道你测试环境，我不敢改。
+			switch (terminal){
+				case 'wc':
+					return encodeURIComponent(`mkdir "${path}" 2>nul & curl -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+				case 'wp':
+					return encodeURIComponent(`mkdir "${path}" -Force; curl.exe -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+				case 'lt':
+				case 'ls':
+				case 'mt'://TODO 我没有苹果电脑，只有armbian(linux)，虽然AI说都通用的，先这样写，你可能要实际测试下
+					return encodeURIComponent(`mkdir -p "${path}" >/dev/null; curl -L -C - "${link}" -o "${path}/${filename}"${header ? (" " + header) : ""}`);
+				default:
+					console.log(`检测不到对应终端 ${terminal}.`);
+					break;
+			}
 		},
 
 		/**
 		 * 发送链接到 RPC 下载器
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description RPC 下载必备
 		 * @param {string} link - 下载链接
 		 * @param {string} filename - 文件名
 		 * @param {string} [header] - 自定义请求头参数（可选）
+		 * @param {string} path - 下载路径
 		 * @returns {Promise<'success'|'fail'>} 发送态结果
 		 */
-		async sendLinkToRPC(link, filename, header) {
+		async sendLinkToRPC(link, filename, path, header) {
 			let rpc = {
 				domain: base.getValue('setting_rpc_domain'),
 				port: base.getValue('setting_rpc_port'),
 				path: base.getValue('setting_rpc_path'),
 				token: base.getValue('setting_rpc_token'),
-				dir: base.getValue('setting_rpc_dir'),
+				dir: base.getValue('setting_rpc_dir')+path,
 			};
 
 			let url = `${rpc.domain}:${rpc.port}${rpc.path}`;
@@ -759,6 +839,49 @@
 			}
 		},
 
+		
+		/**
+		 * Blob 文件嵌套文件夹下载
+		 * @author KanouAo
+		 * @description 通过创建临时链接实现嵌套文件夹下载，windows平台使用File System Access API创建文件夹。该API主要支持Chromium内核浏览器（Chrome/Edge），Firefox和Safari需检测API可用性。
+		 * @param {Blob} blob - 要下载的 Blob 对象
+		 * @param {string} filename - 下载时提示保存的文件名
+		 */
+		async fsBlobDownload(blob, filename, path) {
+			try {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					// 创建嵌套目录
+					async function createNestedDirectory(baseHandle,path) {
+						const parts = path.split('/').filter(Boolean);
+						let currentHandle = baseHandle;
+						for (const part of parts) {
+						  currentHandle = await currentHandle.getDirectoryHandle(part, { create: true });
+						}
+						return currentHandle;
+					}
+					const folderHandle = await createNestedDirectory(globalDirHandle, path);
+					
+					// 创建文件并写入
+					const fileHandle = await folderHandle.getFileHandle(filename, { create: true });
+					const writable = await fileHandle.createWritable();
+					await writable.write(blob);
+					await writable.close();
+					
+					return true;
+				}else{
+					// 降级到基础下载
+					this.blobDownload(blob, filename);
+					return true;
+				}
+			} catch (err) {
+			  console.error('文件夹操作失败:', err);
+			  // 降级到基础下载
+			  this.blobDownload(blob, filename);
+			  return false;
+			}
+		  },
+		  
+
 		/**
 		 * 可跨域 xmlhttpRequest 请求
 		 * @author hmjz100
@@ -841,6 +964,7 @@
 		 * 发送 GET 请求
 		 * @author 油小猴
 		 * @author hmjz100
+		 * @author KanouAo
 		 * @description 支持进度监控、文件下载和自动重试，可处理被下载工具捕获特殊逻辑
 		 * @param {string} url - 请求地址
 		 * @param {Object} headers - 请求头配置
@@ -865,7 +989,7 @@
 							}
 							if (type === 'blob') {
 								console.log('【LinkSwift】Get(load) Blob\n请求地址：' + url + '\n请求头部：', headers, '\n请求结果：', res);
-								res.status === 200 && base.blobDownload(res.response, extra.filename);
+								res.status === 200 && base.fsBlobDownload(res.response, extra.filename,extra.path);
 								resolve(res);
 							} else {
 								// 尝试格式化请求结果以方便调试
@@ -1311,6 +1435,14 @@
 		 */
 		sleep(time) {
 			return new Promise(resolve => setTimeout(resolve, time));
+		},
+
+		/**
+		 * 延时执行（随机）
+		 * @author KanouAo
+		 */
+		customSleep(){
+			base.sleep(globalSleep+Math.random()*globalSleepRandSeed);
 		},
 
 		/**
@@ -2934,8 +3066,13 @@
 	 * 百度网盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $baidu = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+		accessToken:"",
+
 		_getExtra() {
 			let seKey = decodeURIComponent(base.getCookie('BDCLND'));
 			return '{' + '"sekey":"' + seKey + '"' + "}";
@@ -3116,11 +3253,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(o.link[0].dataset.link, { "User-Agent": config.$baidu.api.ua.downloadLink }, 'blob', { filename, index });
+				base.get(o.link[0].dataset.link, { "User-Agent": config.$baidu.api.ua.downloadLink }, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -3224,7 +3362,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -3257,7 +3398,7 @@
 				target.prepend(base.createLoading());
 
 				let BDUSS = $baidu.getBDUSS();
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename, [`User-Agent: ${config.$baidu.api.ua.downloadLink}`, `Cookie: BDUSS=${BDUSS}`]);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path, [`User-Agent: ${config.$baidu.api.ua.downloadLink}`, `Cookie: BDUSS=${BDUSS}`]);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -3591,6 +3732,91 @@
 			})
 		},
 
+		async getFilesByOnce(file,params){
+			try {
+				let res;
+				if(page=="home"||page=="main"){
+					//我找的链接获取文件，1页100个，这个能获取文件夹所有文件我就直接用了
+					//TODO path属性被占用，原来设想的从选中文件夹开始的路径改成_path
+					let url = `${config.$baidu.api.getFiles.home}&dir=${encodeURIComponent(file.path)}&access_token=${this.accessToken}`;
+					res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink});
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件获取请求失败`);
+			}
+		},
+
+		async getFileUrlByOnce(file,params) {
+			try {
+				let res;
+				if(page=="home"||page=="main"){
+					let url = `${config.$baidu.api.getLink.home}&fsids=${params.fsids}&access_token=${this.accessToken}`;
+					res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件下载链接请求失败`);
+			}
+		},
+
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let files=[];//文件数据列表
+			let res;
+			
+			//随机停顿防反爬
+			this.cnt++;
+			if (this.cnt >= 50+Math.random()*10) {
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+				await base.customSleep();
+				this.cnt = 0;
+			}
+
+			//发送请求
+			res=await this.getFilesByOnce(file,undefined);
+
+			//请求失败
+			if(res?.errno){
+				return message.error(`提示：<br/>请求失败，失败码：	${res?.errno}	失败信息：${res.errmsg}`);
+			}
+
+			//请求成功
+			files=files.concat(res.list)//注意变量名
+			return files; 
+		},
+
+		async fetchFiles(file,pNode) {
+			//节点 
+			let fileNode={
+				name:file.server_filename,//注意变量名
+				_path:pNode.name === 'root' ? `` : (pNode._path === '' ? pNode.name : `${pNode._path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file._path=fileNode._path;//TODO path属性被占用，改成 _path
+
+			//判断是否文件夹
+			if (!file?.isdir) {//注意变量名
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
+		},
+
 		async getLink() {
 			Swal.fire({
 				showConfirmButton: false,
@@ -3615,9 +3841,10 @@
 			});
 			// 获取选择的文件列表
 			selectList = this.getSelectedList();
-			let BDUSS = this.getBDUSS(), accessToken = (base.getValue('baidu_access_token') || await $baidu.getToken());
+			let BDUSS = this.getBDUSS();
+			this.accessToken = (base.getValue('baidu_access_token') || await $baidu.getToken());
 
-			if (!accessToken) {
+			if (!this.accessToken) {
 				message.info('提示：<br/>稍后请在新标签页中授权助手哦~');
 				base.deleteValue('baidu_access_token');
 				setTimeout(() => {
@@ -3626,7 +3853,7 @@
 					let interval = setInterval(function () {
 						if (!!base.getValue('baidu_access_token')) {
 							clearInterval(interval);
-							accessToken = base.getValue('baidu_access_token')
+							this.accessToken = base.getValue('baidu_access_token')
 						}
 						attempts++;
 						if (attempts > 120) {
@@ -3733,62 +3960,52 @@
 				}
 				return await getBDUSS();
 			}
+			
+			if(page === 'home' || page === 'main'){
+			}else if(page=="share"){
+				//分享页面所需的变量
+			}else{
+				return message.error('提示：<br/>页面错误~');
+			}
 
+			this.cnt=0; //计数器，用于控制随机延迟
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
 			if (page === 'home' || page === 'main') {
 				if (!selectList.length) {
 					return message.error('提示：<br/>先勾选要下载的文件哦~');
 				}
 
-				let cnt = 0;
-				let processed = selectList.filter(f => !f.isdir).length;
-
-				async function fetchFiles(dirs) {
-					let files = [];
-
-					for (let dir of dirs) {
-						doc.find('.loading-popup .loading-title').html(`文件获取中`);
-						let url = `${config.$baidu.api.getFiles}&dir=${encodeURIComponent(dir.path)}&access_token=${accessToken}`;
-						let res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
-						cnt++;
-
-						if (res?.list?.length && (res.errno === 0 || res.errmsg === "succ")) {
-							let subFiles = res.list.filter(f => !f.isdir);
-
-							processed += subFiles.length;
-							doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} 个文件~</div><div>${dir.path}</div>`);
-
-							files = files.concat(subFiles);
-							if (res.list.some(f => f.isdir)) {
-								files = files.concat(await fetchFiles(res.list.filter(f => f.isdir)));
-							}
-						}
-						if (cnt >= 50) {
-							doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} 个文件~</div><div>休息 3 秒...</div>`);
-							await base.sleep(3000);
-							cnt = 0;
-						}
-					}
-					return files;
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
 				}
 
-				let files = selectList.filter(f => !f.isdir);
-
-				if (selectList.some(f => f.isdir)) {
-					files = files.concat(await fetchFiles(selectList.filter(f => f.isdir)));
-				}
-				if (!files.length) {
+				//文件夹为空
+				if (!fileList.length) {
 					return message.error('提示：<br/>文件夹是空的哦~');
 				}
 
+				//列表转字典
+				const filesDict = fileList.reduce((acc, file) => {
+					acc[file.fs_id] = file;
+					return acc;
+				}, {});
+
+				//获取下载链接 
 				doc.find('.loading-popup .loading-title').html(`链接获取中`);
 				doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-
-				let fidList = files.map(f => f.fs_id);
-				let batchSize = 100;
+				let fidList = fileList.map(f => f.fs_id);
 				let linkList = [];
-				for (let i = 0; i < fidList.length; i += batchSize) {
-					let url = `${config.$baidu.api.getLink}&fsids=${encodeURIComponent(JSON.stringify(fidList.slice(i, i + batchSize)))}&access_token=${accessToken}`;
-					let res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
+				let batchSize = globalBatchsize+Math.ceil(Math.random()*5);
+				let i=0;
+				while (i < fileList.length){
+					//url请求
+					let params={"fsids":encodeURIComponent(JSON.stringify(fidList.slice(i, i + batchSize)))};
+					let res = await this.getFileUrlByOnce(undefined,params);
 
 					if (res?.list?.length && (res.errno === 0 || res.errmsg === "succ")) {
 						linkList = linkList.concat(res.list);
@@ -3811,10 +4028,22 @@
 							return message.error('提示：<br/>获取下载链接失败，刷新网页后再试试吧~');
 						}
 					}
-					await base.sleep(1000);
+
+					// 每次处理完一个批次后，等待	
+					if (i + batchSize < fileList.length){
+						doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${i} / ${fileList.length} 个链接,请耐心等待哦~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+						await base.customSleep();
+					};
+
+					//累加批次
+					i += batchSize;
+					batchSize = globalBatchsize+Math.ceil(Math.random()*5)
 				}
 
 				if (linkList.length) {
+					for (let i = 0; i < linkList.length; i++) {//重写下载路径
+						linkList[i]._path = filesDict[linkList[i].fs_id]._path;
+					}
 					base.showMainDialog(config.base.dom.button[mode].title, this.generateDom(linkList), config.base.dom.button[mode].footer);
 				} else {
 					return message.error('提示：<br/>获取下载链接失败，刷新网页后再试试吧~');
@@ -3835,6 +4064,7 @@
 				if (v.isdir === 1) return;
 				let filename = v.server_filename || v.filename;
 				let size = base.sizeFormat(v.size);
+				let dpath=v._path;//属性被占用
 				if (!v?.dlink || !v?.dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -3845,8 +4075,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="不建议使用本功能，若使用后长时间没有弹出下载提示则代表请求失败，请换用“增强下载”<br/>基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-title="不建议使用本功能，在本网盘单独复制链接并粘贴下载可能会导致服务器回报 403 错误" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-tip" style="display: none"></div>
@@ -3864,37 +4094,47 @@
 					}
 					let BDUSS = this.getBDUSS();
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "User-Agent: ${config.$baidu.api.ua.downloadLink}" --header "Cookie: BDUSS=${BDUSS}"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "User-Agent: ${config.$baidu.api.ua.downloadLink}" --header "Cookie: BDUSS=${BDUSS}"`);
 						if (typeof (alink) === 'object') {
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" target="_blank" href="${alink.link}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink.link}">${decodeURIComponent(alink.text)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						} else {
 							alinkAllText += alink + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						}
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `-A "${config.$baidu.api.ua.downloadLink}" -b "BDUSS=${BDUSS}"`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `-A "${config.$baidu.api.ua.downloadLink}" -b "BDUSS=${BDUSS}"`);
 						if (typeof (alink) === 'object') {
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" target="_blank" href="${alink.link}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink.link}">${decodeURIComponent(alink.text)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						} else {
 							alinkAllText += alink + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 							</div>`;
 						}
@@ -3904,13 +4144,13 @@
 						if (typeof (alink) === 'object') {
 							alinkAllText += decodeURIComponent(alink.text) + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" href="${decodeURIComponent(alink.link)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink.text)}<br/>下载 ${filename}</a>
 							</div>`;
 						} else {
 							alinkAllText += alink + '\r\n';
 							content += `<div class="pl-item">
-								<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+								<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 								<a class="pl-item-link pl-a" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 							</div>`;
 						}
@@ -4134,8 +4374,13 @@
 	 * 阿里云盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $aliyun = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+		authorization:"",
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -4225,11 +4470,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, { "Referer": `https://${location.host}/` }, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, { "Referer": `https://${location.host}/` }, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -4335,7 +4581,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename, [`Referer: https://${location.host}/`]);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path, [`Referer: https://${location.host}/`]);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -4349,7 +4595,10 @@
 				$('.listener-link-rpc').click();
 				$(e.target).text('发送完成，发送结果见上方按钮哦~').animate({ opacity: '0.5' }, "slow");
 			});
-			doc.on('click', '.listener-download-all.blob', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {//TODO 这你原本写的是//.listener-download-all.blob，怕你写错改了下
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -4381,26 +4630,6 @@
 					e.stopPropagation();
 				}
 			}, true);
-		},
-
-		async getFileUrlByOnce(d, f) {
-			let authorization = `${base.getStorage('token').token_type} ${base.getStorage('token').access_token}`;
-			let res = await base.post(config.$aliyun.api.getLink, {
-				drive_id: d,
-				file_id: f
-			}, {
-				authorization,
-				"content-type": "application/json;charset=utf-8",
-				"referer": "https://www.aliyundrive.com/",
-				"x-canary": "client=windows,app=adrive,version=v6.0.0"
-			});
-			if (res.code === 'AccessTokenInvalid') {
-				return message.error('提示：<br/>访问令牌过期了，请刷新网页后再试');
-			}
-			if (res.url) {
-				return res.url;
-			}
-			return '';
 		},
 
 		greenerPage() {
@@ -4460,6 +4689,110 @@
 			})
 		},
 
+		async getFilesByOnce(file,params){
+			let res;
+			if(page=="home"||page=="main"){
+				res = await base.post(config.$aliyun.api.getFiles.home, {
+					"all": false,//TODO 取得全部文件，默认是false，但测试时突然取不到了，不知道是不是阿里改了
+					"drive_id": params.drive_id,
+					"fields": "*",
+					"limit": 100,//TODO 第一次20，之后100。省事先统一100看看,以后有问题再改
+					"marker":params.marker,
+					"order_by": "name",
+					"order_direction": "DESC",
+					"parent_file_id": params.parent_file_id,
+					"url_expire_sec": 14400//4小时后链接失效
+					}, {
+					"authorization":this.authorization,
+					"content-type": "application/json",
+					"referer": "https://www.aliyundrive.com/",
+					"x-canary": "client=windows,app=adrive,version=v6.0.0"
+					}
+				);
+			}else if(page=="share"){
+			}else{
+				return message.error(`提示：<br/>网站页面错误`);
+			}
+			return res;
+		},
+
+		async getFileUrlByOnce(d, f) {
+			let res = await base.post(config.$aliyun.api.getLink.home, {
+				drive_id: d,
+				file_id: f
+			}, {
+				"authorization":this.authorization,
+				"content-type": "application/json;charset=utf-8",
+				"referer": "https://www.aliyundrive.com/",
+				"x-canary": "client=windows,app=adrive,version=v6.0.0"
+			});
+			if (res.code === 'AccessTokenInvalid') {
+				return message.error('提示：<br/>访问令牌过期了，请刷新网页后再试');
+			}
+			if (res.url) {
+				return res.url;
+			}
+			return '';
+		},
+
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let files=[];//文件数据列表
+			let marker='';//文件夹内下一段数据的令牌
+			let res;
+			
+			while (true) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					await base.customSleep();
+					this.cnt = 0;
+				}
+
+				//发送请求
+				let param={"drive_id":file.drive_id,"parent_file_id":file.file_id,"marker":marker};
+				res=await this.getFilesByOnce(file,param);
+
+				//请求失败
+				if(!res?.items){
+					return message.error(`提示：<br/>请求失败`);
+				}
+
+				//请求成功
+				files=files.concat(res.items)
+				marker=res.next_marker;
+				if (!marker)
+					break;
+			}
+			return files; 
+		},
+
+		async fetchFiles(file,pNode) {
+			//节点 
+			let fileNode={
+				name:file.name,//注意变量名
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			if (file?.type!='folder') {//注意变量名
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
+		},
+
 		async getLink() {
 			Swal.fire({
 				showConfirmButton: false,
@@ -4486,55 +4819,81 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+			
+			if(page === 'home'){
+			}else if(page=="share"){
+				//分享页面所需的变量
+			}else{
+				return message.error('提示：<br/>页面错误~');
 			}
-			if (page === 'home') {
-				selectList = selectList.filter(item => item.type === 'file')
-				let batchSize = 15;
-				let processed = 0;
 
+			this.authorization= `${base.getStorage('token').token_type} ${base.getStorage('token').access_token}`;
+			this.cnt=0; //计数器，用于控制随机延迟
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
+			if (page === 'home') {
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					file.drive_id=file.drive_id||file.driveId;//driveId、fileId全统一成drive_id、file_id
+					file.file_id=file.file_id||file.fileId;
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
+				}
+
+				//文件夹为空
+				if (!fileList.length) {
+					return message.error('提示：<br/>文件夹是空的哦~');
+				}
+				
+				//获取下载链接 
 				doc.find('.loading-popup .loading-title').html(`链接获取中`);
 				doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					// 当前批次文件
-					let batch = selectList.slice(i, i + batchSize);
+				let batchSize = 15+Math.ceil(Math.random()*5);
+				let i=0;
+				while (i < fileList.length){
+					// 分批获取链接
+					let batch = fileList.slice(i, i + batchSize);
 
 					// 过滤掉已有 URL 的文件
-					let noUrlSelectList = batch.filter(v => !Boolean(v.url));
-					let hasUrlSelectList = batch.filter(v => Boolean(v.url));
-					let queue = [];
+					let noUrlList = batch.filter(v => !Boolean(v.url))
 
 					// 为没有 URL 的文件生成请求队列
-					noUrlSelectList.forEach((item) => {
-						queue.push(this.getFileUrlByOnce(item.driveId, item.fileId)
-							.then(val => {
-								processed++;
-								doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
-								return val;
-							}));
-					});
-
-					hasUrlSelectList.forEach((item) => {
-						processed++;
-						doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
-					});
+					let queue = [];
+					noUrlList.forEach( (item, index) => {
+							queue.push(this.getFileUrlByOnce(item.drive_id, item.file_id));//浏览器千万别在这附近下断点，不然直接过不去，卡在这的。
+						}
+					);
 
 					// 等待本批次的请求结果
-					const res = await Promise.all(queue);
-					res.forEach((val, index) => {
-						noUrlSelectList[index].url = val;
-					});
+					let res = await Promise.all(queue);
+					res.forEach( (val, index) => {
+						noUrlList[index].url = val;
+					}
+					);
 
-					// 每次处理完一个批次后，等待 1 秒
-					await base.sleep(1000);
+					// 每次处理完一个批次后，等待	
+					if (i + batchSize < fileList.length){
+						doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${i} / ${fileList.length} 个链接,请耐心等待哦~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+						await base.customSleep();
+					};
+
+					//累加批次
+					i += batchSize;
+					batchSize = 15+Math.ceil(Math.random()*5)
 				}
 			} else {
 				return message.error('提示：<br/>页面错误~');
 			}
 
-			let html = this.generateDom(selectList);
-			base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
+			//显示下载GUI
+			if (fileList.length) {
+				let html = this.generateDom(fileList);
+				base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
+			} else {
+				return message.error('提示：<br/>获取下载链接失败，刷新网页后再试试吧~');
+			}
 		},
 
 		generateDom(list) {
@@ -4550,6 +4909,7 @@
 				let did = v.driveId;
 				let size = base.sizeFormat(v.size);
 				let dlink = v.downloadUrl || v.url;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -4559,9 +4919,9 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}" >${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-size="${v.size}" data-index="${i}">增强下载(基于浏览器文件流)</button>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-index="${i}">直接下载(基于浏览器链接)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-size="${v.size}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-did="${did}" data-fid="${fid}" data-filename="${filename}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-success listener-copy-filename" data-title="本网盘于下载高峰期时可能不会显示文件名称，这时需要手动复制文件名称到下载工具中" data-filename="${filename}">复制名称</button>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-title="不建议使用本功能，在本网盘单独复制链接并粘贴下载可能会导致服务器回报 403 错误" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-tip" style="display: none"><span><span class="pl-ext"></span></span> <span class="listener-back">返回</span></div>
@@ -4578,24 +4938,35 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "Referer: https://${location.host}/"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "Referer: https://${location.host}/"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
-					}
+					} 
 					if (mode === 'rpc') {
+						dlink=dlink.replace(' ', '%20')
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink.replace(' ', '%20')}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `&refer=${encodeURIComponent(`https://${location.host}/`)}`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `&refer=${encodeURIComponent(`https://${location.host}/`)}`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -4603,7 +4974,7 @@
 						let alink = base.convertLinkToBC(dlink, filename, `-e "https://${location.host}/"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -4691,8 +5062,13 @@
 	 * 中国移动云盘 / 和彩云
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $mcloud = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+		authorization:"",//cookies
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -4748,11 +5124,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -4836,7 +5213,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -4862,7 +5242,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -4995,6 +5375,61 @@
 			return md5(A + l).toUpperCase();
 		},
 
+		async getFilesByOnce(item,params){
+			try {
+				let res;
+				if(page=="home"){
+					let body = {
+						"pageInfo": {
+							"pageSize": 100,
+							"pageCursor": params.pageCursor,
+							},
+							"orderBy": "updated_at",
+							"orderDirection": "DESC",
+							"parentFileId": item.fileId,
+							"imageThumbnailStyleList": [
+							"Small",
+							"Large"
+							]
+					};
+					let time = new Date(+new Date() + 8 * 3600 * 1000).toJSON().substr(0, 19).replace('T', ' ');
+					let key = this.getRandomString(16);
+					let sign = this.getSign(undefined, body, time, key);
+					res = await base.post(config.$mcloud.api.getFiles.home, body, {
+							'Authorization': this.authorization,
+							'Caller': 'web',
+							'CMS-DEVICE': 'default',
+							'Content-Type': "application/json;charset=UTF-8",
+							'mcloud-channel': '1000101',
+							'mcloud-client': '10701',
+							'mcloud-sign': time + "," + key + "," + sign,
+							'mcloud-version': '7.14.2',
+							'Origin': 'https://yun.139.com',
+							'Referer': 'https://yun.139.com/',
+							'X-DeviceInfo': '||9|7.14.2|chrome|119.0.0.0|||windows 10||zh-CN|||',
+							'X-Huawei-ChannelSrc': '10000034',
+							'X-Inner-Ntwk': '2',
+							'X-M4C-Caller': 'PC',
+							'X-M4C-Src': '10002',
+							'X-SvcType': '1',
+							'X-Yun-Api-Version': 'v1',
+							'X-Yun-App-Channel': '10000034',
+							'X-Yun-Channel-Source': '10000034',
+							'X-Yun-Client-Info': '||9|7.14.2|chrome|119.0.0.0|||windows 10||zh-CN|||||',
+							'X-Yun-Module-Type': '100',
+							'X-Yun-Svc-Type': '1'
+						}
+					);
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件获取请求失败`);
+			}
+		},
+
 		async getFileUrlByOnce(item, index) {
 			try {
 				if (item.downloadUrl) return {
@@ -5004,13 +5439,13 @@
 
 				if (this.detectPage() === 'home') {
 					let body = {
-						fileId: item.contentID
+						fileId: item.fileId
 					}
 					let time = new Date(+new Date() + 8 * 3600 * 1000).toJSON().substr(0, 19).replace('T', ' ');
 					let key = this.getRandomString(16);
 					let sign = this.getSign(undefined, body, time, key);
 
-					let res = await base.post(config.$mcloud.api.getLink, body, {
+					let res = await base.post(config.$mcloud.api.getLink.home, body, {
 						'Authorization': base.getCookie('authorization'),
 						'Caller': 'web',
 						'CMS-DEVICE': 'default',
@@ -5071,6 +5506,64 @@
 				};
 			}
 		},
+		
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let files=[];//文件数据列表
+			let nextPageCursor='';//文件夹内下一段数据的令牌
+			let res;
+			while (true) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹（非全部）已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					await base.customSleep();
+					this.cnt = 0;
+				}
+
+				//发送请求
+				let params={"parent_file_id":file.fileId,"pageCursor":nextPageCursor};
+				res=await this.getFilesByOnce(file,params);
+
+				//请求失败
+				if(!res.success){//注意变量名
+					return message.error(`提示：<br/>请求失败，失败码：	${res?.code}	失败信息：${res.message}`);
+				}
+
+				//请求成功
+				files=files.concat(res.data.items)//注意变量名
+				nextPageCursor=res.data.nextPageCursor;
+				if (!nextPageCursor)
+					break;
+			}
+			return files;
+		},
+
+		async fetchFiles(file,pNode) {
+			//获取文件目录结构（递归）
+			//节点 
+			let fileNode={
+				name:file.name,//注意变量名
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			if (file?.type!="folder") {//注意变量名
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+			
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
+		},
 
 		async getLink() {
 			Swal.fire({
@@ -5098,42 +5591,69 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
-			}
 
+			this.cnt=0;
+			this.fileCount=0;//文件计数
+			this.authorization =  base.getCookie('authorization');
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
 			if (page === 'home') {
-				selectList = selectList.filter(item => item.contentID && item.contentName && item.contentSuffix);
-				let batchSize = 15;
-				let processed = 0;
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					file.name=file.name||file.catalogName;
+					file.fileId=file.fileId||file.catalogID;
+					if(file.catalogID)file.type="folder";
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
+				}
+				
+				//文件夹为空
+				if (!fileList.length) {
+					return message.error('提示：<br/>文件夹是空的哦~');
+				}
+
+				//获取下载链接 
 				doc.find('.loading-popup .loading-title').html(`链接获取中`);
 				doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					let batch = selectList.slice(i, i + batchSize);
-					let queue = [];
+				let batchSize = 15+Math.ceil(Math.random()*5);
+				let i=0;
+				while (i < fileList.length){
+					// 分批获取链接
+					let batch = fileList.slice(i, i + batchSize);
 
+					// 生成请求队列
+					let queue = [];
 					batch.forEach((item, localIndex) => {
 						let globalIndex = i + localIndex;
 						queue.push(this.getFileUrlByOnce(item, globalIndex)
 							.then(val => {
-								processed++;
-								doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
 								return val;
 							}));
 					});
 
+					// 等待本批次的请求结果
 					let res = await Promise.all(queue);
 					res.forEach(val => {
-						selectList[val.index].downloadUrl = val.downloadUrl;
+						fileList[val.index].downloadUrl = val.downloadUrl;
 					});
 
-					await base.sleep(1000);
+					// 每次处理完一个批次后，等待	
+					if (i + batchSize < fileList.length){
+						doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${i} / ${fileList.length} 个链接,请耐心等待哦~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+						await base.customSleep();
+					};
+
+					//累加批次
+					i += batchSize;
+					batchSize = 15+Math.ceil(Math.random()*5)
 				}
 			} else {
 				return message.error('提示：<br/>页面错误~');
 			}
 
-			let html = this.generateDom(selectList);
+			//显示下载GUI
+			let html = this.generateDom(fileList);
 			base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
 		},
 
@@ -5145,9 +5665,10 @@
 			let alinkAllText = '';
 			list.forEach((v, i) => {
 				if (v.dirEtag || v.caName) return;
-				let filename = v.contentName || v.coName;
-				let size = base.sizeFormat(v.contentSize || v.coSize);
+				let filename = v.contentName || v.coName||v.name;
+				let size = base.sizeFormat(v.contentSize || v.coSize||v.size);
 				let dlink = v.downloadUrl;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -5157,8 +5678,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.contentSize || v.coSize}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.contentSize || v.coSize}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -5174,24 +5695,34 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -5199,7 +5730,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -5285,8 +5816,15 @@
 	 * 天翼云盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $tcloud = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+		shareId:0,//分享id
+		accessCode:"",//访问码
+
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -5329,11 +5867,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -5417,7 +5956,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -5443,7 +5985,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -5529,48 +6071,79 @@
 			return accessToken;
 		},
 
+		async getFilesByOnce(item,params){
+			let res;
+			try {
+				if(page=="home"){
+					//TODO 我调试过程中res出现过check ip error - curIp=2409::xxxx:xxxx:xxxx:xxxx:xxxx:xxxx, cookiesIp=120.xxx.xxx.xxx，不知是不是抓IP注意下
+					let url = `${config.$tcloud.api.getFiles.home}?noCache=${Math.random()}&pageSize=${60}&pageNum=${params.pageNum}&mediaType=0&folderId=${params.id}&iconOption=5&orderBy=lastOpTime&descending=true`;
+					res= await base.get(url, {
+						"accept": "application/json;charset=UTF-8",
+						"sign-type": 1,
+						"accept-encoding": "gzip, deflate, br, zstd",
+						"accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+						"priority":"u=1, i",
+					});
+				}else if(page=="share"){//别从自己盘进自己的分享，不然都拿不到自己的密钥（不过也没有这么怪的用户吧……）
+					let url = `${config.$tcloud.api.getFiles.share}?noCache=${Math.random()}&pageSize=${60}&pageNum=${params.pageNum}&fileId=${params.id}&shareDirFileId=${params.id}&isFolder=true&shareId=${this.shareId}&shareMode=1&iconOption=5&orderBy=lastOpTime&descending=true&accessCode=${this.accessCode}`;
+					res=await base.get(url, {
+						"accept": "application/json;charset=UTF-8",
+						"sign-type": 1,
+					});
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件获取请求失败`);
+			}
+		},
+
 		async getFileUrlByOnce(item, index, token) {
 			try {
-				if (item.downloadUrl) return {
-					index,
-					downloadUrl: item.downloadUrl
-				};
-				let time = Date.now(),
-					fileId = item.fileId,
-					o = "AccessToken=" + token + "&Timestamp=" + time + "&fileId=" + fileId,
-					url = config.$tcloud.api.getLink + '?fileId=' + fileId;
-				if (item.shareId) {
-					o = "AccessToken=" + token + "&Timestamp=" + time + "&dt=1&fileId=" + fileId + "&shareId=" + item.shareId;
-					url += '&dt=1&shareId=' + item.shareId;
-				}
-				let sign = md5(o).toString();
-				let res = await base.get(url, {
-					"accept": "application/json;charset=UTF-8",
-					"sign-type": 1,
-					"accesstoken": token,
-					"timestamp": time,
-					"signature": sign
-				});
-				if (res.res_code === 0) {
-					return {
+				let res;
+				if(page=="home"){
+					if (item.downloadUrl) return {
 						index,
-						downloadUrl: res.fileDownloadUrl
+						downloadUrl: item.downloadUrl
 					};
-				} else if (res.errorCode === 'InvalidSessionKey') {
-					return {
-						index,
-						downloadUrl: '提示：<br/>请先登录网盘~'
-					};
-				} else if (res.res_code === 'ShareNotFoundFlatDir') {
-					return {
-						index,
-						downloadUrl: '提示：<br/>请[转存]文件，之后再👉前往[我的网盘]中下载哦~'
-					};
-				} else {
-					return {
-						index,
-						downloadUrl: '获取下载地址失败，刷新后再试试吧~' + (res.res_code ? res.res_code : "")
-					};
+					let time = Date.now(),
+						fileId = item.id,
+						o = "AccessToken=" + token + "&Timestamp=" + time + "&fileId=" + fileId,
+						url = config.$tcloud.api.getLink.home + '?fileId=' + fileId;
+					if (this.shareId) {
+						o = "AccessToken=" + token + "&Timestamp=" + time + "&dt=1&fileId=" + fileId + "&shareId=" + this.shareId;
+						url += '&dt=1&shareId=' + this.shareId;
+					}
+					let sign = md5(o).toString();
+					res = await base.get(url, {
+						"accept": "application/json;charset=UTF-8",
+						"sign-type": 1,
+						"accesstoken": token,
+						"timestamp": time,
+						"signature": sign
+					});
+					if (res.res_code === 0) {
+						return {
+							index,
+							downloadUrl: res.fileDownloadUrl
+						};
+					} else if (res.errorCode === 'InvalidSessionKey') {
+						return {
+							index,
+							downloadUrl: '提示：<br/>请先登录网盘~'
+						};
+					} else if (res.res_code === 'ShareNotFoundFlatDir') {
+						return {
+							index,
+							downloadUrl: '提示：<br/>请[转存]文件，之后再👉前往[我的网盘]中下载哦~'
+						};
+					} else {
+						return {
+							index,
+							downloadUrl: '获取下载地址失败，刷新后再试试吧~' + (res.res_code ? res.res_code : "")
+						};
+					}
 				}
 			} catch (e) {
 				return {
@@ -5578,6 +6151,63 @@
 					downloadUrl: '获取下载地址失败，刷新后再试试吧~'
 				};
 			}
+		},
+		
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let res;
+			let files=[];//文件数据列表
+			let folders=[];//文件夹数据列表
+			let path = file.path ? `${file.path}/${file.name}` : file.name;
+			// let pageCount=Math.ceil(file.fileCount/60);//总页数
+			let pageCount=1;//总页数，先设1，之后根据res返回的值修改//share没有file.fileCount，兼容适配
+			for (let pageNum=1;pageNum<=pageCount;pageNum++) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('#loadingText').html(`<div>文件获取中</div><div>已获取 ${this.fileCount} 个文件，请耐心等待哦~</div><div>>休息 ${globalSleep} 毫秒...</div>`);
+					await base.sleep(globalSleep+Math.random()*globalSleepRandSeed);
+					this.cnt = 0;
+				}
+				//发送请求
+				let param={"pageNum":pageNum,"id":file.id};
+				res=await this.getFilesByOnce(file,param);
+				
+				//请求失败
+				if(!(res?.res_code==0&&res?.res_message=="成功")){
+					return message.error(`提示：<br/>请求失败，失败码：	${res?.res_code}	失败信息：${res.res_message}`);
+				}
+				//请求成功
+				if(pageCount==1)pageCount=Math.ceil(res.fileListAO.count/60);
+				files=files.concat(res.fileListAO.fileList);//注意别占用fileList的变量名字
+				folders=folders.concat(res.fileListAO.folderList);
+				this.fileCount+=res.fileListAO.fileList.length;
+				files.forEach(f => {f.path=path;});
+			}
+			return {files,folders}; 
+		},
+
+		async fetchFiles(file,pNode) {
+			//获取文件目录结构（递归）
+			//节点 这的节点树因为不怎么需要就没做完整
+			let fileNode={
+				name:file.name,//注意变量名
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			//这个不用判断是否文件夹，返回的数据已经分开了
+			doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+			
+			//文件夹内文件遍历
+			let { files, folders }=await this.fetchAllPages(file);
+			for (let f of folders) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
 		},
 
 		async getLink() {
@@ -5606,10 +6236,47 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+
+			if(page=="home"){
+				this.shareId=0;
+				this.accessCode="";
+			}else if(page=="share"){
+				//分享页面所需的变量
+				this.shareId=selectList[0].shareId;//分享内容的id
+				let share_link=location.search.substring(6);//分享的链接，地址带上访问码也可比如code=MFNRJ3bAfe6r（访问码：9lik）也太怪了吧？
+				const percentIndex = share_link.indexOf('%');
+				if (percentIndex !== -1) share_link = share_link.substring(0, percentIndex);
+				this.accessCode=base.getCookie(`share_${share_link}`);//访问密钥，在cookie里有，但不同的分享的密钥都堆一起了
+			}else{
+				return message.error('提示：<br/>页面错误~');
 			}
-			selectList = selectList.filter(item => !item.isFolder)
+			
+			this.cnt=0;
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
+			//获取文件目录结构（递归）
+			for (let file of selectList) {
+				//遍历选中文件
+				//统一变量名
+				file.name=file.name||file.fileName;
+				file.id=file.id||file.fileId;
+				file.size=file.size||file.fileSize;
+				if(!file?.isFolder){//非文件夹
+					fileList = fileList.concat(file);
+					this.fileCount++;
+					continue;
+				}
+				file.fileCount=file.fileData;
+				fileList = fileList.concat(await this.fetchFiles(file,fileTree));
+			}
+
+			//文件夹为空
+			if (!fileList.length) {
+				return message.error('提示：<br/>文件夹是空的哦~');
+			}
+
+			//获取下载链接 
 			doc.find('.loading-popup .loading-title').html(`令牌获取中`);
 			doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取状态~</div>`);
 			let token = base.getStorage('accessToken') || await this.getToken();
@@ -5618,34 +6285,42 @@
 			}
 			doc.find('.loading-popup .loading-title').html(`令牌获取中`);
 			doc.find('.loading-popup .swal2-html-container').html(`<div>获取缓存成功~</div>`);
-
-			let batchSize = 15;
-			let processed = 0;
 			doc.find('.loading-popup .loading-title').html(`链接获取中`);
 			doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-			for (let i = 0; i < selectList.length; i += batchSize) {
-				let batch = selectList.slice(i, i + batchSize);
-				let queue = [];
+			let batchSize = globalBatchsize+Math.ceil(Math.random()*5);
+			let i=0;
+			while (i < fileList.length){
+				// 分批获取链接
+				let batch = fileList.slice(i, i + batchSize);
 
+				// 生成请求队列
+				let queue = [];
 				batch.forEach((item, localIndex) => {
 					let globalIndex = i + localIndex;
 					queue.push(this.getFileUrlByOnce(item, globalIndex, token)
 						.then(val => {
-							processed++;
-							doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
 							return val;
 						}));
 				});
 
+				// 等待本批次的请求结果
 				let res = await Promise.all(queue);
 				res.forEach(val => {
-					selectList[val.index].downloadUrl = val.downloadUrl;
+					fileList[val.index].downloadUrl = val.downloadUrl;
 				});
 
-				await base.sleep(1000);
+				// 每次处理完一个批次后，等待	
+				if (i + batchSize < fileList.length){
+					doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${i+batch.length} / ${fileList.length} 个链接,请耐心等待哦~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					await base.customSleep();
+				};
+
+				//累加批次
+				i += batchSize;
+				batchSize = globalBatchsize+Math.ceil(Math.random()*5)
 			}
 
-			let html = this.generateDom(selectList);
+			let html = this.generateDom(fileList);
 			base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
 		},
 
@@ -5657,10 +6332,11 @@
 			let content = '<div class="pl-main">';
 			let alinkAllText = '';
 			list.forEach((v, i) => {
-				if (v.isFolder) return;
-				let filename = v.fileName;
+				if (v?.isFolder) return;
+				let filename = v.name;
 				let size = base.sizeFormat(v.size);
 				let dlink = v.downloadUrl;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -5670,8 +6346,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -5687,24 +6363,34 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -5712,7 +6398,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -5788,8 +6474,14 @@
 	 * 迅雷云盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $xunlei = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+		authorization:"",
+		token:{},
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -5842,11 +6534,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -5930,7 +6623,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -5972,7 +6668,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -6077,32 +6773,120 @@
 			return token;
 		},
 
-		async getFileUrlByOnce(item, index, token) {
+		async getFilesByOnce(item,params){
+			let res;
 			try {
-				if (item.downloadUrl) return {
-					index,
-					downloadUrl: item.downloadUrl
-				};
-				let res = await base.get(config.$xunlei.api.getLink + item.id, {
-					'Authorization': `${token.credentials.token_type} ${token.credentials.access_token}`,
-					'content-type': "application/json",
-					'x-captcha-token': token.captcha.token,
-					'x-device-id': token.deviceid,
-				});
-				if (res.web_content_link) {
-					return {
-						index,
-						downloadUrl: res.web_content_link
-					};
-				} else {
-					return {
-						index,
-						downloadUrl: '获取下载地址失败，刷新后再试试吧~'
-					};
+				if(page=="home"){
+					//limit最多只能获取到200，res返回参数里有个 next_page_token 是令牌，如果是空的就说明不需要下一页
+					//中间奇怪的那段是URL编码的JSON字符串,第1次请求是不带parent_id之前的&的，后面请求是带parent_id前的&的，但都适用
+					let url=`${config.$xunlei.api.getFiles.home}page_token=${params.next_page_token}&parent_id=${params.parent_id}&filters=%7B%22phase%22%3A%7B%22eq%22%3A%22PHASE_TYPE_COMPLETE%22%7D%2C%22trashed%22%3A%7B%22eq%22%3Afalse%7D%7D&with_audit=true&limit=50`;
+					res = await base.get(url, {
+						'Authorization': this.authorization,
+						'content-type': "application/json",
+						'x-captcha-token': this.token.captcha.token,
+						'x-device-id': this.token.deviceid,
+					});
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
 				}
+				return res;
 			} catch (e) {
 				return message.error('提示：<br/>请先登录网盘后再刷新页面呢~');
 			}
+		},
+
+		async getFileUrlByOnce(item, index, token) {
+			let res;
+			try {
+				if(page=="home"){
+					if (item.downloadUrl) return {
+						index,
+						downloadUrl: item.downloadUrl
+					};
+					res = await base.get(config.$xunlei.api.getLink.home + item.id, {
+						'Authorization': `${token.credentials.token_type} ${token.credentials.access_token}`,
+						'content-type': "application/json",
+						'x-captcha-token': token.captcha.token,
+						'x-device-id': token.deviceid,
+					});
+					if (res.web_content_link) {
+						return {
+							index,
+							downloadUrl: res.web_content_link
+						};
+					} else {
+						return {
+							index,
+							downloadUrl: '获取下载地址失败，刷新后再试试吧~'
+						};
+					}
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error('提示：<br/>请先登录网盘后再刷新页面呢~');
+			}
+		},
+		
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let files=[];//文件数据列表
+			let next_page_token='';//文件夹内下一段数据的令牌
+			let res;
+			while (true) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹（非全部）已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					await base.customSleep();
+					this.cnt = 0;
+				}
+
+				//发送请求
+				let param={"next_page_token":next_page_token,"parent_id":file.id};
+				res=await this.getFilesByOnce(file,param);
+
+				//请求失败
+				if(!res?.files){//注意变量名
+					return message.error(`提示：<br/>请求失败，失败码：	${res?.code}	失败信息：${res.message}`);
+				}
+
+				//请求成功
+				files=files.concat(res.files)//注意变量名
+				next_page_token=res.next_page_token;
+				if (!next_page_token)
+					break;
+			}
+			return files;
+		},
+
+		async fetchFiles(file,pNode) {
+			//获取文件目录结构（递归）
+			//节点 
+			let fileNode={
+				name:file.name,//注意变量名
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			if (file?.kind!='drive#folder') {//注意变量名
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+			
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
 		},
 
 		async getLink() {
@@ -6131,40 +6915,72 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+
+			if(page=="home"){
+			}else if(page=="share"){
+				//分享页面所需的变量
+			}else{
+				return message.error('提示：<br/>页面错误~');
 			}
+			this.token =  this.getToken();
+			this.authorization = `${this.token.credentials.token_type} ${this.token.credentials.access_token}`;
+
+			this.cnt=0;
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
 			if (page === 'home') {
-				let token = this.getToken();
-				let batchSize = 15;
-				let processed = 0;
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
+				}
+	
+				//文件夹为空
+				if (!fileList.length) {
+					return message.error('提示：<br/>文件夹是空的哦~');
+				}
+	
+				//获取下载链接 
 				doc.find('.loading-popup .loading-title').html(`链接获取中`);
 				doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					let batch = selectList.slice(i, i + batchSize);
-					let queue = [];
+				let batchSize = globalBatchsize+Math.ceil(Math.random()*5);
+				let i=0;
+				while (i < fileList.length){
+					// 分批获取链接
+					let batch = fileList.slice(i, i + batchSize);
 
+					// 生成请求队列
+					let queue = [];
 					batch.forEach((item, localIndex) => {
 						let globalIndex = i + localIndex;
-						queue.push(this.getFileUrlByOnce(item, globalIndex, token)
+						queue.push(this.getFileUrlByOnce(item, globalIndex, this.token)
 							.then(val => {
-								processed++;
-								doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
+								// doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
 								return val;
 							}));
 					});
 
 					let res = await Promise.all(queue);
 					res.forEach(val => {
-						selectList[val.index].downloadUrl = val.downloadUrl;
+						fileList[val.index].downloadUrl = val.downloadUrl;
 					});
 
-					await base.sleep(1000);
+					// 每次处理完一个批次后，等待	
+					if (i + batchSize < fileList.length){
+						doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${i+batch.length} / ${fileList.length} 个链接,请耐心等待哦~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+						await base.customSleep();
+					};
+	
+					//累加批次
+					i += batchSize;
+					batchSize = globalBatchsize+Math.ceil(Math.random()*5)
 				}
 			} else {
 				return message.error('提示：<br/>页面错误~');
 			}
-			let html = this.generateDom(selectList);
+			let html = this.generateDom(fileList);
 			base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
 
 		},
@@ -6180,6 +6996,7 @@
 				let filename = v.name;
 				let size = base.sizeFormat(+v.size);
 				let dlink = v.downloadUrl;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -6189,8 +7006,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，下载完成可自动命名，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，下载完成可自动命名，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<a class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，若服务器未回报文件名，此方式下载不会被 IDM 捕获下载链接，此时建议右键此按钮，选择 “使用 IDM 下载”" data-filename="${filename}" data-link="${dlink}" href="${dlink}">直接下载(基于浏览器链接)</a>
 							<button class="pl-item-copy listener-tip pl-btn-primary pl-btn-success listener-copy-filename" data-title="本网盘下载时可能不会显示文件名称，这时需要手动复制文件名称到下载工具中" data-filename="${filename}">复制名称</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
@@ -6207,24 +7024,34 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -6232,7 +7059,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 							<button class="pl-btn-primary listener-link-bc-btn" data-dlink="${dlink}">复制镜像地址</div>
 						</div>`;
@@ -6316,8 +7143,12 @@
 	 * 夸克网盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $quark = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -6389,11 +7220,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -6477,7 +7309,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -6503,7 +7338,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename, [`Cookie: ${document.cookie}`]);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path, [`Cookie: ${document.cookie}`]);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -6629,6 +7464,91 @@
 			})
 		},
 
+		async getFilesByOnce(item,params){
+			try {
+				let res;
+				if(page=="home"){
+					let url=`${config.$quark.api.getFiles.home}&uc_param_str=&pdir_fid=${item.fid}&_page=${params.pageNum}&_size=50&_fetch_total=1&_fetch_sub_dirs=0&_sort=file_type:asc,file_name:asc`;
+					res = await base.get(url, { "User-Agent": config.$quark.api.ua.downloadLink });
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件获取请求失败`);
+			}
+		},
+
+		async getFileUrlByOnce(item, params) {
+			try {
+				let res;
+				if(page=="home"){
+					res = await base.post(config.$quark.api.getLink.home, { "fids": params.fids }, { "content-type": "application/json;charset=utf-8", "user-agent": config.$quark.api.ua.downloadLink });
+				}else if(page=="share"){
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件下载链接请求失败`);
+			}
+		},
+		
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let files=[];//文件数据列表
+			let pageCount=Math.ceil(file.include_items/50);//总页数
+			for (let pageNum=1;pageNum<=pageCount;pageNum++) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					await base.customSleep();
+					this.cnt = 0;
+				}
+				//发送请求
+				let param={"page":pageNum};
+				let res=await this.getFilesByOnce(file,param);
+				//请求失败
+				if (res.code === 31001) {//TODO 可能是这样，没测试，可能要等很久账号掉了，我没时间等
+					return message.error('提示：<br/>请先登录网盘~<br/>代码：' + res.code);
+				}
+				if (res.code !== 0) {
+					return message.error('提示：<br/>获取链接失败了~<br/>代码：' + res.code);
+				}
+				//请求成功
+				files=files.concat(res.data.list)
+			}
+			return files; 
+		},
+
+		async fetchFiles(file,pNode) {
+			//获取文件目录结构（递归）
+			//节点
+			let fileNode={
+				name:file.file_name,
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode)
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			if (!file?.dir) {
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
+		},
+
 		async getLink() {
 			Swal.fire({
 				showConfirmButton: false,
@@ -6655,46 +7575,53 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+
+			if(page=="home"){
+			}else if(page=="share"){
+				//分享页面所需的变量
+			}else{
+				return message.error('提示：<br/>页面错误~');
 			}
+			
+			this.cnt=0; //计数器，用于控制随机延迟
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
+
 			if (page === 'home') {
-				let data = [];
-				let batchSize = 15;
-				let processed = 0;
-				selectList = selectList.filter(item => item.file === true)
-
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					// 获取当前批次文件
-					let batch = selectList.slice(i, i + batchSize);
-					console.log()
-					let fids = batch.map(item => item.fid);
-
-					// 发起请求获取链接
-					let res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "content-type": "application/json;charset=utf-8", "user-agent": config.$quark.api.ua.downloadLink });
-
-					if (res?.code === 31001) {
-						return message.error('提示：<br/>请先登录网盘~<br/>代码：' + res.code);
-					}
-					if (res?.code !== 0) {
-						return message.error('提示：<br/>获取链接失败了~<br/>代码：' + res.code);
-					}
-
-					// 合并响应数据
-					if (res?.data) {
-						data.push(...res.data);
-					}
-
-					// 更新处理进度
-					processed += batch.length;
-
-					// 更新UI显示
-					doc.find('.loading-popup .loading-title').html(`链接获取中`);
-					doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
-
-					// 请求间隔节流
-					await base.sleep(1000);
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
 				}
+
+				//文件夹为空
+				if (!fileList.length) {
+					return message.error('提示：<br/>文件夹是空的哦~');
+				}
+
+				//获取下载链接 
+				//TODO 我认为连续访问网盘的接口不如直接拿全部ID合适，post协议本身不作数据长度上限，即使后台限制为1M，也有65536个文件ID了，你如果觉得不合适可以修改
+				let fids = fileList.map(item => item.fid);
+				let params={"fids":fids};
+				let res = await this.getFileUrlByOnce(undefined,params);
+				if (res.code === 31001) {
+					return message.error('提示：<br/>请先登录网盘~<br/>代码：' + res.code);
+				}
+				if (res.code !== 0) {
+					return message.error('提示：<br/>获取链接失败了~<br/>代码：' + res.code);
+				}
+				if (res.data.length!=fids.length)
+					return message.error('提示：<br/>获取下载链接数目不对，请重新尝试，若文件数目太多，如好几万个文件，请联系作者修改<br/>');
+
+				//显示下载GUI
+				let data = res.data.map((element, index) => {
+					return {
+						...element,
+						path: fileList[index].path//TODO 请求的ID和返回的ID的列表顺序是一一对应的，如果有问题请告诉我或自行修改
+					};
+				});
 				let html = this.generateDom(data);
 				base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
 			} else {
@@ -6714,6 +7641,7 @@
 				let fid = v.fid;
 				let size = base.sizeFormat(v.size);
 				let dlink = v.download_url;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -6723,8 +7651,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -6740,24 +7668,34 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "Cookie: ${document.cookie}"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "Cookie: ${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `-b "${document.cookie}"`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `-b "${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -6765,7 +7703,7 @@
 						let alink = base.convertLinkToBC(dlink, filename, `cookie=${encodeURIComponent(document.cookie)}`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -6853,8 +7791,12 @@
 	 * UC网盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $uc = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -6919,11 +7861,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -7007,7 +7950,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -7033,7 +7979,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename, [`Cookie: ${document.cookie}`]);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path, [`Cookie: ${document.cookie}`]);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -7128,6 +8074,110 @@
 			})
 		},
 
+		async getFilesByOnce(item,params){
+			try {
+				let res;
+				if(page=="home"){
+					let url=`${config.$uc.api.getFiles.home}?pr=UCBrowser&fr=pc&pdir_fid=${params.fid}&_page=${params.pageNum}&_size=50&_fetch_total=1&_fetch_sub_dirs=0&_sort=file_type:asc,updated_at:desc`;
+					res = await base.get(url, {
+						"content-type": "application/json;charset=utf-8", 
+						// "user-agent": config.$quark.api.ua.downloadLink //TODO 怎么是夸克的？
+						"user-agent": config.$uc.api.ua.downloadLink
+					});
+				}else if(page=="share"){
+					
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件获取请求失败`);
+			}
+		},
+
+		async getFileUrlByOnce(item, index, token) {
+			try {
+				if (item.downloadUrl) return {
+					index,
+					downloadUrl: item.downloadUrl
+				};
+				let res = await base.get(config.$xunlei.api.getLink.home + item.id, {
+					'Authorization': `${token.credentials.token_type} ${token.credentials.access_token}`,
+					'content-type': "application/json",
+					'x-captcha-token': token.captcha.token,
+					'x-device-id': token.deviceid,
+				});
+				if (res.web_content_link) {
+					return {
+						index,
+						downloadUrl: res.web_content_link
+					};
+				} else {
+					return {
+						index,
+						downloadUrl: '获取下载地址失败，刷新后再试试吧~'
+					};
+				}
+			} catch (e) {
+				return message.error('提示：<br/>请先登录网盘后再刷新页面呢~');
+			}
+		},
+		
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let res;
+			let files=[];//文件数据列表
+			let pageCount=Math.ceil(file.include_items/50);//总页数
+			for (let pageNum=1;pageNum<=pageCount;pageNum++) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('.loading-popup .swal2-html-container').html(`<div>正遍历到的大型文件夹（非全部）已获取 ${files.length} 个文件~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+					await base.customSleep();
+					this.cnt = 0;
+				}
+
+				//发送请求
+				let param={"fid":file.fid,"pageNum":pageNum};
+				res=await this.getFilesByOnce(file,param);
+
+				//请求失败
+				if(res?.code){//注意变量名
+					return message.error(`提示：<br/>请求失败，失败码：	${res?.code}	失败信息：${res.message}`);
+				}
+
+				//请求成功
+				files=files.concat(res.data.list)//注意变量名
+			}
+			return files;
+		},
+
+		async fetchFiles(file,pNode) {
+			//获取文件目录结构（递归）
+			//节点 
+			let fileNode={
+				name:file.file_name,//注意变量名
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			if (!file?.dir) {//注意变量名
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+			
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
+		},
+
 		async getLink() {
 			Swal.fire({
 				showConfirmButton: false,
@@ -7154,46 +8204,49 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+
+			if(page=="home"){
+			}else if(page=="share"){
+				//分享页面所需的变量
+			}else{
+				return message.error('提示：<br/>页面错误~');
 			}
+
+			this.cnt=0;
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
 			if (page === 'home') {
-				let data = [];
-				let batchSize = 15;
-				let processed = 0;
-				selectList = selectList.filter(item => item.file === true)
-
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					// 获取当前批次文件
-					let batch = selectList.slice(i, i + batchSize);
-					console.log()
-					let fids = batch.map(item => item.fid);
-
-					// 发起请求获取链接
-					let res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "content-type": "application/json;charset=utf-8", "user-agent": config.$quark.api.ua.downloadLink });
-
-					if (res?.code === 31001) {
-						return message.error('提示：<br/>请先登录网盘~<br/>代码：' + res.code);
-					}
-					if (res?.code !== 0) {
-						return message.error('提示：<br/>获取链接失败了~<br/>代码：' + res.code);
-					}
-
-					// 合并响应数据
-					if (res?.data) {
-						data.push(...res.data);
-					}
-
-					// 更新处理进度
-					processed += batch.length;
-
-					// 更新UI显示
-					doc.find('.loading-popup .loading-title').html(`链接获取中`);
-					doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
-
-					// 请求间隔节流
-					await base.sleep(1000);
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
 				}
+	
+				//文件夹为空
+				if (!fileList.length) {
+					return message.error('提示：<br/>文件夹是空的哦~');
+				}
+	
+				//获取下载链接 
+				//TODO 我认为连续访问网盘的接口不如直接拿全部ID合适，post协议本身不作数据长度上限，即使后台限制为1M，也有65536个文件ID了，你如果觉得不合适可以修改
+				let fids = fileList.map(item => item.fid);
+				// 发起请求获取链接
+				let res = await base.post(config.$uc.api.getLink.home, { "fids": fids }, { "content-type": "application/json;charset=utf-8", "user-agent": config.$uc.api.ua.downloadLink });
+				if (res.code !== 0) {
+					return message.error(`提示：<br/>请求失败，失败码：	${res?.code}	失败信息：${res.message}`);
+				}
+				if (res.data.length!=fids.length)
+					return message.error('提示：<br/>获取下载链接数目不对，请重新尝试，若文件数目太多，如好几万个文件，请联系作者修改<br/>');
+
+				//显示下载GUI
+				let data = res.data.map((element, index) => {
+					return {
+						...element,
+						path: fileList[index].path//TODO 请求的ID和返回的ID的列表顺序是一一对应的，如果有问题请告诉我或自行修改
+					};
+				});
 				let html = this.generateDom(data);
 				base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
 			} else {
@@ -7213,6 +8266,7 @@
 				let fid = v.fid;
 				let size = base.sizeFormat(v.size);
 				let dlink = v.download_url;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -7222,8 +8276,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fid}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -7239,24 +8293,34 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename, `--header "Cookie: ${document.cookie}"`);
+						let alink = base.convertLinkToAria(dlink, filename, dpath, `--header "Cookie: ${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename, `-b "${document.cookie}"`);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath, `-b "${document.cookie}"`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -7264,7 +8328,7 @@
 						let alink = base.convertLinkToBC(dlink, filename, `cookie=${encodeURIComponent(document.cookie)}`);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
@@ -7352,8 +8416,14 @@
 	 * 123云盘
 	 * @author 油小猴
 	 * @author hmjz100
+	 * @author KanouAo
 	 */
 	let $123pan = {
+		cnt:0,//计数器，用于控制随机延迟
+		fileCount:0,//文件计数
+		token:{},
+		ShareKey:"",
+
 		addPageListener() {
 			/*
 			防止代码因其他原因被执行多次
@@ -7406,11 +8476,12 @@
 				const $width = o.item.find('.pl-progress-inner');
 				const $text = o.item.find('.pl-progress-inner-text');
 				const filename = o.link[0].dataset.filename;
+				const path=o.link[0].dataset.path;
 				const index = o.link[0].dataset.index;
 				const size = Number(o.link[0].dataset.size) || 0;
 
 				base._resetData(index);
-				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index });
+				base.get(e.currentTarget.dataset.link, undefined, 'blob', { filename, index, path});
 
 				let startTime = Date.now();
 				let prevLoaded = 0;
@@ -7494,7 +8565,10 @@
 				o.stop.hide();
 				o.back.hide();
 			});
-			doc.on('click', '.listener-download-all', function (e) {
+			doc.on('click', '.listener-download-all',async function (e) {
+				if(navigator.userAgent.match(/Chrom(e|ium)/)){//Chromium内核
+					globalDirHandle = await window.showDirectoryPicker();
+				}
 				$('.pl-item-link.blob').each(function () {
 					if ($(this).css('display') !== 'none') {
 						$(this).click();
@@ -7520,7 +8594,7 @@
 				target.find('.pl-loading').remove();
 				target.prepend(base.createLoading());
 
-				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename);
+				let res = await base.sendLinkToRPC(e.currentTarget.dataset.link, e.currentTarget.dataset.filename,e.currentTarget.dataset.path);
 				if (res === 'success') {
 					$('.listener-rpc-task').show();
 					target.removeClass('pl-btn-danger').html('发送成功了!快去看看吧~').animate({ opacity: '0.5' }, "slow");
@@ -7609,6 +8683,171 @@
 			let token = base.getStorage("authorToken");
 			return token;
 		},
+		
+		getRandomNum(len) {
+			len = len || 16;
+			let $chars = '0123456789';
+			let maxPos = $chars.length;
+			let pwd = '';
+			for (let i = 0; i < len; i++) {
+				pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+			}
+			return pwd;
+		},
+
+		async getFilesByOnce(item,params){
+			try {
+				let res;
+				params.driveId=0;//TODO 看起来是个变量，但我定值是0，也没细看这变量怎么产生的，以后出问题再看。
+				params.operateType=8;//文件夹初次打开拿第1页数据时是4，鼠标下滑增加数据是8
+				params.next=0;//如何文件100个以内不用拉数据的是0，超过100的是-1，都填0都适配
+				let time = Date.now();
+				if(page=="home"){
+					//TODO 这URL中间有XXX=时间戳-XXX-XXX的格式，我发觉那放3个随机数竟然也行，如果不合适你就找下。
+					let url=`${config.$123pan.api.getFiles.home}?${this.getRandomNum()}=${time}-${this.getRandomNum()}-${this.getRandomNum()}&driveId=${params.driveId}&limit=100&next=${params.next}&orderBy=update_time&orderDirection=desc&parentFileId=${params.FileId}&trashed=false&SearchData=&Page=${params.pageNum}&OnlyLookAbnormalFile=0&event=homeListFile&operateType=${params.operateType}&inDirectSpace=false`;
+					res = await base.get(url, {
+						"content-type": "application/json;charset=utf-8",
+						"authorization": `Bearer ${this.token}`,
+						"platform": "web"//TODO ios？打错？不合适就换回来
+					});
+				}else if(page=="share"){
+					//TODO 这URL中间有XXX=时间戳-XXX-XXX的格式，我发觉那放3个随机数竟然也行，如果不合适你就找下。
+					let url=`${config.$123pan.api.getFiles.share}?${this.getRandomNum()}=${time}-${this.getRandomNum()}-${this.getRandomNum()}&limit=100&next=${params.next}&orderBy=file_name&orderDirection=asc&shareKey=${this.ShareKey}&ParentFileId=${params.FileId}&Page=${params.pageNum}&event=homeListFile&operateType=${params.operateType}`;
+					res = await base.get(url, {
+						"content-type": "application/json;charset=utf-8",
+						"authorization": `Bearer ${this.token}`,
+						"platform": "web"//TODO ios？打错？不合适就换回来
+					});
+				}else{
+					return message.error(`提示：<br/>网站页面错误`);
+				}
+				return res;
+			} catch (e) {
+				return message.error(`提示：<br/>文件获取请求失败`);
+			}
+		},
+
+		async getFileUrlByOnce(item, index) {
+			try {
+				if (item.DownloadUrl) return {
+					index,
+					downloadUrl: item.DownloadUrl
+				};
+				let res = null;
+				if (this.ShareKey) {
+					res = await base.post(config.$123pan.api.getLink.share, {
+						"ShareKey": this.ShareKey,
+						"FileID": item.FileId,
+						"S3keyFlag": item.S3KeyFlag,
+						"Size": item.Size,
+						"Etag": item.Etag
+					}, {
+						"content-type": "application/json;charset=utf-8",
+						"authorization": `Bearer ${this.token}`,
+						"platform": "ios"//为啥IOS不是WEB？IOS更好点？
+					});
+				} else {
+					res = await base.post(config.$123pan.api.getLink.home, {
+						"driveId": 0,
+						"etag": item.Etag,
+						"fileId": item.FileId,
+						"s3keyFlag": item.S3KeyFlag,
+						"type": item.Type,
+						"fileName": item.FileName,
+						"size": item.Size
+					}, {
+						"content-type": "application/json;charset=utf-8",
+						"authorization": `Bearer ${this.token}`,
+						"platform": "web"//TODO ios？打错？不合适就换回来
+					});
+				}
+				if (res.data?.DownloadUrl) {
+					let url = res.data.DownloadUrl;
+					let surl = new URL(url).searchParams.get("params");
+					if (surl) url = base.decodeBase(surl);
+					url = await base.getFinalUrl(url);
+					return {
+						index,
+						downloadUrl: url
+					};
+				} else if (res.data?.DownloadURL) {
+					let url = res.data.DownloadURL;
+					let surl = new URL(url).searchParams.get("params");
+					if (surl) url = base.decodeBase(surl);
+					url = await base.getFinalUrl(url);
+					return {
+						index,
+						downloadUrl: url
+					};
+				} else if (res?.code === 5112) {
+					return message.error('提示：<br/>请先登录网盘后再获取链接呢~');
+				} else {
+					return {
+						index,
+						downloadUrl: '获取下载地址失败，刷新后再试试吧~'
+					};
+				}
+			} catch (e) {
+				return {
+					index,
+					downloadUrl: '获取下载地址失败，刷新后再试试吧~'
+				};
+			}
+		},
+		
+		async fetchAllPages(file) {
+			//分页获取文件夹内文件数据
+			let res;
+			let files=[];//文件数据列表
+			let pageCount=1;//总页数，先设1，之后根据res返回的值修改//share没有file.fileCount，兼容适配
+			for (let pageNum=1;pageNum<=pageCount;pageNum++) {
+				//随机停顿防反爬
+				this.cnt++;
+				if (this.cnt >= 50+Math.random()*10) {
+					doc.find('#loadingText').html(`<div>文件获取中</div><div>已获取 ${this.fileCount} 个文件，请耐心等待哦~</div><div>>休息 ${globalSleep} 毫秒...</div>`);
+					await base.sleep(globalSleep+Math.random()*globalSleepRandSeed);
+					this.cnt = 0;
+				}
+				//发送请求
+				let param={"pageNum":pageNum,"FileId":file.FileId};
+				res=await this.getFilesByOnce(file,param);
+				
+				//请求失败
+				if(!(res?.code==0&&res?.message=="ok")){
+					return message.error(`提示：<br/>请求失败，失败码：	${res?.res_code}	失败信息：${res.res_message}`);
+				}
+				//请求成功
+				if(pageCount==1)pageCount=Math.ceil(res.data.Total/100);
+				files=files.concat(res.data.InfoList);//注意变量名
+			}
+			return files;
+		},
+
+		async fetchFiles(file,pNode) {
+			//获取文件目录结构（递归）
+			//节点 
+			let fileNode={
+				name:file.FileName,//注意变量名
+				path:pNode.name === 'root' ? `` : (pNode.path === '' ? pNode.name : `${pNode.path}/${pNode.name}`),//一般来说，路径不要特别特别长，不然可能会出问题，不过正常是不会的
+				children:[]
+			}
+			pNode.children.push(fileNode);
+			file.path=fileNode.path;
+
+			//判断是否文件夹
+			if (file.Type === 0) {//注意变量名
+				this.fileCount++;
+				doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${this.fileCount} 个文件~</div>`);
+				return file;
+			}
+			
+			//文件夹内文件遍历
+			let files=[];
+			for (let f of await this.fetchAllPages(file)) {
+				files= files.concat(await this.fetchFiles(f,fileNode));
+			}
+			return files;
+		},
 
 		async getLink() {
 			Swal.fire({
@@ -7636,137 +8875,106 @@
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
-			if (this.isOnlyFolder()) {
-				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
-			}
-			console.log(selectList);
-			if (page === 'home') {
-				let token = this.getToken();
-				let batchSize = 15;
-				let processed = 0;
-				selectList = selectList.filter(item => item.Type === 0);
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					let batch = selectList.slice(i, i + batchSize);
-					let queue = [];
 
-					doc.find('.loading-popup .loading-title').html(`链接获取中`);
-					doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-					batch.forEach((item, localIndex) => {
-						let globalIndex = i + localIndex;
-						queue.push(this.getFileUrlByOnce(item, globalIndex, token)
-							.then(val => {
-								processed++;
-								doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
-								return val;
-							}));
-					});
-
-					let res = await Promise.all(queue);
-					res.forEach(val => {
-						selectList[val.index].DownloadUrl = val.downloadUrl;
-					});
-
-					await base.sleep(1000);
-				}
-				let html = this.generateDom(selectList);
-				base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
-			} else if (page === 'share') {
-				let token = this.getToken();
-				let batchSize = 15;
-				let processed = 0;
-				selectList = selectList.filter(item => item.Type === 0);
+			if(page=="home"){
+			}else if(page=="share"){
+				//分享页面所需的变量
 				let pathSplit = location.pathname.split('/').filter(Boolean);
-				let ShareKey = pathSplit[1];
-				console.log(selectList)
-				for (let i = 0; i < selectList.length; i += batchSize) {
-					let batch = selectList.slice(i, i + batchSize);
-					let queue = [];
-
-					doc.find('.loading-popup .loading-title').html(`链接获取中`);
-					doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
-					batch.forEach((item, localIndex) => {
-						let globalIndex = i + localIndex;
-						queue.push(this.getFileUrlByOnce(item, globalIndex, token, ShareKey)
-							.then(val => {
-								processed++;
-								doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
-								return val;
-							}));
-					});
-
-					let res = await Promise.all(queue);
-					res.forEach(val => {
-						selectList[val.index].DownloadUrl = val.downloadUrl;
-					});
-
-					await base.sleep(1000);
-				}
-				let html = this.generateDom(selectList);
-				base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
-			} else {
+				this.ShareKey = pathSplit[1];
+			}else{
 				return message.error('提示：<br/>页面错误~');
 			}
-		},
+			this.token =  this.getToken();
 
-		async getFileUrlByOnce(item, index, token, ShareKey) {
-			if (item.DownloadUrl) return {
-				index,
-				downloadUrl: item.DownloadUrl
-			};
-			let res = null;
-			if (ShareKey) {
-				res = await base.post(config.$123pan.api.getShareLink, {
-					"ShareKey": ShareKey,
-					"FileID": item.FileId,
-					"S3keyFlag": item.S3KeyFlag,
-					"Size": item.Size,
-					"Etag": item.Etag
-				}, {
-					"content-type": "application/json;charset=utf-8",
-					"authorization": `Bearer ${token}`,
-					"platform": "ios"
-				});
-			} else {
-				res = await base.post(config.$123pan.api.getLink, {
-					"driveId": 0,
-					"etag": item.Etag,
-					"fileId": item.FileId,
-					"s3keyFlag": item.S3KeyFlag,
-					"type": item.Type,
-					"fileName": item.FileName,
-					"size": item.Size
-				}, {
-					"content-type": "application/json;charset=utf-8",
-					"authorization": `Bearer ${token}`,
-					"platform": "ios"
-				});
-			}
-			if (res.data?.DownloadUrl) {
-				let url = res.data.DownloadUrl;
-				let surl = new URL(url).searchParams.get("params");
-				if (surl) url = base.decodeBase(surl);
-				url = await base.getFinalUrl(url);
-				return {
-					index,
-					downloadUrl: url
-				};
-			} else if (res.data?.DownloadURL) {
-				let url = res.data.DownloadURL;
-				let surl = new URL(url).searchParams.get("params");
-				if (surl) url = base.decodeBase(surl);
-				url = await base.getFinalUrl(url);
-				return {
-					index,
-					downloadUrl: url
-				};
-			} else if (res?.code === 5112) {
-				return message.error('提示：<br/>请先登录网盘后再获取链接呢~');
-			} else {
-				return {
-					index,
-					downloadUrl: '获取下载地址失败，刷新后再试试吧~'
-				};
-			}
+			this.cnt=0;
+			this.fileCount=0;//文件计数
+			let fileList=[];//文件列表，只有文件没有文件夹
+			let fileTree = { name: "root", path: ``, children: [] }; // 文件目录树
+			// if (page === 'home') {
+				//获取文件目录结构（递归）
+				for (let file of selectList) {
+					//遍历选中文件
+					//统一变量名
+					fileList = fileList.concat(await this.fetchFiles(file,fileTree));
+				}
+	
+				//文件夹为空
+				if (!fileList.length) {
+					return message.error('提示：<br/>文件夹是空的哦~');
+				}
+	
+				//获取下载链接 
+				doc.find('.loading-popup .loading-title').html(`链接获取中`);
+				doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
+				let batchSize = globalBatchsize+Math.ceil(Math.random()*5);
+				let i=0;
+				while (i < fileList.length){
+					// 分批获取链接
+					let batch = fileList.slice(i, i + batchSize);
+
+					// 生成请求队列
+					let queue = [];
+					batch.forEach((item, localIndex) => {
+						let globalIndex = i + localIndex;
+						queue.push(this.getFileUrlByOnce(item, globalIndex)
+							.then(val => {
+								// processed++;
+								// doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
+								return val;
+							}));
+					});
+
+					// 等待本批次的请求结果
+					let res = await Promise.all(queue);
+					res.forEach(val => {
+						fileList[val.index].DownloadUrl = val.downloadUrl;
+					});
+
+					// 每次处理完一个批次后，等待	
+					if (i + batchSize < fileList.length){
+						doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${i+batch.length} / ${fileList.length} 个链接,请耐心等待哦~</div><div>休息 ${globalSleep} 毫秒...</div>`);
+						await base.customSleep();
+					};
+
+					//累加批次
+					i += batchSize;
+					batchSize = globalBatchsize+Math.ceil(Math.random()*5)
+				}
+				let html = this.generateDom(fileList);
+				base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
+			// } else if (page === 'share') {
+			// 	let batchSize = 15;
+			// 	let processed = 0;
+			// 	selectList = selectList.filter(item => item.Type === 0);
+			// 	console.log(selectList)
+			// 	for (let i = 0; i < selectList.length; i += batchSize) {
+			// 		let batch = selectList.slice(i, i + batchSize);
+			// 		let queue = [];
+
+			// 		doc.find('.loading-popup .loading-title').html(`链接获取中`);
+			// 		doc.find('.loading-popup .swal2-html-container').html(`<div>正在获取文件对应的下载链接~</div>`);
+			// 		batch.forEach((item, localIndex) => {
+			// 			let globalIndex = i + localIndex;
+			// 			queue.push(this.getFileUrlByOnce(item, globalIndex)
+			// 				.then(val => {
+			// 					processed++;
+			// 					doc.find('.loading-popup .swal2-html-container').html(`<div>已获取 ${processed} / ${selectList.length} 个链接~</div>`);
+			// 					return val;
+			// 				}));
+			// 		});
+
+			// 		let res = await Promise.all(queue);
+			// 		res.forEach(val => {
+			// 			selectList[val.index].DownloadUrl = val.downloadUrl;
+			// 		});
+
+			// 		await base.sleep(1000);
+			// 	}
+			// 	let html = this.generateDom(selectList);
+			// 	base.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
+			// } else {
+			// 	return message.error('提示：<br/>页面错误~');
+			// }
 		},
 
 		generateDom(list) {
@@ -7781,6 +8989,7 @@
 				let fileid = v.FileId;
 				let size = base.sizeFormat(v.Size);
 				let dlink = v.DownloadUrl || v.DownloadURL;
+				let dpath=v.path;
 				if (!dlink || !dlink.includes("http")) {
 					content += `<div class="pl-item">
 						<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
@@ -7790,8 +8999,8 @@
 					if (mode === 'api') {
 						alinkAllText += dlink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fileid}" data-index="${i}">增强下载(基于浏览器文件流)</button>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
+							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-default listener-link-api blob" data-title="不建议使用本功能，若文件过大下载完成后有可能不会弹出窗口，此时请换用“RPC 下载 + Mortix”的组合<br/>基于浏览器的 Blob 文件流下载文件，适用于较新的浏览器，可以在此窗口中显示下载剩余时间和下载速度，此方式下载不会被 IDM 捕获下载链接" data-filename="${filename}" data-size="${v.size}" data-link="${dlink}" data-fid="${fileid}" data-index="${i}" data-path="${dpath}">增强下载(基于浏览器文件流)</button>
 							<button class="pl-item-link listener-tip pl-btn-primary pl-btn-info listener-link-api browser" data-title="基于浏览器直接打开链接来下载文件，适用于较为古老但支持 iframe 的浏览器，点击“直接下载”后需等待下载提示弹出才能点击下个“直接下载”，否则只会下载后者，此方式下载有可能会被 IDM 捕获下载链接" data-filename="${filename}" data-link="${dlink}" data-fid="${fileid}">直接下载(基于浏览器链接)</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy-all" href="${dlink}" data-filename="${filename}" data-link="${dlink}">复制链接</button>
 							<div class="pl-item-progress" style="display: none">
@@ -7807,24 +9016,34 @@
 						</div>`;
 					}
 					if (mode === 'aria') {
-						let alink = base.convertLinkToAria(dlink, filename);
+						let alink = base.convertLinkToAria(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 aria2c 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
 					if (mode === 'rpc') {
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
-							<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" data-filename="${filename}" data-link="${dlink}"><svg class="icon-rpc-devices" viewBox="-10 0 1034 1024"><g transform="matrix(1 0 0 -1 0 960)"><path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" /></g></svg><span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span></button>
-						</div>`;
+									<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+									<button class="pl-item-link listener-link-rpc pl-btn-primary pl-btn-info" 
+											data-filename="${filename}" 
+											data-link="${dlink}" 
+											data-path="${dpath}"> <!-- 添加了 data-path 属性 -->
+										<svg class="icon-rpc-devices" viewBox="-10 0 1034 1024">
+											<g transform="matrix(1 0 0 -1 0 960)">
+												<path fill="currentColor" d="M832 -64h-640q-53 0 -90.5 37.5t-37.5 90.5v768q0 53 37.5 90.5t90.5 37.5h640q53 0 90.5 -37.5t37.5 -90.5v-768q0 -53 -37.5 -90.5t-90.5 -37.5zM832 768q0 27 -18.5 45.5t-45.5 18.5h-512q-27 0 -45.5 -18.5t-18.5 -45.5v-320h640v320v0zM832 320h-640v-192q0 -27 18.5 -45.5t45.5 -18.5h512q27 0 45.5 18.5t18.5 45.5v192v0zM512 128q-27 0 -45.5 18.5t-18.5 45.5t18.5 45.5t45.5 18.5t45.5 -18.5t18.5 -45.5t-18.5 -45.5t-45.5 -18.5z" />
+											</g>
+										</svg>
+										<span style="margin-left: 5px;">将 ${filename} 推送到 RPC 下载器</span>
+									</button>
+								</div>`;
 					}
 					if (mode === 'curl') {
-						let alink = base.convertLinkToCurl(dlink, filename);
+						let alink = base.convertLinkToCurl(dlink, filename, dpath);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link listener-link-aria" href="${alink}" title="点击复制 curl 命令行" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>复制 ${filename} 下载命令行</a>
 						</div>`;
 					}
@@ -7832,7 +9051,7 @@
 						let alink = base.convertLinkToBC(dlink, filename);
 						alinkAllText += alink + '\r\n';
 						content += `<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}">${filename}</div>
+							<div class="pl-item-name listener-tip" data-size="${size}" data-path="${dpath}">${filename}</div>
 							<a class="pl-item-link" href="${decodeURIComponent(alink)}" title="点击用比特彗星下载" data-filename="${filename}" data-link="${alink}">${decodeURIComponent(alink)}<br/>下载 ${filename}</a>
 						</div>`;
 					}
