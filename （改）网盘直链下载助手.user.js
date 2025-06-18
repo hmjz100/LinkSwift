@@ -6708,7 +6708,7 @@
 					let fids = batch.map(item => item.fid);
 
 					// 发起请求获取链接
-					let res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "content-type": "application/json;charset=utf-8", "user-agent": config.$quark.api.ua.downloadLink });
+					let res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "content-type": "application/json;charset=utf-8", "user-agent": config.$quark.api.ua.downloadLink, "origin": null });
 
 					if (res?.code === 31001) {
 						return message.error('提示：<br/>请先登录网盘~<br/>代码：' + res.code);
