@@ -4733,6 +4733,28 @@
 			});
 		},
 
+		/**
+		 * 移除网盘页面上的广告元素并处理特定UI交互。
+		 *
+		 * @returns {void}
+		 *
+		 * @description
+		 * 此方法通过以下方式优化用户体验：
+		 * 1. 使用 MutationObserver 检测并自动隐藏各类广告元素
+		 * 2. 针对会员中心按钮进行拦截，替换默认跳转行为
+		 * 3. 通过淡入淡出动画提供平滑的广告消失效果
+		 *
+		 * @example
+		 * // 页面加载完成后调用
+		 * document.addEventListener('DOMContentLoaded', () => {
+		 *   this.removeAD();
+		 * });
+		 *
+		 * @see {@link base.waitForKeyElements} 元素检测工具函数
+		 * @see {@link Swal.fire} SweetAlert2 模态框组件
+		 *
+		 * @fires Swal.fire#custom-modal - 点击会员中心按钮时触发自定义模态框
+		 */
 		removeAD() {
 			base.waitForKeyElements(".adv_swiper_menu", function (tag) {
 				tag.fadeOut();
@@ -5389,6 +5411,11 @@
 				url = protocol + "://" + url;
 				window.open(url, "_self");
 			});
+			doc.on('click', '.rpc-dowon', function (e) {
+				e.preventDefault();
+                console.log("hello")
+				tcloud.RPCDownloadProcess()
+			});
 		},
 
 		removeAD() {
@@ -5403,7 +5430,7 @@
 		addButton() {
 			if (!page) return;
 			let $toolWrap;
-			let $button = $(`<div class="pl-button tcloud-button">下载助手&nbsp;<i aria-label="icon: caret-down" class="anticon anticon-caret-down"><svg viewBox="0 0 1024 1024" data-icon="caret-down" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></i><ul class="pl-dropdown-menu"><li class="pl-dropdown-menu-item pl-button-mode" data-mode="api">API下载</li><li class="pl-dropdown-menu-item pl-button-mode" data-mode="aria" >Aria下载</li><li class="pl-dropdown-menu-item pl-button-mode" data-mode="rpc">RPC下载</li><li class="pl-dropdown-menu-item pl-button-mode" data-mode="curl">cURL下载</li><li class="pl-dropdown-menu-item pl-button-mode" data-mode="bc" >BC下载</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-setting">助手设置</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-beautify">助手美化</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-updatelog">更新日志</li></ul></div>`);
+			let $button = $(`<div class="pl-button tcloud-button rpc-dowon">批量下载&nbsp;</div><div class="pl-button tcloud-button">下载助手&nbsp;<i aria-label="icon: caret-down"class="anticon anticon-caret-down"><svg viewBox="0 0 1024 1024"data-icon="caret-down"width="1em"height="1em"fill="currentColor"aria-hidden="true"focusable="false"class=""><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></i><ul class="pl-dropdown-menu"><li class="pl-dropdown-menu-item pl-button-mode"data-mode="api">API下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="aria">Aria下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="rpc">RPC下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="curl">cURL下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="bc">BC下载</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-setting">助手设置</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-beautify">助手美化</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-updatelog">更新日志</li></ul></div>`);
 			$button.find(".pl-dropdown-menu").css({ 'position': 'absolute', 'left': '-1px' })
 			if (page === 'home') {
 				console.log($button[0])
@@ -5644,6 +5671,36 @@
 				return 'fail';
 			}
 		},
+		async getActiveTaskCount() {
+			let rpc = {
+				domain: base.getValue('setting_rpc_domain'),
+				port: base.getValue('setting_rpc_port'),
+				path: base.getValue('setting_rpc_path'),
+				token: base.getValue('setting_rpc_token'),
+				dir: base.getValue('setting_rpc_dir'),
+			};
+
+			let url = `${rpc.domain}:${rpc.port}${rpc.path}`;
+
+			try {
+				const response = await fetch(url, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					jsonrpc: '2.0',
+					method: 'aria2.tellActive',
+					params: [`token:${rpc.token}`], // 替换为你的 RPC 密钥
+					id: 'active_tasks'
+				})
+				});
+
+				const data = await response.json();
+				return data.result.length; // 返回正在进行的任务数量
+			} catch (error) {
+				console.error('获取任务数失败:', error);
+				return 0;
+			}
+		},
 
 		getSelectedList() {
 			try {
@@ -5689,6 +5746,33 @@
 			});
 		},
 
+		/**
+		 * 初始化网盘链接处理功能，根据用户授权状态配置界面和功能。
+		 *
+		 * @async
+		 * @returns {Promise<void>} 初始化完成后解析
+		 *
+		 * @description
+		 * 此方法执行以下操作：
+		 * 1. 检测当前页面类型以确定适配策略
+		 * 2. 创建操作提示UI组件
+		 * 3. 注册右键菜单命令
+		 * 4. 根据授权状态决定：
+		 *    - 已授权：添加功能按钮并注册页面事件监听
+		 *    - 未授权：添加授权初始化按钮
+		 * 5. 异步获取API访问令牌
+		 *
+		 * @example
+		 * // 组件挂载后调用初始化
+		 * mounted() {
+		 *   this.initPanLinker();
+		 * }
+		 *
+		 * @throws {Error} 如果获取令牌过程中发生网络错误
+		 * @see {@link this.detectPage} 页面类型检测方法
+		 * @see {@link this.addButton} 添加功能按钮
+		 * @see {@link this.getToken} 获取API令牌
+		 */
 		async initPanLinker() {
 			page = this.detectPage();
 			base.createTip();
@@ -5700,6 +5784,37 @@
 				this.addInitButton();
 			}
 			this.getToken();
+		},
+
+		delay(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		},
+
+		async RPCDownloadProcess() {
+			selectList = this.getSelectedList();
+			if (selectList.length === 0) {
+				return message.error('提示：<br/>请勾选要下载的文件哦~');
+			}
+			if (this.isOnlyFolder()) {
+				return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+			}
+			let token = base.getStorage('accessToken') || await this.getToken();
+			if (!token) {
+				return message.error('提示：<br/>请先登录网盘~');
+			}
+			let queue = [];
+			for (const [index, item] of selectList.entries()) {
+				let account = 0;
+				do {
+					// sleep(1000);
+					// setTimeout(RPCDownloadProcess,2000);
+					await this.delay(2000);
+					account = await this.getActiveTaskCount();
+					// setTimeout(RPCDownloadProcess,2000);
+				} while(account);
+				let res = await this.getFileUrlByOnce(item, index, token);
+				await this.sendLinkToRPC(res.filename,res.downloadUrl);
+			}
 		}
 	};
 
@@ -7042,3 +7157,33 @@
 	unsafeWindow.Panlinker = main;
 	main.init();
 })();
+
+
+/**
+ * 批量量RPC下载任务防止同时提交导致链接超时
+ */
+// class RPCDownloadProcess {
+// 	RPCDownloadProcess() {
+// 		selectList = this.getSelectedList();
+// 		if (selectList.length === 0) {
+// 			return message.error('提示：<br/>请勾选要下载的文件哦~');
+// 		}
+// 		if (this.isOnlyFolder()) {
+// 			return message.error('提示：<br/>请打开文件夹后再勾选文件~');
+// 		}
+// 		let token = base.getStorage('accessToken') || await this.getToken();
+// 		if (!token) {
+// 			return message.error('提示：<br/>请先登录网盘~');
+// 		}
+// 		let queue = [];
+// 		for (const [index, item] of selectList.entries()) {
+// 			res = await this.getFileUrlByOnce(item, index, token);
+// 			tcloud.sendLinkToRPC(res.filename,res.downloadUrl)
+// 			do {
+// 				sleep(1000);
+// 				account = tcloud.getActiveTaskCount();
+// 			} while(account);
+
+// 		}
+// 	}
+// }
