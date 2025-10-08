@@ -5146,7 +5146,7 @@
 				this.addPageListener();
 			} else {
 				this.addInitButton();
-			}
+}
 		}
 	};
 
@@ -5413,7 +5413,6 @@
 			});
 			doc.on('click', '.rpc-dowon', function (e) {
 				e.preventDefault();
-                console.log("hello")
 				tcloud.RPCDownloadProcess()
 			});
 		},
@@ -5427,28 +5426,51 @@
 			}, true);
 		},
 
+		/**
+		 * addButton - 在网盘页面上添加下载助手按钮
+		 * 该方法负责在不同的网盘页面环境中（主页或分享页）创建并插入下载助手按钮
+		 */
 		addButton() {
-			if (!page) return;
-			let $toolWrap;
-			let $button = $(`<div class="pl-button tcloud-button rpc-dowon">批量下载&nbsp;</div><div class="pl-button tcloud-button">下载助手&nbsp;<i aria-label="icon: caret-down"class="anticon anticon-caret-down"><svg viewBox="0 0 1024 1024"data-icon="caret-down"width="1em"height="1em"fill="currentColor"aria-hidden="true"focusable="false"class=""><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></i><ul class="pl-dropdown-menu"><li class="pl-dropdown-menu-item pl-button-mode"data-mode="api">API下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="aria">Aria下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="rpc">RPC下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="curl">cURL下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="bc">BC下载</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-setting">助手设置</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-beautify">助手美化</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-updatelog">更新日志</li></ul></div>`);
-			$button.find(".pl-dropdown-menu").css({ 'position': 'absolute', 'left': '-1px' })
-			if (page === 'home') {
-				console.log($button[0])
-				base.listenElement(config.tcloud.mount.home, function () {
-					$toolWrap = $(config.tcloud.mount.home);
-					$button.find(".pl-dropdown-menu").css({ 'top': '28px' })
-					$('.pl-button').length === 0 && $toolWrap.prepend($button);
-				})
-			}
-			if (page === 'share') {
-				base.listenElement(config.tcloud.mount.share, function () {
-					$toolWrap = $(config.tcloud.mount.share);
-					$button.css({ 'height': '28px', 'border-radius': '15px' })
-					$button.find(".pl-dropdown-menu").css({ 'top': '25px' })
-					$('.pl-button').length === 0 && $toolWrap.prepend($button);
-				})
-			}
-			base.createDownloadIframe();
+		    // 检查当前页面是否已初始化，未初始化则直接返回
+		    if (!page) return;
+		    
+		    let $toolWrap; // 存储按钮要挂载的父容器
+		    
+		    // 创建下载按钮和下拉菜单的HTML结构
+		    // 包含一个"批量下载"按钮和一个带下拉菜单的"下载助手"按钮
+		    let $button = $(`<div class="pl-button tcloud-button rpc-dowon">批量下载&nbsp;</div><div class="pl-button tcloud-button">下载助手&nbsp;<i aria-label="icon: caret-down"class="anticon anticon-caret-down"><svg viewBox="0 0 1024 1024"data-icon="caret-down"width="1em"height="1em"fill="currentColor"aria-hidden="true"focusable="false"class=""><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></i><ul class="pl-dropdown-menu"><li class="pl-dropdown-menu-item pl-button-mode"data-mode="api">API下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="aria">Aria下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="rpc">RPC下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="curl">cURL下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="bc">BC下载</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-setting">助手设置</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-beautify">助手美化</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-updatelog">更新日志</li></ul></div>`);
+		    
+		    // 设置下拉菜单的基础样式（绝对定位，左对齐）
+		    $button.find(".pl-dropdown-menu").css({ 'position': 'absolute', 'left': '-1px' })
+		    
+		    // 当页面类型为"主页"时的处理逻辑
+		    if (page === 'home') {
+		        // 打印第一个按钮到控制台（调试用）
+		        console.log($button[0])
+		        
+		        // 监听指定的DOM元素出现，用于确定按钮挂载位置
+		        base.listenElement(config.tcloud.mount.home, function () {
+		            $toolWrap = $(config.tcloud.mount.home); // 获取挂载容器
+		            $button.find(".pl-dropdown-menu").css({ 'top': '28px' }) // 调整下拉菜单位置
+		            // 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
+		            $('.pl-button').length === 0 && $toolWrap.prepend($button);
+		        })
+		    }
+		    
+		    // 当页面类型为"分享页"时的处理逻辑
+		    if (page === 'share') {
+		        // 监听分享页面的指定元素出现
+		        base.listenElement(config.tcloud.mount.share, function () {
+		            $toolWrap = $(config.tcloud.mount.share); // 获取挂载容器
+		            $button.css({ 'height': '28px', 'border-radius': '15px' }) // 调整按钮样式以适应分享页面
+		            $button.find(".pl-dropdown-menu").css({ 'top': '25px' }) // 调整下拉菜单位置
+		            // 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
+		            $('.pl-button').length === 0 && $toolWrap.prepend($button);
+		        })
+		    }
+		    
+		    // 创建下载用的iframe元素（用于某些下载方式）
+		    base.createDownloadIframe();
 		},
 
 		addInitButton() {
@@ -5745,7 +5767,6 @@
 				base._resetData();
 			});
 		},
-
 		/**
 		 * 初始化网盘链接处理功能，根据用户授权状态配置界面和功能。
 		 *
@@ -5806,11 +5827,8 @@
 			for (const [index, item] of selectList.entries()) {
 				let account = 0;
 				do {
-					// sleep(1000);
-					// setTimeout(RPCDownloadProcess,2000);
 					await this.delay(2000);
 					account = await this.getActiveTaskCount();
-					// setTimeout(RPCDownloadProcess,2000);
 				} while(account);
 				let res = await this.getFileUrlByOnce(item, index, token);
 				await this.sendLinkToRPC(res.filename,res.downloadUrl);
