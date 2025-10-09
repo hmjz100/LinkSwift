@@ -246,7 +246,8 @@
 			},
 			"mount": {
 				"home": "[class*=\"FileHead_file-head-left\"]",
-				"share": ".nav-opea"
+				"share": ".nav-opea",
+				"list": "[class*=\"c-file-list-item\"]"
 			}
 		},
 		"xunlei": {
@@ -5442,6 +5443,11 @@
 		    
 		    // 设置下拉菜单的基础样式（绝对定位，左对齐）
 		    $button.find(".pl-dropdown-menu").css({ 'position': 'absolute', 'left': '-1px' })
+
+			let $fileList; // 存储文件列表的DOM元素
+
+			// 定义播放按钮的HTML结构
+			let $playButton = $(`<button id="btnPotplayer" class="pl-btn-primary pl-btn-info" style="margin-left: 10px;" data-link="">🎬 用 PotPlayer 播放</button>`);
 		    
 		    // 当页面类型为"主页"时的处理逻辑
 		    if (page === 'home') {
@@ -5467,6 +5473,58 @@
 		            // 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
 		            $('.pl-button').length === 0 && $toolWrap.prepend($button);
 		        })
+
+				// todo 监听未完成，目前代码进不去
+				
+				// 获取文件列表的DOM元素
+				$fileList = $(config.tcloud.mount.list);
+				//检测到 class 为 fileList 的元素后，给每个文件项添加播放按钮（如果是视频文件）
+				console.log('文件列表元素:', $fileList.length ? '找到' : '未找到');
+				console.log('选择器:', config.tcloud.mount.list);
+
+				// 使用 MutationObserver
+				if ('MutationObserver' in window && $fileList.length > 0) {
+					const observer = new MutationObserver(function(mutations) {
+						mutations.forEach(function(mutation) {
+							// 检查是否有新节点被添加
+							if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+								// 遍历所有新添加的节点
+								$(mutation.addedNodes).each(function() {
+									let $item = $(this);
+									let filename = $item.find('.file-item-name-fileName-span').text().trim();
+									let fileExt = filename.split('.').pop().toLowerCase();
+									
+									// 检查文件是否为视频格式
+									if (['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'].includes(fileExt)) {
+										// 为当前文件项添加播放按钮
+										$item.find('.file-actions').append($playButton.clone().attr('data-link', item.downloadUrl));
+									}
+								});
+							}
+						});
+					});
+					
+					// 配置观察器选项
+					const config = {
+						childList: true,
+						subtree: true
+					};
+					
+					// 开始观察目标节点
+					observer.observe($fileList[0], config);
+					
+					// 另外，为了确保页面初始加载的文件也能被处理
+					// 可以添加一段代码直接处理已存在的文件项
+					$fileList.find('.file-item').each(function() {
+						let $item = $(this);
+						let filename = $item.find('.file-item-name-fileName-span').text().trim();
+						let fileExt = filename.split('.').pop().toLowerCase();
+						
+						if (['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'].includes(fileExt)) {
+							$item.find('.file-actions').append($playButton.clone().attr('data-link', item.downloadUrl));
+						}
+					});
+				}
 		    }
 		    
 		    // 创建下载用的iframe元素（用于某些下载方式）
