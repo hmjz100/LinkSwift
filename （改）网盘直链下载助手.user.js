@@ -5147,7 +5147,7 @@
 				this.addPageListener();
 			} else {
 				this.addInitButton();
-}
+			}
 		}
 	};
 
@@ -5432,103 +5432,70 @@
 		 * 该方法负责在不同的网盘页面环境中（主页或分享页）创建并插入下载助手按钮
 		 */
 		addButton() {
-		    // 检查当前页面是否已初始化，未初始化则直接返回
-		    if (!page) return;
-		    
-		    let $toolWrap; // 存储按钮要挂载的父容器
-		    
-		    // 创建下载按钮和下拉菜单的HTML结构
-		    // 包含一个"批量下载"按钮和一个带下拉菜单的"下载助手"按钮
-		    let $button = $(`<div class="pl-button tcloud-button rpc-dowon">批量下载&nbsp;</div><div class="pl-button tcloud-button">下载助手&nbsp;<i aria-label="icon: caret-down"class="anticon anticon-caret-down"><svg viewBox="0 0 1024 1024"data-icon="caret-down"width="1em"height="1em"fill="currentColor"aria-hidden="true"focusable="false"class=""><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></i><ul class="pl-dropdown-menu"><li class="pl-dropdown-menu-item pl-button-mode"data-mode="api">API下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="aria">Aria下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="rpc">RPC下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="curl">cURL下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="bc">BC下载</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-setting">助手设置</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-beautify">助手美化</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-updatelog">更新日志</li></ul></div>`);
-		    
-		    // 设置下拉菜单的基础样式（绝对定位，左对齐）
-		    $button.find(".pl-dropdown-menu").css({ 'position': 'absolute', 'left': '-1px' })
+			// 检查当前页面是否已初始化，未初始化则直接返回
+			if (!page) return;
+
+			let $toolWrap; // 存储按钮要挂载的父容器
+
+			// 创建下载按钮和下拉菜单的HTML结构
+			// 包含一个"批量下载"按钮和一个带下拉菜单的"下载助手"按钮
+			let $button = $(`<div class="pl-button tcloud-button rpc-dowon">批量下载&nbsp;</div><div class="pl-button tcloud-button">下载助手&nbsp;<i aria-label="icon: caret-down"class="anticon anticon-caret-down"><svg viewBox="0 0 1024 1024"data-icon="caret-down"width="1em"height="1em"fill="currentColor"aria-hidden="true"focusable="false"class=""><path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></i><ul class="pl-dropdown-menu"><li class="pl-dropdown-menu-item pl-button-mode"data-mode="api">API下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="aria">Aria下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="rpc">RPC下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="curl">cURL下载</li><li class="pl-dropdown-menu-item pl-button-mode"data-mode="bc">BC下载</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-setting">助手设置</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-beautify">助手美化</li><li class="pl-dropdown-menu-item pl-button-mode listener-open-updatelog">更新日志</li></ul></div>`);
+
+			// 设置下拉菜单的基础样式（绝对定位，左对齐）
+			$button.find(".pl-dropdown-menu").css({ 'position': 'absolute', 'left': '-1px' })
 
 			let $fileList; // 存储文件列表的DOM元素
 
 			// 定义播放按钮的HTML结构
-			let $playButton = $(`<button id="btnPotplayer" class="pl-btn-primary pl-btn-info" style="margin-left: 10px;" data-link="">🎬 用 PotPlayer 播放</button>`);
-		    
-		    // 当页面类型为"主页"时的处理逻辑
-		    if (page === 'home') {
-		        // 打印第一个按钮到控制台（调试用）
-		        console.log($button[0])
-		        
-		        // 监听指定的DOM元素出现，用于确定按钮挂载位置
-		        base.listenElement(config.tcloud.mount.home, function () {
-		            $toolWrap = $(config.tcloud.mount.home); // 获取挂载容器
-		            $button.find(".pl-dropdown-menu").css({ 'top': '28px' }) // 调整下拉菜单位置
-		            // 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
-		            $('.pl-button').length === 0 && $toolWrap.prepend($button);
-		        })
-		    }
-		    
-		    // 当页面类型为"分享页"时的处理逻辑
-		    if (page === 'share') {
-		        // 监听分享页面的指定元素出现
-		        base.listenElement(config.tcloud.mount.share, function () {
-		            $toolWrap = $(config.tcloud.mount.share); // 获取挂载容器
-		            $button.css({ 'height': '28px', 'border-radius': '15px' }) // 调整按钮样式以适应分享页面
-		            $button.find(".pl-dropdown-menu").css({ 'top': '25px' }) // 调整下拉菜单位置
-		            // 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
-		            $('.pl-button').length === 0 && $toolWrap.prepend($button);
-		        })
+			let $playButton = $(`<button class="pl-btn-primary pl-btn-info video-play " style="margin-left: 10px;" data-link="">播放</button>`);
+
+			// 当页面类型为"主页"时的处理逻辑
+			if (page === 'home') {
+				// 打印第一个按钮到控制台（调试用）
+				console.log($button[0])
+
+				// 监听指定的DOM元素出现，用于确定按钮挂载位置
+				base.listenElement(config.tcloud.mount.home, function () {
+					$toolWrap = $(config.tcloud.mount.home); // 获取挂载容器
+					$button.find(".pl-dropdown-menu").css({ 'top': '28px' }) // 调整下拉菜单位置
+					// 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
+					$('.pl-button').length === 0 && $toolWrap.prepend($button);
+				})
+			}
+
+			// 当页面类型为"分享页"时的处理逻辑
+			if (page === 'share') {
+				// 监听分享页面的指定元素出现
+				base.listenElement(config.tcloud.mount.share, function () {
+					$toolWrap = $(config.tcloud.mount.share); // 获取挂载容器
+					$button.css({ 'height': '28px', 'border-radius': '15px' }) // 调整按钮样式以适应分享页面
+					$button.find(".pl-dropdown-menu").css({ 'top': '25px' }) // 调整下拉菜单位置
+					// 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
+					$('.pl-button').length === 0 && $toolWrap.prepend($button);
+				})
 
 				// todo 监听未完成，目前代码进不去
-				
-				// 获取文件列表的DOM元素
-				$fileList = $(config.tcloud.mount.list);
-				//检测到 class 为 fileList 的元素后，给每个文件项添加播放按钮（如果是视频文件）
-				console.log('文件列表元素:', $fileList.length ? '找到' : '未找到');
-				console.log('选择器:', config.tcloud.mount.list);
 
-				// 使用 MutationObserver
-				if ('MutationObserver' in window && $fileList.length > 0) {
-					const observer = new MutationObserver(function(mutations) {
-						mutations.forEach(function(mutation) {
-							// 检查是否有新节点被添加
-							if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-								// 遍历所有新添加的节点
-								$(mutation.addedNodes).each(function() {
-									let $item = $(this);
-									let filename = $item.find('.file-item-name-fileName-span').text().trim();
-									let fileExt = filename.split('.').pop().toLowerCase();
-									
-									// 检查文件是否为视频格式
-									if (['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'].includes(fileExt)) {
-										// 为当前文件项添加播放按钮
-										$item.find('.file-actions').append($playButton.clone().attr('data-link', item.downloadUrl));
-									}
-								});
-							}
-						});
-					});
-					
-					// 配置观察器选项
-					const config = {
-						childList: true,
-						subtree: true
-					};
-					
-					// 开始观察目标节点
-					observer.observe($fileList[0], config);
-					
-					// 另外，为了确保页面初始加载的文件也能被处理
-					// 可以添加一段代码直接处理已存在的文件项
-					$fileList.find('.file-item').each(function() {
+				base.listenElement(config.tcloud.mount.list, function () {
+					$toolWrap = $(config.tcloud.mount.list); // 获取挂载容器
+					console.log('监听到文件列表:', $toolWrap.length ? '找到' : '未找到');
+					// 为每个视频文件添加播放按钮
+					$toolWrap.each(function () {
 						let $item = $(this);
-						let filename = $item.find('.file-item-name-fileName-span').text().trim();
-						let fileExt = filename.split('.').pop().toLowerCase();
-						
-						if (['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'].includes(fileExt)) {
-							$item.find('.file-actions').append($playButton.clone().attr('data-link', item.downloadUrl));
+						//判断是否已存在元素，判断是否为视频元素
+						const videoExtensions = ['.mp4', '.avi', '.mkv', '.mov', '.wmv', '.flv', '.webm', '.m4v', '.mpeg', '.mpg'];
+						const fileName = $item.find('.file-item-name-fileName-span').text().trim().toLowerCase();
+						const isVideoFile = videoExtensions.some(ext => fileName.endsWith(ext));
+
+						if ($item.find('.video-play').length === 0 && isVideoFile) {
+							$item.append($playButton.clone())
 						}
 					});
-				}
-		    }
-		    
-		    // 创建下载用的iframe元素（用于某些下载方式）
-		    base.createDownloadIframe();
+				})
+			}
+
+			// 创建下载用的iframe元素（用于某些下载方式）
+			base.createDownloadIframe();
 		},
 
 		addInitButton() {
@@ -5560,7 +5527,8 @@
 
 		async getFileUrlByOnce(item, index, token) {
 			try {
-				if (item.downloadUrl) return {
+
+				if (item.downloadUrl && base.getStorage('tcloud_file_url_timeout')[item.fileId] > Date.now()) return {
 					index,
 					downloadUrl: item.downloadUrl
 				};
@@ -5582,6 +5550,11 @@
 					"signature": sign
 				});
 				if (res.res_code === 0) {
+					//将文件url生成时间+5min保存到localstorage,用于下次获取链接时校验超时时间重新获取链接，用setStorage方法存储定义一个json存储fieldid和timeout
+					let timeout = time + 5 * 60 * 1000;
+					let tcloud_file_url_timeout = base.getStorage('tcloud_file_url_timeout') || JSON.parse("{}")
+					tcloud_file_url_timeout[item.fileId] = timeout;
+					base.setStorage('tcloud_file_url_timeout', tcloud_file_url_timeout);
 					return {
 						index,
 						downloadUrl: res.fileDownloadUrl
@@ -5610,8 +5583,9 @@
 			}
 		},
 
-		async getPCSLink() {
-			selectList = this.getSelectedList();
+		async getPCSLink(externalSelectList) {
+			// 优先使用外部传入的selectList，若无则内部获取
+			selectList = externalSelectList || this.getSelectedList();
 			if (selectList.length === 0) {
 				return message.error('提示：<br/>请勾选要下载的文件哦~');
 			}
@@ -5764,14 +5738,14 @@
 
 			try {
 				const response = await fetch(url, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					jsonrpc: '2.0',
-					method: 'aria2.tellActive',
-					params: [`token:${rpc.token}`], // 替换为你的 RPC 密钥
-					id: 'active_tasks'
-				})
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						jsonrpc: '2.0',
+						method: 'aria2.tellActive',
+						params: [`token:${rpc.token}`], // 替换为你的 RPC 密钥
+						id: 'active_tasks'
+					})
 				});
 
 				const data = await response.json();
@@ -5887,9 +5861,9 @@
 				do {
 					await this.delay(2000);
 					account = await this.getActiveTaskCount();
-				} while(account);
+				} while (account);
 				let res = await this.getFileUrlByOnce(item, index, token);
-				await this.sendLinkToRPC(res.filename,res.downloadUrl);
+				await this.sendLinkToRPC(res.filename, res.downloadUrl);
 			}
 		}
 	};
