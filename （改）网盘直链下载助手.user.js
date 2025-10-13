@@ -5407,14 +5407,22 @@
 			});
 			doc.on('click', '#btnPotplayer', function (e) {
 				e.preventDefault();
-				let url = decodeURIComponent(e.target.dataset.link)
-				const protocol = "potplayer";
-				url = protocol + "://" + url;
-				window.open(url, "_self");
+				tcloud.playVideo(e.target.dataset.link);
+				// let url = decodeURIComponent(e.target.dataset.link)
+				// const protocol = "potplayer";
+				// url = protocol + "://" + url;
+				// window.open(url, "_self");
 			});
 			doc.on('click', '.rpc-dowon', function (e) {
 				e.preventDefault();
 				tcloud.RPCDownloadProcess()
+			});
+
+			doc.on('click', '.video-play', function (e) {
+				e.preventDefault();
+				tcloud.getPCSLink({ externalSelectList: [e.target.parentElement.__vue__.fileItem], showDialog: false }).then(() => {
+					tcloud.playVideo(selectList[0].downloadUrl);
+				});
 			});
 		},
 
@@ -5473,8 +5481,6 @@
 					// 如果页面上还没有pl-button类的按钮，则将新按钮添加到挂载容器的开头
 					$('.pl-button').length === 0 && $toolWrap.prepend($button);
 				})
-
-				// todo 监听未完成，目前代码进不去
 
 				base.listenElement(config.tcloud.mount.list, function () {
 					$toolWrap = $(config.tcloud.mount.list); // 获取挂载容器
@@ -5583,7 +5589,8 @@
 			}
 		},
 
-		async getPCSLink(externalSelectList) {
+		async getPCSLink(option) {
+			let { externalSelectList, showDialog = true } = option;
 			// 优先使用外部传入的selectList，若无则内部获取
 			selectList = externalSelectList || this.getSelectedList();
 			if (selectList.length === 0) {
@@ -5605,9 +5612,10 @@
 			res.forEach(val => {
 				selectList[val.index].downloadUrl = val.downloadUrl;
 			});
-
-			let html = this.generateDom(selectList);
-			this.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
+			if (showDialog) {
+				let html = this.generateDom(selectList);
+				this.showMainDialog(config.base.dom.button[mode].title, html, config.base.dom.button[mode].footer);
+			}
 		},
 
 		generateDom(list) {
@@ -5865,7 +5873,14 @@
 				let res = await this.getFileUrlByOnce(item, index, token);
 				await this.sendLinkToRPC(res.filename, res.downloadUrl);
 			}
-		}
+		},
+
+		playVideo(link) {
+			let url = decodeURIComponent(link)
+			const protocol = "potplayer";
+			url = protocol + "://" + url;
+			window.open(url, "_self");
+		},
 	};
 
 	//迅雷云盘
