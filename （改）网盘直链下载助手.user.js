@@ -190,6 +190,62 @@
 			});
 		}
 	});
+
+	let idm ={
+		/**
+		 * 已经下载的次数
+		 */
+		count: 1,
+		/**
+		 * 下载请求超时时间
+		 * 发送给IDM的请求，有概率被一直挂起
+		 */
+		timeout: 10000,
+		/**
+		 * 构建IDM协议体
+		 * @param {string} url 
+		 * @param {string} referer 
+		 * @param {string} ua 
+		 * @returns 
+		 */
+		genBody: (url, referer, ua) => {
+			const data = [
+				`MSG#${idm.count}#13#1#2049:25441:4:${Date.now()}:0:1:1:1285295553:0`,
+				`6=${url.length}:${url}`,
+				`7=${referer.length}:${referer}`,
+				`11=${ua.length+12}:User-Agent: ${ua}`,
+				"122=1:4;"
+			]
+			idm.count++;
+			return data;
+		},
+		/**
+		 * 请求IDM下载
+		 * @param {string} url
+		 * @param {string} referer 
+		 * @param {string} ua 
+		 * @returns 
+		 */
+		download: async (url, referer, ua) => {
+			try {
+				const controller = new AbortController();
+				const id = setTimeout(() => controller.abort(), idm.timeout);
+				const response = await fetch("http://127.0.0.1:1001/client/1", {
+					method: "POST",
+					body: idm.genBody(url, referer, ua),
+					signal: controller.signal  
+				});
+				clearTimeout(id);
+				const text = await response.text()
+				return text.endsWith("3;");
+			} catch (err) {
+				if (err.name === 'AbortError') {
+					console.error("IDM下载请求超时", err);
+				}
+				return false;
+			}
+		}
+	}
 	/**
 	 * 消息提示工具类
 	 * @author 油小猴
@@ -3600,29 +3656,29 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				let size = Number(o.link[0].dataset.size) || 0;
 				let originalHtml = o.link.html();
 				base._resetData(index);
+				const status = await idm.download(o.link[0].dataset.link, "", config.$baidu.api.ua.downloadLink);
+				if (status) {
+					// IDM 捕获处理逻辑
+					o.tip.hide();
+					o.progress.hide();
+					o.copy.show();
+					o.directLink.show();
+					o.link
+						.text('链接已被IDM捕获~请查看IDM下载窗口哦!')
+						.animate({ opacity: '0.5' }, "slow")
+						.show();
+					clearInterval(temp.ins[index]);
+					await base.sleep(2000);
+					o.link.html(originalHtml).animate({ opacity: '1' }, "slow");
+					temp.idm[index] = false;
+					return;
+				}
 				base.get(o.link[0].dataset.link, { "User-Agent": config.$baidu.api.ua.downloadLink, "Origin": "", "Referer": "", "DNT": "" }, 'blob', { filename, index });
 				let startTime = Date.now();
 				let prevLoaded = 0;
 				let prevTime = startTime;
 				temp.ins[index] = setInterval(async () => {
 					let prog = +temp.progress[index] || 0;
-					let isIDM = !!temp.idm[index];
-					if (isIDM) {
-						// IDM 捕获处理逻辑
-						o.tip.hide();
-						o.progress.hide();
-						o.copy.show();
-						o.directLink.show();
-						o.link
-							.text('链接已被IDM捕获~请查看IDM下载窗口哦!')
-							.animate({ opacity: '0.5' }, "slow")
-							.show();
-						clearInterval(temp.ins[index]);
-						await base.sleep(2000);
-						o.link.html(originalHtml).animate({ opacity: '1' }, "slow");
-						temp.idm[index] = false;
-						return;
-					}
 					let currentTime = Date.now();
 					let elapsedTime = currentTime - startTime;
 					let loaded = prog * size / 100;
