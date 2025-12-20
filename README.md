@@ -48,16 +48,6 @@
 
 ## 说明
 
-基于[【网盘直链下载助手】](https://www.baiduyun.wiki/install.html)修改
-- 原作者: [油小猴](https://www.youxiaohou.com/)  
-- 原仓库: [https://github.com/syhyz1990/baiduyun](https://github.com/syhyz1990/baiduyun)
-- 本脚本发布至脚本猫: [https://scriptcat.org/script-show-page/1604](https://scriptcat.org/script-show-page/1604)
-  - 还有 OpenUserJS: [https://openuserjs.org/scripts/hmjz100/LinkSwift](https://openuserjs.org/scripts/hmjz100/LinkSwift)
-
-## 简介
-
-支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 八大网盘，相比较原脚本，增加了更多功能~
-
 > [!IMPORTANT]
 > 本项目所获取的下载链接均基于各大网盘服务商公开的 API 接口获取。  
 > 项目未以任何形式承诺、宣传或实现对网盘限速机制、功能的破解。
@@ -72,6 +62,16 @@
 > 任何第三方在推广、转载或介绍本项目过程中所作出的夸大、误导性宣传*，均不代表本项目立场。  
 > 由此产生的一切后果与责任，与本项目无关，须由相关行为主体自行承担。  
 > *（包括但不限于 “加速下载”“速度起飞” 等表述）
+
+基于[【网盘直链下载助手】](https://www.baiduyun.wiki/install.html)修改
+- 原作者: [油小猴](https://www.youxiaohou.com/)  
+- 原仓库: [https://github.com/syhyz1990/baiduyun](https://github.com/syhyz1990/baiduyun)
+- 本脚本发布至脚本猫: [https://scriptcat.org/script-show-page/1604](https://scriptcat.org/script-show-page/1604)
+  - 还有 OpenUserJS: [https://openuserjs.org/scripts/hmjz100/LinkSwift](https://openuserjs.org/scripts/hmjz100/LinkSwift)
+
+## 简介
+
+支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 八大网盘，相比较原脚本，增加了更多功能~
 
 #### 卑微的小标题
 
