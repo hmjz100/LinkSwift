@@ -86,7 +86,6 @@
 // @connect           123912.com
 // @connect           cjjd19.com
 // @grant             unsafeWindow
-// @grant             chrome
 // @grant             window.close
 // @grant             GM_xmlhttpRequest
 // @grant             GM_setClipboard
