@@ -1,5 +1,5 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
   - name: 问题和讨论
     url: https://github.com/hmjz100/LinkSwift/discussions
-    about: 讨论、问题、想法等
+    about: 对脚本、各大网盘的讨论、问题、想法、投票等可在此社区发布
