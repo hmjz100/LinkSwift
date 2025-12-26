@@ -12,7 +12,6 @@ body:
         请**务必**确认您的问题无重复，且不是因为您的操作、网络或运行脚本的程序问题。
 
   - type: checkboxes
-    id: terms
     attributes:
       label: 确认
       description: 您必须确认、同意并勾选以下事项。
@@ -51,7 +50,7 @@ body:
       required: true
 
   - type: input
-    id: userscript-manager-version
+    id: browser-version
     attributes:
       label: 浏览器及版本
       description: 使用的是什么浏览器？版本？架构？Chromium 内核版本（如有）
