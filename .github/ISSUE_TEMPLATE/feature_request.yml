@@ -1,0 +1,32 @@
+name: 功能请求
+description: 请求新功能
+title: "[功能请求]: "
+labels: ["enhancement/新功能"]
+type: feature
+assignees:
+  - hmjz100
+body:
+  - type: textarea
+    id: issue-today
+    attributes:
+      label: 存在问题
+      description: 目前存在什么问题
+      placeholder: 脚本目前不能……
+
+  - type: textarea
+    id: target-tomorrow
+    attributes:
+      label: 目标愿景
+      description: 希望实现的目标
+      placeholder: 希望能……
+    validations:
+      required: true
+
+  - type: textarea
+    id: advice-if
+    attributes:
+      label: 参考建议
+      description: 可供参考的建议、思路或者示例
+      placeholder: |
+        有什么实现思路，或者参考的样例？
+        **截图可以直接 Ctrl-V 粘贴哦~**

@@ -1,0 +1,127 @@
+name: 错误报告
+description: 反馈发现的 Bug、问题……
+title: "[错误报告]: 请修改标题为您遇到的问题"
+labels: ["bug/漏洞"]
+type: bug
+assignees:
+  - hmjz100
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您花时间填写此错误报告。
+        请**务必**确认您的问题无重复，且不是因为您的操作、网络或运行脚本的程序问题。
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      description: 您必须确认、同意并勾选以下事项。
+      options:
+        - label: |
+            我已确认阅读并同意 [AGPL-3.0 第 15 条](https://www.gnu.org/licenses/agpl-3.0.txt#:~:text=15.%20Disclaimer%20of%20Warranty.) 。
+            本项目不提供任何明示或暗示的担保，使用风险由您自行承担。
+          required: true
+        - label: |
+            我已确认阅读并同意 [AGPL-3.0 第 16 条](https://www.gnu.org/licenses/agpl-3.0.txt#:~:text=16.%20Limitation%20of%20Liability.) 。
+            无论何种情况，版权持有人或其他分发者均不对使用本程序所造成的任何损失承担责任。
+          required: true
+        - label: 我已确认是此脚本的问题，而不是其他原因（例如网络、脚本依赖或操作）。
+          required: true
+        - label: 我已查找过其他议题，确认没有重复的疑问或讨论。
+          required: true
+
+  - type: dropdown
+    id: os-version
+    attributes:
+      label: 操作系统
+      description: 运行浏览器程序使用的操作系统
+      options:
+        - Windows 11
+        - Windows 10
+        - Windows 8
+        - Windows 7
+        - Windows XP
+        - iOS
+        - Mac (x86)
+        - Mac (arm)
+        - Android
+        - Linux
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: userscript-manager-version
+    attributes:
+      label: 浏览器及版本
+      description: 使用的是什么浏览器？版本？架构？Chromium 内核版本（如有）
+      placeholder: Edge 143.0.3650.96 (正式版) (64 位) ，Chromium 143.0.7499.147
+    validations:
+      required: true
+
+  - type: dropdown
+    id: userscript-manager
+    attributes:
+      label: 用户脚本管理器
+      description: 使用的用户脚本管理器是？
+      options:
+        - 篡改猴 / Tampermonkey
+        - 篡改猴测试版 / Tampermonkey Beta
+        - 篡改猴 (MV2 经典版) / Tampermonkey Legacy
+        - 暴力猴 / Violentmonkey
+        - 脚本猫 / ScriptCat
+        - 脚本猫 Beta / ScriptCat Beta
+        - Via
+        - 其他（请在下方输入）
+    validations:
+      required: true
+
+  - type: input
+    id: userscript-manager-other
+    attributes:
+      label: 用户脚本管理器（其他）
+      description: 如果在上方选择了 “其他”，请在这里填写，输入你使用的用户脚本管理器名称
+
+  - type: input
+    id: userscript-manager-version
+    attributes:
+      label: 用户脚本管理器版本
+      description: 使用的用户脚本管理器版本？
+    validations:
+      required: true
+
+  - type: input
+    id: userscript-version
+    attributes:
+      label: 脚本版本
+      description: 非必须，用户脚本的版本
+      placeholder: 使用的 LinkSwift 的版本是？
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 问题详情
+      description: 简洁清晰的问题描述
+      placeholder: 发生了什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: 复现步骤
+      description: 非必须，如何复现此问题的步骤
+      placeholder: |
+        1. [第一步]
+        2. [第二步]
+        3. [...]
+
+  - type: textarea
+    id: proof-items
+    attributes:
+      label: 参考数据
+      description: 非必须，帮助诊断的截图或者其他资料
+      placeholder: |
+        日志、网页截图、F12 控制台截图或 DevTools 快照
+        **截图可以直接 Ctrl-V 粘贴哦~**
