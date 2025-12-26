@@ -1,6 +1,6 @@
 name: 错误报告
 description: 反馈发现的 Bug、问题……
-title: "[错误报告]: 请修改标题为您遇到的问题"
+title: "[错误报告] 请修改我为您的问题"
 labels: ["bug/漏洞"]
 assignees:
   - hmjz100
