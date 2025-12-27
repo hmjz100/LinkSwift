@@ -797,7 +797,8 @@
 			let url = `http://127.0.0.1:1001/client/1?seq=${seq}`;
 			let ext = base.getExtension(filename);
 
-			let headersText = Object.entries(headers).map(([key, value]) => `${key}: ${value}`).join("\n");
+			// 似乎IDM对Header的解码比较死板，不换行的那一条他解析不了
+			let headersText = Object.entries(headers).map(([key, value]) => `${key}: ${value}`).join("\n") + "\n";
 
 			function format(key, val) {
 				if (val === undefined || val === null) return "";
