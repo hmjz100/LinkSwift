@@ -788,7 +788,7 @@
 		async sendLinkToIDM(link, filename, filesize, headers = {}) {
 			link = await this.getFinal(link, headers);
 
-			link = encodeURI(link);
+			// link = encodeURI(link); 这里返回的finalUrl已经编码了，不需要再编码
 			headers = this.standHeaders(headers);
 
 			if (!temp.idm_number) temp.idm_number = 1;
@@ -818,7 +818,9 @@
 			let data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:1:${filesize}:0,${fields.join(",")};`;
 			try {
 				let res = await base.post(url, data, {}, "text");
-				if (res?.status === 200 && res?.statusText === "IDM" && res.responseText.endsWith(`${seq}:3;`)) {
+				// 这里返回的是请求的响应文本，不是响应对象，所以res?.status === 200 && res?.statusText === "IDM"不能使用
+				// 另外判断${seq}:3; 就足以判断出链接是否正确响应了
+				if (res.endsWith(`${seq}:3;`)) {
 					temp.idm_number++;
 					return "success";
 				};
@@ -3119,7 +3121,7 @@
 						allLink.push(dlink);
 						content.find(".pl-main").append(`<div class="pl-item" data-index="${i}" data-link="${dlink}" data-name="${filename}" data-size="${size}">
 							<div class="pl-item-name listener-tip"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<!--button class="pl-item-link pl-btn-primary pl-btn-default listener-idm-download" data-filename="${filename}" data-filesize="${size}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 IDM 下载器</span></button-->
+							<button class="pl-item-link pl-btn-primary pl-btn-default listener-idm-download" data-filename="${filename}" data-filesize="${size}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 IDM 下载器</span></button>
 							<button class="pl-item-link pl-btn-primary pl-btn-default listener-api-download enhance listener-tip" data-title="通过脚本跨域请求下载文件，已支持多线程、智能多分片，显示预估剩余时间、下载速度；<br/>具体线程取决于浏览器的限制，所以非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能!"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
 							<button class="pl-item-link pl-btn-primary pl-btn-info listener-api-download normal listener-tip" data-link="${dlink}" data-filename="${filename}" data-title="通过浏览器访问链接下载文件，适用于支持 iframe 的浏览器<br/>点击后需等待浏览器弹出提示才可点击下个下载，否则只会下载后者"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</button>
 							<button class="pl-item-copy pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy="${filename}" data-title="点击复制文件名"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
