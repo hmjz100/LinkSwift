@@ -815,7 +815,7 @@
 				format(122, 4), // 122: 代理
 			];
 
-			let data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:1:${filesize}:0,${fields.join(",")};`;
+			let data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:2:${filesize}:0,${fields.join(",")};`;
 			try {
 				let res = await base.post(url, data, {}, "text");
 				// 这里返回的是请求的响应文本，不是响应对象，所以res?.status === 200 && res?.statusText === "IDM"不能使用
@@ -8166,4 +8166,5 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 		}
 		return charArray.join("");
 	}
+
 })($ ?? jQuery);
