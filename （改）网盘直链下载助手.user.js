@@ -7799,7 +7799,8 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					history.replaceState({}, "", url);
 				}
 			}, 500)
-		}, yPage() {
+		},
+		beautifyPage() {
 			if (base.getValue("setting_ui_theme").custom.$123pan !== true) return;
 			base.adaptiveThemeOverride([
 				["#597dfc", temp.color],
