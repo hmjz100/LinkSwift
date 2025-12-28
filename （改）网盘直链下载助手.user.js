@@ -8215,5 +8215,4 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 		}
 		return charArray.join("");
 	}
-
 })($ ?? jQuery);
