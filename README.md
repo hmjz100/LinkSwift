@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> 如果您是从 GreasyFork 找到这的，建议前往下方的 [安装](#安装) 选择一个合适的源覆盖安装，避免因脚本失效或 GF 刷子导致无法及时更新。
+> 如果您是从 GreasyFork 找到这的，建议前往下方的 [安装](#安装) 选择一个合适的源覆盖安装，避免因脚本失效或 GF 黑产刷子导致无法及时更新。
 
 ![LinkSwift](https://socialify.git.ci/hmjz100/LinkSwift/image?description=1&descriptionEditable=%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20JavaScript%20%E7%9A%84%E7%BD%91%E7%9B%98%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7&language=1&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8%2BPHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8%2BPHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4%3D&name=1&owner=1&pattern=Charlie%20Brown&theme=Auto)
 
@@ -75,11 +75,20 @@
 
 #### 卑微的小标题
 
-这个脚本只有一个人在修改\~如果喜欢的话还请留个 Star 哦\~   
+~~这个脚本只有一个人在修改\~~~ 如果喜欢的话还请留个 Star 哦\~   
 - 如有 bug 等问题请在这发[议题反馈](https://github.com/hmjz100/LinkSwift/issues)
 
+## 贡献者
+
+感谢下列为本项目做过贡献的开发者！
+
+<a href="https://github.com/hmjz100/LinkSwift/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hmjz100/LinkSwift" />
+</a>
+
+
 ## 版本号
-v1.1.2（基于原版 v6.2.7）  
+v1.1.2.1（基于原版 v6.2.7）  
 本脚本目前仅在 Github、Gitee、脚本猫脚本站 与 OpenUserJS 发布；  
 如果您是在其他渠道获取到本脚本的，安装后所带来的问题作者概不负责。
 
@@ -87,6 +96,7 @@ v1.1.2（基于原版 v6.2.7）
 
 | 版本号 | 创建日期 | 更新日志 |
 | -------- | -------- | -------- |
+| 1.1.2.1 | 2025年12月28日 | 1、新增 - API 下载的推送到 IDM 功能；<br/>（感谢 <a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a> 的帮助）<br/>2、修复 - 复制 Aria2、cURL 命令行错误。 |
 | 1.1.2   | 2025年12月26日 | 1、适配 - 123 云盘新策略；<br/>2、适配 - 夸克、UC 网盘分享页；<br/>3、新增 - 增强下载的多块多线程支持；<br/>4、优化 - 页面绿化的部分匹配规则；<br/>5、优化 - 增强下载进度条样式。 |
 | 1.1.1.9 | 2025年09月13日 | 1、修复 - 123 云盘下载视频变为缩略图。 |
 | 1.1.1.8 | 2025年09月11日 | 1、修复 - 适配新版 123 云盘分享页。 |
@@ -138,7 +148,7 @@ v1.1.2（基于原版 v6.2.7）
 | 1.0.6.2 | 2023年05月08日 | 1、修复部分界面错位，实现CSS内置；<br>2、百度网盘界面将变得更加简洁。 |
 | 1.0.6.1 | 2023年05月06日 | 1、新增百度云盘API下载支持复制链接；<br>2、为了照顾手机浏览器用户，增大项目之间间隙，新增隐藏IDM提示选项，可在助手设置中启用；<br>3、修改CSS，界面会出现更多的主题色；<br>4、支持在游小猴官网查看暗号；<br>5、修复部分语法错误。 |
 | 1.0.6   | 2023年04月15日 | 1、修复了打开阿里云盘分享连接时因下载移动端广告导致只能点击API下载；<br>2、跟进官方6.0.4版本，修复夸克网盘获取下载链接失效、支持移动云盘。 |
-| 1.0.5.5 | 2023年04月01日 | 1、感谢[Night-stars](https://github.com/Night-stars-1)的帮助，修复因为原作者服务器导致的初始化暗号识别错误；<br>2、修改一些文本以及提供给服务器的信息。 |
+| 1.0.5.5 | 2023年04月01日 | 1、感谢[Night Stars](https://github.com/Night-stars-1)的帮助，修复因为原作者服务器导致的初始化暗号识别错误；<br>2、修改一些文本以及提供给服务器的信息。 |
 | 1.0.5.4 | 2023年03月13日 | 1、小修小改css，让主题色出现在更多地方；<br>2、修改下载链接获取失败的提示；<br>3、增加更多的主题色，可在助手设置查看；<br>4、homo彩蛋被删去力（悲）。 |
 | 1.0.5.3 | 2023年03月10日 | 1、阿里云盘可以摸到下载菜单了。 |
 | 1.0.5.2 | 2022年10月04日 | 1、增加脚本信息菜单；<br>2、优化阿里云盘显示svg图片；<br>3、修改弹窗按钮颜色。 |

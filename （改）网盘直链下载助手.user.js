@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name              LinkSwift
 // @namespace         github.com/hmjz100
-// @version           1.1.2
+// @version           1.1.2.1
 // @author            Hmjz100、油小猴
 // @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=
 // @description       (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
@@ -56,7 +56,6 @@
 // @match             *://pan.xunlei.com/*
 // @match             *://pan.quark.cn/*
 // @match             *://drive.uc.cn/*
-// @match             *://fast.uc.cn/*
 // @match             *://*.123pan.com/*
 // @match             *://*.123pan.cn/*
 // @match             *://*.123684.com/*
@@ -108,7 +107,7 @@
  * @author hmjz100
  * @namespace github.com/hmjz100
  * @description  一个基于 JavaScript 盘的文件下载地址获取工具  支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 八大网盘  代码改自 “网盘直链下载助手”，作者油小猴
- * @version 1.1.2
+ * @version 1.1.2.1
  * @license AGPL-3.0-or-later
  * @see {@link https://github.com/hmjz100/LinkSwift/ Github 仓库}
  */
@@ -125,7 +124,7 @@
 	let info = {
 		author: GM_info.script?.author,
 		name: GM_info.script?.name,
-		version: (GM_info.script?.version || "1.1.2"),
+		version: (GM_info.script?.version || "1.1.2.1"),
 		icon: (GM_info.script?.icon || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="),
 		mhandler: GM_info.scriptHandler,
 		mversion: GM_info.version,
@@ -291,7 +290,7 @@
 				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more"
 			},
 			dom: {
-				enhance: `+<br/>此方式可以自动设置用户代理(UA)，然后下载。<br/>此方式的下载请求<b>不会</b>被 IDM 捕获。`,
+				enhance: `+<br/>此方式可以自动设置用户代理(UA)，然后下载。<br/>此方式的下载请求<b>可能会</b>被<b>旧版 IDM</b> 捕获。`,
 				normal: `+<br/>此方式<b>无法下载超过 50MB 的文件</b>，若超过点击会无反应（服务器 403）。<br/>此方式的下载请求<b>可能会</b>被 IDM 捕获。`,
 				copy: `注：此服务直接访问超过 50MB 文件的直链会导致服务器回报 403 错误<br/>如需访问，<b>请修改用户代理(UA)为 "pan.baidu.com"</b>`
 			}
@@ -364,7 +363,6 @@
 				ua: {
 					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) quark-cloud-drive/3.20.0 Chrome/112.0.5615.165 Electron/24.1.3.8 Safari/537.36 Channel/pckk_other_ch"
 				},
-				getShareToken: "https://drive-pc.quark.cn/1/clouddrive/share/sharepage/token?entry=ft&fr=pc&pr=ucpro",
 				getLink: "https://drive-pc.quark.cn/1/clouddrive/file/download?entry=ft&fr=pc&pr=ucpro"
 			},
 			mount: {
@@ -381,7 +379,6 @@
 				ua: {
 					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) uc-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_ch"
 				},
-				getShareToken: "https://pc-api.uc.cn/1/clouddrive/share/sharepage/v2/detail?entry=ft&fr=pc&pr=UCBrowser",
 				getLink: "https://pc-api.uc.cn/1/clouddrive/file/download?entry=ft&fr=pc&pr=UCBrowser"
 			},
 			mount: {
@@ -779,6 +776,7 @@
 		/**
 		 * 发送链接到 IDM 下载器
 		 * @author hmjz100
+		 * @author Night-stars-1
 		 * @description IDM 下载必备
 		 * @param {string} link - 下载链接
 		 * @param {string} filename - 文件名
@@ -786,46 +784,54 @@
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
 		async sendLinkToIDM(link, filename, filesize, headers = {}) {
-			link = await this.getFinal(link, headers);
+			if (!this.sendLinkToIDM.lock) this.sendLinkToIDM.lock = Promise.resolve();
+			return this.sendLinkToIDM.lock = this.sendLinkToIDM.lock.then(async () => {
+				headers = this.standHeaders(headers);
 
-			link = encodeURI(link);
-			headers = this.standHeaders(headers);
+				if (!this.sendLinkToIDM.seq) this.sendLinkToIDM.seq = 1;
+				let seq = this.sendLinkToIDM.seq;
+				let time = Date.now();
+				let url = `http://127.0.0.1:1001/client/1?seq=${seq}`;
+				let ext = base.getExtension(filename);
 
-			if (!temp.idm_number) temp.idm_number = 1;
-			let seq = temp.idm_number;
-			let time = Date.now();
-			let url = `http://127.0.0.1:1001/client/1?seq=${seq}`;
-			let ext = base.getExtension(filename);
+				let headersText = Object.entries(headers).map(([key, value]) => `${key}: ${value}`).join("\n") + "\n"; // 坑1：IDM 对 Header 的解码比较死板，最后不加换行不肯解析
 
-			let headersText = Object.entries(headers).map(([key, value]) => `${key}: ${value}`).join("\n");
+				function format(key, val) {
+					if (val === undefined || val === null) return "";
+					var strVal = String(val);
+					var len = new Blob([strVal]).size; // 坑2：使用 blob.size，而不是 length
+					return `${key}=${len}:${strVal}`;
+				};
 
-			function format(key, val) {
-				if (val === undefined || val === null) return "";
-				var strVal = String(val);
-				var len = new Blob([strVal]).size;
-				return `${key}=${len}:${strVal}`;
-			};
+				let fields = [
+					format(4, ext), // 4: 文件类型
+					format(6, link), // 6: 链接
+					format(7, location.origin), // 7: 来源页面
+					format(11, headersText), // 11: 请求头
+					format(100, filename), // 100: 文件名
+					format(122, 4), // 122: 代理
+				];
 
-			let fields = [
-				format(4, ext), // 4: 文件类型
-				format(6, link), // 6: URL
-				format(7, location.origin), // 7: 来源页面
-				format(11, headersText), // 11: 请求头
-				format(100, filename), // 100: 文件名
-				format(122, 4), // 122: 代理
-			];
+				// 坑3：神秘的请求格式
+				// MSG # {请求指示} #13#1# {10241/20xx}(是否使用扩展提供的文件信息) : {?}(可能是距离扩展启动的时间?) :0: {当前时间戳} :1: {1/2}(是否优先弹窗，再获取文件信息) : {文件大小} :0,{表单}(格式如上);
+				let data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:2:${filesize}:0,${fields.join(",")};`;
 
-			let data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:1:${filesize}:0,${fields.join(",")};`;
-			try {
-				let res = await base.post(url, data, {}, "text");
-				if (res?.status === 200 && res?.statusText === "IDM" && res.responseText.endsWith(`${seq}:3;`)) {
-					temp.idm_number++;
+				let request = base.post(url, data, {}, "text").catch(() => false);
+				let timeout = new Promise((_, reject) => {
+					setTimeout(() => {
+						if (request.abort) request.abort();
+						reject(new Error("timeout"));
+					}, 15 * 1000);
+				})
+
+				let res = await Promise.race([request, timeout]).catch(() => false);
+
+				if (res && res.endsWith(`${seq}:3;`)) {
+					this.sendLinkToIDM.seq++;
 					return "success";
 				};
 				return "fail";
-			} catch (e) {
-				return "fail";
-			}
+			});
 		},
 
 		/**
@@ -1128,7 +1134,8 @@
 			headers = this.standHeaders(headers);
 			return new Promise((resolve, reject) => {
 				var method = usingGET ? "Get" : "Head";
-				base.xmlHttpRequest({
+				let _aborted = false;
+				let request = base.xmlHttpRequest({
 					method: method.toUpperCase(),
 					url,
 					headers,
@@ -1136,23 +1143,57 @@
 						base.console.log(`【LinkSwift】Head${usingGET ? " Get" : ""}(start)\n请求地址：${url}\n请求头部：`, headers);
 					},
 					onload: function (res) {
-						let head = {};
-						res.responseHeaders.trim().split("\r\n").forEach(line => {
-							var parts = line.split(": ");
-							if (parts.length >= 2) {
-								var key = parts[0].toLowerCase();
-								var value = parts.slice(1).join(": ");
-								head[key] = value;
-							}
-						});
-						res.responseHeaders = base.standHeaders(head, true);
-						base.console.log(`【LinkSwift】Head${usingGET ? " Get" : ""}(load)\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
+						if (!_aborted) {
+							let head = {};
+							res.responseHeaders.trim().split("\r\n").forEach(line => {
+								var parts = line.split(": ");
+								if (parts.length >= 2) {
+									var key = parts[0].toLowerCase();
+									var value = parts.slice(1).join(": ");
+									head[key] = value;
+								}
+							});
+							res.responseHeaders = base.standHeaders(head, true);
+							base.console.log(`【LinkSwift】Head${usingGET ? " Get" : ""}(load)\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
 
-						resolve(res);
+							if (!usingGET && !res.responseHeaders.hasOwnProperty("Range") && !(res?.status >= 200 && res?.status < 400)) {
+								base.head(res.finalUrl, { ...headers, Range: "bytes=0-0" }, true).then(resolve).catch(reject);
+								return;
+							}
+
+							resolve(res);
+						}
+					},
+					onreadystatechange: function (res) {
+						if (res.readyState === 2) { // HEADERS_RECEIVED
+							_aborted = true;
+							if (request && request.abort) request.abort();
+
+							let head = {};
+							res.responseHeaders.trim().split("\r\n").forEach(line => {
+								var parts = line.split(": ");
+								if (parts.length >= 2) {
+									var key = parts[0].toLowerCase();
+									var value = parts.slice(1).join(": ");
+									head[key] = value;
+								}
+							});
+							res.responseHeaders = base.standHeaders(head, true);
+							base.console.log(`【LinkSwift】Head${usingGET ? " Get" : ""}(load) RS2\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
+
+							if (!usingGET && !res.responseHeaders.hasOwnProperty("Range") && !(res?.status >= 200 && res?.status < 400)) {
+								base.head(res.finalUrl, { ...headers, Range: "bytes=0-0" }, true).then(resolve).catch(reject);
+								return;
+							}
+
+							resolve(res);
+						}
 					},
 					onerror: function (err) {
-						base.console.error(`【LinkSwift】Head${usingGET ? " Get" : ""}(error)\n请求出现错误，可能是网络问题。`, err);
-						reject(err);
+						if (!_aborted) {
+							base.console.error(`【LinkSwift】Head${usingGET ? " Get" : ""}(error)\n请求出现错误，可能是网络问题。`, err);
+							reject(err);
+						}
 					}
 				});
 			});
@@ -1178,10 +1219,6 @@
 					base.getFinal(res.finalUrl, headers, usingGET, returnURL).then(resolve).catch(reject);
 					return;
 				}
-				if (!headers.hasOwnProperty("Range") && !(res?.status >= 300 && res?.status < 400)) {
-					base.getFinal(res.finalUrl, { ...headers, Range: "bytes=0-0" }, true, returnURL).then(resolve).catch(reject);
-					return;
-				}
 				if (returnURL) return resolve(res.finalUrl);
 				else return resolve(res);
 			});
@@ -1190,7 +1227,6 @@
 		/**
 		 * 下载文件
 		 * @author hmjz100
-		 * @author Gemini 3
 		 * @description 发送 GET 请求，一般用于文件下载，支持进度监控、自动重试、断点续传、非断回退
 		 * @param {string} url - 请求地址
 		 * @param {Object} headers - 请求头配置
@@ -1203,7 +1239,7 @@
 			// 初始化全局共享状态
 			this.download.active = this.download.active || 0; // 全局活跃线程数
 			this.download.taskCount = this.download.taskCount || 0; // 当前正在运行的 download 任务数
-			var global_maxThreads = 4; // 整个允许的最大并发数
+			var global_maxThreads = 8; // 整个允许的最大并发数
 
 			if (extra) base.console.log(`【LinkSwift】Download\n收到数据：`, extra);
 			if (!extra || !extra.index || !extra.name || !extra.size) throw new Error("extra 缺少内容。");
@@ -1342,8 +1378,8 @@
 							}
 						};
 
-						// 启动当前任务的并发线程
-						var maxThreads = Math.min(extra.thread || 2, 2);
+						// 启动当前任务的并发线程，单任务最高 3 个
+						var maxThreads = Math.min(extra.thread || 3, 3);
 						await Promise.all(Array(maxThreads).fill(0).map(worker));
 
 						if (status.aborted) return;
@@ -1619,9 +1655,9 @@
 		},
 
 		/**
-		 * 自适应 CSS 颜色替换
+		 * 自适应样式颜色替换器
 		 * @author hmjz100
-		 * @description 支持全局样式替换和资源路径修正，处理颜色渐变过渡效果
+		 * @description 支持全局样式替换和资源路径修正，处理颜色渐变过渡效果等
 		 * @param {string} cssText - 原始 CSS 内容
 		 * @param {string} baseURI - 资源基础路径
 		 * @param {"default"|"other"} type - 替换模式（默认模式包含过渡效果）
@@ -2470,6 +2506,14 @@
 				<div class="block">(ﾉ◕ヮ◕)ﾉ 遇到 Bug 要记得去 <a class="pl-a" href="https://github.com/hmjz100/LinkSwift/issues" target="_blank">Github 议题</a> 向我报告哦~</div>
 				<div class="block">(o゜▽゜)o☆ 觉得好用？来一同完善本项目吧~ 欢迎提交<a class="pl-a" href="https://github.com/hmjz100/LinkSwift/pulls" target="_blank">拉取请求</a>为本项目做贡献~</div>
 				<div class="block">
+					<name>V1.1.2.1</name>
+					<div>
+					<div>1、新增 - API 下载的推送到 IDM 功能；</div>
+					<div style="margin-left:10px">（感谢 <a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a> 的帮助）</div>
+					<div>2、修复 - 复制 Aria2、cURL 命令行错误。</div>
+					</div>
+				</div>
+				<div class="block">
 					<name>V1.1.2</name>
 					<div>
 					<div>1、适配 - 123 云盘新策略；</div>
@@ -2534,7 +2578,7 @@
 				<div class="block">
 					<name>V1.1.1.1</name>
 					<div>
-					<div>1、修复推送到 Aria2 时推送成功但报错的 Bug。</div>
+					<div>1、修复推送至 Aria2 时推送成功但报错的 Bug。</div>
 					</div>
 				</div>
 				<div class="block">
@@ -2836,7 +2880,7 @@
 				<div class="block">
 					<name>V1.0.5.5</name>
 					<div>
-					<div>1、感谢<a href="https://github.com/Night-stars-1">Night Stars</a>的帮助，修复因为原作者服务器导致的初始化暗号识别错误；</div>
+					<div>1、感谢<a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a>的帮助，修复因为原作者服务器导致的初始化暗号识别错误；</div>
 					<div>2、修改一些文本以及提供给服务器的信息。</div>
 					</div>
 				</div>
@@ -3119,11 +3163,11 @@
 						allLink.push(dlink);
 						content.find(".pl-main").append(`<div class="pl-item" data-index="${i}" data-link="${dlink}" data-name="${filename}" data-size="${size}">
 							<div class="pl-item-name listener-tip"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<!--button class="pl-item-link pl-btn-primary pl-btn-default listener-idm-download" data-filename="${filename}" data-filesize="${size}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 IDM 下载器</span></button-->
 							<button class="pl-item-link pl-btn-primary pl-btn-default listener-api-download enhance listener-tip" data-title="通过脚本跨域请求下载文件，已支持多线程、智能多分片，显示预估剩余时间、下载速度；<br/>具体线程取决于浏览器的限制，所以非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能!"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
 							<button class="pl-item-link pl-btn-primary pl-btn-info listener-api-download normal listener-tip" data-link="${dlink}" data-filename="${filename}" data-title="通过浏览器访问链接下载文件，适用于支持 iframe 的浏览器<br/>点击后需等待浏览器弹出提示才可点击下个下载，否则只会下载后者"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</button>
-							<button class="pl-item-copy pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy="${filename}" data-title="点击复制文件名"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
-							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy copy listener-tip" data-copy="${dlink}" data-title="点击复制下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制链接</button>
+							<button class="pl-btn-primary pl-btn-default listener-idm-download listener-tip" data-filename="${filename}" data-filesize="${size}" data-link="${dlink}" data-title="通过 IDM 扩展的捕获协议，将链接推送至 IDM，理论上仅适用于版本较新的 IDM。<br/>使用前请确保您的 IDM 的 “设置” > “文件类型” > “接管下载文件扩展名” 里有 “${base.getExtension(filename)}”，若无请添加。"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 IDM (Beta)</span></button>
+							<button class="pl-item-copy pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy='${filename}' data-title="点击复制文件名"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
+							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy copy listener-tip" data-copy='${dlink}' data-title="点击复制下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制链接</button>
 							<div class="pl-item-downing" style="display:none">
 								<div class="pl-progress">
 									<div class="progress footer"><span class="text">正在加载...</span></div>
@@ -3139,7 +3183,7 @@
 						allLink.push(finalink);
 						content.find(".pl-main").append(`<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<a class="pl-item-link listener-copy listener-tip" data-copy="${finalink}" data-title="点击复制 curl 命令行">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${filename} 下载命令行</a>
+							<a class="pl-item-link listener-copy listener-tip" data-copy='${finalink}' data-title="点击复制 curl 命令行">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${filename} 下载命令行</a>
 						</div>`);
 					}
 					if (temp.mode === "aria2") {
@@ -3148,7 +3192,7 @@
 						content.find(".pl-main").append(`<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
 							<button class="pl-item-link pl-btn-primary pl-btn-default listener-aria2-download" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Aria2 下载器</span></button>
-							<button class="pl-btn-primary pl-btn-info listener-copy listener-tip" data-copy="${finalink}" data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
+							<button class="pl-btn-primary pl-btn-info listener-copy listener-tip" data-copy='${finalink}' data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
 						</div>`);
 					}
 					if (temp.mode === "bitcomet") {
@@ -3157,8 +3201,8 @@
 						content.find(".pl-main").append(`<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
 							<a class="pl-item-link pl-btn-primary pl-btn-default listener-tip" href="${finalink}" data-title="点击打开 BC 链接以手动调起比特彗星下载，右键可复制 BC 链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>使用 BC 链接下载</a>
-							${mirror ? `<button class="pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy="${mirror}" data-title="点击复制镜像地址"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制镜像</a>` : ""}
-							<button class="pl-btn-primary pl-btn-info listener-bitcomet-download listener-tip" data-filename="${filename}" data-link="${dlink}" data-title="除非 BC 链接无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送到下载器</span></button>
+							${mirror ? `<button class="pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy='${mirror}' data-title="点击复制镜像地址"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制镜像</a>` : ""}
+							<button class="pl-btn-primary pl-btn-info listener-bitcomet-download listener-tip" data-filename="${filename}" data-link="${dlink}" data-title="除非 BC 链接无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至下载器</span></button>
 						</div>`);
 					}
 					if (temp.mode === "abdm") {
@@ -3171,24 +3215,24 @@
 			});
 			allLink = (allLink ? allLink.join("\r\n") : "")
 			if (temp.mode === "api" && list.length >= 2) {
-				if (list.length >= 2) content.find(".pl-extra").append(`<!--button class="pl-btn-primary pl-btn-default idm listener-send-rpc" data-type="idm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>推送全部到下载器</button-->
-				<button class="pl-btn-primary api listener-download-all enhance listener-tip" data-title="建议换用 “Aria2 推送下载”，本方式若文件过大有可能不会弹出下载后窗口<br/>通过脚本跨域请求下载文件，适用于较新的浏览器，可在此显示剩余时间和速度"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载</button>
-				<button class="pl-btn-primary pl-btn-warning api listener-copy listener-tip" data-copy="${allLink}" data-title="点击复制全部下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部链接</button>`);
+				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary api listener-download-all enhance listener-tip" data-title="通过脚本跨域请求下载文件，已支持多线程、智能多分片，显示预估剩余时间、下载速度；<br/>具体线程取决于浏览器的限制，所以非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能!"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载 (Beta)</button>
+				<button class="pl-btn-primary pl-btn-default idm listener-send-rpc listener-tip" data-type="idm" data-title="通过 IDM 扩展的捕获协议，将链接推送至 IDM，理论上仅适用于版本较新的 IDM。<br/>使用前请确保您的 IDM 的 “设置” > “文件类型” > “接管下载文件扩展名” 里有上述文件的扩展名，若无请添加。"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 IDM (Beta)</button>
+				<button class="pl-btn-primary pl-btn-warning api listener-copy listener-tip" data-copy='${allLink}' data-title="点击复制全部下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部链接</button>`);
 			} else if (temp.mode === "curl") {
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning curl listener-open-setting listener-tip" data-title="${temp.terminalType[base.getValue("setting_curl_terminal")]}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改终端类型</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary curl listener-copy listener-tip" data-copy="${allLink}" data-title="点击复制全部 curl 命令行"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
+				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary curl listener-copy listener-tip" data-copy='${allLink}' data-title="点击复制全部 curl 命令行"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
 			} else if (temp.mode === "aria2") {
 				let rpc = base.getValue("setting_aria2_rpc").find(i => i.default);
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning aria2 listener-open-aria2-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-success aria2 listener-rpc-task youxiaohou listener-tip" data-title="访问原作者的 Aria2 管理页面以查看下载任务，功能较少"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-list-check"/></svg>查看任务 (油小猴)</button>`);
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-success aria2 listener-rpc-task ariang listener-tip" data-title="访问 AriaNg 的官方 Demo 以查看下载任务，功能较多"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-list-check"/></svg>查看任务 (AriaNg)</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default aria2 listener-send-rpc" data-type="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>推送全部到下载器</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-info aria2 listener-copy listener-tip" data-copy="${allLink}" data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
+				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default aria2 listener-send-rpc" data-type="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
+				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-info aria2 listener-copy listener-tip" data-copy='${allLink}' data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
 			} else if (temp.mode === "bitcomet") {
 				let rpc = base.getValue("setting_bitcomet_rpc").find(i => i.default);
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning bitcomet listener-open-bitcomet-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default bitcomet listener-copy listener-tip" data-copy="${allLink}" data-title="点击复制全部 BC 链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部 BC 链接</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-info bitcomet listener-send-rpc listener-tip" data-type="bitcomet" data-title="除非 BC 链接无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>推送全部到下载器</button>`);
+				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default bitcomet listener-copy listener-tip" data-copy='${allLink}' data-title="点击复制全部 BC 链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部 BC 链接</button>`);
+				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-info bitcomet listener-send-rpc listener-tip" data-type="bitcomet" data-title="除非 BC 链接无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
 			} else if (temp.mode === "abdm") {
 				let rpc = base.getValue("setting_abdm_rpc").find(i => i.default);
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning abdm listener-open-abdm-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
@@ -5674,12 +5718,13 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					let res = await base.post(config.$mcloud.api.getLink, body, {
 						"Authorization": getCookie("authorization"),
 						"Caller": "web",
+						"Content-Type": "application/json;charset=UTF-8",
 						"CMS-DEVICE": "default",
 						"Mcloud-Channel": "1000101",
 						"Mcloud-Client": "10701",
 						"Mcloud-Sign": time + "," + key + "," + sign,
 						"Mcloud-Version": "7.14.2",
-						"X-DeviceInfo": "||9|7.14.2|chrome|119.0.0.0|||windows 10||zh-CN|||",
+						"X-DeviceInfo": "||9|7.17.0|edge||||windows 10||zh-CN|||",
 						"X-Huawei-ChannelSrc": "10000034",
 						"X-Inner-Ntwk": "2",
 						"X-M4C-Caller": "PC",
@@ -5688,9 +5733,10 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						"X-Yun-Api-Version": "v1",
 						"X-Yun-App-Channel": "10000034",
 						"X-Yun-Channel-Source": "10000034",
-						"X-Yun-Client-Info": "||9|7.14.2|chrome|119.0.0.0|||windows 10||zh-CN|||||",
+						"X-Yun-Client-Info": "||9|7.17.0|edge||||windows 10||zh-CN|||||",
 						"X-Yun-Module-Type": "100",
-						"X-Yun-Svc-Type": "1"
+						"X-Yun-Svc-Type": "1",
+						"X-Yun-Url-Type": "3"
 					});
 					if (res.success) {
 						return {
@@ -6956,7 +7002,6 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					location.pathname.match(/^\/(?:s|share)\/([a-zA-Z0-9]+)/)?.[1]; // 兜底
 				if (!pwd_id) return message.error("错误：<br/>无法提取分享 ID~");
 
-				//let stoken = await this.getShareToken(pwd_id);
 				let data = [];
 				let batchSize = 15;
 				let processed = 0;
@@ -7381,7 +7426,6 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					location.pathname.match(/^\/(?:s|share)\/([a-zA-Z0-9]+)/)?.[1]; // 兜底
 				if (!pwd_id) return message.error("错误：<br/>无法提取分享 ID~");
 
-				//let stoken = await this.getShareToken(pwd_id);
 				let data = [];
 				let batchSize = 15;
 				let processed = 0;
@@ -7738,6 +7782,13 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 			// 分享 手机二维码
 			base.waitForKeyElements(".rightInfo .qrcode_btn", function (tag) {
 				tag.hide();
+			}, true);
+			base.waitForKeyElements(`#iqiyi-ad-overlay`, function (tag) {
+				tag.remove();
+				base.setStorage("iqiyi_ad_closed", {
+					date: '2099-12-31T23:59:59.999Z',
+					timestamp: Date.now()
+				});
 			}, true);
 			// 为页面主动添加 notoken 参数（token 太长影响观感，故不添加），以避免被新版页面屎山代码搞得二次刷新
 			setInterval(() => {
