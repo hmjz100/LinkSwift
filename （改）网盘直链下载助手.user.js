@@ -845,34 +845,37 @@
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
 		async sendLinkToAria2(link, filename, headers) {
-			let list = base.getValue("setting_aria2_rpc");
-			let selected = list.find(i => i.default);
-			let rpc = {
-				domain: selected.domain,
-				port: selected.port,
-				path: selected.path,
-				dir: selected.dir,
-				token: selected.token
-			};
-			let url = `${rpc.domain}:${rpc.port}${rpc.path}`;
-			let dir = (rpc.dir !== null && rpc.dir !== "") ? rpc.dir : undefined;
-			let data = {
-				id: new Date().getTime(),
-				jsonrpc: "2.0",
-				method: "aria2.addUri",
-				params: [`token:${rpc.token}`, [link], {
-					dir,
-					out: filename,
-					header: headers
-				}]
-			};
-			try {
-				let res = await base.post(url, data, {}, "");
-				if (res.result) return "success";
-				return "fail";
-			} catch (e) {
-				return "fail";
-			}
+			if (!this.sendLinkToAria2.lock) this.sendLinkToAria2.lock = Promise.resolve();
+			return this.sendLinkToAria2.lock = this.sendLinkToAria2.lock.then(async () => {
+				let list = base.getValue("setting_aria2_rpc");
+				let selected = list.find(i => i.default);
+				let rpc = {
+					domain: selected.domain,
+					port: selected.port,
+					path: selected.path,
+					dir: selected.dir,
+					token: selected.token
+				};
+				let url = `${rpc.domain}:${rpc.port}${rpc.path}`;
+				let dir = (rpc.dir !== null && rpc.dir !== "") ? rpc.dir : undefined;
+				let data = {
+					id: new Date().getTime(),
+					jsonrpc: "2.0",
+					method: "aria2.addUri",
+					params: [`token:${rpc.token}`, [link], {
+						dir,
+						out: filename,
+						header: headers
+					}]
+				};
+				try {
+					let res = await base.post(url, data, {}, "");
+					if (res.result) return "success";
+					return "fail";
+				} catch (e) {
+					return "fail";
+				}
+			});
 		},
 
 		/**
@@ -885,40 +888,43 @@
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
 		async sendLinkToBitcomet(link, filename, headers) {
-			let list = base.getValue("setting_bitcomet_rpc");
-			let selected = list.find(i => i.default);
-			let rpc = {
-				domain: selected.domain,
-				port: selected.port,
-				path: selected.path,
-				dir: selected.dir,
-				authName: selected.authName,
-				authPass: selected.authPass,
-			};
-			let url = `${rpc.domain}:${rpc.port}${rpc.path}`;
-			let data = new URLSearchParams();
-			data.append("url", link);
-			if (rpc.dir !== null && rpc.dir !== "") data.append("save_path", rpc.dir);
-			data.append("file_name", filename);
-			data.append("connection", 200);
-			if (headers && base.isType(headers) === "object") {
-				for (var [key, value] of Object.entries(headers)) {
-					data.append(key, value);
+			if (!this.sendLinkToBitcomet.lock) this.sendLinkToBitcomet.lock = Promise.resolve();
+			return this.sendLinkToBitcomet.lock = this.sendLinkToBitcomet.lock.then(async () => {
+				let list = base.getValue("setting_bitcomet_rpc");
+				let selected = list.find(i => i.default);
+				let rpc = {
+					domain: selected.domain,
+					port: selected.port,
+					path: selected.path,
+					dir: selected.dir,
+					authName: selected.authName,
+					authPass: selected.authPass,
+				};
+				let url = `${rpc.domain}:${rpc.port}${rpc.path}`;
+				let data = new URLSearchParams();
+				data.append("url", link);
+				if (rpc.dir !== null && rpc.dir !== "") data.append("save_path", rpc.dir);
+				data.append("file_name", filename);
+				data.append("connection", 200);
+				if (headers && base.isType(headers) === "object") {
+					for (var [key, value] of Object.entries(headers)) {
+						data.append(key, value);
+					}
 				}
-			}
-			try {
-				let res = await base.post(url, data, {
-					"Authorization": `Basic ${base.encodeBase(rpc.authName + ":" + rpc.authPass)}`,
-					"Content-Type": "application/x-www-form-urlencoded"
-				}, "blob");
-				if (res.response && res?.responseText?.includes("Add task failed!")) {
-					return "fail";
-				} else {
+				try {
+					let res = await base.post(url, data, {
+						"Authorization": `Basic ${base.encodeBase(rpc.authName + ":" + rpc.authPass)}`,
+						"Content-Type": "application/x-www-form-urlencoded"
+					}, "blob");
+					if (res.response && res?.responseText?.includes("Add task failed!")) {
+						return "fail";
+					} else {
+						return "success";
+					}
+				} catch (e) {
 					return "success";
 				}
-			} catch (e) {
-				return "success";
-			}
+			});
 		},
 
 		/**
@@ -931,37 +937,40 @@
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
 		async sendLinkToABDM(link, filename, headers) {
-			let newHeaders = {};
-			for (let key in headers) {
-				newHeaders[key.toLowerCase().split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("-")] = headers[key];
-			}
-			headers = { "User-Agent": navigator.userAgent, "Origin": location.origin, "Referer": `${location.origin}/`, "DNT": "1", ...newHeaders };
-			let list = base.getValue("setting_abdm_rpc");
-			let selected = list.find(i => i.default);
-			let rpc = {
-				domain: selected.domain,
-				port: selected.port,
-				dir: selected.dir
-			};
-			let url = `${rpc.domain}:${rpc.port}/start-headless-download`;
-			let data = {
-				"downloadSource": {
-					"name": filename,
-					"description": "LinkSwift",
-					"link": link,
-					"headers": headers,
-					"downloadPage": headers["Referer"]
-				},
-				"name": filename
-			}
-			if (rpc.dir) data.folder = rpc.dir;
-			try {
-				let res = await base.post(url, data, { "Content-Type": "text/plain;charset=UTF-8" }, "text");
-				if (res === "OK") return "success";
-				return "fail";
-			} catch (e) {
-				return "fail";
-			}
+			if (!this.sendLinkToBitcomet.lock) this.sendLinkToBitcomet.lock = Promise.resolve();
+			return this.sendLinkToBitcomet.lock = this.sendLinkToBitcomet.lock.then(async () => {
+				let newHeaders = {};
+				for (let key in headers) {
+					newHeaders[key.toLowerCase().split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("-")] = headers[key];
+				}
+				headers = { "User-Agent": navigator.userAgent, "Origin": location.origin, "Referer": `${location.origin}/`, "DNT": "1", ...newHeaders };
+				let list = base.getValue("setting_abdm_rpc");
+				let selected = list.find(i => i.default);
+				let rpc = {
+					domain: selected.domain,
+					port: selected.port,
+					dir: selected.dir
+				};
+				let url = `${rpc.domain}:${rpc.port}/start-headless-download`;
+				let data = {
+					"downloadSource": {
+						"name": filename,
+						"description": "LinkSwift",
+						"link": link,
+						"headers": headers,
+						"downloadPage": headers["Referer"]
+					},
+					"name": filename
+				}
+				if (rpc.dir) data.folder = rpc.dir;
+				try {
+					let res = await base.post(url, data, { "Content-Type": "text/plain;charset=UTF-8" }, "text");
+					if (res === "OK") return "success";
+					return "fail";
+				} catch (e) {
+					return "fail";
+				}
+			});
 		},
 
 		/**
@@ -3170,8 +3179,8 @@
 							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy copy listener-tip" data-copy='${dlink}' data-title="点击复制下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制链接</button>
 							<div class="pl-item-downing" style="display:none">
 								<div class="pl-progress">
-									<div class="progress footer"><span class="text">正在加载...</span></div>
-									<div class="progress header"><span class="text">正在加载...</span></div>
+									<div class="progress foot"><span class="text">正在加载...</span></div>
+									<div class="progress head"><span class="text">正在加载...</span></div>
 								</div>
 								<button class="pl-btn-primary pl-btn-danger stop"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>取消下载</button>
 								<button class="pl-btn-primary pl-btn-info back" style="display:none"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>返回</button>
@@ -3370,7 +3379,7 @@
 				var status = base._EventFactory(e);
 				status.down_enhance_downing.find(".pl-progress .text").text("正在加载...");
 				status.down_enhance_downing.find(".pl-progress .text").css("white-space", "");
-				status.down_enhance_downing.find(".pl-progress .header").css("background", "");
+				status.down_enhance_downing.find(".pl-progress .head").css("background", "");
 				status.down_enhance.show();
 				status.down_enhance_downing.hide();
 				status.down_enhance_downing.find(".stop").hide();
@@ -3637,8 +3646,8 @@ a.pl-item-link:hover{color:#fff}
 .pl-item-downing{flex:1;display:flex;align-items:center;gap:10px}
 .pl-progress{position:relative; display:flex; flex:1; height:33px; overflow:hidden; border-radius:50px; background-color:#ebebeb}
 .pl-progress .progress{display:flex; align-items:center; justify-content:space-around; position:absolute; left:0; top:0; height:100%; width:var(--width,0); transition:width .4s linear; will-change:width}
-.pl-progress .progress.header{z-index:2; border-radius:50px; color:#fff; background-color:${temp.color}; overflow:hidden}
-.pl-progress .progress.footer{z-index:1; color:#333}
+.pl-progress .progress.head{z-index:2; border-radius:50px; color:#fff; background-color:${temp.color}; overflow:hidden}
+.pl-progress .progress.foot{z-index:1; color:#333}
 .pl-progress .progress .text{line-height:1; font-size:12px; font-weight:500; white-space:nowrap; padding:0 13px}
 .pl-ext{display:inline-block;width:44px;background:#999;color:#fff;height:16px;line-height:16px;font-size:12px;border-radius:3px}
 .pl-retry{padding:3px 10px;background:#cc3235;color:#fff;border-radius:3px;cursor:pointer}
@@ -4083,7 +4092,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -4096,7 +4105,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -5097,7 +5106,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -5110,7 +5119,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -5477,7 +5486,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -5490,7 +5499,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -5938,7 +5947,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -5951,7 +5960,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -6326,7 +6335,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -6339,7 +6348,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -6711,7 +6720,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -6724,7 +6733,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -7168,7 +7177,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -7181,7 +7190,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
@@ -7582,7 +7591,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					}
 				})
 					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#55af28");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
 						base.blobDownload(res.response, file.name);
 						await base.sleep(1000);
 
@@ -7595,7 +7604,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						status.down_enhance_downing.find(".stop").hide();
 						status.down_enhance_downing.find(".back").show();
 						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .header").css("background", "#cc3235");
+						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
 						let estatus = `QAQ 下载出错~`;
 						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
 						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
