@@ -439,7 +439,7 @@
 		 * @author 油小猴
 		 * @description 通过 Object.prototype.toString 精确识别对象类型
 		 * @param {*} obj - 待检测对象
-		 * @returns {string} 类型名称（全小写），如：array/number/null/date 等
+		 * @returns {String} 类型名称（全小写），如：array/number/null/date 等
 		 * @example
 		 * isType([]) // => "array"
 		 * isType(null) // => "null"
@@ -451,7 +451,7 @@
 		/**
 		 * 获取 GreaseMonkey-Compatible-Manager 存储的值
 		 * @author 油小猴
-		 * @param {string} name - 存储键名
+		 * @param {String} name - 存储键名
 		 * @returns {*} 存储的值
 		 */
 		getValue(name) {
@@ -461,7 +461,7 @@
 		/**
 		 * 设置 GreaseMonkey-Compatible-Manager 存储的值
 		 * @author 油小猴
-		 * @param {string|array} path - 存储键名或路径数组
+		 * @param {String|Array} path - 存储键名或路径数组
 		 * @param {*} value - 要存储的值
 		 */
 		setValue(path, value) {
@@ -484,7 +484,7 @@
 		/**
 		 * 删除 GreaseMonkey-Compatible-Manager 存储的值
 		 * @author 油小猴
-		 * @param {string|array} key - 单个键名
+		 * @param {String|Array} key - 单个键名
 		 */
 		delValue(key) {
 			return GM_deleteValue(key);
@@ -494,7 +494,7 @@
 		 * 从 localStorage 获取存储值
 		 * @description 自动解析 JSON 格式内容
 		 * @author 油小猴
-		 * @param {string} key - 存储键名
+		 * @param {String} key - 存储键名
 		 * @returns {*} 存储的原始值或解析后的对象
 		 */
 		getStorage(key) {
@@ -509,7 +509,7 @@
 		 * 设置 localStorage 存储值
 		 * @author 油小猴
 		 * @description 自动 `JSON.stringify` `对象` `数组` 类型的数据
-		 * @param {string} key - 存储键名
+		 * @param {String} key - 存储键名
 		 * @param {*} value - 要存储的值
 		 */
 		setStorage(key, value) {
@@ -523,7 +523,7 @@
 		 * 删除 localStorage 存储值
 		 * @author 油小猴
 		 * @description 没什么特别的
-		 * @param {string} key - 存储键名
+		 * @param {String} key - 存储键名
 		 */
 		delStorage(key) {
 			return localStorage.removeItem(key);
@@ -532,7 +532,7 @@
 		/**
 		 * 剪贴板写入
 		 * @author 油小猴
-		 * @param {string} text - 要复制的文本内容
+		 * @param {String} text - 要复制的文本内容
 		 */
 		setClipboard(text) {
 			GM_setClipboard(text, "text");
@@ -543,8 +543,8 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 自动执行 URI 兼容性编码转换
-		 * @param {string} str - 待编码的字符串
-		 * @returns {string} Base64 编码结果字符串
+		 * @param {String} str - 待编码的字符串
+		 * @returns {String} Base64 编码结果字符串
 		 */
 		encodeBase(str) {
 			try { str = btoa(str) } catch { }
@@ -556,8 +556,8 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 自动执行 URI 兼容性解码转换
-		 * @param {string} str - Base64 编码字符串
-		 * @returns {string} 解码后的原始字符串
+		 * @param {String} str - Base64 编码字符串
+		 * @returns {String} 解码后的原始字符串
 		 */
 		decodeBase(str) {
 			try { str = decodeURIComponent(str) } catch { }
@@ -570,8 +570,8 @@
 		 * 数字补零格式化
 		 * @author hmjz100
 		 * @description 对 1-9 的数字自动补前导零
-		 * @param {number} i - 待格式化的数字
-		 * @returns {string} 格式化后的字符串（如"05"）
+		 * @param {Number} i - 待格式化的数字
+		 * @returns {String} 格式化后的字符串（如"05"）
 		 */
 		timeFormat(i) {
 			if (i >= 0 && i <= 9) {
@@ -584,8 +584,8 @@
 		/**
 		 * 获取文件扩展名并转为大写
 		 * @author 油小猴
-		 * @param {string} name - 完整文件名
-		 * @returns {string} 大写的文件扩展名（如 `TXT`）
+		 * @param {String} name - 完整文件名
+		 * @returns {String} 大写的文件扩展名（如 `TXT`）
 		 */
 		getExtension(name) {
 			let reg = /(?!\.)\w+$/;
@@ -600,8 +600,8 @@
 		 * 文件大小格式化
 		 * @author hmjz100
 		 * @description 自动转换单位到最合适的存储单位（如 `1.2MB`），支持 1000/1024 进制切换
-		 * @param {number} value - 文件字节大小
-		 * @returns {string} 可读格式的大小描述
+		 * @param {Number} value - 文件字节大小
+		 * @returns {String} 可读格式的大小描述
 		 */
 		sizeFormat(value = 0) {
 			var sizeUnitBase = 1024
@@ -632,8 +632,8 @@
 		/**
 		 * 将剩余时间（秒）格式化为可读的时间字符串
 		 *
-		 * @param {number} remainingTimeSeconds 剩余总秒数（支持小数）
-		 * @returns {string} 格式化后的时间字符串，包含以下可能格式：
+		 * @param {Number} remainingTimeSeconds 剩余总秒数（支持小数）
+		 * @returns {String} 格式化后的时间字符串，包含以下可能格式：
 		 *   - "X天 HH时:MM分:SS秒"（超过1天）
 		 *   - "HH时:MM分:SS秒"（超过1小时）
 		 *   - "MM分:SS秒"（超过1分钟）
@@ -673,27 +673,27 @@
 		/**
 		 * 文件列表排序
 		 * @author 油小猴
+		 * @author hmjz100
 		 * @description 按中文拼音顺序对文件数组进行排序
 		 * @param {Array} arr - 包含文件对象的数组
-		 * @param {string} arr[].filename - 文件名属性（兼容 server_filename）
+		 * @param {String} arr[].filename - 文件名属性（兼容 server_filename）
 		 */
 		sortByName(arr) {
-			let handle = () => {
+			arr.sort(() => {
 				return (a, b) => {
 					let p1 = a.filename ? a.filename : a.server_filename;
 					let p2 = b.filename ? b.filename : b.server_filename;
 					return p1.localeCompare(p2, "zh-CN");
 				};
-			};
-			arr.sort(handle());
+			});
 		},
 
 		/**
 		 * 文件名安全处理
 		 * @author 油小猴
 		 * @description 替换非法字符为下划线
-		 * @param {string} name - 原始文件名
-		 * @returns {string} 修正后的安全文件名
+		 * @param {String} name - 原始文件名
+		 * @returns {String} 修正后的安全文件名
 		 */
 		fixFilename(name) {
 			let replace = /[!?&|`"'*\/:<>\\]/g
@@ -701,14 +701,24 @@
 		},
 
 		/**
-		 * Headers 标准化
+		 * 头标准化
 		 * @author hmjz100
-		 * @description 标准化 Headers 的键，使用驼峰命名
-		 * @param {object} headers - 原始文件名
-		 * @param {Boolean} notDeafult - 原始文件名
-		 * @returns {object} 标准化后的 Headers
+		 * @description 标准化请求头、响应头的键，使用驼峰命名
+		 * @param {String|Object} headers - 请求头、响应头的字符串或对象
+		 * @param {Boolean} addDeafult - 是否不添加默认头
+		 * @returns {Object} 标准化后的 Headers
 		 */
-		standHeaders(headers = {}, notDeafult = false) {
+		standHeaders(headers = {}, addDeafult = false) {
+			if (!headers) return {};
+			if (typeof headers === 'string') {
+				const rawHeaders = {};
+				headers.split(/[\r\n]+/).forEach(line => {
+					if (!line.trim() || !line.includes(':')) return;
+					const [key, ...valueParts] = line.split(':');
+					rawHeaders[key.trim().toLowerCase()] = valueParts.join(':').trim();
+				});
+				headers = rawHeaders;
+			}
 			let newHeaders = {};
 			for (let key in headers) {
 				let value
@@ -716,7 +726,7 @@
 				else value = String(headers[key]);
 				newHeaders[key.toLowerCase().split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("-")] = value;
 			}
-			if (notDeafult) return newHeaders;
+			if (addDeafult) return newHeaders;
 			return {
 				"Dnt": "", "Cache-Control": "no-cache", "Pragma": "no-cache", "Expires": "0",
 				"User-Agent": navigator.userAgent,
@@ -731,10 +741,10 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 根据终端类型生成对应 curl 命令，支持断点续传，自动处理文件名特殊字符
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
-		 * @param {string} [headers] - 自定义请求头参数（可选）
-		 * @returns {string} 编码后的 curl 命令字符串
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
+		 * @param {String} [headers] - 自定义请求头参数（可选）
+		 * @returns {String} 编码后的 curl 命令字符串
 		 */
 		convertLinkToCurl(link, filename, headers) {
 			let terminal = base.getValue("setting_curl_terminal");
@@ -747,10 +757,10 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 将链接转换为 Aria2 格式命令，自动处理文件名特殊字符
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
-		 * @param {string} [headers] - 自定义请求头参数（可选）
-		 * @returns {string} 编码后的 aria2c 命令字符串
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
+		 * @param {String} [headers] - 自定义请求头参数（可选）
+		 * @returns {String} 编码后的 aria2c 命令字符串
 		 */
 		convertLinkToAria2(link, filename, headers) {
 			filename = base.fixFilename(filename);
@@ -762,10 +772,10 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 将链接转换为 BC 协议格式，自动处理 URL 编码
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
-		 * @param {string} [headers] - 自定义请求头参数（可选）
-		 * @returns {string} 编码后的 BC 协议 URL
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
+		 * @param {String} [headers] - 自定义请求头参数（可选）
+		 * @returns {String} 编码后的 BC 协议 URL
 		 */
 		convertLinkToBitComet(link, filename, headers) {
 			filename = base.fixFilename(filename);
@@ -778,8 +788,8 @@
 		 * @author hmjz100
 		 * @author Night-stars-1
 		 * @description IDM 下载必备
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
 		 * @param {Array} [headers] - 自定义请求头参数（可选）
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
@@ -839,8 +849,8 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description Aria2 下载必备
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
 		 * @param {Array} [headers] - 自定义请求头参数（可选）
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
@@ -882,8 +892,8 @@
 		 * 发送链接到比特彗星下载器
 		 * @author hmjz100
 		 * @description 比特彗星下载必备
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
 		 * @param {Array} [headers] - 自定义请求头参数（可选）
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
@@ -931,8 +941,8 @@
 		 * 发送链接到 AB Download Manager 下载器
 		 * @author hmjz100
 		 * @description AB Download Manager 下载必备
-		 * @param {string} link - 下载链接
-		 * @param {string} filename - 文件名
+		 * @param {String} link - 下载链接
+		 * @param {String} filename - 文件名
 		 * @param {Array} [headers] - 自定义请求头参数（可选）
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
@@ -978,7 +988,7 @@
 		 * @author 油小猴
 		 * @description 通过创建临时链接实现文件下载
 		 * @param {Blob} blob - 要下载的 Blob 对象
-		 * @param {string} filename - 下载时提示保存的文件名
+		 * @param {String} filename - 下载时提示保存的文件名
 		 */
 		blobDownload(blob, filename) {
 			if (blob instanceof Blob) {
@@ -1011,10 +1021,10 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 一般用于请求 API，支持智能格式化数据、智能编码请求数据
-		 * @param {string} url - 请求地址
-		 * @param {Object|string} data - 请求数据
+		 * @param {String} url - 请求地址
+		 * @param {Object|String} data - 请求数据
 		 * @param {Object} headers - 请求头配置
-		 * @param {string} [type="json"] - 响应类型（支持 `json`, `blob` 等）
+		 * @param {String} [type="json"] - 响应类型（支持 `json`, `blob` 等）
 		 * @returns {Promise} 包含响应数据的 `Promise` 对象
 		 */
 		async post(url, data, headers, type = "json") {
@@ -1061,15 +1071,9 @@
 					}
 				});
 			})
-			let proto = request.prototype;
-			while (proto && proto !== Object.prototype) {
-				for (var key of Object.getOwnPropertyNames(proto)) {
-					if (typeof request[key] === "function") {
-						promise[key] = request[key].bind(request);
-					}
-				};
-				proto = Object.getPrototypeOf(proto); // 继续向上遍历
-				if (proto === request) break; // 防止循环
+			if (request) {
+				var methods = Object.getOwnPropertyNames(request).filter(key => typeof request[key] === 'function' && !promise.hasOwnProperty(key) && !['then', 'catch', 'finally'].includes(key)); // 自动收集 request 上的函数属性进行绑定，并能智能排除 Promise 原生方法
+				methods.forEach(method => { promise[method] = (...args) => request[method](...args); }); // 动态绑定到 Promise
 			}
 			return promise;
 		},
@@ -1079,9 +1083,9 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 一般用于请求 API，支持智能格式化数据
-		 * @param {string} url - 请求地址
+		 * @param {String} url - 请求地址
 		 * @param {Object} headers - 请求头配置
-		 * @param {string} [type="json"] - 响应类型
+		 * @param {String} [type="json"] - 响应类型
 		 * @returns {Promise} 包含响应数据的 `Promise` 对象
 		 */
 		async get(url, headers, type = "json") {
@@ -1117,26 +1121,19 @@
 					}
 				});
 			})
-			let proto = request.prototype;
-			while (proto && proto !== Object.prototype) {
-				for (var key of Object.getOwnPropertyNames(proto)) {
-					if (typeof request[key] === "function") {
-						promise[key] = request[key].bind(request);
-					}
-				};
-				proto = Object.getPrototypeOf(proto); // 继续向上遍历
-				if (proto === request) break; // 防止循环
+			if (request) {
+				var methods = Object.getOwnPropertyNames(request).filter(key => typeof request[key] === 'function' && !promise.hasOwnProperty(key) && !['then', 'catch', 'finally'].includes(key)); // 自动收集 request 上的函数属性进行绑定，并能智能排除 Promise 原生方法
+				methods.forEach(method => { promise[method] = (...args) => request[method](...args); }); // 动态绑定到 Promise
 			}
 			return promise;
 		},
-
 		/**
 		 * 发送 HEAD 请求
 		 * @author hmjz100
 		 * @description 用于获取请求地址返回的请求头，支持智能降级为轻量 GET (`Range: bytes=0-0`)，返回结构化响应头
-		 * @param {string} url - 请求地址
+		 * @param {String} url - 请求地址
 		 * @param {Object} headers - 请求头配置
-		 * @param {boolean} usingGET - 是否使用 GET
+		 * @param {Boolean} usingGET - 是否使用 GET
 		 * @returns {Promise} 包含响应数据的 `Promise` 对象
 		 */
 		async head(url, headers, usingGET) {
@@ -1153,16 +1150,9 @@
 					},
 					onload: function (res) {
 						if (!_aborted) {
-							let head = {};
-							res.responseHeaders.trim().split("\r\n").forEach(line => {
-								var parts = line.split(": ");
-								if (parts.length >= 2) {
-									var key = parts[0].toLowerCase();
-									var value = parts.slice(1).join(": ");
-									head[key] = value;
-								}
-							});
-							res.responseHeaders = base.standHeaders(head, true);
+							const rawHeaders = res.responseHeaders || (request?.getAllResponseHeaders?.() || "") || "";
+							res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", true);
+
 							base.console.log(`【LinkSwift】Head${usingGET ? " Get" : ""}(load)\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
 
 							if (!usingGET && !res.responseHeaders.hasOwnProperty("Range") && !(res?.status >= 200 && res?.status < 400)) {
@@ -1178,16 +1168,9 @@
 							_aborted = true;
 							if (request && request.abort) request.abort();
 
-							let head = {};
-							res.responseHeaders.trim().split("\r\n").forEach(line => {
-								var parts = line.split(": ");
-								if (parts.length >= 2) {
-									var key = parts[0].toLowerCase();
-									var value = parts.slice(1).join(": ");
-									head[key] = value;
-								}
-							});
-							res.responseHeaders = base.standHeaders(head, true);
+							const rawHeaders = res.responseHeaders || (request?.getAllResponseHeaders?.() || "") || "";
+							res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", true);
+
 							base.console.log(`【LinkSwift】Head${usingGET ? " Get" : ""}(load) RS2\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
 
 							if (!usingGET && !res.responseHeaders.hasOwnProperty("Range") && !(res?.status >= 200 && res?.status < 400)) {
@@ -1213,11 +1196,11 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 使用 GET、Head，智能追踪 HTTP 30x 重定向，返回最终访问地址
-		 * @param {string} url - 初始请求地址
+		 * @param {String} url - 初始请求地址
 		 * @param {Object} headers - 请求头配置
-		 * @param {boolean} usingGET - 是否使用 GET
-		 * @param {boolean} returnURL - 是否只返回链接而不是 res
-		 * @returns {Promise<string>} 最终 URL 地址
+		 * @param {Boolean} usingGET - 是否使用 GET
+		 * @param {Boolean} returnURL - 是否只返回链接而不是 res
+		 * @returns {Promise<String>} 最终 URL 地址
 		 */
 		getFinal(url, headers = {}, usingGET = false, returnURL = true) {
 			return new Promise(async (resolve, reject) => {
@@ -1237,9 +1220,9 @@
 		 * 下载文件
 		 * @author hmjz100
 		 * @description 发送 GET 请求，一般用于文件下载，支持进度监控、自动重试、断点续传、非断回退
-		 * @param {string} url - 请求地址
+		 * @param {String} url - 请求地址
 		 * @param {Object} headers - 请求头配置
-		 * @param {number} [size=0] - 响应类型
+		 * @param {Number} [size=0] - 响应类型
 		 * @param {Object} [extra] - 附加参数（必须 `name`、`index`、`size` 属性；可选 `thread`、`retry` 属性）
 		 * @returns {Promise} 包含响应数据的 `Promise` 对象
 		 */
@@ -1455,10 +1438,10 @@
 		 * Aria2 RPC 服务测试
 		 * @author hmjz100
 		 * @description 验证 `JSON-RPC` 接口可用性
-		 * @param {string} domain - 服务域名
-		 * @param {string} port - 服务端口
-		 * @param {string} path - RPC 路径
-		 * @param {string} token - 认证令牌
+		 * @param {String} domain - 服务域名
+		 * @param {String} port - 服务端口
+		 * @param {String} path - RPC 路径
+		 * @param {String} token - 认证令牌
 		 * @returns {Promise<"success"|"fail">} 连接状态结果
 		 */
 		async testConnectToAria2(domain, port, path, token) {
@@ -1498,8 +1481,8 @@
 		 * AB Download Manager RPC 服务测试
 		 * @author hmjz100
 		 * @description 验证 `JSON-RPC` 接口可用性
-		 * @param {string} domain - 服务域名
-		 * @param {string} port - 服务端口
+		 * @param {String} domain - 服务域名
+		 * @param {String} port - 服务端口
 		 * @returns {Promise<"success"|"fail">} 连接状态结果
 		 */
 		async testConnectToABDM(domain, port) {
@@ -1552,7 +1535,7 @@
 		 * @author 油小猴
 		 * @description 递归处理嵌套数组，自动进行 URI 编码
 		 * @param {Object} obj - 待转换的键值对对象
-		 * @returns {string} URL 编码格式字符串（如`key1=value1&key2=value2`）
+		 * @returns {String} URL 编码格式字符串（如`key1=value1&key2=value2`）
 		 */
 		stringify(obj) {
 			let str = "";
@@ -1576,10 +1559,10 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 支持 `样式标签` `外链CSS` 注入，提供精准的 DOM 定位和插入位置控制
-		 * @param {string} id - 样式元素 ID
+		 * @param {String} id - 样式元素 ID
 		 * @param {"style"|"link"} tag - 标签类型（`style` 或 `link`）
-		 * @param {string} css - CSS 内容或外链 URL
-		 * @param {string} [element=".{mount}"] - 定位基准元素选择器
+		 * @param {String} css - CSS 内容或外链 URL
+		 * @param {String} [element=".{mount}"] - 定位基准元素选择器
 		 * @param {"before"|"after"|"prepend"|"append"} [position="append"] - 插入位置
 		 */
 		addStyle(id, tag = "style", css, element = `.${mount}`, position = "append") {
@@ -1613,8 +1596,8 @@
 		 * 十六进制颜色转 RGBA
 		 * @author hmjz100
 		 * @description 支持 4 位和 8 位十六进制格式，自动解析透明度通道
-		 * @param {string} hex - 十六进制颜色值（如 `#09f` 或 `#0099ffaa` ）
-		 * @returns {string} RGBA 格式字符串（如 `15, 170, 255, 0.67`）
+		 * @param {String} hex - 十六进制颜色值（如 `#09f` 或 `#0099ffaa` ）
+		 * @returns {String} RGBA 格式字符串（如 `15, 170, 255, 0.67`）
 		 */
 		hexToRgba(hex) {
 			// 去掉 # 号
@@ -1641,8 +1624,8 @@
 		 * RGBA 颜色转十六进制
 		 * @author hmjz100
 		 * @description 支持透明度转换，自动补全缩写格式
-		 * @param {string} rgba - RGBA 格式颜色值（如 `rgba(15,170,255,0.67)`）
-		 * @returns {string} 十六进制颜色值（如 `#09aaffaa`）
+		 * @param {String} rgba - RGBA 格式颜色值（如 `rgba(15,170,255,0.67)`）
+		 * @returns {String} 十六进制颜色值（如 `#09aaffaa`）
 		 */
 		rgbaToHex(rgba) {
 			// 去掉前缀 "rgba" 或 "rgb" 并移除空格
@@ -1667,11 +1650,11 @@
 		 * 自适应样式颜色替换器
 		 * @author hmjz100
 		 * @description 支持全局样式替换和资源路径修正，处理颜色渐变过渡效果等
-		 * @param {string} cssText - 原始 CSS 内容
-		 * @param {string} baseURI - 资源基础路径
+		 * @param {String} cssText - 原始 CSS 内容
+		 * @param {String} baseURI - 资源基础路径
 		 * @param {"default"|"other"} type - 替换模式（默认模式包含过渡效果）
-		 * @param {Array<[string, string]>} colorMap - 颜色映射表（旧颜色 → 新颜色）
-		 * @returns {string} 处理后的 CSS 内容
+		 * @param {Array<[String, String]>} colorMap - 颜色映射表（旧颜色 → 新颜色）
+		 * @returns {String} 处理后的 CSS 内容
 		 */
 		adaptiveStyleOverride(cssText, baseURI, type, colorMap) {
 			if (!cssText) return "";
@@ -1751,7 +1734,7 @@
 		 * 自适应全局主题颜色修改器
 		 * @author hmjz100
 		 * @description 自动遍历并替换 `页面所有样式表` `SVG 元素` 的颜色值
-		 * @param {Array<[string, string]>} colorMap - 颜色映射表
+		 * @param {Array<[String, String]>} colorMap - 颜色映射表
 		 * @param {"default"|"other"} type - 替换模式
 		 */
 		adaptiveThemeOverride(colorMap, type) {
@@ -1838,7 +1821,7 @@
 		 * 延时执行
 		 * @author 油小猴
 		 * @description 仅可于 `async` 函数中执行，否则无法倒计时。
-		 * @param {number} time - 等待时间（毫秒）
+		 * @param {Number} time - 等待时间（毫秒）
 		 * @returns {Promise<void>} 延时完成的 `Promise`
 		 */
 		sleep(time) {
@@ -1851,9 +1834,9 @@
 		 * @description 该函数将版本号按 `.` 分割为数字数组，逐段比较大小。
 		 * 若某段 a 的数字大于 b，则 a 更新；
 		 * 若所有段均相等，则版本相等（返回 false）。
-		 * @param {string} a - 待比较的版本号
-		 * @param {string} b - 基准版本号（如 "1.0.9.7"）
-		 * @returns {boolean} - 若 a 比 b 更新，返回 true；否则返回 false
+		 * @param {String} a - 待比较的版本号
+		 * @param {String} b - 基准版本号（如 "1.0.9.7"）
+		 * @returns {Boolean} - 若 a 比 b 更新，返回 true；否则返回 false
 		 */
 		isNewerVersion(a, b) {
 			let partsA = a.split(".").map(Number);
@@ -1871,8 +1854,8 @@
 		/**
 		 * 提取版本号主版本
 		 * @author 油小猴
-		 * @param {string} version - 完整版本号（如 `1.2.3`）
-		 * @returns {string|null} 主版本号（如 `1`）或 `null`（格式错误时）
+		 * @param {String} version - 完整版本号（如 `1.2.3`）
+		 * @returns {String|null} 主版本号（如 `1`）或 `null`（格式错误时）
 		 */
 		getMajorVersion(version) {
 			let [major] = (version || "").split(".");
@@ -1884,7 +1867,7 @@
 		 * @author 油小猴
 		 * @description 支持 Fiber 架构遍历，可指定向上查找层级
 		 * @param {HTMLElement} dom - 起始 DOM 元素
-		 * @param {number} [traverseUp=0] - 向上遍历层级
+		 * @param {Number} [traverseUp=0] - 向上遍历层级
 		 * @returns {Object|null} React 组件实例或 `null`
 		 */
 		findReact(dom, traverseUp = 0) {
@@ -2469,8 +2452,8 @@
 		 * 显示调试信息面板
 		 * @description 展示脚本运行时环境、版本信息及依赖状态
 		 * @author hmjz100
-		 * @property{string} manageHandler - 外部管理器名称
-		 * @property{string} manageVersion - 外部管理器版本
+		 * @property{String} manageHandler - 外部管理器名称
+		 * @property{String} manageVersion - 外部管理器版本
 		 */
 		showDebug() {
 			let debugInfo = "";
@@ -3137,7 +3120,7 @@
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @param {Array} configs - 用于配置生成 HTML 的参数
-		 * @returns {string} 生成的 HTML 内容
+		 * @returns {String} 生成的 HTML 内容
 		 * @description 详见代码
 		 */
 		generateDom(configs) {
@@ -3273,10 +3256,10 @@
 		 * @author 油小猴
 		 * @description 根据原始链接和镜像域名列表生成多个镜像链接，支持多线程下载。
 		 * 每个镜像地址会根据 thread 参数生成多个重复链接（通过添加 `&` 符号区分）。
-		 * @param {string} link - 原始下载链接
-		 * @param {Array<string>} mirror - 镜像域名数组
-		 * @param {number} [thread=2] - 每个镜像生成的线程数（链接重复次数），默认为 2
-		 * @returns {string} 所有镜像链接组成的字符串，每行一个链接
+		 * @param {String} link - 原始下载链接
+		 * @param {Array<String>} mirror - 镜像域名数组
+		 * @param {Number} [thread=2] - 每个镜像生成的线程数（链接重复次数），默认为 2
+		 * @returns {String} 所有镜像链接组成的字符串，每行一个链接
 		 *
 		 * @example
 		 * getMirrorList("https://example.com/file.zip", ["mirror1.com", "mirror2.com"], 2)
@@ -3834,9 +3817,9 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 		 * @author 油小猴
 		 * @author hmjz100
 		 * @description 使用 SweetAlert2 显示一个自定义样式的对话框，用于展示信息或操作提示。
-		 * @param {string} title - 对话框标题
-		 * @param {string} html - 对话框内容的 HTML 字符串
-		 * @param {string} footer - 对话框底部说明文字
+		 * @param {String} title - 对话框标题
+		 * @param {String} html - 对话框内容的 HTML 字符串
+		 * @param {String} footer - 对话框底部说明文字
 		 */
 		showMainDialog(title, html, footer) {
 			Swal.fire({
@@ -3869,11 +3852,11 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 		 * @author hmjz100
 		 * @description 监听 DOM 元素是否出现，若未出现则每隔一段时间重试，直到找到为止。
 		 * 支持在 iframe 内部查找元素，适用于异步加载场景。
-		 * @param {string} selectorElem - 要等待的目标元素选择器
+		 * @param {String} selectorElem - 要等待的目标元素选择器
 		 * @param {Function} actionFunction - 找到元素后执行的回调函数，接收 jQuery 元素作为参数，返回 true 可以不再继续寻找
-		 * @param {boolean} [bWaitOnce=false] - 是否只执行一次回调，默认为 false，如果不设置为 true 的话需要自行判断是否对元素进行操作
-		 * @param {string} [iframeSelector] - 若目标元素位于 iframe 中，传入 iframe 的选择器
-		 * @param {string} [controlKey] - 控制唯一性的键名，用于避免重复处理
+		 * @param {Boolean} [bWaitOnce=false] - 是否只执行一次回调，默认为 false，如果不设置为 true 的话需要自行判断是否对元素进行操作
+		 * @param {String} [iframeSelector] - 若目标元素位于 iframe 中，传入 iframe 的选择器
+		 * @param {String} [controlKey] - 控制唯一性的键名，用于避免重复处理
 		 */
 		waitForKeyElements(selectorElem, actionFunction, bWaitOnce, iframeSelector, controlKey) {
 			// 初始化管理器
@@ -6131,10 +6114,14 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				};
 				let time = Date.now();
 				let url = `${config.$tcloud.api.getLink}?fileId=${item.fileId}`;
-				let _sign = `AccessToken=${token}&Timestamp=${time}&fileId=${item.fileId}`;
+				let _sign = `AccessToken=${token}&Timestamp=${time}`;
 				if (item.shareId) {
 					url += `&dt=1&shareId=${item.shareId}`;
-					_sign += `&dt=1&shareId=${item.shareId}`;
+					_sign += `&dt=1`;
+				}
+				_sign += `&fileId=${item.fileId}`;
+				if (item.shareId) {
+					_sign += `&shareId=${item.shareId}`;
 				}
 				let res = await base.get(url, { "Accept": "application/json;charset=UTF-8", "Sign-Type": 1, "Accesstoken": token, "Timestamp": time, "Signature": md5(_sign).toString() });
 				if (res.res_code == 0) {
