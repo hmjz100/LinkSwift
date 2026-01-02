@@ -5344,7 +5344,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDom(temp.links), config.base.dom.button[temp.mode].footer);
 		},
 		async getFileUrlByOnce(d, f) {
-			let res = await base.post(config.$aliyun.api.getLink, { drive_id: d, file_id: f }, { "Authorization": `${base.getStorage("token").token_type} ${base.getStorage("token").access_token}`, "X-Canary": "client=windows,app=adrive,version=v6.0.0" });
+			let res = await base.post(config.$aliyun.api.getLink, { drive_id: d, file_id: f }, { "Content-Type": "application/json", "Authorization": `${base.getStorage("token").token_type} ${base.getStorage("token").access_token}`, "X-Canary": "client=windows,app=adrive,version=v6.0.0" });
 			if (res.code == "AccessTokenInvalid") {
 				return message.error("提示：<br/>访问令牌过期了，请刷新网页后再试");
 			}
@@ -6956,7 +6956,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					let batch = selectList.slice(i, i + batchSize);
 					let fids = batch.map(item => item.fid);
 					// 发起请求获取链接
-					let res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "User-Agent": config.$quark.api.ua.downloadLink });
+					let res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "User-Agent": config.$quark.api.ua.downloadLink });
 					if (res?.code == 31001) {
 						return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 					} else if (res?.code == 23018) {
@@ -7008,7 +7008,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					let fids = batch.map(item => item.fid);
 					let fids_token = batch.map(item => item.share_fid_token);
 					// 发起请求获取链接
-					let res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "User-Agent": config.$quark.api.ua.downloadLink });
+					let res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "User-Agent": config.$quark.api.ua.downloadLink });
 					if (res?.code == 31001) {
 						return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 					} else if (res?.code == 23018) {
@@ -7380,7 +7380,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					let batch = selectList.slice(i, i + batchSize);
 					let fids = batch.map(item => item.fid);
 					// 发起请求获取链接
-					let res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "User-Agent": config.$uc.api.ua.downloadLink });
+					let res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "User-Agent": config.$uc.api.ua.downloadLink });
 					if (res?.code == 31001) {
 						return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 					} else if (res?.code == 23018) {
@@ -7432,7 +7432,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					let fids = batch.map(item => item.fid);
 					let fids_token = batch.map(item => item.share_fid_token);
 					// 发起请求获取链接
-					let res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "User-Agent": config.$uc.api.ua.downloadLink });
+					let res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "User-Agent": config.$uc.api.ua.downloadLink });
 					if (res?.code == 31001) {
 						return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 					} else if (res?.code == 23018) {
@@ -7930,9 +7930,9 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 		async getFileUrlByOnce(item, index, token, ShareKey) {
 			let res = null;
 			if (ShareKey) {
-				res = await base.post(config.$123pan.api.getShareLink, { "ShareKey": ShareKey, "FileID": item.FileId, "S3keyFlag": item.S3KeyFlag, "Size": item.Size, "Etag": item.Etag }, { "Authorization": `Bearer ${token}`, "Platform": "ios" });
+				res = await base.post(config.$123pan.api.getShareLink, { "ShareKey": ShareKey, "FileID": item.FileId, "S3keyFlag": item.S3KeyFlag, "Size": item.Size, "Etag": item.Etag }, { "Content-Type": "application/json", "Authorization": `Bearer ${token}`, "Platform": "ios" });
 			} else {
-				res = await base.post(config.$123pan.api.getLink, { "driveId": 0, "etag": item.Etag, "fileId": item.FileId, "s3keyFlag": item.S3KeyFlag, "type": item.Type, "fileName": item.FileName, "size": item.Size }, { "Authorization": `Bearer ${token}`, "Platform": "ios" });
+				res = await base.post(config.$123pan.api.getLink, { "driveId": 0, "etag": item.Etag, "fileId": item.FileId, "s3keyFlag": item.S3KeyFlag, "type": item.Type, "fileName": item.FileName, "size": item.Size }, { "Content-Type": "application/json", "Authorization": `Bearer ${token}`, "Platform": "ios" });
 			}
 			if (res.data?.DownloadUrl || res.data?.DownloadURL) {
 				let url = res.data.DownloadUrl ? res.data.DownloadUrl : res.data?.DownloadURL;
