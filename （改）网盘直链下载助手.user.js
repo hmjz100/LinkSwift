@@ -816,14 +816,14 @@
 				let fields = [
 					format(4, ext), // 4: 文件类型
 					format(6, link), // 6: 链接
-					format(7, location.origin), // 7: 来源页面
+					format(7, location.origin), // 7: 来源页面（“该文件来自网页”）
 					format(11, headersText), // 11: 请求头
 					format(100, filename), // 100: 文件名
 					format(122, 4), // 122: 代理
 				];
 
 				// 坑3：神秘的请求格式
-				// MSG # {请求指示} #13#1# {10241/20xx}(是否使用扩展提供的文件信息) : {?}(可能是距离扩展启动的时间?) :0: {当前时间戳} :1: {1/2}(是否优先弹窗，再获取文件信息) : {文件大小} :0,{表单}(格式如上);
+				// MSG# {请求指示} #13#1# {10241/20xx}(是/否 使用扩展提供的文件信息) : {?}(可能是距离扩展启动的时间?) :0: {当前时间戳} :0:1: {2/1}(是/否 优先弹窗，再获取文件信息) : {文件大小} :0,{表单}(格式如上);
 				let data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:2:${filesize}:0,${fields.join(",")};`;
 
 				let request = base.post(url, data, {}, "text").catch(() => false);
@@ -2605,7 +2605,7 @@
 					<div>
 					<div>1、修复移动云盘下载错误；</div>
 					<div>2、优化代码，更好的错误识别；</div>
-					<div>3、去除了游小猴云服务。</div>
+					<div>3、去除了油小猴云服务。</div>
 					</div>
 				</div>
 				<div class="block">
@@ -2857,7 +2857,7 @@
 					<div>1、新增百度云盘API 下载支持复制链接；</div>
 					<div>2、为了照顾手机浏览器用户，增大项目之间间隙，新增隐藏IDM提示选项，可在助手设置中启用；</div>
 					<div>3、修改CSS，界面会出现更多的主题色；</div>
-					<div>4、支持在游小猴官网查看暗号；</div>
+					<div>4、支持在油小猴官网查看暗号；</div>
 					<div>5、修复部分语法错误。</div>
 					</div>
 				</div>
@@ -3734,7 +3734,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					</p>
 					<p>
 						如果您喜欢这个脚本的话<br/>
-						请支持原版作者 <a class="listener-tip pl-a" target="_blank" href="https://www.youxiaohou.com" data-title="${config.base.service.account ? `的微信公众号……<br/><img style="width:250px" src="${config.base.service.account}">` : ""}"><svg class="pl-icon"><use xlink:href="#pl-icon-si-tampermonkey"></use></svg> 油小猴</a><br/>
+						请支持原版作者 <a class="listener-tip pl-a" target="_blank" href="https://www.youxiaohou.com" data-title='${config.base.service.account ? `的微信公众号……<br/><img style="width:250px" src="${config.base.service.account}">` : ""}'><svg class="pl-icon"><use xlink:href="#pl-icon-si-tampermonkey"></use></svg> 油小猴</a><br/>
 						并给此改版点个 <a class="listener-tip pl-a" target="_blank" href="https://github.com/hmjz100/LinkSwift/" data-title="来看看此项目的 Github 页面吧~"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg> Star</a>？
 					</p>
 					<p>脚本不仅能精简网盘界面<br/>点亮后还能修改多个网盘的主题色哦！</p>
