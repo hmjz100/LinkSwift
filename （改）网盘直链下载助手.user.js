@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name              LinkSwift
 // @namespace         github.com/hmjz100
 // @version           1.1.3
@@ -243,6 +243,11 @@
 					abdm: {
 						title: "ABDM 下载",
 						footer: `<p>适用于 <a href="https://abdownloadmanager.com/" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>AB Download Manager</a></p>`
+					},
+					gopeed: {
+						title: "Gopeed 下载",
+						footer: `<p>适用于 <a href="https://github.com/GopeedLab/gopeed" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>Gopeed</a></p>`
+
 					}
 				},
 				themes: [
@@ -991,6 +996,49 @@
 		},
 
 		/**
+		 * 发送链接到 Gopeed 下载器
+		 * @author 油小猴
+		 * @author hmjz100
+		 * @description Aria2 下载必备
+		 * @param {string} link - 下载链接
+		 * @param {string} filename - 文件名
+		 * @param {Array} [headers] - 自定义请求头参数（可选）
+		 * @returns {Promise<"success"|"fail">} 发送态结果
+		 */
+		async sendLinkToGopeed(link, filename, headers) {
+			let list = base.getValue("setting_gopeed_rpc");
+			let selected = list.find(i => i.default);
+			let rpc = {
+				domain: selected.domain,
+				port: selected.port,
+				token: selected.token
+			};
+			let url = `${rpc.domain}:${rpc.port}/api/v1/tasks`;
+			let download_header = {};
+			if (headers != null) {
+				download_header.header = headers
+			}
+			let data = {
+				req: {
+					url: link,
+					extra: download_header
+				},
+				// opts: {
+				// 	extra: {
+				// 		connections: 64
+				// 	}
+				// }
+			};
+			try {
+				let res = await base.post(url, data, { "X-Api-Token": rpc.token }, "");
+				if (res.code == 0) return "success";
+				return "fail";
+			} catch (e) {
+				return "fail";
+			}
+		},
+
+		/**
 		 * Blob 文件下载
 		 * @author 油小猴
 		 * @description 通过创建临时链接实现文件下载
@@ -1518,6 +1566,38 @@
 				});
 			});
 		},
+		/**
+		 * Gopeed 服务测试
+		 * @author hmjz100
+		 * @description 测试Gopeed服务是否正常
+		 * @param {string} domain - 服务域名
+		 * @param {string} port - 服务端口
+		 * @param {string} token - 服务端授权
+		 * @returns {Promise<"success"|"fail">} 连接状态结果
+		 */
+		async testConnectToGopeed(domain, port, token) {
+			return new Promise((resolve, reject) => {
+				let rpc = { domain, port };
+				let url = `${rpc.domain}:${rpc.port}/api/v1/info`;
+				base.xmlHttpRequest({
+					method: "GET", url, headers: { "X-Api-Token": token },
+					responseType: "json",
+					onloadstart() {
+						base.console.log("【LinkSwift】Post(start) GopeedTest\n请求地址：" + url + "\n请求内容：", new Date().getTime());
+					},
+					onload: function (res) {
+						base.console.log("【LinkSwift】Post(load) GopeedTest\n请求地址：" + url + "\n请求结果：", res);
+						if (res.status !== 200) return resolve("fail");
+						resolve("success");
+					},
+					onerror: function (err) {
+						base.console.error("【LinkSwift】Post(error) GopeedTest\n请求失败", err);
+						resolve("fail");
+					},
+				});
+			});
+		},
+
 
 		/**
 		 * 重置请求相关数据
@@ -2051,6 +2131,17 @@
 					]
 				},
 				{
+					name: "setting_gopeed_rpc",
+					value: [
+						{
+							domain: "http://localhost",
+							port: "9999",
+							token: "",
+							default: true
+						}
+					]
+				},
+				{
 					name: "setting_curl_terminal",
 					value: "wc"
 				},
@@ -2182,6 +2273,10 @@
 				<label class="pl-setting-item listener-tip abdm" data-title="有关 AB Download Manager 远程服务的配置">
 					<div>AB Download Manager 服务器</div>
 					<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-open-abdm-setting" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
+				</label>
+				<label class="pl-setting-item listener-tip abdm" data-title="Gopeed 远程服务的配置">
+					<div>Gopeed 服务器</div>
+					<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-open-gopeed-setting" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
 				</label>
 				<label class="pl-setting-item curl">
 					<div>终端类型</div>
@@ -2488,6 +2583,72 @@
 						ABSelected[0].default = true;
 						base.setValue("setting_abdm_rpc", ABSelected);
 						ABSelected = BCList[0];
+					}
+				},
+				willClose: () => {
+					if (event && $(event.currentTarget).data("back-to-setting")) base.showSetting();
+					if (event && $(event.currentTarget).data("back-to-downloads")) base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDom(temp.links), config.base.dom.button[temp.mode].footer);
+				},
+			});
+		},
+
+		/**
+		 * 显示 Gopeed 服务设置界面
+		 * @author hmjz100
+		 * @description 包含 RPC 配置的交互界面
+		 */
+		showGopeedSetting(event) {
+			let GopeedList = base.getValue("setting_gopeed_rpc");
+			let GopeedOptions = GopeedList.map((item, index) => {
+				return `<option value="${index}"${item.default ? " selected" : ""}>${item.domain}:${item.port}</option>`;
+			}).join("");
+			let GopeedSelected = GopeedList.find(i => i.default);
+			let GopeedSetting = `<div style="text-align:center;">适用于 Gopeed 推送下载</div>
+			<div style="text-align:center;">请注意修改Gopeed服务端配置需要重启Gopeed程序才能生效</div>
+				<label class="pl-setting-item">
+					<div>默认配置</div>
+					<div>
+						<select class="swal2-select pl-input listener-rpc-select" data-type="gopeed" style="max-width:50%;min-width:auto">
+							${GopeedOptions}<option value="new">+ 创建新项目</option>
+						</select>
+						<button type="button" class="pl-button-mini swal2-deny swal2-styled listener-rpc-delete" data-type="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
+						<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-rpc-test" data-type="gopeed" style="margin-left:0"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>测试</span></button>
+					</div>
+				</label>
+				<label class="pl-setting-item">
+					<div>服务主机</div>
+					<input type="text" autocomplete="off" placeholder="主机地址，需带上 http(s)://，但不需要写端口与路径" class="swal2-input pl-input listener-rpc-input" data-type="gopeed.domain" value="">
+				</label>
+				<label class="pl-setting-item">
+					<div>服务端口</div>
+					<input type="text" autocomplete="off" placeholder="服务器端口号，一般为 9999" class="swal2-input pl-input listener-rpc-input" data-type="gopeed.port" value="">
+				</label>
+				<label class="pl-setting-item">
+					<div>接口令牌</div>
+					<input type="text" autocomplete="off" placeholder="服务器接口令牌，为空表示没有 " class="swal2-input pl-input listener-rpc-input" data-type="gopeed.token" value="">
+				</label>`;
+			Swal.fire({
+				...temp.swalDefault,
+				title: "Gopeed 服务设置",
+				html: GopeedSetting,
+				icon: "info",
+				iconHtml: "⚙︎",
+				allowOutsideClick: false,
+				showCloseButton: true,
+				showConfirmButton: false,
+				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
+				didOpen: (toast) => {
+					let element = $(toast);
+					if (event && Object.keys($(event.currentTarget).data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass("listener-tip").attr("data-title", "返回上页").css({ "left": "0", "right": "auto" }).text("◃");
+					if (GopeedSelected) {
+						element.find(".listener-rpc-input").each(function () {
+							let type = $(this).data("type").split(".")[1];
+							$(this).val(GopeedSelected[type] || "");
+						});
+					} else {
+						GopeedSelected[0].default = true;
+						base.setValue("setting_gopeed_rpc", GopeedSelected);
+						GopeedSelected = BCList[0];
 					}
 				},
 				willClose: () => {
@@ -3342,6 +3503,12 @@
 							<button class="pl-item-link pl-btn-primary pl-btn-default listener-abdm-download slient" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 ABDM 下载器</span></button>
 						</div>`);
 					}
+					if (temp.mode === "gopeed") {
+						content.find(".pl-main").append(`<div class="pl-item">
+							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
+							<button class="pl-item-link pl-btn-primary pl-btn-default listener-gopeed-download" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Gopeed 下载器</span></button>
+						</div>`);
+					}
 				}
 			});
 			allLink = (allLink ? allLink.join("\r\n") : "")
@@ -3369,6 +3536,11 @@
 			} else if (temp.mode === "abdm") {
 				let rpc = base.getValue("setting_abdm_rpc").find(i => i.default);
 				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning abdm listener-open-abdm-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
+			} else if (temp.mode === "gopeed") {
+				let rpc = base.getValue("setting_gopeed_rpc").find(i => i.default);
+				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning gopeed listener-open-gopeed-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
+				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default gopeed listener-send-rpc" data-type="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至Gopeed</button>`);
+
 			}
 			function updateTooltip($element, value) {
 				if (!value) return;
@@ -3447,6 +3619,9 @@
 			});
 			$doc.on("click", ".listener-open-abdm-setting", (e) => {
 				base.showABDMSetting(e);
+			});
+			$doc.on("click", ".listener-open-gopeed-setting", (e) => {
+				base.showGopeedSetting(e);
 			});
 			$doc.on("click", ".listener-open-updatelog", () => {
 				base.showUpdate();
@@ -3669,6 +3844,11 @@
 						let domain = selected.domain,
 							port = selected.port;
 						result = await base.testConnectToABDM(domain, port);
+					} else if (type === "gopeed") {
+						let domain = selected.domain,
+							port = selected.port,
+							token = selected.token;
+						result = await base.testConnectToGopeed(domain, port, token);
 					}
 					if (result === "success") {
 						text.html("成功");
@@ -4336,6 +4516,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"), { "User-Agent": config.$baidu.api.ua.downloadLink });
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -4773,6 +4970,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<div class="g-button-menu pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> Aria2 下载</div>
 						<div class="g-button-menu pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> 彗星下载</div>
 						<div class="g-button-menu pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> ABDM 下载</div>
+						<div class="g-button-menu pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> Gopeed 下载</div>
 						<div class="g-button-menu pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg> 助手设置</div>
 						<div class="g-button-menu pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg> 助手美化</div>
 						<div class="g-button-menu pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg> 更新日志</div>
@@ -4795,6 +4993,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 							<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 							<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 							<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+							<li class="sub cursor-p pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 							<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 							<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 							<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -5443,6 +5642,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"), { "Referer": `https://${location.host}/` });
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -5526,6 +5742,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -5816,6 +6033,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"));
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -5914,6 +6148,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -6264,6 +6499,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"));
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -6337,6 +6589,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 					<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 					<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 					<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+					<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 					<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 					<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 					<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -6630,6 +6883,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"));
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -6692,6 +6962,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -6987,6 +7258,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"), { "User-Agent": config.$quark.api.ua.downloadLink, "Referer": `https://${location.host}/`, Cookie: document.cookie });
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -7093,6 +7381,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 							<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 							<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 							<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+							<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 							<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 							<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 							<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -7117,6 +7406,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -7418,6 +7708,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				await base.sleep(3000);
 				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"), { "User-Agent": config.$uc.api.ua.downloadLink, Referer: `https://${location.host}/`, Cookie: document.cookie });
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
 			$doc.on("click", ".listener-bitcomet-download", async function (e) {
 				let target = $(e.currentTarget);
 				if (target.attr("data-processing") === "true") return;
@@ -7496,6 +7803,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -7517,6 +7825,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -7797,6 +8106,23 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
 				let res = await base.sendLinkToAria2(target.data("link"), target.data("filename"));
+				if (res === "success") {
+					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
+			});
+			$doc.on("click", ".listener-gopeed-download", async function (e) {
+				let target = $(e.currentTarget);
+				if (target.attr("data-processing") === "true") return;
+				target.attr("data-processing", "true");
+				let originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+				let res = await base.sendLinkToGopeed(target.data("link"), target.data("filename"));
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8143,6 +8469,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -8161,6 +8488,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
@@ -8181,6 +8509,7 @@ a.downloadSubtitle:disabled, button.downloadSubtitle:disabled{background-color:$
 						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
 						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
 						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
+						<li class="pl-button-mode" data-mode="gopeed"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Gopeed 下载</li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
 						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
 						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
