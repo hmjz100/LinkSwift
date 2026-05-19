@@ -635,6 +635,8 @@
 		 * @returns {String} Base64 编码结果字符串
 		 */
 		encodeBase(str) {
+			try { str = encodeURIComponent(str) } catch { }
+			try { str = unescape(str) } catch { }
 			try { str = btoa(str) } catch { }
 			return str;
 		},
@@ -650,6 +652,7 @@
 		decodeBase(str) {
 			try { str = decodeURIComponent(str) } catch { }
 			try { str = atob(str) } catch { }
+			try { str = escape(str) } catch { }
 			try { str = decodeURIComponent(str) } catch { }
 			return str;
 		},
@@ -1794,7 +1797,7 @@
 				tag === "style" ? $style.html(css.trim().replace(/\t/g, "").replace(/\r\n|\n\r|\n|\r/g, "\n").replace(/\n+/g, "\n")) : $style.attr("href", css);
 				if ($styleDom.length) {
 					$styleDom.replaceWith($style);
-					base.console.info($style[0])
+					base.console.info($style[0]);
 					return true;
 				}
 				if (position === "before") {
@@ -1958,138 +1961,120 @@
 		adaptiveThemeOverride(colorMap, type) {
 			if (!colorMap || colorMap.length === 0) return;
 
-			// 安全编解码
-			const safeAtob = (str) => decodeURIComponent(escape(atob(str)));
-			const safeBtoa = (str) => btoa(unescape(encodeURIComponent(str)));
-
-			// 正则处理 SVG 字符串颜色
-			const processSvgString = (svgContent) => {
-				return svgContent.replace(/(fill|stroke|stop-color)\s*=\s*["']([^"']+)["']/g, (match, attr, val) => {
-					if (!val || val === "none" || val === "transparent" || val.startsWith("url")) return match;
-					const newVal = base.adaptiveStyleOverride(val, "", type, colorMap);
-					return `${attr}="${newVal}"`;
-				});
-			};
-
-			// 处理之前生成的特定 ID 样式表
-			base.waitForKeyElements(`[${mount}^="${mount}-ColorUI-"], [id^="${mount}-ColorUI-"]`, function (tag) {
+			// 处理动态生成的 CSS
+			base.waitForKeyElements(`[${mount}^="${mount}-ColorUI-"], [id^="${mount}-ColorUI-"]`, (tag) => {
 				const text = tag.text();
 				const newCss = base.adaptiveStyleOverride(text, "", type, colorMap);
-				if (text !== newCss) {
-					base.addStyle(tag.attr(mount) || tag.attr("id"), "style", newCss, tag[0]);
+				if (text !== newCss) base.addStyle(tag.attr(mount) || tag.attr("id"), "style", newCss, tag[0]);
+				return true;
+			}, true, null, "wkfe_generated_css");
+
+			// 普通元素行内样式
+			base.waitForKeyElements(`[style]:not([${mount}^="${mount}-"],[class*="listener-"])`, ($el) => {
+				const el = $el[0];
+				if ($el.parent(`[class*="pl-"]`).length || el.getAttribute("data-pl-colored") === temp.color) return false;
+
+				const style = el.getAttribute("style");
+				if (style && !style.includes("data:image/svg+xml")) {
+					const newStyle = base.adaptiveStyleOverride(style, "", type, colorMap);
+					if (style !== newStyle) el.setAttribute("style", newStyle);
+					el.setAttribute("data-pl-colored", temp.color);
 				}
-				return false; // bWaitOnce为false，手动控制
-			}, false, null, "wkfe_generated_css");
+				return false;
+			}, false, null, "wkfe_inline_style");
+
+			// 外部样式处理
+			if (!temp.colored) {
+				let styleCount = 0;
+				// Link 标签
+				base.waitForKeyElements(`link[rel="stylesheet"]`, ($tag) => {
+					const href = $tag.attr("href");
+					if (!href) return;
+					fetch(new URL(href, location.href).href).then(r => r.text()).then(text => {
+						const id = `${mount}-ColorUI-` + href.replace(/[^\w]/g, "_");
+						base.addStyle(id, "style", base.adaptiveStyleOverride(text, href, type, colorMap), $tag[0], "after");
+					});
+					return true;
+				}, true, null, "wkfe_link_once");
+
+				// Style 标签
+				base.waitForKeyElements(`style:not([${mount}^="${mount}-"],[id^="swal-pub"],[class^="darkreader"])`, ($tag) => {
+					const text = $tag.html();
+					if ($tag.data("raw-css") === text) return;
+					$tag.data("raw-css", text);
+
+					const css = base.adaptiveStyleOverride(text, "", type, colorMap);
+					if (css !== text) {
+						const id = $tag.attr(mount) || `${mount}-ColorUI-${styleCount++}`;
+						base.addStyle(id, "style", css, $tag[0], "after");
+					}
+				}, false, null, "wkfe_style_persistent");
+
+				temp.colored = true;
+			}
+
+			const utils = {
+				// 颜色替换
+				replace: (val) => (val && val !== "none" && !val.startsWith("url")) ? base.adaptiveStyleOverride(val, "", type, colorMap) : val,
+
+				// 统一处理 DataURL
+				processDataUrl: (dataUrl) => {
+					const isBase64 = dataUrl.includes(";base64,");
+					const parts = dataUrl.split(isBase64 ? ";base64," : ",");
+					if (parts.length < 2) return dataUrl;
+
+					const raw = isBase64 ? base.decodeBase(parts[1]) : decodeURIComponent(parts[1].replace(/\\/g, ""));
+					const newSvg = raw.replace(/(fill|stroke|stop-color)\s*=\s*["']([^"']+)["']/g, (m, attr, val) => {
+						const newVal = utils.replace(val);
+						return newVal !== val ? `${attr}="${newVal}"` : m;
+					});
+					return isBase64 ? `${parts[0]};base64,${base.encodeBase(newSvg)}` : `${parts[0]},${encodeURIComponent(newSvg)}`;
+				}
+			};
 
 			// 处理原生 SVG 标签
-			base.waitForKeyElements("svg", function ($svg) {
-				const elSvg = $svg[0];
-				// 性能拦截：如果当前颜色已应用，跳过整个内部循环
-				if (elSvg.getAttribute("data-pl-colored") === temp.color) return false;
+			base.waitForKeyElements("svg", ($svg) => {
+				const el = $svg[0];
+				if (el.getAttribute("data-pl-colored") === temp.color) return false;
 
-				const attrNames = ["fill", "stroke", "stop-color"];
-				$svg.find("path, circle, rect, ellipse, line, polyline, polygon, stop, use").each((i, el) => {
-					for (const name of attrNames) {
-						const val = el.getAttribute(name);
-						if (val && val !== "none" && !val.startsWith("url")) {
-							const newVal = base.adaptiveStyleOverride(val, "", type, colorMap);
-							if (newVal !== val) el.setAttribute(name, newVal);
+				const targets = "path, circle, rect, ellipse, line, polyline, polygon, stop, use";
+				const attrs = ["fill", "stroke", "stop-color"];
+
+				$svg.find(targets).each((_, sub) => {
+					attrs.forEach(attr => {
+						const val = sub.getAttribute(attr);
+						if (val) {
+							const newVal = utils.replace(val);
+							if (newVal !== val) sub.setAttribute(attr, newVal);
 						}
-					}
+					});
 				});
 
-				elSvg.setAttribute("data-pl-colored", temp.color);
+				el.setAttribute("data-pl-colored", temp.color);
 				return false;
 			}, false, null, "wkfe_svg_dom");
 
-			// 处理 Data URL SVG
-			base.waitForKeyElements("img[src*='data:image/svg+xml'], [style*='data:image/svg+xml']", function ($el) {
+			// 处理 DataURL SVG
+			base.waitForKeyElements(`img[src*="data:image/svg+xml"], [style*="data:image/svg+xml"]`, ($el) => {
 				const el = $el[0];
 				if (el.getAttribute("data-pl-colored") === temp.color) return false;
 
 				try {
 					if (el.tagName === "IMG") {
 						const src = el.getAttribute("src");
-						if (src && src.includes("data:image/svg+xml")) {
-							const isBase64 = src.includes(";base64,");
-							const parts = src.split(isBase64 ? ";base64," : ",");
-							const raw = isBase64 ? safeAtob(parts[1]) : decodeURIComponent(parts[1]);
-							const newSvg = processSvgString(raw);
-							const newSrc = isBase64 ? `${parts[0]};base64,${safeBtoa(newSvg)}` : `${parts[0]},${encodeURIComponent(newSvg)}`;
-							if (src !== newSrc) el.setAttribute("src", newSrc);
-						}
+						const newSrc = utils.processDataUrl(src);
+						if (src !== newSrc) el.setAttribute("src", newSrc);
 					} else {
-						const bgImg = $el.css("background-image");
-						const match = bgImg.match(/url\((['"]?)(data:image\/svg\+xml[^"']+)['"]?\)/);
-						if (match) {
-							const fullData = match[2];
-							const isBase64 = fullData.includes(";base64,");
-							const parts = fullData.split(isBase64 ? ";base64," : ",");
-							const raw = isBase64 ? safeAtob(parts[1]) : decodeURIComponent(parts[1].replace(/\\/g, ""));
-							const newSvg = processSvgString(raw);
-							const newFullData = isBase64 ? `${parts[0]};base64,${safeBtoa(newSvg)}` : `${parts[0]},${encodeURIComponent(newSvg)}`;
-							if (fullData !== newFullData) $el.css("background-image", bgImg.replace(fullData, newFullData));
-						}
+						const style = el.getAttribute("style");
+						const newStyle = style.replace(/url\((['"]?)(data:image\/svg\+xml[^"']+)['"]?\)/g, (match, quote, data) => {
+							return `url(${quote}${utils.processDataUrl(data)}${quote})`;
+						});
+						if (style !== newStyle) el.setAttribute("style", newStyle);
 					}
 					el.setAttribute("data-pl-colored", temp.color);
-				} catch (e) { console.warn("DataSVG Error", e); }
+				} catch { }
 				return false;
 			}, false, null, "wkfe_svg_data");
-
-			// 处理普通元素的行内样式
-			base.waitForKeyElements(`[style]:not([${mount}^="${mount}-"],[class*="listener-"])`, function ($el) {
-				const el = $el[0];
-				// 排除插件自身 UI
-				if ($el.parent(`[class*="pl-"]`).length) return false;
-				if (el.getAttribute("data-pl-colored") === temp.color) return false;
-
-				const style = el.getAttribute("style");
-				if (style) {
-					const newStyle = base.adaptiveStyleOverride(style, "", type, colorMap);
-					if (style !== newStyle) {
-						el.setAttribute("style", newStyle);
-					}
-					el.setAttribute("data-pl-colored", temp.color);
-				}
-				return false;
-			}, false, null, "wkfe_inline_style");
-
-			/**
-			 * 初始化的外部样式处理 (仅注册一次观察者)
-			 * 内部生成的样式会由任务 1 负责后续切换
-			 */
-			if (!temp.colored) {
-				let styleCount = 0;
-
-				// 监控外部 Link
-				base.waitForKeyElements(`link[rel="stylesheet"]`, function ($tag) {
-					let href = $tag.attr("href");
-					if (!href) return;
-					try { href = new URL(href, location.href).href; } catch { return; }
-
-					fetch(href).then(r => r.text()).then(text => {
-						const id = `${mount}-ColorUI-` + href.replace(/[^\w]/g, "_");
-						const css = base.adaptiveStyleOverride(text, href, type, colorMap);
-						base.addStyle(id, "style", css, $tag[0], "after");
-					});
-				}, true, null, "wkfe_link_once");
-
-				// 监控普通 Style 标签
-				base.waitForKeyElements(`style:not([${mount}^="${mount}-"],[id^="swal-pub"],[class^="darkreader"])`, function ($tag) {
-					const text = $tag.html();
-					// 使用 jQuery.data 缓存原始文本，避免重复处理
-					if ($tag.data("raw-css") === text) return;
-					$tag.data("raw-css", text);
-
-					const css = base.adaptiveStyleOverride(text, "", type, colorMap);
-					if (css === text) return;
-
-					const id = $tag.attr(mount) || `${mount}-ColorUI-${styleCount++}`;
-					base.addStyle(id, "style", css, $tag[0], "after");
-				}, false, null, "wkfe_style_persistent");
-
-				temp.colored = true;
-			}
 		},
 
 		/**
@@ -8182,7 +8167,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$quark.api.ua.downloadLink, "Referer": `https://${location.host}/`, "Cookie": document.cookie });
+				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$quark.api.ua.downloadLink, "Referer": `https://${location.host}/`, "Cookie": String(document.cookie) });
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8216,7 +8201,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$quark.api.ua.downloadLink, "referrer": `https://${location.host}/`, "cookie": document.cookie });
+				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$quark.api.ua.downloadLink, "referrer": `https://${location.host}/`, "cookie": String(document.cookie) });
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8233,7 +8218,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$quark.api.ua.downloadLink, "Cookie": document.cookie });
+				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$quark.api.ua.downloadLink, "Cookie": String(document.cookie) });
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8379,7 +8364,7 @@ button.downloadSubtitle:disabled {
 					const batch = selects.slice(i, i + batchSize);
 					const fids = batch.map(item => item.fid);
 					// 发起请求获取链接
-					const res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": document.cookie, "User-Agent": config.$quark.api.ua.downloadLink });
+					const res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -8437,7 +8422,7 @@ button.downloadSubtitle:disabled {
 					const fids = batch.map(item => item.fid);
 					const fids_token = batch.map(item => item.share_fid_token);
 					// 发起请求获取链接
-					const res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": document.cookie, "User-Agent": config.$quark.api.ua.downloadLink });
+					const res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -8599,7 +8584,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$uc.api.ua.downloadLink, "Referer": `https://${location.host}/`, "Cookie": document.cookie });
+				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$uc.api.ua.downloadLink, "Referer": `https://${location.host}/`, "Cookie": String(document.cookie) });
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8633,7 +8618,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$uc.api.ua.downloadLink, "referrer": `https://${location.host}/`, "cookie": document.cookie });
+				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$uc.api.ua.downloadLink, "referrer": `https://${location.host}/`, "cookie": String(document.cookie) });
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8650,7 +8635,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$uc.api.ua.downloadLink, "Cookie": document.cookie });
+				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$uc.api.ua.downloadLink, "Cookie": String(document.cookie) });
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8763,7 +8748,7 @@ button.downloadSubtitle:disabled {
 					const batch = selects.slice(i, i + batchSize);
 					const fids = batch.map(item => item.fid);
 					// 发起请求获取链接
-					const res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": document.cookie, "User-Agent": config.$uc.api.ua.downloadLink });
+					const res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -8821,7 +8806,7 @@ button.downloadSubtitle:disabled {
 					const fids = batch.map(item => item.fid);
 					const fids_token = batch.map(item => item.share_fid_token);
 					// 发起请求获取链接
-					const res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": document.cookie, "User-Agent": config.$uc.api.ua.downloadLink });
+					const res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -9070,13 +9055,11 @@ button.downloadSubtitle:disabled {
 				tag.find("svg").css({ "margin-right": "0" });
 			});
 			// 新版 分享 登录按钮
-			base.waitForKeyElements(".share-header_center > .share-header_center-not-login > .ant-btn", (tag) => {
+			base.waitForKeyElements(".share-header_center > .share-header_center-not-login > .loginRight", (tag) => {
 				if (tag.hasClass("reg") || tag.hasClass("log")) return;
-				tag.removeClass("ant-btn-variant-solid").addClass("ant-btn-variant-outlined");
-				tag.addClass("ant-btn-two-chinese-chars").addClass("reg");
-				tag.find("span").text("注册");
+				tag.addClass("reg").text("注册");
 				if (tag.next().hasClass("log")) return;
-				const button = $(`<button type="button" class="ant-btn ${[...document.querySelector(`[class*="ant-btn css-"]`).classList].find(c => /^css-[a-z0-9]+$/.test(c))} ant-btn-primary ant-btn-color-primary ant-btn-variant-solid loginRight mfy-button ant-btn-two-chinese-chars log" style="margin-left:10px!important"><span>登录</span></button>`);
+				const button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle loginRight log" style="margin-left:10px!important"><span>登录</span></button>`);
 				// 加个跳转到原页面也不难吧？
 				button.on("click", () => {
 					const login = new URL(`https://user.123pan.cn/centerlogin`);
@@ -9111,7 +9094,7 @@ button.downloadSubtitle:disabled {
 				tag.children().each(function () {
 					const $child = $(this);
 					if ($child.hasClass("pointer-text")) {
-						const button = $(`<button type="button" class="ant-btn ${[...document.querySelector(`[class*="ant-btn css-"]`).classList].find(c => /^css-[a-z0-9]+$/.test(c))} ant-btn-primary ant-btn-color-primary ant-btn-variant-solid loginRight mfy-button replaced"><span>${$child.text()}</span></button>`);
+						const button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle replaced"><span>${$child.text()}</span></button>`);
 						button.on("click", () => {
 							if ($child.text().includes("登录")) {
 								const login = new URL(`https://user.123pan.cn/centerlogin`);
@@ -9144,12 +9127,17 @@ button.downloadSubtitle:disabled {
 				if (tag.find(`[class*="button-invite-new-image"]`).is(":hidden")) return;
 				tag.find(`[class*="button-invite-new-image"]`).hide();
 			}, true);
-			// 新版 主页 顶部会员广告
-			base.waitForKeyElements(`.mfy-main-layout__head > .ant-carousel:has(.VipBanner)`, (tag) => {
+			// 新版 主页/分享 顶部会员广告
+			base.waitForKeyElements(`.mfy-main-layout__head > .ant-carousel:has(.VipBanner), .app-wrap>div[style*="100%"]:has(img[src*="banner"])`, (tag) => {
 				tag.hide();
 			}, true);
+			// 新版 主页 弹窗会员广告
+			base.waitForKeyElements(`.splash-screen-modal:has([class*="image"][style*="ad"])`, (tag) => {
+				tag.hide();
+				tag.find(`button[class*="close"]`).click();
+			}, true);
 			// 分享 手机二维码
-			base.waitForKeyElements(".rightInfo .qrcode_btn", function (tag) {
+			base.waitForKeyElements(".rightInfo > .h-popover:has(.qrcode_btn)", function (tag) {
 				tag.hide();
 			}, true);
 		},
@@ -9286,7 +9274,7 @@ button.downloadSubtitle:disabled {
 		getSelectedList() {
 			try {
 				const selectedList = [];
-				const reactDom = $(".ant-table-wrapper, .tiled-list, .file-list, .single-file-sharing-container-content")[0];
+				const reactDom = $(".ant-table-wrapper, .tiled-list, .file-list, .single-file-sharing-container-content, .custom-table-wrapper")[0];
 				const reactObj = base.findReact(reactDom);
 				const props = reactObj.pendingProps;
 				if (props) {
@@ -9349,7 +9337,7 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$123pan.mount.shareNew, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button type="button" class="ant-btn ${[...document.querySelector(`[class*="ant-btn css-"]`).classList].find(c => /^css-[a-z0-9]+$/.test(c))} ant-btn-primary ant-btn-color-primary ant-btn-variant-solid mfy-button pl-button color-button" style="user-select: text !important;">
+				const $button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle pl-button color-button" style="user-select: text !important;">
 					<svg class="icon" aria-hidden="true" style="color: rgb(255, 255, 255);"><use xlink:href="#general_download_16_1"></use></svg>
 					<span>下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:20px">
@@ -9392,7 +9380,7 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$123pan.mount.shareNew, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button type="button" class="ant-btn ${[...document.querySelector(`[class*="ant-btn css-"]`).classList].find(c => /^css-[a-z0-9]+$/.test(c))} ant-btn-primary ant-btn-color-primary ant-btn-variant-solid mfy-button pl-button-init color-button" style="user-select: text !important;">
+				const $button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle pl-button-init color-button" style="user-select: text !important;">
 					<svg class="icon" aria-hidden="true" style="color: rgb(255, 255, 255);"><use xlink:href="#general_download_16_1"></use></svg>
 					<span>点我点亮</span>
 				</button>`);
