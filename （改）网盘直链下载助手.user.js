@@ -1161,7 +1161,11 @@
 						}
 
 						base.console.info("【LinkSwift】Post(load)\n请求地址：" + url + "\n请求数据：", _data, "\n请求头部：", headers, "\n请求结果：", res);
-						resolve(res.responseDecode ?? res.response ?? res.responseText);
+						const body=res.responseDecode ?? res.response ?? res.responseText;
+						if (body && typeof body === "object") {
+						    body.headers = res.responseHeaders;
+						}
+						resolve(body);
 					},
 					onerror: (error) => {
 						let msg = "请求失败";
@@ -3532,6 +3536,7 @@
 				getFileSize,
 				getFileLink,
 				getFileMirror,
+				getSetcookie,
 				convert = {},
 				tooltip = {}
 			} = (base.isType(configs[1]) === "object" ? configs[1] : {});
@@ -3543,6 +3548,7 @@
 				const filename = getFileName(v);
 				const size = getFileSize(v);
 				const dlink = getFileLink(v);
+				const setcookie=getSetcookie(v);
 				const mirror = base.isType(getFileMirror) !== "undefined" ? getFileMirror(getFileLink(v)) : undefined;
 				if (!dlink || !dlink.includes("http")) {
 					content.find(".pl-main").append(`<div class="pl-item">
@@ -3582,7 +3588,7 @@
 						allLink.push(finalink);
 						content.find(".pl-main").append(`<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<button class="pl-item-link pl-btn-primary pl-btn-default listener-aria2-download" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Aria2 下载器</span></button>
+							<button class="pl-item-link pl-btn-primary pl-btn-default listener-aria2-download" data-filename="${filename}" data-link="${dlink}" data-setcookie="${setcookie}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Aria2 下载器</span></button>
 							<button class="pl-btn-primary pl-btn-info listener-copy listener-tip" data-copy='${finalink}' data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
 						</div>`);
 					}
@@ -8184,7 +8190,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$quark.api.ua.downloadLink}`, `Referer:https://${location.host}/`, `Cookie:${document.cookie}`]);
+				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$quark.api.ua.downloadLink}`, `Referer:https://${location.host}/`, "Cookie:"+target.data("setcookie")]);
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8438,6 +8444,7 @@ button.downloadSubtitle:disabled {
 							return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 						}
 					}
+					res.data[i]['set_cookie']=res.headers['Set-Cookie'].replace(/expires=[-/\s,0-9A-Z:a-z]{20,};{0,1}\s{0,1}/gi,'').replace(/path=\/;{0,1}\s{0,1}/gi,'').replace(/max-age=[-0-9]{1,};{0,1}\s{0,1}/gi,'').replace(/domain=([-0-9a-z.]{3,});{0,1}\s{0,1}/gi,'').replace(/secure;{0,1}\s{0,1}/gi,'').replace(/httponly;{0,1}\s{0,1}/gi,'').trim().replace(/;$/gi,'');
 
 					// 合并响应数据
 					if (res.data) {
@@ -8456,6 +8463,7 @@ button.downloadSubtitle:disabled {
 					getFileName: v => v.file_name,
 					getFileSize: v => v.size,
 					getFileLink: v => v.download_url,
+					getSetcookie: v => v.set_cookie,
 					convert: {
 						aria2: `--header "User-Agent:${config.$quark.api.ua.downloadLink}" --header "Referer:https://${location.host}/" --header "Cookie:${document.cookie}"`,
 						curl: `-A "${config.$quark.api.ua.downloadLink}" -e "https://${location.host}/" -b "${document.cookie}"`,
