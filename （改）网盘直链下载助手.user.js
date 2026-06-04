@@ -9438,7 +9438,7 @@ button.downloadSubtitle:disabled {
 			else if (/www.guangyapan.com/.test(location.host)) temp.main = $guangya;
 			else if (/pan.quark.cn/.test(location.host)) temp.main = $quark;
 			else if (/drive.uc.cn/.test(location.host)) temp.main = $uc;
-			else if (/(www|login|yun|user).(123(pan|684|865|952|912).com|123pan.cn)/.test(location.host)) temp.main = $123pan;
+			else if (/(www|login|yun|user|share).(123(pan|684|865|952|912).com|123pan.cn)$/.test(location.host)) temp.main = $123pan;
 
 			// 智能默认设置
 			base.initDefaultConfig();
