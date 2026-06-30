@@ -27,10 +27,9 @@ body:
         - label: 我已确认是此脚本的问题，而不是其他原因（例如网络、脚本依赖或操作）。
           required: true
         - label: 我已安装金丝雀版，并且确认金丝雀版未修复此问题。
-          required: true
         - label: 我已查找过其他议题，确认没有重复的疑问或讨论。
           required: true
-        - label: 我已修改上方的 “请修改我为您的问题” 为自己的问题。
+        - label: 我已修改上方标题的 “请修改我为您的问题” 为自己的问题。
           required: true
 
   - type: dropdown
