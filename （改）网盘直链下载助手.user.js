@@ -424,8 +424,8 @@
 		$123pan: {
 			// BT吸血二代，开创性的采用了按流量计费；韭菜培养时间长达三年！
 			api: {
-				getLink: "https://www.123pan.com/api/file/download_info",
-				getShareLink: "https://www.123pan.com/api/share/download/info"
+				getLink: "https://api.123pan.cn/api/v2/file/download_info",
+				getShareLink: "https://api.123pan.cn/api/v2/share/download/info"
 			},
 			mount: {
 				home: ".home-operator .home-operator-button-group",
@@ -9258,11 +9258,20 @@ button.downloadSubtitle:disabled {
 			} else {
 				res = await base.post(config.$123pan.api.getLink, { "driveId": 0, "etag": item.Etag, "fileId": item.FileId, "s3keyFlag": item.S3KeyFlag, "type": item.Type, "fileName": item.FileName, "size": item.Size }, { "Content-Type": "application/json", "Authorization": `Bearer ${token}`, "Platform": "ios" });
 			}
-			if (res.data?.DownloadUrl || res.data?.DownloadURL) {
-				let url = res.data.DownloadUrl ? res.data.DownloadUrl : res.data?.DownloadURL;
-				const surl = new URL(url).searchParams.get("params");
-				if (surl) url = base.decodeBase(surl);
+			if (res.data?.dispatchList?.length > 0 && res.data?.downloadPath) {
+				// 拼接线路前缀与下载路径（默认取第一条线路）
+				const prefix = res.data.dispatchList[0].prefix || "";
+				let url = `${prefix}${res.data.downloadPath}`;
+
+				// 如果链接中存在需要解码的参数，保留解码逻辑
+				try {
+					const surl = new URL(url).searchParams.get("params");
+					if (surl) url = base.decodeBase(surl);
+				} catch { }
+
+				// 如果原代码有 base.getFinalUrl，请保留
 				// url = await base.getFinalUrl(url);
+
 				return { index, downloadUrl: url };
 			} else if (res.code) {
 				if (res.code == 5112) return message.error("提示：<br/>请先登录网盘后再获取链接呢~");
