@@ -6568,7 +6568,11 @@ button.downloadSubtitle:disabled {
 
 			if (temp.page === "home") {
 				selects = selects.filter(item => item.type === "file");
-				selects = await this.getFilesUrl(selects, `${base.getStorage("token").token_type} ${base.getStorage("token").access_token}`);
+				const token = base.getStorage("token");
+				if (!token || !token.token_type || !token.access_token) {
+					return message.error("提示：<br/>请先登录网盘~");
+				}
+				selects = await this.getFilesUrl(selects, `${aliyunToken.token_type} ${aliyunToken.access_token}`);
 			} else {
 				return message.error("提示：<br/>页面错误~");
 			}
