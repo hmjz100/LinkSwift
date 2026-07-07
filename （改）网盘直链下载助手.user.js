@@ -173,7 +173,7 @@
 		toast: true,
 		position: "top-end",
 		showConfirmButton: false,
-		timer: 3500,
+		timer: 5000,
 		timerProgressBar: true,
 		showCloseButton: true,
 		didOpen: function (toast) {
@@ -281,7 +281,6 @@
 			}
 		},
 		$baidu: {
-			// 当年大战的最后赢家，虽然限速，但哪怕抽丝剥茧，也能得到结果
 			api: {
 				ua: {
 					downloadLink: "pan.baidu.com"
@@ -305,10 +304,9 @@
 			}
 		},
 		$aliyun: {
-			// 和夸克差不多，不予置评
 			api: {
-				getLink: "https://api.aliyundrive.com/v2/file/get_download_url",
-				getShareLink: "https://api.aliyundrive.com/v2/file/get_share_link_download_url"
+				getLink: `https://${location.host.replace("www", "api")}/v2/file/get_download_url`,
+				getShareLink: `https://${location.host.replace("www", "api")}/v2/file/get_share_link_download_url`
 			},
 			mount: {
 				home: `[class^="header--"]>[class^="actions--"]`,
@@ -325,7 +323,6 @@
 			}
 		},
 		$mcloud: {
-			// 运营商中的精品，意外的不错，也没有啥限制，就是没资源
 			api: {
 				getLink: "https://personal-kd-njs.yun.139.com/hcy/file/getDownloadUrl"
 			},
@@ -339,7 +336,6 @@
 			}
 		},
 		$tcloud: {
-			// 运营商中的精品，意外的不错，也没有啥限制，就是没资源
 			api: {
 				getAccessToken: "https://api.cloud.189.cn/open/oauth2/ssoH5.action",
 				getLink: "https://api.cloud.189.cn/open/file/getFileDownloadUrl.action"
@@ -356,10 +352,10 @@
 		$xunlei: {
 			api: {
 				mirror: [
-					// 没想到这么难找，还有可能随时失效，真有你的呀
 					"vod0780-aliyun04-vip-lixian.xunlei.com", "vod0781-aliyun04-vip-lixian.xunlei.com", "vod3379-aliyun04-vip-lixian.xunlei.com", "vod3429-aliyun04-vip-lixian.xunlei.com", "vod3459-aliyun04-vip-lixian.xunlei.com", "vod3533-aliyun04-vip-lixian.xunlei.com", "vod4252-aliyun04-vip-lixian.xunlei.com", "vod4253-aliyun04-vip-lixian.xunlei.com", "vod4320-aliyun04-vip-lixian.xunlei.com", "vod4321-aliyun04-vip-lixian.xunlei.com", "vod0555-aliyun06-vip-lixian.xunlei.com", "vod0556-aliyun06-vip-lixian.xunlei.com", "vod1284-aliyun06-vip-lixian.xunlei.com", "vod1285-aliyun06-vip-lixian.xunlei.com", "vod1363-aliyun06-vip-lixian.xunlei.com", "vod1372-aliyun06-vip-lixian.xunlei.com", "vod1629-aliyun06-vip-lixian.xunlei.com", "vod1630-aliyun06-vip-lixian.xunlei.com", "vod1703-aliyun06-vip-lixian.xunlei.com", "vod1704-aliyun06-vip-lixian.xunlei.com", "vod1844-aliyun06-vip-lixian.xunlei.com", "vod0254-aliyun08-vip-lixian.xunlei.com", "vod0255-aliyun08-vip-lixian.xunlei.com", "vod0256-aliyun08-vip-lixian.xunlei.com", "vod0257-aliyun08-vip-lixian.xunlei.com", "vod0261-aliyun08-vip-lixian.xunlei.com", "vod0262-aliyun08-vip-lixian.xunlei.com", "vod0263-aliyun08-vip-lixian.xunlei.com", "vod0264-aliyun08-vip-lixian.xunlei.com", "vod0759-aliyun08-vip-lixian.xunlei.com", "vod0760-aliyun08-vip-lixian.xunlei.com", "vod9410-aliyun08-vip-lixian.xunlei.com", "vod9411-aliyun08-vip-lixian.xunlei.com", "vod9412-aliyun08-vip-lixian.xunlei.com", "vod0080-b02-vip-lixian.xunlei.com", "vod0432-b02-vip-lixian.xunlei.com", "vod0531-b02-vip-lixian.xunlei.com", "vod0532-b02-vip-lixian.xunlei.com", "vod0533-b02-vip-lixian.xunlei.com", "vod0534-b02-vip-lixian.xunlei.com", "vod0537-b02-vip-lixian.xunlei.com", "vod0563-b02-vip-lixian.xunlei.com", "vod0565-b02-vip-lixian.xunlei.com", "vod0566-b02-vip-lixian.xunlei.com", "vod0568-b02-vip-lixian.xunlei.com", "vod0571-b02-vip-lixian.xunlei.com", "vod0572-b02-vip-lixian.xunlei.com", "vod0573-b02-vip-lixian.xunlei.com", "vod0595-b02-vip-lixian.xunlei.com", "vod0596-b02-vip-lixian.xunlei.com", "vod0597-b02-vip-lixian.xunlei.com", "vod0598-b02-vip-lixian.xunlei.com", "vod0636-b02-vip-lixian.xunlei.com", "vod0637-b02-vip-lixian.xunlei.com", "vod0638-b02-vip-lixian.xunlei.com", "vod0639-b02-vip-lixian.xunlei.com", "vod0640-b02-vip-lixian.xunlei.com", "vod0641-b02-vip-lixian.xunlei.com", "vod0642-b02-vip-lixian.xunlei.com", "vod0643-b02-vip-lixian.xunlei.com", "vod0644-b02-vip-lixian.xunlei.com", "vod0645-b02-vip-lixian.xunlei.com", "vod0646-b02-vip-lixian.xunlei.com", "vod0647-b02-vip-lixian.xunlei.com", "vod0648-b02-vip-lixian.xunlei.com", "vod0649-b02-vip-lixian.xunlei.com", "vod0650-b02-vip-lixian.xunlei.com", "vod0651-b02-vip-lixian.xunlei.com", "vod0652-b02-vip-lixian.xunlei.com", "vod0653-b02-vip-lixian.xunlei.com", "vod0654-b02-vip-lixian.xunlei.com", "vod0725-b02-vip-lixian.xunlei.com", "vod0726-b02-vip-lixian.xunlei.com", "vod0727-b02-vip-lixian.xunlei.com", "vod0006-b05-vip-lixian.xunlei.com", "vod0009-b05-vip-lixian.xunlei.com", "vod0010-b05-vip-lixian.xunlei.com", "vod0011-b05-vip-lixian.xunlei.com", "vod0012-b05-vip-lixian.xunlei.com", "vod0013-b05-vip-lixian.xunlei.com", "vod0014-b05-vip-lixian.xunlei.com", "vod0043-b05-vip-lixian.xunlei.com", "vod0044-b05-vip-lixian.xunlei.com", "vod0045-b05-vip-lixian.xunlei.com", "vod0051-b05-vip-lixian.xunlei.com", "vod0053-b05-vip-lixian.xunlei.com", "vod0054-b05-vip-lixian.xunlei.com", "vod0055-b05-vip-lixian.xunlei.com", "vod0139-b05-vip-lixian.xunlei.com", "vod0140-b05-vip-lixian.xunlei.com", "vod0141-b05-vip-lixian.xunlei.com", "vod0142-b05-vip-lixian.xunlei.com", "vod0143-b05-vip-lixian.xunlei.com", "vod0349-b05-vip-lixian.xunlei.com", "vod0001-c01-vip-lixian.xunlei.com", "vod0002-c01-vip-lixian.xunlei.com", "vod0003-c01-vip-lixian.xunlei.com", "vod0004-c01-vip-lixian.xunlei.com", "vod0005-c01-vip-lixian.xunlei.com", "vod0070-h01-vip-lixian.xunlei.com", "vod0071-h01-vip-lixian.xunlei.com", "vod0074-h01-vip-lixian.xunlei.com", "vod0075-h01-vip-lixian.xunlei.com", "vod0131-h01-vip-lixian.xunlei.com", "vod0132-h01-vip-lixian.xunlei.com", "vod0153-h01-vip-lixian.xunlei.com", "vod0088-h04-vip-lixian.xunlei.com", "vod0089-h04-vip-lixian.xunlei.com", "vod0090-h04-vip-lixian.xunlei.com", "vod0091-h04-vip-lixian.xunlei.com", "vod0092-h04-vip-lixian.xunlei.com", "vod0093-h04-vip-lixian.xunlei.com", "vod0094-h04-vip-lixian.xunlei.com", "vod0097-h04-vip-lixian.xunlei.com", "vod0098-h04-vip-lixian.xunlei.com", "vod0099-h04-vip-lixian.xunlei.com", "vod0100-h04-vip-lixian.xunlei.com", "vod0101-h04-vip-lixian.xunlei.com", "vod0105-h04-vip-lixian.xunlei.com", "vod0128-h04-vip-lixian.xunlei.com", "vod0129-h04-vip-lixian.xunlei.com", "vod0143-h04-vip-lixian.xunlei.com", "vod0317-h04-vip-lixian.xunlei.com", "vod0318-h04-vip-lixian.xunlei.com", "vod0319-h04-vip-lixian.xunlei.com", "vod0320-h04-vip-lixian.xunlei.com", "vod0003-h05-vip-lixian.xunlei.com", "vod0004-h05-vip-lixian.xunlei.com", "vod0007-h05-vip-lixian.xunlei.com", "vod0008-h05-vip-lixian.xunlei.com", "vod0009-h05-vip-lixian.xunlei.com", "vod0010-h05-vip-lixian.xunlei.com", "vod0012-h05-vip-lixian.xunlei.com", "vod0013-h05-vip-lixian.xunlei.com", "vod0014-h05-vip-lixian.xunlei.com", "vod0017-h05-vip-lixian.xunlei.com", "vod0097-h05-vip-lixian.xunlei.com", "vod0098-h05-vip-lixian.xunlei.com", "vod0099-h05-vip-lixian.xunlei.com", "vod0116-h05-vip-lixian.xunlei.com", "vod0117-h05-vip-lixian.xunlei.com", "vod0121-h05-vip-lixian.xunlei.com", "vod0122-h05-vip-lixian.xunlei.com", "vod0131-h05-vip-lixian.xunlei.com", "vod0145-h05-vip-lixian.xunlei.com", "vod0146-h05-vip-lixian.xunlei.com", "vod0184-h05-vip-lixian.xunlei.com", "vod0185-h05-vip-lixian.xunlei.com", "vod0221-h05-vip-lixian.xunlei.com", "vod0222-h05-vip-lixian.xunlei.com", "vod0223-h05-vip-lixian.xunlei.com", "vod0224-h05-vip-lixian.xunlei.com", "vod0225-h05-vip-lixian.xunlei.com", "vod0227-h05-vip-lixian.xunlei.com", "vod0252-h05-vip-lixian.xunlei.com", "vod0253-h05-vip-lixian.xunlei.com", "vod0254-h05-vip-lixian.xunlei.com", "vod0001-m01-vip-lixian.xunlei.com", "vod0002-m01-vip-lixian.xunlei.com", "vod0003-m01-vip-lixian.xunlei.com", "vod0006-m01-vip-lixian.xunlei.com", "vod0007-m01-vip-lixian.xunlei.com", "vod0008-m01-vip-lixian.xunlei.com", "vod0010-m01-vip-lixian.xunlei.com", "vod0011-m01-vip-lixian.xunlei.com", "vod0012-m01-vip-lixian.xunlei.com", "vod0013-m01-vip-lixian.xunlei.com", "vod0014-m01-vip-lixian.xunlei.com", "vod0019-m01-vip-lixian.xunlei.com", "vod0020-m01-vip-lixian.xunlei.com", "vod0021-m01-vip-lixian.xunlei.com", "vod0022-m01-vip-lixian.xunlei.com", "vod0064-txyun08-vip-lixian.xunlei.com", "vod0065-txyun08-vip-lixian.xunlei.com", "vod0066-txyun08-vip-lixian.xunlei.com", "vod0067-txyun08-vip-lixian.xunlei.com", "vod0068-txyun08-vip-lixian.xunlei.com", "vod0069-txyun08-vip-lixian.xunlei.com", "vod0070-txyun08-vip-lixian.xunlei.com", "vod0340-txyun08-vip-lixian.xunlei.com", "vod0341-txyun08-vip-lixian.xunlei.com", "vod0032-z01-vip-lixian.xunlei.com", "vod0035-z01-vip-lixian.xunlei.com", "vod0036-z01-vip-lixian.xunlei.com", "vod0037-z01-vip-lixian.xunlei.com", "vod0038-z01-vip-lixian.xunlei.com", "vod0039-z01-vip-lixian.xunlei.com", "vod0040-z01-vip-lixian.xunlei.com", "vod0041-z01-vip-lixian.xunlei.com", "vod0042-z01-vip-lixian.xunlei.com", "vod0091-z01-vip-lixian.xunlei.com", "vod0093-z01-vip-lixian.xunlei.com", "vod0131-z01-vip-lixian.xunlei.com", "vod0135-z01-vip-lixian.xunlei.com", "vod0136-z01-vip-lixian.xunlei.com", "vod0146-z01-vip-lixian.xunlei.com", "vod0155-z01-vip-lixian.xunlei.com", "vod0156-z01-vip-lixian.xunlei.com", "vod0167-z01-vip-lixian.xunlei.com", "vod0195-z01-vip-lixian.xunlei.com", "vod0196-z01-vip-lixian.xunlei.com", "vod0281-z01-vip-lixian.xunlei.com"
 				],
-				getLink: "https://api-pan.xunlei.com/drive/v1/files/"
+				getLink: "https://api-pan.xunlei.com/drive/v1/files/",
+				getCaptchaToken: "https://xluser-ssl.xunlei.com/v1/shield/captcha/init",
 			},
 			mount: {
 				home: `[class^="FileMenu__menu--"]`,
@@ -372,7 +368,6 @@
 			}
 		},
 		$guangya: {
-			// 不愧是吸血雷！现在又想学习吸二代的按流量计费方式！
 			api: {
 				getLink: "https://api.guangyapan.com/nd.bizuserres.s/v1/get_res_download_url",
 				getShareLink: "https://api.guangyapan.com/nd.bizuserres.s/v1/get_share_download_url",
@@ -388,7 +383,6 @@
 			}
 		},
 		$quark: {
-			// 没想到啊没想到，矮子里面挑高个，竟是还有些良心
 			api: {
 				ua: {
 					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) quark-cloud-drive/3.20.0 Chrome/112.0.5615.165 Electron/24.1.3.8 Safari/537.36 Channel/pckk_other_ch"
@@ -405,7 +399,6 @@
 			}
 		},
 		$uc: {
-			// 夸克团队做的，意见同上
 			api: {
 				ua: {
 					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) uc-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_ch"
@@ -422,7 +415,6 @@
 			}
 		},
 		$123pan: {
-			// BT吸血二代，开创性的采用了按流量计费；韭菜培养时间长达三年！
 			api: {
 				getLink: "https://api.123pan.cn/api/v2/file/download_info",
 				getShareLink: "https://api.123pan.cn/api/v2/share/download/info"
@@ -1797,7 +1789,7 @@
 				tag === "style" ? $style.html(css.trim().replace(/\t/g, "").replace(/\r\n|\n\r|\n|\r/g, "\n").replace(/\n+/g, "\n")) : $style.attr("href", css);
 				if ($styleDom.length) {
 					$styleDom.replaceWith($style);
-					base.console.info($style[0]);
+					// base.console.info($style[0]);
 					return true;
 				}
 				if (position === "before") {
@@ -1831,7 +1823,7 @@
 			const r = parseInt(hex.substring(0, 2), 16);
 			const g = parseInt(hex.substring(2, 4), 16);
 			const b = parseInt(hex.substring(4, 6), 16);
-			let a;
+			let a = "";
 			// 如果是八位十六进制颜色值，解析 alpha 通道
 			if (hex.length === 8) {
 				a = parseInt(hex.substring(6, 8), 16) / 255; // 将 alpha 值转换为 0 到 1 之间的小数
@@ -3968,7 +3960,22 @@
 					},
 					willOpen: async () => {
 						Swal.showLoading();
-						await temp.main.getLink();
+						await temp.main.getLink().catch(e => {
+							// 错误信息和堆栈
+							let msg = (e instanceof Error) ? e.message : String(e || "未知错误");
+							let displayMsg = msg;
+							// 如果已经包含格式化字符，则直接使用，否则补全格式
+							if (!msg.includes("：<br/>")) {
+								msg = displayMsg = `非常规错误：<br/>${msg}`;
+								displayMsg += `<br/>请截图控制台的报错内容，向开发者反馈。`
+							};
+							message.error(displayMsg);
+
+							const consoleMsg = msg.replaceAll("：<br/>", "：").replaceAll("<br/>", " ");
+							const consoleStack = (e instanceof Error && e.stack) ? e.stack?.split?.('\n')?.slice?.(1)?.join?.('\n') : "无堆栈信息";
+							base.console.error(`【LinkSwift】Error\n${consoleMsg}\n堆栈：\n${consoleStack}`);
+							return;
+						});
 					},
 				});
 			});
@@ -3986,18 +3993,18 @@
 			base.addStyle("swal-pub-style", "style", `@media (prefers-color-scheme:light){${GM_getResourceText("SwalLigt")}}`);
 			base.addStyle("swal-pub-dark-style", "style", `@media (prefers-color-scheme:dark){${GM_getResourceText("SwalDark").replace(/#19191a/, "#222226")}}`);
 			base.addStyle("swal-pub-custom-style", "style", `
-html:has(.swal2-container), html.swal2-shown {font-size: unset!important}
 .swal2-container *{vertical-align:baseline;line-height:normal}
 .swal2-styled{transition:all.2s}
 .swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:${temp.color} transparent }
 .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}
-.swal2-timer-progress-bar{width:100%;height:.25em;background:${temp.color}33 }
+.swal2-timer-progress-bar{width:100%;height:.25em;border:1px #ffffff33 solid;border-radius:50px;background:${temp.color} }
 .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:${temp.color};color:#EBE6E3;line-height:2em;text-align:center}
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:${temp.color} }
 .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:${temp.color}}
 .swal2-html-container{padding:1em 1.6em 0.3em;margin:0}
-.swal2-close,div:where(.swal2-container) button:where(.swal2-close){position:absolute;border-radius:10px;top:0;right:0;transition:all.2s}
+.swal2-close,div:where(.swal2-container) button:where(.swal2-close){border-radius:10px;transition:all.2s}
 .swal2-close:hover,div:where(.swal2-container) button:where(.swal2-close):hover{color:${temp.color};background-color:${temp.color}30;font-size:60px}
+.swal2-popup.swal2-toast .swal2-close,div:where(.swal2-container) .swal2-toast button:where(.swal2-close){background-color:transparent;font-size:2em}
 .swal2-styled{display:flex;justify-content:center;align-items:center;gap:5px}
 .swal2-styled.swal2-confirm,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){background-color:${temp.color};color:#EBE6E3}
 .swal2-styled.swal2-confirm:focus,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus{box-shadow:0 0 0 3px ${temp.color}80}
@@ -4012,7 +4019,8 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel)
 {border-radius:50px}
 div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{opacity:0.7}
 .swal2-backdrop-show,.swal2-noanimation,div:where(.swal2-container).swal2-backdrop-show, div:where(.swal2-container).swal2-noanimation{background:rgba(25,25,26,.75);transition:backdrop-filter.2s;backdrop-filter:blur(1px)}
-body.swal2-toast-shown .swal2-container{backdrop-filter:none}
+body.swal2-toast-shown .swal2-container{backdrop-filter:none;width:auto;max-width:100%;word-break:break-all}
+.swal2-popup.swal2-toast,div:where(.swal2-container) div:where(.swal2-toast){width:auto!important;grid-template-columns:1fr auto 1fr}
 .swal2-popup,div:where(.swal2-container) div:where(.swal2-popup){padding-bottom:1em;border-radius:10px}
 .swal2-title,div:where(.swal2-container) h2:where(.swal2-title){height:auto}
 .swal2-html-container,div:where(.swal2-container) div:where(.swal2-html-container){padding:1.3em 1.3em 0.3em;margin:0}
@@ -4038,7 +4046,8 @@ div:where(.swal2-container) textarea:where(.swal2-textarea):focus-visible
 {outline:0;border:1px solid ${temp.color};box-shadow:0 0 0 3px ${temp.color}80}
 .swal2-checkbox, .swal2-file, .swal2-input, .swal2-radio, .swal2-select, .swal2-textarea,
 div:where(.swal2-container) input:where(.swal2-input), div:where(.swal2-container) input:where(.swal2-file), div:where(.swal2-container) textarea:where(.swal2-textarea), div:where(.swal2-container) select:where(.swal2-select), div:where(.swal2-container) div:where(.swal2-radio), div:where(.swal2-container) label:where(.swal2-checkbox)
-{margin:1em 2em}`);
+{margin:1em 2em}
+html:has(.swal2-container), html.swal2-shown, body:has(.swal2-container), body.swal2-shown {font-size: unset!important}`);
 			base.addStyle(`${mount}-main-style`, "style", `
 :root {
 	--pl-c: ${temp.color};
@@ -4726,7 +4735,7 @@ header[style="display:none;"]~.pl-button {
 
 .pl-setting-item>*:nth-child(2) {
 	display: flex;
-	max-width: 80%;
+	max-width: 85%;
 	align-items: center;
 	justify-content: space-between
 }
@@ -4746,7 +4755,7 @@ header[style="display:none;"]~.pl-button {
 }
 
 .pl-setting-item>.pl-input:not([type="checkbox"]) {
-	width: 80%
+	width: 79%
 }
 
 .center-input {
@@ -5160,48 +5169,46 @@ button.downloadSubtitle:disabled {
 	 */
 	const $baidu = {
 		async getToken() {
-			try {
-				$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
-				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取授权状态~</div>`);
-				// 获取授权状态
-				const authorize = await base.getFinal(config.$baidu.api.getAccessToken, { Origin: "", Referer: "" }, true);
-				let accessToken;
-				// 判断授权情况
-				if (authorize.includes("authorize")) {
-					$doc.find(".loading-popup .loading-title").html(`授权获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取授权页面~</div>`);
-					// 没授权，先获取授权的页面
-					const html = await base.get(config.$baidu.api.getAccessToken, {}, "text", false);
-					// 提取页面的发送确认授权的参数
-					const bdstoken = html.match(/name="bdstoken"\s+value="([^"]+)"/)?.[1];
-					const client_id = html.match(/name="client_id"\s+value="([^"]+)"/)?.[1];
-					const data = {
-						grant_permissions_arr: "netdisk",
-						bdstoken: bdstoken,
-						client_id: client_id,
-						response_type: "token",
-						display: "page",
-						grant_permissions: "basic,netdisk"
-					};
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在自动确认授权~</div>`);
-					// 发送请求达到自动进行授权
-					await base.post(config.$baidu.api.getAccessToken, base.stringify(data), { Origin: "", Referer: "", "Content-Type": "application/x-www-form-urlencoded" });
-					// 再次获取授权状态
-					const res2 = await base.getFinal(config.$baidu.api.getAccessToken, { Origin: "", Referer: "" }, true);
-					accessToken = res2.match(/access_token=([^&]+)/)?.[1];
-				} else if (authorize.includes("access_token=")) {
-					accessToken = authorize.match(/access_token=([^&]+)/)?.[1];
-				}
-				// 统一处理令牌结果
-				$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
-				if (accessToken) {
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>授权成功，令牌已缓存~</div>`);
-					base.setValue("baidu_access_token", accessToken);
-					return accessToken;
-				} else return "";
-			} catch {
-				return "";
+			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
+			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取授权状态~</div>`);
+			// 获取授权状态
+			const authorize = await base.getFinal(config.$baidu.api.getAccessToken, { Origin: "", Referer: "" }, true);
+			let accessToken;
+			// 判断授权情况
+			if (authorize.includes("authorize")) {
+				$doc.find(".loading-popup .loading-title").html(`授权获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取授权页面~</div>`);
+				// 没授权，先获取授权的页面
+				const html = await base.get(config.$baidu.api.getAccessToken, {}, "text", false);
+				// 提取页面的发送确认授权的参数
+				const bdstoken = html.match(/name="bdstoken"\s+value="([^"]+)"/)?.[1];
+				const client_id = html.match(/name="client_id"\s+value="([^"]+)"/)?.[1];
+				const data = {
+					grant_permissions_arr: "netdisk",
+					bdstoken: bdstoken,
+					client_id: client_id,
+					response_type: "token",
+					display: "page",
+					grant_permissions: "basic,netdisk"
+				};
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在自动确认授权~</div>`);
+				// 发送请求达到自动进行授权
+				await base.post(config.$baidu.api.getAccessToken, base.stringify(data), { Origin: "", Referer: "", "Content-Type": "application/x-www-form-urlencoded" });
+				// 再次获取授权状态
+				const res2 = await base.getFinal(config.$baidu.api.getAccessToken, { Origin: "", Referer: "" }, true);
+				accessToken = res2.match(/access_token=([^&]+)/)?.[1];
+			} else if (authorize.includes("access_token=")) {
+				accessToken = authorize.match(/access_token=([^&]+)/)?.[1];
 			}
+			// 统一处理令牌结果
+			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
+			if (accessToken) {
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>授权成功，令牌已缓存~</div>`);
+				base.setValue("baidu_access_token", accessToken);
+				return accessToken;
+			} else {
+				return ""
+			};
 		},
 		async getShareData() {
 			// 前置
@@ -5928,15 +5935,15 @@ button.downloadSubtitle:disabled {
 				const res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
 
 				if (!res || res.errno !== 0 || !res.list) {
-					if (res.errno === 112) return message.error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
+					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
 					if (res.errno === 9019) {
 						base.delValue("baidu_access_token");
-						return message.error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
+						throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
 					}
 					if (res.errno || res.errmsg) {
 						batch.forEach(item => item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`);
 					} else {
-						return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+						throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 					}
 				}
 
@@ -5997,15 +6004,15 @@ button.downloadSubtitle:disabled {
 				const res = await base.post(url, data);
 
 				if (!res || res.errno !== 0 || !res.list) {
-					if (res.errno === 112) return message.error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
+					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
 					if (res.errno === 9019) {
 						base.delValue("baidu_access_token");
-						return message.error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
+						throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
 					}
 					if (res.errno || res.errmsg) {
 						item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`;
 					} else {
-						return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+						throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 					}
 				}
 
@@ -6051,7 +6058,10 @@ button.downloadSubtitle:disabled {
 			return await get(dirs);
 		},
 		async getLink() {
-			let token = (base.getValue("baidu_access_token") || await temp.main.getToken());
+			let token = base.getValue("baidu_access_token") || await this.getToken().catch(e => {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[百度网盘] 获取令牌失败");
+			});
 
 			// 回退授权
 			if (!token) {
@@ -6068,7 +6078,7 @@ button.downloadSubtitle:disabled {
 					attempts++;
 					if (attempts > 120) {
 						clearInterval(interval);
-						return message.error("提示：<br/>时间太长，我先撤下啦~");
+						throw new Error("提示：<br/>时间太长，我先撤下啦~");
 					}
 				}, 1000);
 				return;
@@ -6076,7 +6086,7 @@ button.downloadSubtitle:disabled {
 
 			// 获取选择的文件列表
 			const selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
 
 			$doc.find(".loading-popup .loading-title").html(`链接获取中`);
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
@@ -6085,12 +6095,15 @@ button.downloadSubtitle:disabled {
 			const dirs = selects.filter(f => f.isdir);
 			if (temp.page === "home" || temp.page === "main") {
 				if (dirs.length > 0) files = files.concat(await this.getFilesList(dirs, token, files.length));
-				if (!files.length) return message.error("提示：<br/>文件夹是空的哦~");
+				if (!files.length) throw new Error("提示：<br/>文件夹是空的哦~");
 
 				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
 				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
 
-				files = await this.getFilesUrl(files, token);
+				files = await this.getFilesUrl(files, token).catch(e => {
+					if (e instanceof Error) throw e;
+					throw new Error(e?.message || e || "[百度网盘] 获取文件 URL 失败");
+				});
 			} else if (temp.page === "share") {
 				const shareData = await this.getShareData();
 
@@ -6100,9 +6113,12 @@ button.downloadSubtitle:disabled {
 					shareData.timestamp = sign.data.timestamp;
 				}
 
-				files = await this.getShareFilesUrl(files, shareData, token);
+				files = await this.getShareFilesUrl(files, shareData, token).catch(e => {
+					if (e instanceof Error) throw e;
+					throw new Error(e?.message || e || "[百度网盘] 获取分享文件 URL 失败");
+				});
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 
 			temp.links = [files, {
@@ -6324,7 +6340,7 @@ button.downloadSubtitle:disabled {
 				}
 				const selections = temp.main.getSelectedList();
 				if (selections.length === 0) {
-					return message.error("提示：<br/>请勾选要保存到网盘的文件哦~");
+					throw new Error("提示：<br/>请勾选要保存到网盘的文件哦~");
 				}
 				message.info("提示：<br/>因网盘限制，请保存到自己网盘后再去下载哦~");
 				await base.sleep(500);
@@ -6560,8 +6576,8 @@ button.downloadSubtitle:disabled {
 
 			// 获取选择的文件列表
 			let selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => item.type !== "file")) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => item.type !== "file")) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 
 			$doc.find(".loading-popup .loading-title").html(`链接获取中`);
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
@@ -6572,9 +6588,12 @@ button.downloadSubtitle:disabled {
 				if (!token || !token.token_type || !token.access_token) {
 					return message.error("提示：<br/>请先登录网盘~");
 				}
-				selects = await this.getFilesUrl(selects, `${aliyunToken.token_type} ${aliyunToken.access_token}`);
+				selects = await this.getFilesUrl(selects, `${token.token_type} ${token.access_token}`).catch(e => {
+					if (e instanceof Error) throw e;
+					throw new Error(e?.message || e || "[阿里云盘] 获取文件 URL 失败");
+				});
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 
 			temp.links = [selects, {
@@ -6621,11 +6640,11 @@ button.downloadSubtitle:disabled {
 					const res = await base.post(config.$aliyun.api.getLink, { drive_id: item.driveId, file_id: item.fileId }, { "Authorization": token, "X-Canary": "client=windows,app=adrive,version=v6.0.0" });
 
 					if (!res || !res.url || res.code) {
-						if (res.code == "AccessTokenInvalid") return message.error("提示：<br/>访问令牌过期了，请刷新后重试~<br/>代码：" + res.code);
+						if (res.code == "AccessTokenInvalid") throw new Error("提示：<br/>访问令牌过期了，请刷新后重试~<br/>代码：" + res.code);
 						if (res.code) {
 							batch.forEach(item => item.dlink = `获取下载地址失败，服务器说：${res.code}，刷新后再试试吧~`);
 						} else {
-							return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 						}
 					};
 
@@ -6957,76 +6976,72 @@ button.downloadSubtitle:disabled {
 			return md5(A + l).toUpperCase();
 		},
 		async getFileUrl(item, index) {
-			try {
-				if (item.downloadUrl) return {
-					index,
-					downloadUrl: item.downloadUrl
-				};
-				if (this.detectPage() === "home") {
-					const body = {
-						fileId: item.contentID
-					}
-					const time = new Date(+new Date() + 8 * 3600 * 1000).toJSON().substr(0, 19).replace("T", " ");
-					const key = this.getRandomString(16);
-					const sign = this.getSign(undefined, body, time, key);
-					const getCookie = (name) => {
-						const cname = name + "=";
-						const ca = document.cookie.split(";");
-						for (let i = 0; i < ca.length; i++) {
-							const c = ca[i].trim();
-							if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
-						}
-						return "";
-					}
-					const res = await base.post(config.$mcloud.api.getLink, body, {
-						"Authorization": getCookie("authorization"),
-						"Caller": "web",
-						"Content-Type": "application/json;charset=UTF-8",
-						"CMS-DEVICE": "default",
-						"Mcloud-Channel": "1000101",
-						"Mcloud-Client": "10701",
-						"Mcloud-Sign": time + "," + key + "," + sign,
-						"Mcloud-Version": "7.14.2",
-						"X-DeviceInfo": "||9|7.17.0|edge||||windows 10||zh-CN|||",
-						"X-Huawei-ChannelSrc": "10000034",
-						"X-Inner-Ntwk": "2",
-						"X-M4C-Caller": "PC",
-						"X-M4C-Src": "10002",
-						"X-SvcType": "1",
-						"X-Yun-Api-Version": "v1",
-						"X-Yun-App-Channel": "10000034",
-						"X-Yun-Channel-Source": "10000034",
-						"X-Yun-Client-Info": "||9|7.17.0|edge||||windows 10||zh-CN|||||",
-						"X-Yun-Module-Type": "100",
-						"X-Yun-Svc-Type": "1",
-						"X-Yun-Url-Type": "3"
-					});
-					if (res.success) {
-						return { index, downloadUrl: res.data.url };
-					} else {
-						return { index, downloadUrl: "获取下载地址失败，刷新后再试试吧~" };
-					}
+			if (item.downloadUrl) return {
+				index,
+				downloadUrl: item.downloadUrl
+			};
+			if (this.detectPage() === "home") {
+				const body = {
+					fileId: item.contentID
 				}
-				if (this.detectPage() === "share") {
-					const vueDom = document.querySelector(".main_file_list").__vue__;
-					const res = await base.post(config.$mcloud.api.getShareLink, `linkId=${vueDom.linkID}&contentIds=${item.path}&catalogIds=`, { "Content-Type": "application/x-www-form-urlencoded" });
-					if (res.code == 0) {
-						return { index, downloadUrl: res.data.redrUrl };
-					} else {
-						return { index, downloadUrl: "获取下载地址失败，刷新后再试试吧~" };
+				const time = new Date(+new Date() + 8 * 3600 * 1000).toJSON().substr(0, 19).replace("T", " ");
+				const key = this.getRandomString(16);
+				const sign = this.getSign(undefined, body, time, key);
+				const getCookie = (name) => {
+					const cname = name + "=";
+					const ca = document.cookie.split(";");
+					for (let i = 0; i < ca.length; i++) {
+						const c = ca[i].trim();
+						if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
 					}
+					return "";
 				}
-			} catch {
-				return { index, downloadUrl: "获取下载地址失败，刷新后再试试吧~" };
+				const res = await base.post(config.$mcloud.api.getLink, body, {
+					"Authorization": getCookie("authorization"),
+					"Caller": "web",
+					"Content-Type": "application/json;charset=UTF-8",
+					"CMS-DEVICE": "default",
+					"Mcloud-Channel": "1000101",
+					"Mcloud-Client": "10701",
+					"Mcloud-Sign": time + "," + key + "," + sign,
+					"Mcloud-Version": "7.14.2",
+					"X-DeviceInfo": "||9|7.17.0|edge||||windows 10||zh-CN|||",
+					"X-Huawei-ChannelSrc": "10000034",
+					"X-Inner-Ntwk": "2",
+					"X-M4C-Caller": "PC",
+					"X-M4C-Src": "10002",
+					"X-SvcType": "1",
+					"X-Yun-Api-Version": "v1",
+					"X-Yun-App-Channel": "10000034",
+					"X-Yun-Channel-Source": "10000034",
+					"X-Yun-Client-Info": "||9|7.17.0|edge||||windows 10||zh-CN|||||",
+					"X-Yun-Module-Type": "100",
+					"X-Yun-Svc-Type": "1",
+					"X-Yun-Url-Type": "3"
+				});
+				if (res.success) {
+					return { index, downloadUrl: res.data.url };
+				} else {
+					return { index, downloadUrl: "获取下载地址失败，服务器未返回有效数据，刷新后再试试吧~" };
+				}
+			}
+			if (this.detectPage() === "share") {
+				const vueDom = document.querySelector(".main_file_list").__vue__;
+				const res = await base.post(config.$mcloud.api.getShareLink, `linkId=${vueDom.linkID}&contentIds=${item.path}&catalogIds=`, { "Content-Type": "application/x-www-form-urlencoded" });
+				if (res.code == 0) {
+					return { index, downloadUrl: res.data.redrUrl };
+				} else {
+					return { index, downloadUrl: "获取下载地址失败，服务器未返回有效数据，刷新后再试试吧~" };
+				}
 			}
 		},
 		async getFilesUrl(items, token) {
-
+			// TODO: 先预留着
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => !item.contentID && !item.contentName)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => !item.contentID && !item.contentName)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				selects = selects.filter(item => item.contentID && item.contentName && item.contentSuffix);
 				const batchSize = 15;
@@ -7045,14 +7060,15 @@ button.downloadSubtitle:disabled {
 								return val;
 							}));
 					});
-					const res = await Promise.all(queue);
-					res.forEach(val => {
-						selects[val.index].downloadUrl = val.downloadUrl;
+					const res = await Promise.all(queue).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[中国移动云盘] 获取文件 URL 失败");
 					});
+					res.forEach(val => (selects[val.index].downloadUrl = val.downloadUrl));
 					await base.sleep(1000);
 				}
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 			temp.links = [selects, {
 				isFolder: v => (v.dirEtag || v.caName),
@@ -7304,54 +7320,56 @@ button.downloadSubtitle:disabled {
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取状态~</div>`);
 			const res = await base.getFinal(config.$tcloud.api.getAccessToken, undefined, true);
 			const accessToken = res.match(/accessToken=(\w+)/)?.[1];
-			accessToken && base.setStorage("accessToken", accessToken);
-			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
-			$doc.find(".loading-popup .swal2-html-container").html(`<div>获取成功，令牌已缓存~</div>`);
-			return accessToken;
+			if (accessToken) {
+				base.setStorage("accessToken", accessToken);
+				$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>获取成功，令牌已缓存~</div>`);
+				return accessToken;
+			}
+			return undefined;
 		},
 		async getFileUrl(item, index, token) {
-			try {
-				if (item.downloadUrl) {
-					return {
-						index,
-						downloadUrl: item.downloadUrl
-					}
-				};
-				const time = Date.now();
-				let url = `${config.$tcloud.api.getLink}?fileId=${item.fileId}`;
-				let _sign = `AccessToken=${token}&Timestamp=${time}`;
-				if (item.shareId) {
-					url += `&dt=1&shareId=${item.shareId}`;
-					_sign += `&dt=1`;
+			if (item.downloadUrl) {
+				return {
+					index,
+					downloadUrl: item.downloadUrl
 				}
-				_sign += `&fileId=${item.fileId}`;
-				if (item.shareId) {
-					_sign += `&shareId=${item.shareId}`;
-				}
-				const res = await base.get(url, { "Accept": "application/json;charset=UTF-8", "Sign-Type": 1, "Accesstoken": token, "Timestamp": time, "Signature": md5(_sign).toString() });
-				if (res.res_code == 0) {
-					return { index, downloadUrl: res.fileDownloadUrl };
-				} else if (res.errorcode == "InvalidSessionKey") {
-					return { index, downloadUrl: "提示：<br/>请先登录网盘~" };
-				} else if (res.res_code == "ShareNotFoundFlatDir") {
-					return { index, downloadUrl: "提示：<br/>请[转存]文件，之后再👉前往[我的网盘]中下载哦~" };
-				} else {
-					return { index, downloadUrl: "获取下载地址失败，刷新后再试试吧~" + (res.res_code ? res.res_code : "") };
-				}
-			} catch {
-				return { index, downloadUrl: "获取下载地址失败，刷新后再试试吧~" };
+			};
+			const time = Date.now();
+			let url = `${config.$tcloud.api.getLink}?fileId=${item.fileId}`;
+			let _sign = `AccessToken=${token}&Timestamp=${time}`;
+			if (item.shareId) {
+				url += `&dt=1&shareId=${item.shareId}`;
+				_sign += `&dt=1`;
+			}
+			_sign += `&fileId=${item.fileId}`;
+			if (item.shareId) {
+				_sign += `&shareId=${item.shareId}`;
+			}
+			const res = await base.get(url, { "Accept": "application/json;charset=UTF-8", "Sign-Type": 1, "Accesstoken": token, "Timestamp": time, "Signature": md5(_sign).toString() });
+			if (res.res_code == 0) {
+				return { index, downloadUrl: res.fileDownloadUrl };
+			} else if (res.errorcode == "InvalidSessionKey") {
+				return { index, downloadUrl: "提示：<br/>请先登录网盘~" };
+			} else if (res.res_code == "ShareNotFoundFlatDir") {
+				return { index, downloadUrl: "提示：<br/>请[转存]文件，之后再👉前往[我的网盘]中下载哦~" };
+			} else {
+				return { index, downloadUrl: "获取下载地址失败，刷新后再试试吧~" + (res.res_code ? res.res_code : "") };
 			}
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => item.isFolder)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => item.isFolder)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			selects = selects.filter(item => !item.isFolder)
 			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取状态~</div>`);
-			const token = base.getStorage("accessToken") || await this.getToken();
+			const token = base.getStorage("accessToken") || await this.getToken().catch(e => {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[天翼云盘] 获取令牌失败");
+			});
 			if (!token) {
-				return message.error("提示：<br/>请先登录网盘~");
+				throw new Error("提示：<br/>请先登录网盘~");
 			}
 			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>获取缓存成功~</div>`);
@@ -7371,7 +7389,10 @@ button.downloadSubtitle:disabled {
 							return val;
 						}));
 				});
-				const res = await Promise.all(queue);
+				const res = await Promise.all(queue).catch(e => {
+					if (e instanceof Error) throw e;
+					throw new Error(e?.message || e || "[天翼云盘] 获取文件 URL 失败");
+				});
 				res.forEach(val => {
 					selects[val.index].downloadUrl = val.downloadUrl;
 				});
@@ -7614,51 +7635,133 @@ button.downloadSubtitle:disabled {
 				element.prepend($button);
 			})
 		},
-		getToken() {
-			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
-			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取状态~</div>`);
-			let credentials = {}, captcha = {};
-			for (let i = 0; i < localStorage.length; i++) {
-				if (/^credentials_/.test(localStorage.key(i))) {
-					credentials = base.getStorage(localStorage.key(i));
-					base.setStorage("");
-				}
-				if (/^captcha_[\w]{16}/.test(localStorage.key(i))) {
-					captcha = base.getStorage(localStorage.key(i));
-				}
+		_getCaptchaSign(clientId, version, host, deviceId, timestamp) {
+			// 基础参数
+			let currentHash = `${clientId}${version}${host}${deviceId}${timestamp}`;
+			// 12 层哈希的盐值
+			const salts = [
+				"o6b11ImBwJA1KSNMTALjL0xMkMjTP",
+				"oVHCQaox9N6+R91GY63sbxci9K9ymFl",
+				"XReS2zbwYB/+vUnYDwZ",
+				"O56ssQHYiK5enUTKaV",
+				"sGKNxaX7aUzpjJ2n+/2f1I0",
+				"1oyQWde2s4zvz",
+				"ziq13Yyc6HUXr3477c20PJfwBjg7ux",
+				"xKMXTJmlEqamEpkWfp6WeP1qZezdCA",
+				"rUA",
+				"XVIzRTbY7MGdUXn0+qLjw",
+				"aGrpbD3EUDGo0wmvaKPDGxVRaNVN6",
+				"ieQk/"
+			];
+			// 循环进行 12 层哈希计算
+			for (let i = 0; i < salts.length; i++) {
+				currentHash = md5(currentHash + salts[i]);
 			}
-			const deviceid = /(\w{32})/.exec(base.getStorage("deviceid").split(","))[0];
-			const token = {
-				credentials,
-				captcha,
-				deviceid
-			};
-			return token;
+			// 最终返回验证值
+			return `1.${currentHash}`;
 		},
-		async getFileUrl(item, index, token) {
-			try {
-				if (item.downloadUrl) return {
-					index,
-					downloadUrl: item.downloadUrl
-				};
-				const res = await base.get(config.$xunlei.api.getLink + item.id, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.token, "X-Device-Id": token.deviceid });
-				if (res.web_content_link) {
-					return { index, downloadUrl: res.web_content_link };
-				} else if (res.error_code == 9) {
-					return { index, downloadUrl: "获取下载地址失败，服务器说：页面验证过期了，刷新后再获取吧~" };
-				} else {
-					return { index, downloadUrl: `获取下载地址失败，${res.error_description ? "服务器说：" + res.error_description + "。" : "刷新后再试试吧~"}` };
+		async getToken(force = false, title = true) {
+			if (!this.getToken.lock) this.getToken.lock = Promise.resolve();
+			return this.getToken.lock = this.getToken.lock.then(async () => {
+				if (title) {
+					$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>获取状态中~</div>`);
 				}
-			} catch {
-				return message.error("提示：<br/>请先登录网盘后再刷新页面呢~");
+				let creds = {}, cap = {}, userId = "", clientId = "", capKey = "";
+
+				const clientVersion = "1.92.62";
+				const timestamp = Math.floor(Date.now());
+				const deviceId = /(\w{32})/.exec((base.getStorage("deviceid") || "")?.split?.(",")?.[0])?.[0] || ""; // 设备 ID
+
+				// 凭证
+				for (let i = 0; i < localStorage.length; i++) {
+					const key = localStorage.key(i);
+					const val = base.getStorage(key);
+
+					if (key.startsWith("credentials_")) {
+						creds = val;
+						userId = val?.user_id || "";
+						clientId = key.split("_")[1];
+						capKey = `captcha_${clientId}`;
+					} else if (key.startsWith("captcha_")) {
+						cap = val;
+						clientId = key.split("_")[1];
+						capKey = `captcha_${clientId}`;
+					}
+				}
+
+				// 校验并刷新
+				const isExpired = force || !cap?.token || Date.now() >= new Date(cap.expires_at).getTime();
+				if (isExpired && clientId && deviceId) {
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>令牌过期，正在获取新令牌~</div>`);
+
+					const res = await base.post(config.$xunlei.api.getCaptchaToken, {
+						client_id: clientId,
+						action: "get:/drive/v1/about",
+						device_id: deviceId,
+						meta: {
+							username: "", phone_number: "", email: "",
+							package_name: location.host,
+							client_version: clientVersion,
+							captcha_sign: this._getCaptchaSign(clientId, clientVersion, location.host, deviceId, timestamp.toString()),
+							timestamp: timestamp.toString(),
+							user_id: userId
+						}
+					}, { "Content-Type": "application/json" });
+
+					if (res?.captcha_token) {
+						cap = { token: res.captcha_token, expires_at: new Date(timestamp + res.expires_in * 1000).toString() };
+						base.setStorage(capKey, cap);
+					} else {
+						throw new Error(`错误：<br/>令牌刷新失败，${res?.error_description || res?.error || "未知错误"}`);
+					}
+				} else if (!creds || !cap || !clientId || !deviceId) {
+					throw new Error(`错误：<br/>请先登录网盘后再获取文件呢~`);
+				}
+
+				return { credentials: creds, captcha: cap, device_id: deviceId };
+			});
+		},
+		async getFileUrl(item, index, isRetry = false) {
+			if (item.downloadUrl) return { index, downloadUrl: item.downloadUrl };
+
+			// 获取当前内存中的 token
+			const token = await this.getToken(false, false).catch(e => {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[迅雷云盘] 获取令牌失败");
+			});
+
+			const res = await base.get(config.$xunlei.api.getLink + item.id, {
+				"Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`,
+				"Content-Type": "application/json",
+				"X-Captcha-Token": token.captcha.token,
+				"X-Device-Id": token.device_id
+			});
+
+			if (res.web_content_link) {
+				return { index, downloadUrl: res.web_content_link };
+			} else {
+				// 令牌过期
+				if (res.error_code == 9) {
+					// 递归重试一次，isRetry=true 防止死循环
+					if (!isRetry) {
+						await this.getToken(true, false);
+						return await this.getFileUrl(item, index, true);
+					} else {
+						return { index, downloadUrl: "获取下载地址失败，服务器说：页面的验证令牌过期了，请再重新获取一次吧~" };
+					}
+				}
+				return {
+					index,
+					downloadUrl: `获取下载地址失败，${res.error_description ? "服务器说：" + res.error_description : "刷新后再试试吧~"}`
+				};
 			}
 		},
 		async getLink() {
 			const selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => item.kind !== "drive#file")) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => item.kind !== "drive#file")) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
-				const token = this.getToken();
 				const batchSize = 15;
 				let proc = 0;
 				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
@@ -7668,21 +7771,24 @@ button.downloadSubtitle:disabled {
 					const queue = [];
 					batch.forEach((item, localIndex) => {
 						const globalIndex = i + localIndex;
-						queue.push(this.getFileUrl(item, globalIndex, token)
+						queue.push(this.getFileUrl(item, globalIndex)
 							.then(val => {
 								proc++;
 								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
 								return val;
 							}));
 					});
-					const res = await Promise.all(queue);
+					const res = await Promise.all(queue).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[迅雷云盘] 获取文件 URL 失败");
+					});
 					res.forEach(val => {
 						selects[val.index].downloadUrl = val.downloadUrl;
 					});
 					await base.sleep(1000);
 				}
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 			temp.links = [selects, {
 				isFolder: v => v.kind === "drive#folder",
@@ -7729,7 +7835,10 @@ button.downloadSubtitle:disabled {
 	 */
 	const $guangya = {
 		addPageListener() {
-			this.getShareToken(true);
+			this.getShareToken(true).catch(e => {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[光鸭云盘] 获取分享令牌失败");
+			});
 			$doc.on("click", ".listener-api-download.enhance", async function (e) {
 				e.preventDefault();
 				const status = base._EventFactory(e);
@@ -7956,19 +8065,19 @@ button.downloadSubtitle:disabled {
 				}
 			}
 
-			const res = await base.post(config.$guangya.api.getShareToken, { "shareId": shareId, "code": code }, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.token, "X-Device-Id": token.deviceid });
+			const res = await base.post(config.$guangya.api.getShareToken, { "shareId": shareId, "code": code }, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.captcha_token, "X-Device-Id": token.deviceid });
 
 			if (res.data?.accessToken) return res.data.accessToken;
-			else return message.error(`提示：<br/>获取分享令牌失败，${res.msg ? "服务器说：" + res.msg + "。" : "刷新后再试试吧~"}`);
+			else throw new Error(`提示：<br/>获取分享令牌失败，${res.msg ? "服务器说：" + res.msg + "。" : "刷新后再试试吧~"}`);
 		},
 		async getFileUrl(item, index, token, shareToken) {
 			try {
 				let res;
 				if (item.downloadUrl) return { index, downloadUrl: item.downloadUrl };
 				if (shareToken) {
-					res = await base.post(config.$guangya.api.getShareLink, { "fileId": item.fileId, "accessToken": shareToken }, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.token, "X-Device-Id": token.deviceid });
+					res = await base.post(config.$guangya.api.getShareLink, { "fileId": item.fileId, "accessToken": shareToken }, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.captcha_token, "X-Device-Id": token.deviceid });
 				} else {
-					res = await base.post(config.$guangya.api.getLink, { "fileId": item.fileId }, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.token, "X-Device-Id": token.deviceid });
+					res = await base.post(config.$guangya.api.getLink, { "fileId": item.fileId }, { "Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`, "Content-Type": "application/json", "X-Captcha-Token": token.captcha.captcha_token, "X-Device-Id": token.deviceid });
 				}
 
 				if (res.data?.signedURL || res.data?.downloadUrl) {
@@ -7981,13 +8090,13 @@ button.downloadSubtitle:disabled {
 					return { index, downloadUrl: `获取下载地址失败，${res.msg ? "服务器说：" + res.msg + "。" : "刷新后再试试吧~"}` };
 				}
 			} catch {
-				return message.error("提示：<br/>请先登录网盘后再刷新页面呢~");
+				throw new Error("提示：<br/>请先登录网盘后再刷新页面呢~");
 			}
 		},
 		async getLink() {
 			const selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => item.resType == 2)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => item.resType == 2)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const token = this.getToken();
 				const batchSize = 15;
@@ -8006,7 +8115,10 @@ button.downloadSubtitle:disabled {
 								return val;
 							}));
 					});
-					const res = await Promise.all(queue);
+					const res = await Promise.all(queue).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[光鸭云盘] 获取文件下载 URL 失败");
+					});
 					res.forEach(val => {
 						selects[val.index].downloadUrl = val.downloadUrl;
 					});
@@ -8014,7 +8126,10 @@ button.downloadSubtitle:disabled {
 				}
 			} else if (temp.page === "share") {
 				const token = this.getToken();
-				const shareToken = await this.getShareToken(false, token);
+				const shareToken = await this.getShareToken(false, token).catch(e => {
+					if (e instanceof Error) throw e;
+					throw new Error(e?.message || e || "[光鸭云盘] 获取分享令牌失败");
+				});
 				const batchSize = 15;
 				let proc = 0;
 				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
@@ -8031,14 +8146,17 @@ button.downloadSubtitle:disabled {
 								return val;
 							}));
 					});
-					const res = await Promise.all(queue);
+					const res = await Promise.all(queue).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[光鸭云盘] 获取文件下载 URL 失败");
+					});
 					res.forEach(val => {
 						selects[val.index].downloadUrl = val.downloadUrl;
 					});
 					await base.sleep(1000);
 				}
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 			temp.links = [selects, {
 				isFolder: v => v.resType == 2,
@@ -8356,8 +8474,8 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => !item.file)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => !item.file)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const data = [];
 				const batchSize = 15;
@@ -8371,17 +8489,17 @@ button.downloadSubtitle:disabled {
 					const res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
-						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
+						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 						if (res.code == 23018) {
 							const fid = res.message?.match(/\[([a-f0-9]{32})\]/)?.[1];
 							const item = batch.find(item => item.fid === fid);
-							return message.error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
+							throw new Error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
 						}
 
 						if (res.code || res.message) {
-							return message.error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 						}
 					}
 
@@ -8414,7 +8532,7 @@ button.downloadSubtitle:disabled {
 				const pwd_id = unsafeWindow.factStat?.ut?.baseParams?.pwd_id || // fast
 					unsafeWindow.factStat?.wa?.customStatParams?.pwd_id || // drive
 					location.pathname.match(/^\/(?:s|share)\/([a-zA-Z0-9]+)/)?.[1]; // 兜底
-				if (!pwd_id) return message.error("错误：<br/>无法提取分享 ID~");
+				if (!pwd_id) throw new Error("错误：<br/>无法提取分享 ID~");
 
 				const data = [];
 				const batchSize = 15;
@@ -8429,17 +8547,17 @@ button.downloadSubtitle:disabled {
 					const res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
-						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
+						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 						if (res.code == 23018) {
 							const fid = res.message?.match(/\[([a-f0-9]{32})\]/)?.[1];
 							const item = batch.find(item => item.fid === fid);
-							return message.error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
+							throw new Error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
 						}
 
 						if (res.code || res.message) {
-							return message.error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 						}
 					}
 
@@ -8469,7 +8587,7 @@ button.downloadSubtitle:disabled {
 				}];
 				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 		},
 		getSelectedList() {
@@ -8740,8 +8858,8 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => !item.file)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => !item.file)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const data = [];
 				const batchSize = 15;
@@ -8755,17 +8873,17 @@ button.downloadSubtitle:disabled {
 					const res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
-						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
+						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 						if (res.code == 23018) {
 							const fid = res.message?.match(/\[([a-f0-9]{32})\]/)?.[1];
 							const item = batch.find(item => item.fid === fid);
-							return message.error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
+							throw new Error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
 						}
 
 						if (res.code || res.message) {
-							return message.error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 						}
 					}
 
@@ -8798,7 +8916,7 @@ button.downloadSubtitle:disabled {
 				const pwd_id = unsafeWindow.factStat?.ut?.baseParams?.pwd_id || // fast
 					unsafeWindow.factStat?.wa?.customStatParams?.pwd_id || // drive
 					location.pathname.match(/^\/(?:s|share)\/([a-zA-Z0-9]+)/)?.[1]; // 兜底
-				if (!pwd_id) return message.error("错误：<br/>无法提取分享 ID~");
+				if (!pwd_id) throw new Error("错误：<br/>无法提取分享 ID~");
 
 				const data = [];
 				const batchSize = 15;
@@ -8813,17 +8931,17 @@ button.downloadSubtitle:disabled {
 					const res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.downloadLink });
 
 					if (!res || res.code !== 0 || !res.data) {
-						if (res.code == 31001) return message.error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
+						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 						if (res.code == 23018) {
 							const fid = res.message?.match(/\[([a-f0-9]{32})\]/)?.[1];
 							const item = batch.find(item => item.fid === fid);
-							return message.error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
+							throw new Error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
 						}
 
 						if (res.code || res.message) {
-							return message.error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
 						}
 					}
 
@@ -8853,7 +8971,7 @@ button.downloadSubtitle:disabled {
 				}];
 				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 		},
 		getSelectedList() {
@@ -9181,8 +9299,8 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
-			if (selects.every(item => item.Type !== 0)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
+			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.every(item => item.Type !== 0)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const token = this.getToken();
 				const batchSize = 15;
@@ -9202,7 +9320,10 @@ button.downloadSubtitle:disabled {
 								return val;
 							}));
 					});
-					const res = await Promise.all(queue);
+					const res = await Promise.all(queue).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[123云盘] 获取文件下载 URL 失败");
+					});
 					res.forEach(val => {
 						selects[val.index].DownloadUrl = val.downloadUrl;
 					});
@@ -9237,7 +9358,10 @@ button.downloadSubtitle:disabled {
 								return val;
 							}));
 					});
-					const res = await Promise.all(queue);
+					const res = await Promise.all(queue).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[123云盘] 获取文件下载 URL 失败");
+					});
 					res.forEach(val => {
 						selects[val.index].DownloadUrl = val.downloadUrl;
 					});
@@ -9252,7 +9376,7 @@ button.downloadSubtitle:disabled {
 				}]
 				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
 			} else {
-				return message.error("提示：<br/>页面错误~");
+				throw new Error("提示：<br/>页面错误~");
 			}
 		},
 		async getFileUrl(item, index, token, ShareKey) {
@@ -9278,7 +9402,7 @@ button.downloadSubtitle:disabled {
 
 				return { index, downloadUrl: url };
 			} else if (res.code) {
-				if (res.code == 5112) return message.error("提示：<br/>请先登录网盘后再获取链接呢~");
+				if (res.code == 5112) throw new Error("提示：<br/>请先登录网盘后再获取链接呢~");
 				if (res.code == 5113) return { index, downloadUrl: "获取下载地址失败，服务器说：本月免费流量不足，请开通网盘会员~" };
 			} else {
 				return { index, downloadUrl: `获取下载地址失败，${res.message ? "服务器说：" + res.message + "。" : "刷新后再试试吧~"}` };
@@ -9433,8 +9557,8 @@ button.downloadSubtitle:disabled {
 			const mountElem = $(`<${mount} class="${mount}" />`);
 			temp.mount = mountElem;
 
-			unsafeWindow.temp = temp;
-			unsafeWindow.base = base;
+			// unsafeWindow.temp = temp;
+			// unsafeWindow.base = base;
 
 			base.waitForKeyElements(`html:not(:has(> .${mount})) head`, (element) => {
 				if ($(`.${mount}`).length > 0) return;
