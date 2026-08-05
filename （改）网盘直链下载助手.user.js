@@ -358,8 +358,8 @@
 				getCaptchaToken: "https://xluser-ssl.xunlei.com/v1/shield/captcha/init",
 			},
 			mount: {
-				home: `[class^="FileMenu__menu--"]`,
-				share: `[class^="Share__batchActionBox--"]`
+			    home: `[class*="FileMenu__menus--"], [class*="FileMenu__menu--"]`,
+			    share: `[class^="Share__batchActionBox--"]`
 			},
 			dom: {
 				enhance: `+<br/>此方式可以自动设置文件名，然后下载。<br/>此方式的下载请求<b>不会</b>被 IDM 捕获。`,
