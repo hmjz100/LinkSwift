@@ -939,7 +939,7 @@
 		 * @param {Array} [headers] - 自定义请求头参数（可选）
 		 * @returns {Promise<"success"|"fail">} 发送态结果
 		 */
-		async sendLinkToAria2(link, filename, headers) {
+		async sendLinkToAria2(link, filename, headers, relativeDirectory = "") {
 			if (!this.sendLinkToAria2.lock) this.sendLinkToAria2.lock = Promise.resolve();
 			return this.sendLinkToAria2.lock = this.sendLinkToAria2.lock.then(async () => {
 				const list = base.getValue("setting_aria2_rpc");
@@ -952,7 +952,11 @@
 					token: selected.token
 				};
 				const url = `${rpc.domain}:${rpc.port}${rpc.path}`;
-				const dir = (rpc.dir !== null && rpc.dir !== "") ? rpc.dir : undefined;
+				let dir = rpc.dir || undefined;
+				if (relativeDirectory) {
+					if (!dir) return "fail";
+					dir = dir.replace(/[\\/]+$/, "") + "/" + relativeDirectory;
+				}
 				const data = {
 					id: new Date().getTime(),
 					jsonrpc: "2.0",
@@ -3574,7 +3578,7 @@
 						allLink.push(finalink);
 						content.find(".pl-main").append(`<div class="pl-item">
 							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<button class="pl-item-link pl-btn-primary pl-btn-default listener-aria2-download" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Aria2 下载器</span></button>
+							<button class="pl-item-link pl-btn-primary pl-btn-default listener-aria2-download" data-directory="${encodeURIComponent(v.relativeDirectory || "")}" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Aria2 下载器</span></button>
 							<button class="pl-btn-primary pl-btn-info listener-copy listener-tip" data-copy='${finalink}' data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
 						</div>`);
 					}
@@ -8210,6 +8214,45 @@ button.downloadSubtitle:disabled {
 	 * @author hmjz100
 	 */
 	const $quark = {
+		async collectFiles(items) {
+			const files = [];
+			const visited = new Set();
+			const walk = async (entries, relativeDirectory) => {
+				for (const item of entries) {
+					if (visited.has(item.fid)) continue;
+					visited.add(item.fid);
+					if (item.file) {
+						files.push({ ...item, relativeDirectory });
+						continue;
+					}
+					// Keep each cloud folder as one local path component.
+					const name = item.file_name;
+					if (!name || name === "." || name === ".." || /[\\/]/.test(name)) {
+						throw new Error("文件夹名称无法用于本地路径");
+					}
+					const directory = relativeDirectory ? relativeDirectory + "/" + name : name;
+					for (let page = 1; ; page++) {
+						const url = new URL(config.$quark.api.getLink);
+						url.pathname = "/1/clouddrive/file/sort";
+						url.searchParams.set("pdir_fid", item.fid);
+						url.searchParams.set("_page", page);
+						url.searchParams.set("_size", "100");
+						url.searchParams.set("_fetch_total", "1");
+						url.searchParams.set("_sort", "file_type:asc,file_name:asc");
+						const res = await base.get(url.href, { "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
+						if (res?.code !== 0 || !Array.isArray(res.data?.list)) {
+							throw new Error("读取文件夹失败，代码：" + (res?.code ?? "unknown"));
+						}
+						const children = res.data.list;
+						await walk(children, directory);
+						if (children.length < 100) break;
+						await base.sleep(300);
+					}
+				}
+			};
+			await walk(items, "");
+			return files;
+		},
 		addPageListener() {
 			$doc.on("click", ".pl-button-save", async function (e) {
 				e.preventDefault();
@@ -8306,7 +8349,7 @@ button.downloadSubtitle:disabled {
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$quark.api.ua.downloadLink}`, `Referer:https://${location.host}/`, `Cookie:${document.cookie}`]);
+				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$quark.api.ua.downloadLink}`, `Referer:https://${location.host}/`, `Cookie:${document.cookie}`], decodeURIComponent(target.attr("data-directory") || ""));
 				if (res === "success") {
 					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
 				} else {
@@ -8475,6 +8518,13 @@ button.downloadSubtitle:disabled {
 		async getLink() {
 			let selects = this.getSelectedList();
 			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (temp.page === "home" && selects.some(item => !item.file)) {
+				if (temp.mode === "aria2" && !base.getValue("setting_aria2_rpc").find(i => i.default)?.dir) {
+					throw new Error("请先在 Aria2 服务设置中填写保存目录，以保留文件夹结构");
+				}
+				selects = await this.collectFiles(selects);
+				if (!selects.length) throw new Error("所选文件夹中没有文件");
+			}
 			if (selects.every(item => !item.file)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const data = [];
@@ -8505,7 +8555,10 @@ button.downloadSubtitle:disabled {
 
 					// 合并响应数据
 					if (res.data) {
-						data.push(...res.data);
+						data.push(...res.data.map(file => ({
+							...file,
+							relativeDirectory: batch.find(item => item.fid === file.fid)?.relativeDirectory || ""
+						})));
 					}
 					// 更新处理进度
 					proc += batch.length;
