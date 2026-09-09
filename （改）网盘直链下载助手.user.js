@@ -1,9 +1,9 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name              LinkSwift
 // @namespace         github.com/hmjz100
-// @version           1.1.3
+// @version           1.1.4
 // @author            Hmjz100、油小猴
-// @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkY1OUQ7c3RvcC1vcGFjaXR5OjEiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGRDcwMDtzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZCQzAyRDtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuNCwgLTIpIHNjYWxlKDAuOSkiPjxwYXRoIGQ9Ik0xMDMuNiAxMDcuNGMzLjUtMi4yIDguOS02LjEgMTMuOC0xMi41czcuMy0xMi41IDguNS0xNi41Yy41LTEuNyAyLjItNy41IDIuMi0xNC43IDAtMTAuMS0zLjMtMjUuMS0xNS40LTM2LjgtMTQuNS0xNC0zMi4xLTE0LjMtMzUuNy0xNC4zLTggMC0xNS43IDEuOS0yMi42IDUuMkM0NCAyMyAzNS43IDMxLjQgMzAuOCA0MS43Yy0xLjMgMi44LTQgNC43LTcuMSA1LTQgLjMtNy41IDQuNC04LjkgOS42LS41IDEuOS0xLjYgMy41LTMuMSA0LjdDNC40IDY2LjggMCA3NS43IDAgODVjMCA2LjggMi4zIDEzLjEgNi4xIDE4LjIgNS41IDcuNCAxNC4yIDEyLjIgMjQgMTIuMmg0Ny4xYzQuNCAwIDExLS41IDE4LjMtMy41IDMuMi0xLjQgNS45LTMgOC4xLTQuNXoiIGZpbGw9IiNBMDk5RjAiLz48cGF0aCBkPSJNMTE5LjggNjQuM2MuMS0xNy4xLTEwLjQtMjgtMTIuNS0zMC4xQzk1IDIyLjEgNzkuOSAyMS44IDc2LjkgMjEuOGMtMTcuNiAwLTMzLjMgMTAuNS0zOS45IDI2LjctLjYgMS4zLTEuOCAyLjMtMy40IDIuM2gtLjRjLTUuOCAwLTEwLjYgNC44LTEwLjYgMTAuN3YuNWMwIDEuNC0uOCAyLjYtMS45IDMuM0MxMy40IDY5IDguOCA3Ni44IDguOCA4NWMwIDEyLjIgOS45IDIyLjMgMjIuMiAyMi4zaDQ1LjJjMy42LS4xIDE3LjYtLjkgMjkuNi0xMiAyLjktMi44IDEzLjktMTMuNyAxNC0zMXoiIGZpbGw9IiM1NzRBQjgiLz48cGF0aCBkPSJNMTEwLjggNTcuNGwuMiAzLjNjMCAxLjMtMS4xIDIuNC0yLjMgMi40LTEuMyAwLTIuMy0xLjEtMi4zLTIuNGwtLjEtMi44di0uM2MwLTEuMi45LTIuMiAyLjEtMi4zaC4zYy43IDAgMS4zLjMgMS43LjctLjIuMS4zLjUuNCAxLjR6bS0zLjMtMTAuM2MwIDEuMi0xIDIuMy0yLjIgMi4zaC0uMWMtLjggMC0xLjYtLjUtMi0xLjItNC42LTguMy0xMy4zLTEzLjUtMjIuOC0xMy41LTEuMiAwLTIuMy0xLTIuMy0yLjJ2LS4xYzAtMS4yIDEtMi4zIDIuMi0yLjNoLjFhMzAuMzcgMzAuMzcgMCAwIDEgMTUuOCA0LjRjNC42IDIuOCA4LjQgNi44IDExLjEgMTEuNS4xLjMuMi43LjIgMS4xek04OC4zIDczLjhMNzMuNSA5My4yYy0xLjUgMS45LTMuNSAzLjEtNS43IDMuNWgtLjJjLS40LjEtLjguMS0xLjIuMS0uNiAwLTEuMS0uMS0xLjYtLjItMi4yLS40LTQuMi0xLjctNS42LTMuNUw0NC4zIDczLjljLTItMi42LTIuNS01LjQtMS40LTcuNy4xLS4xLjEtLjIuMi0uMiAxLjItMiAzLjUtMy4yIDYuNC0zLjJoNi42di01LjdjMC02LjggNC43LTEyIDEwLjktMTIgNC44IDAgOC41IDIuNiAxMC4zIDcuMi41IDEuMy0uMiAyLjctMS41IDMuMnMtMi44LS4xLTMuMy0xLjRjLTEuMS0yLjctMi45LTQtNS41LTQtMy41IDAtNiAzLTYgN3Y4LjFjMCAuNS0uMiAxLS42IDEuNC0uNi43LTEuNyAxLjEtMi42IDEuMWgtOC40Yy0xLjMgMC0yIC40LTIuMS43LS4yLjQgMCAxLjMuOSAyLjRMNjMuMSA5MGMuOSAxLjIgMi4xIDEuOCAzLjMgMS44czIuMy0uNiAzLjEtMS43bDE0LjgtMTkuM2MuOS0xLjEgMS4xLTIgLjktMi40LS4yLS4zLS45LS43LTIuMS0uN2gtNy42Yy0uOSAwLTEuNy0uNS0yLjEtMS4yLS4zLS40LS40LS44LS40LTEuMyAwLTEuNCAxLjEtMi41IDIuNS0yLjVoNy42YzMuMSAwIDUuNSAxLjMgNi42IDMuNWwuMy43Yy43IDIuMS4xIDQuNi0xLjcgNi45eiIgZmlsbD0iI2ZmZiIvPjwvZz48Zz48cGF0aCBkPSJNMCAxMDAgUTY0IDExNSAxMjggMTAwIEwxMjggMTI4IEwwIDEyOCBaIiBmaWxsPSIjRDMyRjJGIi8+PHBhdGggZD0iTTAgMTAwIFE2NCAxMTUgMTI4IDEwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGRHcmFkaWVudCkiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjY0IiB5PSIxMjEiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksIC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InVybCgjZ29sZEdyYWRpZW50KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InRleHQtc2hhZG93OiAwcHggMXB4IDJweCByZ2JhKDAsMCwwLDAuMyk7Ij7liIYg5LiNIOi1t+OAgOe6ryDpnaAg54ixPC90ZXh0PjwvZz48L3N2Zz4=
+// @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=
 // @description       (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 九大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
 // @description:zh-CN (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 九大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
 // @description:zh-TW (｡>ᴗ•)✧《也許同類型中最好用？》系列 - 一個基於 JavaScript 的網盤檔案下載地址獲取工具✨，基於【網盤直鏈下載助手】改編 | 支援 百度網盤 / 阿里雲盤 / 中國移動雲盤 / 天翼雲盤 / 迅雷雲盤 / 光鴨雲盤 / 夸克網盤 / UC網盤 / 123雲盤 九大平台 | 開源・自用・除廣 | 改介面・擴功能・修Bug | 既超越原版，亦是同類中最好用版本！👋
@@ -14,7 +14,6 @@
 // @website           https://github.com/hmjz100/LinkSwift/
 // @homepageURL       https://github.com/hmjz100/LinkSwift/
 // @homepage          https://github.com/hmjz100/LinkSwift/
-// @support           https://github.com/hmjz100/LinkSwift/issues
 // @supportURL        https://github.com/hmjz100/LinkSwift/issues
 // @require           https://unpkg.com/jquery@3.6.0/dist/jquery.min.js
 // @require           https://unpkg.com/sweetalert2@11.4.8/dist/sweetalert2.min.js
@@ -22,7 +21,6 @@
 // @resource SwalDark https://unpkg.com/@sweetalert2/theme-dark@5.0.26/dark.min.css
 // @require           https://unpkg.com/js-md5@0.7.3/build/md5.min.js
 // @run-at            document-start
-// @early-start
 // @match             *://pan.baidu.com/disk/home*
 // @match             *://yun.baidu.com/disk/home*
 // @match             *://pan.baidu.com/disk/timeline*
@@ -102,8 +100,9 @@
 // @compatible	      Firefox
 // @compatible	      Safari
 // @compatible	      Opera
+// @early-start
 // ==/UserScript==
-// @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=
+
 /**
  * @name LinkSwift
  * @template （改）网盘直链下载助手
@@ -111,7 +110,7 @@
  * @author hmjz100
  * @namespace github.com/hmjz100
  * @description  一个基于 JavaScript 盘的文件下载地址获取工具  支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 九大网盘  代码改自 “网盘直链下载助手”，作者油小猴
- * @version 1.1.3.1-Preview
+ * @version 1.1.4
  * @license AGPL-3.0-or-later
  * @see {@link https://github.com/hmjz100/LinkSwift/ Github 仓库}
  */
@@ -128,7 +127,7 @@
 	const info = {
 		author: GM_info.script?.author,
 		name: GM_info.script?.name,
-		version: (GM_info.script?.version || "1.1.3"),
+		version: (GM_info.script?.version || "1.1.4"),
 		icon: (GM_info.script?.icon || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkY1OUQ7c3RvcC1vcGFjaXR5OjEiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGRDcwMDtzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZCQzAyRDtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuNCwgLTIpIHNjYWxlKDAuOSkiPjxwYXRoIGQ9Ik0xMDMuNiAxMDcuNGMzLjUtMi4yIDguOS02LjEgMTMuOC0xMi41czcuMy0xMi41IDguNS0xNi41Yy41LTEuNyAyLjItNy41IDIuMi0xNC43IDAtMTAuMS0zLjMtMjUuMS0xNS40LTM2LjgtMTQuNS0xNC0zMi4xLTE0LjMtMzUuNy0xNC4zLTggMC0xNS43IDEuOS0yMi42IDUuMkM0NCAyMyAzNS43IDMxLjQgMzAuOCA0MS43Yy0xLjMgMi44LTQgNC43LTcuMSA1LTQgLjMtNy41IDQuNC04LjkgOS42LS41IDEuOS0xLjYgMy41LTMuMSA0LjdDNC40IDY2LjggMCA3NS43IDAgODVjMCA2LjggMi4zIDEzLjEgNi4xIDE4LjIgNS41IDcuNCAxNC4yIDEyLjIgMjQgMTIuMmg0Ny4xYzQuNCAwIDExLS41IDE4LjMtMy41IDMuMi0xLjQgNS45LTMgOC4xLTQuNXoiIGZpbGw9IiNBMDk5RjAiLz48cGF0aCBkPSJNMTE5LjggNjQuM2MuMS0xNy4xLTEwLjQtMjgtMTIuNS0zMC4xQzk1IDIyLjEgNzkuOSAyMS44IDc2LjkgMjEuOGMtMTcuNiAwLTMzLjMgMTAuNS0zOS45IDI2LjctLjYgMS4zLTEuOCAyLjMtMy40IDIuM2gtLjRjLTUuOCAwLTEwLjYgNC44LTEwLjYgMTAuN3YuNWMwIDEuNC0uOCAyLjYtMS45IDMuM0MxMy40IDY5IDguOCA3Ni44IDguOCA4NWMwIDEyLjIgOS45IDIyLjMgMjIuMiAyMi4zaDQ1LjJjMy42LS4xIDE3LjYtLjkgMjkuNi0xMiAyLjktMi44IDEzLjktMTMuNyAxNC0zMXoiIGZpbGw9IiM1NzRBQjgiLz48cGF0aCBkPSJNMTEwLjggNTcuNGwuMiAzLjNjMCAxLjMtMS4xIDIuNC0yLjMgMi40LTEuMyAwLTIuMy0xLjEtMi4zLTIuNGwtLjEtMi44di0uM2MwLTEuMi45LTIuMiAyLjEtMi4zaC4zYy43IDAgMS4zLjMgMS43LjctLjIuMS4zLjUuNCAxLjR6bS0zLjMtMTAuM2MwIDEuMi0xIDIuMy0yLjIgMi4zaC0uMWMtLjggMC0xLjYtLjUtMi0xLjItNC42LTguMy0xMy4zLTEzLjUtMjIuOC0xMy41LTEuMiAwLTIuMy0xLTIuMy0yLjJ2LS4xYzAtMS4yIDEtMi4zIDIuMi0yLjNoLjFhMzAuMzcgMzAuMzcgMCAwIDEgMTUuOCA0LjRjNC42IDIuOCA4LjQgNi44IDExLjEgMTEuNS4xLjMuMi43LjIgMS4xek04OC4zIDczLjhMNzMuNSA5My4yYy0xLjUgMS45LTMuNSAzLjEtNS43IDMuNWgtLjJjLS40LjEtLjguMS0xLjIuMS0uNiAwLTEuMS0uMS0xLjYtLjItMi4yLS40LTQuMi0xLjctNS42LTMuNUw0NC4zIDczLjljLTItMi42LTIuNS01LjQtMS40LTcuNy4xLS4xLjEtLjIuMi0uMiAxLjItMiAzLjUtMy4yIDYuNC0zLjJoNi42di01LjdjMC02LjggNC43LTEyIDEwLjktMTIgNC44IDAgOC41IDIuNiAxMC4zIDcuMi41IDEuMy0uMiAyLjctMS41IDMuMnMtMi44LS4xLTMuMy0xLjRjLTEuMS0yLjctMi45LTQtNS41LTQtMy41IDAtNiAzLTYgN3Y4LjFjMCAuNS0uMiAxLS42IDEuNC0uNi43LTEuNyAxLjEtMi42IDEuMWgtOC40Yy0xLjMgMC0yIC40LTIuMS43LS4yLjQgMCAxLjMuOSAyLjRMNjMuMSA5MGMuOSAxLjIgMi4xIDEuOCAzLjMgMS44czIuMy0uNiAzLjEtMS43bDE0LjgtMTkuM2MuOS0xLjEgMS4xLTIgLjktMi40LS4yLS4zLS45LS43LTIuMS0uN2gtNy42Yy0uOSAwLTEuNy0uNS0yLjEtMS4yLS4zLS40LS40LS44LS40LTEuMyAwLTEuNCAxLjEtMi41IDIuNS0yLjVoNy42YzMuMSAwIDUuNSAxLjMgNi42IDMuNWwuMy43Yy43IDIuMS4xIDQuNi0xLjcgNi45eiIgZmlsbD0iI2ZmZiIvPjwvZz48Zz48cGF0aCBkPSJNMCAxMDAgUTY0IDExNSAxMjggMTAwIEwxMjggMTI4IEwwIDEyOCBaIiBmaWxsPSIjRDMyRjJGIi8+PHBhdGggZD0iTTAgMTAwIFE2NCAxMTUgMTI4IDEwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGRHcmFkaWVudCkiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjY0IiB5PSIxMjEiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksIC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InVybCgjZ29sZEdyYWRpZW50KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InRleHQtc2hhZG93OiAwcHggMXB4IDJweCByZ2JhKDAsMCwwLDAuMyk7Ij7liIYg5LiNIOi1t+OAgOe6ryDpnaAg54ixPC90ZXh0PjwvZz48L3N2Zz4="),
 		mhandler: GM_info.scriptHandler,
 		mversion: GM_info.version,
@@ -139,10 +138,11 @@
 		main: {},
 		page: "",
 		mode: [],
-		links: [],
+		files: [],
 		glinks: [],
 		color: "",
 		request: {},
+		downing: {},
 		colored: false,
 		swalDefault: {
 			position: "center",
@@ -176,7 +176,7 @@
 		timer: 5000,
 		timerProgressBar: true,
 		showCloseButton: true,
-		didOpen: function (toast) {
+		didOpen(toast) {
 			toast.addEventListener("mouseenter", () => {
 				Swal.stopTimer();
 			});
@@ -193,19 +193,19 @@
 	 * 包含 success / error / warning / info / question 等类型。
 	 */
 	const message = {
-		success: function (text) {
+		success(text) {
 			toast.fire({ title: text, icon: "success" });
 		},
-		error: function (text) {
+		error(text) {
 			toast.fire({ title: text, icon: "error" });
 		},
-		warning: function (text) {
+		warning(text) {
 			toast.fire({ title: text, icon: "warning" });
 		},
-		info: function (text) {
+		info(text) {
 			toast.fire({ title: text, icon: "info" });
 		},
-		question: function (text) {
+		question(text) {
 			toast.fire({ title: text, icon: "question" });
 		}
 	};
@@ -224,15 +224,22 @@
 			},
 			dom: {
 				footer: `o(≧▽≦)o 十分感谢您的支持！来给此项目一个 <a href="https://github.com/hmjz100/LinkSwift" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>Star</a> 吧~`,
-				button: {
+				method: {
 					api: {
 						title: "API 下载",
-						footer: `<p>适用于 <a href="https://www.youxiaohou.com/zh-cn/idm.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>IDM</a>，<a href="https://www.youxiaohou.com/zh-cn/ndm.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>NDM</a> 以及浏览器自带下载</p>`
+						footer: `<p>适用于 <a href="https://www.youxiaohou.com/zh-cn/idm.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>IDM</a>，<a href="https://www.youxiaohou.com/zh-cn/ndm.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>NDM</a> 以及浏览器自带下载</p>`,
+						enhance: "通过脚本管理器的跨域请求功能下载文件多个分片，在内存聚合为 blob 地址后，下载文件。<br/><br/>此方法能够向服务器提供正确的请求头，可自动满足部分网盘的请求头要求，而无需手动设置；<br/>支持多线程、智能多分片，可在当前页面显示预估剩余时间、下载进度、速度；<br/><br/>浏览器对此方法的下载线程与文件大小（2GB 内，可能更小）以及系统内存有限制！<br/>下载超过限制的大文件时，进度可能不到 100% 就会导致浏览器卡顿！<br/>因此，非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能！",
+						normal: "通过浏览器直接访问下载地址来下载文件。<br/><br/>此方法无法向服务器提供正确的请求头！所以在服务器对请求头有限制的情况下可能会失败！<br/>点击后需等待浏览器弹出提示才可点击下个下载，否则只会下载后者。适用于支持 iframe 的浏览器",
+						idm: "通过从 IDM 扩展的捕获方法，将下载地址“捕获”给 IDM 使其弹框；<br/><br/>此方法能够向服务器提供正确的请求头，可自动满足部分网盘的请求头要求，而无需手动设置；<br/>理论上仅适用于版本较新的 IDM，<b>使用前请确保您已经配置好 IDM 服务参数。<b>"
 					},
 					aria2: {
 						title: "Aria2 下载",
 						footer: `<p>RPC 适用于 <a href="https://www.youxiaohou.com/zh-cn/motrix.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>Motrix</a>，<a href="https://www.youxiaohou.com/download.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>Aria2 Tools</a>，<a href="https://www.youxiaohou.com/download.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>AriaNgGUI</a></p>
-						<p>命令行适用于 <a href="https://www.youxiaohou.com/zh-cn/xdown.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>XDown</a> 及 <a href="https://www.youxiaohou.com/zh-cn/linux.html#linux-shell" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>Linux Shell 命令行</a></p>`
+						<p>命令行适用于 <a href="https://www.youxiaohou.com/zh-cn/xdown.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>XDown</a> 及 <a href="https://www.youxiaohou.com/zh-cn/linux.html#linux-shell" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>Linux Shell 命令行</a></p>`,
+						manager: {
+							youxiaohou: "访问原作者的 Aria2 管理页面以查看下载任务，功能较少",
+							ariang: "访问 AriaNg 的官方 Demo 以查看下载任务，功能较多"
+						}
 					},
 					curl: {
 						title: "cURL 下载",
@@ -240,11 +247,27 @@
 					},
 					bitcomet: {
 						title: "比特彗星下载",
-						footer: `<p>适用于 <a href="https://www.youxiaohou.com/zh-cn/bitcomet.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>比特彗星</a></p>`
+						footer: `<p>适用于 <a href="https://www.youxiaohou.com/zh-cn/bitcomet.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>比特彗星</a></p>`,
+						normal: "点击打开 BC 地址以手动调起比特彗星下载，右键可复制 BC 地址",
+						sendto: "除非 BC 地址无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"
 					},
 					abdm: {
 						title: "ABDM 下载",
 						footer: `<p>适用于 <a href="https://abdownloadmanager.com/" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>AB Download Manager</a></p>`
+					}
+				},
+				copy: {
+					name: "点击复制文件名",
+					link: "点击复制下载地址",
+					curl: "点击复制 cURL 命令行",
+					aria2: "Aria2 没启用 RPC？点击复制 Aria2 命令行",
+					bitcomet: "点击打开 BC 地址以手动调起比特彗星下载，右键可复制 BC 地址",
+					mirrors: "点击复制镜像地址",
+					all: {
+						link: "点击复制全部下载地址",
+						curl: "点击复制全部 cURL 命令行",
+						aria2: "Aria2 没启用 RPC？点击复制全部 Aria2 命令行",
+						bitcomet: "点击复制全部 BC 地址，可粘贴到比特彗星中下载"
 					}
 				},
 				themes: [
@@ -278,6 +301,9 @@
 					{ color: "#bca280", name: "度盘|午后棕" },
 					{ color: "#59524c", name: "文派|咖啡灰" }
 				]
+			},
+			icon: {
+				idm: "data:image/png;base64,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"
 			}
 		},
 		$baidu: {
@@ -385,9 +411,10 @@
 		$quark: {
 			api: {
 				ua: {
-					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) quark-cloud-drive/3.20.0 Chrome/112.0.5615.165 Electron/24.1.3.8 Safari/537.36 Channel/pckk_other_ch"
+					main: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 QuarkPC/6.9.7.761 QuarkCloudDrivePC/6.9.7.761 quark-cloud-drive/2.5.40"
 				},
-				getLink: "https://drive-pc.quark.cn/1/clouddrive/file/download?entry=ft&fr=pc&pr=ucpro"
+				getLink: "https://drive-pc.quark.cn/1/clouddrive/file/download?pr=ucpro&fr=pc&sys=win32&ve=6.9.7.761",
+				getSocialToken: "https://drive-social-api.quark.cn/1/clouddrive/chat/conv/file/acquire_dl_token?pr=ucpro&fr=pc&sys=win32&ve=6.9.7.761&fr=win&la=zh-CN&ch=pckk%40product_guanwan"
 			},
 			mount: {
 				home: ".btn-operate .btn-main",
@@ -401,9 +428,10 @@
 		$uc: {
 			api: {
 				ua: {
-					downloadLink: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) uc-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_ch"
+					main: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) uc-cloud-drive/1.8.8 Chrome/100.0.4896.160 Electron/18.3.5.16-b62cf9c50d Safari/537.36 Channel/ucpan_other_ch",
+					secCh: `"Not=A?Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"`
 				},
-				getLink: "https://pc-api.uc.cn/1/clouddrive/file/download?entry=ft&fr=pc&pr=UCBrowser"
+				getLink: "https://pc-api.uc.cn/1/clouddrive/file/download?pr=UCBrowser&fr=pc&sys=win32&ve=1.8.8"
 			},
 			mount: {
 				home: ".btn-operate .btn-main",
@@ -416,13 +444,18 @@
 		},
 		$123pan: {
 			api: {
+				ua: {
+					main: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 123pan/3.2.3 Chrome/108.0.5359.215 Electron/22.3.27 Safari/537.36 WebView/1.0",
+					os: "123pan/v323(Windows10.0.26200)",
+					version: "323",
+					secCh: `"Not?A_Brand";v="8", "Chromium";v="108"`
+				},
 				getLink: "https://api.123pan.cn/api/v2/file/download_info",
-				getShareLink: "https://api.123pan.cn/api/v2/share/download/info"
+				getShareLink: "https://api.123pan.cn/api/v2/share/download/info",
 			},
 			mount: {
 				home: ".home-operator .home-operator-button-group",
-				share: ".conter .rightInfo",
-				shareNew: ".content .content-header-container-wrap .rightInfo, .single-file-sharing-container-content-file-operate"
+				share: ".content .content-header-container-wrap .rightInfo, .single-file-sharing-container-content-file-operate"
 			},
 			dom: {
 				enhance: `+<br/>此方式的下载请求<b>不会</b>被 IDM 捕获。`,
@@ -566,8 +599,8 @@
 				try {
 					GM_setClipboard(text, "text");
 					return true;
-				} catch (err) {
-					console.error('无法复制内容到剪贴板:', err);
+				} catch (e) {
+					base.console.error('无法复制内容到剪贴板:', e);
 				}
 			}
 
@@ -576,8 +609,8 @@
 				try {
 					await GM.setClipboard(text, "text");
 					return true;
-				} catch (err) {
-					console.error('无法复制内容到剪贴板:', err);
+				} catch (e) {
+					base.console.error('无法复制内容到剪贴板:', e);
 				}
 			}
 
@@ -587,8 +620,8 @@
 				try {
 					await navigator.clipboard.writeText(text);
 					return true;
-				} catch (err) {
-					console.error('无法复制内容到剪贴板:', err);
+				} catch (e) {
+					base.console.error('无法复制内容到剪贴板:', e);
 				}
 			}
 
@@ -611,8 +644,8 @@
 				document.body.removeChild(textArea);
 
 				if (successful) return true;
-			} catch (err) {
-				console.error('无法复制内容到剪贴板:', err);
+			} catch (e) {
+				base.console.error('无法复制内容到剪贴板:', e);
 			}
 
 			return false;
@@ -784,294 +817,95 @@
 		},
 
 		/**
+		 * Cookie 标准化
+		 * @author hmjz100
+		 * @description 将 Cookie 或 Set-Cookie 解析为统一的键值对对象
+		 * @param {String|Array} input - Cookie 字符串或数组
+		 * @param {String} type - 头部键名（如 'cookie' 或 'set-cookie'）
+		 * @returns {Object} 解析后的键值对对象
+		 */
+		standCookies(input, type = 'cookie') {
+			if (!input) return {};
+			const cookies = {};
+			const lines = Array.isArray(input) ? input : [input];
+			const isSetCookie = type.includes('set-cookie');
+			// 拆分可能被逗号合并的多个 Cookie 块
+			const blocks = lines.flatMap(line => line.split(','));
+			blocks.forEach(block => {
+				const parts = block.split(';');
+				if (isSetCookie) {
+					// Set-Cookie，第一项永远是真实的 Cookie 名值对
+					const mainPair = parts[0].trim();
+					if (!mainPair.includes('=')) return;
+					const [key, ...valueParts] = mainPair.split('=');
+					const trimmedKey = key.trim();
+					// 兜底，排除极少数非标准后端把控制属性写在开头的情况
+					if (/^(path|domain|expires|max-age|samesite|secure|httponly)$/i.test(trimmedKey)) return;
+					cookies[trimmedKey] = valueParts.join('=').trim();
+				} else {
+					// 普通 Cookie，每一个分号隔开的都是真实的键值对
+					parts.forEach(part => {
+						if (!part.includes('=')) return;
+						const [key, ...valueParts] = part.split('=');
+						cookies[key.trim()] = valueParts.join('=').trim();
+					});
+				}
+			});
+			return cookies;
+		},
+		/**
 		 * 头标准化
 		 * @author hmjz100
-		 * @description 标准化请求头、响应头的键，使用驼峰命名
-		 * @param {String|Object} headers - 请求头、响应头的字符串或对象
+		 * @description 标准化头键名（大驼峰），同名键转数组，Cookie 类头部格式化为对象
+		 * @param {String|Object} headers - 请求头文本或对象
 		 * @param {Boolean} withServer - 是否添加默认头字段
 		 * @param {Boolean} withOrigin - 是否添加来源头字段
+		 * @param {Boolean} withCookie - 是否格式化 Cookie 字段
 		 * @returns {Object} 标准化后的 Headers
 		 */
-		standHeaders(headers = {}, withServer = true, withOrigin = true) {
+		standHeaders(headers = {}, withServer = true, withOrigin = true, withCookie = false) {
 			if (!headers) return {};
+			// 统一数据源，转换为纯粹的键值数组 [ [key, value], [key, value] ]
+			const pairs = [];
 			if (typeof headers === 'string') {
-				const rawHeaders = {};
 				headers.split(/[\r\n]+/).forEach(line => {
-					if (!line.trim() || !line.includes(':')) return;
-					const [key, ...valueParts] = line.split(':');
-					rawHeaders[key.trim().toLowerCase()] = valueParts.join(':').trim();
+					if (!line.includes(':')) return;
+					const [key, ...valParts] = line.split(':');
+					pairs.push([key, valParts.join(':')]);
 				});
-				headers = rawHeaders;
+			} else {
+				for (const key in headers) {
+					const val = headers[key];
+					// 如果值是纯对象（非数组），转字符串
+					const value = (typeof val === 'object' && !Array.isArray(val)) ? JSON.stringify(val) : val;
+					pairs.push([key, value]);
+				}
 			}
 			const newHeaders = {};
-			for (const key in headers) {
-				let value
-				if (this.isType(headers[key]) === "object") value = JSON.stringify(headers[key]);
-				else value = String(headers[key]);
-				newHeaders[key.toLowerCase().split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("-")] = value;
-			}
-			if (!withServer) return newHeaders;
-			return {
+			// 处理大驼峰转换和同名键合并
+			pairs.forEach(([key, value]) => {
+				const normKey = key.trim().toLowerCase().split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join("-");
+				const valStr = typeof value === 'string' ? value.trim() : value;
+				if (newHeaders[normKey]) {
+					newHeaders[normKey] = [].concat(newHeaders[normKey], valStr);
+				} else {
+					newHeaders[normKey] = valStr;
+				}
+			});
+			// 格式化 Cookie 属性
+			if (withCookie) for (const key in newHeaders) if (key.toLowerCase().includes('cookie')) newHeaders[key] = this.standCookies(newHeaders[key], key.toLowerCase());
+			return withServer ? {
 				"Accept": "*/*",
 				"User-Agent": navigator.userAgent,
-				"Origin": withOrigin ? location.origin : "",
-				"Referer": withOrigin ? `${location.origin}/` : "",
+				...(withOrigin ? { "Origin": location.origin, "Referer": `${location.origin}/` } : {}),
 				...newHeaders
-			};
-		},
-
-		/**
-		 * 生成 cURL 下载命令
-		 * @author 油小猴
-		 * @author hmjz100
-		 * @description 根据终端类型生成对应 curl 命令，支持断点续传，自动处理文件名特殊字符
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {String} [headers] - 自定义请求头参数（可选）
-		 * @returns {String} 编码后的 curl 命令字符串
-		 */
-		convertLinkToCurl(link, filename, headers) {
-			const terminal = base.getValue("setting_curl_terminal");
-			filename = base.fixFilename(filename);
-			return `${terminal !== "wp" ? "curl" : "curl.exe"} -L -C - "${link}" -o "${filename}"${headers ? (" " + headers) : ""}`;
-		},
-
-		/**
-		 * 生成 Aria2 下载命令
-		 * @author 油小猴
-		 * @author hmjz100
-		 * @description 将链接转换为 Aria2 格式命令，自动处理文件名特殊字符
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {String} [headers] - 自定义请求头参数（可选）
-		 * @returns {String} 编码后的 aria2c 命令字符串
-		 */
-		convertLinkToAria2(link, filename, headers) {
-			filename = base.fixFilename(filename);
-			return `aria2c "${link}" --out "${filename}"${headers ? (" " + headers) : ""}`;
-		},
-
-		/**
-		 * 生成 BC 协议下载链接
-		 * @author 油小猴
-		 * @author hmjz100
-		 * @description 将链接转换为 BC 协议格式，自动处理 URL 编码
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {String} [headers] - 自定义请求头参数（可选）
-		 * @returns {String} 编码后的 BC 协议 URL
-		 */
-		convertLinkToBitComet(link, filename, headers) {
-			filename = base.fixFilename(filename);
-			const bc = `AA/${encodeURIComponent(filename)}/?url=${encodeURIComponent(link)}${headers ? ("&" + headers) : ""}ZZ`;
-			return `bc://http/${base.encodeBase(bc)}`;
-		},
-
-		/**
-		 * 发送链接到 IDM 下载器
-		 * @author hmjz100
-		 * @author Night-stars-1
-		 * @description IDM 下载必备
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {Array} [headers] - 自定义请求头参数（可选）
-		 * @returns {Promise<"success"|"fail">} 发送态结果
-		 */
-		async sendLinkToIDM(link, filename, filesize, headers = {}) {
-			const rpc = base.getValue("setting_idm_rpc").find(i => i.default);
-			if (!this.sendLinkToIDM.lock) this.sendLinkToIDM.lock = Promise.resolve();
-			return this.sendLinkToIDM.lock = this.sendLinkToIDM.lock.then(async () => {
-				headers = this.standHeaders(headers, true, false);
-
-				if (!this.sendLinkToIDM.seq) this.sendLinkToIDM.seq = 1;
-				const seq = this.sendLinkToIDM.seq;
-				const time = Date.now();
-				const url = `http://127.0.0.1:1001/client/${rpc.id}?seq=${seq}`;
-				const ext = base.getExtension(filename);
-
-				const headersText = Object.entries(headers).map(([key, value]) => `${key}: ${value}`).join("\n") + "\n"; // 坑1：IDM 对 Header 的解码比较死板，最后不加换行不肯解析
-
-				function format(key, val) {
-					if (val === undefined || val === null) return "";
-					const strVal = String(val);
-					const len = new Blob([strVal]).size; // 坑2：使用 blob.size，而不是 length
-					return `${key}=${len}:${strVal}`;
-				};
-
-				const fields = [
-					format(4, ext), // 4: 文件类型
-					format(6, link), // 6: 链接
-					format(7, location.origin), // 7: 来源页面（“该文件来自网页”）
-					format(11, headersText), // 11: 请求头
-					format(100, filename), // 100: 文件名
-					format(122, 4), // 122: 代理
-				];
-
-				// 坑3：神秘的请求格式
-				// MSG# {请求指示} #13#1# {10241/20xx}(是/否 使用扩展提供的文件信息) : {?}(可能是距离扩展启动的时间?) :0: {当前时间戳} :0:1: {2/1}(是/否 优先弹窗，再获取文件信息) : {文件大小} :0,{表单}(格式如上);
-				const data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:2:${filesize}:0,${fields.join(",")};`;
-
-				const request = base.post(url, data, {}, "text", false).catch(() => false);
-				const timeout = new Promise((_, reject) => {
-					setTimeout(() => {
-						if (request.abort) request.abort();
-						reject(new Error("timeout"));
-					}, 15 * 1000);
-				})
-
-				const res = await Promise.race([request, timeout]).catch(() => false);
-
-				if (res && res.endsWith(`${seq}:3;`)) {
-					this.sendLinkToIDM.seq++;
-					return "success";
-				};
-				return "fail";
-			});
-		},
-
-		/**
-		 * 发送链接到 Aria2 下载器
-		 * @author 油小猴
-		 * @author hmjz100
-		 * @description Aria2 下载必备
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {Array} [headers] - 自定义请求头参数（可选）
-		 * @returns {Promise<"success"|"fail">} 发送态结果
-		 */
-		async sendLinkToAria2(link, filename, headers) {
-			if (!this.sendLinkToAria2.lock) this.sendLinkToAria2.lock = Promise.resolve();
-			return this.sendLinkToAria2.lock = this.sendLinkToAria2.lock.then(async () => {
-				const list = base.getValue("setting_aria2_rpc");
-				const selected = list.find(i => i.default);
-				const rpc = {
-					domain: selected.domain,
-					port: selected.port,
-					path: selected.path,
-					dir: selected.dir,
-					token: selected.token
-				};
-				const url = `${rpc.domain}:${rpc.port}${rpc.path}`;
-				const dir = (rpc.dir !== null && rpc.dir !== "") ? rpc.dir : undefined;
-				const data = {
-					id: new Date().getTime(),
-					jsonrpc: "2.0",
-					method: "aria2.addUri",
-					params: [[link], {
-						dir,
-						out: filename,
-						header: headers
-					}]
-				};
-				if (rpc.token) data.params.unshift(`token:${rpc.token}`);
-				try {
-					const res = await base.post(url, data, { "Accept": "application/json", "Content-Type": "application/json;charset=UTF-8" }, "json", false);
-					if (res.result) return "success";
-					return "fail";
-				} catch {
-					return "fail";
-				}
-			});
-		},
-
-		/**
-		 * 发送链接到比特彗星下载器
-		 * @author hmjz100
-		 * @description 比特彗星下载必备
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {Array} [headers] - 自定义请求头参数（可选）
-		 * @returns {Promise<"success"|"fail">} 发送态结果
-		 */
-		async sendLinkToBitcomet(link, filename, headers) {
-			if (!this.sendLinkToBitcomet.lock) this.sendLinkToBitcomet.lock = Promise.resolve();
-			return this.sendLinkToBitcomet.lock = this.sendLinkToBitcomet.lock.then(async () => {
-				const list = base.getValue("setting_bitcomet_rpc");
-				const selected = list.find(i => i.default);
-				const rpc = {
-					domain: selected.domain,
-					port: selected.port,
-					path: selected.path,
-					dir: selected.dir,
-					authName: selected.authName,
-					authPass: selected.authPass,
-				};
-				const url = `${rpc.domain}:${rpc.port}${rpc.path}`;
-				const data = new URLSearchParams();
-				data.append("url", link);
-				if (rpc.dir !== null && rpc.dir !== "") data.append("save_path", rpc.dir);
-				data.append("file_name", filename);
-				data.append("connection", 200);
-				if (headers && base.isType(headers) === "object") {
-					for (const [key, value] of Object.entries(headers)) {
-						data.append(key, value);
-					}
-				}
-				try {
-					const res = await base.post(url, data, {
-						"Authorization": `Basic ${base.encodeBase(rpc.authName + ":" + rpc.authPass)}`,
-						"Content-Type": "application/x-www-form-urlencoded",
-						"Cache-Control": "max-age=0",
-						"Origin": `${rpc.domain}:${rpc.port}`,
-						"Referer": `${rpc.domain}:${rpc.port}/panel/task_add_httpftp`,
-					}, "text", false);
-					if (res && res.includes("Add task failed!")) {
-						return "fail";
-					} else {
-						return "success";
-					}
-				} catch {
-					return "success";
-				}
-			});
-		},
-
-		/**
-		 * 发送链接到 AB Download Manager 下载器
-		 * @author hmjz100
-		 * @description AB Download Manager 下载必备
-		 * @param {String} link - 下载链接
-		 * @param {String} filename - 文件名
-		 * @param {Array} [headers] - 自定义请求头参数（可选）
-		 * @returns {Promise<"success"|"fail">} 发送态结果
-		 */
-		async sendLinkToABDM(link, filename, headers) {
-			if (!this.sendLinkToABDM.lock) this.sendLinkToABDM.lock = Promise.resolve();
-			return this.sendLinkToABDM.lock = this.sendLinkToABDM.lock.then(async () => {
-				headers = this.standHeaders(headers);
-				const list = base.getValue("setting_abdm_rpc");
-				const selected = list.find(i => i.default);
-				const rpc = {
-					domain: selected.domain,
-					port: selected.port,
-					dir: selected.dir
-				};
-				const url = `${rpc.domain}:${rpc.port}/start-headless-download`;
-				const data = {
-					"downloadSource": {
-						"name": filename,
-						"description": "LinkSwift",
-						"link": link,
-						"headers": headers
-					},
-					"name": filename
-				}
-				if (headers["Referer"]) data["downloadSource"]["downloadPage"] = headers["Referer"];
-				if (rpc.dir) data.folder = rpc.dir;
-				try {
-					const res = await base.post(url, data, { "Content-Type": "text/plain;charset=UTF-8" }, "text", false);
-					if (res === "OK") return "success";
-					return "fail";
-				} catch {
-					return "fail";
-				}
-			});
+			} : newHeaders;
 		},
 
 		/**
 		 * Blob 文件下载
 		 * @author 油小猴
-		 * @description 通过创建临时链接实现文件下载
+		 * @description 通过创建临时地址实现文件下载
 		 * @param {Blob} blob - 要下载的 Blob 对象
 		 * @param {String} filename - 下载时提示保存的文件名
 		 */
@@ -1097,8 +931,7 @@
 		xmlHttpRequest(option) {
 			const xmlHttpRequest = (typeof GM_xmlhttpRequest === "function") ? GM_xmlhttpRequest : (typeof GM?.xmlHttpRequest === "function") ? GM.xmlHttpRequest : null;
 			if (!xmlHttpRequest || base.isType(xmlHttpRequest) !== "function") throw new Error("GreaseMonkey 兼容 XMLHttpRequest 不可用。");
-
-			return xmlHttpRequest({ withCredentials: true, ...option });;
+			return xmlHttpRequest({ withCredentials: true, ...option });
 		},
 
 		/**
@@ -1111,9 +944,10 @@
 		 * @param {Object} headers - 请求头配置
 		 * @param {String} [type="json"] - 响应类型（支持 `json`, `blob` 等）
 		 * @param {Boolean} [withOrigin=true] - 是否携带跨域信息
+		 * @param {Boolean} [full=false] - 是否返回完整请求信息
 		 * @returns {Promise} 包含响应数据的 `Promise` 对象
 		 */
-		async post(url, data, headers, type = "json", withOrigin = true) {
+		async post(url, data, headers, type = "json", withOrigin = true, full = false) {
 			let _data = data;
 			if (this.isType(data) === "object" || this.isType(data) === "array") {
 				data = JSON.stringify(data);
@@ -1125,15 +959,14 @@
 			let request
 			const promise = new Promise((resolve, reject) => {
 				request = base.xmlHttpRequest({
-					url, headers, data,
-					method: "POST", responseType: type,
+					method: "POST", url, headers, data, responseType: type, anonymous: false,
 					onloadstart: () => {
-						base.console.info("【LinkSwift】Post(start)\n请求地址：" + url + "\n请求数据：", _data, "\n请求头部：", headers);
+						base.console.info("【LinkSwift】Post(start)\n请求地址：" + url + "\n请求数据：", _data, "\n请求头部：", base.standHeaders(headers, false, false, true));
 					},
 					onload: (res) => {
 						// 转换 Headers 到 Object
 						const rawHeaders = res.responseHeaders || (request?.getAllResponseHeaders?.() || "") || "";
-						res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false);
+						res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false, true);
 
 						if (type === "blob") {
 							base.console.info("【LinkSwift】Post(load) Blob\n请求地址：" + url + "\n请求数据：", _data, "\n请求结果：", res);
@@ -1152,8 +985,8 @@
 							if (this.isType(res.response) === "object") res.responseDecode = res.response;
 						}
 
-						base.console.info("【LinkSwift】Post(load)\n请求地址：" + url + "\n请求数据：", _data, "\n请求头部：", headers, "\n请求结果：", res);
-						resolve(res.responseDecode ?? res.response ?? res.responseText);
+						base.console.info("【LinkSwift】Post(load)\n请求地址：" + url + "\n请求数据：", _data, "\n请求头部：", base.standHeaders(headers, false, false, true), "\n请求结果：", res);
+						resolve(full ? res : res.responseDecode ?? res.response ?? res.responseText);
 					},
 					onerror: (error) => {
 						let msg = "请求失败";
@@ -1162,7 +995,7 @@
 						reject(new Error(msg));
 					}
 				});
-			})
+			});
 			if (request) {
 				const methods = Object.getOwnPropertyNames(request).filter(key => typeof request[key] === 'function' && !promise.hasOwnProperty(key) && !['then', 'catch', 'finally'].includes(key)); // 自动收集 request 上的函数属性进行绑定，并能智能排除 Promise 原生方法
 				methods.forEach(method => { promise[method] = (...args) => request[method](...args); }); // 动态绑定到 Promise
@@ -1186,15 +1019,14 @@
 			let request
 			const promise = new Promise((resolve, reject) => {
 				request = base.xmlHttpRequest({
-					url, headers,
-					method: "GET", responseType: type,
+					method: "GET", url, headers, responseType: type, anonymous: false,
 					onloadstart: () => {
-						base.console.info("【LinkSwift】Get(start)\n请求地址：" + url + "\n请求头部：", headers);
+						base.console.info("【LinkSwift】Get(start)\n请求地址：" + url + "\n请求头部：", base.standHeaders(headers, false, false, true));
 					},
 					onload: (res) => {
 						// 转换 Headers 到 Object
 						const rawHeaders = res.responseHeaders || (request?.getAllResponseHeaders?.() || "") || "";
-						res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false);
+						res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false, true);
 
 						if (type === "blob") {
 							base.console.info("【LinkSwift】Get(load) Blob\n请求地址：" + url, "\n请求结果：", res);
@@ -1220,7 +1052,7 @@
 						reject(new Error(msg));
 					}
 				});
-			})
+			});
 			if (request) {
 				const methods = Object.getOwnPropertyNames(request).filter(key => typeof request[key] === 'function' && !promise.hasOwnProperty(key) && !['then', 'catch', 'finally'].includes(key)); // 自动收集 request 上的函数属性进行绑定，并能智能排除 Promise 原生方法
 				methods.forEach(method => { promise[method] = (...args) => request[method](...args); }); // 动态绑定到 Promise
@@ -1242,17 +1074,15 @@
 				const method = usingGET ? "Get" : "Head";
 				let _aborted = false;
 				const request = base.xmlHttpRequest({
-					method: method.toUpperCase(),
-					url,
-					headers,
+					method: method.toUpperCase(), url, headers, anonymous: false,
 					onloadstart: () => {
-						base.console.info(`【LinkSwift】Head${usingGET ? " Get" : ""}(start)\n请求地址：${url}\n请求头部：`, headers);
+						base.console.info(`【LinkSwift】Head${usingGET ? " Get" : ""}(start)\n请求地址：${url}\n请求头部：`, base.standHeaders(headers, false, false, true));
 					},
-					onload: function (res) {
+					onload(res) {
 						if (!_aborted) {
 							// 转换 Headers 到 Object
 							const rawHeaders = res.responseHeaders || (request?.getAllResponseHeaders?.() || "") || "";
-							res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false);
+							res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false, true);
 
 							base.console.info(`【LinkSwift】Head${usingGET ? " Get" : ""}(load)\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
 
@@ -1265,14 +1095,14 @@
 							resolve(res);
 						}
 					},
-					onreadystatechange: function (res) {
+					onreadystatechange(res) {
 						if (res.readyState === 2) { // HEADERS_RECEIVED
 							_aborted = true;
 							if (request && request.abort) request.abort(); // 主动停止接收数据，适配某些不给用 HEAD 请求又不肯 range 头部的后端
 
 							// 转换 Headers 到 Object
 							const rawHeaders = res.responseHeaders || (request?.getAllResponseHeaders?.() || "") || "";
-							res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false);
+							res.responseHeaders = base.standHeaders(typeof rawHeaders === 'string' ? rawHeaders.trim() : "", false, false, true);
 
 							base.console.info(`【LinkSwift】Head${usingGET ? " Get" : ""}(load) RS2\n请求地址：${res.finalUrl}\n响应状态：${res.status}\n响应内容：`, res);
 
@@ -1284,10 +1114,10 @@
 							resolve(res);
 						}
 					},
-					onerror: function (err) {
+					onerror(error) {
 						if (!_aborted) {
-							base.console.error(`【LinkSwift】Head${usingGET ? " Get" : ""}(error)\n请求出现错误，可能是网络问题。`, err);
-							reject(err);
+							base.console.error(`【LinkSwift】Head${usingGET ? " Get" : ""}(error)\n请求出现错误，可能是网络问题。`, error);
+							reject(error);
 						}
 					}
 				});
@@ -1302,8 +1132,8 @@
 		 * @param {String} url - 初始请求地址
 		 * @param {Object} headers - 请求头配置
 		 * @param {Boolean} usingGET - 是否使用 GET
-		 * @param {Boolean} returnURL - 是否只返回链接而不是 res
-		 * @returns {Promise<String>} 最终 URL 地址
+		 * @param {Boolean} returnURL - 是否只返回地址而不是 res
+		 * @returns {Promise<String>} 最终地址
 		 */
 		getFinal(url, headers = {}, usingGET = false, returnURL = true) {
 			return this.head(url, headers, usingGET)
@@ -1429,8 +1259,7 @@
 
 											resData = await new Promise((s, j) => {
 												const xhr = base.xmlHttpRequest({
-													url, method: "GET", responseType: "arraybuffer",
-													headers: { ...headers, "Range": `bytes=${start}-${end}` },
+													method: "GET", url, headers: { ...headers, "Range": `bytes=${start}-${end}` }, responseType: "arraybuffer", anonymous: false,
 													onloadstart() {
 														startTime = Date.now(); // 拿到首字节开始为当前块计时
 													},
@@ -1569,7 +1398,7 @@
 						} else {
 							// 不支持 Range，回退
 							const xhr = base.xmlHttpRequest({
-								url: url, headers, method: "GET", responseType: "blob",
+								method: "GET", url, headers, responseType: "blob", anonymous: false,
 								onprogress: (progress) => {
 									if (status.aborted) return;
 
@@ -1668,12 +1497,11 @@
 					params: [`token:${rpc.token}`]
 				};
 				base.xmlHttpRequest({
-					method: "POST", url, headers: {}, data: JSON.stringify(rpcData),
-					responseType: "json",
+					method: "POST", url, headers: {}, data: JSON.stringify(rpcData), responseType: "json", anonymous: false,
 					onloadstart() {
 						base.console.info("【LinkSwift】Post(start) Aria2Test\n请求地址：" + url + "\n请求内容：", rpcData);
 					},
-					onload: function (res) {
+					onload(res) {
 						base.console.info("【LinkSwift】Post(load) Aria2Test\n请求地址：" + url + "\n请求结果：", res);
 						if (!res.response) return resolve("fail");
 						if (res.response?.error) {
@@ -1682,8 +1510,8 @@
 							resolve("success");
 						}
 					},
-					onerror: function (err) {
-						base.console.error("【LinkSwift】Post(error) Aria2Test\n请求失败", err);
+					onerror(error) {
+						base.console.error("【LinkSwift】Post(error) Aria2Test\n请求失败", error);
 						resolve("fail");
 					},
 				});
@@ -1703,18 +1531,17 @@
 				const rpc = { domain, port };
 				const url = `${rpc.domain}:${rpc.port}/ping`;
 				base.xmlHttpRequest({
-					method: "POST", url, headers: {}, data: new Date().getTime(),
-					responseType: "text",
+					method: "POST", url, headers: {}, data: new Date().getTime(), responseType: "text", anonymous: false,
 					onloadstart() {
 						base.console.info("【LinkSwift】Post(start) ABDMTest\n请求地址：" + url + "\n请求内容：", new Date().getTime());
 					},
-					onload: function (res) {
+					onload(res) {
 						base.console.info("【LinkSwift】Post(load) ABDMTest\n请求地址：" + url + "\n请求结果：", res);
 						if (!res.response || res.response !== "pong") return resolve("fail");
 						resolve("success");
 					},
-					onerror: function (err) {
-						base.console.error("【LinkSwift】Post(error) ABDMTest\n请求失败", err);
+					onerror(error) {
+						base.console.error("【LinkSwift】Post(error) ABDMTest\n请求失败", error);
 						resolve("fail");
 					},
 				});
@@ -1726,12 +1553,13 @@
 		 * @author 油小猴
 		 * @description 中止所有进行中的请求，清除进度记录和定时器
 		 */
-		_resetAllData() {
-			temp.links = [];
-			$.each(temp.request, function (key) {
+		_resetAllData(keepFiles = false) {
+			if (!keepFiles) temp.files = [];
+			if (Object.keys(temp.request).length > 0) Object.keys(temp.request).forEach(key => {
 				(temp.request[key]).abort();
 			});
 			temp.request = {};
+			temp.downing = {};
 		},
 
 		/**
@@ -1741,6 +1569,7 @@
 		 */
 		_resetData(i) {
 			temp.request[i] && temp.request[i].abort();
+			delete temp.downing[i];
 		},
 
 		/**
@@ -1775,31 +1604,28 @@
 		 * @param {String} id - 样式元素 ID
 		 * @param {"style"|"link"} tag - 标签类型（`style` 或 `link`）
 		 * @param {String} css - CSS 内容或外链 URL
-		 * @param {String} [element=".{mount}"] - 定位基准元素选择器
+		 * @param {String} [_element=".{mount}"] - 定位基准元素选择器
 		 * @param {"before"|"after"|"prepend"|"append"} [position="append"] - 插入位置
 		 */
-		addStyle(id, tag = "style", css, element = `.${mount}`, position = "append") {
-			base.waitForKeyElements(element, (element) => {
+		addStyle(id, tag = "style", css, _element = `.${mount}`, position = "append") {
+			base.waitForKeyElements(_element, (element) => {
+				//const darkrender = $(".darkreader").length > 0 && this.isType(_element) === "string" && _element.includes(mount);
 				const $styleDom = $(`[${mount}="${id}"], #${id}`);
 				const $style = $(`<${tag}>`, {
 					rel: "stylesheet",
-					id: id,
-					[mount]: id
+					[mount]: id,
+					//...darkrender ? { class: "darkreader" } : {} // 根据页面是否有 Dark Reader 类名的元素来决定是否加入 Dark Reader 豁免类名
 				});
 				tag === "style" ? $style.html(css.trim().replace(/\t/g, "").replace(/\r\n|\n\r|\n|\r/g, "\n").replace(/\n+/g, "\n")) : $style.attr("href", css);
 				if ($styleDom.length) {
 					$styleDom.replaceWith($style);
-					// base.console.info($style[0]);
 					return true;
 				}
-				if (position === "before") {
-					element.before($style);
-				} else if (position === "after") {
-					element.after($style);
-				} else if (position === "prepend") {
-					element.prepend($style);
-				} else {
-					element.append($style);
+				switch (position) {
+					case "before": element.before($style); break;
+					case "after": element.after($style); break;
+					case "prepend": element.prepend($style); break;
+					case "append": default: element.append($style); break;
 				}
 				// return true;
 			}, true);
@@ -1893,7 +1719,7 @@
 			});
 			// 处理 colorMap
 			if (type === "other") {
-				colorMap.forEach(function (colorPair) {
+				colorMap.forEach(colorPair => {
 					const oldColor = colorPair[0];
 					const newColor = colorPair[1];
 					// 生成旧颜色的三种形式：原样、全大写、全小写
@@ -1912,7 +1738,7 @@
 				return cssText;
 			}
 			if (colorMap) {
-				colorMap.forEach(function (colorPair) {
+				colorMap.forEach(colorPair => {
 					const oldColor = colorPair[0];
 					const newColor = colorPair[1];
 					// 生成三种形式
@@ -2025,7 +1851,7 @@
 			};
 
 			// 处理原生 SVG 标签
-			base.waitForKeyElements("svg", ($svg) => {
+			base.waitForKeyElements("svg:not(.pl-icon, [data-pl-colored])", ($svg) => {
 				const el = $svg[0];
 				if (el.getAttribute("data-pl-colored") === temp.color) return false;
 
@@ -2253,6 +2079,23 @@
 			}
 		},
 
+		_idmHotUpdate() {
+			const rawValue = base.getValue("setting_idm_rpc");
+			const valueType = this.isType(rawValue);
+			if (valueType === "array") {
+				const defaultItem = rawValue.find(item => item.default === true);
+				if (defaultItem) base.setValue("setting_idm_rpc", defaultItem.id);
+			} else if (valueType === "text" && typeof rawValue === "string" && rawValue.trim().startsWith("[")) {
+				try {
+					const parsed = JSON.parse(rawValue);
+					if (Array.isArray(parsed)) {
+						const defaultItem = parsed.find(item => item.default === true);
+						if (defaultItem) base.setValue("setting_idm_rpc", defaultItem.id);
+					}
+				} catch { }
+			}
+		},
+
 		/**
 		 * 初始化默认配置
 		 * @author 油小猴
@@ -2261,12 +2104,13 @@
 		 */
 		initDefaultConfig() {
 			if (base.getValue("setting_config_version") !== "1") this.initConfigMigration(1);
+			this._idmHotUpdate();
 
 			// 默认值
 			const defaults = [
 				{
 					name: "setting_idm_rpc",
-					value: [{ id: "1", default: true }]
+					value: "1"
 				},
 				{
 					name: "setting_aria2_rpc",
@@ -2397,33 +2241,32 @@
 		 * @description 构建包含 RPC 配置、终端类型等设置项的交互界面
 		 * @see {@link https://www.youxiaohou.com/zh-cn/motrix.html#使用指南 RPC 配置说明}、 {@link https://www.youxiaohou.com/zh-cn/curl.html cURL 使用教程}
 		 */
-		showSetting(event) {
+		showSetting(target) {
 			const setting = $(`<div>
-				<div style="text-align:center;">带星号的设置项目将在网页刷新后生效</div>
-				<label class="pl-setting-item listener-tip aria2" data-title="有关 IDM 服务的配置">
+				<label class="${mount} setting-item tip idm" data-title="有关 IDM 服务的配置">
 					<div>IDM 服务器</div>
-					<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-open-idm-setting" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
+					<button action="settings" type="idm" class="${mount} btn default" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
 				</label>
-				<label class="pl-setting-item listener-tip aria2" data-title="有关 Aria2 远程服务的配置">
+				<label class="${mount} setting-item tip aria2" data-title="有关 Aria2 远程服务的配置">
 					<div>Aria2 服务器</div>
-					<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-open-aria2-setting" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
+					<button action="settings" type="aria2" class="${mount} btn default" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
 				</label>
-				<label class="pl-setting-item listener-tip bitcomet" data-title="有关比特彗星远程服务的配置">
+				<label class="${mount} setting-item tip bitcomet" data-title="有关比特彗星远程服务的配置">
 					<div>比特彗星服务器</div>
-					<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-open-bitcomet-setting" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
+					<button action="settings" type="bitcomet" class="${mount} btn default" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
 				</label>
-				<label class="pl-setting-item listener-tip abdm" data-title="有关 AB Download Manager 远程服务的配置">
+				<label class="${mount} setting-item tip abdm" data-title="有关 AB Download Manager 远程服务的配置">
 					<div>AB Download Manager 服务器</div>
-					<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-open-abdm-setting" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
+					<button action="settings" type="abdm" class="${mount} btn default" data-back-to-setting="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>配置</span></button>
 				</label>
-				<label class="pl-setting-item curl">
+				<label class="${mount} setting-item curl">
 					<div>终端类型</div>
-					<select class="swal2-select pl-input listener-terminal">
+					<select name="terminal" class="${mount} input swal2-select">
 					${Object.keys(temp.terminalType).map(i => `<option value="${i}" ${base.getValue("setting_curl_terminal") === i ? "selected" : ""}>${temp.terminalType[i]}</option>`).join("")}
 					</select>
 				</label>
 				<div class="curl" style="display:flex;justify-content:flex-end;"><a href="https://www.youxiaohou.com/zh-cn/curl.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg> cURL使用教程</a>，适用于 cURL 下载👆</div>
-				<div class="other" style="display:flex;justify-content:center;margin-top:20px"><button type="button" class="pl-button-mini swal2-deny swal2-styled listener-unregister listener-tip" data-title="仅会清除已存储的百度令牌，其余设置项目无影响，仍会保留"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>熄灭已经点亮的按钮*</span></button></div>
+				<div class="other" style="display:flex;justify-content:center;margin-top:20px"><button class="${mount} btn unregister danger tip" data-title="仅会清除已存储的百度令牌及夸克令牌，其余设置项目无影响，仍会保留"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>熄灭已经点亮的按钮*</span></button></div>
 			</div>`);
 			Swal.fire({
 				...temp.swalDefault,
@@ -2437,11 +2280,11 @@
 				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
 				didOpen: (toast) => {
 					const element = $(toast);
-					if (event && Object.keys($(event.currentTarget).data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass("listener-tip").attr("data-title", "返回上页").css({ "left": "0", "right": "auto" }).text("◃");
-					if (event && $(event.currentTarget).data("back-to-downloads")) element.find(".aria2, .bitcomet, .abdm, .other").hide();
+					if (target?.data?.().some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
+					if (target?.data?.("back-to-downloads")) element.find(".aria2, .bitcomet, .abdm, .other").hide();
 				},
 				willClose: () => {
-					if (event && $(event.currentTarget).data("back-to-downloads")) base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+					if (target?.data?.("back-to-downloads")) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
 				},
 			});
 		},
@@ -2451,66 +2294,72 @@
 		 * @author hmjz100
 		 * @description 包含 RPC 配置的交互界面
 		 */
-		showIDMSetting(event) {
-			const IDMList = base.getValue("setting_idm_rpc");
-			const IDMOptions = IDMList.map((item, index) => {
-				return `<option value="${index}"${item.default ? " selected" : ""}>${item.id ? item.id : "0"}</option>`;
-			}).join("");
-			let IDMSelected = IDMList.find(i => i.default);
+		showIDMSetting(target) {
+			const IDMValue = base.getValue("setting_idm_rpc");
 			const IDMSetting = `<div style="text-align:center;">适用于 IDM 推送下载</div>
-				<label class="pl-setting-item">
-					<div>默认配置</div>
-					<div>
-						<select class="swal2-select pl-input listener-rpc-select" data-type="idm" style="max-width:50%;min-width:auto">
-							${IDMOptions}<option value="new">+ 创建新项目</option>
-						</select>
-						<button type="button" class="pl-button-mini swal2-deny swal2-styled listener-rpc-delete" data-type="idm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
-					</div>
+				<label class="${mount} setting-item">
+					<div>客户端标识</div>
+					<input type="number" autocomplete="off" placeholder="用于标识 IDM 客户端扩展的标识" class="${mount} input swal2-input" data-type="idm.id" value="">
 				</label>
-				<label class="pl-setting-item">
-					<div>客户标识</div>
-					<input type="number" autocomplete="off" placeholder="用于标识 IDM 客户端扩展的标识" class="swal2-input pl-input listener-rpc-input" data-type="idm.id" value="">
-				</label>
-				<div style="text-align:start;margin-top:1em">
-					<div>标识请使用以下方法获取：</div>
-					<div>01. 确保已安装好 IDM 以及 IDM 浏览器扩展；</div>
-					<div>02. 右键 IDM 扩展图标，进入 “管理扩展”；</div>
-					<div>03. 在打开的浏览器的管理页面，滚动到下方；</div>
-					<div>04. 选择 “检查视图” 右侧的任意一个选项进入；</div>
-					<div>05. 在打开的 “DevTools” 窗口中，点击 “应用程序（Application）” 标签；</div>
-					<div>06. 在左侧栏中找到 “扩展存储（Extension Storage）”，展开；</div>
-					<div>07. 在展开的子项中选择 “本地（Local）”；</div>
-					<div>08. 在右侧主视图中显示的表格中找到 “client” 对应数字值；</div>
-					<div>09. 复制数字值，粘贴到上方的 “客户标识” 里；</div>
-					<div>10. 去试着获取链接，选择发送到 IDM 看看吧！</div>
-				</div>`;
+				<p style="text-align:start">提示：Client ID（即客户端标识）是 IDM 客户端用于标识不同浏览器 IDM 捕获扩展的唯一 ID。<br/>如果您有多个浏览器，每个浏览器都需要配置不同的客户端标识。<br/>如果填写了错误的客户端标识，将会导致 “推送到 IDM” 功能无法正常推送。</p>
+				<div style="margin-top:1em;text-align:start">
+					<p>Chromium 类浏览器标识请使用以下方法获取：</p>
+					<ol class="list">
+						<li>确保已打开扩展管理页面的 “开发人员模式”；</li>
+						<li>确保已安装好 IDM 以及 IDM 浏览器扩展；</li>
+						<li>右键 IDM 扩展图标，进入 “管理扩展”；</li>
+						<li>在打开的浏览器的管理页面，滚动到下方；</li>
+						<li>选择 “检查视图” 右侧的任意一个选项进入；</li>
+						<li>在打开的 “DevTools” 窗口中，点击 “应用程序（Application）” 标签；</li>
+						<li>在左侧栏中找到 “扩展存储（Extension Storage）”，展开；</li>
+						<li>在展开的子项中选择 “本地（Local）”；</li>
+						<li>在右侧主视图中显示的表格中找到 “client” 对应数字值；</li>
+						<li>复制数字值，粘贴到上方的 “客户标识” 里；</li>
+						<li>去试着获取地址，选择发送到 IDM 看看吧！</li>
+					</ol>
+				</div><div style="margin-top:1em;text-align:start">
+					<p>Firefox 类浏览器标识请使用以下方法获取：</p>
+					<ol class="list">
+						<li>确保已安装好 IDM 以及 IDM 浏览器扩展；</li>
+						<li>右键 IDM 扩展图标，进入 “管理扩展”；</li>
+						<li>在打开的浏览器的管理页面，找到并点击 <svg class="pl-icon"><use xlink:href="#pl-icon-firefox-setting"></use></svg>（小齿轮），选择 “调试附加组件”；</li>
+						<li>在打开的 “调试/运行时” 页面中，找到 “IDM Integration Module”，然后点击右侧的 “检查”；</li>
+						<li>在打开的 “DevTools” 窗口中，点击 “存储（Storage）” 标签；</li>
+						<li>在左侧栏中找到 “扩展存储（Extension Storage）”，展开；</li>
+						<li>在展开的子项中选择 “moz-extension://” 开头的项目；</li>
+						<li>在右侧主视图中显示的表格中找到 “client” 对应数字值；</li>
+						<li>复制数字值，粘贴到上方的 “客户标识” 里；</li>
+						<li>去试着获取地址，选择发送到 IDM 看看吧！</li>
+					</ol>
+				</div><div style="margin-top:1em;text-align:start">
+					<p>知识拓展：配置捕获的文件扩展名</p>
+					<ol class="list">
+						<li>在 IDM 的 “设置” > “文件类型” > “接管下载文件扩展名” 里添加您需要捕获的文件扩展名；</li>
+						<li>例如：.mp4, .avi, .mkv 等</li>
+					</ol>
+				</div><style>ol.list{list-style:inside decimal-leading-zero!important;margin:0;padding:0}ol.list li{list-style:inherit}ol.list:before{content:"";display:none}</style>`;
 			Swal.fire({
 				...temp.swalDefault,
 				title: "IDM 服务设置",
 				html: IDMSetting,
-				icon: "info",
-				iconHtml: "⚙︎",
+				icon: "success",
+				iconHtml: `<img src="${config.base.icon.idm}" alt="Internet Download Manager" style="width:.8em;height:.8em;" />`,
 				allowOutsideClick: false,
 				showCloseButton: true,
 				showConfirmButton: false,
 				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
 				didOpen: (toast) => {
 					const element = $(toast);
-					if (event && Object.keys($(event.currentTarget).data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass("listener-tip").attr("data-title", "返回上页").css({ "left": "0", "right": "auto" }).text("◃");
-					if (IDMSelected) {
-						element.find(".listener-rpc-input").each(function () {
-							const type = $(this).data("type").split(".")[1];
-							$(this).val(IDMSelected[type] || "");
-						});
-					} else {
-						IDMList[0].default = true;
-						base.setValue("setting_idm_rpc", IDMList);
-						IDMSelected = IDMList[0];
-					}
+					if (Object.keys(target.data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
+					if (IDMValue) element.find(`[data-type="idm.id"]`).val(IDMValue);
+					element.find(`[data-type="idm.id"]`).on("input", (e) => {
+						e.preventDefault();
+						base.setValue("setting_idm_rpc", String($(e.currentTarget).val()));
+					});
 				},
 				willClose: () => {
-					if (event && $(event.currentTarget).data("back-to-setting")) base.showSetting();
-					if (event && $(event.currentTarget).data("back-to-downloads")) base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+					if (target?.data?.("back-to-setting")) base.showSetting();
+					if (target?.data?.("back-to-downloads")) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
 				},
 			});
 		},
@@ -2521,42 +2370,42 @@
 		 * @description 包含 RPC 配置的交互界面
 		 * @see {@link https://www.youxiaohou.com/zh-cn/motrix.html#使用指南 RPC 配置说明}
 		 */
-		showAria2Setting(event) {
+		showAria2Setting(target) {
 			const AriaList = base.getValue("setting_aria2_rpc");
 			const AriaOptions = AriaList.map((item, index) => {
 				return `<option value="${index}"${item.default ? " selected" : ""}>${item.domain ? item.domain : ""}:${item.port ? item.port : ""}${item.path ? item.path : ""}</option>`;
 			}).join("");
 			let AriaSelected = AriaList.find(i => i.default);
 			const Aria2Setting = `<div style="text-align:center;"><a href="https://www.youxiaohou.com/zh-cn/motrix.html#使用指南" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg> RPC配置说明</a>，适用于 Aria2 推送下载</div>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>默认配置</div>
 					<div>
-						<select class="swal2-select pl-input listener-rpc-select" data-type="aria2" style="max-width:50%;min-width:auto">
+						<select class="${mount} input swal2-select listener-rpc-select" data-type="aria2" style="max-width:50%;min-width:auto">
 							${AriaOptions}<option value="new">+ 创建新项目</option>
 						</select>
-						<button type="button" class="pl-button-mini swal2-deny swal2-styled listener-rpc-delete" data-type="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
-						<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-rpc-test" data-type="aria2" style="margin-left:0"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>测试</span></button>
+						<button class="${mount} btn danger listener-rpc-delete" data-type="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
+						<button class="${mount} btn listener-rpc-test" data-type="aria2" style="margin-left:0"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>测试</span></button>
 					</div>
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务主机</div>
-					<input type="text" autocomplete="off" placeholder="主机名，仅支持以及需带上 http(s)://，不支持 ws" class="swal2-input pl-input listener-rpc-input" data-type="aria2.domain" value="">
+					<input type="text" autocomplete="off" placeholder="主机名，仅支持以及需带上 http(s)://，不支持 ws" class="${mount} input swal2-input listener-rpc-input" data-type="aria2.domain" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务端口</div>
-					<input type="text" autocomplete="off" placeholder="端口号，例如 Motrix 为 16800，Aria2 为 6800" class="swal2-input pl-input listener-rpc-input" data-type="aria2.port" value="">
+					<input type="text" autocomplete="off" placeholder="端口号，例如 Motrix 为 16800，Aria2 为 6800" class="${mount} input swal2-input listener-rpc-input" data-type="aria2.port" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务路径</div>
-					<input type="text" autocomplete="off" placeholder="访问路径，一般是 /jsonrpc" class="swal2-input pl-input listener-rpc-input" data-type="aria2.path" value="">
+					<input type="text" autocomplete="off" placeholder="访问路径，一般是 /jsonrpc" class="${mount} input swal2-input listener-rpc-input" data-type="aria2.path" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务密钥</div>
-					<input type="text" autocomplete="off" placeholder="无密钥无需填写" class="swal2-input pl-input listener-rpc-input" data-type="aria2.token" value="">
+					<input type="text" autocomplete="off" placeholder="无密钥无需填写" class="${mount} input swal2-input listener-rpc-input" data-type="aria2.token" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>存储路径</div>
-					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="swal2-input pl-input listener-rpc-input" data-type="aria2.dir" value="">
+					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="${mount} input swal2-input listener-rpc-input" data-type="aria2.dir" value="">
 				</label>`;
 			Swal.fire({
 				...temp.swalDefault,
@@ -2570,11 +2419,11 @@
 				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
 				didOpen: (toast) => {
 					const element = $(toast);
-					if (event && Object.keys($(event.currentTarget).data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass("listener-tip").attr("data-title", "返回上页").css({ "left": "0", "right": "auto" }).text("◃");
+					if (Object.keys(target.data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
 					if (AriaSelected) {
-						element.find(".listener-rpc-input").each(function () {
-							const type = $(this).data("type").split(".")[1];
-							$(this).val(AriaSelected[type] || "");
+						element.find(".listener-rpc-input").each((_, input) => {
+							const type = $(input).data("type").split(".")[1];
+							$(input).val(AriaSelected[type] || "");
 						});
 					} else {
 						AriaList[0].default = true;
@@ -2583,8 +2432,8 @@
 					}
 				},
 				willClose: () => {
-					if (event && $(event.currentTarget).data("back-to-setting")) base.showSetting();
-					if (event && $(event.currentTarget).data("back-to-downloads")) base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+					if (target?.data?.("back-to-setting")) base.showSetting();
+					if (target?.data?.("back-to-downloads")) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
 				},
 			});
 		},
@@ -2594,45 +2443,45 @@
 		 * @author hmjz100
 		 * @description 包含 RPC 配置的交互界面
 		 */
-		showBitcometSetting(event) {
+		showBitcometSetting(target) {
 			const BCList = base.getValue("setting_bitcomet_rpc");
 			const BCOptions = BCList.map((item, index) => {
 				return `<option value="${index}"${item.default ? " selected" : ""}>${item.domain ? item.domain : ""}:${item.port ? item.port : ""}${item.path ? item.path : ""}</option>`;
 			}).join("");
 			let BCSelected = BCList.find(i => i.default);
 			const BitcometSetting = `<div style="text-align:center;">适用于比特彗星推送下载</div>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>默认配置</div>
 					<div>
-						<select class="swal2-select pl-input listener-rpc-select" data-type="bitcomet" style="max-width:75%;min-width:auto">
+						<select class="${mount} input swal2-select listener-rpc-select" data-type="bitcomet" style="max-width:75%;min-width:auto">
 							${BCOptions}<option value="new">+ 创建新项目</option>
 						</select>
-						<button type="button" class="pl-button-mini swal2-deny swal2-styled listener-rpc-delete" data-type="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
+						<button class="${mount} btn danger listener-rpc-delete" data-type="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
 					</div>
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务主机</div>
-					<input type="text" autocomplete="off" placeholder="主机地址，需带上 http(s)://，但不需要写端口与路径" class="swal2-input pl-input listener-rpc-input" data-type="bitcomet.domain" value="">
+					<input type="text" autocomplete="off" placeholder="主机地址，需带上 http(s)://，但不需要写端口与路径" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.domain" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务端口</div>
-					<input type="text" autocomplete="off" placeholder="服务器端口号，一般为 8080" class="swal2-input pl-input listener-rpc-input" data-type="bitcomet.port" value="">
+					<input type="text" autocomplete="off" placeholder="服务器端口号，一般为 8080" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.port" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务路径</div>
-					<input type="text" autocomplete="off" placeholder="一般是 /panel/task_add_httpftp_result" class="swal2-input pl-input listener-rpc-input" data-type="bitcomet.path" value="">
+					<input type="text" autocomplete="off" placeholder="一般是 /panel/task_add_httpftp_result" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.path" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务账号</div>
-					<input type="text" autocomplete="off" placeholder="本地服务器账号，无账号无需填写" class="swal2-input pl-input listener-rpc-input" data-type="bitcomet.authName" value="">
+					<input type="text" autocomplete="off" placeholder="本地服务器账号，无账号无需填写" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.authName" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务密码</div>
-					<input type="text" autocomplete="off" placeholder="本地服务器密码，无密码无需填写" class="swal2-input pl-input listener-rpc-input" data-type="bitcomet.authPass" value="">
+					<input type="text" autocomplete="off" placeholder="本地服务器密码，无密码无需填写" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.authPass" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>存储路径</div>
-					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="swal2-input pl-input listener-rpc-input" data-type="bitcomet.dir" value="">
+					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.dir" value="">
 				</label>`;
 			Swal.fire({
 				...temp.swalDefault,
@@ -2646,11 +2495,11 @@
 				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
 				didOpen: (toast) => {
 					const element = $(toast);
-					if (event && Object.keys($(event.currentTarget).data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass("listener-tip").attr("data-title", "返回上页").css({ "left": "0", "right": "auto" }).text("◃");
+					if (Object.keys(target.data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
 					if (BCSelected) {
-						element.find(".listener-rpc-input").each(function () {
-							const type = $(this).data("type").split(".")[1];
-							$(this).val(BCSelected[type] || "");
+						element.find(".listener-rpc-input").each((_, input) => {
+							const type = $(input).data("type").split(".")[1];
+							$(input).val(BCSelected[type] || "");
 						});
 					} else {
 						BCSelected[0].default = true;
@@ -2659,8 +2508,8 @@
 					}
 				},
 				willClose: () => {
-					if (event && $(event.currentTarget).data("back-to-setting")) base.showSetting();
-					if (event && $(event.currentTarget).data("back-to-downloads")) base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+					if (target?.data?.("back-to-setting")) base.showSetting();
+					if (target?.data?.("back-to-downloads")) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
 				},
 			});
 		},
@@ -2670,34 +2519,34 @@
 		 * @author hmjz100
 		 * @description 包含 RPC 配置的交互界面
 		 */
-		showABDMSetting(event) {
+		showABDMSetting(target) {
 			const ABList = base.getValue("setting_abdm_rpc");
 			const ABOptions = ABList.map((item, index) => {
 				return `<option value="${index}"${item.default ? " selected" : ""}>${item.domain}:${item.port}</option>`;
 			}).join("");
 			let ABSelected = ABList.find(i => i.default);
 			const ABSetting = `<div style="text-align:center;">适用于 AB Download Manager 推送下载</div>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>默认配置</div>
 					<div>
-						<select class="swal2-select pl-input listener-rpc-select" data-type="abdm" style="max-width:50%;min-width:auto">
+						<select class="${mount} input swal2-select listener-rpc-select" data-type="abdm" style="max-width:50%;min-width:auto">
 							${ABOptions}<option value="new">+ 创建新项目</option>
 						</select>
-						<button type="button" class="pl-button-mini swal2-deny swal2-styled listener-rpc-delete" data-type="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
-						<button type="button" class="pl-button-mini swal2-confirm swal2-styled listener-rpc-test" data-type="abdm" style="margin-left:0"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>测试</span></button>
+						<button class="${mount} btn danger listener-rpc-delete" data-type="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>删除</span></button>
+						<button class="${mount} btn listener-rpc-test" data-type="abdm" style="margin-left:0"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>测试</span></button>
 					</div>
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务主机</div>
-					<input type="text" autocomplete="off" placeholder="主机地址，需带上 http(s)://，但不需要写端口与路径" class="swal2-input pl-input listener-rpc-input" data-type="abdm.domain" value="">
+					<input type="text" autocomplete="off" placeholder="主机地址，需带上 http(s)://，但不需要写端口与路径" class="${mount} input swal2-input listener-rpc-input" data-type="abdm.domain" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>服务端口</div>
-					<input type="text" autocomplete="off" placeholder="服务器端口号，一般为 15151" class="swal2-input pl-input listener-rpc-input" data-type="abdm.port" value="">
+					<input type="text" autocomplete="off" placeholder="服务器端口号，一般为 15151" class="${mount} input swal2-input listener-rpc-input" data-type="abdm.port" value="">
 				</label>
-				<label class="pl-setting-item">
+				<label class="${mount} setting-item">
 					<div>存储路径</div>
-					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="swal2-input pl-input listener-rpc-input" data-type="abdm.dir" value="">
+					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="${mount} input swal2-input listener-rpc-input" data-type="abdm.dir" value="">
 				</label>`;
 			Swal.fire({
 				...temp.swalDefault,
@@ -2711,11 +2560,11 @@
 				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
 				didOpen: (toast) => {
 					const element = $(toast);
-					if (event && Object.keys($(event.currentTarget).data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass("listener-tip").attr("data-title", "返回上页").css({ "left": "0", "right": "auto" }).text("◃");
+					if (Object.keys(target.data()).some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
 					if (ABSelected) {
-						element.find(".listener-rpc-input").each(function () {
-							const type = $(this).data("type").split(".")[1];
-							$(this).val(ABSelected[type] || "");
+						element.find(".listener-rpc-input").each((_, input) => {
+							const type = $(input).data("type").split(".")[1];
+							$(input).val(ABSelected[type] || "");
 						});
 					} else {
 						ABSelected[0].default = true;
@@ -2724,8 +2573,8 @@
 					}
 				},
 				willClose: () => {
-					if (event && $(event.currentTarget).data("back-to-setting")) base.showSetting();
-					if (event && $(event.currentTarget).data("back-to-downloads")) base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+					if (target?.data?.("back-to-setting")) base.showSetting();
+					if (target?.data?.("back-to-downloads")) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
 				},
 			});
 		},
@@ -2762,23 +2611,22 @@
 					{ name: "123 云盘", key: "$123pan" }
 				];
 				return themeList.map(item => {
-					return `<label class="pl-setting-item">
+					return `<label class="${mount} setting-item">
 						<div>${item.name}</div>
-						<input type="checkbox" class="swal2-checkbox pl-input listener-theme" data-type="${item.key}" ${base.getValue("setting_ui_theme").custom[item.key] === true ? "checked" : ""}>
+						<input type="checkbox" class="${mount} input swal2-checkbox listener-theme" data-type="${item.key}" ${base.getValue("setting_ui_theme").custom[item.key] === true ? "checked" : ""}>
 					</label>`;
 				}).join("");
 			}
 			const beautify = $(`<div>
-				<div style="text-align:center;">带星号的美化项目将在网页刷新后生效</div>
-				<label class="pl-setting-item" style="justify-content:center"><div class="pl-color">${changeColor()}</div></label>
-				<div class="pl-setting-item"><div>替换界面配色为主题颜色*</div><div class="pl-checkboxies">${changeTheme()}</div></div>
+				<label class="${mount} setting-item" style="justify-content:center"><div class="pl-color">${changeColor()}</div></label>
+				<div class="${mount} setting-item"><div>替换界面配色为主题颜色<br/>*将在网页刷新后生效</div><div class="right checkboxies">${changeTheme()}</div></div>
 				<style>
 					.pl-color{display:grid!important;grid-template-columns:repeat(5, var(--pl-color-width));gap:10px;--pl-color-width:55px}
 					.pl-color > div{background-color:var(--color);width:var(--pl-color-width);height:var(--pl-color-width);box-sizing:border-box;cursor:pointer}
-					.pl-color .mask{width:calc(var(--pl-color-width) - 2px);height:calc(var(--pl-color-width) - 2px);opacity:0;transition:opacity.2s;color:#EBE6E3;font-size:13px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+					.pl-color .mask{width:calc(var(--pl-color-width) - 2px);height:calc(var(--pl-color-width) - 2px);opacity:0;transition:opacity.2s;color:#FFF;font-size:13px;display:flex;align-items:center;justify-content:center;flex-direction:column}
 					.pl-color > div:hover .mask{opacity:1}
-					.pl-checkboxies{display:grid!important;grid-template-columns:repeat(2, 98px);gap:10px}
-					.pl-input[type=checkbox]{height:20px;width:20px;padding:0!important;background-image:none!important}
+					.right.checkboxies{display:grid!important;grid-template-columns:repeat(2, 98px);gap:10px}
+					.${mount}.input[type=checkbox]{height:20px;width:20px;padding:0!important;background-image:none!important}
 				</style>
 			</div>`)
 			Swal.fire({
@@ -2804,14 +2652,14 @@
 		showDebug() {
 			let debugInfo;
 			debugInfo += `<span>以下内容均为脚本自检信息<br/>本页面仅作为调试使用<span>`;
-			debugInfo += `<label class="pl-setting-item"><div>[外] 管理器名称</div>${info.mhandler ? info.mhandler : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[外] 管理器版本</div>${info.mversion ? info.mversion : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[内] 脚本挂载点</div>${mount ? `${mount.toLowerCase()}.${mount}` : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[外] 脚本名称</div>${info.name ? info.name : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[外] 脚本作者</div>${info.author ? info.author : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[外/内] 脚本版本</div>${info.version ? info.version : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[外/内] 脚本图标</div>${info.icon ? `<img style="max-width:30%" src="${info.icon}"></img>` : "无法获取"}</label>`;
-			debugInfo += `<label class="pl-setting-item"><div>[内] 公众号二维码</div>${config.base?.service?.account ? `<img style="max-width:30%" src="${config.base.service.account}"></img>` : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[外] 管理器名称</div>${info.mhandler ? info.mhandler : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[外] 管理器版本</div>${info.mversion ? info.mversion : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[内] 脚本挂载点</div>${mount ? `${mount.toLowerCase()}.${mount}` : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[外] 脚本名称</div>${info.name ? info.name : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[外] 脚本作者</div>${info.author ? info.author : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[外/内] 脚本版本</div>${info.version ? info.version : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[外/内] 脚本图标</div>${info.icon ? `<img style="max-width:30%" src="${info.icon}"></img>` : "无法获取"}</label>`;
+			debugInfo += `<label class="${mount} setting-item"><div>[内] 公众号二维码</div>${config.base?.service?.account ? `<img style="max-width:30%" src="${config.base.service.account}"></img>` : "无法获取"}</label>`;
 			debugInfo = "<div>" + debugInfo + "</div>";
 			Swal.fire({
 				...temp.swalDefault,
@@ -2832,532 +2680,539 @@
 		async showUpdate() {
 			await Swal.fire({
 				...temp.swalDefault,
-				icon: "info",
 				title: "更新日志",
-				html: `<div class="version-log">
+				imageUrl: `data:image/jpeg;base64,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`,
+				imageAlt: `喜马拉雅山脉，珠穆朗玛峰`,
+				customClass: {
+					image: 'swal2-banner',
+					container: `${mount}-about`
+				},
+				html: `<blockquote>
+					<p>风雨送春归，飞雪迎春到。已是悬崖百丈冰，犹有花枝俏。</p>
+					<p>俏也不争春，只把春来报。待到山花烂漫时，她在丛中笑。</p>
+				</blockquote>
+				<div>(ﾉ◕ヮ◕)ﾉ 遇到 Bug 要记得去 <a class="pl-a" href="https://github.com/hmjz100/LinkSwift/issues" target="_blank">Github 议题</a> 向我报告哦~</div>
+				<div>(o゜▽゜)o☆ 觉得好用？来一同完善本项目吧~ 欢迎提交<a class="pl-a" href="https://github.com/hmjz100/LinkSwift/pulls" target="_blank">拉取请求</a>为本项目做贡献~</div>
+				<hr/>
 				<div class="block">
+					<name>v1.1.4 (测试版，非最终品质)</name>
 					<blockquote>
-						<div>风雨送春归，飞雪迎春到。已是悬崖百丈冰，犹有花枝俏。</div>
-						<div>俏也不争春，只把春来报。待到山花烂漫时，她在丛中笑。</div>
+						<p>残暑未消风先快，一叶轻舟过万重。🍂🥮</p>
+						<p>告别了繁杂与沉闷，LinkSwift 带来以下更新：</p>
 					</blockquote>
-				</div>
-				<div class="block">(ﾉ◕ヮ◕)ﾉ 遇到 Bug 要记得去 <a class="pl-a" href="https://github.com/hmjz100/LinkSwift/issues" target="_blank">Github 议题</a> 向我报告哦~</div>
-				<div class="block">(o゜▽゜)o☆ 觉得好用？来一同完善本项目吧~ 欢迎提交<a class="pl-a" href="https://github.com/hmjz100/LinkSwift/pulls" target="_blank">拉取请求</a>为本项目做贡献~</div>
-				<div class="block">
-					<name>V1.1.3.1</name>
 					<div>
-					<div>1、新增 - 支持光鸭云盘；（好拗口的产品名……）</div>
-					<div>2、适配 - 123 云盘 260427 升级；</div>
-					<div>3、优化 - 使用 eslint 处理脚本代码；</div>
-					<div>4、优化 - 请求头的格式化与来源声明；</div>
-					<div>5、修复 - 因迅雷云盘更新导致脚本弹窗异常变大；</div>
-					<div>6、修复 - 推送到 ABDM 下载器实际成功却显示失败。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.3</name>
-					<div>
-					<div>LinkSwift 开发者在此祝您新春快乐！</div>
-					<div>爆竹声中一岁除，春风送暖入屠苏。LinkSwift 迎来功能更新：</div>
-					<div>1、新增 - IDM 客户端设置；</div>
-					<div>2、优化 - 链接缓存、浮动提示框；</div>
-					<div>3、适配 - 百度网盘分享页。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.2.1</name>
-					<div>
-					<div>1、新增 - API 下载的推送到 IDM 功能；</div>
-					<div style="margin-left:10px">（感谢 <a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a> 的帮助）</div>
-					<div>2、修复 - 复制 Aria2、cURL 命令行错误。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.2</name>
-					<div>
-					<div>1、适配 - 123 云盘新策略；</div>
-					<div>2、适配 - 夸克、UC 网盘分享页；</div>
-					<div>3、新增 - 增强下载的多块多线程支持；</div>
-					<div>4、优化 - 页面绿化的部分匹配规则；</div>
-					<div>5、优化 - 增强下载进度条样式。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.9</name>
-					<div>
-					<div>1、修复 - 123 云盘下载视频变为缩略图。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.8</name>
-					<div>
-					<div>1、修复 - 适配新版 123 云盘分享页。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.7</name>
-					<div>
-					<div>1、修复 - 缺失声明 @connect 导致的问题。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.6</name>
-					<div>
-					<div>1、<span style="color:#EBE6E3;background:${temp.color}">废弃 - 百度网盘 BDUSS Cookie 相关代码，转向使用更安全的 AccessToken</span>；</div>
-					<div>2、废弃 - 百度网盘分享页面下载相关代码；</div>
-					<div>3、优化 - 下载窗口可在设置改变后动态修改界面。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.5</name>
-					<div>
-					<div>1、新增 - AB Download Manager 下载方式；</div>
-					<div>2、优化 - 支持从设置页面一键返回下载窗口，无需重复获取链接。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.4</name>
-					<div>
-					<div>1、适配 123 云盘新版页面。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.3</name>
-					<div>
-					<div>1、修复夸克网盘无法获取下载链接的 Bug；</div>
-					<div>2、修复 API 下载无法复制全部链接。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.2</name>
-					<div>
-					<div>1、修复无法删除第一项远程配置的 Bug。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1.1</name>
-					<div>
-					<div>1、修复推送至 Aria2 时推送成功但报错的 Bug。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.1</name>
-					<div>
-					<div>1、配置文件格式更新，<span style="color:#EBE6E3;background:${temp.color}">支持添加、删除、切换多个服务配置</span>；</div>
-					<div>2、支持比特彗星推送下载，<span style="color:#EBE6E3;background:${temp.color}">原 RPC 已并入 Aria2 下载</span>；</div>
-					<div>3、界面<span style="color:#EBE6E3;background:${temp.color}">增加 Font Awesome 图标！</span>更好看啦；</div>
-					<div>4、优化脚本代码、界面，运行更轻快；</div>
-					<div>5、修复上个版本遗存的问题。</div>
+						<p>1、新增 - 支持光鸭云盘；</p>
+						<p>2、适配 - 变来变去的 123 云盘；</p>
+						<p>3、优化 - 网络请求头标准化；</p>
+						<p>4、优化 - 调样式，改类名，优逻辑；</p>
+						<p>5、优化 - 使用 eslint 处理与检查脚本代码问题；</p>
+						<p>6、优化 - 夸克网盘 Cookie 传递；</p>
+						<p style="margin-left:10px">（感谢 <a href="https://github.com/kwkvh" target="_blank">kwkvh</a> 提供的想法）</p>
+						<p>7、修复 - 迅雷云盘样式调整导致脚本弹窗异常变大；</p>
+						<p>8、修复 - 推送到 ABDM 下载器实际成功却显示失败。</p>
 					</div>
 				</div>
 				<hr/>
 				<div class="block">
-					<name>V1.1.0.1</name>
+					<name>v1.1.3</name>
+					<blockquote>
+						<p>爆竹声中一岁除，春风送暖入屠苏。🧨🎆</p>
+						<p>开发者在此祝您新春快乐！LinkSwift 迎来功能更新：</p>
+					</blockquote>
 					<div>
-					<div>1、修复查看 RPC 下载任务的 Bug。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.1.0</name>
-					<div>
-					<div>1、支持 UC 网盘、123 云盘；</div>
-					<div>2、改进了网盘主题的注入方式；</div>
-					<div>3、聚合并重构了部分重复函数，对整体脚本逻辑进行了梳理和精简；</div>
-					<div>4、将脚本执行阶段从 document-body 适配为 document-start。</div>
+						<p>1、新增 - IDM 客户端设置；</p>
+						<p>2、优化 - 链接缓存、浮动提示框；</p>
+						<p>3、适配 - 百度网盘分享页。</p>
 					</div>
 				</div>
 				<hr/>
 				<div class="block">
-					<name>V1.0.9.7</name>
+					<name>v1.1.2.1</name>
 					<div>
-					<div>1、修复移动云盘下载错误；</div>
-					<div>2、优化代码，更好的错误识别；</div>
-					<div>3、去除了油小猴云服务。</div>
+						<p>1、新增 - API 下载的推送到 IDM 功能；</p>
+						<p style="margin-left:10px">（感谢 <a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a> 的帮助）</p>
+						<p>2、修复 - 复制 Aria2、cURL 命令行错误。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9.6</name>
+					<name>v1.1.2</name>
 					<div>
-					<div>1、支持在百度网盘中选择文件夹下载；</div>
-					<div>2、优化部分提示。</div>
+						<p>1、适配 - 123 云盘新策略；</p>
+						<p>2、适配 - 夸克、UC 网盘分享页；</p>
+						<p>3、新增 - 增强下载的多块多线程支持；</p>
+						<p>4、优化 - 页面绿化的部分匹配规则；</p>
+						<p>5、优化 - 增强下载进度条样式。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9.5</name>
+					<name>v1.1.1.9</name>
 					<div>
-					<div>1、修复因代码逻辑错误而无法获取链接的 Bug。</div>
+						<p>1、修复 - 123 云盘下载视频变为缩略图。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9.4</name>
+					<name>v1.1.1.8</name>
 					<div>
-					<div>1、修复因百度网盘 AccessToken 过期导致无法获取链接的 Bug。</div>
+						<p>1、修复 - 适配新版 123 云盘分享页。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9.3</name>
+					<name>v1.1.1.7</name>
 					<div>
-					<div>1、若网盘不支持在分享中下载，将仅显示保存网盘按钮；</div>
-					<div>2、优化下载界面，支持选择 Iframe 或 Blob 的方式来下载文件，增加按钮的提示文本；</div>
-					<div>3、优化 CSS 样式，统一了 SweetAlert2 按钮样式，同时适配了 Dark Reader 插件，界面更协调；</div>
-					<div>4、支持修改油小猴网站主题色；</div>
-					<div>5、原有主题相关设置现已移动至助手美化页面中。</div>
+						<p>1、修复 - 缺失声明 @connect 导致的问题。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9.2</name>
+					<name>v1.1.1.6</name>
 					<div>
-					<div>1、修复使用API 下载时有可能会导致IDM无限弹窗的Bug。</div>
+						<p>1、<span style="color:#FFF;background:var(--pl-c)">废弃 - 百度网盘 BDUSS Cookie 相关代码，转向使用更安全的 AccessToken</span>；</p>
+						<p>2、废弃 - 百度网盘分享页面下载相关代码；</p>
+						<p>3、优化 - 下载窗口可在设置改变后动态修改界面。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9.1</name>
+					<name>v1.1.1.5</name>
 					<div>
-					<div>1、修复在百度网盘旧版下脚本无法删除元素的Bug。</div>
+						<p>1、新增 - AB Download Manager 下载方式；</p>
+						<p>2、优化 - 支持从设置页面一键返回下载窗口，无需重复获取链接。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.9</name>
+					<name>v1.1.1.4</name>
 					<div>
-					<div>1、跟进官方V6.2.7，修复因无法进行百度授权而导致获取直链报错 9019 的 Bug。</div>
-					</div>
-				</div>
-				<hr/>
-				<div class="block">
-					<name>V1.0.8.9</name>
-					<div>
-					<div>1、跟进官方V6.2.3，优化保存到网盘提示，修复阿里云盘、移动云盘失效的问题；</div>
-					<div>2、优化修改网盘主题的代码，减少对页面的破坏。</div>
+						<p>1、适配 123 云盘新版页面。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.8.8</name>
+					<name>v1.1.1.3</name>
 					<div>
-					<div>1、修复下载菜单字体过小的Bug。</div>
+						<p>1、修复夸克网盘无法获取下载地址的 Bug；</p>
+						<p>2、修复 API 下载无法复制全部链接。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.8.7</name>
+					<name>v1.1.1.2</name>
 					<div>
-					<div>1、修复在阿里云盘分享页面下点击“未点亮”按钮时没有任何反应的Bug；</div>
-					<div>2、更新并优化网盘界面精简规则；</div>
-					<div>3、支持更换 百度网盘、阿里云盘、迅雷云盘、夸克网盘、移动云盘 界面的主题颜色。</div>
+						<p>1、修复无法删除第一项远程配置的 Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.8.6</name>
+					<name>v1.1.1.1</name>
 					<div>
-					<div>1、新增移动云盘会员中心页面，可在网盘中点击“会员中心”按钮查看(但无法使用第三方支付)。</div>
+						<p>1、修复推送至 Aria2 时推送成功但报错的 Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.8.5</name>
+					<name>v1.1.1</name>
 					<div>
-					<div>1、跟进官方V6.1.6，修复迅雷网盘分享页面无法选中文件，修复移动云盘无法判断页面。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.8.4</name>
-					<div>
-					<div>1、修复因重复绑定按钮而导致命令重复执行的Bug；</div>
-					<div>2、优化调试信息界面排版；</div>
-					<div>3、移除对百度网盘手机网页版的支持。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.8.3</name>
-					<div>
-					<div>1、适配阿里云盘新域名alipan.com。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.8.2</name>
-					<div>
-					<div>1、更换新图标。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.8.1</name>
-					<div>
-					<div>1、修复因重复绑定按钮而导致 RPC 下载会发送多条下载请求的Bug；</div>
-					<div>2、选择不使用油小猴服务器时，“用ghproxy连接Github仓库”更换为“用jsdelivr连接Github仓库”；</div>
-					<div>3、跟进官方V6.1.4版本，修复移动网盘无法获取链接，支持阿里云盘新域名alipan.com。</div>
+						<p>1、配置文件格式更新，<span style="color:#FFF;background:var(--pl-c)">支持添加、删除、切换多个服务配置</span>；</p>
+						<p>2、支持比特彗星推送下载，<span style="color:#FFF;background:var(--pl-c)">原 RPC 已并入 Aria2 下载</span>；</p>
+						<p>3、界面<span style="color:#FFF;background:var(--pl-c)">增加 Font Awesome 图标！</span>更好看啦；</p>
+						<p>4、优化脚本代码、界面，运行更轻快；</p>
+						<p>5、修复上个版本遗存的问题。</p>
 					</div>
 				</div>
 				<hr/>
 				<div class="block">
-					<name>V1.0.8</name>
+					<name>v1.1.0.1</name>
 					<div>
-					<div>1、修复迅雷网盘无法勾选文件。</div>
+						<p>1、修复查看 RPC 下载任务的 Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.7.9</name>
+					<name>v1.1.0</name>
 					<div>
-					<div>1、更新精简网盘元素匹配规则，防止因通知横条而导致不能点到“API 下载”以下的按钮。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.8</name>
-					<div>
-					<div>1、跟进官方V6.1.2，加入V2接口。</div>
-					<div>2、修复百度网盘下载时因为获取不到accessToken而一直转圈。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.7</name>
-					<div>
-					<div>1、修复百度网盘的按钮会因为主题不同而被改变颜色的Bug；</div>
-					<div>2、更新夸克网盘按钮与界面。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.6</name>
-					<div>
-					<div>1、修复“注入”功能；</div>
-					<div>2、黑暗模式支持随设置热切换。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.5</name>
-					<div>
-					<div>1、修复阿里云盘下载逻辑；</div>
-					<div>2、精简代码；</div>
-					<div>3、支持深色模式；</div>
-					<div>4、修改部分提示文本；</div>
-					<div>5、修改部分CSS；</div>
-					<div>6、设置可测试RPC连接。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.4</name>
-					<div>
-					<div>1、优化下载逻辑；</div>
-					<div>2、修复阿里云盘无法使用API 下载。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.3</name>
-					<div>
-					<div>1、如果出现网络请求错误时支持自动重新请求；</div>
-					<div>2、可选择是否使用油小猴服务器。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.2</name>
-					<div>
-					<div>1、修复使用 RPC 下载时会重复发送链接的Bug。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7.1</name>
-					<div>
-					<div>[实验功能，不影响正常使用]支持百度网盘手机网页版，勾选文件后可在顶栏找到“下载助手”按钮。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.7</name>
-					<div>
-					<div>1、重构夸克网盘、阿里云盘按钮。</div>
+						<p>1、支持 UC 网盘、123 云盘；</p>
+						<p>2、改进了网盘主题的注入方式；</p>
+						<p>3、聚合并重构了部分重复函数，对整体脚本逻辑进行了梳理和精简；</p>
+						<p>4、将脚本执行阶段从 document-body 适配为 document-start。</p>
 					</div>
 				</div>
 				<hr/>
 				<div class="block">
-					<name>V1.0.6.9</name>
+					<name>v1.0.9.7</name>
 					<div>
-					<div>1、下载窗口加入关闭按钮。</div>
+						<p>1、修复移动云盘下载错误；</p>
+						<p>2、优化代码，更好的错误识别；</p>
+						<p>3、去除了油小猴云服务。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.8</name>
+					<name>v1.0.9.6</name>
 					<div>
-					<div>1、修复夸克网盘按钮错位。</div>
+						<p>1、支持在百度网盘中选择文件夹下载；</p>
+						<p>2、优化部分提示。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.7</name>
+					<name>v1.0.9.5</name>
 					<div>
-					<div>1、将百度网盘界面修改为主题色，可在设置选择是否修改；</div>
-					<div>2、增加主题色名称，更改部分内容颜色；</div>
-					<div>3、移动云盘API 下载支持批量复制；</div>
-					<div>4、优化控制台输出结果；</div>
-					<div>5、百度网盘API 下载不使用IDM时可以显示剩余时间；</div>
-					<div>6、“取消点亮按钮”按钮的位置现已移动到设置页面。</div>
-					<div>7、homo特有的彩蛋又回来力(喜)。</div>
+						<p>1、修复因代码逻辑错误而无法获取链接的 Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.6</name>
+					<name>v1.0.9.4</name>
 					<div>
-					<div>1、修复暗号错误。</div>
+						<p>1、修复因百度网盘 AccessToken 过期导致无法获取链接的 Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.5</name>
+					<name>v1.0.9.3</name>
 					<div>
-					<div>1、修复即使输入正确暗号也不能成功点亮按钮的服务器错误。</div>
+						<p>1、若网盘不支持在分享中下载，将仅显示保存网盘按钮；</p>
+						<p>2、优化下载界面，支持选择 Iframe 或 Blob 的方式来下载文件，增加按钮的提示文本；</p>
+						<p>3、优化 CSS 样式，统一了 SweetAlert2 按钮样式，同时适配了 Dark Reader 插件，界面更协调；</p>
+						<p>4、支持修改油小猴网站主题色；</p>
+						<p>5、原有主题相关设置现已移动至助手美化页面中。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.4</name>
+					<name>v1.0.9.2</name>
 					<div>
-					<div>1、跟进官方V6.1.1版本，修复阿里云盘获取下载链接时的问题。</div>
+						<p>1、修复使用API 下载时有可能会导致IDM无限弹窗的Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.3</name>
+					<name>v1.0.9.1</name>
 					<div>
-					<div>1、照顾小屏幕用户，将始终显示复制全部链接的按钮；</div>
-					<div>2、增加取消下载时的动画。</div>
+						<p>1、修复在百度网盘旧版下脚本无法删除元素的Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.6.2</name>
+					<name>v1.0.9</name>
 					<div>
-					<div>1、修复部分界面错位，实现CSS内置；</div>
-					<div>2、百度网盘界面将变得更加简洁。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.6.1</name>
-					<div>
-					<div>1、新增百度云盘API 下载支持复制链接；</div>
-					<div>2、为了照顾手机浏览器用户，增大项目之间间隙，新增隐藏IDM提示选项，可在助手设置中启用；</div>
-					<div>3、修改CSS，界面会出现更多的主题色；</div>
-					<div>4、支持在油小猴官网查看暗号；</div>
-					<div>5、修复部分语法错误。</div>
-					</div>
-				</div>
-				<div class="block">
-					<name>V1.0.6</name>
-					<div>
-					<div>1、修复了打开阿里云盘分享连接时因下载移动端广告导致只能点击 API 下载；</div>
-					<div>2、跟进官方6.0.4版本，修复夸克网盘获取下载链接失效、支持移动云盘。</div>
+						<p>1、跟进官方V6.2.7，修复因无法进行百度授权而导致获取直链报错 9019 的 Bug。</p>
 					</div>
 				</div>
 				<hr/>
 				<div class="block">
-					<name>V1.0.5.5</name>
+					<name>v1.0.8.9</name>
 					<div>
-					<div>1、感谢<a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a>的帮助，修复因为原作者服务器导致的初始化暗号识别错误；</div>
-					<div>2、修改一些文本以及提供给服务器的信息。</div>
+						<p>1、跟进官方V6.2.3，优化保存到网盘提示，修复阿里云盘、移动云盘失效的问题；</p>
+						<p>2、优化修改网盘主题的代码，减少对页面的破坏。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.5.4</name>
+					<name>v1.0.8.8</name>
 					<div>
-					<div>1、小修小改css，让主题色出现在更多地方；</div>
-					<div>2、修改下载链接获取失败的提示；</div>
-					<div>3、增加更多的主题色，可在助手设置查看；</div>
-					<div>4、homo彩蛋被删去力（悲）。</div>
+						<p>1、修复下载菜单字体过小的Bug。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.5.3</name>
+					<name>v1.0.8.7</name>
 					<div>
-					<div>1、修啦修啦，阿里云盘可以摸到下载菜单了。</div>
+						<p>1、修复在阿里云盘分享页面下点击“未点亮”按钮时没有任何反应的Bug；</p>
+						<p>2、更新并优化网盘界面精简规则；</p>
+						<p>3、支持更换 百度网盘、阿里云盘、迅雷云盘、夸克网盘、移动云盘 界面的主题颜色。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.5.2</name>
+					<name>v1.0.8.6</name>
 					<div>
-					<div>1、增加脚本信息菜单（没有用）；</div>
-					<div>2、优化阿里云盘显示svg图片；</div>
-					<div>3、修改弹窗按钮颜色。</div>
+						<p>1、新增移动云盘会员中心页面，可在网盘中点击“会员中心”按钮查看(但无法使用第三方支付)。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.5.1</name>
+					<name>v1.0.8.5</name>
 					<div>
-					<div>1、修复在切换按钮主题后夸克网盘不能正常显示按钮。</div>
+						<p>1、跟进官方V6.1.6，修复迅雷网盘分享页面无法选中文件，修复移动云盘无法判断页面。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.5</name>
+					<name>v1.0.8.4</name>
 					<div>
-					<div>1、跟进官方V5.0.4版本；</div>
-					<div>2、小改动，照着官方版本更正文件名称检测；</div>
-					<div>3、保留彩蛋，但必须舍弃官方暗号。</div>
+						<p>1、修复因重复绑定按钮而导致命令重复执行的Bug；</p>
+						<p>2、优化调试信息界面排版；</p>
+						<p>3、移除对百度网盘手机网页版的支持。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.4</name>
+					<name>v1.0.8.3</name>
 					<div>
-					<div>大改！</div>
-					<div>1、修复了原作者留下的夸克网盘切换文件夹就多一个“下载助手”按钮的大BUG；</div>
-					<div>2、终于来了，在下载菜单增加“助手设置”“更新日志”按钮；</div>
-					<div>【再也不用点进油猴管理再进设置了(保留油猴管理内设置)】</div>
-					<div>3、修改阿里云盘和夸克网盘下载助手按钮样式；</div>
-					<div>4、增加“取消点亮按钮”油猴菜单；</div>
-					<div>5、修改部分css，使其与选择的主题更贴切。</div>
+						<p>1、适配阿里云盘新域名alipan.com。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.8.2</name>
+					<div>
+						<p>1、更换新图标。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.8.1</name>
+					<div>
+						<p>1、修复因重复绑定按钮而导致 RPC 下载会发送多条下载请求的Bug；</p>
+						<p>2、选择不使用油小猴服务器时，“用ghproxy连接Github仓库”更换为“用jsdelivr连接Github仓库”；</p>
+						<p>3、跟进官方V6.1.4版本，修复移动网盘无法获取链接，支持阿里云盘新域名alipan.com。</p>
 					</div>
 				</div>
 				<hr/>
 				<div class="block">
-					<name>V1.0.3</name>
+					<name>v1.0.8</name>
 					<div>
-					<div>1、增加一个小彩蛋； 提示：</div>
-					<div>homo（需在未点亮按钮状态触发）</div>
-					<div>【需要重新恢复按钮为未点亮状态请进入 已安装脚本->编辑->开发者->重置到出厂->确定】</div>
-					<div>2、修改/增加默认主题色。</div>
+						<p>1、修复迅雷网盘无法勾选文件。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.2</name>
+					<name>v1.0.7.9</name>
 					<div>
-					<div>1、修改并加宽界面，调整部分css，使Sweetalert2界面更美观，更与原版相近；</div>
-					<div>2、修改部分提示文字，使文字更容易复制。</div>
+						<p>1、更新精简网盘元素匹配规则，防止因通知横条而导致不能点到“API 下载”以下的按钮。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.1</name>
+					<name>v1.0.7.8</name>
 					<div>
-					<div>1、去除更新提示；</div>
-					<div>2、更新Sweetalert2至11版本；</div>
-					<div>3、部分CDN节点更换为jsdelivr。</div>
+						<p>1、跟进官方V6.1.2，加入V2接口。</p>
+						<p>2、修复百度网盘下载时因为获取不到accessToken而一直转圈。</p>
 					</div>
 				</div>
 				<div class="block">
-					<name>V1.0.0</name>
+					<name>v1.0.7.7</name>
 					<div>
-					<div>1、增加“注入”功能（bushi）；</div>
-					<div>2、去除广告。</div>
+						<p>1、修复百度网盘的按钮会因为主题不同而被改变颜色的Bug；</p>
+						<p>2、更新夸克网盘按钮与界面。</p>
+					</div>
 				</div>
+				<div class="block">
+					<name>v1.0.7.6</name>
+					<div>
+						<p>1、修复“注入”功能；</p>
+						<p>2、黑暗模式支持随设置热切换。</p>
+					</div>
 				</div>
+				<div class="block">
+					<name>v1.0.7.5</name>
+					<div>
+						<p>1、修复阿里云盘下载逻辑；</p>
+						<p>2、精简代码；</p>
+						<p>3、支持深色模式；</p>
+						<p>4、修改部分提示文本；</p>
+						<p>5、修改部分CSS；</p>
+						<p>6、设置可测试RPC连接。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.7.4</name>
+					<div>
+						<p>1、优化下载逻辑；</p>
+						<p>2、修复阿里云盘无法使用API 下载。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.7.3</name>
+					<div>
+						<p>1、如果出现网络请求错误时支持自动重新请求；</p>
+						<p>2、可选择是否使用油小猴服务器。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.7.2</name>
+					<div>
+						<p>1、修复使用 RPC 下载时会重复发送链接的Bug。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.7.1</name>
+					<div>
+						<p>[实验功能，不影响正常使用]支持百度网盘手机网页版，勾选文件后可在顶栏找到“下载助手”按钮。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.7</name>
+					<div>
+						<p>1、重构夸克网盘、阿里云盘按钮。</p>
+					</div>
+				</div>
+				<hr/>
+				<div class="block">
+					<name>v1.0.6.9</name>
+					<div>
+						<p>1、下载窗口加入关闭按钮。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.8</name>
+					<div>
+						<p>1、修复夸克网盘按钮错位。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.7</name>
+					<div>
+						<p>1、将百度网盘界面修改为主题色，可在设置选择是否修改；</p>
+						<p>2、增加主题色名称，更改部分内容颜色；</p>
+						<p>3、移动云盘API 下载支持批量复制；</p>
+						<p>4、优化控制台输出结果；</p>
+						<p>5、百度网盘API 下载不使用IDM时可以显示剩余时间；</p>
+						<p>6、“取消点亮按钮”按钮的位置现已移动到设置页面。</p>
+						<p>7、homo特有的彩蛋又回来力(喜)。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.6</name>
+					<div>
+						<p>1、修复暗号错误。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.5</name>
+					<div>
+						<p>1、修复即使输入正确暗号也不能成功点亮按钮的服务器错误。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.4</name>
+					<div>
+						<p>1、跟进官方V6.1.1版本，修复阿里云盘获取下载地址时的问题。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.3</name>
+					<div>
+						<p>1、照顾小屏幕用户，将始终显示复制全部链接的按钮；</p>
+						<p>2、增加取消下载时的动画。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.2</name>
+					<div>
+						<p>1、修复部分界面错位，实现CSS内置；</p>
+						<p>2、百度网盘界面将变得更加简洁。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6.1</name>
+					<div>
+						<p>1、新增百度云盘API 下载支持复制链接；</p>
+						<p>2、为了照顾手机浏览器用户，增大项目之间间隙，新增隐藏IDM提示选项，可在助手设置中启用；</p>
+						<p>3、修改CSS，界面会出现更多的主题色；</p>
+						<p>4、支持在油小猴官网查看暗号；</p>
+						<p>5、修复部分语法错误。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.6</name>
+					<div>
+						<p>1、修复了打开阿里云盘分享连接时因下载移动端广告导致只能点击 API 下载；</p>
+						<p>2、跟进官方6.0.4版本，修复夸克网盘获取下载地址失效、支持移动云盘。</p>
+					</div>
+				</div>
+				<hr/>
+				<div class="block">
+					<name>v1.0.5.5</name>
+					<div>
+						<p>1、感谢<a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a>的帮助，修复因为原作者服务器导致的初始化暗号识别错误；</p>
+						<p>2、修改一些文本以及提供给服务器的信息。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.5.4</name>
+					<div>
+						<p>1、小修小改css，让主题色出现在更多地方；</p>
+						<p>2、修改下载地址获取失败的提示；</p>
+						<p>3、增加更多的主题色，可在助手设置查看；</p>
+						<p>4、homo彩蛋被删去力（悲）。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.5.3</name>
+					<div>
+						<p>1、修啦修啦，阿里云盘可以摸到下载菜单了。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.5.2</name>
+					<div>
+						<p>1、增加脚本信息菜单（没有用）；</p>
+						<p>2、优化阿里云盘显示svg图片；</p>
+						<p>3、修改弹窗按钮颜色。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.5.1</name>
+					<div>
+						<p>1、修复在切换按钮主题后夸克网盘不能正常显示按钮。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.5</name>
+					<div>
+						<p>1、跟进官方V5.0.4版本；</p>
+						<p>2、小改动，照着官方版本更正文件名称检测；</p>
+						<p>3、保留彩蛋，但必须舍弃官方暗号。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.4</name>
+					<div>
+						<p>大改！</p>
+						<p>1、修复了原作者留下的夸克网盘切换文件夹就多一个“下载助手”按钮的大BUG；</p>
+						<p>2、终于来了，在下载菜单增加“助手设置”“更新日志”按钮；</p>
+						<p>【再也不用点进油猴管理再进设置了(保留油猴管理内设置)】</p>
+						<p>3、修改阿里云盘和夸克网盘下载助手按钮样式；</p>
+						<p>4、增加“取消点亮按钮”油猴菜单；</p>
+						<p>5、修改部分css，使其与选择的主题更贴切。</p>
+					</div>
+				</div>
+				<hr/>
+				<div class="block">
+					<name>v1.0.3</name>
+					<div>
+						<p>1、增加一个小彩蛋； 提示：</p>
+						<p>homo（需在未点亮按钮状态触发）</p>
+						<p>【需要重新恢复按钮为未点亮状态请进入 已安装脚本->编辑->开发者->重置到出厂->确定】</p>
+						<p>2、修改/增加默认主题色。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.2</name>
+					<div>
+						<p>1、修改并加宽界面，调整部分css，使Sweetalert2界面更美观，更与原版相近；</p>
+						<p>2、修改部分提示文字，使文字更容易复制。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.1</name>
+					<div>
+						<p>1、去除更新提示；</p>
+						<p>2、更新Sweetalert2至11版本；</p>
+						<p>3、部分CDN节点更换为jsdelivr。</p>
+					</div>
+				</div>
+				<div class="block">
+					<name>v1.0.0</name>
+					<div>
+						<p>1、增加“注入”功能（bushi）；</p>
+						<p>2、去除广告。</p>
+					</div>
 				</div>
 				<style>
-				div:where(.swal2-container) div:where(.swal2-popup){
-					width:36em!important;
+				div:where(.swal2-container) div:where(.swal2-popup){width:36em!important}
+
+				.${mount}-about{--background:#f9f9f9;--border:#bdbdbd}
+				@media (prefers-color-scheme: dark) {.${mount}-about{--background:#383a42;--border:#61636b}}
+
+				.${mount}-about > .swal2-popup > .swal2-html-container{text-align:left;display:grid!important;gap:10px}
+
+				.${mount}-about > .swal2-popup > .swal2-html-container *{margin:0}
+				.${mount}-about > .swal2-popup > .swal2-html-container > hr{border-top: 1px solid var(--border)}
+				.${mount}-about > .swal2-popup > .swal2-html-container .block name{display:block;font-size:1.2em}
+
+				.${mount}-about > .swal2-popup > .swal2-html-container .block,
+				.${mount}-about > .swal2-popup > .swal2-html-container .block>div{display:grid;gap:5px;line-height:1.3}
+
+				.${mount}-about > .swal2-popup > .swal2-html-container blockquote {
+					background-color: var(--background);
+					border-left: 4px solid var(--border);
+					border-radius: 0 5px 5px 0;
+					padding: 0.6em 0.8em;
+					line-height: 1.3;
+					margin: 0;
 				}
-				.version-log{
-					text-align:left;
-				}
-				.version-log > .block,
-				.version-log > hr{
-					margin-bottom:20px;
-				}
-				.version-log > hr{
-					border-style:inset;
-					border-width:1px;
-				}
-				.version-log .block name{
-					display:block;
-					margin-bottom:10px;
-					font-size:1.2em;
-				}
-				.version-log .block div{
-					margin-bottom:5px;
-				}
-				.version-log .block blockquote{
-					padding:0.7em;
-					border-left:5px solid #bdbdbd;
-					background-color:#f9f9f9;
-					margin:0;
-				}
-				@media (prefers-color-scheme:dark){
-					.version-log .block blockquote{
-						border-left:5px solid #7A7C84;
-						background-color:#464851;
+				@media (prefers-color-scheme: dark) {
+					.${mount}-about > .swal2-popup > .swal2-html-container blockquote {
+						background-color: var(--background);
+						border-left-color: var(--border);
 					}
 				}
 				</style>`,
@@ -3372,11 +3227,11 @@
 		 * @description 一个究极好用的指示框，支持监听元素悬停事件动态改变位置，亦能显示文件名与大小
 		 * @author 油小猴
 		 * @author hmjz100
-		 * @fires .listener-tip - 鼠标移动事件触发指示框定位
+		 * @fires .${mount}.tip - 鼠标移动事件触发指示框定位
 		 * @see {@link temp.color} 使用全局主题色渲染文件大小信息
 		 */
 		createTip() {
-			let tooltip = document.querySelector(".pl-tooltip");
+			let tooltip = document.querySelector(`.${mount}.tooltip`);
 			let ticking = false; // 用于 rAF 节流
 			let currentTarget = null;
 
@@ -3463,7 +3318,7 @@
 			};
 
 			const handleOver = (e) => {
-				const target = e.target.closest(".listener-tip");
+				const target = e.target.closest(`.${mount}.tip`);
 				if (!target) return;
 
 				currentTarget = target;
@@ -3472,9 +3327,9 @@
 			};
 
 			const handleOut = (e) => {
-				// 只有离开到非 tooltip/listener-tip 区域才隐藏
+				// 只有离开到非 tooltip/${mount}.tip 区域才隐藏
 				const related = e.relatedTarget;
-				if (!related || !related.closest(".listener-tip, .pl-tooltip")) {
+				if (!related || !related.closest(`.${mount}.tip, .${mount}.tooltip`)) {
 					currentTarget = null;
 					if (tooltip) tooltip.style.display = "none";
 				}
@@ -3496,163 +3351,14 @@
 		},
 
 		/**
-		 * 创建用于下载的隐藏 iframe
-		 * @author 油小猴
-		 * @description 该方法会创建一个隐藏的 iframe 元素，并将其插入到指定的挂载点中，用于后续的下载操作。
-		 * iframe 的 src 设置为 "javascript:;" 以避免加载额外资源，提升性能。
-		 */
-		createIframe() {
-			const iframe = $(`<iframe style="padding:0;margin:0;display:block;display:none" src="javascript:;" id="downloadIframe"></iframe>`);
-			temp.mount.append(iframe);
-		},
-
-		/**
-		 * 创建用于下载页面的 HTML
-		 * @author 油小猴
-		 * @author hmjz100
-		 * @param {Array} configs - 用于配置生成 HTML 的参数
-		 * @returns {String} 生成的 HTML 内容
-		 * @description 详见代码
-		 */
-		generateDOM(configs) {
-			if (base.isType(configs) !== "array" && configs.length !== 2) return message.error("提示：<br/>配置解析失败~");
-			const list = (Array.isArray(configs[0]) ? configs[0] : []);
-			if (!list.length) return message.error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
-			const {
-				isFolder,
-				getFileName,
-				getFileSize,
-				getFileLink,
-				getFileMirror,
-				convert = {},
-				tooltip = {}
-			} = (base.isType(configs[1]) === "object" ? configs[1] : {});
-			const content = $(`<div><div class="pl-main"></div><div class="pl-extra"></div></div>`);
-			let allLink = [];
-			list.forEach((v, i) => {
-				i = i + 1;
-				if (isFolder(v)) return;
-				const filename = getFileName(v);
-				const size = getFileSize(v);
-				const dlink = getFileLink(v);
-				const mirror = base.isType(getFileMirror) !== "undefined" ? getFileMirror(getFileLink(v)) : undefined;
-				if (!dlink || !dlink.includes("http")) {
-					content.find(".pl-main").append(`<div class="pl-item">
-						<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-						<div class="pl-item-message">${dlink ? dlink : "获取下载链接失败，刷新网页后再试试吧~"}</div>
-					</div>`)
-				} else {
-					if (temp.mode === "api") {
-						allLink.push(dlink);
-						content.find(".pl-main").append(`<div class="pl-item" data-index="${i}" data-link="${dlink}" data-name="${filename}" data-size="${size}">
-							<div class="pl-item-name listener-tip"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<button class="pl-item-link pl-btn-primary pl-btn-default listener-api-download enhance listener-tip" data-title="通过脚本跨域请求下载文件，已支持多线程、智能多分片，显示预估剩余时间、下载速度；<br/>具体线程取决于浏览器的限制，所以非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能!"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
-							<button class="pl-item-link pl-btn-primary pl-btn-info listener-api-download normal listener-tip" data-link="${dlink}" data-filename="${filename}" data-title="通过浏览器访问链接下载文件，适用于支持 iframe 的浏览器<br/>点击后需等待浏览器弹出提示才可点击下个下载，否则只会下载后者"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</button>
-							<button class="pl-btn-primary pl-btn-default listener-idm-download listener-tip" data-filename="${filename}" data-filesize="${size}" data-link="${dlink}" data-title="通过 IDM 扩展的捕获协议，将链接推送至 IDM，理论上仅适用于版本较新的 IDM。"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 IDM (Beta)</span></button>
-							<button class="pl-item-copy pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy='${filename}' data-title="点击复制文件名"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
-							<button class="pl-item-copy pl-btn-primary pl-btn-warning listener-copy copy listener-tip" data-copy='${dlink}' data-title="点击复制下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制链接</button>
-							<div class="pl-item-downing" style="display:none">
-								<div class="pl-progress">
-									<div class="progress foot"><span class="text">正在加载...</span></div>
-									<div class="progress head"><span class="text">正在加载...</span></div>
-								</div>
-								<button class="pl-btn-primary pl-btn-danger stop"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>取消下载</button>
-								<button class="pl-btn-primary pl-btn-info back" style="display:none"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>返回</button>
-							</div>
-						</div>`);
-					}
-					if (temp.mode === "curl") {
-						const finalink = base.convertLinkToCurl(dlink, filename, convert?.curl);
-						allLink.push(finalink);
-						content.find(".pl-main").append(`<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<a class="pl-item-link listener-copy listener-tip" data-copy='${finalink}' data-title="点击复制 curl 命令行">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${filename} 下载命令行</a>
-						</div>`);
-					}
-					if (temp.mode === "aria2") {
-						const finalink = base.convertLinkToAria2(dlink, filename, convert?.aria2);
-						allLink.push(finalink);
-						content.find(".pl-main").append(`<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<button class="pl-item-link pl-btn-primary pl-btn-default listener-aria2-download" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 Aria2 下载器</span></button>
-							<button class="pl-btn-primary pl-btn-info listener-copy listener-tip" data-copy='${finalink}' data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
-						</div>`);
-					}
-					if (temp.mode === "bitcomet") {
-						const finalink = base.convertLinkToBitComet(dlink, filename, convert?.bitcomet);
-						allLink.push(finalink);
-						content.find(".pl-main").append(`<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<a class="pl-item-link pl-btn-primary pl-btn-default listener-tip" href="${finalink}" data-title="点击打开 BC 链接以手动调起比特彗星下载，右键可复制 BC 链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>使用 BC 链接下载</a>
-							${mirror ? `<button class="pl-btn-primary pl-btn-success listener-copy listener-tip" data-copy='${mirror}' data-title="点击复制镜像地址"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制镜像</a>` : ""}
-							<button class="pl-btn-primary pl-btn-info listener-bitcomet-download listener-tip" data-filename="${filename}" data-link="${dlink}" data-title="除非 BC 链接无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至下载器</span></button>
-						</div>`);
-					}
-					if (temp.mode === "abdm") {
-						content.find(".pl-main").append(`<div class="pl-item">
-							<div class="pl-item-name listener-tip" data-size="${size}"><div class="name">${filename}</div><div class="size">${base.sizeFormat(size)}</div></div>
-							<button class="pl-item-link pl-btn-primary pl-btn-default listener-abdm-download slient" data-filename="${filename}" data-link="${dlink}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送链接到 ABDM 下载器</span></button>
-						</div>`);
-					}
-				}
-			});
-			allLink = (allLink ? allLink.join("\r\n") : "")
-			if (temp.mode === "api") {
-				const rpc = base.getValue("setting_idm_rpc").find(i => i.default);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary api listener-download-all enhance listener-tip" data-title="通过脚本跨域请求下载文件，已支持多线程、智能多分片，显示预估剩余时间、下载速度；<br/>具体线程取决于浏览器的限制，所以非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能!"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载 (Beta)</button>
-				<button class="pl-btn-primary pl-btn-default idm listener-send-rpc listener-tip" data-type="idm" data-title="通过 IDM 扩展的捕获协议，将链接推送至 IDM，理论上仅适用于版本较新的 IDM。<br/>使用前请确保您的 IDM 的 “设置” > “文件类型” > “接管下载文件扩展名” 里有上述文件的扩展名，若无请添加。"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 IDM (Beta)</button>`);
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning idm listener-open-idm-setting listener-tip" data-title="${rpc.id}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning api listener-copy listener-tip" data-copy='${allLink}' data-title="点击复制全部下载链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部链接</button>`);
-			} else if (temp.mode === "curl") {
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning curl listener-open-setting listener-tip" data-title="${temp.terminalType[base.getValue("setting_curl_terminal")]}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改终端类型</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary curl listener-copy listener-tip" data-copy='${allLink}' data-title="点击复制全部 curl 命令行"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
-			} else if (temp.mode === "aria2") {
-				const rpc = base.getValue("setting_aria2_rpc").find(i => i.default);
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning aria2 listener-open-aria2-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-success aria2 listener-rpc-task youxiaohou listener-tip" data-title="访问原作者的 Aria2 管理页面以查看下载任务，功能较少"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-list-check"/></svg>查看任务 (油小猴)</button>`);
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-success aria2 listener-rpc-task ariang listener-tip" data-title="访问 AriaNg 的官方 Demo 以查看下载任务，功能较多"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-list-check"/></svg>查看任务 (AriaNg)</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default aria2 listener-send-rpc" data-type="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-info aria2 listener-copy listener-tip" data-copy='${allLink}' data-title="Aria2 没启用 RPC？点击复制 aria2c 命令行手动下载"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
-			} else if (temp.mode === "bitcomet") {
-				const rpc = base.getValue("setting_bitcomet_rpc").find(i => i.default);
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning bitcomet listener-open-bitcomet-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-default bitcomet listener-copy listener-tip" data-copy='${allLink}' data-title="点击复制全部 BC 链接"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部 BC 链接</button>`);
-				if (list.length >= 2) content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-info bitcomet listener-send-rpc listener-tip" data-type="bitcomet" data-title="除非 BC 链接无法调起比特彗星，否则不建议使用此方式<br/><br/>由于比特彗星内置的远程下载 Web API 服务代码存在缺陷，请求可能会随机出现“发送失败 - 服务器返回空请求”错误，实际上客户端已成功开始下载<br/>由于脚本无法准确判断请求是否真正成功，即使出现错误，也会提示“成功”"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
-			} else if (temp.mode === "abdm") {
-				const rpc = base.getValue("setting_abdm_rpc").find(i => i.default);
-				content.find(".pl-extra").append(`<button class="pl-btn-primary pl-btn-warning abdm listener-open-abdm-setting listener-tip" data-title="${rpc.domain + ":" + rpc.port}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
-			}
-			function updateTooltip($element, value) {
-				if (!value) return;
-				$element.addClass("listener-tip");
-				if (value.startsWith("+")) {
-					// 追加模式：去掉开头的 "+"，然后拼接到现有 data-title
-					const newValue = value.substring(1);
-					const existingTitle = $element.attr("data-title") || "";
-					$element.attr("data-title", existingTitle + newValue);
-				} else {
-					// 替换模式
-					$element.attr("data-title", value);
-				}
-			}
-			if (tooltip?.enhance) updateTooltip(content.find(".enhance"), tooltip.enhance);
-			if (tooltip?.normal) updateTooltip(content.find(".normal"), tooltip.normal);
-			if (tooltip?.copy) updateTooltip(content.find(".copy"), tooltip.copy);
-			if (tooltip?.filename) updateTooltip(content.find(".filename"), tooltip.filename);
-			const html = content.html();
-			content.remove();
-			return html;
-		},
-
-		/**
 		 * 获取镜像列表
 		 * @author 油小猴
-		 * @description 根据原始链接和镜像域名列表生成多个镜像链接，支持多线程下载。
-		 * 每个镜像地址会根据 thread 参数生成多个重复链接（通过添加 `&` 符号区分）。
-		 * @param {String} link - 原始下载链接
+		 * @description 根据原始地址和镜像域名列表生成多个镜像地址，支持多线程下载。
+		 * 每个镜像地址会根据 thread 参数生成多个重复地址（通过添加 `&` 符号区分）。
+		 * @param {String} link - 原始下载地址
 		 * @param {Array<String>} mirror - 镜像域名数组
-		 * @param {Number} [thread=2] - 每个镜像生成的线程数（链接重复次数），默认为 2
-		 * @returns {String} 所有镜像链接组成的字符串，每行一个链接
+		 * @param {Number} [thread=2] - 每个镜像生成的线程数（地址重复次数），默认为 2
+		 * @returns {String} 所有镜像地址组成的字符串，每行一个地址
 		 *
 		 * @example
 		 * getMirrorList("https://example.com/file.zip", ["mirror1.com", "mirror2.com"], 2)
@@ -3685,173 +3391,50 @@
 		 * @description 详见代码
 		 */
 		addPageListener() {
-			$doc.on("click", ".listener-open-setting", (e) => {
-				base.showSetting(e);
-			});
-			$doc.on("click", ".listener-open-idm-setting", (e) => {
-				base.showIDMSetting(e);
-			});
-			$doc.on("click", ".listener-open-aria2-setting", (e) => {
-				base.showAria2Setting(e);
-			});
-			$doc.on("click", ".listener-open-bitcomet-setting", (e) => {
-				base.showBitcometSetting(e);
-			});
-			$doc.on("click", ".listener-open-abdm-setting", (e) => {
-				base.showABDMSetting(e);
-			});
-			$doc.on("click", ".listener-open-updatelog", () => {
-				base.showUpdate();
-			});
-			$doc.on("click", ".listener-open-beautify", () => {
-				base.showBeautify();
-			});
-			$doc.on("click", ".listener-unregister", async function () {
-				message.warning("正在“注入”设置项目...");
-				const list = base.getValue("setting_init");
-				list.code;
-				list.license;
-				base.setValue("setting_init", list);
-				base.delValue("baidu_access_token");
-				location.reload();
-			});
-			$doc.on("change", ".listener-terminal", async function (e) {
-				base.setValue("setting_curl_terminal", e.currentTarget.value);
-			});
-			$doc.on("click", ".listener-color", async function (e) {
-				const element = $(e.currentTarget).closest(".listener-color").length > 0 ? $(e.currentTarget).closest(".listener-color") : $(e.currentTarget);
-				const parent = element.closest(".pl-color");
-				const mask = element.find(".mask");
-				const color = element.data("color");
-				if (color && parent.length > 0 && mask.length > 0) {
-					parent.find(".this").remove();
-					mask.append(`<div class="this"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"></use></svg></div>`);
-					const list = base.getValue("setting_ui_theme")
-					list.color = color;
-					base.setValue("setting_ui_theme", list);
-					base.addPanLinkerStyle();
-				}
-			});
-			$doc.on("change", ".listener-theme", async function (e) {
-				const list = base.getValue("setting_ui_theme");
-				list.custom[e.currentTarget.dataset.type] = e.currentTarget.checked;
-				base.setValue("setting_ui_theme", list);
-			});
-			$doc.on("click", ".listener-api-download.normal", async function (e) {
-				e.preventDefault();
-				const dataset = e.currentTarget.dataset;
-				const link = new URL(dataset.link);
-				$("#downloadIframe").attr("src", link.href);
-			});
-			$doc.on("click", ".pl-item-downing .stop", async function (e) {
-				const status = base._EventFactory(e);
-				const index = status.item.data("index");
-				if (temp.request[index]) {
-					temp.request[index].abort();
-					status.down_enhance_downing.find(".pl-progress .text").text("正在取消...");
-					status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-					await base.sleep(1050);
-					status.down_enhance_downing.find(".back").click();
-				}
-			});
-			$doc.on("click", ".pl-item-downing .back", async function (e) {
-				const status = base._EventFactory(e);
-				status.down_enhance_downing.find(".pl-progress .text").text("正在加载...");
-				status.down_enhance_downing.find(".pl-progress .text").css("white-space", "");
-				status.down_enhance_downing.find(".pl-progress .head").css("background", "");
-				status.down_enhance.show();
-				status.down_enhance_downing.hide();
-				status.down_enhance_downing.find(".stop").hide();
-				status.down_enhance_downing.find(".back").hide();
-				status.down_normal.show();
-				status.down_idm.show();
-				status.link_copy.show();
-				status.link_message.hide();
-			});
-			$doc.on("click", ".listener-download-all", async function (e) {
-				const target = $(e.currentTarget);
-				const originalHtml = target.html();
-				$(".pl-item-link.enhance").each((index, element) => {
-					if ($(element).css("display") !== "none") {
-						$(element).click();
-					}
-				});
-				target.text("下载开始，进度见上方按钮哦~").animate({ opacity: "0.5" }, "slow");
-				await base.sleep(2000);
-				target.css("opacity", "");
-				target.html(originalHtml);
-			});
-			$doc.on("click", ".listener-send-rpc", async function (e) {
-				const target = $(e.currentTarget);
-				const originalHtml = target.html();
-				$(`.listener-${target.data("type")}-download`).each((index, element) => {
-					if ($(element).attr("data-processing") !== "true") {
-						$(element).click();
-					}
-				});
-				target.text("发送完成，结果见上方按钮哦~").animate({ opacity: "0.5" }, "slow");
-				await base.sleep(2000);
-				target.css("opacity", "");
-				target.html(originalHtml);
-			});
-			$doc.on("click", ".listener-copy", async function (e) {
+			$doc.on("click", `.${mount}[action="settings"][type]`, async (e) => {
 				e.preventDefault();
 				const target = $(e.currentTarget);
-				const originalHtml = target.html();
-				const copy = target.data("copy");
-				if (copy) {
-					await base.setClipboard(copy);
-					target.html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"/></svg>复制成功`).animate({ opacity: "0.5" }, "slow");
-					await base.sleep(2000);
-					target.css("opacity", "");
-					target.html(originalHtml);
+				const type = target.attr("type");
+				if (!type) base.showSetting(target);
+				switch (type) {
+					case "idm": base.showIDMSetting(target); break;
+					case "curl": base.showSetting(target); break;
+					case "aria2": base.showAria2Setting(target); break;
+					case "bitcomet": base.showBitcometSetting(target); break;
+					case "abdm": base.showABDMSetting(target); break;
+					default: break;
 				}
 			});
-			$doc.on("click", ".listener-rpc-task.youxiaohou", function () {
-				const rpc = base.getValue("setting_aria2_rpc").find(i => i.default);
-				const isHttps = rpc.domain.startsWith("https://");
-				const url = `${isHttps ? "https" : "http"}://d.youxiaohou.com/?rpc=${base.encodeBase(JSON.stringify({ domain: rpc.domain, port: rpc.port }))}#${rpc.token}`;
-				GM_openInTab(url, { active: true, insert: true, setParent: true });
-			});
-			$doc.on("click", ".listener-rpc-task.ariang", function () {
-				const rpc = base.getValue("setting_aria2_rpc").find(i => i.default);
-				const isHttps = rpc.domain.startsWith("https://");
-				const url = `${isHttps ? "https" : "http"}://ariang.mayswind.net/latest/#!/settings/rpc/set?protocol=${isHttps ? "wss" : "ws"}&host=${rpc.domain.replace(/^(https?:\/\/)/, "")}&port=${rpc.port}&interface=${rpc.path.replace(/^\//, "")}&secret=${rpc.token}`;
-				GM_openInTab(url, { active: true, insert: true, setParent: true });
-			});
-			$doc.on("change", ".listener-rpc-select", async function () {
-				const element = $(this);
-				const selectedIndex = element.val();
-				const type = element.data("type");
+			$doc.on("change", ".listener-rpc-select", async (e) => {
+				const target = $(e.currentTarget);
+				const selectedIndex = target.val();
+				const type = target.data("type");
 				const list = base.getValue(`setting_${type}_rpc`);
 				if (selectedIndex === "new") {
 					return $(".listener-rpc-input").val("");
 				} else if (list[selectedIndex]) {
-					list.forEach((item,) => {
-						if (item.default) {
-							delete item.default;
-						}
+					list.forEach(item => {
+						if (item.default) delete item.default;
 					});
 					list[selectedIndex].default = true;
 					base.setValue(`setting_${type}_rpc`, list);
-					$(".listener-rpc-input").each((index, element) => {
-						const type = $(element).data("type").split(".")[1];
-						$(element).val(list[selectedIndex][type] || "");
+					$(".listener-rpc-input").each((_, input) => {
+						const type = $(input).data("type").split(".")[1];
+						$(input).val(list[selectedIndex][type] || "");
 					});
 				}
 			});
-			$doc.on("input", ".listener-rpc-input", async function () {
-				let type = $(this).data("type");
+			$doc.on("input", ".listener-rpc-input", async (e) => {
+				const target = $(e.currentTarget);
+				let type = target.data("type");
 				if (!type) return;
 				type = type.split(".")
 				const list = base.getValue(`setting_${type[0]}_rpc`);
-				const value = $(this).val();
+				const value = target.val();
 				let selectedIndex = $(".listener-rpc-select option:selected").val();
 				if (selectedIndex === "new") {
-					list.forEach((item,) => {
-						if (item.default) {
-							delete item.default;
-						}
+					list.forEach((item) => {
+						if (item.default) delete item.default;
 					});
 					list.push({
 						domain: "",
@@ -3877,8 +3460,10 @@
 				};
 				select.html(`${options}<option value="new">+ 创建新项目</option>`);
 			});
-			$doc.on("click", ".listener-rpc-delete", async function () {
-				const type = $(this).data("type");
+			$doc.on("click", ".listener-rpc-delete", async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const type = target.data("type");
 				let list = base.getValue(`setting_${type}_rpc`);
 				const selectedIndex = parseInt($(".listener-rpc-select option:selected").val(), 10);
 				if (selectedIndex === "new" || !confirm("您确定要删除此项目吗？")) return;
@@ -3892,23 +3477,24 @@
 					return `<option value="${index}"${item.default ? " selected" : ""}>${item.domain ? item.domain : ""}:${item.port ? item.port : ""}${item.path ? item.path : ""}</option>`;
 				}).join("");
 				select.html(`${options}<option value="new">+ 创建新项目</option>`);
-				$(".listener-rpc-input").each(function () {
-					const key = $(this).data("type").split(".")[1];
-					$(this).val(list[newDefaultIndex][key] || "");
+				$(".listener-rpc-input").each((_, input) => {
+					const key = $(input).data("type").split(".")[1];
+					$(input).val(list[newDefaultIndex][key] || "");
 				});
 			});
-			$doc.on("click", ".listener-rpc-test", async function () {
-				const element = $(this);
-				const type = element.data("type");
+			$doc.on("click", ".listener-rpc-test", async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const type = target.data("type");
 				const selectedIndex = $(".listener-rpc-select option:selected").val();
 				const list = base.getValue(`setting_${type}_rpc`);
-				const text = element.find("span");
+				const text = target.find("span");
 				const originalHtml = text.html();
-				if (selectedIndex === "new" || element.data("testing") === "true") return;
+				if (selectedIndex === "new" || target.data("testing") === "true") return;
 				if (list[selectedIndex]) {
-					element.data("testing", "true");
+					target.data("testing", "true");
 					text.html("等待");
-					element.css({ "opacity": "0.9" });
+					target.css({ "opacity": "0.9" });
 					const selected = list.find(i => i.default);
 					let result = "fail"
 					if (type === "aria2") {
@@ -3924,19 +3510,73 @@
 					}
 					if (result === "success") {
 						text.html("成功");
-						element.css({ "background-color": "#52c41a" });
+						target.css({ "background-color": "#52c41a" });
 					} else {
 						text.html("失败");
-						element.css({ "background-color": "#cb1616" });
+						target.css({ "background-color": "#cb1616" });
 					}
-					element.css({ "opacity": "" });
+					target.css({ "opacity": "" });
 					await base.sleep(3000);
-					element.data("testing", "false");
+					target.data("testing", "false");
 					text.html(originalHtml);
-					element.css({ "background-color": "" });
+					target.css({ "background-color": "" });
 				}
 			});
-			$doc.on("click", ".pl-button-mode", async function (e) {
+			$doc.on("click", ".listener-open-setting", (e) => {
+				base.showSetting(e);
+			});
+			$doc.on("click", ".listener-open-idm-setting", (e) => {
+				base.showIDMSetting(e);
+			});
+			$doc.on("click", ".listener-open-aria2-setting", (e) => {
+				base.showAria2Setting(e);
+			});
+			$doc.on("click", ".listener-open-bitcomet-setting", (e) => {
+				base.showBitcometSetting(e);
+			});
+			$doc.on("click", ".listener-open-abdm-setting", (e) => {
+				base.showABDMSetting(e);
+			});
+			$doc.on("click", ".listener-open-updatelog", () => {
+				base.showUpdate();
+			});
+			$doc.on("click", ".listener-open-beautify", () => {
+				base.showBeautify();
+			});
+			$doc.on("click", ".listener-unregister", async (e) => {
+				e.preventDefault();
+				message.warning("正在“注入”设置项目...");
+				const list = base.getValue("setting_init");
+				delete list.code;
+				delete list.license;
+				base.setValue("setting_init", list);
+				base.delValue("baidu_access_token");
+				base.delValue("quark_social_token");
+				location.reload();
+			});
+			$doc.on("change", ".listener-terminal", async (e) => {
+				base.setValue("setting_curl_terminal", e.currentTarget.value);
+			});
+			$doc.on("click", ".listener-color", async (e) => {
+				const target = $(e.currentTarget).closest(".listener-color").length > 0 ? $(e.currentTarget).closest(".listener-color") : $(e.currentTarget);
+				const parent = target.closest(".pl-color");
+				const mask = target.find(".mask");
+				const color = target.data("color");
+				if (color && parent.length > 0 && mask.length > 0) {
+					parent.find(".this").remove();
+					mask.append(`<div class="this"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"></use></svg></div>`);
+					const list = base.getValue("setting_ui_theme")
+					list.color = color;
+					base.setValue("setting_ui_theme", list);
+					base.addPanLinkerStyle();
+				}
+			});
+			$doc.on("change", ".listener-theme", async (e) => {
+				const list = base.getValue("setting_ui_theme");
+				list.custom[e.currentTarget.dataset.type] = e.currentTarget.checked;
+				base.setValue("setting_ui_theme", list);
+			});
+			$doc.on("click", ".pl-button-mode", async (e) => {
 				temp.mode = e.currentTarget.dataset.mode;
 				console.info(e, temp, base.isType(temp.main?.getLink));
 				if (!temp.mode) return;
@@ -3993,23 +3633,48 @@
 			base.addStyle("swal-pub-style", "style", `@media (prefers-color-scheme:light){${GM_getResourceText("SwalLigt")}}`);
 			base.addStyle("swal-pub-dark-style", "style", `@media (prefers-color-scheme:dark){${GM_getResourceText("SwalDark").replace(/#19191a/, "#222226")}}`);
 			base.addStyle("swal-pub-custom-style", "style", `
-.swal2-container *{vertical-align:baseline;line-height:normal}
+.swal2-container > *{vertical-align:baseline;line-height:normal}
 .swal2-styled{transition:all.2s}
 .swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:${temp.color} transparent }
 .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}
-.swal2-timer-progress-bar{width:100%;height:.25em;border:1px #ffffff33 solid;border-radius:50px;background:${temp.color} }
-.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:${temp.color};color:#EBE6E3;line-height:2em;text-align:center}
-.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:${temp.color} }
-.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:${temp.color}}
+.swal2-timer-progress-bar{width:100%;height:.25em;border:1px #ffffff33 solid;border-radius:50px;background:var(--pl-c) }
+.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:var(--pl-c);color:#FFF;line-height:2em;text-align:center}
+.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:var(--pl-c) }
+.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:var(--pl-c)}
 .swal2-html-container{padding:1em 1.6em 0.3em;margin:0}
-.swal2-close,div:where(.swal2-container) button:where(.swal2-close){border-radius:10px;transition:all.2s}
-.swal2-close:hover,div:where(.swal2-container) button:where(.swal2-close):hover{color:${temp.color};background-color:${temp.color}30;font-size:60px}
+.swal2-close,div:where(.swal2-container) button:where(.swal2-close){font-family:inherit;line-height:0;position:absolute;top:10px;right:10px;border-radius:50em;transition:all.2s}
+.swal2-close:hover,div:where(.swal2-container) button:where(.swal2-close):hover{color:#fff;background-color:${temp.color};font-size:60px;}
 .swal2-popup.swal2-toast .swal2-close,div:where(.swal2-container) .swal2-toast button:where(.swal2-close){background-color:transparent;font-size:2em}
+
+.swal2-popup,div:where(.swal2-container) div:where(.swal2-popup){overflow:hidden}
+@media (prefers-color-scheme:light){
+	.swal2-popup,div:where(.swal2-container) div:where(.swal2-popup){color:#1D1D1F;background:#F5F5F7}
+	.swal2-footer,div:where(.swal2-container) .swal2-footer{color:#0000008F}
+}
+@media (prefers-color-scheme:dark){
+	.swal2-popup,div:where(.swal2-container) div:where(.swal2-popup){color:#F5F5F7;background:#1D1D1F}
+	.swal2-footer,div:where(.swal2-container) .swal2-footer{color:#FFFFFFEB}
+}
+
+div:where(.swal2-container) img:where(.swal2-banner) {max-width:100%;width:100%;margin:0!important;cursor:initial}
+
+div:where(.swal2-container) button,
+div:where(.swal2-container) input,
+div:where(.swal2-container) keygen,
+div:where(.swal2-container) optgroup,
+div:where(.swal2-container) select,
+div:where(.swal2-container) textarea {
+	font-family: inherit;
+	line-height: normal;
+}
+
 .swal2-styled{display:flex;justify-content:center;align-items:center;gap:5px}
-.swal2-styled.swal2-confirm,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){background-color:${temp.color};color:#EBE6E3}
+.swal2-styled[style*="inline-block"]{display:inline-flex!important}
+.swal2-styled.swal2-confirm,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){background-color:${temp.color};color:#FFF}
 .swal2-styled.swal2-confirm:focus,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus{box-shadow:0 0 0 3px ${temp.color}80}
 .swal2-styled.swal2-deny:focus,.swal2-close:focus,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):focus{box-shadow:0 0 0 3px #dc374180}
 .swal2-styled.swal2-cancel:focus,div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):focus{box-shadow:0 0 0 3px #6e788180}
+
 .swal2-styled.swal2-confirm,
 .swal2-styled.swal2-deny,
 .swal2-styled.swal2-cancel,
@@ -4017,6 +3682,7 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm),
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny),
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel)
 {border-radius:50px}
+
 div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{opacity:0.7}
 .swal2-backdrop-show,.swal2-noanimation,div:where(.swal2-container).swal2-backdrop-show, div:where(.swal2-container).swal2-noanimation{background:rgba(25,25,26,.75);transition:backdrop-filter.2s;backdrop-filter:blur(1px)}
 body.swal2-toast-shown .swal2-container{backdrop-filter:none;width:auto;max-width:100%;word-break:break-all}
@@ -4026,13 +3692,16 @@ body.swal2-toast-shown .swal2-container{backdrop-filter:none;width:auto;max-widt
 .swal2-html-container,div:where(.swal2-container) div:where(.swal2-html-container){padding:1.3em 1.3em 0.3em;margin:0}
 .swal2-footer,div:where(.swal2-container) div:where(.swal2-footer){flex-direction:column;justify-content:center;align-items:center}
 .swal2-footer p,div:where(.swal2-container) div:where(.swal2-footer) p{margin:0;padding:0}
-.swal2-icon-content,div:where(.swal2-icon) .swal2-icon-content{font-family:sans-serif}
+.swal2-icon-content,div:where(.swal2-icon) .swal2-icon-content{font-family:unset;line-height:normal}
+div:where(.swal2-icon) .swal2-icon-content {position:relative;top:-0.025em;font-variant-emoji:text!important}
+
 .swal2-input, .swal2-file, swal2-select, .swal2-textarea,
 div:where(.swal2-container) input:where(.swal2-input),
 div:where(.swal2-container) input:where(.swal2-file),
 div:where(.swal2-container) input:where(.swal2-select),
 div:where(.swal2-container) textarea:where(.swal2-textarea)
 {box-shadow:none}
+
 .swal2-input:focus, .swal2-file:focus, .swal2-select:focus, .swal2-textarea:focus,
 .swal2-input:focus-visible, .swal2-file:focus-visible, .swal2-select:focus-visible, .swal2-textarea:focus-visible,
 div:where(.swal2-container) input:where(.swal2-input):focus,
@@ -4044,14 +3713,22 @@ div:where(.swal2-container) input:where(.swal2-select):focus-visible,
 div:where(.swal2-container) textarea:where(.swal2-textarea):focus,
 div:where(.swal2-container) textarea:where(.swal2-textarea):focus-visible
 {outline:0;border:1px solid ${temp.color};box-shadow:0 0 0 3px ${temp.color}80}
+
 .swal2-checkbox, .swal2-file, .swal2-input, .swal2-radio, .swal2-select, .swal2-textarea,
 div:where(.swal2-container) input:where(.swal2-input), div:where(.swal2-container) input:where(.swal2-file), div:where(.swal2-container) textarea:where(.swal2-textarea), div:where(.swal2-container) select:where(.swal2-select), div:where(.swal2-container) div:where(.swal2-radio), div:where(.swal2-container) label:where(.swal2-checkbox)
 {margin:1em 2em}
+
+div:where(.swal2-container){font:500 24px/normal -apple-system,"PingFang SC",Helvetica Neue,Helvetica,STHeiTi,'Source Han Sans SC','Noto Sans CJK SC','HanHei SC','方正兰亭黑_GB18030','方正兰亭黑_GBK',ui-sans-serif,sans-serif,system-ui,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji',emoji}
+
+div:where(.swal2-container) button > span {position:relative;top:-0.025em}
 html:has(.swal2-container), html.swal2-shown, body:has(.swal2-container), body.swal2-shown {font-size: unset!important}`);
 			base.addStyle(`${mount}-main-style`, "style", `
 :root {
 	--pl-c: ${temp.color};
+	--pl-c: ${temp.color};
+	--pl-c-0d: ${temp.color}0d;
 	--pl-c-15: ${temp.color}15;
+	--pl-c-1f: ${temp.color}1f;
 	--pl-c-30: ${temp.color}30;
 	--pl-c-33: ${temp.color}33;
 	--pl-c-80: ${temp.color}80;
@@ -4066,7 +3743,7 @@ body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar
 }
 
 body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar-track {
-	background: #EBE6E3 !important;
+	background: #FFF !important;
 	border-radius: 10px
 }
 
@@ -4121,24 +3798,21 @@ body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar
 .pl-icon {
 	display: inline;
 	align-self: center;
+	align-items: center;
+
 	width: 15px;
 	height: 15px;
 	font-size: 18px;
-	vertical-align: -0.15em;
+	vertical-align: 0;
+	flex-shrink: 0;
+
 	fill: currentColor;
 	overflow: hidden
 }
 
-.pl-main {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	min-height: 50px;
-	max-height: calc(100vh - 300px);
-	padding: 8px 6px;
-	overflow: auto;
-	background: var(--pl-c-15);
-	border-radius: 10px
+.pl-a .pl-icon {
+	display: inline-flex;
+	vertical-align: baseline;
 }
 
 .pl-a {
@@ -4170,7 +3844,7 @@ body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar
 
 .pl-a:hover,
 .pl-a:focus {
-	color: #EBE6E3
+	color: #FFF
 }
 
 .pl-a:hover::before,
@@ -4180,14 +3854,26 @@ body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar
 
 .pl-a:active {
 	opacity: 0.8;
-	color: #EBE6E3
+	color: #FFF
 }
 
-.pl-a .pl-icon {
-	vertical-align: -0.06em
+/* 独立组件 - 下载列表 */
+.${mount}.main {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-height: 50px;
+	max-height: calc(100vh - 300px);
+	padding: 8px 6px;
+	overflow: auto;
+	background: var(--pl-c-15);
+	border-radius: 10px
 }
-
-.pl-item {
+.${mount}.main > .item {
+	width: max-content;
+	min-width: 100%;
+	flex-shrink: 0;
+	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -4195,29 +3881,26 @@ body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar
 	background: var(--pl-c-30);
 	border-radius: 8px
 }
-
-.pl-item-name {
-	width: 15%;
+.${mount}.main > .item > .name {
+	flex: 0 0 150px;
+	min-width: 100px;
 	overflow: hidden;
 	text-align: left;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	cursor: default
 }
-
-.pl-item-name>* {
+.${mount}.main > .item > .name > * {
 	overflow: hidden;
 	text-align: left;
 	white-space: nowrap;
 	text-overflow: ellipsis
 }
-
-.pl-item-link {
+.${mount}.main > .item > .link {
 	flex: 1;
 	cursor: pointer
 }
-
-a.pl-item-link {
+.${mount}.main > .item > a.link {
 	overflow: hidden;
 	text-align: left;
 	white-space: nowrap;
@@ -4226,27 +3909,47 @@ a.pl-item-link {
 	transition: color .15s;
 	will-change: color
 }
-
-a.pl-item-link:hover {
-	color: #EBE6E3
+.${mount}.main > .item > a.link:hover {
+	color: #FFF
 }
-
-.pl-item-message {
+.${mount}.main > .item > .message {
 	display: flex;
 	flex: 1;
 	justify-content: space-between
 }
-
-.pl-item-downing {
+.${mount}.main > .item > .downing {
 	display: flex;
 	flex: 1;
+	min-width: 200px;
 	align-items: center;
 	gap: 10px
 }
+.${mount}.extra {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	overflow: auto;
+	background-color: var(--pl-c-15);
+	border-radius: 10px
+}
+.${mount}.extra:has(>*) {
+	margin-top: 1.25em;
+	padding: 8px 6px
+}
+.${mount}.extra>.${mount}.btn[action="all"]:not([type*="idm"],[type*="bitcomet"]),
+.${mount}.extra>.${mount}.btn[action="copy"][type*="curl"],
+.${mount}.extra>.${mount}.btn[action="copy"][type*="bitcomet"] {
+	flex: 1
+}
+.${mount}.extra:not(:has(>.${mount}.btn[action="all"], >.${mount}.btn[action="copy"][type*="curl"], >.${mount}.btn[action="copy"][type*="bitcomet"]))>* {
+	flex: 1
+}
 
-.pl-progress {
+/* 独立组件 - 进度条 */
+.${mount}.progress-bar {
 	display: flex;
 	flex: 1;
+	min-width: 120px;
 	position: relative;
 	height: 33px;
 	overflow: hidden;
@@ -4255,77 +3958,50 @@ a.pl-item-link:hover {
 	color: #333
 }
 @media (prefers-color-scheme:dark) {
-	.pl-progress {
+	.${mount}.progress-bar {
 		background-color: #808080;
-		color: #EBE6E3
+		color: #FFF
 	}
 }
-
-.pl-progress .progress {
+.${mount}.progress-bar > .foreground,
+.${mount}.progress-bar > .background {
 	display: flex;
 	position: absolute;
 	top: 0;
 	left: 0;
 	align-items: center;
 	justify-content: space-around;
-	width: var(--width, 0);
 	height: 100%;
+	width: var(--width, 0);
 	transition: width .4s linear;
 	will-change: width
 }
-
-.pl-progress .progress.head {
+.${mount}.progress-bar > .foreground {
 	z-index: 2;
 	overflow: hidden;
-	background-color: var(--pl-c);
-	background-size: 1rem 1rem;
 	border-radius: 50px;
-	color: #EBE6E3
-}
-
-.pl-progress .progress.head {
+	background-color: var(--pl-c);
 	background-image: linear-gradient(45deg,hsla(0,0%,100%,.15) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.15) 0,hsla(0,0%,100%,.15) 75%,transparent 0,transparent);
 	background-size: 3vh 3vh;
 	-webkit-animation: 1s linear reverse infinite progress-bar-stripes;
 	animation: 1s linear reverse infinite progress-bar-stripes;
+	color: #FFF
+}
+.${mount}.progress-bar > .background {
+	z-index: 1;
+	overflow: visible;
+	background-color: transparent
 }
 @-webkit-keyframes progress-bar-stripes {
-	from {
-		background-position: 3vh 0
-	}
-	to {
-		background-position: 0 0
-	}
+	from { background-position: 3vh 0 }
+	to { background-position: 0 0 }
 }
 @keyframes progress-bar-stripes {
-	from {
-		background-position: 3vh 0
-	}
-	to {
-		background-position: 0 0
-	}
+	from { background-position: 3vh 0 }
+	to { background-position: 0 0 }
 }
-/*
-.pl-progress .progress.head {
-	background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-	background-size: 40px 40px;
-	animation: barberpole 2s linear infinite;
-}
-@keyframes barberpole {
-	from {
-		background-position: 0 0
-	}
-	to {
-		background-position: 40px 0
-	}
-}
-*/
-
-.pl-progress .progress.foot {
-	z-index: 1;
-}
-
-.pl-progress .progress .text {
+.${mount}.progress-bar > .foreground > .text,
+.${mount}.progress-bar > .background > .text {
 	padding: 0 13px;
 	font-size: 12px;
 	font-weight: 500;
@@ -4333,134 +4009,111 @@ a.pl-item-link:hover {
 	white-space: nowrap
 }
 
-.pl-ext {
-	display: inline-block;
-	width: 44px;
-	height: 16px;
-	background: #999;
-	border-radius: 3px;
-	color: #EBE6E3;
-	font-size: 12px;
-	line-height: 16px
-}
-
-.pl-retry {
-	padding: 3px 10px;
-	background: #cc3235;
-	border-radius: 3px;
-	color: #EBE6E3;
-	cursor: pointer
-}
-
-.pl-extra {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	overflow: auto;
-	background-color: var(--pl-c-15);
-	border-radius: 10px
-}
-
-.pl-extra:has(>*) {
-	margin-top: 1.25em;
-	padding: 8px 6px
-}
-
-.pl-extra>.api.listener-download-all,
-.pl-extra>.curl.listener-copy,
-.pl-extra>.aria2.listener-send-rpc,
-.pl-extra>.bitcomet.listener-copy,
-.pl-extra>.abdm {
-	flex: 1
-}
-
-.pl-extra:not(:has(>.api.listener-download-all, >.curl.listener-copy, >.idm.listener-send-rpc, >.aria2.listener-send-rpc, >.bitcomet.listener-copy, >.abdm))>* {
-	flex: 1
-}
-
-.pl-btn-primary {
+/* 独立组件 - 按钮 */
+.${mount}.btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 5px;
-	padding: 0.625em 1.1em;
+	padding: 0.3125em 0.55em;
 	border: 0;
 	border-radius: 50px;
 	outline: none;
 	background: var(--pl-c);
-	color: #EBE6E3 !important;
-	font-size: 12px;
+	color: #FFF !important;
+	font-size: 1.125em;
 	white-space: nowrap;
 	word-break: keep-all;
 	cursor: pointer;
 	transition: opacity .2s, box-shadow .2s;
 	will-change: opacity, box-shadow
 }
-
-.pl-btn-primary:hover {
-	opacity: 0.8 !important
-}
-
-.pl-btn-primary:focus {
-	box-shadow: 0 0 0 3px var(--pl-c-80)
-}
-
-.pl-btn-success {
-	background: #55af28
-}
-
-.pl-btn-success:focus {
-	box-shadow: 0 0 0 3px #55af2880
-}
-
-.pl-btn-info {
-	background: #606266
-}
-
-.pl-btn-info:focus {
-	box-shadow: 0 0 0 3px #60626680
-}
-
-.pl-btn-warning {
-	background: #da9328
-}
-
-.pl-btn-warning:focus {
-	box-shadow: 0 0 0 3px #da932880
-}
-
-.pl-btn-danger {
-	background: #cc3235
-}
-
-.pl-btn-danger:focus {
-	box-shadow: 0 0 0 3px #cc323580
-}
-
-.pl-btn-opacity {
+.${mount}.btn.mini { font-size: 12px; padding: 0.625em 1.1em }
+.${mount}.btn:hover { opacity: 0.8 }
+.${mount}.btn:focus { box-shadow: 0 0 0 3px var(--pl-c-80) }
+.${mount}.btn.success { background: #55af28 }
+.${mount}.btn.success:focus { box-shadow: 0 0 0 3px #55af2880 }
+.${mount}.btn.info { background: #606266 }
+.${mount}.btn.info:focus { box-shadow: 0 0 0 3px #60626680 }
+.${mount}.btn.warning { background: #da9328 }
+.${mount}.btn.warning:focus { box-shadow: 0 0 0 3px #da932880 }
+.${mount}.btn.danger { background: #cc3235 }
+.${mount}.btn.danger:focus { box-shadow: 0 0 0 3px #cc323580 }
+.${mount}.btn.opacity {
 	animation: easeOpacity 1.2s 2;
 	animation-fill-mode: forwards;
 	will-change: opacity
 }
-
 @keyframes easeOpacity {
-	from {
-		opacity: 1
-	}
-
-	50% {
-		opacity: 0.35
-	}
-
-	to {
-		opacity: 1
-	}
+	from { opacity: 1 }
+	50% { opacity: 0.35 }
+	to { opacity: 1 }
 }
 
-.pl-button-mini {
-	padding: 5px 10px
+/* 独立组件 - 设置项目 */
+.${mount}.setting-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 1em
+}
+/* 左侧标题 */
+.${mount}.setting-item > *:nth-child(1) {
+	flex-shrink: 0;
+	white-space: nowrap;
+}
+/* 右侧内容 */
+.${mount}.setting-item>*:nth-child(2) {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	max-width: 80%;
+	box-sizing: border-box;
+}
+.${mount}.setting-item>.left:nth-child(2) {
+	justify-content: flex-start;
+}
+.${mount}.setting-item>.right:nth-child(2) {
+	justify-content: flex-end;
+}
+/* 当第二位是容器或输入框/选择框 */
+.${mount}.setting-item > div:nth-child(2),
+.${mount}.setting-item > input:nth-child(2):not([type="checkbox"]),
+.${mount}.setting-item > select:nth-child(2) {
+	flex: 1;
+	width: 100%;
+	min-width: 0;
+}
+/* 当第二位是单个按钮、链接等操作元素 */
+.${mount}.setting-item > button:nth-child(2),
+.${mount}.setting-item > a:nth-child(2),
+.${mount}.setting-item > .btn:nth-child(2) {
+	flex: 0 0 auto; /* 不放大、不缩小，保持原大小 */
+	width: fit-content; /* 适应自身宽度 */
+	white-space: nowrap; /* 防止文字折行 */
+}
+/* 当第二位是容器组合：内部有输入框/选择框 */
+.${mount}.setting-item > div:nth-child(2) > select,
+.${mount}.setting-item > div:nth-child(2) > input:not([type="checkbox"]) {
+	flex: 1;
+	min-width: 0; /* 允许缩小，触发 ellipsis 省略号 */
+}
+/* 当第二位是容器组合，内部有按钮 */
+.${mount}.setting-item > div:nth-child(2) > button,
+.${mount}.setting-item > div:nth-child(2) > a,
+.${mount}.setting-item > div:nth-child(2) > .btn {
+	flex: 0 0 auto; /* 不放大、不缩小，保持原大小 */
+	white-space: nowrap; /* 防止文字折行 */
+}
+/* 嵌套子设置项防样式污染 */
+.${mount}.setting-item .${mount}.setting-item {
+	margin: 0;
+	gap: 5px
 }
 
+/* ----------====================---------- */
 .pl-button,
 .pl-dropdown-menu {
 	transition: all .2s
@@ -4472,13 +4125,25 @@ a.pl-item-link:hover {
 
 .pl-button .pl-dropdown-menu {
 	opacity: 0;
+	transform: scaleY(0);
+	transform-origin: top;
 	pointer-events: none;
-	will-change: opacity
+	transition: opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06), transform 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06); /* Ant Design */
+	will-change: transform, opacity;
 }
-
+.pl-button .pl-dropdown-menu.reverse {
+	opacity: 0;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	pointer-events: none;
+	transition: opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06), transform 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06); /* Ant Design */
+	will-change: transform, opacity;
+}
 .pl-button:hover .pl-dropdown-menu {
 	opacity: 1;
-	pointer-events: auto
+	transform: scaleY(1);
+	pointer-events: auto;
+	transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); /* Ant Design */
 }
 
 .pl-button-init {
@@ -4486,19 +4151,10 @@ a.pl-item-link:hover {
 	animation: easeInitOpacity 1.2s 5;
 	animation-fill-mode: forwards
 }
-
 @keyframes easeInitOpacity {
-	from {
-		opacity: 0.5
-	}
-
-	50% {
-		opacity: 1
-	}
-
-	to {
-		opacity: 0.5
-	}
+	from { opacity: 0.5 }
+	50% { opacity: 1 }
+	to { opacity: 0.5 }
 }
 
 .pl-dropdown-menu {
@@ -4508,49 +4164,51 @@ a.pl-item-link:hover {
 	padding: 5px 0;
 	border: none;
 	border-radius: 5px;
-	background: #fff;
-	box-shadow: 0 1px 6px var(--pl-c-33);
-	-webkit-box-shadow: 0 1px 6px var(--pl-c-33);
-	color: var(--pl-c);
+	color: #1D1D1F;
+	background: #F5F5F7;
+	box-shadow: 0 6px 16px 0 rgba(0,0,0,0.08), 0 3px 6px -4px var(--pl-c-1f, rgba(0, 0, 0, 0.12)), 0 9px 28px 8px var(--pl-c-0d, rgba(0, 0, 0, 0.05)); /* Ant Design */
+	-webkit-box-shadow: 0 6px 16px 0 rgba(0,0,0,0.08), 0 3px 6px -4px var(--pl-c-1f, rgba(0, 0, 0, 0.12)), 0 9px 28px 8px var(--pl-c-0d, rgba(0, 0, 0, 0.05)); /* Ant Design */
 	text-align: center
 }
 
 @media (prefers-color-scheme:dark) {
 	.pl-dropdown-menu {
-		background: #222226;
-		color: #EBE6E3
+		color: #F5F5F7;
+		background: #282829
 	}
 }
 
 .pl-button-mode {
-	display: flex;
+	display: flex!important;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	gap: 5px;
 	height: 30px;
 	padding: 0 10px !important;
 	background-color: transparent;
-	color: var(--pl-c) !important;
+	color: inherit !important;
 	white-space: nowrap;
 	cursor: pointer;
+	font: 500 12px/normal -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans SC','Noto Sans',ui-sans-serif,sans-serif,system-ui,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji',emoji !important;
 	transition: background-color .2s;
 	will-change: background-color
 }
 
 @media (prefers-color-scheme:dark) {
 	.pl-dropdown-menu .pl-button-mode {
-		color: #EBE6E3 !important
+		color: #F5F5F7 !important
 	}
 }
 
 .pl-button-mode:hover {
+	color: var(--pl-c) !important;
 	background-color: var(--pl-c-33) !important
 }
 
 @media (prefers-color-scheme:dark) {
 	.pl-button-mode:hover {
-		background: var(--pl-c) !important;
-		color: #EBE6E3 !important
+		color: #F5F5F7 !important;
+		background-color: var(--pl-c) !important
 	}
 }
 
@@ -4610,7 +4268,7 @@ header[style="display:none;"]~.pl-button {
 	height: 36px;
 	background: var(--pl-c);
 	border-radius: 2px;
-	color: #EBE6E3;
+	color: #FFF;
 	font-size: 14px;
 	line-height: 39px;
 	text-align: center;
@@ -4630,7 +4288,7 @@ header[style="display:none;"]~.pl-button {
 	border: 1px solid var(--pl-c);
 	border-radius: 2px;
 	background: var(--pl-c);
-	color: #EBE6E3;
+	color: #FFF;
 	font-size: 14px;
 	line-height: 36px;
 	text-align: center;
@@ -4657,7 +4315,7 @@ header[style="display:none;"]~.pl-button {
 	padding: 0 12px;
 	border: 1px solid var(--pl-c);
 	background: var(--pl-c);
-	color: #EBE6E3;
+	color: #FFF;
 	font-size: 12px;
 	line-height: 28px;
 	cursor: pointer;
@@ -4672,7 +4330,6 @@ header[style="display:none;"]~.pl-button {
 .xunlei-button {
 	display: inline-flex;
 	position: relative;
-	flex-shrink: 0;
 	align-items: center;
 	justify-content: center;
 	width: fit-content;
@@ -4683,7 +4340,7 @@ header[style="display:none;"]~.pl-button {
 	border-radius: 5px;
 	background: var(--pl-c);
 	box-shadow: 0 0 0 0 transparent;
-	color: #EBE6E3;
+	color: #FFF;
 	font-size: 14px;
 	line-height: 1.5;
 	white-space: nowrap;
@@ -4726,36 +4383,13 @@ header[style="display:none;"]~.pl-button {
 	padding: 10px 20px !important
 }
 
-.pl-setting-item {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: 1em
-}
-
-.pl-setting-item>*:nth-child(2) {
-	display: flex;
-	max-width: 85%;
-	align-items: center;
-	justify-content: space-between
-}
-
-.pl-setting-item .pl-setting-item {
-	margin: 0;
-	gap: 5px
-}
-
-.pl-input {
+.${mount}.input {
 	margin: 0;
 	padding: 8px 10px !important;
 	border: 1px solid #c2c2c2;
 	border-radius: 5px;
 	appearance: auto !important;
 	font-size: 14px !important
-}
-
-.pl-setting-item>.pl-input:not([type="checkbox"]) {
-	width: 79%
 }
 
 .center-input {
@@ -4772,7 +4406,7 @@ header[style="display:none;"]~.pl-button {
 	max-width: 600px;
 	border-radius: 5px;
 	background: #333;
-	color: #EBE6E3;
+	color: #FFF;
 	font-size: 12px;
 	line-height: 1.3;
 	word-break: break-all;
@@ -4805,7 +4439,7 @@ header[style="display:none;"]~.pl-button {
 	left: 9px;
 	width: 82px;
 	height: 82px;
-	background: #EBE6E3
+	background: #FFF
 }
 
 @keyframes load {
@@ -4851,12 +4485,12 @@ header[style="display:none;"]~.pl-button {
 
 .pl-button-save {
 	background-color: var(--pl-c) !important;
-	color: #EBE6E3 !important
+	color: #FFF !important
 }
 
 .pl-button-save:hover {
 	background-color: var(--pl-c-d0) !important;
-	color: #EBE6E3 !important
+	color: #FFF !important
 }
 
 .swal2-container {
@@ -4868,23 +4502,23 @@ body.swal2-height-auto {
 }
 
 [class^="swal2-"],
-[class*="pl-btn"] {
+.${mount}.btn {
 	transition: all .2s
 }
 
 ::-webkit-selection {
 	background-color: var(--pl-c);
-	color: #EBE6E3
+	color: #FFF
 }
 
 ::-moz-selection {
 	background-color: var(--pl-c);
-	color: #EBE6E3
+	color: #FFF
 }
 
 ::selection {
 	background-color: var(--pl-c);
-	color: #EBE6E3
+	color: #FFF
 }
 
 input::-webkit-selection,textarea::-webkit-selection {
@@ -4924,16 +4558,16 @@ button.downloadSubtitle:disabled {
 	background-color: var(--pl-c-d0)
 }
 
-/* 哪里都没用到的 RGB! */
+/* 哪里都没用到的 RGB!
+*:not(section,div) {animation: RGB 10s linear infinite}
 @keyframes RGB {
 	0% {
-		filter: hue-rotate()
+		filter: hue-rotate(0deg);
 	}
-
-	to {
-		filter: hue-rotate(-360deg)
+	100% {
+		filter: hue-rotate(360deg);
 	}
-}
+} */
 `);
 		},
 
@@ -4952,12 +4586,12 @@ button.downloadSubtitle:disabled {
 				html: `<div class="pl-init-content">
 					<p>
 						我就直说了吧…<br/>你可以按下下方的 <span style="color:red">红色按钮</span> 跳过这一有趣的流程<br/>
-						或者继续输入一些神秘的 <span class="listener-tip" data-title="乙烯一克，一克一克一克……锕！<br/>　　　　　　▃▃▆█▇▄▖<br/>　　　　▟◤▖　　　　◥█▎<br/>　　◢◤　　▐　　　　　▐▉<br/>　▗◤　　▂　　▗▖　　　▕█▎<br/>　◤　▗▅▖◥▄　▀◣　　　　█▊<br/>▐　▕▎◥▖◣◤　　　　　◢██<br/>█◣　◥▅█▀　　　　　▐██◤<br/>▐█▙▂　　　　　　◢██◤<br/>　◥██◣　　　　◢▄◤<br/>　　　▀██▅▇▀" style="font-style:italic;color:#412300;background-color:#d0b164">“恶臭数字”</span><br/>解锁隐藏（大嘘）彩蛋
+						或者继续输入一些神秘的 <span class="${mount} tip" data-title="乙烯一克，一克一克一克……锕！<br/>　　　　　　▃▃▆█▇▄▖<br/>　　　　▟◤▖　　　　◥█▎<br/>　　◢◤　　▐　　　　　▐▉<br/>　▗◤　　▂　　▗▖　　　▕█▎<br/>　◤　▗▅▖◥▄　▀◣　　　　█▊<br/>▐　▕▎◥▖◣◤　　　　　◢██<br/>█◣　◥▅█▀　　　　　▐██◤<br/>▐█▙▂　　　　　　◢██◤<br/>　◥██◣　　　　◢▄◤<br/>　　　▀██▅▇▀" style="font-style:italic;color:#412300;background-color:#d0b164">“恶臭数字”</span><br/>解锁隐藏（大嘘）彩蛋
 					</p>
 					<p>
 						如果您喜欢这个脚本的话<br/>
-						请支持原版作者 <a class="listener-tip pl-a" target="_blank" href="https://www.youxiaohou.com" data-title='${config.base.service.account ? `的微信公众号……<br/><img style="width:250px" src="${config.base.service.account}">` : ""}'><svg class="pl-icon"><use xlink:href="#pl-icon-si-tampermonkey"></use></svg> 油小猴</a><br/>
-						并给此改版点个 <a class="listener-tip pl-a" target="_blank" href="https://github.com/hmjz100/LinkSwift/" data-title="来看看此项目的 Github 页面吧~"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg> Star</a>？
+						请支持原版作者 <a class="${mount} anchor tip" target="_blank" href="https://www.youxiaohou.com" data-title='${config.base.service.account ? `的微信公众号……<br/><img style="width:250px" src="${config.base.service.account}">` : ""}'><svg class="pl-icon"><use xlink:href="#pl-icon-si-tampermonkey"></use></svg> 油小猴</a><br/>
+						并给此改版点个 <a class="${mount} anchor tip" target="_blank" href="https://github.com/hmjz100/LinkSwift/" data-title="来看看此项目的 Github 页面吧~"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg> Star</a>？
 					</p>
 					<p>脚本不仅能精简网盘界面<br/>点亮后还能修改多个网盘的主题色哦！</p>
 				</div><style>.pl-init-content p{margin:10px 0!important}</style>`,
@@ -4976,8 +4610,8 @@ button.downloadSubtitle:disabled {
 						code = code.trim();
 						if (["114514", "1919810", "1145141919810"].includes(code)) return "homo";
 						return Swal.showValidationMessage(`错误：错误的神秘数字`);
-					} catch (error) {
-						return Swal.showValidationMessage(`错误：${error}`);
+					} catch (e) {
+						return Swal.showValidationMessage(`错误：${e}`);
 					}
 				},
 				showCloseButton: true,
@@ -5055,7 +4689,7 @@ button.downloadSubtitle:disabled {
 					title: "pl-title",
 					closeButton: "pl-close",
 					content: "pl-content",
-					input: "pl-input",
+					input: `${mount} input`,
 					footer: "pl-footer"
 				},
 				confirmButtonText: `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg> 关闭`,
@@ -5105,7 +4739,7 @@ button.downloadSubtitle:disabled {
 			const processElements = () => {
 				const elements = $(selectorElem, targetDoc);
 				let foundActive = false;
-				elements.each((i, el) => {
+				elements.each((_, el) => {
 					const jEl = $(el);
 					const isproc = jEl.data(controlKey);
 					if (isproc) return true; // 跳过已处理元素
@@ -5139,28 +4773,728 @@ button.downloadSubtitle:disabled {
 			// 立即执行初始检查
 			processElements();
 		},
+	};
 
+	// 下载函数
+	const download = {
+		state(index) {
+			index = Number(index);
+			const configs = temp.files;
+			if (isNaN(index) || base.isType(configs) !== "array" || configs?.length !== 2) return false;
+			const files = (Array.isArray(configs[0]) ? configs[0] : []);
+			if (!files.length || !files?.[index]) return false;
+			return base.isType(configs[1]) === "object" ? { files, ...configs[1] } : {};
+		},
+		async copy(target, content) {
+			const originalHtml = target.html();
+			if (content) {
+				await base.setClipboard(content);
+				target.html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"/></svg>复制成功`).animate({ opacity: "0.5" }, "slow");
+				await base.sleep(2000);
+				target.css("opacity", "");
+				target.html(originalHtml);
+			}
+		},
 		/**
-		 * 状态工厂
+		 * 添加页面元素监听
 		 * @author 油小猴
 		 * @author hmjz100
-		 * @description 接受被监听的 DOM 元素的状态，根据状态确定元素是谁
-		 * @param {Event} event - 元素状态
+		 * @description 详见代码
 		 */
-		_EventFactory(event) {
-			const target = $(event.target);
-			const item = target.parents(".pl-item");
-			return {
-				target, item,
-				down_normal: item.find(".pl-item-link.normal"),
-				down_enhance: item.find(".pl-item-link.enhance"),
-				down_enhance_downing: item.find(".pl-item-downing"),
-				down_idm: item.find(".listener-idm-download"),
-				link_message: item.find(".pl-item-message"),
-				link_copy: item.find(".pl-item-copy"),
+		addPageListener() {
+			$doc.on("click", `.${mount}.btn[action="download"]`, async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const item = target.closest(".item");
+				const index = Number(item.data("index"));
+				const type = target.attr("type");
+				const downing = item.find(".downing");
+
+				switch (type) {
+					case "normal": {
+						// 直接下载：通过隐形 iframe 访问下载链接
+						if (target.data("state") === "processing") return;
+						target.data("state", "processing");
+						const state = download.state(index);
+						if (!state) { target.removeData("state"); return; }
+						const { files, get } = state;
+						const link = get.link(files[index]);
+						if (!link) { target.removeData("state"); return; }
+						// 在 ${mount}.${mount} 元素中追加隐形 iframe
+						const iframe = $("<iframe/>", { src: link, css: { display: "none" } });
+						temp.mount.append(iframe);
+						let cleaned = false;
+						const cleanup = () => { if (cleaned) return; cleaned = true; iframe.remove(); target.removeData("state"); };
+						iframe.on("load", cleanup);
+						setTimeout(cleanup, 5000);
+						break;
+					}
+					case "enhance": {
+						// 增强下载：带进度跟踪的分块下载
+						if (target.data("state") === "processing") return;
+						target.data("state", "processing");
+						const state = download.state(index);
+						if (!state) { target.removeData("state"); return; }
+						const { files, get, headers, dom } = state;
+						const file = files[index];
+						const link = get.link(file);
+						const name = get.name(file);
+						const size = get.size(file);
+						base._resetData(index);
+						const $downing = () => $(`.${mount}.main .item[data-index="${index}"] .downing`);  // 通过 index 实时查找 downing 元素（兼容 DOM 重建后的异步回调）
+						temp.downing[index] = { status: "downloading", progress: 0, text: "正在加载..." };  // 记录下载状态，供 generateDOM 重建后恢复
+						// UI 初始化：隐藏按钮、显示进度条
+						item.find(`[action="download"][type="enhance"], [action="download"][type="normal"], [action="sendto"][type="idm"], [action="copy"]`).hide();
+						$downing().find('[type="stop"]').show();
+						$downing().show();
+						base.download(link, headers, {
+							index: String(index), name, size,
+							onProgress: (data) => {
+								const dprog = Math.min(data.progress, 100);
+								const text = `${dprog.toFixed(2)}% | 已载:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`;
+								$downing().find(".progress-bar").css("--width", `${dprog}%`);
+								$downing().find(".text").text(text);
+								temp.downing[index] = { status: "downloading", progress: dprog, loaded: data.loaded, speedText: data.speedText, etaText: data.etaText, text };
+							}
+						}).then(async (res) => {
+							temp.downing[index] = { status: "done", text: `下载完成~ 浏览器下载框应该弹出来了哦~`, background: "#55af28" };
+							$downing().find(".foreground").css("background", "#55af28");
+							base.blobDownload(res.response, name);
+							await base.sleep(1000);
+							$downing().find('[type="stop"]').hide();
+							$downing().find('[type="back"]').show();
+							$downing().find(".text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
+						}).catch(async (error) => {
+							base.console.error("【LinkSwift】Download(load)", error);
+							$downing().find('[type="stop"]').hide();
+							$downing().find('[type="back"]').show();
+							$downing().find(".progress-bar").css("--width", "100%");
+							$downing().find(".foreground").css("background", "#cc3235");
+							let estatus = `QAQ 下载出错~`;
+							if (dom?.download?.error) estatus += dom.download.error(error);
+							temp.downing[index] = { status: "error", text: estatus, background: "#cc3235", whiteSpace: "break-spaces" };
+							$downing().find(".text").html(estatus).css("white-space", "break-spaces");
+						});
+						break;
+					}
+					case "stop": {
+						// 取消下载
+						if (temp.request[index]) {
+							temp.request[index].abort();
+							downing.find(".text").text("正在取消...");
+							downing.find(".progress-bar").css("--width", "100%");
+							await base.sleep(1050);
+							downing.find('[type="back"]').click();
+						}
+						break;
+					}
+					case "back": {
+						// 返回：恢复 UI 至初始状态
+						delete temp.downing[index];  // 用户主动返回，清除状态记录
+						downing.find(".text").text("正在加载...").css("white-space", "");
+						downing.find(".foreground").css("background", "");
+						downing.find(".progress-bar").css("--width", "");
+						item.find(`[action="download"][type="enhance"], [action="download"][type="normal"]`).show().removeData("state");
+						downing.hide();
+						downing.find('[type="stop"], [type="back"]').hide();
+						item.find(`[action="sendto"][type="idm"], [action="copy"]`).show();
+						break;
+					}
+					default: break;
+				}
+			});
+
+			$doc.on("click", `.${mount}.btn[action="sendto"][type]`, async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const item = target.closest(".item");
+				const index = Number(item.data("index"));
+				const type = target.attr("type");
+				const originalHtml = target.html();
+				const state = download.state(index);
+				if (!state || target.data("state") === "processing") return;
+				target.data("state", "processing");
+
+				target.find(".pl-icon").remove();
+				target.find(".pl-loading").remove();
+				target.prepend(base.createLoading());
+
+				const { files, get, headers } = state;
+				const file = files[index];
+				const link = get.link(file);
+				const name = get.name(file);
+				const size = get.size(file);
+
+				let res = "fail";
+				try {
+					switch (type) {
+						case "idm": res = await download.tools.sendTo.idm(link, name, size, headers); break;
+						case "aria2": res = await download.tools.sendTo.aria2(link, name, headers); break;
+						case "bitcomet": res = await download.tools.sendTo.bitcomet(link, name, headers); break;
+						case "abdm": res = await download.tools.sendTo.abdm(link, name, headers); break;
+						default: break;
+					}
+				} catch (e) {
+					// 错误信息和堆栈
+					const msg = (e instanceof Error) ? e.message : String(e || "未知错误");
+					const consoleStack = (e instanceof Error && e.stack) ? e.stack?.split?.('\n')?.slice?.(1)?.join?.('\n') : "无堆栈信息";
+					base.console.error(`【LinkSwift】Error\n${msg}\n堆栈：\n${consoleStack}`);
+					res = "fail";
+				}
+				if (res === "success") {
+					target.removeClass("danger success").addClass("success").html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"></use></svg> 发送成功啦~`).animate({ opacity: "0.5" }, "slow");
+				} else {
+					target.addClass("danger").text("发送失败！请检查网络及配置").animate({ opacity: "0.5" }, "slow");
+				}
+				await base.sleep(3000);
+				target.removeClass("danger success").removeData("state").html(originalHtml).css("opacity", "");
+			});
+
+			$doc.on("click", `.${mount}.btn[action="aria2"][type]`, (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const type = target.attr("type");
+				const server = base.getValue("setting_aria2_rpc").find(i => i.default);
+				const isHttps = server.domain.startsWith("https://");
+				switch (type) {
+					case "youxiaohou": {
+						const url = `${isHttps ? "https" : "http"}://d.youxiaohou.com/?rpc=${base.encodeBase(JSON.stringify({ domain: server.domain, port: server.port }))}#${server.token}`;
+						GM_openInTab(url, { active: true, insert: true, setParent: true });
+						break;
+					}
+					case "ariang": {
+						const url = `${isHttps ? "https" : "http"}://ariang.mayswind.net/latest/#!/settings/rpc/set?protocol=${isHttps ? "wss" : "ws"}&host=${server.domain.replace(/^(https?:\/\/)/, "")}&port=${server.port}&interface=${server.path.replace(/^\//, "")}&secret=${server.token}`;
+						GM_openInTab(url, { active: true, insert: true, setParent: true });
+						break;
+					}
+					default: break;
+				}
+			});
+			$doc.on("click", `.${mount}.btn[action="all"][type]`, async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const originalHtml = target.html();
+				const _type = target.attr("type");
+				const action = _type.split(".")[0];
+				const type = _type.split(".")?.[1] || "";
+				if (target.data("state") === "processing") return;
+				target.data("state", "processing");
+				const targets = $(`[action="${action}"][type="${type}"]`);
+				if (targets.length) targets.each(async (index, element) => {
+					if ($(element).css("display") !== "none" && $(element).data("state") !== "processing") $(element).click();
+					if (index < targets.length - 1) await base.sleep(100);
+				});
+				target.html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"></use></svg> 开始执行，详情见上方哦~`).animate({ opacity: "0.5" }, "slow");
+				await base.sleep(2000);
+				target.removeData("state").css("opacity", "").html(originalHtml);
+			});
+
+			$doc.on("click", `.${mount}[action="copy"][type]`, async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const item = target.closest(".item");
+				const index = Number(item.data("index"));
+				const _type = target.attr("type");
+				const originalHtml = target.html();
+
+				// 仅处理以 "file" 或 "all.file" 开头的类型
+				const isAll = _type.startsWith("all.file");
+				if (!isAll && !_type.startsWith("file")) return;
+
+				const state = download.state(isAll ? 0 : index);
+				if (!state || target.data("state") === "processing") return;
+				target.data("state", "processing");
+				const { files, get, headers } = state;
+
+				// 解析子类型，确定待处理的文件索引列表（all 时为全部非目录文件）
+				const subType = isAll ? _type.replace(/^all\.file\./, "") : _type.replace(/^file\./, "");
+				const indices = isAll ? files.map((v, i) => i).filter(i => !get.dir(files[i])) : [index];
+
+				// 按子类型生成每行内容（每行一个）
+				const lines = [];
+				for (const i of indices) {
+					const file = files[i];
+					const link = get.link(file);
+					const name = get.name(file);
+					let line = "";
+					switch (subType) {
+						case "link": line = link; break;
+						case "name": line = name; break;
+						case "cmd.curl": line = download.tools.convertTo.curl(link, name, headers); break;
+						case "cmd.aria2": line = download.tools.convertTo.aira2(link, name, headers); break;
+						case "cmd.bitcomet": line = download.tools.convertTo.bitcomet(link, name, headers); break;
+						default: break;
+					}
+					if (line) lines.push(line);
+				}
+
+				if (lines.length) {
+					await base.setClipboard(lines.join("\r\n"));
+					target.html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"/></svg> 复制成功`).animate({ opacity: "0.5" }, "slow");
+					await base.sleep(2000);
+				}
+				target.removeData("state").css("opacity", "").html(originalHtml);
+			});
+		},
+		/**
+		 * 创建用于下载页面的 HTML
+		 * @author 油小猴
+		 * @author hmjz100
+		 * @returns {String} 生成的 HTML 内容
+		 * @description 详见代码
+		 */
+		generateDOM(keepDowning = false) {
+			const state = this.state(false);
+			if (!state) throw new Error("提示：<br/>配置解析失败~");
+			const { files, get, headers, dom } = state;
+			if (!files.length) throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
+			if (!keepDowning) base._resetAllData(true);
+
+			const content = $(`<div><div class="${mount} main"></div><div class="${mount} extra"></div></div>`);
+			let allLink = [];
+			files.forEach((v, i) => {
+				if (get.dir(v)) return;
+				const name = get.name(v);
+				const size = get.size(v);
+				const link = get.link(v);
+				const mirrors = base.isType(get.mirror) !== "undefined" ? get.mirror(get.link(v)) : undefined;
+				if (!link || !link.includes("http")) {
+					content.find(`.${mount}.main`).append(`<div class="item">
+						<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+						<div class="message">${link ? link : "获取下载地址失败，刷新网页后再试试吧~"}</div>
+					</div>`)
+				} else {
+					if (temp.mode === "api") {
+						allLink.push(link);
+						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}" data-link="${link}" data-name="${name}" data-size="${size}">
+							<div class="name ${mount} tip"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+							<button action="download" type="enhance" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
+
+							<button action="download" type="normal" class="link ${mount} btn info mini tip" data-title="${config.base.dom.method.api.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</button>
+
+							<button action="sendto" type="idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 IDM (Beta)</span></button>
+
+							<button action="copy" type="file.name" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.name}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
+
+							<button action="copy" type="file.link" class="${mount} btn warning mini tip" data-title="${config.base.dom.copy.link}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制地址</button>
+
+							<div class="downing" style="display:none">
+								<div class="${mount} progress-bar">
+									<div class="foreground"><span class="text">正在加载...</span></div>
+									<div class="background"><span class="text">正在加载...</span></div>
+								</div>
+								<button action="download" type="stop" class="${mount} btn danger mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>取消下载</button>
+								<button action="download" type="back" class="${mount} btn info mini" style="display:none"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>返回</button>
+							</div>
+						</div>`);
+					}
+					if (temp.mode === "curl") {
+						const finalink = download.tools.convertTo.curl(link, name, headers);
+						allLink.push(finalink);
+						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
+							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+							<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${name} 下载命令行</a>
+						</div>`);
+					}
+					if (temp.mode === "aria2") {
+						const finalink = download.tools.convertTo.aira2(link, name, headers);
+						allLink.push(finalink);
+						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
+							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+							<button action="sendto" type="aria2" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 Aria2 下载器</span></button>
+
+							<button action="copy" type="file.cmd.aria2" class="${mount} btn info mini tip" data-title="${config.base.dom.copy.aria2}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
+						</div>`);
+					}
+					if (temp.mode === "bitcomet") {
+						const finalink = download.tools.convertTo.bitcomet(link, name, headers);
+						allLink.push(finalink);
+						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
+							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+							<a href="${finalink}" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.bitcomet.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>使用 BC 地址下载</a>
+
+							${mirrors ? `<button action="copy" type="file.link.mirrors" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.mirrors}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制镜像</button>` : ""}
+
+							<button action="sendto" type="bitcomet" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至下载器</span></button>
+						</div>`);
+					}
+					if (temp.mode === "abdm") {
+						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
+
+							<div class="${mount} name tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+							<button action="sendto" type="abdm" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 ABDM 下载器</span></button>
+						</div>`);
+					}
+				}
+			});
+			allLink = (allLink ? allLink.join("\r\n") : "")
+			if (temp.mode === "api") {
+				const rpc = base.getValue("setting_idm_rpc");
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="download.enhance" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载 (Beta)</button>
+				
+					<button action="all" type="sendto.idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 IDM (Beta)</button>`);
+
+				content.find(`.${mount}.extra`).append(`<button action="settings" type="idm" class="${mount} btn warning mini tip" data-title="${rpc}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改 IDM 服务参数</button>`);
+
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.link" class="${mount} btn warning mini api tip" data-title="${config.base.dom.copy.all.link}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部地址</button>`);
+			} else if (temp.mode === "curl") {
+				content.find(`.${mount}.extra`).append(`<button action="settings" type="curl" class="${mount} btn warning mini tip" data-title="${temp.terminalType[base.getValue("setting_curl_terminal")]}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改终端类型</button>`);
+
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.cmd.curl" class="${mount} btn default mini curl tip" data-title="${config.base.dom.copy.all.curl}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
+			} else if (temp.mode === "aria2") {
+				const rpc = base.getValue("setting_aria2_rpc").find(i => i.default);
+
+				content.find(`.${mount}.extra`).append(`<button action="settings" type="aria2" class="${mount} btn warning mini tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
+
+				content.find(`.${mount}.extra`).append(`<button action="aria2" type="youxiaohou" class="${mount} btn success mini tip" data-title="${config.base.dom.method.aria2.manager.youxiaohou}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-list-check"/></svg>查看任务 (油小猴)</button>`);
+
+				content.find(`.${mount}.extra`).append(`<button action="aria2" type="ariang" class="${mount} btn success mini tip" data-title="${config.base.dom.method.aria2.manager.ariang}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-list-check"/></svg>查看任务 (AriaNg)</button>`);
+
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="sendto.aria2" class="${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
+
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.cmd.aria2" class="${mount} btn info mini tip" data-title="${config.base.dom.copy.all.aria2}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
+			} else if (temp.mode === "bitcomet") {
+				const rpc = base.getValue("setting_bitcomet_rpc").find(i => i.default);
+
+				content.find(`.${mount}.extra`).append(`<button class="${mount} btn warning mini tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
+
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.cmd.bitcomet" class="${mount} btn default mini tip" data-title="${config.base.dom.copy.all.bitcomet}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部 BC 地址</button>`);
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="sendto.bitcomet" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
+			} else if (temp.mode === "abdm") {
+				const rpc = base.getValue("setting_abdm_rpc").find(i => i.default);
+
+				content.find(`.${mount}.extra`).append(`<button action="settings" type="abdm" class="${mount} btn warning mini tip" data-title="${rpc.domain + ":" + rpc.port}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="sendto.abdm" class="${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
+			}
+			function updateTooltip($element, value) {
+				if (!value) return;
+				$element.addClass(`${mount} tip`);
+				if (value.startsWith("+")) {
+					// 追加模式：去掉开头的 "+"，然后拼接到现有 data-title
+					const newValue = value.substring(1);
+					const existingTitle = $element.attr("data-title") || "";
+					$element.attr("data-title", existingTitle + newValue);
+				} else {
+					// 替换模式
+					$element.attr("data-title", value);
+				}
+			}
+			if (dom?.tooltip?.enhance) updateTooltip(content.find(`[action="download"][type="enhance"]`), dom.tooltip.enhance);
+			if (dom?.tooltip?.normal) updateTooltip(content.find(`[action="download"][type="normal"]`), dom.tooltip.normal);
+			if (dom?.tooltip?.copy) updateTooltip(content.find(`[action="copy"]`), dom.tooltip.copy);
+			if (dom?.tooltip?.filename) updateTooltip(content.find(`[action="copy"][type="file.name"]`), dom.tooltip.filename);
+			// 恢复下载状态：遍历 temp.downing，对每个 index 重建 UI 状态
+			const restoreDowning = (idx, st) => {
+				const $item = content.find(`.item[data-index="${idx}"]`);
+				if (!$item.length) return;
+				$item.find(`[action="download"][type="enhance"], [action="download"][type="normal"], [action="sendto"][type="idm"], [action="copy"]`).hide();
+				$item.find(".downing").show();
+				if (st.status === "downloading") {
+					$item.find('[type="stop"]').show();
+					$item.find('[type="back"]').hide();
+					$item.find(".progress-bar").css("--width", `${st.progress}%`);
+					$item.find(".text").text(st.text);
+				} else if (st.status === "done") {
+					$item.find('[type="stop"]').hide();
+					$item.find('[type="back"]').show();
+					$item.find(".foreground").css("background", st.background);
+					$item.find(".text").html(st.text);
+				} else if (st.status === "error") {
+					$item.find('[type="stop"]').hide();
+					$item.find('[type="back"]').show();
+					$item.find(".progress-bar").css("--width", "100%");
+					$item.find(".foreground").css("background", st.background);
+					$item.find(".text").html(st.text).css("white-space", st.whiteSpace || "break-spaces");
+				}
 			};
-		}
-	};
+			Object.entries(temp.downing).forEach(([idx, st]) => restoreDowning(idx, st));
+			const html = content.html();
+			content.remove();
+			return html;
+		},
+		tools: {
+			convertTo: {
+				/**
+				 * 生成 cURL 下载命令
+				 * @author 油小猴
+				 * @author hmjz100
+				 * @description 根据终端类型生成对应 curl 命令，支持断点续传，自动处理文件名特殊字符
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Object} [headers] - 请求头对象（可选）
+				 * @returns {String} 编码后的 curl 命令字符串
+				 */
+				curl(link, filename, headers) {
+					const terminal = base.getValue("setting_curl_terminal");
+					filename = base.fixFilename(filename);
+					headers = base.standHeaders(headers, true, false);
+					let headerStr = "";
+					if (headers && base.isType(headers) === "object") {
+						const parts = [];
+						for (const [key, value] of Object.entries(headers)) {
+							// 转义双引号以防止命令行注入/语法错误
+							const safeValue = String(value).replace(/"/g, '\\"');
+							parts.push(`-H "${key}: ${safeValue}"`);
+						}
+						if (parts.length > 0) {
+							headerStr = " " + parts.join(" ");
+						}
+					}
+					return `${terminal !== "wp" ? "curl" : "curl.exe"} -L -C - "${link}" -o "${filename}"${headerStr}`;
+				},
+				/**
+				 * 生成 Aria2 下载命令
+				 * @author 油小猴
+				 * @author hmjz100
+				 * @description 将地址转换为 Aria2 格式命令，自动处理文件名特殊字符
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Object} [headers] - 请求头对象（可选）
+				 * @returns {String} 编码后的 aria2c 命令字符串
+				 */
+				aira2(link, filename, headers) {
+					filename = base.fixFilename(filename);
+					headers = base.standHeaders(headers, true, false);
+					let headerStr = "";
+					if (headers && base.isType(headers) === "object") {
+						const parts = [];
+						for (const [key, value] of Object.entries(headers)) {
+							// 转义内部双引号
+							const safeValue = String(value).replace(/"/g, '\\"');
+							parts.push(`--header="${key}: ${safeValue}"`);
+						}
+						if (parts.length > 0) {
+							headerStr = " " + parts.join(" ");
+						}
+					}
+					return `aria2c "${link}" --out "${filename}"${headerStr}`;
+				},
+				/**
+				 * 生成 BC 协议下载地址
+				 * @author 油小猴
+				 * @author hmjz100
+				 * @description 将地址转换为 BC 协议格式，自动处理 URL 编码
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Object} [headers] - 请求头对象（可选）
+				 * @param {Array} [config] - 自定义参数（可选）
+				 * @returns {String} 编码后的 BC 协议 URL
+				 */
+				bitcomet(link, filename, headers, config) {
+					filename = base.fixFilename(filename);
+					headers = base.standHeaders(headers, true, false);
+					const data = new URLSearchParams();
+					if (headers && base.isType(headers) === "object") for (const [key, value] of Object.entries(headers)) {
+						switch (key.toLowerCase()) {
+							case "referer": data.set("referrer", value); break;
+							case "user-agent": data.set("user_agent", value); break;
+							case "cookie": data.set("cookie", value); break;
+							default: break;
+						}
+					}
+					if (config && base.isType(config) === "object") for (const [key, value] of Object.entries(config)) data.set(key, value);
+					const extraParams = data.toString();
+					const bc = `AA/${encodeURIComponent(filename)}/?url=${encodeURIComponent(link)}${extraParams ? ("&" + extraParams) : ""}ZZ`;
+					return `bc://http/${base.encodeBase(bc)}`;
+				},
+			},
+			sendTo: {
+				/**
+				 * 发送地址到 IDM 下载器
+				 * @author hmjz100
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Number} filesize - 文件大小
+				 * @param {Object} [headers] - 请求头对象（可选）
+				 * @returns {Promise<"success"|"fail">} 发送态结果
+				 */
+				async idm(link, filename, filesize, headers = {}) {
+					const rpc = base.getValue("setting_idm_rpc");
+					if (!this.idm.lock) this.idm.lock = Promise.resolve();
+					return this.idm.lock = this.idm.lock.then(async () => {
+						headers = base.standHeaders(headers);
+						if (!this.idm.seq) this.idm.seq = 1;
+						const seq = this.idm.seq;
+						const time = Date.now();
+						const url = `http://127.0.0.1:1001/client/${rpc}?seq=${seq}`;
+						const ext = base.getExtension(filename);
+						const headersText = Object.entries(headers).map(([key, value]) => `${key}: ${value}`).join("\n") + "\n"; // 坑1：IDM 对 Header 的解码比较死板，最后不加换行不肯解析
+						function format(key, val) {
+							if (val === undefined || val === null) return "";
+							const strVal = String(val);
+							const len = new Blob([strVal]).size; // 坑2：使用 blob.size，而不是 length
+							return `${key}=${len}:${strVal}`;
+						};
+						const fields = [
+							format(4, ext), // 4: 文件类型
+							format(6, link), // 6: 下载地址
+							format(7, location.origin), // 7: 来源页面（“该文件来自网页”）
+							format(11, headersText), // 11: 请求头
+							format(100, filename), // 100: 文件名
+							format(122, 4), // 122: 代理
+						];
+						// 坑3：神秘的请求格式
+						// MSG# {请求指示} #13#1# {10241/20xx}(是/否 使用扩展提供的文件信息) : {?}(可能是距离扩展启动的时间?) :0: {当前时间戳} :0:1: {2/1}(是/否 优先弹窗，再获取文件信息) : {文件大小} :0,{表单}(格式如上);
+						const data = `MSG#${seq}#13#1#10241:${seq + 1000}:0:${time}:0:1:2:${filesize}:0,${fields.join(",")};`;
+						const request = base.post(url, data, {}, "text", false);
+						const timeout = new Promise((_, reject) => {
+							setTimeout(() => {
+								if (request.abort) request.abort();
+								reject(new Error("timeout"));
+							}, 15 * 1000);
+						});
+						const res = await Promise.race([request, timeout]);
+						if (res && res.endsWith(`${seq}:3;`)) {
+							this.idm.seq++;
+							return "success";
+						};
+						return "fail";
+					});
+				},
+				/**
+				 * 发送地址到 Aria2 下载器
+				 * @author 油小猴
+				 * @author hmjz100
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Array} [headers] - 请求头对象（可选）
+				 * @returns {Promise<"success"|"fail">} 发送态结果
+				 */
+				async aria2(link, filename, headers) {
+					if (!this.aria2.lock) this.aria2.lock = Promise.resolve();
+					return this.aria2.lock = this.aria2.lock.then(async () => {
+						headers = base.standHeaders(headers);
+						const header_parts = [];
+						for (const [key, value] of Object.entries(headers)) {
+							header_parts.push(`${key}: ${value}`);
+						}
+						const list = base.getValue("setting_aria2_rpc");
+						const selected = list.find(i => i.default);
+						const rpc = {
+							domain: selected.domain,
+							port: selected.port,
+							path: selected.path,
+							dir: selected.dir,
+							token: selected.token
+						};
+						const url = `${rpc.domain}:${rpc.port}${rpc.path}`;
+						const dir = (rpc.dir !== null && rpc.dir !== "") ? rpc.dir : undefined;
+						const data = {
+							id: new Date().getTime(),
+							jsonrpc: "2.0",
+							method: "aria2.addUri",
+							params: [[link], {
+								...(dir !== undefined && dir !== "" ? { dir } : {}),
+								...(headers?.["User-Agent"] ? { "user-agent": headers["User-Agent"] } : {}),
+								...(headers?.["Referer"] ? { "referer": headers["Referer"] } : { "referer": `${location.origin}/` }),
+								out: filename,
+								header: header_parts
+							}]
+						};
+						if (rpc.token) data.params.unshift(`token:${rpc.token}`);
+						const res = await base.post(url, data, { "Accept": "application/json", "Content-Type": "application/json;charset=UTF-8" }, "json", false);
+						if (res.result) return "success";
+						return "fail";
+					});
+				},
+				/**
+				 * 发送地址到比特彗星下载器
+				 * @author hmjz100
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Array} [headers] - 请求头对象（可选）
+				 * @param {Array} [config] - 自定义参数（可选）
+				 * @returns {Promise<"success"|"fail">} 发送态结果
+				 */
+				async bitcomet(link, filename, headers, config) {
+					if (!this.bitcomet.lock) this.bitcomet.lock = Promise.resolve();
+					return this.bitcomet.lock = this.bitcomet.lock.then(async () => {
+						headers = base.standHeaders(headers);
+						const list = base.getValue("setting_bitcomet_rpc");
+						const selected = list.find(i => i.default);
+						const rpc = {
+							domain: selected.domain,
+							port: selected.port,
+							path: selected.path,
+							dir: selected.dir,
+							authName: selected.authName,
+							authPass: selected.authPass,
+						};
+						const url = `${rpc.domain}:${rpc.port}${rpc.path}`;
+						const data = new URLSearchParams();
+						data.set("url", link);
+						if (rpc.dir !== null && rpc.dir !== "") data.set("save_path", rpc.dir);
+						data.set("file_name", filename);
+						data.set("connection", 200);
+						if (headers && base.isType(headers) === "object") for (const [key, value] of Object.entries(headers)) {
+							switch (key.toLowerCase()) {
+								case "referer": data.set("referrer", value); break;
+								case "user-agent": data.set("user_agent", value); break;
+								case "cookie": data.set("cookie", value); break;
+								default: break;
+							}
+						}
+						if (config && base.isType(config) === "object") for (const [key, value] of Object.entries(config)) data.set(key, value);
+						try {
+							const res = await base.post(url, data, {
+								"Authorization": `Basic ${base.encodeBase(rpc.authName + ":" + rpc.authPass)}`,
+								"Content-Type": "application/x-www-form-urlencoded",
+								"Cache-Control": "max-age=0",
+								"Origin": `${rpc.domain}:${rpc.port}`,
+								"Referer": `${rpc.domain}:${rpc.port}/panel/task_add_httpftp`,
+							}, "text", false);
+							if (res && res.includes("Add task failed!")) return "fail";
+							else return "success";
+						} catch {
+							return "success";
+						}
+					});
+				},
+				/**
+				 * 发送地址到 AB Download Manager 下载器
+				 * @author hmjz100
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Array} [headers] - 请求头对象（可选）
+				 * @returns {Promise<"success"|"fail">} 发送态结果
+				 */
+				async abdm(link, filename, headers) {
+					if (!this.abdm.lock) this.abdm.lock = Promise.resolve();
+					return this.abdm.lock = this.abdm.lock.then(async () => {
+						headers = base.standHeaders(headers);
+						const list = base.getValue("setting_abdm_rpc");
+						const selected = list.find(i => i.default);
+						const rpc = {
+							domain: selected.domain,
+							port: selected.port,
+							dir: selected.dir
+						};
+						const url = `${rpc.domain}:${rpc.port}/start-headless-download`;
+						const data = {
+							"downloadSource": {
+								"name": filename,
+								"description": "LinkSwift",
+								"link": link,
+								"headers": headers
+							},
+							"name": filename
+						}
+						if (headers?.["Referer"]) data["downloadSource"]["downloadPage"] = headers["Referer"];
+						if (rpc.dir) data.folder = rpc.dir;
+						const res = await base.post(url, data, { "Content-Type": "text/plain;charset=UTF-8" }, "text", false);
+						if (res === "OK") return "success";
+						return "fail";
+					});
+				},
+			},
+		},
+	}
 
 	/**
 	 * 百度网盘
@@ -5241,7 +5575,7 @@ button.downloadSubtitle:disabled {
 			}
 		},
 		addPageListener() {
-			$doc.on("mouseenter mouseleave click", ".pl-button.g-dropdown-button", function (e) {
+			$doc.on("mouseenter mouseleave click", ".pl-button.g-dropdown-button", (e) => {
 				if (e.type === "mouseleave") {
 					$(e.currentTarget).removeClass("button-open");
 				} else {
@@ -5249,10 +5583,10 @@ button.downloadSubtitle:disabled {
 					$(e.currentTarget).find(".pl-dropdown-menu").show();
 				}
 			});
-			$doc.on("mouseleave", ".pl-button.g-dropdown-button .pl-dropdown-menu", function (e) {
+			$doc.on("mouseleave", ".pl-button.g-dropdown-button .pl-dropdown-menu", (e) => {
 				$(e.currentTarget).hide();
 			});
-			$doc.on("click", ".pl-button-save", async function (e) {
+			$doc.on("click", ".pl-button-save", async (e) => {
 				e.preventDefault();
 				const selections = temp.main.getSelectedList();
 				if (selections.length === 0) {
@@ -5262,236 +5596,116 @@ button.downloadSubtitle:disabled {
 				await base.sleep(500);
 				document.querySelector(".tools-share-save-hb").click();
 			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, { "User-Agent": config.$baidu.api.ua.downloadLink, "Origin": "", "Referer": "" }, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$baidu.api.ua.downloadLink });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$baidu.api.ua.downloadLink}`]);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$baidu.api.ua.downloadLink });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$baidu.api.ua.downloadLink });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
 		},
 		greenerPage() {
 			temp.page = temp.main.detectPage();
-			base.waitForKeyElements(".wp-s-header-user__vip-center", function (tag) {
+			base.waitForKeyElements(".wp-s-header-user__vip-center", (tag) => {
 				tag.remove();
 			}, true);
-			base.waitForKeyElements(".wp-s-header-user__create-team-content", function (tag) {
+			base.waitForKeyElements(".wp-s-header-user__create-team-content", (tag) => {
 				tag.remove();
 			}, true);
-			base.waitForKeyElements(".app-user-vip-center-box.vip-center-type-2", function (tag) {
+			base.waitForKeyElements(".app-user-vip-center-box.vip-center-type-2", (tag) => {
 				tag.remove();
 			}, true);
-			base.waitForKeyElements(".wp-s-header__vip-btn-tip", function (tag) {
+			base.waitForKeyElements(".wp-s-header__vip-btn-tip", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".app-user-vip-center-tip", function (tag) {
+			base.waitForKeyElements(".app-user-vip-center-tip", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements("#web-header-text-s-45", function (tag) {
+			base.waitForKeyElements("#web-header-text-s-45", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".wp-s-header__vip-btn", function (tag) {
+			base.waitForKeyElements(".wp-s-header__vip-btn", (tag) => {
 				tag.text("会员中心")
 			}, true);
-			base.waitForKeyElements(".KQcHyA", function (tag) {
+			base.waitForKeyElements(".KQcHyA", (tag) => {
 				tag.text("会员中心")
 			}, true);
-			base.waitForKeyElements(".gOIbzPb", function (tag) {
+			base.waitForKeyElements(".gOIbzPb", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".wp-s-header-user__create-team-title", function (tag) {
+			base.waitForKeyElements(".wp-s-header-user__create-team-title", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".web-header-ad-item", function (tag) {
+			base.waitForKeyElements(".web-header-ad-item", (tag) => {
 				tag.fadeOut();
 			});
-			base.waitForKeyElements(".wp-s-header__game-entry", function (tag) {
+			base.waitForKeyElements(".wp-s-header__game-entry", (tag) => {
 				tag.fadeOut();
 			}, true)
-			base.waitForKeyElements(".bd-aside-ad", function (tag) {
+			base.waitForKeyElements(".bd-aside-ad", (tag) => {
 				tag.fadeOut();
 			}, true)
-			base.waitForKeyElements(".btn-img-tips", function (tag) {
+			base.waitForKeyElements(".btn-img-tips", (tag) => {
 				tag.fadeOut();
 			}, true)
-			base.waitForKeyElements(".nd-operate-guidance", function (tag) {
+			base.waitForKeyElements(".nd-operate-guidance", (tag) => {
 				tag.fadeOut();
 			}, true)
-			base.waitForKeyElements(".module-operation-content", function (tag) {
+			base.waitForKeyElements(".module-operation-content", (tag) => {
 				tag.fadeOut();
 				document.querySelector(".operate-guide-close").click();
 				document.querySelector(".module-canvas").click();
 			}, true)
-			base.waitForKeyElements(`[class*="module-"][class*="-box"]:not(.module-box), [class*="module-"][class*="-mask"]`, function (tag) {
+			base.waitForKeyElements(`[class*="module-"][class*="-box"]:not(.module-box), [class*="module-"][class*="-mask"]`, (tag) => {
 				tag.fadeOut();
 				tag.find(".close-mask").click();
 			}, true)
-			base.waitForKeyElements(".newIcon", function (tag) {
+			base.waitForKeyElements(".newIcon", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".u-badge__content.is-dot", function (tag) {
+			base.waitForKeyElements(".u-badge__content.is-dot", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".wp-side-options.g-clearfix", function (tag) {
+			base.waitForKeyElements(".wp-side-options.g-clearfix", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".wp-s-header-user__drop-channel", function (tag) {
+			base.waitForKeyElements(".wp-s-header-user__drop-channel", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".app-download", function (tag) {
+			base.waitForKeyElements(".app-download", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`.g-button[title*="手机"]`, function (tag) {
+			base.waitForKeyElements(`.g-button[title*="手机"]`, (tag) => {
 				tag.fadeOut();
 			}, true)
-			base.waitForKeyElements(".yike-entrance", function (tag) {
+			base.waitForKeyElements(".yike-entrance", (tag) => {
 				tag.remove();
 			}, true)
-			base.waitForKeyElements("div.dialog-gray:has(.dialog-close):has(.tip-body):has(~ .module-canvas)", function (tag) {
+			base.waitForKeyElements("div.dialog-gray:has(.dialog-close):has(.tip-body):has(~ .module-canvas)", (tag) => {
 				tag.find(".dialog-close").click();
 				$(".module-canvas").click();
 			}, true)
 
 			// back pc motivate 回端激励
-			base.waitForKeyElements(".wp-s-header ~ div:not([class]):has(.nd-custom-btn)", function (tag) {
+			base.waitForKeyElements(".wp-s-header ~ div:not([class]):has(.nd-custom-btn)", (tag) => {
 				if (!tag.text().includes("客户端")) return;
 				tag.remove();
 			}, true)
-			base.waitForKeyElements(".pc-client-fullscreen-modal", function (tag) {
+			base.waitForKeyElements(".pc-client-fullscreen-modal", (tag) => {
 				tag.hide();
 				tag.find(".pc-client-modal-close").click();
 			}, true)
-			base.waitForKeyElements(".nd-bottom-right-popover:has(.nd-custom-popover-close)", function (tag) {
+			base.waitForKeyElements(".nd-bottom-right-popover:has(.nd-custom-popover-close)", (tag) => {
 				tag.hide();
 				tag.find(".nd-custom-popover-close").click();
 			}, true)
-			base.waitForKeyElements(".wp-s-aside-nav__sub-bottom > a.wp-aside-nav__pc-client-button", function (tag) {
+			base.waitForKeyElements(".wp-s-aside-nav__sub-bottom > a.wp-aside-nav__pc-client-button", (tag) => {
 				tag.remove();
 			}, true)
-			base.waitForKeyElements(".open-pc-menu-wrap, .menu-open-pc-wrap", function (tag) {
+			base.waitForKeyElements(".open-pc-menu-wrap, .menu-open-pc-wrap", (tag) => {
 				tag.remove();
 			}, true)
-			base.waitForKeyElements(`.nd-invoke-app-btn > .nd-custom-btn-wrapper:has(img.BdPc[src*="Bdpc.png"])`, function (tag) {
+			base.waitForKeyElements(`.nd-invoke-app-btn > .nd-custom-btn-wrapper:has(img.BdPc[src*="Bdpc.png"])`, (tag) => {
 				tag.remove();
 			}, true)
-			base.waitForKeyElements(`.wp-s-aside-nav__main-item.wp-s-aside-nav__nav-tooltip:has(img[src*="wAIUtHEN+698AAAAABJRU5ErkJggg=="])`, function (tag) {
+			base.waitForKeyElements(`.wp-s-aside-nav__main-item.wp-s-aside-nav__nav-tooltip:has(img[src*="wAIUtHEN+698AAAAABJRU5ErkJggg=="])`, (tag) => {
 				tag.remove();
 			}, true)
 
-			base.waitForKeyElements("a.tools__item", function (tag) {
+			base.waitForKeyElements("a.tools__item", (tag) => {
 				if (tag.attr("linked")) return;
 				if (tag.attr("href")) {
 					try {
@@ -5503,7 +5717,7 @@ button.downloadSubtitle:disabled {
 				}
 				tag.attr("linked", true)
 			}, true);
-			base.waitForKeyElements("p.wp-s-aside-nav__main-item-text", function (tag) {
+			base.waitForKeyElements("p.wp-s-aside-nav__main-item-text", (tag) => {
 				if (tag.attr("linked")) return;
 				if (tag.closest("a").attr("href")) {
 					try {
@@ -5520,8 +5734,8 @@ button.downloadSubtitle:disabled {
 				}
 				tag.attr("linked", true)
 			}, true);
-			base.waitForKeyElements(`dd[node-type="header-link"]`, function (tag) {
-				tag.children().each((index, element) => {
+			base.waitForKeyElements(`dd[node-type="header-link"]`, (tag) => {
+				tag.children().each((_, element) => {
 					const tag = $(element);
 					if (!tag.attr("node-type")) return;
 					const type = tag.attr("node-type");
@@ -5534,7 +5748,7 @@ button.downloadSubtitle:disabled {
 					}
 				});
 			}, true);
-			base.waitForKeyElements(".__yunguanjia", function (tag) {
+			base.waitForKeyElements(".__yunguanjia", (tag) => {
 				tag.html(`<div class="yunguanjia-list __yunguanjia row g-clearfix _item sel">
 					<span type="radio" class="radio-box _radioInput __yunguanjiaRadio">
 						<span class="device-name">添加我的电脑</span>
@@ -5548,7 +5762,7 @@ button.downloadSubtitle:disabled {
 			}, true)
 			// 美化分享页面
 			if (temp.page === "share") {
-				base.waitForKeyElements(`iframe[src^="/buy/ad"]`, function (tag) {
+				base.waitForKeyElements(`iframe[src^="/buy/ad"]`, (tag) => {
 					tag.fadeOut();
 				}, true)
 				// 一朵可爱捏
@@ -5565,16 +5779,16 @@ button.downloadSubtitle:disabled {
 						display:none!important;
 					}
 				`, `.${mount}`);
-				base.waitForKeyElements(`.KPDwCE`, function (tag) {
+				base.waitForKeyElements(`.KPDwCE`, (tag) => {
 					tag.css("background", "transparent");
 				}, true);
-				base.waitForKeyElements(".share-list .KPDwCE .AuPKyz", function (tag) {
+				base.waitForKeyElements(".share-list .KPDwCE .AuPKyz", (tag) => {
 					tag.css("background", "transparent");
 				}, true);
-				base.waitForKeyElements(`#layoutMain`, function (tag) {
+				base.waitForKeyElements(`#layoutMain`, (tag) => {
 					tag.css({ "border-radius": "24px" });
 				}, true)
-				base.waitForKeyElements(".frame-content", function (tag) {
+				base.waitForKeyElements(".frame-content", (tag) => {
 					tag.css({ "margin": "auto" });
 				}, true)
 			}
@@ -5683,11 +5897,11 @@ button.downloadSubtitle:disabled {
 				.module-topToolBar,
 				.module-timeline-view .timeline-title-curday
 				{background:transparent!important;border-bottom:0}
-				.MdLxwM{background :#EBE6E3!important}
+				.MdLxwM{background :#FFF!important}
 				.aside-absolute-container{position:absolute!important}
-				.aside-absolute-container .QGOvsxb .remainingSpaceUi_span{background:#8af248!important;border-radius:10px 0 0 10px;border-right:#EBE6E3 1px solid;border-bottom:#EBE6E3 1px solid}
+				.aside-absolute-container .QGOvsxb .remainingSpaceUi_span{background:#8af248!important;border-radius:10px 0 0 10px;border-right:#FFF 1px solid;border-bottom:#FFF 1px solid}
 				.xtJbHcb .CDaavKb .KQcHyA{background:rgb(244,207,0)!important;padding:8px 15px}
-				.xtJbHcb .web-header-nav-new-version-inner{background:${temp.color}!important;padding:8px 15px;line-height:15px;width:auto;height:auto}
+				.xtJbHcb .web-header-nav-new-version-inner{background:var(--pl-c)!important;padding:8px 15px;line-height:15px;width:auto;height:auto}
 				a{transition:all.2s!important}
 				#bd-main .bd-left{margin:auto!important}
 				.verify-input input{padding-left:0!important;text-align:center!important}
@@ -5788,61 +6002,61 @@ button.downloadSubtitle:disabled {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
 				const $button = $(`<div class="g-dropdown-button pl-button">
-					<div class="g-button g-button-blue color-button"><span class="g-button-right"><em class="icon icon-download" style="color:#EBE6E3;"></em><span class="text" style="width:60px;">下载助手</span></span></div>
+					<div class="g-button g-button-blue color-button"><span class="g-button-right"><em class="icon icon-download" style="color:#FFF;"></em><span class="text" style="width:60px;">下载助手</span></span></div>
 					<div class="menu" style="color:${temp.color};border-color:${temp.color};width:auto;z-index:41;">
-						<div class="g-button-menu pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg> API 下载</div>
-						<div class="g-button-menu pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg> cURL 下载</div>
-						<div class="g-button-menu pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> Aria2 下载</div>
-						<div class="g-button-menu pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> 彗星下载</div>
-						<div class="g-button-menu pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg> ABDM 下载</div>
-						<div class="g-button-menu pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg> 助手设置</div>
-						<div class="g-button-menu pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg> 助手美化</div>
-						<div class="g-button-menu pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg> 更新日志</div>
+						<div class="g-button-menu pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></div>
+						<div class="g-button-menu pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></div>
+						<div class="g-button-menu pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></div>
+						<div class="g-button-menu pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></div>
+						<div class="g-button-menu pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></div>
+						<div class="g-button-menu pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></div>
+						<div class="g-button-menu pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></div>
+						<div class="g-button-menu pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></div>
 					</div>
 				</div>`);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$baidu.mount.main, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "main") return;
 				const $button = $(`<div class="wp-s-agile-tool-bar__h-group pl-button">
 					<div class="wp-s-agile-tool-bar__h-action is-need-left-sep is-main color-button">
-						<button type="button" class="u-button nd-file-list-toolbar-action-item u-button--primary u-button--small is-round is-has-icon pl-button color-button">
+						<button class="u-button nd-file-list-toolbar-action-item u-button--primary u-button--small is-round is-has-icon pl-button color-button">
 							<i class="u-icon u-icon-download"></i>
 							<span>下载助手</span>
 						</button>
 						<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu">
-							<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-							<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-							<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-							<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-							<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-							<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-							<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-							<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+							<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+							<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+							<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+							<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+							<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+							<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+							<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+							<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 						</ul>
 					</div>
 				</div>`);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$baidu.mount.main, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "youth") return;
 				const $button = $(`<div class="wp-s-agile-tool-bar__h-group pl-button">
 					<div class="wp-s-agile-tool-bar__h-action is-need-left-sep is-main color-button">
-						<button type="button" class="u-button nd-file-list-toolbar-action-item u-button--primary u-button--small is-round is-has-icon pl-button color-button" style="font-size:14px;font-weight:700">
+						<button class="u-button nd-file-list-toolbar-action-item u-button--primary u-button--small is-round is-has-icon pl-button color-button" style="font-size:14px;font-weight:700">
 							<i class="u-icon u-icon-more"></i>
 							<span>网盘助手</span>
 						</button>
 						<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu">
-							<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-							<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-							<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+							<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+							<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+							<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 						</ul>
 					</div>
 				</div>`);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
@@ -5852,34 +6066,34 @@ button.downloadSubtitle:disabled {
 						<span class="text" style="width:auto;">下载助手</span>
 					</span>
 					<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu" style="top:37px">
-						<!--li class="sub cursor-p pl-button-mode pl-button-save"><em class="icon noicon-zhuancun_bai"></em>保存后下载</li-->
-						<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="sub cursor-p pl-button-mode pl-button-save"><em class="icon noicon-zhuancun_bai" style="width:15px"></em><span>保存后下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</a>`)
 				element.after($button);
-			})
+			});
 		},
 		addInitButton() {
 			base.waitForKeyElements(config.$baidu.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
-				const $button = $(`<div class="g-dropdown-button pl-button-init" style="opacity:0.5"><div style="color:#EBE6E3;" class="g-button g-button-blue color-button"><span class="g-button-right"><em class="icon icon-download" style="color:#EBE6E3;"></em><span class="text" style="width:60px;">点我点亮</span></span></div></div>`);
+				const $button = $(`<div class="g-dropdown-button pl-button-init" style="opacity:0.5"><div style="color:#FFF;" class="g-button g-button-blue color-button"><span class="g-button-right"><em class="icon icon-download" style="color:#FFF;"></em><span class="text" style="width:60px;">点我点亮</span></span></div></div>`);
 				$button.click(base.showInitDialog);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$baidu.mount.main, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || (temp.page !== "main" && temp.page !== "youth")) return;
 				const $button = $(`<div class="wp-s-agile-tool-bar__h-group pl-button-init">
 					<div class="wp-s-agile-tool-bar__h-action is-need-left-sep is-main color-button">
-						<button type="button" class="u-button nd-file-list-toolbar-action-item u-button--primary u-button--small is-round is-has-icon pl-button color-button" style="font-size:14px;font-weight:700">
+						<button class="u-button nd-file-list-toolbar-action-item u-button--primary u-button--small is-round is-has-icon pl-button color-button" style="font-size:14px;font-weight:700">
 							<i class="u-icon u-icon-download"></i>
 							<span>点我点亮</span>
 						</button>
@@ -5887,19 +6101,19 @@ button.downloadSubtitle:disabled {
 				</div>`);
 				$button.click(base.showInitDialog);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
 				const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button-init color-button" href="javascript:;">
 					<span class="g-button-right">
-						<em class="icon icon-download" style="color:#EBE6E3;line-height:27px"></em>
+						<em class="icon icon-download" style="color:#FFF;line-height:27px"></em>
 						<span class="text" style="width:auto;">点我点亮</span>
 					</span>
 				</a>`)
 				$button.click(base.showInitDialog);
 				element.after($button);
-			})
+			});
 		},
 		async getFilesUrl(items, token) {
 			if (base.isType(items) !== "array") return [];
@@ -5943,7 +6157,7 @@ button.downloadSubtitle:disabled {
 					if (res.errno || res.errmsg) {
 						batch.forEach(item => item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`);
 					} else {
-						throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+						throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 					}
 				}
 
@@ -5956,7 +6170,7 @@ button.downloadSubtitle:disabled {
 				});
 
 				proc += res.list.length;
-				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个链接`);
+				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个地址`);
 
 				// 批次间休息
 				if (i + size < pending.length) await base.sleep(1000);
@@ -6012,7 +6226,7 @@ button.downloadSubtitle:disabled {
 					if (res.errno || res.errmsg) {
 						item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`;
 					} else {
-						throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+						throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 					}
 				}
 
@@ -6021,7 +6235,7 @@ button.downloadSubtitle:disabled {
 				temp.glinks.push({ "id": item.fs_id, "expires": (Date.now() + 4 * 60 * 60 * 1000), "data": res.list[0] });
 
 				proc++
-				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个链接`);
+				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个地址`);
 
 				// 批次间休息
 				if (proc < pending.length) await base.sleep(1000);
@@ -6068,7 +6282,7 @@ button.downloadSubtitle:disabled {
 				message.info("提示：<br/>稍后请在新标签页中授权助手哦~");
 				base.delValue("baidu_access_token");
 				await base.sleep(3300);
-				GM_openInTab(config.$baidu.api.getAccessToken, { active: true, insert: true, setParent: true })
+				GM_openInTab(config.$baidu.api.getAccessToken, { active: true, insert: true, setParent: true });
 				let attempts = 0;
 				const interval = setInterval(() => {
 					if (base.getValue("baidu_access_token")) {
@@ -6086,10 +6300,10 @@ button.downloadSubtitle:disabled {
 
 			// 获取选择的文件列表
 			const selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 
-			$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+			$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 
 			let files = selects.filter(f => !f.isdir);
 			const dirs = selects.filter(f => f.isdir);
@@ -6097,12 +6311,12 @@ button.downloadSubtitle:disabled {
 				if (dirs.length > 0) files = files.concat(await this.getFilesList(dirs, token, files.length));
 				if (!files.length) throw new Error("提示：<br/>文件夹是空的哦~");
 
-				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 
 				files = await this.getFilesUrl(files, token).catch(e => {
 					if (e instanceof Error) throw e;
-					throw new Error(e?.message || e || "[百度网盘] 获取文件 URL 失败");
+					throw new Error(e?.message || e || "[百度网盘] 获取下载地址失败");
 				});
 			} else if (temp.page === "share") {
 				const shareData = await this.getShareData();
@@ -6115,37 +6329,45 @@ button.downloadSubtitle:disabled {
 
 				files = await this.getShareFilesUrl(files, shareData, token).catch(e => {
 					if (e instanceof Error) throw e;
-					throw new Error(e?.message || e || "[百度网盘] 获取分享文件 URL 失败");
+					throw new Error(e?.message || e || "[百度网盘] 获取分享下载地址失败");
 				});
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
 
-			temp.links = [files, {
-				isFolder: v => v.isdir === 1,
-				getFileName: v => (v.server_filename || v.filename),
-				getFileSize: v => v.size,
-				getFileLink: v => {
-					if (!v.dlink || !v.dlink.startsWith("http")) return v.dlink;
-					const url = new URL(v.dlink);
-					url.searchParams.set("access_token", token);
-					return url.href;
+			temp.files = [files, {
+				get: {
+					dir: v => v.isdir === 1,
+					name: v => (v.server_filename || v.filename),
+					size: v => v.size,
+					link: v => {
+						if (!v.dlink || !v.dlink.startsWith("http")) return v.dlink;
+						const url = new URL(v.dlink);
+						url.searchParams.set("access_token", token);
+						return url.href;
+					},
 				},
-				convert: {
-					aria2: `--header "User-Agent:${config.$baidu.api.ua.downloadLink}"`,
-					curl: `-A "${config.$baidu.api.ua.downloadLink}"`,
-					bitcomet: `user_agent=${encodeURIComponent(config.$baidu.api.ua.downloadLink)}`
-				},
-				tooltip: config.$baidu.dom
+				headers: { "User-Agent": config.$baidu.api.ua.downloadLink },
+				convert: {},
+				dom: {
+					tooltip: config.$baidu.dom,
+					download: {
+						error: (error) => {
+							if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+							if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+							if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+						}
+					}
+				}
 			}];
-			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
 		getSelectedList() {
 			try {
 				let list = [];
 				// 3
 				const fileList = unsafeWindow.document.querySelector(".file-list");
-				if (fileList?.__vue__?.allFileList?.[0]) list = fileList.__vue__.allFileList.filter(function (item) { return !!item.selected; });
+				if (fileList?.__vue__?.allFileList?.[0]) list = fileList.__vue__.allFileList.filter(item => !!item.selected);
 
 				// 2
 				const wpCore = unsafeWindow.document.querySelector(".wp-s-core-pan");
@@ -6157,7 +6379,7 @@ button.downloadSubtitle:disabled {
 
 				return base.clone(list);
 			} catch (e) {
-				console.error(e);
+				base.console.error(e);
 				return [];
 			}
 		},
@@ -6235,7 +6457,7 @@ button.downloadSubtitle:disabled {
 						position: "center"
 					});
 					if (dialog.isConfirmed) {
-						base.waitForKeyElements("button#auth-allow", function (element) {
+						base.waitForKeyElements("button#auth-allow", (element) => {
 							element[0].click();
 						}, true)
 						return;
@@ -6252,7 +6474,7 @@ button.downloadSubtitle:disabled {
 							showConfirmButton: false,
 							showDenyButton: false,
 							position: "bottom-end",
-						})
+						});
 					}
 				} else if (/openapi.baidu.com\/oauth\/2.0\/login_success/.test(location.href)) {
 					const int = setInterval(async () => {
@@ -6286,7 +6508,7 @@ button.downloadSubtitle:disabled {
 										}
 									}, 10);
 								},
-								didOpen: function (toast) {
+								didOpen(toast) {
 									toast.addEventListener("mouseenter", () => {
 										Swal.stopTimer();
 									});
@@ -6318,14 +6540,14 @@ button.downloadSubtitle:disabled {
 	 */
 	const $aliyun = {
 		addPageListener() {
-			$doc.on("click", ".pl-button-save", async function (e) {
+			$doc.on("click", ".pl-button-save", async (e) => {
 				e.preventDefault();
 				const reactDomGrid = document.querySelector(config.$aliyun.mount.grid);
 				if (reactDomGrid) {
 					const dialog = await Swal.fire({
 						...temp.swalDefault,
 						title: "提示",
-						html: `<div style="display:flex;align-items:center;justify-content:center;">请先切换到&nbsp;&nbsp;<svg class="icon" class="icon--D3kMk " viewBox="0 0 1024 1024" width="20" height="20" fill="currentColor"><use xlink:href="#PDSDrag"></use></svg>&nbsp;<b>列表视图</b>&nbsp;&nbsp;后再获取下载链接哦</div>`,
+						html: `<div style="display:flex;align-items:center;justify-content:center;">请先切换到&nbsp;&nbsp;<svg class="icon" class="icon--D3kMk " viewBox="0 0 1024 1024" width="20" height="20" fill="currentColor"><use xlink:href="#PDSDrag"></use></svg>&nbsp;<b>列表视图</b>&nbsp;&nbsp;后再获取下载地址哦</div>`,
 						icon: "info",
 						showCloseButton: true,
 						showDenyButton: true,
@@ -6334,7 +6556,7 @@ button.downloadSubtitle:disabled {
 					});
 					if (dialog.isConfirmed) {
 						document.querySelector(config.$aliyun.mount.switch).click();
-						return message.success("提示：<br/>切换为列表视图成功<br/>请再获取一次下载链接吧~");
+						return message.success("提示：<br/>切换为列表视图成功<br/>请再获取一次下载地址吧~");
 					}
 					return false;
 				}
@@ -6346,144 +6568,24 @@ button.downloadSubtitle:disabled {
 				await base.sleep(500);
 				document.querySelector(`[class*="btn-save--"]`).click();
 			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, undefined, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "Referer": `https://${location.host}/` });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`Referer:https://${location.host}/`]);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "referrer": `https://${location.host}/` });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), undefined);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
 		},
 		greenerPage() {
-			base.waitForKeyElements(`[class*="share-list-banner"]`, function (tag) {
+			base.waitForKeyElements(`[class*="share-list-banner"]`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`[class*="to-app"]`, function (tag) {
+			base.waitForKeyElements(`[class*="to-app"]`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`[class*="btn-mobile-save"]`, function (tag) {
+			base.waitForKeyElements(`[class*="btn-mobile-save"]`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`[class*="SplashScreenImg--close"]`, function (tag) {
+			base.waitForKeyElements(`[class*="SplashScreenImg--close"]`, (tag) => {
 				tag[0].click();
 			}, true);
-			base.waitForKeyElements(`[class*="container"]`, function (tag) {
+			base.waitForKeyElements(`[class*="container"]`, (tag) => {
 				tag.find(`[class^="icon-close"]`).click();
 			}, true);
-			base.waitForKeyElements(`[class*="popup_main_close"]`, function (tag) {
+			base.waitForKeyElements(`[class*="popup_main_close"]`, (tag) => {
 				tag[0].click();
 			}, true);
 		},
@@ -6502,7 +6604,7 @@ button.downloadSubtitle:disabled {
 				["138, 157, 255", base.hexToRgba(`${temp.color}D0`)],
 			]);
 		},
-		svg: `<svg class="ali-btn-icon" style="margin-right:3px;" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M853.333 938.667H170.667a85.333 85.333 0 0 1-85.334-85.334v-384A85.333 85.333 0 0 1 170.667 384H288a32 32 0 0 1 0 64H170.667a21.333 21.333 0 0 0-21.334 21.333v384a21.333 21.333 0 0 0 21.334 21.334h682.666a21.333 21.333 0 0 0 21.334-21.334v-384A21.333 21.333 0 0 0 853.333 448H736a32 32 0 0 1 0-64h117.333a85.333 85.333 0 0 1 85.334 85.333v384a85.333 85.333 0 0 1-85.334 85.334z" fill="#EBE6E3"></path><path d="M715.03 543.552a32.81 32.81 0 0 0-46.251 0L554.005 657.813v-540.48a32 32 0 0 0-64 0v539.734L375.893 543.488a32.79 32.79 0 0 0-46.229 0 32.427 32.427 0 0 0 0 46.037l169.557 168.811a32.81 32.81 0 0 0 46.251 0l169.557-168.81a32.47 32.47 0 0 0 0-45.974z" fill="#EBE6E3"></path></svg>`,
+		svg: `<svg class="ali-btn-icon" style="margin-right:3px;" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M853.333 938.667H170.667a85.333 85.333 0 0 1-85.334-85.334v-384A85.333 85.333 0 0 1 170.667 384H288a32 32 0 0 1 0 64H170.667a21.333 21.333 0 0 0-21.334 21.333v384a21.333 21.333 0 0 0 21.334 21.334h682.666a21.333 21.333 0 0 0 21.334-21.334v-384A21.333 21.333 0 0 0 853.333 448H736a32 32 0 0 1 0-64h117.333a85.333 85.333 0 0 1 85.334 85.333v384a85.333 85.333 0 0 1-85.334 85.334z" fill="#FFF"></path><path d="M715.03 543.552a32.81 32.81 0 0 0-46.251 0L554.005 657.813v-540.48a32 32 0 0 0-64 0v539.734L375.893 543.488a32.79 32.79 0 0 0-46.229 0 32.427 32.427 0 0 0 0 46.037l169.557 168.811a32.81 32.81 0 0 0 46.251 0l169.557-168.81a32.47 32.47 0 0 0 0-45.974z" fill="#FFF"></path></svg>`,
 		addButton() {
 			base.waitForKeyElements(config.$aliyun.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
@@ -6510,33 +6612,33 @@ button.downloadSubtitle:disabled {
 				const $button = $(`<div class="ali-button pl-button">
 					<span data-role="icon" data-render-as="svg" class="icon">${temp.main.svg}下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:30px; right:0;">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				element.append($button);
-			})
+			});
 			base.waitForKeyElements(config.$aliyun.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
 				const $button = $(`<div class="ali-button pl-button">
 					<span data-role="icon" data-render-as="svg" class="icon">${temp.main.svg}下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:30px; right:16px;">
-						<li class="pl-button-mode pl-button-save"><use xlink:href="#pl-icon-fa-save"/></svg>保存后下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode pl-button-save"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-drive"/></svg><span>保存后下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				$button.css({ "margin-right": "10px", "height": "36px", "width": "auto", "padding": "1px 30px" });
 				element.prepend($button);
-			})
+			});
 		},
 		addInitButton() {
 			const $button = $(`<div class="ali-button pl-button-init"><span data-role="icon" data-render-as="svg" class="icon">${temp.main.svg}点我点亮</span></div>`);
@@ -6546,13 +6648,13 @@ button.downloadSubtitle:disabled {
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
 				$button.css({ "width": "auto" });
 				element.append($button);
-			})
+			});
 			base.waitForKeyElements(config.$aliyun.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
 				$button.css({ "margin-right": "10px", "height": "36px", "padding": "1px 30px", "width": "auto" });
 				element.prepend($button);
-			})
+			});
 		},
 		async getLink() {
 			const reactDomGrid = document.querySelector(config.$aliyun.mount.grid);
@@ -6560,7 +6662,7 @@ button.downloadSubtitle:disabled {
 				const dialog = await Swal.fire({
 					...temp.swalDefault,
 					title: "提示",
-					html: `<div style="display:flex;align-items:center;justify-content:center;">请先切换到&nbsp;&nbsp;<svg class="icon" class="icon--D3kMk " viewBox="0 0 1024 1024" width="20" height="20" fill="currentColor"><use xlink:href="#PDSDrag"></use></svg>&nbsp;<b>列表视图</b>&nbsp;&nbsp;后再获取下载链接哦</div>`,
+					html: `<div style="display:flex;align-items:center;justify-content:center;">请先切换到&nbsp;&nbsp;<svg class="icon" class="icon--D3kMk " viewBox="0 0 1024 1024" width="20" height="20" fill="currentColor"><use xlink:href="#PDSDrag"></use></svg>&nbsp;<b>列表视图</b>&nbsp;&nbsp;后再获取下载地址哦</div>`,
 					icon: "info",
 					showCloseButton: true,
 					showDenyButton: true,
@@ -6569,18 +6671,18 @@ button.downloadSubtitle:disabled {
 				});
 				if (dialog.isConfirmed) {
 					document.querySelector(config.$aliyun.mount.switch).click();
-					return message.success("提示：<br/>切换为列表视图成功<br/>请再获取一次下载链接吧~");
+					return message.success("提示：<br/>切换为列表视图成功<br/>请再获取一次下载地址吧~");
 				}
 				return false;
 			}
 
 			// 获取选择的文件列表
 			let selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => item.type !== "file")) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 
-			$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+			$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 
 			if (temp.page === "home") {
 				selects = selects.filter(item => item.type === "file");
@@ -6590,25 +6692,33 @@ button.downloadSubtitle:disabled {
 				}
 				selects = await this.getFilesUrl(selects, `${token.token_type} ${token.access_token}`).catch(e => {
 					if (e instanceof Error) throw e;
-					throw new Error(e?.message || e || "[阿里云盘] 获取文件 URL 失败");
+					throw new Error(e?.message || e || "[阿里云盘] 获取下载地址失败");
 				});
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
 
-			temp.links = [selects, {
-				isFolder: v => v.type === "folder",
-				getFileName: v => v.name,
-				getFileSize: v => v.size,
-				getFileLink: v => (v.downloadUrl || v.url),
-				convert: {
-					aria2: `--header "Referer:https://${location.host}/"`,
-					curl: `-e "https://${location.host}/"`,
-					bitcomet: `&refer=${encodeURIComponent(`https://${location.host}/`)}`
+			temp.files = [selects, {
+				get: {
+					dir: v => v.type === "folder",
+					name: v => v.name,
+					size: v => v.size,
+					link: v => (v.downloadUrl || v.url),
 				},
-				tooltip: config.$aliyun.dom
+				headers: {},
+				convert: {},
+				dom: {
+					tooltip: config.$aliyun.dom,
+					download: {
+						error: (error) => {
+							if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+							if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+							if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+						}
+					}
+				}
 			}];
-			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
 		async getFilesUrl(items, token) {
 			if (base.isType(items) !== "array") return [];
@@ -6644,7 +6754,7 @@ button.downloadSubtitle:disabled {
 						if (res.code) {
 							batch.forEach(item => item.dlink = `获取下载地址失败，服务器说：${res.code}，刷新后再试试吧~`);
 						} else {
-							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 						}
 					};
 
@@ -6654,7 +6764,7 @@ button.downloadSubtitle:disabled {
 					});
 
 					proc++;
-					$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${pending.length} 个链接`);
+					$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${pending.length} 个地址`);
 				}));
 
 				// 批次间休息
@@ -6672,7 +6782,7 @@ button.downloadSubtitle:disabled {
 				if (props) {
 					const fileList = props.dataSource || [];
 					const selectedKeys = props.selectedKeys.split(",");
-					fileList.forEach(function (val) {
+					fileList.forEach(val => {
 						if (selectedKeys.includes(val.fileId)) {
 							list.push(val);
 						}
@@ -6680,7 +6790,7 @@ button.downloadSubtitle:disabled {
 				}
 				return base.clone(list);
 			} catch (e) {
-				console.error(e);
+				base.console.error(e);
 				return [];
 			}
 		},
@@ -6708,158 +6818,38 @@ button.downloadSubtitle:disabled {
 	 */
 	const $mcloud = {
 		addPageListener() {
-			$doc.on("click", ".pl-button-save", async function (e) {
+			$doc.on("click", ".pl-button-save", async (e) => {
 				e.preventDefault();
 				const selections = temp.main.getSelectedList();
-				if (selections.length === 0) return message.error("提示：<br/>请勾选要下载的文件哦~");
+				if (selections.length === 0) return message.error("提示：<br/>请先勾选要下载的文件哦~");
 				if (selections.every(item => !item.contentID && !item.contentName)) return message.error("提示：<br/>请打开文件夹后再勾选文件~");
 				message.info("提示：<br/>因网盘限制，只能够通过页面直接下载哦~");
 				await base.sleep(500);
 				document.querySelector(".btn-top.btn-top_dl").click();
 			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, undefined, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), undefined);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
 		},
 		greenerPage() {
-			base.waitForKeyElements(".adv_swiper_menu", function (tag) {
+			base.waitForKeyElements(".adv_swiper_menu", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".client-bubble", function (tag) {
+			base.waitForKeyElements(".client-bubble", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".avs-box", function (tag) {
+			base.waitForKeyElements(".avs-box", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".top-adv-swiper", function (tag) {
+			base.waitForKeyElements(".top-adv-swiper", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".client_download_icon", function (tag) {
+			base.waitForKeyElements(".client_download_icon", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".document_top_memberCenter", function (tag) {
-				$(tag[0]).click(function () {
+			base.waitForKeyElements(".document_top_memberCenter", (tag) => {
+				$(tag[0]).click(() => {
 					Swal.fire({
 						...temp.swalDefault,
 						html: `<iframe style="height:700px; width:440px; border:0;" src="https://vip.yun.139.com/vip/"></iframe>`,
-						didOpen: function (toast) {
+						didOpen(toast) {
 							const iframe = toast.querySelector('iframe');
 							const updateHeight = () => {
 								iframe.style.height = (window.innerHeight - 100) + 'px';
@@ -6868,7 +6858,7 @@ button.downloadSubtitle:disabled {
 							window.addEventListener('resize', updateHeight);
 							toast._resizeHandler = updateHeight;
 						},
-						willClose: function (toast) {
+						willClose(toast) {
 							// 清理事件监听器
 							window.removeEventListener('resize', toast._resizeHandler);
 						},
@@ -6896,32 +6886,32 @@ button.downloadSubtitle:disabled {
 				const $button = $(`<div class="pl-button mcloud-button btn-top">
 					<span class="mcloud-btn">下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:36px; left:0; letter-spacing:normal;">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$mcloud.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
 				const $button = $(`<div class="pl-button mcloud-share-button">
 					<span class="mcloud-btn">下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:36px; left:0; letter-spacing:normal;">
-						<li class="pl-button-mode pl-button-save"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode pl-button-save"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>直接下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				element.prepend($button);
-			})
+			});
 		},
 		addInitButton() {
 			const $button = $(`<div class="pl-button-init"><span class="mcloud-btn">点我点亮</span></div>`);
@@ -6931,13 +6921,13 @@ button.downloadSubtitle:disabled {
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
 				$button.addClass("mcloud-button");
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$mcloud.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
 				$button.addClass("mcloud-share-button").css({ "cursor": "pointer" });
 				element.prepend($button);
-			})
+			});
 		},
 		getRandomString(len) {
 			len = len || 16;
@@ -6951,7 +6941,7 @@ button.downloadSubtitle:disabled {
 		},
 		utob(str) {
 			const u = String.fromCharCode;
-			return str.replace(/[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g, function (t) {
+			return str.replace(/[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g, (t) => {
 				if (t.length < 2) {
 					const e = t.charCodeAt(0);
 					return e < 128 ? t : e < 2048 ? u(192 | e >>> 6) + u(128 | 63 & e) : u(224 | e >>> 12 & 15) + u(128 | e >>> 6 & 63) + u(128 | 63 & e);
@@ -7040,14 +7030,14 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => !item.contentID && !item.contentName)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				selects = selects.filter(item => item.contentID && item.contentName && item.contentSuffix);
 				const batchSize = 15;
 				let proc = 0;
-				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 				for (let i = 0; i < selects.length; i += batchSize) {
 					const batch = selects.slice(i, i + batchSize);
 					const queue = [];
@@ -7056,13 +7046,13 @@ button.downloadSubtitle:disabled {
 						queue.push(this.getFileUrl(item, globalIndex)
 							.then(val => {
 								proc++;
-								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 								return val;
 							}));
 					});
 					const res = await Promise.all(queue).catch(e => {
 						if (e instanceof Error) throw e;
-						throw new Error(e?.message || e || "[中国移动云盘] 获取文件 URL 失败");
+						throw new Error(e?.message || e || "[中国移动云盘] 获取下载地址失败");
 					});
 					res.forEach(val => (selects[val.index].downloadUrl = val.downloadUrl));
 					await base.sleep(1000);
@@ -7070,20 +7060,33 @@ button.downloadSubtitle:disabled {
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
-			temp.links = [selects, {
-				isFolder: v => (v.dirEtag || v.caName),
-				getFileName: v => (v.contentName || v.coName),
-				getFileSize: v => (v.contentSize || v.coSize),
-				getFileLink: v => v.downloadUrl,
-				tooltip: config.$mcloud.dom
+			temp.files = [selects, {
+				get: {
+					dir: v => (v.dirEtag || v.caName),
+					name: v => (v.contentName || v.coName),
+					size: v => (v.contentSize || v.coSize),
+					link: v => v.downloadUrl,
+				},
+				headers: {},
+				convert: {},
+				dom: {
+					tooltip: config.$mcloud.dom,
+					download: {
+						error: (error) => {
+							if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+							if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+							if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+						}
+					}
+				}
 			}];
-			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
 		getSelectedList() {
 			try {
-				return document.querySelector(".main_file_list").__vue__.selects.map(val => val.item);
+				return document.querySelector(".main_file_list").__vue__.selectList.map(val => val.item);
 			} catch {
-				const vueDom = document.querySelector(".home-page").__vue__;
+				const vueDom = document.querySelector(".home-page")?.__vue__;
 				const fileList = vueDom._computedWatchers.fileList.value;
 				const dirList = vueDom._computedWatchers.dirList.value;
 				const selectedFileIndex = vueDom.selectedFile;
@@ -7120,133 +7123,11 @@ button.downloadSubtitle:disabled {
 	 * @author hmjz100
 	 */
 	const $tcloud = {
-		addPageListener() {
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, undefined, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), undefined);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-		},
 		greenerPage() {
-			base.waitForKeyElements(".advertising-mask", function (tag) {
+			base.waitForKeyElements(".advertising-mask", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements("a.client-download.nav-block", function (tag) {
+			base.waitForKeyElements("a.client-download.nav-block", (tag) => {
 				tag.fadeOut();
 			}, true);
 		},
@@ -7275,30 +7156,30 @@ button.downloadSubtitle:disabled {
 					</svg>
 				</i>
 				<ul class="pl-dropdown-menu">
-					<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-					<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-					<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-					<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-					<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-					<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-					<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-					<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+					<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+					<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+					<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+					<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+					<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+					<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+					<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+					<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 				</ul>
 			</div>`);
-			$button.find(".pl-dropdown-menu").css({ "position": "absolute", "left": "-1px" })
+			$button.find(".pl-dropdown-menu").css({ "position": "absolute", "left": "-1px" });
 			base.waitForKeyElements(config.$tcloud.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
-				$button.find(".pl-dropdown-menu").css({ "top": "28px" })
+				$button.find(".pl-dropdown-menu").css({ "top": "28px" });
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$tcloud.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				$button.css({ "height": "28px", "border-radius": "15px" })
-				$button.find(".pl-dropdown-menu").css({ "top": "25px" })
+				$button.css({ "height": "28px", "border-radius": "15px" });
+				$button.find(".pl-dropdown-menu").css({ "top": "25px" });
 				element.prepend($button);
-			})
+			});
 		},
 		addInitButton() {
 			const $button = $(`<div class="tcloud-button pl-button-init">点我点亮</div>`);
@@ -7307,13 +7188,13 @@ button.downloadSubtitle:disabled {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$tcloud.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				$button.css({ "height": "28px", "border-radius": "15px" })
+				$button.css({ "height": "28px", "border-radius": "15px" });
 				element.prepend($button);
-			})
+			});
 		},
 		async getToken() {
 			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
@@ -7359,7 +7240,7 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => item.isFolder)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			selects = selects.filter(item => !item.isFolder)
 			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
@@ -7375,8 +7256,8 @@ button.downloadSubtitle:disabled {
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>获取缓存成功~</div>`);
 			const batchSize = 15;
 			let proc = 0;
-			$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+			$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 			for (let i = 0; i < selects.length; i += batchSize) {
 				const batch = selects.slice(i, i + batchSize);
 				const queue = [];
@@ -7385,27 +7266,40 @@ button.downloadSubtitle:disabled {
 					queue.push(this.getFileUrl(item, globalIndex, token)
 						.then(val => {
 							proc++;
-							$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+							$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 							return val;
 						}));
 				});
 				const res = await Promise.all(queue).catch(e => {
 					if (e instanceof Error) throw e;
-					throw new Error(e?.message || e || "[天翼云盘] 获取文件 URL 失败");
+					throw new Error(e?.message || e || "[天翼云盘] 获取下载地址失败");
 				});
 				res.forEach(val => {
 					selects[val.index].downloadUrl = val.downloadUrl;
 				});
 				await base.sleep(1000);
 			}
-			temp.links = [selects, {
-				isFolder: v => v.isFolder,
-				getFileName: v => v.fileName,
-				getFileSize: v => v.size,
-				getFileLink: v => v.downloadUrl,
-				tooltip: config.$mcloud.dom
+			temp.files = [selects, {
+				get: {
+					dir: v => v.isFolder,
+					name: v => v.fileName,
+					size: v => v.size,
+					link: v => v.downloadUrl,
+				},
+				headers: {},
+				convert: {},
+				dom: {
+					tooltip: config.$mcloud.dom,
+					download: {
+						error: (error) => {
+							if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+							if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+							if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+						}
+					}
+				}
 			}];
-			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
 		getSelectedList() {
 			try {
@@ -7427,7 +7321,6 @@ button.downloadSubtitle:disabled {
 			} else {
 				this.addInitButton();
 			}
-			this.addPageListener();
 			this.getToken();
 		},
 	};
@@ -7439,7 +7332,7 @@ button.downloadSubtitle:disabled {
 	 */
 	const $xunlei = {
 		addPageListener() {
-			$doc.on("click", ".pl-button-save", async function (e) {
+			$doc.on("click", ".pl-button-save", async (e) => {
 				e.preventDefault();
 				const selections = temp.main.getSelectedList();
 				if (selections.length === 0) {
@@ -7448,126 +7341,6 @@ button.downloadSubtitle:disabled {
 				message.info("提示：<br/>因网盘限制，请保存到自己网盘后再去下载哦~");
 				await base.sleep(500);
 				document.querySelector(".saveToCloud").click();
-			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, undefined, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "mirror_url_list": base.getMirrorList(target.data("link"), config.$xunlei.api.mirror), "checkboxCustomHeadersForMirrors": "on" });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), undefined);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
 			});
 		},
 		beautifyPage() {
@@ -7592,48 +7365,48 @@ button.downloadSubtitle:disabled {
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
 				const $button = $(`<div class="xunlei-button pl-button"><i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:34px;">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$xunlei.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<div class="xunlei-button pl-button">
-					<i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">下载助手</span>
-					<ul class="pl-dropdown-menu" style="top:34px;">
-						<li class="pl-button-mode pl-button-save"><i class="xlpfont xlp-file-upload"></i><span style="margin-left:3px;">转存后下载</span></li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+				const $button = $(`<button class="td-button active color-button pl-button" style="border-radius:8px">
+					<i class="xlpfont xlp-download"></i><span class="text">下载助手</span>
+					<ul class="pl-dropdown-menu reverse" style="bottom:35px;">
+						<li class="pl-button-mode pl-button-save"><i class="xlpfont xlp-file-upload" style="width:15px;height:15px;font-size:15px"></i><span>转存后下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
-				</div>`);
-				$button.css({ "margin-right": "10px" });
-				element.prepend($button);
-			})
+				</button>`);
+				element.append($button);
+			});
 		},
 		addInitButton() {
-			const $button = $(`<div class="xunlei-button pl-button-init"><i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">点我点亮</span></div>`);
-			$button.click(base.showInitDialog);
 			base.waitForKeyElements(config.$xunlei.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
+				const $button = $(`<div class="xunlei-button pl-button-init"><i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">点我点亮</span></div>`);
+				$button.click(base.showInitDialog);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$xunlei.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				$button.css({ "margin-right": "10px" });
-				element.prepend($button);
-			})
+				const $button = $(`<button class="td-button active color-button pl-button-init" style="border-radius:8px"><i class="xlpfont xlp-download"></i><span class="text">点我点亮</span></button>`);
+				$button.click(base.showInitDialog);
+				element.append($button);
+			});
 		},
 		_getCaptchaSign(clientId, version, host, deviceId, timestamp) {
 			// 基础参数
@@ -7667,57 +7440,121 @@ button.downloadSubtitle:disabled {
 					$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
 					$doc.find(".loading-popup .swal2-html-container").html(`<div>获取状态中~</div>`);
 				}
-				let creds = {}, cap = {}, userId = "", clientId = "", capKey = "";
+
+				let creds = {}, cap = {};
+				let userId = "", clientId = "", credsKey = "", capKey = "";
 
 				const clientVersion = "1.92.62";
-				const timestamp = Math.floor(Date.now());
-				const deviceId = /(\w{32})/.exec((base.getStorage("deviceid") || "")?.split?.(",")?.[0])?.[0] || ""; // 设备 ID
+				const timestamp = Date.now();
 
-				// 凭证
+				// 提取信息
+				const rawDeviceId = base.getStorage("deviceid") || "";
+				const deviceId = /(\w{32})/.exec(rawDeviceId?.split?.(",")?.[0])?.[0] || ""; // 32 位设备 ID
+
 				for (let i = 0; i < localStorage.length; i++) {
 					const key = localStorage.key(i);
 					const val = base.getStorage(key);
 
 					if (key.startsWith("credentials_")) {
-						creds = val;
-						userId = val?.user_id || "";
+						creds = val || {};
+						userId = creds?.user_id || "";
 						clientId = key.split("_")[1];
+						credsKey = key;
 						capKey = `captcha_${clientId}`;
 					} else if (key.startsWith("captcha_")) {
-						cap = val;
-						clientId = key.split("_")[1];
-						capKey = `captcha_${clientId}`;
-					}
-				}
-
-				// 校验并刷新
-				const isExpired = force || !cap?.token || Date.now() >= new Date(cap.expires_at).getTime();
-				if (isExpired && clientId && deviceId) {
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>令牌过期，正在获取新令牌~</div>`);
-
-					const res = await base.post(config.$xunlei.api.getCaptchaToken, {
-						client_id: clientId,
-						action: "get:/drive/v1/about",
-						device_id: deviceId,
-						meta: {
-							username: "", phone_number: "", email: "",
-							package_name: location.host,
-							client_version: clientVersion,
-							captcha_sign: this._getCaptchaSign(clientId, clientVersion, location.host, deviceId, timestamp.toString()),
-							timestamp: timestamp.toString(),
-							user_id: userId
+						cap = val || {};
+						if (!clientId) {
+							clientId = key.split("_")[1];
+							capKey = key;
+							credsKey = `credentials_${clientId}`;
 						}
-					}, { "Content-Type": "application/json" });
-
-					if (res?.captcha_token) {
-						cap = { token: res.captcha_token, expires_at: new Date(timestamp + res.expires_in * 1000).toString() };
-						base.setStorage(capKey, cap);
-					} else {
-						throw new Error(`错误：<br/>令牌刷新失败，${res?.error_description || res?.error || "未知错误"}`);
 					}
-				} else if (!creds || !cap || !clientId || !deviceId) {
-					throw new Error(`错误：<br/>请先登录网盘后再获取文件呢~`);
 				}
+
+				// 基本校验，无客户端 ID 或设备 ID 直接抛错
+				if (!clientId || !deviceId) throw new Error(`错误：<br/>请先登录网盘后再获取文件呢~`);
+
+				// 检查并刷新 Credentials
+				const credsExpiresAt = creds?.expires_at ? new Date(creds.expires_at).getTime() : 0;
+				// 提前 60 秒算作过期，防止临界点请求失效
+				const isCredsExpired = force || !creds?.access_token || Date.now() >= (credsExpiresAt - 60000);
+
+				if (isCredsExpired) {
+					if (!creds?.refresh_token) throw new Error(`错误：<br/>登录凭证已过期，且未检测到刷新令牌，请重新登录网盘~`);
+
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>登录凭证过期，正在获取新凭证~</div>`);
+
+					try {
+						const credsRes = await base.post(config.$xunlei.api.getAccessToken, {
+							client_id: clientId,
+							grant_type: "refresh_token",
+							refresh_token: creds.refresh_token
+						}, {
+							"Content-Type": "application/json",
+							"x-action": "401",
+							"x-client-id": clientId,
+							"x-device-id": rawDeviceId,
+							"x-device-sign": deviceId,
+							"x-protocol-version": "301",
+							"x-sdk-version": "3.4.20"
+						});
+
+						if (credsRes?.access_token) {
+							creds = {
+								...creds,
+								...credsRes,
+								expires_at: new Date(timestamp + (credsRes.expires_in || 43200) * 1000).toISOString()
+							};
+							userId = creds.user_id || userId;
+							base.setStorage(credsKey, creds);
+						} else {
+							throw new Error(credsRes?.error_description || credsRes?.error || "未知错误");
+						}
+					} catch (e) {
+						throw new Error(`错误：<br/>身份凭证刷新失败：${e.message || e}`, { cause: e });
+					}
+				}
+
+				// 检查并刷新 Captcha
+				const capExpiresAt = cap?.expires_at ? new Date(cap.expires_at).getTime() : 0;
+				const isCapExpired = force || !cap?.token || Date.now() >= (capExpiresAt - 60000);
+
+				if (isCapExpired) {
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>验证令牌过期，正在获取新令牌~</div>`);
+
+					try {
+						const capRes = await base.post(config.$xunlei.api.getCaptchaToken, {
+							client_id: clientId,
+							action: "get:/drive/v1/about",
+							device_id: deviceId,
+							meta: {
+								username: "",
+								phone_number: "",
+								email: "",
+								package_name: location.host,
+								client_version: clientVersion,
+								captcha_sign: this._getCaptchaSign(clientId, clientVersion, location.host, deviceId, timestamp.toString()),
+								timestamp: timestamp.toString(),
+								user_id: userId
+							}
+						}, { "Content-Type": "application/json" });
+
+						if (capRes?.captcha_token) {
+							cap = {
+								token: capRes.captcha_token,
+								expires_at: new Date(timestamp + capRes.expires_in * 1000).toString()
+							};
+							base.setStorage(capKey, cap);
+						} else {
+							throw new Error(capRes?.error_description || capRes?.error || "未知错误");
+						}
+					} catch (e) {
+						throw new Error(`错误：<br/>验证令牌刷新失败：${e.message || e}`, { cause: e });
+					}
+				}
+
+				// 终极校验
+				if (!creds?.access_token || !cap?.token) throw new Error(`错误：<br/>获取令牌失败，请重新登录网盘~`);
 
 				return { credentials: creds, captcha: cap, device_id: deviceId };
 			});
@@ -7759,13 +7596,13 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			const selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => item.kind !== "drive#file")) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const batchSize = 15;
 				let proc = 0;
-				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 				for (let i = 0; i < selects.length; i += batchSize) {
 					const batch = selects.slice(i, i + batchSize);
 					const queue = [];
@@ -7774,13 +7611,13 @@ button.downloadSubtitle:disabled {
 						queue.push(this.getFileUrl(item, globalIndex)
 							.then(val => {
 								proc++;
-								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 								return val;
 							}));
 					});
 					const res = await Promise.all(queue).catch(e => {
 						if (e instanceof Error) throw e;
-						throw new Error(e?.message || e || "[迅雷云盘] 获取文件 URL 失败");
+						throw new Error(e?.message || e || "[迅雷云盘] 获取下载地址失败");
 					});
 					res.forEach(val => {
 						selects[val.index].downloadUrl = val.downloadUrl;
@@ -7790,15 +7627,28 @@ button.downloadSubtitle:disabled {
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
-			temp.links = [selects, {
-				isFolder: v => v.kind === "drive#folder",
-				getFileName: v => v.name,
-				getFileSize: v => v.size,
-				getFileLink: v => v.downloadUrl,
-				getFileMirror: v => base.getMirrorList(v, config.$xunlei.api.mirror),
-				tooltip: config.$xunlei.dom
+			temp.files = [selects, {
+				get: {
+					dir: v => v.kind === "drive#folder",
+					name: v => v.name,
+					size: v => v.size,
+					link: v => v.downloadUrl,
+					morror: v => base.getMirrorList(v, config.$xunlei.api.mirror),
+				},
+				headers: {},
+				convert: {},
+				dom: {
+					tooltip: config.$xunlei.dom,
+					download: {
+						error: (error) => {
+							if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+							if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+							if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+						}
+					}
+				}
 			}];
-			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
 		getSelectedList() {
 			try {
@@ -7839,126 +7689,6 @@ button.downloadSubtitle:disabled {
 				if (e instanceof Error) throw e;
 				throw new Error(e?.message || e || "[光鸭云盘] 获取分享令牌失败");
 			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, undefined, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "checkboxCustomHeadersForMirrors": "on" });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), undefined);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
 		},
 		beautifyPage() {
 			if (base.getValue("setting_ui_theme").custom.$guangya !== true) return;
@@ -7974,14 +7704,14 @@ button.downloadSubtitle:disabled {
 		addButton() {
 			const $button = $(`<button class="ant-btn ant-btn-primary ant-btn-color-primary ant-btn-variant-solid ant-dropdown-trigger guangya-button pl-button">${this.svg}<span>下载助手</span>
 				<ul class="pl-dropdown-menu">
-					<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-					<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-					<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-					<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-					<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-					<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-					<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-					<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+					<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+					<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+					<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+					<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+					<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+					<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+					<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+					<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 				</ul>
 			</button>`);
 			base.waitForKeyElements(config.$guangya.mount.home, (element) => {
@@ -7990,15 +7720,15 @@ button.downloadSubtitle:disabled {
 				$button.addClass([...document.querySelector(`[class*="ant-btn css-"]`).className.match(/css-[a-z0-9]+ css-var-[a-z0-9_]+/g) || []].join(' '));
 				$button.find(".pl-dropdown-menu").css({ "top": "34px" });
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$guangya.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
 				$button.addClass([...document.querySelector(`[class*="ant-btn css-"]`).className.match(/css-[a-z0-9]+ css-var-[a-z0-9_]+/g) || []].join(' '));
 				$button.addClass("ant-btn-lg");
-				$button.find(".pl-dropdown-menu").css({ "bottom": "46px" });
+				$button.find(".pl-dropdown-menu").addClass("reverse").css({ "bottom": "46px" });
 				element.append($button);
-			})
+			});
 		},
 		addInitButton() {
 			const $button = $(`<button class="ant-btn ant-btn-primary ant-btn-color-primary ant-btn-variant-solid guangya-button pl-button-init">${this.svg}<span>点我点亮</span></button>`);
@@ -8009,7 +7739,7 @@ button.downloadSubtitle:disabled {
 				$button.addClass([...document.querySelector(`[class*="ant-btn css-"]`).className.match(/css-[a-z0-9]+ css-var-[a-z0-9_]+/g) || []].join(' '));
 				$button.find(".pl-dropdown-menu").css({ "top": "34px" });
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$guangya.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
@@ -8017,7 +7747,7 @@ button.downloadSubtitle:disabled {
 				$button.addClass("ant-btn-lg");
 				$button.find(".pl-dropdown-menu").css({ "bottom": "46px" });
 				element.append($button);
-			})
+			});
 		},
 		getToken() {
 			$doc.find(".loading-popup .loading-title").html(`令牌获取中`);
@@ -8095,14 +7825,14 @@ button.downloadSubtitle:disabled {
 		},
 		async getLink() {
 			const selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => item.resType == 2)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const token = this.getToken();
 				const batchSize = 15;
 				let proc = 0;
-				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 				for (let i = 0; i < selects.length; i += batchSize) {
 					const batch = selects.slice(i, i + batchSize);
 					const queue = [];
@@ -8111,13 +7841,13 @@ button.downloadSubtitle:disabled {
 						queue.push(this.getFileUrl(item, globalIndex, token)
 							.then(val => {
 								proc++;
-								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 								return val;
 							}));
 					});
 					const res = await Promise.all(queue).catch(e => {
 						if (e instanceof Error) throw e;
-						throw new Error(e?.message || e || "[光鸭云盘] 获取文件下载 URL 失败");
+						throw new Error(e?.message || e || "[光鸭云盘] 获取文件下载地址失败");
 					});
 					res.forEach(val => {
 						selects[val.index].downloadUrl = val.downloadUrl;
@@ -8132,8 +7862,8 @@ button.downloadSubtitle:disabled {
 				});
 				const batchSize = 15;
 				let proc = 0;
-				$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 				for (let i = 0; i < selects.length; i += batchSize) {
 					const batch = selects.slice(i, i + batchSize);
 					const queue = [];
@@ -8142,13 +7872,13 @@ button.downloadSubtitle:disabled {
 						queue.push(this.getFileUrl(item, globalIndex, token, shareToken)
 							.then(val => {
 								proc++;
-								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 								return val;
 							}));
 					});
 					const res = await Promise.all(queue).catch(e => {
 						if (e instanceof Error) throw e;
-						throw new Error(e?.message || e || "[光鸭云盘] 获取文件下载 URL 失败");
+						throw new Error(e?.message || e || "[光鸭云盘] 获取文件下载地址失败");
 					});
 					res.forEach(val => {
 						selects[val.index].downloadUrl = val.downloadUrl;
@@ -8158,14 +7888,27 @@ button.downloadSubtitle:disabled {
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
-			temp.links = [selects, {
-				isFolder: v => v.resType == 2,
-				getFileName: v => v.fileName,
-				getFileSize: v => v.fileSize,
-				getFileLink: v => v.downloadUrl,
-				tooltip: config.$guangya.dom
+			temp.files = [selects, {
+				get: {
+					dir: v => v.resType == 2,
+					name: v => v.fileName,
+					size: v => v.fileSize,
+					link: v => v.downloadUrl,
+				},
+				headers: {},
+				convert: {},
+				dom: {
+					tooltip: config.$guangya.dom,
+					download: {
+						error: (error) => {
+							if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+							if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+							if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+						}
+					}
+				}
 			}];
-			base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
 		getSelectedList() {
 			try {
@@ -8176,10 +7919,8 @@ button.downloadSubtitle:disabled {
 				if (props) {
 					const fileList = props.dataSource || [];
 					const selectedKeys = props.selectedItems || [];
-					fileList.forEach(function (val) {
-						if (selectedKeys.includes(val.fileId)) {
-							selectedList.push({ ...val });
-						}
+					fileList.forEach(val => {
+						if (selectedKeys.includes(val.fileId)) selectedList.push({ ...val });
 					});
 				}
 				return selectedList;
@@ -8211,7 +7952,7 @@ button.downloadSubtitle:disabled {
 	 */
 	const $quark = {
 		addPageListener() {
-			$doc.on("click", ".pl-button-save", async function (e) {
+			$doc.on("click", ".pl-button-save", async (e) => {
 				e.preventDefault();
 				const selections = temp.main.getSelectedList();
 				if (selections.length === 0) {
@@ -8224,172 +7965,51 @@ button.downloadSubtitle:disabled {
 					element.one("click", async () => {
 						await base.sleep(1000);
 						document.querySelector(".share-save").click();
-					})
+					});
 					return true;
 				}, true)
 			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, { "User-Agent": config.$quark.api.ua.downloadLink }, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						if (error?.status == 412) estatus += ` 服务器说：需要登录才能下载~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$quark.api.ua.downloadLink, "Referer": `https://${location.host}/`, "Cookie": String(document.cookie) });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$quark.api.ua.downloadLink}`, `Referer:https://${location.host}/`, `Cookie:${document.cookie}`]);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$quark.api.ua.downloadLink, "referrer": `https://${location.host}/`, "cookie": String(document.cookie) });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$quark.api.ua.downloadLink, "Cookie": String(document.cookie) });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
 		},
 		greenerPage() {
-			base.waitForKeyElements(`[class*="Activity--video-toolbar-activity"]`, function (tag) {
+			base.waitForKeyElements(`[class*="Activity--video-toolbar-activity"]`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`span[class*="SectionHeaderController--icon-download"]`, function (tag) {
+			base.waitForKeyElements(`span[class*="SectionHeaderController--icon-download"]`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`div[class*="SectionHeaderController--download-popover"]`, function (tag) {
+			base.waitForKeyElements(`div[class*="SectionHeaderController--download-popover"]`, (tag) => {
 				tag.find(".ant-popover-arrow").css({ "left": "75%" });
 			}, true);
-			base.waitForKeyElements(`div[class*="DetailLayout--client-download"]`, function (tag) {
+			base.waitForKeyElements(`div[class*="DetailLayout--client-download"]`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".next-box.share-right-side-content", function (tag) {
+			base.waitForKeyElements(".next-box.share-right-side-content", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(`[class*="DetailLayout--container"] .feature-screen`, function (tag) {
+			base.waitForKeyElements(`[class*="DetailLayout--container"] .feature-screen`, (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".ant-modal-content .ant-modal-body .right-wrap", function (tag) {
+			base.waitForKeyElements(".ant-modal-content .ant-modal-body .right-wrap", (tag) => {
 				if (tag.find(".hint").text().includes("客户端")) tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".pc-member-entrance span.button-text", function (tag) {
+			base.waitForKeyElements(".pc-member-entrance span.button-text", (tag) => {
 				tag.text("会员中心");
-				const observer = new MutationObserver(function (mutations) {
-					mutations.forEach(function () {
-						if (tag.text() === "会员中心") return
+				const observer = new MutationObserver(mutations => {
+					mutations.forEach(() => {
+						if (tag.text() === "会员中心") return;
 						tag.text("会员中心");
 					});
 				});
 				const config = { subtree: true, characterData: true, childList: true };
 				observer.observe(tag[0], config);
 			}, true);
-			base.waitForKeyElements(".pc-member-entrance .tips", function (tag) {
+			base.waitForKeyElements(".pc-member-entrance .tips", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".modal .modal-content .halo-animated-background .halo-content .pay-modal .close", function (tag) {
+			base.waitForKeyElements(".modal .modal-content .halo-animated-background .halo-content .pay-modal .close", (tag) => {
 				tag[0].click();
 			}, true);
-			base.waitForKeyElements(".modal .modal-content .halo-animated-background .halo-content .red-envelope .close", function (tag) {
+			base.waitForKeyElements(".modal .modal-content .halo-animated-background .halo-content .red-envelope .close", (tag) => {
 				tag[0].click();
 			}, true);
 		},
@@ -8408,7 +8028,7 @@ button.downloadSubtitle:disabled {
 			]);
 			base.addStyle(`${mount}-quark`, "style", `.file-list .hover-oper .hover-transparent-bg{background:transparent!important} .ant-checkbox-wrapper .ant-checkbox-checked .ant-checkbox-inner,.ant-checkbox-wrapper .ant-checkbox-indeterminate .ant-checkbox-inner:after{background-color:${temp.color}!important}`);
 		},
-		svg: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSI+PHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNNiA5bDIgMiAyLTJ6Ii8+PHBhdGggZD0iTTExIDVoMS41NTNjLjg1IDAgMS4xNi4wOTMgMS40Ny4yNjcuMzExLjE3NC41NTYuNDMuNzIyLjc1Ni4xNjYuMzI2LjI1NS42NS4yNTUgMS41NHY0Ljg3M2MwIC44OTItLjA4OSAxLjIxNS0uMjU1IDEuNTQtLjE2Ni4zMjctLjQxLjU4My0uNzIyLjc1Ny0uMzEuMTc0LS42Mi4yNjctMS40Ny4yNjdIMy40NDdjLS44NSAwLTEuMTYtLjA5My0xLjQ3LS4yNjdhMS43NzggMS43NzggMCAwMS0uNzIyLS43NTZjLS4xNjYtLjMyNi0uMjU1LS42NS0uMjU1LTEuNTRWNy41NjNjMC0uODkyLjA4OS0xLjIxNS4yNTUtMS41NC4xNjYtLjMyNy40MS0uNTgzLjcyMi0uNzU3LjMxLS4xNzQuNjItLjI2NyAxLjQ3LS4yNjdIOCIvPjxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTggMXY5Ii8+PC9nPjwvc3ZnPg==",
+		svg: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTUgNHYxSDIuNWEuNS41IDAgMCAwLS41LjV2OGEuNS41IDAgMCAwIC41LjVoMTFhLjUuNSAwIDAgMCAuNS0uNXYtOGEuNS41IDAgMCAwLS41LS41SDExVjRoMi41QTEuNSAxLjUgMCAwIDEgMTUgNS41djhhMS41IDEuNSAwIDAgMS0xLjUgMS41aC0xMUExLjUgMS41IDAgMCAxIDEgMTMuNXYtOEExLjUgMS41IDAgMCAxIDIuNSA0em0zLjUtM3Y2LjVoMWwuMDg1LjAwN0EuNS41IDAgMCAxIDkuOSA4LjNsLTEuNDkyIDEuOTktLjAwOC4wMTRhLjUuNSAwIDAgMS0uOC0uMDA0bC0xLjUtMi0uMDQ2LS4wNzNBLjUuNSAwIDAgMSA2LjUgNy41aDFWMXoiLz48L3N2Zz4=",
 		addButton() {
 			base.waitForKeyElements(config.$quark.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
@@ -8416,16 +8036,16 @@ button.downloadSubtitle:disabled {
 				const $button = $(`<div class="ant-dropdown-trigger pl-button" style="display: inline-block;">
 					<div class="ant-upload ant-upload-select ant-upload-select-text">
 						<ul class="pl-dropdown-menu" style="top:35px">
-							<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-							<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-							<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-							<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-							<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-							<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-							<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-							<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+							<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+							<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+							<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+							<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+							<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+							<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+							<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+							<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 						</ul>
-						<button type="button" class="ant-btn ant-btn-primary quark-button">
+						<button class="ant-btn ant-btn-primary quark-button">
 							<img class="btn-icon" src="${temp.main.svg}">
 							<span>下载助手</span>
 						</button>
@@ -8433,48 +8053,72 @@ button.downloadSubtitle:disabled {
 				</div>`);
 				$button.css({ "margin-right": "16px" });
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$quark.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button type="button" class="ant-btn btn-file ant-btn-primary pl-button quark-button">
+				const $button = $(`<button class="ant-btn btn-file ant-btn-primary pl-button quark-button">
 					<img class="btn-icon" src="${temp.main.svg}"><span>下载助手</span>
-					<ul class="pl-dropdown-menu" style="bottom:22px;left:0">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+					<ul class="pl-dropdown-menu reverse" style="bottom:22px;left:0">
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</button>`);
 				$button.css({ "height": "36px", "margin-left": "16px", "border-radius": "6px", "display": "inline-block" });
 				element.append($button);
-			})
+			});
 		},
 		addInitButton() {
 			base.waitForKeyElements(config.$quark.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
-				const $button = $(`<button type="button" class="ant-btn ant-btn-primary quark-button pl-button-init"><img class="btn-icon" src="${temp.main.svg}"><span>点我点亮</span></button>`);
+				const $button = $(`<button class="ant-btn ant-btn-primary quark-button pl-button-init"><img class="btn-icon" src="${temp.main.svg}"><span>点我点亮</span></button>`);
 				$button.css({ "margin-right": "16px", "display": "inline-block" });
 				$button.click(base.showInitDialog);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$quark.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button type="button" class="ant-btn btn-file ant-btn-primary pl-button-init quark-button"><img class="btn-icon" src="${temp.main.svg}"><span>点我点亮</span></button>`);
+				const $button = $(`<button class="ant-btn btn-file ant-btn-primary pl-button-init quark-button"><img class="btn-icon" src="${temp.main.svg}"><span>点我点亮</span></button>`);
 				$button.css({ "height": "36px", "margin-left": "16px", "border-radius": "6px", "display": "inline-block" });
 				$button.click(base.showInitDialog);
 				element.append($button);
-			})
+			});
+		},
+		async getSocialToken() {
+			const now = Date.now();
+			// 检查缓存的令牌
+			const cachedToken = base.getValue("quark_social_token");
+			if (cachedToken && cachedToken.token && cachedToken.expired_timestamp) {
+				// 如果令牌未过期（预留60秒缓冲时间），直接返回缓存的令牌
+				if (cachedToken.expired_timestamp > now + 60000) {
+					return cachedToken.token;
+				}
+			}
+			const time = Math.floor(now / 1e3);
+			const res = await base.post(config.$quark.api.getSocialToken, { "conversation_id": "300000" + time, "conversation_type": 3, "msg_id": time + "000" }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.main });
+			if (!res || res.code !== 0 || !res.data?.token) {
+				if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
+				if (res.code || res.message) {
+					throw new Error(`提示：<br/>获取令牌失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+				} else {
+					throw new Error("提示：<br/>获取令牌失败，刷新网页后再试试吧~");
+				}
+			}
+			// 缓存令牌数据
+			base.setValue("quark_social_token", res.data);
+			return res?.data?.token || "";
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => !item.file)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const data = [];
@@ -8485,8 +8129,9 @@ button.downloadSubtitle:disabled {
 					// 获取当前批次文件
 					const batch = selects.slice(i, i + batchSize);
 					const fids = batch.map(item => item.fid);
-					// 发起请求获取链接
-					const res = await base.post(config.$quark.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
+					const token = await this.getSocialToken();
+					// 发起请求获取地址
+					const res = await base.post(config.$quark.api.getLink, { "fids": fids, "speedup_session": "", "token": token }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.main });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -8495,44 +8140,54 @@ button.downloadSubtitle:disabled {
 							const item = batch.find(item => item.fid === fid);
 							throw new Error(`提示：<br/>超出游客可获取大小限制<br/>请登录后获取哦~${item?.file_name ? `<br/>文件：${item.file_name}` : ""}`);
 						}
-
+						base.delValue("quark_social_token");
 						if (res.code || res.message) {
-							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取地址失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 						}
 					}
 
 					// 合并响应数据
-					if (res.data) {
-						data.push(...res.data);
-					}
+					if (res.data) data.push(...res.data);
 					// 更新处理进度
 					proc += batch.length;
 					// 更新UI显示
-					$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 					// 请求间隔节流
 					await base.sleep(1000);
 				}
-				temp.links = [data, {
-					isFolder: v => v.file === false,
-					getFileName: v => v.file_name,
-					getFileSize: v => v.size,
-					getFileLink: v => v.download_url,
-					convert: {
-						aria2: `--header "User-Agent:${config.$quark.api.ua.downloadLink}" --header "Referer:https://${location.host}/" --header "Cookie:${document.cookie}"`,
-						curl: `-A "${config.$quark.api.ua.downloadLink}" -e "https://${location.host}/" -b "${document.cookie}"`,
-						bitcomet: `user_agent=${encodeURIComponent(config.$quark.api.ua.downloadLink)}&refer=${encodeURIComponent(`https://${location.host}/`)}&cookie=${encodeURIComponent(document.cookie)}`
+				temp.files = [data, {
+					get: {
+						dir: v => v.file === false,
+						name: v => v.file_name,
+						size: v => v.size,
+						link: v => v.download_url,
 					},
-					tooltip: config.$quark.dom
+					headers: { "User-Agent": config.$quark.api.ua.main, "Cookie": String(document.cookie) },
+					convert: {},
+					dom: {
+						tooltip: config.$quark.dom,
+						download: {
+							error: (error) => {
+								if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+								if (error?.status == 412) return ` 服务器说：需要登录才能下载~`;
+								if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+								if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+							}
+						}
+					}
 				}];
-				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+				base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 			} else if (temp.page === "share") {
 				const pwd_id = unsafeWindow.factStat?.ut?.baseParams?.pwd_id || // fast
 					unsafeWindow.factStat?.wa?.customStatParams?.pwd_id || // drive
 					location.pathname.match(/^\/(?:s|share)\/([a-zA-Z0-9]+)/)?.[1]; // 兜底
 				if (!pwd_id) throw new Error("错误：<br/>无法提取分享 ID~");
+
+				temp.pugs = temp.pugs || base.standCookies(document.cookie, "cookie")?.__pugs || "";
+				const cookie = `__pugs=${temp.pugs}`;
 
 				const data = [];
 				const batchSize = 15;
@@ -8543,9 +8198,11 @@ button.downloadSubtitle:disabled {
 					const batch = selects.slice(i, i + batchSize);
 					const fids = batch.map(item => item.fid);
 					const fids_token = batch.map(item => item.share_fid_token);
-					// 发起请求获取链接
-					const res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$quark.api.ua.downloadLink });
-
+					const token = await this.getSocialToken().catch(() => "");
+					// 发起请求获取地址
+					let res = await base.post(config.$quark.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken, "speedup_session": "", "token": token }, { "Content-Type": "application/json", "Cookie": cookie, "User-Agent": config.$quark.api.ua.main }, "json", true, true);
+					if (!temp.pugs && res?.responseHeaders?.["Set-Cookie"]?.__pugs) temp.pugs = res?.responseHeaders?.["Set-Cookie"]?.__pugs;
+					res = res.responseDecode ?? res.response ?? res.responseText;
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
 						if (res.code == 23018) {
@@ -8555,37 +8212,47 @@ button.downloadSubtitle:disabled {
 						}
 
 						if (res.code || res.message) {
-							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取地址失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 						}
 					}
 
 					// 合并响应数据
-					if (res.data) {
-						data.push(...res.data);
-					}
+					if (res.data) data.push(...res.data);
 					// 更新处理进度
 					proc += batch.length;
 					// 更新UI显示
-					$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 					// 请求间隔节流
 					await base.sleep(1000);
 				}
-				temp.links = [data, {
-					isFolder: v => v.file === false,
-					getFileName: v => v.file_name,
-					getFileSize: v => v.size,
-					getFileLink: v => v.download_url,
-					convert: {
-						aria2: `--header "User-Agent:${config.$quark.api.ua.downloadLink}" --header "Referer:https://${location.host}/" --header "Cookie:${document.cookie}"`,
-						curl: `-A "${config.$quark.api.ua.downloadLink}" -e "https://${location.host}/" -b "${document.cookie}"`,
-						bitcomet: `user_agent=${encodeURIComponent(config.$quark.api.ua.downloadLink)}&refer=${encodeURIComponent(`https://${location.host}/`)}&cookie=${encodeURIComponent(document.cookie)}`
+				temp.files = [data, {
+					get: {
+						dir: v => v.file === false,
+						name: v => v.file_name,
+						size: v => v.size,
+						link: v => v.download_url,
 					},
-					tooltip: config.$quark.dom
+					headers: {
+						"User-Agent": config.$quark.api.ua.main,
+						"Cookie": temp.pugs ? cookie : String(document.cookie)
+					},
+					convert: {},
+					dom: {
+						tooltip: config.$quark.dom,
+						download: {
+							error: (error) => {
+								if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+								if (error?.status == 412) return ` 服务器说：需要登录才能下载~`;
+								if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+								if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+							}
+						}
+					}
 				}];
-				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+				base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
@@ -8600,10 +8267,8 @@ button.downloadSubtitle:disabled {
 					const stoken = props.stoken || "";
 					const fileList = props.list || [];
 					const selectedKeys = props.selectedRowKeys || [];
-					fileList.forEach(function (val) {
-						if (selectedKeys.includes(val.fid)) {
-							selectedList.push({ ...val, stoken });
-						}
+					fileList.forEach(val => {
+						if (selectedKeys.includes(val.fid)) selectedList.push({ ...val, stoken });
 					});
 				}
 				return selectedList;
@@ -8635,7 +8300,7 @@ button.downloadSubtitle:disabled {
 	 */
 	const $uc = {
 		addPageListener() {
-			$doc.on("click", ".pl-button-save", async function (e) {
+			$doc.on("click", ".pl-button-save", async (e) => {
 				e.preventDefault();
 				const selections = temp.main.getSelectedList();
 				if (selections.length === 0) {
@@ -8645,138 +8310,15 @@ button.downloadSubtitle:disabled {
 				await base.sleep(500);
 				document.querySelector(".file-info_r").click();
 			});
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, { "User-Agent": config.$uc.api.ua.downloadLink }, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						if (error?.responseText?.includes?.("require login")) estatus += ` 服务器说：需要登录才能下载~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"), { "User-Agent": config.$uc.api.ua.downloadLink, "Referer": `https://${location.host}/`, "Cookie": String(document.cookie) });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"), [`User-Agent:${config.$uc.api.ua.downloadLink}`, `Referer:https://${location.host}/`, `Cookie:${document.cookie}`]);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"), { "user_agent": config.$uc.api.ua.downloadLink, "referrer": `https://${location.host}/`, "cookie": String(document.cookie) });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), { "User-Agent": config.$uc.api.ua.downloadLink, "Cookie": String(document.cookie) });
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
 		},
 		greenerPage() {
-			base.waitForKeyElements(`[class*="VideoDetail--content-footer"]`, function (tag) {
-				tag.children().each(function () {
-					const $child = $(this);
-					if ($child.text().includes("手机客户端")) {
-						$child.hide();
-					}
+			base.waitForKeyElements(`[class*="VideoDetail--content-footer"]`, (tag) => {
+				tag.children().each((_, element) => {
+					const $child = $(element);
+					if ($child.text().includes("手机客户端")) $child.hide();
 				});
 			}, true);
-			base.waitForKeyElements(`[class*="PCLandingBanner--ad-block"]`, function (tag) {
+			base.waitForKeyElements(`[class*="PCLandingBanner--ad-block"]`, (tag) => {
 				tag.hide();
 			}, true);
 		},
@@ -8801,64 +8343,64 @@ button.downloadSubtitle:disabled {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
 				const $button = $(`<div class="ant-dropdown-trigger pl-button">
-					<button type="button" class="uc-button ant-btn btn-file ant-btn-primary">
+					<button class="uc-button ant-btn btn-file ant-btn-primary">
 						<img class="uc-btn-icon" src="${temp.main.svg}"><span>下载助手</span>
 					</button>
 					<ul class="pl-dropdown-menu" style="top:39px;">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				$button.css({ "margin-right": "10px", "display": "inline-block" });
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$uc.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
 				const $button = $(`<div class="ant-dropdown-trigger pl-button">
-					<button type="button" class="uc-button ant-btn btn-file ant-btn-primary" style="height:40px;">
+					<button class="uc-button ant-btn btn-file ant-btn-primary" style="height:40px;">
 						<img class="uc-btn-icon" src="${temp.main.svg}"><span>下载助手</span>
 					</button>
 					<ul class="pl-dropdown-menu">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</div>`);
 				$button.css({ "margin-left": "10px", "display": "inline-block" });
 				element.append($button);
-			})
+			});
 		},
 		addInitButton() {
-			const $button = $(`<div class="ant-dropdown-trigger pl-button-init"><button type="button" class="uc-button ant-btn btn-file ant-btn-primary" style="height:40px;"><img class="uc-btn-icon" src="${temp.main.svg}"><span>点我点亮</span></button></div>`);
+			const $button = $(`<div class="ant-dropdown-trigger pl-button-init"><button class="uc-button ant-btn btn-file ant-btn-primary" style="height:40px;"><img class="uc-btn-icon" src="${temp.main.svg}"><span>点我点亮</span></button></div>`);
 			$button.click(base.showInitDialog);
 			base.waitForKeyElements(config.$uc.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
 				$button.css({ "margin-right": "10px", "display": "inline-block" });
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$uc.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
 				$button.css({ "margin-left": "10px", "display": "inline-block" });
 				element.append($button);
-			})
+			});
 		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => !item.file)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const data = [];
@@ -8869,8 +8411,8 @@ button.downloadSubtitle:disabled {
 					// 获取当前批次文件
 					const batch = selects.slice(i, i + batchSize);
 					const fids = batch.map(item => item.fid);
-					// 发起请求获取链接
-					const res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.downloadLink });
+					// 发起请求获取地址
+					const res = await base.post(config.$uc.api.getLink, { "fids": fids }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -8881,37 +8423,44 @@ button.downloadSubtitle:disabled {
 						}
 
 						if (res.code || res.message) {
-							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取地址失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 						}
 					}
 
 					// 合并响应数据
-					if (res.data) {
-						data.push(...res.data);
-					}
+					if (res.data) data.push(...res.data);
 					// 更新处理进度
 					proc += batch.length;
 					// 更新UI显示
-					$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 					// 请求间隔节流
 					await base.sleep(1000);
 				}
-				temp.links = [data, {
-					isFolder: v => v.file === false,
-					getFileName: v => v.file_name,
-					getFileSize: v => v.size,
-					getFileLink: v => v.download_url,
-					convert: {
-						aria2: `--header "User-Agent:${config.$uc.api.ua.downloadLink}" --header "Referer:https://${location.host}/" --header "Cookie:${document.cookie}"`,
-						curl: `-A "${config.$uc.api.ua.downloadLink}" -e "https://${location.host}/" -b "${document.cookie}"`,
-						bitcomet: `user_agent=${encodeURIComponent(config.$uc.api.ua.downloadLink)}&refer=${encodeURIComponent(`https://${location.host}/`)}&cookie=${encodeURIComponent(document.cookie)}`
+				temp.files = [data, {
+					get: {
+						dir: v => v.file === false,
+						name: v => v.file_name,
+						size: v => v.size,
+						link: v => v.download_url,
 					},
-					tooltip: config.$uc.dom
+					headers: { "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh },
+					convert: {},
+					dom: {
+						tooltip: config.$uc.dom,
+						download: {
+							error: (error) => {
+								if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+								if (error?.responseText?.includes?.("require login")) return ` 服务器说：需要登录才能下载~`;
+								if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+								if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+							}
+						}
+					}
 				}];
-				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+				base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 			} else if (temp.page === "share") {
 				const pwd_id = unsafeWindow.factStat?.ut?.baseParams?.pwd_id || // fast
 					unsafeWindow.factStat?.wa?.customStatParams?.pwd_id || // drive
@@ -8927,8 +8476,8 @@ button.downloadSubtitle:disabled {
 					const batch = selects.slice(i, i + batchSize);
 					const fids = batch.map(item => item.fid);
 					const fids_token = batch.map(item => item.share_fid_token);
-					// 发起请求获取链接
-					const res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.downloadLink });
+					// 发起请求获取地址
+					const res = await base.post(config.$uc.api.getLink, { "fids": fids, "fids_token": fids_token, pwd_id, "stoken": batch[0].stoken }, { "Content-Type": "application/json", "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh });
 
 					if (!res || res.code !== 0 || !res.data) {
 						if (res.code == 31001) throw new Error("提示：<br/>请先登录网盘~<br/>代码：" + res.code);
@@ -8939,9 +8488,9 @@ button.downloadSubtitle:disabled {
 						}
 
 						if (res.code || res.message) {
-							throw new Error(`提示：<br/>获取链接失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
+							throw new Error(`提示：<br/>获取地址失败了~<br/>${res.code ? res.code : ""} ${res.message ? res.message : ""}`);
 						} else {
-							throw new Error("提示：<br/>获取下载链接失败，刷新网页后再试试吧~");
+							throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 						}
 					}
 
@@ -8952,24 +8501,33 @@ button.downloadSubtitle:disabled {
 					// 更新处理进度
 					proc += batch.length;
 					// 更新UI显示
-					$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 					// 请求间隔节流
 					await base.sleep(1000);
 				}
-				temp.links = [data, {
-					isFolder: v => v.file === false,
-					getFileName: v => v.file_name,
-					getFileSize: v => v.size,
-					getFileLink: v => v.download_url,
-					convert: {
-						aria2: `--header "User-Agent:${config.$uc.api.ua.downloadLink}" --header "Referer:https://${location.host}/" --header "Cookie:${document.cookie}"`,
-						curl: `-A "${config.$uc.api.ua.downloadLink}" -e "https://${location.host}/" -b "${document.cookie}"`,
-						bitcomet: `user_agent=${encodeURIComponent(config.$uc.api.ua.downloadLink)}&refer=${encodeURIComponent(`https://${location.host}/`)}&cookie=${encodeURIComponent(document.cookie)}`
+				temp.files = [data, {
+					get: {
+						dir: v => v.file === false,
+						name: v => v.file_name,
+						size: v => v.size,
+						link: v => v.download_url,
 					},
-					tooltip: config.$uc.dom
+					headers: { "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh },
+					convert: {},
+					dom: {
+						tooltip: config.$uc.dom,
+						download: {
+							error: (error) => {
+								if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+								if (error?.responseText?.includes?.("require login")) return ` 服务器说：需要登录才能下载~`;
+								if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+								if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+							}
+						}
+					}
 				}];
-				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+				base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
@@ -8984,10 +8542,8 @@ button.downloadSubtitle:disabled {
 					const stoken = props.stoken || "";
 					const fileList = props.list || [];
 					const selectedKeys = props.selectedRowKeys || [];
-					fileList.forEach(function (val) {
-						if (selectedKeys.includes(val.fid)) {
-							selectedList.push({ ...val, stoken });
-						}
+					fileList.forEach(val => {
+						if (selectedKeys.includes(val.fid)) selectedList.push({ ...val, stoken });
 					});
 				}
 				return selectedList;
@@ -9018,128 +8574,6 @@ button.downloadSubtitle:disabled {
 	 * @author hmjz100
 	 */
 	const $123pan = {
-		addPageListener() {
-			$doc.on("click", ".listener-api-download.enhance", async function (e) {
-				e.preventDefault();
-				const status = base._EventFactory(e);
-				const file = {
-					index: status.item.data("index"),
-					link: status.item.data("link"),
-					name: status.item.data("name"),
-					size: status.item.data("size") || 0,
-				}
-				base._resetData(file.index);
-
-				// UI 初始化
-				status.down_normal.hide();
-				status.down_enhance.hide();
-				status.down_idm.hide();
-				status.link_message.hide();
-				status.link_copy.hide();
-
-				status.down_enhance_downing.find(".stop").show();
-				status.down_enhance_downing.show();
-
-				base.download(file.link, undefined, {
-					...file,
-					onProgress: (data) => {
-						const dprog = Math.min(data.progress, 100);
-						status.down_enhance_downing.find(".pl-progress").css("--width", `${dprog}%`);
-						status.down_enhance_downing.find(".pl-progress .text").text(`${dprog.toFixed(2)}% | 已存:${base.sizeFormat(data.loaded)} | 速度:${data.speedText} | 剩余:${data.etaText}`);
-					}
-				})
-					.then(async (res) => {
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#55af28");
-						base.blobDownload(res.response, file.name);
-						await base.sleep(1000);
-
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress .text").html(`下载完成~ 浏览器下载框应该弹出来了哦~`);
-					})
-					.catch(async (error) => {
-						base.console.error("【LinkSwift】Download(load)", error);
-						status.down_enhance_downing.find(".stop").hide();
-						status.down_enhance_downing.find(".back").show();
-						status.down_enhance_downing.find(".pl-progress").css("--width", "100%");
-						status.down_enhance_downing.find(".pl-progress .head").css("background", "#cc3235");
-						let estatus = `QAQ 下载出错~`;
-						if (!error?.status) estatus += ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
-						if (error?.status == 403) estatus += ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
-						if (error?.status == 204 || error?.statusText === "IDM") estatus += ` 服务说：链接已被 IDM 捕获~`;
-						status.down_enhance_downing.find(".pl-progress .text").html(estatus);
-						status.down_enhance_downing.find(".pl-progress .text").css("white-space", "break-spaces");
-					})
-			});
-			$doc.on("click", ".listener-idm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToIDM(target.data("link"), target.data("filename"), target.data("filesize"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-aria2-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToAria2(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-bitcomet-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToBitcomet(target.data("link"), target.data("filename"));
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-			$doc.on("click", ".listener-abdm-download", async function (e) {
-				const target = $(e.currentTarget);
-				if (target.attr("data-processing") === "true") return;
-				target.attr("data-processing", "true");
-				const originalHtml = target.html();
-				target.find(".pl-icon").remove();
-				target.find(".pl-loading").remove();
-				target.prepend(base.createLoading());
-				const res = await base.sendLinkToABDM(target.data("link"), target.data("filename"), undefined);
-				if (res === "success") {
-					target.removeClass("pl-btn-danger").html("发送成功啦!快去看看吧~").animate({ opacity: "0.5" }, "slow");
-				} else {
-					target.addClass("pl-btn-danger").text("发送失败，检查一下您的配置信息哦!").animate({ opacity: "0.5" }, "slow");
-				}
-				await base.sleep(3000);
-				target.removeClass("pl-btn-danger").removeAttr("data-processing").html(originalHtml).css("opacity", "");
-			});
-		},
 		greenerPage() {
 			// 旧版 分享 登录按钮
 			base.waitForKeyElements(".cent > .cent-not-login > .ant-btn", (tag) => {
@@ -9148,7 +8582,7 @@ button.downloadSubtitle:disabled {
 				tag.removeClass("loginRight");
 				tag.find("span").text("注册");
 				if (tag.next().hasClass("log")) return;
-				const button = $(`<button type="button" class="ant-btn ant-btn-default ant-btn-two-chinese-chars log loginRight" style="width:auto!important;height:auto!important;margin-left:10px!important"><span>登录</span></button>`);
+				const button = $(`<button class="ant-btn ant-btn-default ant-btn-two-chinese-chars log loginRight" style="width:auto!important;height:auto!important;margin-left:10px!important"><span>登录</span></button>`);
 				button.on("click", () => {
 					const login = new URL(`https://user.123pan.cn/centerlogin`);
 					login.searchParams.set("redirect_url", location.href);
@@ -9159,20 +8593,18 @@ button.downloadSubtitle:disabled {
 			// 旧版 分享 按钮去除文本
 			base.waitForKeyElements(`.rightInfo .register:not(.pl-button, .pl-button-init),
 				.homeClass > div > .ant-dropdown-trigger:not(.pl-button, .pl-button-init),
-				.homeClass > div > .sysbut`, function (tag) {
+				.homeClass > div > .sysbut`, (tag) => {
 				let hasTextNode = false;
-				tag.contents().each(function () {
-					if (this.nodeType === 3 && $.trim(this.textContent)) {
+				tag.contents().each((_, element) => {
+					if (element.nodeType === 3 && $.trim(element.textContent)) {
 						hasTextNode = true;
 						return;
 					}
 				});
 				if (!hasTextNode) return;
 				tag.css({ "width": "38px" });
-				tag.contents().each(function () {
-					if (this.nodeType === 3) {
-						$(this).remove();
-					}
+				tag.contents().each((_, element) => {
+					if (element.nodeType === 3) $(element).remove();
 				});
 				tag.find("svg").css({ "margin-right": "0" });
 			});
@@ -9181,7 +8613,7 @@ button.downloadSubtitle:disabled {
 				if (tag.hasClass("reg") || tag.hasClass("log")) return;
 				tag.addClass("reg").text("注册");
 				if (tag.next().hasClass("log")) return;
-				const button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle loginRight log" style="margin-left:10px!important"><span>登录</span></button>`);
+				const button = $(`<button class="hbutton hbutton-primary hbutton-middle loginRight log" style="margin-left:10px!important"><span>登录</span></button>`);
 				// 加个跳转到原页面也不难吧？
 				button.on("click", () => {
 					const login = new URL(`https://user.123pan.cn/centerlogin`);
@@ -9213,10 +8645,10 @@ button.downloadSubtitle:disabled {
 			// 新版 分享 超限登录
 			base.waitForKeyElements(".login-footer-240828", (tag) => {
 				if (tag.find(".replaced").length) return;
-				tag.children().each(function () {
-					const $child = $(this);
+				tag.children().each((_, element) => {
+					const $child = $(element);
 					if ($child.hasClass("pointer-text")) {
-						const button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle replaced"><span>${$child.text()}</span></button>`);
+						const button = $(`<button class="hbutton hbutton-primary hbutton-middle replaced"><span>${$child.text()}</span></button>`);
 						button.on("click", () => {
 							if ($child.text().includes("登录")) {
 								const login = new URL(`https://user.123pan.cn/centerlogin`);
@@ -9237,29 +8669,34 @@ button.downloadSubtitle:disabled {
 				tag.hide();
 			}, true);
 			// 新版 主页 顶栏会员中心按钮广告
-			base.waitForKeyElements(`.frontend-layout-header-right > span > [alt^="buttonMall"]`, (tag) => {
-				if (tag.parent().is(":hidden")) return;
-				tag.parent().hide();
-				const button = $(`<div class="frontend-layout-header-right-button-invite-new">会员中心</div>`);
+			base.waitForKeyElements(`[class^="frontendLayoutHeaderRight"] > a[class^="memberButtonLink"]`, (tag) => {
+				const next = tag.next("a[class*='ButtonInviteNew']");
+				if (tag.is(":hidden") || !next.length) return;
+				tag.hide();
+				const button = next.clone();
+				button.find("img").hide();
+				button.attr("href", tag.attr("href"));
+				button.text("会员中心");
 				button.on("click", () => { tag.click() });
-				tag.parent().after(button);
+				tag.after(button);
 			}, true);
 			// 新版 主页 顶栏会员中心按钮广告
-			base.waitForKeyElements(`.frontend-layout-header-right > div[class*="button-invite-new"]`, (tag) => {
-				if (tag.find(`[class*="button-invite-new-image"]`).is(":hidden")) return;
-				tag.find(`[class*="button-invite-new-image"]`).hide();
+			base.waitForKeyElements(`[class^="frontendLayoutHeaderRight"] > a[class*="ButtonInviteNew"]`, (tag) => {
+				if (tag.find(`[class*="ButtonInviteNew-image"]`).is(":hidden")) return;
+				tag.find(`[class*="ButtonInviteNew-image"]`).hide();
 			}, true);
 			// 新版 主页/分享 顶部会员广告
-			base.waitForKeyElements(`.mfy-main-layout__head > .ant-carousel:has(.VipBanner), .app-wrap>div[style*="100%"]:has(img[src*="banner"])`, (tag) => {
+			base.waitForKeyElements(`.mfy-main-layout__head > [class*="carousel"]:has([class^="vipBanner"]), .mfy-main-layout__head > .ant-carousel:has(.VipBanner), .app-wrap>div[style*="100%"]:has(img[src*="banner"])`, (tag) => {
 				tag.hide();
 			}, true);
 			// 新版 主页 弹窗会员广告
-			base.waitForKeyElements(`.splash-screen-modal:has([class*="image"][style*="ad"])`, (tag) => {
+			base.waitForKeyElements(`[class^="splashScreenModal"]:has([class*="splashScreenModal__image"][style*="ad"]), .splash-screen-modal:has([class*="image"][style*="ad"])`, (tag) => {
 				tag.hide();
 				tag.find(`button[class*="close"]`).click();
 			}, true);
+
 			// 分享 手机二维码
-			base.waitForKeyElements(".rightInfo > .h-popover:has(.qrcode_btn)", function (tag) {
+			base.waitForKeyElements(`.rightInfo > [class*="mfy_h-popover-module__root"]:has(.qrcode_btn)`, (tag) => {
 				tag.hide();
 			}, true);
 		},
@@ -9297,48 +8734,69 @@ button.downloadSubtitle:disabled {
 			const token = base.getStorage("authorToken");
 			return token;
 		},
+		getUUID() {
+			$doc.find(".loading-popup .loading-title").html(`用户标识获取中`);
+			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取用户标识~</div>`);
+			const uuid = base.getStorage("LoginUuid");
+			return uuid;
+		},
 		async getLink() {
 			let selects = this.getSelectedList();
-			if (selects.length === 0) throw new Error("提示：<br/>请勾选要下载的文件哦~");
+			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 			if (selects.every(item => item.Type !== 0)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
 				const token = this.getToken();
+				const uuid = this.getUUID();
 				const batchSize = 15;
 				let proc = 0;
 				selects = selects.filter(item => item.Type === 0);
 				for (let i = 0; i < selects.length; i += batchSize) {
 					const batch = selects.slice(i, i + batchSize);
 					const queue = [];
-					$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 					batch.forEach((item, localIndex) => {
 						const globalIndex = i + localIndex;
-						queue.push(this.getFileUrl(item, globalIndex, token)
+						queue.push(this.getFileUrl(item, globalIndex, token, uuid, undefined)
 							.then(val => {
 								proc++;
-								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 								return val;
 							}));
 					});
 					const res = await Promise.all(queue).catch(e => {
 						if (e instanceof Error) throw e;
-						throw new Error(e?.message || e || "[123云盘] 获取文件下载 URL 失败");
+						throw new Error(e?.message || e || "[123云盘] 获取文件下载地址失败");
 					});
 					res.forEach(val => {
 						selects[val.index].DownloadUrl = val.downloadUrl;
 					});
 					await base.sleep(1000);
 				}
-				temp.links = [selects, {
-					isFolder: v => v.Type !== 0,
-					getFileName: v => v.FileName,
-					getFileSize: v => v.Size,
-					getFileLink: v => v.DownloadUrl || v.DownloadURL,
-					tooltip: config.$123pan.dom
-				}]
-				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+				temp.files = [selects, {
+					get: {
+						dir: v => v.Type !== 0,
+						name: v => v.FileName,
+						size: v => v.Size,
+						link: v => v.DownloadUrl || v.DownloadURL,
+					},
+					headers: {},
+					convert: {},
+					dom: {
+						tooltip: config.$123pan.dom,
+						download: {
+							error(error) {
+								if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+								if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+								if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+							}
+						}
+					}
+				}];
+				base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 			} else if (temp.page === "share") {
 				const token = this.getToken();
+				const uuid = this.getUUID();
 				const batchSize = 15;
 				let proc = 0;
 				selects = selects.filter(item => item.Type === 0);
@@ -9347,62 +8805,81 @@ button.downloadSubtitle:disabled {
 				for (let i = 0; i < selects.length; i += batchSize) {
 					const batch = selects.slice(i, i + batchSize);
 					const queue = [];
-					$doc.find(".loading-popup .loading-title").html(`链接获取中`);
-					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载链接~</div>`);
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 					batch.forEach((item, localIndex) => {
 						const globalIndex = i + localIndex;
-						queue.push(this.getFileUrl(item, globalIndex, token, ShareKey)
+						queue.push(this.getFileUrl(item, globalIndex, token, uuid, ShareKey)
 							.then(val => {
 								proc++;
-								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个链接~</div>`);
+								$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} / ${selects.length} 个地址~</div>`);
 								return val;
 							}));
 					});
 					const res = await Promise.all(queue).catch(e => {
 						if (e instanceof Error) throw e;
-						throw new Error(e?.message || e || "[123云盘] 获取文件下载 URL 失败");
+						throw new Error(e?.message || e || "[123云盘] 获取文件下载地址失败");
 					});
 					res.forEach(val => {
 						selects[val.index].DownloadUrl = val.downloadUrl;
 					});
 					await base.sleep(1000);
 				}
-				temp.links = [selects, {
-					isFolder: v => v.Type !== 0,
-					getFileName: v => v.FileName,
-					getFileSize: v => v.Size,
-					getFileLink: v => v.DownloadUrl || v.DownloadURL,
-					tooltip: config.$123pan.dom
-				}]
-				base.showMainDialog(config.base.dom.button[temp.mode].title, base.generateDOM(temp.links), config.base.dom.button[temp.mode].footer);
+				temp.files = [selects, {
+					get: {
+						dir: v => v.Type !== 0,
+						name: v => v.FileName,
+						size: v => v.Size,
+						link: v => v.DownloadUrl || v.DownloadURL,
+					},
+					headers: {},
+					convert: {},
+					dom: {
+						tooltip: config.$123pan.dom,
+						download: {
+							error(error) {
+								if (!error?.status) return ` 服务器未返回状态，若是下载一段时间后中断，可能是服务器返回文件长度不匹配，请重试；若是直接中断，请检查您的网络、脚本管理器扩展或浏览器~`;
+								if (error?.status == 403) return ` 服务器说：链接已过期，关闭窗口重新获取试试吧~`;
+								if (error?.status == 204 || error?.statusText === "IDM") return ` 服务说：链接已被 IDM 捕获~`;
+							}
+						}
+					}
+				}];
+				base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
 		},
-		async getFileUrl(item, index, token, ShareKey) {
+		async getFileUrl(item, index, token, uuid, ShareKey) {
 			let res;
 			if (ShareKey) {
-				res = await base.post(config.$123pan.api.getShareLink, { "ShareKey": ShareKey, "FileID": item.FileId, "S3keyFlag": item.S3KeyFlag, "Size": item.Size, "Etag": item.Etag }, { "Content-Type": "application/json", "Authorization": `Bearer ${token}`, "Platform": "ios" });
+				res = await base.post(config.$123pan.api.getShareLink,
+					{ "ShareKey": ShareKey, "FileID": item.FileId, "S3keyFlag": item.S3KeyFlag, "Size": item.Size, "Etag": item.Etag },
+					{ "Accept": "application/json, text/plain, */*", "Content-Type": "application/json; charset=UTF-8", "Authorization": `Bearer ${token}`, "User-Agent": config.$123pan.api.ua.main, "Sec-Ch-Ua": config.$123pan.api.ua.secCh, "Platform": "web", "Platform_os": config.$123pan.api.ua.os, "App-Version": config.$123pan.api.ua.version, "LoginUuid": uuid || "", "Devicename": "", "Mac-Addr": "" }
+				);
 			} else {
-				res = await base.post(config.$123pan.api.getLink, { "driveId": 0, "etag": item.Etag, "fileId": item.FileId, "s3keyFlag": item.S3KeyFlag, "type": item.Type, "fileName": item.FileName, "size": item.Size }, { "Content-Type": "application/json", "Authorization": `Bearer ${token}`, "Platform": "ios" });
+				res = await base.post(config.$123pan.api.getLink,
+					{ "driveId": 0, "etag": item.Etag, "fileId": item.FileId, "s3keyFlag": item.S3KeyFlag, "type": item.Type, "fileName": item.FileName, "size": item.Size },
+					{ "Accept": "application/json, text/plain, */*", "Content-Type": "application/json; charset=UTF-8", "Authorization": `Bearer ${token}`, "User-Agent": config.$123pan.api.ua.main, "Sec-Ch-Ua": config.$123pan.api.ua.secCh, "Platform": "web", "Platform_os": config.$123pan.api.ua.os, "App-Version": config.$123pan.api.ua.version, "LoginUuid": uuid || "", "Devicename": "", "Mac-Addr": "" }
+				);
 			}
 			if (res.data?.dispatchList?.length > 0 && res.data?.downloadPath) {
 				// 拼接线路前缀与下载路径（默认取第一条线路）
 				const prefix = res.data.dispatchList[0].prefix || "";
 				let url = `${prefix}${res.data.downloadPath}`;
 
-				// 如果链接中存在需要解码的参数，保留解码逻辑
+				// 如果地址中存在需要解码的参数，保留解码逻辑
 				try {
 					const surl = new URL(url).searchParams.get("params");
 					if (surl) url = base.decodeBase(surl);
 				} catch { }
 
-				// 如果原代码有 base.getFinalUrl，请保留
+				// 如果想要得到最终跳转后的地址
 				// url = await base.getFinalUrl(url);
 
 				return { index, downloadUrl: url };
 			} else if (res.code) {
-				if (res.code == 5112) throw new Error("提示：<br/>请先登录网盘后再获取链接呢~");
+				if (res.code == 5112) throw new Error("提示：<br/>请先登录网盘后再获取地址呢~");
 				if (res.code == 5113) return { index, downloadUrl: "获取下载地址失败，服务器说：本月免费流量不足，请开通网盘会员~" };
 			} else {
 				return { index, downloadUrl: `获取下载地址失败，${res.message ? "服务器说：" + res.message + "。" : "刷新后再试试吧~"}` };
@@ -9411,13 +8888,13 @@ button.downloadSubtitle:disabled {
 		getSelectedList() {
 			try {
 				const selectedList = [];
-				const reactDom = $(".ant-table-wrapper, .tiled-list, .file-list, .single-file-sharing-container-content, .custom-table-wrapper")[0];
+				const reactDom = $(`.ant-table-wrapper, .tiled-list, .file-list, .single-file-sharing-container-content, .custom-table-wrapper, [class^="mfy_h-table-module__shell__"]`)[0];
 				const reactObj = base.findReact(reactDom);
 				const props = reactObj.pendingProps;
 				if (props) {
 					const fileList = props?.dataSource || props?.loadedFileList || props?.files || [];
 					const selectedKey = props?.rowSelection?.selectedRowKeys || [];
-					fileList.forEach(function (val) {
+					fileList.forEach(val => {
 						if (val?.checked === true) {
 							selectedList.push(val);
 						} else if (selectedKey.includes(val.FileId)) {
@@ -9435,95 +8912,70 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$123pan.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
-				const $button = $(`<button type="button" class="ant-btn ant-btn-primary ant-btn-color-primary ant-btn-variant-solid ant-dropdown-trigger mfy-button upload-button pl-button color-button" style="user-select: text !important;">
+				const $button = $(`<button class="mfy-button upload-button pl-button color-button" style="user-select: text !important;">
 					<svg class="icon home-operator-icon-upload" aria-hidden="true"><use xlink:href="#general_download_16_1"></use></svg>
 					<span>下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:23px">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</button>`);
-				$button.addClass([...document.querySelector(`[class*="ant-btn css-"]`).className.match(/css-[a-z0-9]+ css-var-[a-z0-9_]+/g) || []].join(' '));
+				$button.addClass([...document.querySelector(`.mfy-button.upload-button[class^="mfy_h-button-module"]`)?.classList || []].filter(cls => /^mfy_h-button-module__[A-Za-z0-9_-]+$/.test(cls)).join(' '));
+				$button.find("svg").addClass([...document.querySelector(`[class^="icon"]`)?.classList || []].filter(cls => /^icon_[A-Za-z0-9]+$/.test(cls)).join(' '));
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$123pan.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<div class="register pl-button color-button">
-					<svg class="icon" aria-hidden="true" style="color:rgb(255, 255, 255);margin-right:5px;"><use xlink:href="#top_btn_download2"></use></svg>下载助手
-					<ul class="pl-dropdown-menu" style="top:37px">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
-					</ul>
-				</div>`);
-				$button.css({ "width": "100px" });
-				element.append($button);
-			})
-			base.waitForKeyElements(config.$123pan.mount.shareNew, (element) => {
-				temp.page = temp.main.detectPage();
-				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle pl-button color-button" style="user-select: text !important;">
+				const $button = $(`<button class="pl-button color-button" style="user-select: text !important;">
 					<svg class="icon" aria-hidden="true" style="color: rgb(255, 255, 255);"><use xlink:href="#general_download_16_1"></use></svg>
 					<span>下载助手</span>
-					<ul class="pl-dropdown-menu" style="top:20px">
-						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</li>
-						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</li>
-						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</li>
-						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</li>
-						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</li>
-						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</li>
-						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</li>
-						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</li>
+					<ul class="pl-dropdown-menu" style="top:19px">
+						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
 				</button>`);
+				$button.addClass([...document.querySelector(`button[class*="mfy_h-button-module__primary"]`)?.classList || []].filter(cls => /^mfy_h-button-module__[A-Za-z0-9_-]+$/.test(cls)).join(' '));
 				$(".single-file-sharing-container-content").css({ "width": "415px" });
 				element.append($button);
-			})
+			});
 		},
 		addInitButton() {
 			base.waitForKeyElements(config.$123pan.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
-				const $button = $(`<button type="button" class="ant-btn ant-btn-primary ant-btn-color-primary ant-btn-variant-solid ant-dropdown-trigger mfy-button upload-button pl-button-init color-button" style="user-select: text !important;">
+				const $button = $(`<button class="mfy-button upload-button pl-button-init color-button" style="user-select: text !important;">
 					<svg class="icon home-operator-icon-upload" aria-hidden="true"><use xlink:href="#general_download_16_1"></use></svg>
 					<span>点我点亮</span>
 				</button>`);
-				$button.addClass([...document.querySelector(`[class*="ant-btn css-"]`).className.match(/css-[a-z0-9]+ css-var-[a-z0-9_]+/g) || []].join(' '));
+				$button.addClass([...document.querySelector(`.mfy-button.upload-button[class^="mfy_h-button-module"]`)?.classList || []].filter(cls => /^mfy_h-button-module__[A-Za-z0-9_-]+$/.test(cls)).join(' '));
+				$button.find("svg").addClass([...document.querySelector(`[class^="icon"]`)?.classList || []].filter(cls => /^icon_[A-Za-z0-9]+$/.test(cls)).join(' '));
 				$button.click(base.showInitDialog);
 				element.prepend($button);
-			})
+			});
 			base.waitForKeyElements(config.$123pan.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<div class="register pl-button-init color-button">
-					<svg class="icon" aria-hidden="true" style="color:rgb(255, 255, 255);margin-right:5px;"><use xlink:href="#top_btn_download2"></use></svg>点我点亮
-				</div>`);
-				$button.click(base.showInitDialog);
-				$button.css({ "width": "100px" });
-				element.append($button);
-			})
-			base.waitForKeyElements(config.$123pan.mount.shareNew, (element) => {
-				temp.page = temp.main.detectPage();
-				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button type="button" class="hbutton hbutton-primary hbutton-middle pl-button-init color-button" style="user-select: text !important;">
+				const $button = $(`<button class="pl-button-init color-button" style="user-select: text !important;">
 					<svg class="icon" aria-hidden="true" style="color: rgb(255, 255, 255);"><use xlink:href="#general_download_16_1"></use></svg>
 					<span>点我点亮</span>
 				</button>`);
+				$button.addClass([...document.querySelector(`button[class*="mfy_h-button-module__primary"]`)?.classList || []].filter(cls => /^mfy_h-button-module__[A-Za-z0-9_-]+$/.test(cls)).join(' '));
 				$button.click(base.showInitDialog);
 				element.append($button);
-			})
+			});
 		},
 		detectPage() {
 			const path = location.pathname;
@@ -9538,7 +8990,6 @@ button.downloadSubtitle:disabled {
 			} else {
 				this.addInitButton();
 			}
-			this.addPageListener();
 		},
 	};
 
@@ -9563,7 +9014,7 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(`html:not(:has(> .${mount})) head`, (element) => {
 				if ($(`.${mount}`).length > 0) return;
 				element.after(temp.mount);
-			})
+			});
 
 			// 判断页面地址，定义主执行
 			if (/(pan|yun).baidu.com/.test(location.host)) temp.main = $baidu;
@@ -9583,10 +9034,9 @@ button.downloadSubtitle:disabled {
 			base.addPanLinkerStyle();
 			// 创建按钮事件
 			base.addPageListener();
+			download.addPageListener();
 			// 创建提示信息用的隐藏 tip
 			base.createTip();
-			// 创建下载用的隐藏 iframe
-			base.createIframe();
 
 			// 运行主程序
 			if ("initPanLinker" in temp.main) temp.main.initPanLinker();
@@ -9605,58 +9055,65 @@ button.downloadSubtitle:disabled {
 				}, true);
 			}
 			// 创建图标
-			temp.mount.append(`<svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;">
-				<symbol id="pl-icon-fa-downward" viewBox="0 0 512 512">
+			temp.mount.append(`<svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;" preserveAspectRatio="xMidYMid meet">
+				<symbol id="pl-icon-fa-downward" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M425.199,223.957c-13.303-13.303-34.961-13.303-48.205-0.06l-86.861,85.086V34.133C290.133,15.309,274.824,0,256,0 s-34.133,15.309-34.133,34.133v274.867l-86.801-85.052c-13.312-13.312-34.961-13.312-48.273,0 c-13.312,13.312-13.303,34.97,0,48.273c0.017,0.017,0.034,0.026,0.043,0.043l148.361,146.5c5.726,5.658,13.227,8.482,20.727,8.482 c7.543,0,15.078-2.859,20.787-8.568L425.199,272.23c6.451-6.443,10.001-15.019,10.001-24.132S431.65,230.409,425.199,223.957z"></path>
 					<path d="M401.067,443.733H110.933c-18.825,0-34.133,15.309-34.133,34.133S92.109,512,110.933,512h290.133 c18.825,0,34.133-15.309,34.133-34.133S419.883,443.733,401.067,443.733z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-plug" viewBox="0 0 384 512">
+				<symbol id="pl-icon-fa-plug" viewBox="0 0 384 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M96 0C78.3 0 64 14.3 64 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l0 32c0 77.4 55 142 128 156.8l0 67.2c0 17.7 14.3 32 32 32s32-14.3 32-32l0-67.2C297 398 352 333.4 352 256l0-32c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 160z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-cloud-arrow-down" viewBox="0 0 640 512">
+				<symbol id="pl-icon-fa-cloud-arrow-down" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128l-368 0zm79-167l80 80c9.4 9.4 24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-39 39L344 184c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 134.1-39-39c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-gear" viewBox="0 0 512 512">
+				<symbol id="pl-icon-fa-gear" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-palette" viewBox="0 0 512 512">
+				<symbol id="pl-icon-fa-palette" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3L344 320c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5 .1-7 .2-10.6 .2C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-96a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm96 96a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-newspaper" viewBox="0 0 512 512">
+				<symbol id="pl-icon-fa-newspaper" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M96 96c0-35.3 28.7-64 64-64l288 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L80 480c-44.2 0-80-35.8-80-80L0 128c0-17.7 14.3-32 32-32s32 14.3 32 32l0 272c0 8.8 7.2 16 16 16s16-7.2 16-16L96 96zm64 24l0 80c0 13.3 10.7 24 24 24l112 0c13.3 0 24-10.7 24-24l0-80c0-13.3-10.7-24-24-24L184 96c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16l48 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-48 0c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16l48 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-48 0c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-256 0c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-256 0c-8.8 0-16 7.2-16 16z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-cloud-arrow-up" viewBox="0 0 640 512">
+				<symbol id="pl-icon-fa-cloud-arrow-up" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128l-368 0zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39L296 392c0 13.3 10.7 24 24 24s24-10.7 24-24l0-134.1 39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-copy" viewBox="0 0 448 512">
+				<symbol id="pl-icon-fa-copy" viewBox="0 0 448 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-check" viewBox="0 0 448 512">
+				<symbol id="pl-icon-fa-check" viewBox="0 0 448 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-list-check" viewBox="0 0 512 512">
+				<symbol id="pl-icon-fa-list-check" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-x-mark" viewBox="0 0 384 512">
+				<symbol id="pl-icon-fa-x-mark" viewBox="0 0 384 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-unlock-keyhole" viewBox="0 0 448 512">
+				<symbol id="pl-icon-fa-unlock-keyhole" viewBox="0 0 448 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M224 64c-44.2 0-80 35.8-80 80l0 48 240 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0 0-48C80 64.5 144.5 0 224 0c57.5 0 107 33.7 130.1 82.3c7.6 16 .8 35.1-15.2 42.6s-35.1 .8-42.6-15.2C283.4 82.6 255.9 64 224 64zm32 320c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-star" viewBox="0 0 576 512">
+				<symbol id="pl-icon-fa-star" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
 				</symbol>
-				<symbol id="pl-icon-fa-link" viewBox="0 0 640 512">
+				<symbol id="pl-icon-fa-drive" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid meet">
+					<path d="M160 96C124.7 96 96 124.7 96 160L96 324.1C114.1 311.4 136.2 304 160 304L480 304C503.8 304 525.9 311.4 544 324.1L544 160C544 124.7 515.3 96 480 96L160 96zM544 416C544 380.7 515.3 352 480 352L160 352C124.7 352 96 380.7 96 416L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 416zM320 448C320 430.3 334.3 416 352 416C369.7 416 384 430.3 384 448C384 465.7 369.7 480 352 480C334.3 480 320 465.7 320 448zM448 416C465.7 416 480 430.3 480 448C480 465.7 465.7 480 448 480C430.3 480 416 465.7 416 448C416 430.3 430.3 416 448 416z"/>
+				</symbol>
+				<symbol id="pl-icon-fa-link" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet">
 					<path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path>
 				</symbol>
-				<symbol id="pl-icon-si-tampermonkey" viewBox="0 0 24 24">
+				<symbol id="pl-icon-si-tampermonkey" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
 					<path d="M5.955.002C3-.071.275 2.386.043 5.335c-.069 3.32-.011 6.646-.03 9.969.06 1.87-.276 3.873.715 5.573 1.083 2.076 3.456 3.288 5.77 3.105 4.003-.011 8.008.022 12.011-.017 2.953-.156 5.478-2.815 5.482-5.772-.007-4.235.023-8.473-.015-12.708C23.82 2.533 21.16.007 18.205.003c-4.083-.005-8.167 0-12.25-.002zm.447 12.683c2.333-.046 4.506 1.805 4.83 4.116.412 2.287-1.056 4.716-3.274 5.411-2.187.783-4.825-.268-5.874-2.341-1.137-2.039-.52-4.827 1.37-6.197a4.896 4.896 0 012.948-.99zm11.245 0c2.333-.046 4.505 1.805 4.829 4.116.413 2.287-1.056 4.716-3.273 5.411-2.188.783-4.825-.268-5.875-2.341-1.136-2.039-.52-4.827 1.37-6.197a4.896 4.896 0 012.949-.99z"/>
+				</symbol>
+				<symbol id="pl-icon-firefox-setting" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
+					<path d="m8.628 16-1.25 0a1.632 1.632 0 0 1-1.562-1.177l-.406-1.414a5.939 5.939 0 0 1-.78-.466l-1.448.36a1.632 1.632 0 0 1-1.799-.765l-.625-1.082a1.633 1.633 0 0 1 .229-1.931l1.045-1.101A3.279 3.279 0 0 1 2 8c0-.153.014-.302.032-.45L.999 6.479a1.63 1.63 0 0 1-.238-1.94l.625-1.083a1.636 1.636 0 0 1 1.787-.768l1.477.355c.258-.179.51-.329.761-.452l.406-1.414A1.63 1.63 0 0 1 7.378 0l1.25 0c.714 0 1.354.478 1.559 1.163l.425 1.436c.242.121.484.266.739.444l1.478-.355a1.635 1.635 0 0 1 1.786.768l.625 1.083c.36.625.263 1.422-.237 1.941l-1.035 1.07c.018.148.032.297.032.45 0 .145-.014.285-.031.424l1.045 1.101c.492.519.586 1.312.229 1.931l-.625 1.083a1.63 1.63 0 0 1-1.8.764l-1.447-.36c-.259.182-.51.333-.759.458l-.425 1.437A1.638 1.638 0 0 1 8.628 16zm-4.016-4.341.528.109a4.72 4.72 0 0 0 1.032.615l.359.404.485 1.691c.046.16.194.271.36.271l1.25 0a.37.37 0 0 0 .359-.269l.506-1.707.355-.398c.324-.137.645-.33 1.01-.608l.529-.109 1.731.431a.378.378 0 0 0 .416-.176l.625-1.083a.378.378 0 0 0-.053-.446l-1.25-1.317-.167-.505.022-.174c.021-.127.041-.255.041-.388 0-.149-.021-.293-.042-.437l-.021-.15.171-.513 1.244-1.289a.378.378 0 0 0 .055-.448l-.625-1.082a.38.38 0 0 0-.412-.177l-1.758.422-.521-.108a4.7 4.7 0 0 0-.991-.594l-.356-.398-.506-1.707a.373.373 0 0 0-.36-.269l-1.25 0a.377.377 0 0 0-.36.271l-.486 1.691-.36.405a4.71 4.71 0 0 0-1.013.6l-.521.109-1.757-.422a.383.383 0 0 0-.413.177l-.625 1.083a.375.375 0 0 0 .055.447L3.142 6.9l.171.514-.021.15A2.981 2.981 0 0 0 3.25 8c0 .133.02.261.037.389l.022.174-.167.505-1.25 1.317a.38.38 0 0 0-.053.446l.625 1.083a.38.38 0 0 0 .415.176l1.733-.431z"/><path d="M8 6.25c.965 0 1.75.785 1.75 1.75S8.965 9.75 8 9.75 6.25 8.965 6.25 8 7.035 6.25 8 6.25M8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
 				</symbol>
 			</svg>`);
 		}
 	};
 
 	base.console = Object.fromEntries(Object.entries(console).filter(([, value]) => typeof value === "function").map(([key, value]) => [key, value.bind(console)]));
+	unsafeWindow.console.clear = new Function(base.decodeBase("Y29uc29sZS5sb2coIiVj5bey5riF6Zmk5o6n5Yi25Y+wIiwgImNvbG9yOmdyYXk7Zm9udC1zdHlsZTppdGFsaWMiKTs="));
 	main.init();
 
 	// 这是啥？我不到啊

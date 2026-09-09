@@ -25,8 +25,6 @@
    <img src="https://img.shields.io/badge/Google_Chrome-≥76.0-yellow.svg?style=for-the-badge" alt="Google Chrome-≥76.0">
    <img src="https://img.shields.io/badge/Microsoft_Edge-≥88.0-blue.svg?style=for-the-badge" alt="Microsoft Edge-≥88.0">
    <img src="https://img.shields.io/badge/支持平台-Windows_|_Mac_|_Linux_|_Android-blueviolet.svg?style=for-the-badge" alt="支持平台">
-   <br/>
-   <img alt="Starchart" src="https://starchart.cc/hmjz100/LinkSwift.svg?variant=adaptive&line=%23574ab8">
 </p>
 
 ## 介绍
@@ -90,7 +88,7 @@
 ## 版本号
 
 正式版：v1.1.3  
-测试版：v1.1.3.1-Preview  
+测试版：v1.1.4  
 本脚本目前仅在 Github、Gitee、脚本猫脚本站 与 OpenUserJS 发布；  
 如果您是在其他渠道获取到本脚本的，安装后所带来的问题开发者概不负责。
 
@@ -98,6 +96,7 @@
 
 | 版本号 | 创建日期 | 更新日志 |
 | -------- | -------- | -------- |
+| 1.1.4   | 2026年09月09日 | (测试版，非最终品质)<br/>残暑未消风先快，一叶轻舟过万重。🍂🥮<br/>告别了繁杂与沉闷，LinkSwift 带来以下更新：<br/>1、新增 - 支持光鸭云盘；<br/>2、适配 - 变来变去的 123 云盘；<br/>3、优化 - 网络请求头标准化；<br/>4、优化 - 调样式，改类名，优逻辑；<br/>5、优化 - 使用 eslint 处理与检查脚本代码问题；<br/>6、优化 - 夸克网盘 Cookie 传递；<br/>（感谢 <a href="https://github.com/kwkvh" target="_blank">kwkvh</a> 提供的想法）<br/>7、修复 - 迅雷云盘样式调整导致脚本弹窗异常变大；<br/>8、修复 - 推送到 ABDM 下载器实际成功却显示失败。 |
 | 1.1.3   | 2026年02月16日 | LinkSwift 开发者在此祝您新春快乐！<br/>爆竹声中一岁除，春风送暖入屠苏。LinkSwift 迎来功能更新：<br/>1、新增 - IDM 客户端设置；<br/>2、优化 - 链接缓存、浮动提示框；<br/>3、适配 - 百度网盘分享页。 |
 | 1.1.2.1 | 2025年12月28日 | 1、新增 - API 下载的推送到 IDM 功能；<br/>（感谢 <a href="https://github.com/Night-stars-1" target="_blank">Night Stars</a> 的帮助）<br/>2、修复 - 复制 Aria2、cURL 命令行错误。 |
 | 1.1.2   | 2025年12月26日 | 1、适配 - 123 云盘新策略；<br/>2、适配 - 夸克、UC 网盘分享页；<br/>3、新增 - 增强下载的多块多线程支持；<br/>4、优化 - 页面绿化的部分匹配规则；<br/>5、优化 - 增强下载进度条样式。 |

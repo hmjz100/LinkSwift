@@ -7,8 +7,8 @@
 - 开发工具  
 Visual Studio Code、TRAE CN、Github Desktop、Git
 
-- AI 辅助（按常用排序，纯聊天，无助理）  
-Google/Gemini（VSCode 插件、网页）、TRAE CN 包含的模型（IDE 内聊天）、OpenAI/ChatGPT、Microsoft/Copilot、阿里/通义千问、深度求索/DeepSeek
+- AI 辅助（按常用排序，纯聊天及古法CV，无助理）  
+Google Gemini（网页）、TRAE CN 包含的模型（IDE 内聊天）、阿里 通义千问、深度求索 DeepSeek、OpenAI ChatGPT、Microsoft Copilot
 
 - 浏览器（按常用排序，除第一位外不常访问）  
 Microsoft Edge > Supermium > 百分浏览器
