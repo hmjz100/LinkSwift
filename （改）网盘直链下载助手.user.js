@@ -1619,15 +1619,15 @@
 				tag === "style" ? $style.html(css.trim().replace(/\t/g, "").replace(/\r\n|\n\r|\n|\r/g, "\n").replace(/\n+/g, "\n")) : $style.attr("href", css);
 				if ($styleDom.length) {
 					$styleDom.replaceWith($style);
-					return true;
+				} else {
+					switch (position) {
+						case "before": element.before($style); break;
+						case "after": element.after($style); break;
+						case "prepend": element.prepend($style); break;
+						case "append": default: element.append($style); break;
+					}
 				}
-				switch (position) {
-					case "before": element.before($style); break;
-					case "after": element.after($style); break;
-					case "prepend": element.prepend($style); break;
-					case "append": default: element.append($style); break;
-				}
-				// return true;
+				return true; // 始终返回 true 以让 bWaitOnce=true 的观察者在首次处理后断开，避免闭包/css 文本被永久持有导致内存泄漏
 			}, true);
 		},
 
@@ -1722,6 +1722,8 @@
 				colorMap.forEach(colorPair => {
 					const oldColor = colorPair[0];
 					const newColor = colorPair[1];
+					// 跳过旧色与新色相同的条目，否则 replace 会反复注入 transition 导致无限循环
+					if (!oldColor || oldColor.toLowerCase() === (newColor || "").toLowerCase()) return;
 					// 生成旧颜色的三种形式：原样、全大写、全小写
 					const variants = [
 						oldColor,
@@ -1741,6 +1743,9 @@
 				colorMap.forEach(colorPair => {
 					const oldColor = colorPair[0];
 					const newColor = colorPair[1];
+					// 跳过旧色与新色相同的条目，否则 regexWithBlock 会反复注入 transition:all.2s
+					// 导致 wkfe_generated_css → addStyle → 新 ColorUI 标签 → 再处理 → 无限循环与内存爆炸
+					if (!oldColor || oldColor.toLowerCase() === (newColor || "").toLowerCase()) return;
 					// 生成三种形式
 					const variants = [
 						oldColor,
@@ -1808,7 +1813,10 @@
 				base.waitForKeyElements(`link[rel="stylesheet"]`, ($tag) => {
 					const href = $tag.attr("href");
 					if (!href) return;
+					// 若 fetch 期间主题色已变更，则放弃本次结果，避免写入过时色覆盖新主题
+					const expectedColor = temp.color;
 					fetch(new URL(href, location.href).href).then(r => r.text()).then(text => {
+						if (temp.color !== expectedColor) return;
 						const id = `${mount}-ColorUI-` + href.replace(/[^\w]/g, "_");
 						base.addStyle(id, "style", base.adaptiveStyleOverride(text, href, type, colorMap), $tag[0], "after");
 					});
@@ -1818,12 +1826,20 @@
 				// Style 标签
 				base.waitForKeyElements(`style:not([${mount}^="${mount}-"],[id^="swal-pub"],[class^="darkreader"])`, ($tag) => {
 					const text = $tag.html();
-					if ($tag.data("raw-css") === text) return;
+					// 同时检查 raw-css 与 raw-color，确保主题色变更后会重新处理该 style 标签
+					if ($tag.data("raw-css") === text && $tag.data("raw-color") === temp.color) return;
 					$tag.data("raw-css", text);
+					$tag.data("raw-color", temp.color);
 
 					const css = base.adaptiveStyleOverride(text, "", type, colorMap);
 					if (css !== text) {
-						const id = $tag.attr(mount) || `${mount}-ColorUI-${styleCount++}`;
+						// 清理此前在当前 style 标签上挂载的 ColorUI 样式，避免 SPA 重建后残留导致内存泄漏
+						const prevId = $tag.data("color-ui-id");
+						if (prevId) {
+							$($tag[0].parentNode).children(`[${mount}="${prevId}"]`).remove();
+						}
+						const id = $tag.attr(mount) || $tag.data("color-ui-id") || `${mount}-ColorUI-${styleCount++}`;
+						$tag.data("color-ui-id", id);
 						base.addStyle(id, "style", css, $tag[0], "after");
 					}
 				}, false, null, "wkfe_style_persistent");
@@ -3629,6 +3645,9 @@
 		 */
 		addPanLinkerStyle() {
 			temp.color = base.getValue("setting_ui_theme").color;
+			// 主题色变更时，重置 colored 标志，以便 adaptiveThemeOverride 中的 link/style 观察者
+			// 能以新的 colorMap 重建，避免持有旧 colorMap 闭包与 temp.color 不一致导致的反馈循环与内存泄漏
+			temp.colored = false;
 			if ("beautifyPage" in temp.main) temp.main.beautifyPage();
 			base.addStyle("swal-pub-style", "style", `@media (prefers-color-scheme:light){${GM_getResourceText("SwalLigt")}}`);
 			base.addStyle("swal-pub-dark-style", "style", `@media (prefers-color-scheme:dark){${GM_getResourceText("SwalDark").replace(/#19191a/, "#222226")}}`);
