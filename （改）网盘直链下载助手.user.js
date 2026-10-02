@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name              LinkSwift
 // @namespace         github.com/hmjz100
-// @version           1.1.4
+// @version           1.1.7
 // @author            Hmjz100、油小猴
 // @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=
 // @description       (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 九大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
@@ -110,7 +110,7 @@
  * @author hmjz100
  * @namespace github.com/hmjz100
  * @description  一个基于 JavaScript 盘的文件下载地址获取工具  支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 九大网盘  代码改自 “网盘直链下载助手”，作者油小猴
- * @version 1.1.4
+ * @version 1.1.7
  * @license AGPL-3.0-or-later
  * @see {@link https://github.com/hmjz100/LinkSwift/ Github 仓库}
  */
@@ -127,7 +127,7 @@
 	const info = {
 		author: GM_info.script?.author,
 		name: GM_info.script?.name,
-		version: (GM_info.script?.version || "1.1.4"),
+		version: (GM_info.script?.version || "1.1.7"),
 		icon: (GM_info.script?.icon || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkY1OUQ7c3RvcC1vcGFjaXR5OjEiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGRDcwMDtzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZCQzAyRDtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuNCwgLTIpIHNjYWxlKDAuOSkiPjxwYXRoIGQ9Ik0xMDMuNiAxMDcuNGMzLjUtMi4yIDguOS02LjEgMTMuOC0xMi41czcuMy0xMi41IDguNS0xNi41Yy41LTEuNyAyLjItNy41IDIuMi0xNC43IDAtMTAuMS0zLjMtMjUuMS0xNS40LTM2LjgtMTQuNS0xNC0zMi4xLTE0LjMtMzUuNy0xNC4zLTggMC0xNS43IDEuOS0yMi42IDUuMkM0NCAyMyAzNS43IDMxLjQgMzAuOCA0MS43Yy0xLjMgMi44LTQgNC43LTcuMSA1LTQgLjMtNy41IDQuNC04LjkgOS42LS41IDEuOS0xLjYgMy41LTMuMSA0LjdDNC40IDY2LjggMCA3NS43IDAgODVjMCA2LjggMi4zIDEzLjEgNi4xIDE4LjIgNS41IDcuNCAxNC4yIDEyLjIgMjQgMTIuMmg0Ny4xYzQuNCAwIDExLS41IDE4LjMtMy41IDMuMi0xLjQgNS45LTMgOC4xLTQuNXoiIGZpbGw9IiNBMDk5RjAiLz48cGF0aCBkPSJNMTE5LjggNjQuM2MuMS0xNy4xLTEwLjQtMjgtMTIuNS0zMC4xQzk1IDIyLjEgNzkuOSAyMS44IDc2LjkgMjEuOGMtMTcuNiAwLTMzLjMgMTAuNS0zOS45IDI2LjctLjYgMS4zLTEuOCAyLjMtMy40IDIuM2gtLjRjLTUuOCAwLTEwLjYgNC44LTEwLjYgMTAuN3YuNWMwIDEuNC0uOCAyLjYtMS45IDMuM0MxMy40IDY5IDguOCA3Ni44IDguOCA4NWMwIDEyLjIgOS45IDIyLjMgMjIuMiAyMi4zaDQ1LjJjMy42LS4xIDE3LjYtLjkgMjkuNi0xMiAyLjktMi44IDEzLjktMTMuNyAxNC0zMXoiIGZpbGw9IiM1NzRBQjgiLz48cGF0aCBkPSJNMTEwLjggNTcuNGwuMiAzLjNjMCAxLjMtMS4xIDIuNC0yLjMgMi40LTEuMyAwLTIuMy0xLjEtMi4zLTIuNGwtLjEtMi44di0uM2MwLTEuMi45LTIuMiAyLjEtMi4zaC4zYy43IDAgMS4zLjMgMS43LjctLjIuMS4zLjUuNCAxLjR6bS0zLjMtMTAuM2MwIDEuMi0xIDIuMy0yLjIgMi4zaC0uMWMtLjggMC0xLjYtLjUtMi0xLjItNC42LTguMy0xMy4zLTEzLjUtMjIuOC0xMy41LTEuMiAwLTIuMy0xLTIuMy0yLjJ2LS4xYzAtMS4yIDEtMi4zIDIuMi0yLjNoLjFhMzAuMzcgMzAuMzcgMCAwIDEgMTUuOCA0LjRjNC42IDIuOCA4LjQgNi44IDExLjEgMTEuNS4xLjMuMi43LjIgMS4xek04OC4zIDczLjhMNzMuNSA5My4yYy0xLjUgMS45LTMuNSAzLjEtNS43IDMuNWgtLjJjLS40LjEtLjguMS0xLjIuMS0uNiAwLTEuMS0uMS0xLjYtLjItMi4yLS40LTQuMi0xLjctNS42LTMuNUw0NC4zIDczLjljLTItMi42LTIuNS01LjQtMS40LTcuNy4xLS4xLjEtLjIuMi0uMiAxLjItMiAzLjUtMy4yIDYuNC0zLjJoNi42di01LjdjMC02LjggNC43LTEyIDEwLjktMTIgNC44IDAgOC41IDIuNiAxMC4zIDcuMi41IDEuMy0uMiAyLjctMS41IDMuMnMtMi44LS4xLTMuMy0xLjRjLTEuMS0yLjctMi45LTQtNS41LTQtMy41IDAtNiAzLTYgN3Y4LjFjMCAuNS0uMiAxLS42IDEuNC0uNi43LTEuNyAxLjEtMi42IDEuMWgtOC40Yy0xLjMgMC0yIC40LTIuMS43LS4yLjQgMCAxLjMuOSAyLjRMNjMuMSA5MGMuOSAxLjIgMi4xIDEuOCAzLjMgMS44czIuMy0uNiAzLjEtMS43bDE0LjgtMTkuM2MuOS0xLjEgMS4xLTIgLjktMi40LS4yLS4zLS45LS43LTIuMS0uN2gtNy42Yy0uOSAwLTEuNy0uNS0yLjEtMS4yLS4zLS40LS40LS44LS40LTEuMyAwLTEuNCAxLjEtMi41IDIuNS0yLjVoNy42YzMuMSAwIDUuNSAxLjMgNi42IDMuNWwuMy43Yy43IDIuMS4xIDQuNi0xLjcgNi45eiIgZmlsbD0iI2ZmZiIvPjwvZz48Zz48cGF0aCBkPSJNMCAxMDAgUTY0IDExNSAxMjggMTAwIEwxMjggMTI4IEwwIDEyOCBaIiBmaWxsPSIjRDMyRjJGIi8+PHBhdGggZD0iTTAgMTAwIFE2NCAxMTUgMTI4IDEwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGRHcmFkaWVudCkiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjY0IiB5PSIxMjEiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksIC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InVybCgjZ29sZEdyYWRpZW50KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgc3R5bGU9InRleHQtc2hhZG93OiAwcHggMXB4IDJweCByZ2JhKDAsMCwwLDAuMyk7Ij7liIYg5LiNIOi1t+OAgOe6ryDpnaAg54ixPC90ZXh0PjwvZz48L3N2Zz4="),
 		mhandler: GM_info.scriptHandler,
 		mversion: GM_info.version,
@@ -381,6 +381,7 @@
 					"vod0780-aliyun04-vip-lixian.xunlei.com", "vod0781-aliyun04-vip-lixian.xunlei.com", "vod3379-aliyun04-vip-lixian.xunlei.com", "vod3429-aliyun04-vip-lixian.xunlei.com", "vod3459-aliyun04-vip-lixian.xunlei.com", "vod3533-aliyun04-vip-lixian.xunlei.com", "vod4252-aliyun04-vip-lixian.xunlei.com", "vod4253-aliyun04-vip-lixian.xunlei.com", "vod4320-aliyun04-vip-lixian.xunlei.com", "vod4321-aliyun04-vip-lixian.xunlei.com", "vod0555-aliyun06-vip-lixian.xunlei.com", "vod0556-aliyun06-vip-lixian.xunlei.com", "vod1284-aliyun06-vip-lixian.xunlei.com", "vod1285-aliyun06-vip-lixian.xunlei.com", "vod1363-aliyun06-vip-lixian.xunlei.com", "vod1372-aliyun06-vip-lixian.xunlei.com", "vod1629-aliyun06-vip-lixian.xunlei.com", "vod1630-aliyun06-vip-lixian.xunlei.com", "vod1703-aliyun06-vip-lixian.xunlei.com", "vod1704-aliyun06-vip-lixian.xunlei.com", "vod1844-aliyun06-vip-lixian.xunlei.com", "vod0254-aliyun08-vip-lixian.xunlei.com", "vod0255-aliyun08-vip-lixian.xunlei.com", "vod0256-aliyun08-vip-lixian.xunlei.com", "vod0257-aliyun08-vip-lixian.xunlei.com", "vod0261-aliyun08-vip-lixian.xunlei.com", "vod0262-aliyun08-vip-lixian.xunlei.com", "vod0263-aliyun08-vip-lixian.xunlei.com", "vod0264-aliyun08-vip-lixian.xunlei.com", "vod0759-aliyun08-vip-lixian.xunlei.com", "vod0760-aliyun08-vip-lixian.xunlei.com", "vod9410-aliyun08-vip-lixian.xunlei.com", "vod9411-aliyun08-vip-lixian.xunlei.com", "vod9412-aliyun08-vip-lixian.xunlei.com", "vod0080-b02-vip-lixian.xunlei.com", "vod0432-b02-vip-lixian.xunlei.com", "vod0531-b02-vip-lixian.xunlei.com", "vod0532-b02-vip-lixian.xunlei.com", "vod0533-b02-vip-lixian.xunlei.com", "vod0534-b02-vip-lixian.xunlei.com", "vod0537-b02-vip-lixian.xunlei.com", "vod0563-b02-vip-lixian.xunlei.com", "vod0565-b02-vip-lixian.xunlei.com", "vod0566-b02-vip-lixian.xunlei.com", "vod0568-b02-vip-lixian.xunlei.com", "vod0571-b02-vip-lixian.xunlei.com", "vod0572-b02-vip-lixian.xunlei.com", "vod0573-b02-vip-lixian.xunlei.com", "vod0595-b02-vip-lixian.xunlei.com", "vod0596-b02-vip-lixian.xunlei.com", "vod0597-b02-vip-lixian.xunlei.com", "vod0598-b02-vip-lixian.xunlei.com", "vod0636-b02-vip-lixian.xunlei.com", "vod0637-b02-vip-lixian.xunlei.com", "vod0638-b02-vip-lixian.xunlei.com", "vod0639-b02-vip-lixian.xunlei.com", "vod0640-b02-vip-lixian.xunlei.com", "vod0641-b02-vip-lixian.xunlei.com", "vod0642-b02-vip-lixian.xunlei.com", "vod0643-b02-vip-lixian.xunlei.com", "vod0644-b02-vip-lixian.xunlei.com", "vod0645-b02-vip-lixian.xunlei.com", "vod0646-b02-vip-lixian.xunlei.com", "vod0647-b02-vip-lixian.xunlei.com", "vod0648-b02-vip-lixian.xunlei.com", "vod0649-b02-vip-lixian.xunlei.com", "vod0650-b02-vip-lixian.xunlei.com", "vod0651-b02-vip-lixian.xunlei.com", "vod0652-b02-vip-lixian.xunlei.com", "vod0653-b02-vip-lixian.xunlei.com", "vod0654-b02-vip-lixian.xunlei.com", "vod0725-b02-vip-lixian.xunlei.com", "vod0726-b02-vip-lixian.xunlei.com", "vod0727-b02-vip-lixian.xunlei.com", "vod0006-b05-vip-lixian.xunlei.com", "vod0009-b05-vip-lixian.xunlei.com", "vod0010-b05-vip-lixian.xunlei.com", "vod0011-b05-vip-lixian.xunlei.com", "vod0012-b05-vip-lixian.xunlei.com", "vod0013-b05-vip-lixian.xunlei.com", "vod0014-b05-vip-lixian.xunlei.com", "vod0043-b05-vip-lixian.xunlei.com", "vod0044-b05-vip-lixian.xunlei.com", "vod0045-b05-vip-lixian.xunlei.com", "vod0051-b05-vip-lixian.xunlei.com", "vod0053-b05-vip-lixian.xunlei.com", "vod0054-b05-vip-lixian.xunlei.com", "vod0055-b05-vip-lixian.xunlei.com", "vod0139-b05-vip-lixian.xunlei.com", "vod0140-b05-vip-lixian.xunlei.com", "vod0141-b05-vip-lixian.xunlei.com", "vod0142-b05-vip-lixian.xunlei.com", "vod0143-b05-vip-lixian.xunlei.com", "vod0349-b05-vip-lixian.xunlei.com", "vod0001-c01-vip-lixian.xunlei.com", "vod0002-c01-vip-lixian.xunlei.com", "vod0003-c01-vip-lixian.xunlei.com", "vod0004-c01-vip-lixian.xunlei.com", "vod0005-c01-vip-lixian.xunlei.com", "vod0070-h01-vip-lixian.xunlei.com", "vod0071-h01-vip-lixian.xunlei.com", "vod0074-h01-vip-lixian.xunlei.com", "vod0075-h01-vip-lixian.xunlei.com", "vod0131-h01-vip-lixian.xunlei.com", "vod0132-h01-vip-lixian.xunlei.com", "vod0153-h01-vip-lixian.xunlei.com", "vod0088-h04-vip-lixian.xunlei.com", "vod0089-h04-vip-lixian.xunlei.com", "vod0090-h04-vip-lixian.xunlei.com", "vod0091-h04-vip-lixian.xunlei.com", "vod0092-h04-vip-lixian.xunlei.com", "vod0093-h04-vip-lixian.xunlei.com", "vod0094-h04-vip-lixian.xunlei.com", "vod0097-h04-vip-lixian.xunlei.com", "vod0098-h04-vip-lixian.xunlei.com", "vod0099-h04-vip-lixian.xunlei.com", "vod0100-h04-vip-lixian.xunlei.com", "vod0101-h04-vip-lixian.xunlei.com", "vod0105-h04-vip-lixian.xunlei.com", "vod0128-h04-vip-lixian.xunlei.com", "vod0129-h04-vip-lixian.xunlei.com", "vod0143-h04-vip-lixian.xunlei.com", "vod0317-h04-vip-lixian.xunlei.com", "vod0318-h04-vip-lixian.xunlei.com", "vod0319-h04-vip-lixian.xunlei.com", "vod0320-h04-vip-lixian.xunlei.com", "vod0003-h05-vip-lixian.xunlei.com", "vod0004-h05-vip-lixian.xunlei.com", "vod0007-h05-vip-lixian.xunlei.com", "vod0008-h05-vip-lixian.xunlei.com", "vod0009-h05-vip-lixian.xunlei.com", "vod0010-h05-vip-lixian.xunlei.com", "vod0012-h05-vip-lixian.xunlei.com", "vod0013-h05-vip-lixian.xunlei.com", "vod0014-h05-vip-lixian.xunlei.com", "vod0017-h05-vip-lixian.xunlei.com", "vod0097-h05-vip-lixian.xunlei.com", "vod0098-h05-vip-lixian.xunlei.com", "vod0099-h05-vip-lixian.xunlei.com", "vod0116-h05-vip-lixian.xunlei.com", "vod0117-h05-vip-lixian.xunlei.com", "vod0121-h05-vip-lixian.xunlei.com", "vod0122-h05-vip-lixian.xunlei.com", "vod0131-h05-vip-lixian.xunlei.com", "vod0145-h05-vip-lixian.xunlei.com", "vod0146-h05-vip-lixian.xunlei.com", "vod0184-h05-vip-lixian.xunlei.com", "vod0185-h05-vip-lixian.xunlei.com", "vod0221-h05-vip-lixian.xunlei.com", "vod0222-h05-vip-lixian.xunlei.com", "vod0223-h05-vip-lixian.xunlei.com", "vod0224-h05-vip-lixian.xunlei.com", "vod0225-h05-vip-lixian.xunlei.com", "vod0227-h05-vip-lixian.xunlei.com", "vod0252-h05-vip-lixian.xunlei.com", "vod0253-h05-vip-lixian.xunlei.com", "vod0254-h05-vip-lixian.xunlei.com", "vod0001-m01-vip-lixian.xunlei.com", "vod0002-m01-vip-lixian.xunlei.com", "vod0003-m01-vip-lixian.xunlei.com", "vod0006-m01-vip-lixian.xunlei.com", "vod0007-m01-vip-lixian.xunlei.com", "vod0008-m01-vip-lixian.xunlei.com", "vod0010-m01-vip-lixian.xunlei.com", "vod0011-m01-vip-lixian.xunlei.com", "vod0012-m01-vip-lixian.xunlei.com", "vod0013-m01-vip-lixian.xunlei.com", "vod0014-m01-vip-lixian.xunlei.com", "vod0019-m01-vip-lixian.xunlei.com", "vod0020-m01-vip-lixian.xunlei.com", "vod0021-m01-vip-lixian.xunlei.com", "vod0022-m01-vip-lixian.xunlei.com", "vod0064-txyun08-vip-lixian.xunlei.com", "vod0065-txyun08-vip-lixian.xunlei.com", "vod0066-txyun08-vip-lixian.xunlei.com", "vod0067-txyun08-vip-lixian.xunlei.com", "vod0068-txyun08-vip-lixian.xunlei.com", "vod0069-txyun08-vip-lixian.xunlei.com", "vod0070-txyun08-vip-lixian.xunlei.com", "vod0340-txyun08-vip-lixian.xunlei.com", "vod0341-txyun08-vip-lixian.xunlei.com", "vod0032-z01-vip-lixian.xunlei.com", "vod0035-z01-vip-lixian.xunlei.com", "vod0036-z01-vip-lixian.xunlei.com", "vod0037-z01-vip-lixian.xunlei.com", "vod0038-z01-vip-lixian.xunlei.com", "vod0039-z01-vip-lixian.xunlei.com", "vod0040-z01-vip-lixian.xunlei.com", "vod0041-z01-vip-lixian.xunlei.com", "vod0042-z01-vip-lixian.xunlei.com", "vod0091-z01-vip-lixian.xunlei.com", "vod0093-z01-vip-lixian.xunlei.com", "vod0131-z01-vip-lixian.xunlei.com", "vod0135-z01-vip-lixian.xunlei.com", "vod0136-z01-vip-lixian.xunlei.com", "vod0146-z01-vip-lixian.xunlei.com", "vod0155-z01-vip-lixian.xunlei.com", "vod0156-z01-vip-lixian.xunlei.com", "vod0167-z01-vip-lixian.xunlei.com", "vod0195-z01-vip-lixian.xunlei.com", "vod0196-z01-vip-lixian.xunlei.com", "vod0281-z01-vip-lixian.xunlei.com"
 				],
 				getLink: "https://api-pan.xunlei.com/drive/v1/files/",
+				listFiles: "https://api-pan.xunlei.com/drive/v1/files",
 				getCaptchaToken: "https://xluser-ssl.xunlei.com/v1/shield/captcha/init",
 			},
 			mount: {
@@ -2497,7 +2498,7 @@
 				</label>
 				<label class="${mount} setting-item">
 					<div>存储路径</div>
-					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.dir" value="">
+					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认；推送云盘文件夹时会在其下创建对应目录" class="${mount} input swal2-input listener-rpc-input" data-type="bitcomet.dir" value="">
 				</label>`;
 			Swal.fire({
 				...temp.swalDefault,
@@ -3617,6 +3618,8 @@
 					willOpen: async () => {
 						Swal.showLoading();
 						await temp.main.getLink().catch(e => {
+							// 关闭加载弹窗：弹窗本身禁止点击外部与 Esc 关闭，出错时不关闭会永久锁住页面滚动
+							Swal.close();
 							// 错误信息和堆栈
 							let msg = (e instanceof Error) ? e.message : String(e || "未知错误");
 							let displayMsg = msg;
@@ -4949,7 +4952,19 @@ button.downloadSubtitle:disabled {
 					switch (type) {
 						case "idm": res = await download.tools.sendTo.idm(link, name, size, headers); break;
 						case "aria2": res = await download.tools.sendTo.aria2(link, name, headers); break;
-						case "bitcomet": res = await download.tools.sendTo.bitcomet(link, name, headers); break;
+						case "bitcomet": {
+							const config = {};
+							if (base.isType(get.path) === "function") {
+								const path = get.path(file);
+								if (path) config.folderPath = path;
+							}
+							if (base.isType(get.mirror) === "function") {
+								const mirrorList = get.mirror(link);
+								if (mirrorList) config.mirror_url_list = mirrorList;
+							}
+							res = await download.tools.sendTo.bitcomet(link, name, headers, Object.keys(config).length ? config : undefined);
+							break;
+						}
 						case "abdm": res = await download.tools.sendTo.abdm(link, name, headers); break;
 						default: break;
 					}
@@ -4967,6 +4982,107 @@ button.downloadSubtitle:disabled {
 				}
 				await base.sleep(3000);
 				target.removeClass("danger success").removeData("state").html(originalHtml).css("opacity", "");
+			});
+
+			// 展开/收起文件夹分组，文件行在首次展开时一次性插入
+			$doc.on("click", `.${mount}.btn[action="togglefolder"]`, (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				const row = target.closest(".item");
+				const groupIndex = Number(row.attr("data-group-index"));
+				const path = temp.folderGroups?.[groupIndex];
+				if (!row.length || path === undefined) return;
+				if (temp.expandedFolders.has(path)) {
+					temp.expandedFolders.delete(path);
+					row.parent().find(`.item[data-group-file="${groupIndex}"]`).remove();
+					target.text("展开");
+				} else {
+					temp.expandedFolders.add(path);
+					row.after(temp.folderHtml?.[groupIndex] || "");
+					target.text("收起");
+				}
+			});
+
+			// 按文件夹批量推送：groupIndex 为 -1 时推送全部文件，逐个推送并显示进度
+			$doc.on("click", `.${mount}.btn[action="sendfolder"]`, async (e) => {
+				e.preventDefault();
+				const target = $(e.currentTarget);
+				if (target.data("state") === "processing") return;
+				const groupIndex = Number(target.attr("data-group-index"));
+				const state = download.state(0);
+				if (!state) return;
+				const { files, get, headers } = state;
+				const indices = files.map((v, i) => i).filter(i => {
+					if (get.dir(files[i])) return false;
+					if (groupIndex === -1) return true;
+					const path = base.isType(get.path) === "function" ? get.path(files[i]) : "";
+					return path === temp.folderGroups?.[groupIndex];
+				});
+				if (!indices.length) return;
+				target.data("state", "processing");
+				const originalHtml = target.html();
+				target.find(".pl-icon").remove();
+				// 圆环形进度：批量推送时悬浮在页面角落显示总进度，pointer-events:none 不阻挡页面操作
+				const ringColor = temp.color || "#09AAFF";
+				const ringId = `${mount}-push-ring`;
+				const ringC = (2 * Math.PI * 30).toFixed(1);
+				const showRing = (total) => {
+					$(`#${ringId}`).remove();
+					$(document.body).append(`<div id="${ringId}" style="position:fixed;right:24px;bottom:24px;z-index:99999;display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none;">
+						<svg width="72" height="72" viewBox="0 0 72 72">
+							<circle cx="36" cy="36" r="30" fill="rgba(0,0,0,0.7)" stroke="rgba(255,255,255,0.25)" stroke-width="6"/>
+							<circle class="pl-push-ring-fg" cx="36" cy="36" r="30" fill="none" stroke="${ringColor}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${ringC}" stroke-dashoffset="${ringC}" transform="rotate(-90 36 36)" style="transition:stroke-dashoffset .25s"/>
+							<text class="pl-push-ring-pct" x="36" y="36" text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="14" font-weight="600">0%</text>
+						</svg>
+						<div class="pl-push-ring-label" style="background:rgba(0,0,0,0.7);color:#fff;font-size:12px;line-height:20px;padding:2px 10px;border-radius:10px;">推送中 0 / ${total}</div>
+					</div>`);
+				};
+				const updateRing = (done, total) => {
+					const el = $(`#${ringId}`);
+					if (!el.length) return;
+					el.find(".pl-push-ring-fg").attr("stroke-dashoffset", (2 * Math.PI * 30 * (1 - done / total)).toFixed(1));
+					el.find(".pl-push-ring-pct").text(`${Math.round((done / total) * 100)}%`);
+					el.find(".pl-push-ring-label").text(`推送中 ${done} / ${total}`);
+				};
+				const hideRing = (total, fail) => {
+					const el = $(`#${ringId}`);
+					if (!el.length) return;
+					el.find(".pl-push-ring-fg").attr("stroke-dashoffset", "0");
+					el.find(".pl-push-ring-pct").text("100%");
+					el.find(".pl-push-ring-label").text(fail ? `推送完成，${fail} 个失败` : "全部推送完成");
+					setTimeout(() => el.fadeOut(400, () => el.remove()), 1200);
+				};
+				let ok = 0, fail = 0;
+				const total = indices.length;
+				if (total >= 2) showRing(total);
+				for (let n = 0; n < total; n++) {
+					const file = files[indices[n]];
+					const link = get.link(file);
+					const name = get.name(file);
+					target.text(`推送中 ${n + 1} / ${total}`);
+					updateRing(n, total);
+					const config = {};
+					if (base.isType(get.path) === "function") {
+						const path = get.path(file);
+						if (path) config.folderPath = path;
+					}
+					if (base.isType(get.mirror) === "function") {
+						const mirrorList = get.mirror(link);
+						if (mirrorList) config.mirror_url_list = mirrorList;
+					}
+					try {
+						const res = await download.tools.sendTo.bitcomet(link, name, headers, Object.keys(config).length ? config : undefined);
+						res === "success" ? ok++ : fail++;
+					} catch {
+						fail++;
+					}
+					await base.sleep(150);
+				}
+				updateRing(total, total);
+				hideRing(total, fail);
+				target.html(fail ? `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>${ok} 成功 ${fail} 失败</span>` : `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"/></svg><span>${ok} 个已推送</span>`).animate({ opacity: "0.5" }, "slow");
+				await base.sleep(3000);
+				target.removeData("state").css("opacity", "").html(originalHtml);
 			});
 
 			$doc.on("click", `.${mount}.btn[action="aria2"][type]`, (e) => {
@@ -5039,6 +5155,7 @@ button.downloadSubtitle:disabled {
 					switch (subType) {
 						case "link": line = link; break;
 						case "name": line = name; break;
+						case "link.mirrors": line = get.mirror ? get.mirror(link) : ""; break;
 						case "cmd.curl": line = download.tools.convertTo.curl(link, name, headers); break;
 						case "cmd.aria2": line = download.tools.convertTo.aira2(link, name, headers); break;
 						case "cmd.bitcomet": line = download.tools.convertTo.bitcomet(link, name, headers); break;
@@ -5068,90 +5185,137 @@ button.downloadSubtitle:disabled {
 			const { files, get, headers, dom } = state;
 			if (!files.length) throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 			if (!keepDowning) base._resetAllData(true);
+			if (!keepDowning || !temp.expandedFolders) temp.expandedFolders = new Set();
 
 			const content = $(`<div><div class="${mount} main"></div><div class="${mount} extra"></div></div>`);
 			let allLink = [];
+			// 带相对路径信息时按文件夹分组渲染：先只渲染文件夹行，文件行在展开时一次性插入，避免一次渲染数百行造成卡顿
+			const hasGroups = base.isType(get.path) === "function" && files.some(v => !get.dir(v) && get.path(v));
+			const groups = new Map();
 			files.forEach((v, i) => {
 				if (get.dir(v)) return;
+				const key = hasGroups ? get.path(v) : "";
+				if (!groups.has(key)) groups.set(key, []);
+				groups.get(key).push(i);
+			});
+			const groupPaths = [...groups.keys()];
+			const groupHtml = [];
+			const buildFileRow = (v, i, groupIndex) => {
 				const name = get.name(v);
+				const path = base.isType(get.path) === "function" ? get.path(v) : "";
+				const displayName = path ? `${path}/${name}` : name;
 				const size = get.size(v);
 				const link = get.link(v);
 				const mirrors = base.isType(get.mirror) !== "undefined" ? get.mirror(get.link(v)) : undefined;
+				const groupAttr = groupIndex === undefined ? "" : ` data-group-file="${groupIndex}"`;
 				if (!link || !link.includes("http")) {
-					content.find(`.${mount}.main`).append(`<div class="item">
-						<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+					return `<div class="item"${groupAttr}>
+						<div class="name ${mount} tip" data-size="${size}"><div class="name">${displayName}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
 						<div class="message">${link ? link : "获取下载地址失败，刷新网页后再试试吧~"}</div>
-					</div>`)
-				} else {
-					if (temp.mode === "api") {
-						allLink.push(link);
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}" data-link="${link}" data-name="${name}" data-size="${size}">
-							<div class="name ${mount} tip"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
-
-							<button action="download" type="enhance" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
-
-							<button action="download" type="normal" class="link ${mount} btn info mini tip" data-title="${config.base.dom.method.api.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</button>
-
-							<button action="sendto" type="idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 IDM (Beta)</span></button>
-
-							<button action="copy" type="file.name" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.name}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
-
-							<button action="copy" type="file.link" class="${mount} btn warning mini tip" data-title="${config.base.dom.copy.link}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制地址</button>
-
-							<div class="downing" style="display:none">
-								<div class="${mount} progress-bar">
-									<div class="foreground"><span class="text">正在加载...</span></div>
-									<div class="background"><span class="text">正在加载...</span></div>
-								</div>
-								<button action="download" type="stop" class="${mount} btn danger mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>取消下载</button>
-								<button action="download" type="back" class="${mount} btn info mini" style="display:none"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>返回</button>
-							</div>
-						</div>`);
-					}
-					if (temp.mode === "curl") {
-						const finalink = download.tools.convertTo.curl(link, name, headers);
-						allLink.push(finalink);
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
-
-							<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${name} 下载命令行</a>
-						</div>`);
-					}
-					if (temp.mode === "aria2") {
-						const finalink = download.tools.convertTo.aira2(link, name, headers);
-						allLink.push(finalink);
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
-
-							<button action="sendto" type="aria2" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 Aria2 下载器</span></button>
-
-							<button action="copy" type="file.cmd.aria2" class="${mount} btn info mini tip" data-title="${config.base.dom.copy.aria2}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
-						</div>`);
-					}
-					if (temp.mode === "bitcomet") {
-						const finalink = download.tools.convertTo.bitcomet(link, name, headers);
-						allLink.push(finalink);
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
-
-							<a href="${finalink}" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.bitcomet.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>使用 BC 地址下载</a>
-
-							${mirrors ? `<button action="copy" type="file.link.mirrors" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.mirrors}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制镜像</button>` : ""}
-
-							<button action="sendto" type="bitcomet" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至下载器</span></button>
-						</div>`);
-					}
-					if (temp.mode === "abdm") {
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-
-							<div class="${mount} name tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
-
-							<button action="sendto" type="abdm" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 ABDM 下载器</span></button>
-						</div>`);
-					}
+					</div>`;
 				}
-			});
+				if (temp.mode === "api") {
+					allLink.push(link);
+					return `<div class="item" data-index="${i}" data-link="${link}" data-name="${name}" data-size="${size}"${groupAttr}>
+						<div class="name ${mount} tip"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+						<button action="download" type="enhance" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
+
+						<button action="download" type="normal" class="link ${mount} btn info mini tip" data-title="${config.base.dom.method.api.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>直接下载</button>
+
+						<button action="sendto" type="idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 IDM (Beta)</span></button>
+
+						<button action="copy" type="file.name" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.name}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
+
+						<button action="copy" type="file.link" class="${mount} btn warning mini tip" data-title="${config.base.dom.copy.link}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制地址</button>
+
+						<div class="downing" style="display:none">
+							<div class="${mount} progress-bar">
+								<div class="foreground"><span class="text">正在加载...</span></div>
+								<div class="background"><span class="text">正在加载...</span></div>
+							</div>
+							<button action="download" type="stop" class="${mount} btn danger mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>取消下载</button>
+							<button action="download" type="back" class="${mount} btn info mini" style="display:none"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg>返回</button>
+						</div>
+					</div>`;
+				}
+				if (temp.mode === "curl") {
+					const finalink = download.tools.convertTo.curl(link, name, headers);
+					allLink.push(finalink);
+					return `<div class="item" data-index="${i}"${groupAttr}>
+						<div class="name ${mount} tip" data-size="${size}"><div class="name">${displayName}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+						<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${name} 下载命令行</a>
+					</div>`;
+				}
+				if (temp.mode === "aria2") {
+					const finalink = download.tools.convertTo.aira2(link, name, headers);
+					allLink.push(finalink);
+					return `<div class="item" data-index="${i}"${groupAttr}>
+						<div class="name ${mount} tip" data-size="${size}"><div class="name">${displayName}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+						<button action="sendto" type="aria2" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 Aria2 下载器</span></button>
+
+						<button action="copy" type="file.cmd.aria2" class="${mount} btn info mini tip" data-title="${config.base.dom.copy.aria2}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制下载命令行</button>
+					</div>`;
+				}
+				if (temp.mode === "bitcomet") {
+					const finalink = download.tools.convertTo.bitcomet(link, name, headers, null, mirrors ? String(mirrors).split("\n") : []);
+					allLink.push(finalink);
+					return `<div class="item" data-index="${i}"${groupAttr}>
+						<div class="name ${mount} tip" data-size="${size}"><div class="name">${displayName}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+						<a href="${finalink}" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.bitcomet.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>使用 BC 地址下载</a>
+
+						${mirrors ? `<button action="copy" type="file.link.mirrors" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.mirrors}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制镜像</button>` : ""}
+
+						<button action="sendto" type="bitcomet" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至下载器</span></button>
+					</div>`;
+				}
+				if (temp.mode === "abdm") {
+					return `<div class="item" data-index="${i}"${groupAttr}>
+
+						<div class="${mount} name tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+
+						<button action="sendto" type="abdm" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 ABDM 下载器</span></button>
+					</div>`;
+				}
+				return "";
+			};
+			if (hasGroups) {
+				temp.folderGroups = groupPaths;
+				temp.folderHtml = groupHtml;
+				groupPaths.forEach((path, groupIndex) => {
+					const indices = groups.get(path);
+					groupHtml[groupIndex] = indices.map(i => buildFileRow(files[i], i, groupIndex)).join("");
+					if (path === "") {
+						// 未分组的文件（直接勾选的）按原样渲染
+						content.find(`.${mount}.main`).append(groupHtml[groupIndex]);
+						return;
+					}
+					const items = indices.map(i => files[i]);
+					const totalSize = items.reduce((sum, v) => sum + (Number(get.size(v)) || 0), 0);
+					const expanded = temp.expandedFolders.has(path);
+					const pushButton = temp.mode === "bitcomet" ? `
+
+						<button action="sendfolder" data-group-index="${groupIndex}" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送此文件夹</span></button>` : "";
+					content.find(`.${mount}.main`).append(`<div class="item folder-group" data-group-index="${groupIndex}">
+						<div class="name ${mount} tip" data-title="点击展开查看该文件夹内的文件列表"><div class="name">${path}</div><div class="size">${items.length} 个文件 · ${base.sizeFormat(totalSize)}</div></div>
+
+						<button action="togglefolder" class="${mount} btn default mini">${expanded ? "收起" : "展开"}</button>
+						${pushButton}
+					</div>
+					${expanded ? groupHtml[groupIndex] : ""}`);
+				});
+			} else {
+				temp.folderGroups = null;
+				temp.folderHtml = null;
+				files.forEach((v, i) => {
+					if (get.dir(v)) return;
+					content.find(`.${mount}.main`).append(buildFileRow(v, i, undefined));
+				});
+			}
 			allLink = (allLink ? allLink.join("\r\n") : "")
 			if (temp.mode === "api") {
 				const rpc = base.getValue("setting_idm_rpc");
@@ -5181,10 +5345,14 @@ button.downloadSubtitle:disabled {
 			} else if (temp.mode === "bitcomet") {
 				const rpc = base.getValue("setting_bitcomet_rpc").find(i => i.default);
 
-				content.find(`.${mount}.extra`).append(`<button class="${mount} btn warning mini tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
+				content.find(`.${mount}.extra`).append(`<button action="settings" type="bitcomet" class="${mount} btn warning mini tip" data-title="${rpc.domain + ":" + rpc.port + rpc.path}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改服务参数</button>`);
 
 				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.cmd.bitcomet" class="${mount} btn default mini tip" data-title="${config.base.dom.copy.all.bitcomet}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部 BC 地址</button>`);
-				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="sendto.bitcomet" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
+				if (hasGroups) {
+					content.find(`.${mount}.extra`).append(`<button action="sendfolder" data-group-index="-1" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送全部至下载器</span></button>`);
+				} else if (files.length >= 2) {
+					content.find(`.${mount}.extra`).append(`<button action="all" type="sendto.bitcomet" class="${mount} btn info mini tip" data-title="${config.base.dom.method.bitcomet.sendto}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至下载器</button>`);
+				}
 			} else if (temp.mode === "abdm") {
 				const rpc = base.getValue("setting_abdm_rpc").find(i => i.default);
 
@@ -5303,9 +5471,10 @@ button.downloadSubtitle:disabled {
 				 * @param {String} filename - 文件名
 				 * @param {Object} [headers] - 请求头对象（可选）
 				 * @param {Array} [config] - 自定义参数（可选）
+				 * @param {Array<String>} [mirrors] - 镜像地址列表（可选），每个镜像作为一个 mirror 参数写入 BC 链接
 				 * @returns {String} 编码后的 BC 协议 URL
 				 */
-				bitcomet(link, filename, headers, config) {
+				bitcomet(link, filename, headers, config, mirrors = []) {
 					filename = base.fixFilename(filename);
 					headers = base.standHeaders(headers, true, false);
 					const data = new URLSearchParams();
@@ -5318,7 +5487,10 @@ button.downloadSubtitle:disabled {
 						}
 					}
 					if (config && base.isType(config) === "object") for (const [key, value] of Object.entries(config)) data.set(key, value);
-					const extraParams = data.toString();
+					let extraParams = data.toString();
+					for (const item of (base.isType(mirrors) === "array" ? mirrors : [])) {
+						if (item) extraParams += `&mirror=${encodeURIComponent(item)}`;
+					}
 					const bc = `AA/${encodeURIComponent(filename)}/?url=${encodeURIComponent(link)}${extraParams ? ("&" + extraParams) : ""}ZZ`;
 					return `bc://http/${base.encodeBase(bc)}`;
 				},
@@ -5428,7 +5600,7 @@ button.downloadSubtitle:disabled {
 				 * @param {String} link - 下载地址
 				 * @param {String} filename - 文件名
 				 * @param {Array} [headers] - 请求头对象（可选）
-				 * @param {Array} [config] - 自定义参数（可选）
+				 * @param {Object} [config] - 自定义参数（可选）；键 folderPath 为云盘内的相对文件夹路径，会在配置的存储路径下创建对应子目录；其余键值对原样写入请求
 				 * @returns {Promise<"success"|"fail">} 发送态结果
 				 */
 				async bitcomet(link, filename, headers, config) {
@@ -5459,7 +5631,18 @@ button.downloadSubtitle:disabled {
 								default: break;
 							}
 						}
-						if (config && base.isType(config) === "object") for (const [key, value] of Object.entries(config)) data.set(key, value);
+						if (config && base.isType(config) === "object") {
+							let folderPath = "";
+							for (const [key, value] of Object.entries(config)) {
+								if (key === "folderPath") { folderPath = String(value || ""); continue; }
+								data.set(key, value);
+							}
+							// 在配置的存储路径下按云盘内的文件夹结构创建子目录；未配置存储路径时无法确定基准目录，保持默认行为
+							if (folderPath && rpc.dir) {
+								const sub = folderPath.split("/").filter(Boolean).join("\\") + "\\";
+								data.set("save_path", rpc.dir.replace(/[\\/]+$/, "") + "\\" + sub);
+							}
+						}
 						try {
 							const res = await base.post(url, data, {
 								"Authorization": `Basic ${base.encodeBase(rpc.authName + ":" + rpc.authPass)}`,
@@ -7613,11 +7796,59 @@ button.downloadSubtitle:disabled {
 				};
 			}
 		},
+		async listFolderFiles(folderId, prefix = "") {
+			// 递归列出文件夹中的全部文件，folderPath 记录文件在所选文件夹内的相对路径
+			const token = await this.getToken(false, false).catch(e => {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[迅雷云盘] 获取令牌失败");
+			});
+			const headers = {
+				"Authorization": `${token.credentials?.token_type} ${token.credentials?.access_token}`,
+				"Content-Type": "application/json",
+				"X-Captcha-Token": token.captcha.token,
+				"X-Device-Id": token.device_id
+			};
+			const files = [];
+			let pageToken = "";
+			do {
+				const url = `${config.$xunlei.api.listFiles}?parent_id=${folderId}&limit=100${pageToken ? "&page_token=" + encodeURIComponent(pageToken) : ""}`;
+				const res = await base.get(url, headers).catch(e => {
+					throw new Error(e?.message || e || "[迅雷云盘] 列出文件夹内容失败");
+				});
+				for (const item of (res?.files || [])) {
+					if (item.kind === "drive#folder") {
+						files.push(...await this.listFolderFiles(item.id, prefix ? `${prefix}/${item.name}` : item.name));
+					} else if (item.kind === "drive#file") {
+						item.folderPath = prefix;
+						files.push(item);
+					}
+				}
+				pageToken = res?.next_page_token || "";
+			} while (pageToken);
+			return files;
+		},
 		async getLink() {
-			const selects = this.getSelectedList();
+			let selects = this.getSelectedList();
 			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
-			if (selects.every(item => item.kind !== "drive#file")) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 			if (temp.page === "home") {
+				// 展开选中的文件夹：递归列出其中的全部文件，并记录相对路径供推送下载器时创建目录
+				if (selects.some(item => item.kind === "drive#folder")) {
+					$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+					$doc.find(".loading-popup .swal2-html-container").html(`<div>正在解析选中的文件夹~</div>`);
+					const expanded = [];
+					for (const item of selects) {
+						if (item.kind === "drive#folder") {
+							expanded.push(...await this.listFolderFiles(item.id, item.name).catch(e => {
+								if (e instanceof Error) throw e;
+								throw new Error(e?.message || e || "[迅雷云盘] 解析文件夹失败");
+							}));
+						} else {
+							expanded.push(item);
+						}
+					}
+					if (!expanded.length) throw new Error("提示：<br/>所选文件夹里没有文件哦~");
+					selects = expanded;
+				}
 				const batchSize = 15;
 				let proc = 0;
 				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
@@ -7652,7 +7883,8 @@ button.downloadSubtitle:disabled {
 					name: v => v.name,
 					size: v => v.size,
 					link: v => v.downloadUrl,
-					morror: v => base.getMirrorList(v, config.$xunlei.api.mirror),
+					path: v => v.folderPath || "",
+					mirror: v => base.getMirrorList(v, config.$xunlei.api.mirror),
 				},
 				headers: {},
 				convert: {},
