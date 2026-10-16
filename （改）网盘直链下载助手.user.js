@@ -817,6 +817,31 @@
 		},
 
 		/**
+		 * HTML 文本与属性转义
+		 * @author hiuyt
+		 * @description 转义动态文本，避免文件名等内容被解析为 HTML。
+		 */
+		escapeHTML(value) {
+			return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+		},
+
+		/**
+		 * 命令行参数引用
+		 * @author hiuyt
+		 * @description 按所选终端引用完整参数，拒绝不能安全表示的 CMD 参数。
+		 */
+		quoteArgument(value, terminal = base.getValue("setting_curl_terminal")) {
+			value = String(value);
+			if (/[\0\r\n]/.test(value)) throw new Error("命令行参数不能包含空字符或换行。");
+			if (terminal === "wc") {
+				if (/["%!]/.test(value)) throw new Error("参数包含 CMD 无法安全引用的字符，请切换到 PowerShell 或 Linux/macOS 终端。");
+				return '"' + value.replace(/(\\+)$/, "$1$1") + '"';
+			}
+			if (terminal === "wp") return "'" + value.replace(/['\u2018\u2019]/g, char => char + char) + "'";
+			return "'" + value.replace(/'/g, "'\"'\"'") + "'";
+		},
+
+		/**
 		 * Cookie 标准化
 		 * @author hmjz100
 		 * @description 将 Cookie 或 Set-Cookie 解析为统一的键值对对象
@@ -1191,7 +1216,7 @@
 					this.download.taskCount++; // 任务进入
 
 					try {
-						const finalHead = await base.getFinal(url, headers, false, false).catch(reject);
+						const finalHead = await base.getFinal(url, { ...headers, Range: "bytes=0-0" }, true, false).catch(reject);
 						if (!finalHead) return;
 						url = finalHead.finalUrl;
 
@@ -1213,12 +1238,12 @@
 						if (!(finalHead.status >= 200 && finalHead.status < 400)) return reject(finalHead);
 						if (finalHead.status == 204 && finalHead.statusText === "IDM") return reject(finalHead);
 
-						const supportRange = finalHead.status == 206 && (responseHeaders?.["Accept-Ranges"]?.includes("bytes") || responseHeaders?.["Content-Range"]?.includes("bytes"));
+						const supportRange = finalHead.status === 206 && responseHeaders?.["Content-Range"] === `bytes 0-0/${size}`;
 
-						if (!!supportRange || size > 0) {
+						if (supportRange) {
 							base.console.info(`【LinkSwift】Download(Start)\n文件名称：${extra.name}\n断点续传：支持`);
 
-							const maxRetry = extra.retry || 10;
+							const maxRetry = extra.retry ?? 10;
 							let index = 0;
 							let offset = 0;
 
@@ -1302,8 +1327,9 @@
 													onload: (load) => {
 														status.requests.delete(xhr);
 														if (load.status == 204 && load.statusText === "IDM") return j(load);
-														if (load.status >= 200 && load.status < 300) s(load.response);
-														else j(load);
+														const range = base.standHeaders(load.responseHeaders, false, false)["Content-Range"];
+														if (load.status !== 206 || range !== `bytes ${start}-${end}/${size}` || load.response?.byteLength !== _size) return j(new Error("服务器返回的文件分片不完整或范围不匹配。"));
+														s(load.response);
 													},
 													onerror: (error) => {
 														status.requests.delete(xhr);
@@ -1442,6 +1468,7 @@
 								},
 								onload: (load) => {
 									if (status.aborted) return;
+									if (load.status !== 200 || load.response?.size !== size) return reject(new Error("服务器返回的文件不完整或状态异常。"));
 									if (typeof extra?.onProgress === "function") extra.onProgress({
 										progress: 100,
 										loaded: size,
@@ -3289,10 +3316,10 @@
 					const name = nameEl ? nameEl.textContent : "";
 					const sizeText = sizeEl ? sizeEl.textContent : "";
 
-					html = `<span>${name}</span>`;
+					html = `<span>${base.escapeHTML(name)}</span>`;
 					if (sizeText) {
 						dual = true;
-						html += `<span style="background-color:${temp.color}">${sizeText}</span>`;
+						html += `<span style="background-color:${temp.color}">${base.escapeHTML(sizeText)}</span>`;
 					}
 				}
 
@@ -5029,30 +5056,35 @@ button.downloadSubtitle:disabled {
 				const subType = isAll ? _type.replace(/^all\.file\./, "") : _type.replace(/^file\./, "");
 				const indices = isAll ? files.map((v, i) => i).filter(i => !get.dir(files[i])) : [index];
 
-				// 按子类型生成每行内容（每行一个）
-				const lines = [];
-				for (const i of indices) {
-					const file = files[i];
-					const link = get.link(file);
-					const name = get.name(file);
-					let line = "";
-					switch (subType) {
-						case "link": line = link; break;
-						case "name": line = name; break;
-						case "cmd.curl": line = download.tools.convertTo.curl(link, name, headers); break;
-						case "cmd.aria2": line = download.tools.convertTo.aira2(link, name, headers); break;
-						case "cmd.bitcomet": line = download.tools.convertTo.bitcomet(link, name, headers); break;
-						default: break;
+				try {
+					// 按子类型生成每行内容（每行一个）
+					const lines = [];
+					for (const i of indices) {
+						const file = files[i];
+						const link = get.link(file);
+						const name = get.name(file);
+						let line = "";
+						switch (subType) {
+							case "link": line = link; break;
+							case "name": line = name; break;
+							case "cmd.curl": line = download.tools.convertTo.curl(link, name, headers); break;
+							case "cmd.aria2": line = download.tools.convertTo.aira2(link, name, headers); break;
+							case "cmd.bitcomet": line = download.tools.convertTo.bitcomet(link, name, headers); break;
+							default: break;
+						}
+						if (line) lines.push(line);
 					}
-					if (line) lines.push(line);
-				}
 
-				if (lines.length) {
-					await base.setClipboard(lines.join("\r\n"));
-					target.html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"/></svg> 复制成功`).animate({ opacity: "0.5" }, "slow");
-					await base.sleep(2000);
+					if (lines.length) {
+						await base.setClipboard(lines.join("\r\n"));
+						target.html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"/></svg> 复制成功`).animate({ opacity: "0.5" }, "slow");
+						await base.sleep(2000);
+					}
+				} catch (error) {
+					message.error(error.message);
+				} finally {
+					target.removeData("state").css("opacity", "").html(originalHtml);
 				}
-				target.removeData("state").css("opacity", "").html(originalHtml);
 			});
 		},
 		/**
@@ -5070,7 +5102,6 @@ button.downloadSubtitle:disabled {
 			if (!keepDowning) base._resetAllData(true);
 
 			const content = $(`<div><div class="${mount} main"></div><div class="${mount} extra"></div></div>`);
-			let allLink = [];
 			files.forEach((v, i) => {
 				if (get.dir(v)) return;
 				const name = get.name(v);
@@ -5079,15 +5110,14 @@ button.downloadSubtitle:disabled {
 				const mirrors = base.isType(get.mirror) !== "undefined" ? get.mirror(get.link(v)) : undefined;
 				if (!link || !link.includes("http")) {
 					content.find(`.${mount}.main`).append(`<div class="item">
-						<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+						<div class="name ${mount} tip" data-size="${size}"><div class="name">${base.escapeHTML(name)}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
-						<div class="message">${link ? link : "获取下载地址失败，刷新网页后再试试吧~"}</div>
+						<div class="message">${link ? base.escapeHTML(link) : "获取下载地址失败，刷新网页后再试试吧~"}</div>
 					</div>`)
 				} else {
 					if (temp.mode === "api") {
-						allLink.push(link);
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}" data-link="${link}" data-name="${name}" data-size="${size}">
-							<div class="name ${mount} tip"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}" data-link="${base.escapeHTML(link)}" data-name="${base.escapeHTML(name)}" data-size="${size}">
+							<div class="name ${mount} tip"><div class="name">${base.escapeHTML(name)}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
 							<button action="download" type="enhance" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>增强下载 (Beta)</button>
 
@@ -5111,18 +5141,15 @@ button.downloadSubtitle:disabled {
 					}
 					if (temp.mode === "curl") {
 						const finalink = download.tools.convertTo.curl(link, name, headers);
-						allLink.push(finalink);
 						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+							<div class="name ${mount} tip" data-size="${size}"><div class="name">${base.escapeHTML(name)}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
-							<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${name} 下载命令行</a>
+							<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}">${base.escapeHTML(finalink)}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${base.escapeHTML(name)} 下载命令行</a>
 						</div>`);
 					}
 					if (temp.mode === "aria2") {
-						const finalink = download.tools.convertTo.aira2(link, name, headers);
-						allLink.push(finalink);
 						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+							<div class="name ${mount} tip" data-size="${size}"><div class="name">${base.escapeHTML(name)}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
 							<button action="sendto" type="aria2" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 Aria2 下载器</span></button>
 
@@ -5131,9 +5158,8 @@ button.downloadSubtitle:disabled {
 					}
 					if (temp.mode === "bitcomet") {
 						const finalink = download.tools.convertTo.bitcomet(link, name, headers);
-						allLink.push(finalink);
 						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
-							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+							<div class="name ${mount} tip" data-size="${size}"><div class="name">${base.escapeHTML(name)}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
 							<a href="${finalink}" class="link ${mount} btn default mini tip" data-title="${config.base.dom.method.bitcomet.normal}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>使用 BC 地址下载</a>
 
@@ -5145,14 +5171,13 @@ button.downloadSubtitle:disabled {
 					if (temp.mode === "abdm") {
 						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
 
-							<div class="${mount} name tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
+							<div class="${mount} name tip" data-size="${size}"><div class="name">${base.escapeHTML(name)}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
 							<button action="sendto" type="abdm" class="link ${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送地址到 ABDM 下载器</span></button>
 						</div>`);
 					}
 				}
 			});
-			allLink = (allLink ? allLink.join("\r\n") : "")
 			if (temp.mode === "api") {
 				const rpc = base.getValue("setting_idm_rpc");
 				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="download.enhance" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载 (Beta)</button>
@@ -5257,15 +5282,13 @@ button.downloadSubtitle:disabled {
 					if (headers && base.isType(headers) === "object") {
 						const parts = [];
 						for (const [key, value] of Object.entries(headers)) {
-							// 转义双引号以防止命令行注入/语法错误
-							const safeValue = String(value).replace(/"/g, '\\"');
-							parts.push(`-H "${key}: ${safeValue}"`);
+							parts.push(`-H ${base.quoteArgument(`${key}: ${value}`)}`);
 						}
 						if (parts.length > 0) {
 							headerStr = " " + parts.join(" ");
 						}
 					}
-					return `${terminal !== "wp" ? "curl" : "curl.exe"} -L -C - "${link}" -o "${filename}"${headerStr}`;
+					return `${terminal !== "wp" ? "curl" : "curl.exe"} -L -C - -o ${base.quoteArgument(filename)}${headerStr} -- ${base.quoteArgument(link)}`;
 				},
 				/**
 				 * 生成 Aria2 下载命令
@@ -5284,15 +5307,13 @@ button.downloadSubtitle:disabled {
 					if (headers && base.isType(headers) === "object") {
 						const parts = [];
 						for (const [key, value] of Object.entries(headers)) {
-							// 转义内部双引号
-							const safeValue = String(value).replace(/"/g, '\\"');
-							parts.push(`--header="${key}: ${safeValue}"`);
+							parts.push(`--header=${base.quoteArgument(`${key}: ${value}`)}`);
 						}
 						if (parts.length > 0) {
 							headerStr = " " + parts.join(" ");
 						}
 					}
-					return `aria2c "${link}" --out "${filename}"${headerStr}`;
+					return `aria2c --out ${base.quoteArgument(filename)}${headerStr} -- ${base.quoteArgument(link)}`;
 				},
 				/**
 				 * 生成 BC 协议下载地址
@@ -5336,7 +5357,7 @@ button.downloadSubtitle:disabled {
 				async idm(link, filename, filesize, headers = {}) {
 					const rpc = base.getValue("setting_idm_rpc");
 					if (!this.idm.lock) this.idm.lock = Promise.resolve();
-					return this.idm.lock = this.idm.lock.then(async () => {
+					return this.idm.lock = this.idm.lock.catch(() => { }).then(async () => {
 						headers = base.standHeaders(headers);
 						if (!this.idm.seq) this.idm.seq = 1;
 						const seq = this.idm.seq;
@@ -5387,7 +5408,7 @@ button.downloadSubtitle:disabled {
 				 */
 				async aria2(link, filename, headers) {
 					if (!this.aria2.lock) this.aria2.lock = Promise.resolve();
-					return this.aria2.lock = this.aria2.lock.then(async () => {
+					return this.aria2.lock = this.aria2.lock.catch(() => { }).then(async () => {
 						headers = base.standHeaders(headers);
 						const header_parts = [];
 						for (const [key, value] of Object.entries(headers)) {
@@ -5433,7 +5454,7 @@ button.downloadSubtitle:disabled {
 				 */
 				async bitcomet(link, filename, headers, config) {
 					if (!this.bitcomet.lock) this.bitcomet.lock = Promise.resolve();
-					return this.bitcomet.lock = this.bitcomet.lock.then(async () => {
+					return this.bitcomet.lock = this.bitcomet.lock.catch(() => { }).then(async () => {
 						headers = base.standHeaders(headers);
 						const list = base.getValue("setting_bitcomet_rpc");
 						const selected = list.find(i => i.default);
@@ -5485,7 +5506,7 @@ button.downloadSubtitle:disabled {
 				 */
 				async abdm(link, filename, headers) {
 					if (!this.abdm.lock) this.abdm.lock = Promise.resolve();
-					return this.abdm.lock = this.abdm.lock.then(async () => {
+					return this.abdm.lock = this.abdm.lock.catch(() => { }).then(async () => {
 						headers = base.standHeaders(headers);
 						const list = base.getValue("setting_abdm_rpc");
 						const selected = list.find(i => i.default);
@@ -6250,7 +6271,7 @@ button.downloadSubtitle:disabled {
 				}
 
 				if (base.isType(res.list) === "array") Object.assign(item, res.list[0]);
-				if (base.isType(res.list) === "string") item.dlink = `<span>获取下载地址失败，服务器说：此文件大小超过可获取限制，需要<b>保存到网盘</b>后于网盘中下载。</span>`;
+				if (base.isType(res.list) === "string") item.dlink = "获取下载地址失败，服务器说：此文件大小超过可获取限制，需要保存到网盘后于网盘中下载。";
 				temp.glinks.push({ "id": item.fs_id, "expires": (Date.now() + 4 * 60 * 60 * 1000), "data": res.list[0] });
 
 				proc++
