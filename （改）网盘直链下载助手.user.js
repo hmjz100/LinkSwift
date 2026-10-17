@@ -6181,7 +6181,7 @@ button.downloadSubtitle:disabled {
 				}
 
 				batch.forEach(_item => {
-					const item = res.list.find(li => li.fs_id == _item.fs_id);
+					const item = res?.list?.find?.(li => li.fs_id == _item.fs_id);
 					if (item) {
 						Object.assign(_item, item);
 						temp.glinks.push({ id: _item.fs_id, expires: (Date.now() + 4 * 60 * 60 * 1000), data: item });
