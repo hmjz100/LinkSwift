@@ -2101,7 +2101,7 @@
 			if (valueType === "array") {
 				const defaultItem = rawValue.find(item => item.default === true);
 				if (defaultItem) base.setValue("setting_idm_rpc", defaultItem.id);
-			} else if (valueType === "text" && typeof rawValue === "string" && rawValue.trim().startsWith("[")) {
+			} else if (valueType === "string" && rawValue.trim().startsWith("[")) {
 				try {
 					const parsed = JSON.parse(rawValue);
 					if (Array.isArray(parsed)) {
