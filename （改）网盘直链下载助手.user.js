@@ -5334,7 +5334,7 @@ button.downloadSubtitle:disabled {
 			sendTo: {
 				/**
 				 * 通过 NDM 官方扩展使用的本机 WebSocket 协议发送下载任务。
-				 * @author OpenAI Codex
+				 * @author um
 				 * @description 协议来源：NDM Firefox 扩展 1.9.9 的 bg.js；客户端不提供逐任务确认。
 				 * @param {String} link - 下载地址
 				 * @param {String} filename - 文件名
