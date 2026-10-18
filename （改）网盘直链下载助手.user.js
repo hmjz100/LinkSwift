@@ -932,7 +932,46 @@
 		xmlHttpRequest(option) {
 			const xmlHttpRequest = (typeof GM_xmlhttpRequest === "function") ? GM_xmlhttpRequest : (typeof GM?.xmlHttpRequest === "function") ? GM.xmlHttpRequest : null;
 			if (!xmlHttpRequest || base.isType(xmlHttpRequest) !== "function") throw new Error("GreaseMonkey 兼容 XMLHttpRequest 不可用。");
-			return xmlHttpRequest({ withCredentials: true, ...option });
+			// 探针：包装所有回调并登记心跳；管理器（如 Via）对请求始终不回调时由看门狗兜底中止，避免 Promise 永久挂起、整页卡死
+			// 只有“发出后连续 60 秒无任何回调（含 progress/readystatechange）”才判定为悬挂，正常慢速传输不受影响
+			const probeId = `r${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+			const detail = `${option.method || "GET"} ${option.url}`;
+			let handle = null;
+			let watchdog = null;
+			const armWatchdog = () => {
+				clearTimeout(watchdog);
+				watchdog = setTimeout(() => {
+					probe.log("xhr-watchdog", `请求 ${probeId} ${detail} 发出后连续 60 秒无任何回调，已中止（若频繁出现，说明脚本管理器的跨域请求实现未回调）`);
+					probe.untrack(probeId);
+					try { handle?.abort?.(); } catch { }
+				}, 60 * 1000);
+			};
+			const wrapped = { ...option };
+			const terminal = new Set(["onabort", "onerror", "onload", "onloadend", "ontimeout"]);
+			const wrapCallback = (name) => {
+				const original = option[name];
+				wrapped[name] = (arg) => {
+					if (terminal.has(name)) clearTimeout(watchdog); // 终态回调：请求已结束，看门狗退役
+					else armWatchdog(); // 过程回调（progress/readystatechange/loadstart）：仅续期
+					probe.untrack(probeId); // 收到任何回调即视为请求“活着”，撤销悬挂标记
+					if (typeof original === "function") return original(arg);
+				};
+			};
+			["onabort", "onerror", "onload", "onloadend", "ontimeout", "onprogress", "onreadystatechange", "onloadstart"].forEach(wrapCallback);
+			probe.track(probeId, detail);
+			probe.log("xhr-open", detail);
+			armWatchdog();
+			try {
+				handle = xmlHttpRequest({ withCredentials: true, ...wrapped });
+				const abortOriginal = handle?.abort?.bind(handle);
+				if (abortOriginal) handle.abort = (...args) => { clearTimeout(watchdog); probe.untrack(probeId); return abortOriginal(...args); };
+			} catch (e) {
+				clearTimeout(watchdog);
+				probe.untrack(probeId);
+				probe.log("xhr-throw", `${detail} :: ${e?.message || e}`);
+				throw e;
+			}
+			return handle;
 		},
 
 		/**
@@ -2671,6 +2710,15 @@
 			debugInfo += `<span>以下内容均为脚本自检信息<br/>本页面仅作为调试使用<span>`;
 			debugInfo += `<label class="${mount} setting-item"><div>[外] 管理器名称</div>${info.mhandler ? info.mhandler : "无法获取"}</label>`;
 			debugInfo += `<label class="${mount} setting-item"><div>[外] 管理器版本</div>${info.mversion ? info.mversion : "无法获取"}</label>`;
+			// 探针日志：直接在调试面板里展示最近 50 条，方便 Via 等移动端无控制台的环境查看
+			const probeLogs = probe.dump().slice(-50);
+			if (probeLogs.length) {
+				debugInfo += `<label class="${mount} setting-item"><div>探针日志（最近 ${probeLogs.length} 条，完整导出请在控制台执行 LinkSwift_probe.dump()）</div></label>`;
+				debugInfo += `<div style="max-height:260px;overflow-y:auto;font-size:11px;line-height:1.5;word-break:break-all;background:rgba(0,0,0,.35);color:#eee;border-radius:6px;padding:8px;">`;
+				for (const item of probeLogs) debugInfo += `<div>[${item.t}] ${probe.escape(item.event)} ${probe.escape(item.detail || "")}</div>`;
+				debugInfo += `</div>`;
+				debugInfo += `<label class="${mount} setting-item"><div>探针日志</div><button class="${mount} btn default listener-probe-clear"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"></use></svg><span>清空日志</span></button></label>`;
+			}
 			debugInfo += `<label class="${mount} setting-item"><div>[内] 脚本挂载点</div>${mount ? `${mount.toLowerCase()}.${mount}` : "无法获取"}</label>`;
 			debugInfo += `<label class="${mount} setting-item"><div>[外] 脚本名称</div>${info.name ? info.name : "无法获取"}</label>`;
 			debugInfo += `<label class="${mount} setting-item"><div>[外] 脚本作者</div>${info.author ? info.author : "无法获取"}</label>`;
@@ -3560,6 +3608,10 @@
 			$doc.on("click", ".listener-open-beautify", () => {
 				base.showBeautify();
 			});
+			$doc.on("click", ".listener-probe-clear", () => {
+				probe.clear();
+				message.success("探针日志已清空~");
+			});
 			$doc.on("click", ".listener-unregister", async (e) => {
 				e.preventDefault();
 				message.warning("正在“注入”设置项目...");
@@ -3598,6 +3650,7 @@
 				console.info(e, temp, base.isType(temp.main?.getLink));
 				if (!temp.mode) return;
 				if (!base.isType(temp.main?.getLink).includes("function")) return;
+				probe.log("getlink-start", `mode=${temp.mode}`);
 				Swal.fire({
 					...temp.swalDefault,
 					showConfirmButton: false,
@@ -3618,6 +3671,7 @@
 					willOpen: async () => {
 						Swal.showLoading();
 						await temp.main.getLink().catch(e => {
+							probe.log("getlink-error", (e instanceof Error) ? `${e.message}\n${e.stack || ""}` : String(e));
 							// 关闭加载弹窗：弹窗本身禁止点击外部与 Esc 关闭，出错时不关闭会永久锁住页面滚动
 							Swal.close();
 							// 错误信息和堆栈
@@ -5603,10 +5657,11 @@ button.downloadSubtitle:disabled {
 				 * @param {Object} [config] - 自定义参数（可选）；键 folderPath 为云盘内的相对文件夹路径，会在配置的存储路径下创建对应子目录；其余键值对原样写入请求
 				 * @returns {Promise<"success"|"fail">} 发送态结果
 				 */
-				async bitcomet(link, filename, headers, config) {
-					if (!this.bitcomet.lock) this.bitcomet.lock = Promise.resolve();
-					return this.bitcomet.lock = this.bitcomet.lock.then(async () => {
-						headers = base.standHeaders(headers);
+					async bitcomet(link, filename, headers, config) {
+						if (!this.bitcomet.lock) this.bitcomet.lock = Promise.resolve();
+						return this.bitcomet.lock = this.bitcomet.lock.then(async () => {
+							probe.log("bitcomet-send", `${filename} :: ${String(link).slice(0, 120)}`);
+							headers = base.standHeaders(headers);
 						const list = base.getValue("setting_bitcomet_rpc");
 						const selected = list.find(i => i.default);
 						const rpc = {
@@ -7869,17 +7924,18 @@ button.downloadSubtitle:disabled {
 						if (e instanceof Error) throw e;
 						throw new Error(e?.message || e || "[迅雷云盘] 获取下载地址失败");
 					});
-					res.forEach(val => {
-						selects[val.index].downloadUrl = val.downloadUrl;
-					});
-					await base.sleep(1000);
+						res.forEach(val => {
+							selects[val.index].downloadUrl = val.downloadUrl;
+						});
+						await base.sleep(1000);
+					}
+				} else {
+					throw new Error("提示：<br/>页面错误~");
 				}
-			} else {
-				throw new Error("提示：<br/>页面错误~");
-			}
-			temp.files = [selects, {
-				get: {
-					dir: v => v.kind === "drive#folder",
+				probe.log("getlink-done", `共 ${selects.length} 个文件，打开结果弹窗`);
+				temp.files = [selects, {
+					get: {
+						dir: v => v.kind === "drive#folder",
 					name: v => v.name,
 					size: v => v.size,
 					link: v => v.downloadUrl,
@@ -9244,9 +9300,88 @@ button.downloadSubtitle:disabled {
 		},
 	};
 
+	/**
+	 * 卡死探针
+	 * @author hmjz100
+	 * @description 排查 Via 等管理器下点击解析后整页卡死（后续网络请求与新建标签页全部无响应、需重启浏览器）的问题。
+	 * 控制台日志在进程被杀后会丢失，因此将日志与请求心跳同步写入 localStorage（持久化，重启后仍在）。
+	 * 重启后在任意同源页面控制台执行 `LinkSwift_probe.dump()` 导出日志，`LinkSwift_probe.clear()` 清空。
+	 * 心跳原理：每个 GM_XHR 发出时登记，收到回调时销毁；一个 1 秒的定时器持续刷新时间戳并报告未回调请求的悬挂时长。
+	 * 若日志里心跳时间戳停止而页面时间戳继续，说明主线程未被阻塞、是请求回调丢失；若两者同时停止，说明主线程被同步阻塞。
+	 */
+	const probe = {
+		key: "LinkSwift_probe_log",
+		beatKey: "LinkSwift_probe_beat",
+		max: 500,
+		enabled: true,
+		timer: null,
+		log(event, detail) {
+			if (!this.enabled) return;
+			try {
+				const list = JSON.parse(localStorage.getItem(this.key) || "[]");
+				list.push({ t: new Date().toISOString(), page: location.host + location.pathname, event, detail: detail === undefined ? "" : String(detail).slice(0, 500) });
+				while (list.length > this.max) list.shift();
+				localStorage.setItem(this.key, JSON.stringify(list));
+			} catch { }
+		},
+		track(id, note) {
+			if (!this.enabled) return;
+			try {
+				const map = JSON.parse(localStorage.getItem(this.beatKey) || "{}");
+				map[id] = { start: Date.now(), note: String(note || "").slice(0, 200) };
+				localStorage.setItem(this.beatKey, JSON.stringify(map));
+			} catch { }
+		},
+		untrack(id) {
+			if (!this.enabled) return;
+			try {
+				const map = JSON.parse(localStorage.getItem(this.beatKey) || "{}");
+				delete map[id];
+				localStorage.setItem(this.beatKey, JSON.stringify(map));
+			} catch { }
+		},
+		start() {
+			if (this.timer || !this.enabled) return;
+			this.timer = setInterval(() => {
+				// 页面时间戳：只要主线程活着就会持续刷新
+				localStorage.setItem("LinkSwift_probe_pagebeat", String(Date.now()));
+				try {
+					const map = JSON.parse(localStorage.getItem(this.beatKey) || "{}");
+					const now = Date.now();
+					for (const id in map) {
+						const age = now - map[id].start;
+						// 悬挂超过 15 秒的请求记一次（不重复刷屏，靠覆盖最后一条）
+						if (age > 15000) localStorage.setItem(`LinkSwift_probe_hang_${id}`, String(age));
+					}
+				} catch { }
+			}, 1000);
+		},
+		stop() {
+			if (this.timer) { clearInterval(this.timer); this.timer = null; }
+		},
+		escape(text) {
+			return String(text ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+		},
+		dump() {
+			try { return JSON.parse(localStorage.getItem(this.key) || "[]"); } catch { return []; }
+		},
+		clear() {
+			try {
+				localStorage.removeItem(this.key);
+				localStorage.removeItem(this.beatKey);
+				localStorage.removeItem("LinkSwift_probe_pagebeat");
+				for (const k of Object.keys(localStorage)) if (k.startsWith("LinkSwift_probe_hang_")) localStorage.removeItem(k);
+			} catch { }
+		}
+	};
+	try { unsafeWindow.LinkSwift_probe = probe; } catch { }
+
 	// 主代码
 	const main = {
 		async init() {
+			// 启动探针心跳：每秒刷新页面时间戳，供重启后判断卡死时主线程是否被同步阻塞
+			probe.log("page-init", `handler=${info.mhandler} ${info.mversion} v${info.version}`);
+			probe.start();
 			/**
 			 * 控制台输出
 			 * @author 油小猴
