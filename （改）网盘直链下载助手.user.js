@@ -2322,7 +2322,7 @@
 					</select>
 				</label>
 				<div class="curl" style="display:flex;justify-content:flex-end;"><a href="https://www.youxiaohou.com/zh-cn/curl.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg> cURL使用教程</a>，适用于 cURL 下载👆</div>
-				<div class="other" style="display:flex;justify-content:center;margin-top:20px"><button class="${mount} btn unregister danger tip" data-title="仅会清除已存储的百度令牌及夸克令牌，其余设置项目无影响，仍会保留"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>熄灭已经点亮的按钮*</span></button></div>
+				<div class="other" style="display:flex;justify-content:center;margin-top:20px;gap:10px;"><button class="${mount} btn unregister danger tip" data-title="仅会清除已存储的百度令牌及夸克令牌，其余设置项目无影响，仍会保留"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-x-mark"/></svg><span>熄灭已经点亮的按钮*</span></button><button class="${mount} btn listener-debuginfo default tip" data-title="查看脚本自检信息与卡死探针日志（用于排查解析卡死问题）"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>调试信息</span></button></div>
 			</div>`);
 			Swal.fire({
 				...temp.swalDefault,
@@ -3611,6 +3611,11 @@
 			$doc.on("click", ".listener-probe-clear", () => {
 				probe.clear();
 				message.success("探针日志已清空~");
+			});
+			// Via 等管理器不支持 GM_registerMenuCommand 时没有外部菜单入口，设置面板里的按钮是唯一调试入口
+			$doc.on("click", ".listener-debuginfo", (e) => {
+				e.preventDefault();
+				base.showDebug();
 			});
 			$doc.on("click", ".listener-unregister", async (e) => {
 				e.preventDefault();
