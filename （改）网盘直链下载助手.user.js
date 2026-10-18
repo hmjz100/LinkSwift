@@ -230,6 +230,7 @@
 						footer: `<p>适用于 <a href="https://www.youxiaohou.com/zh-cn/idm.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>IDM</a>，<a href="https://www.youxiaohou.com/zh-cn/ndm.html" target="_blank" class="pl-a" data-no-instant="1"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-link"></use></svg>NDM</a> 以及浏览器自带下载</p>`,
 						enhance: "通过脚本管理器的跨域请求功能下载文件多个分片，在内存聚合为 blob 地址后，下载文件。<br/><br/>此方法能够向服务器提供正确的请求头，可自动满足部分网盘的请求头要求，而无需手动设置；<br/>支持多线程、智能多分片，可在当前页面显示预估剩余时间、下载进度、速度；<br/><br/>浏览器对此方法的下载线程与文件大小（2GB 内，可能更小）以及系统内存有限制！<br/>下载超过限制的大文件时，进度可能不到 100% 就会导致浏览器卡顿！<br/>因此，非<b>必要情况（例如系统环境无法安装程序）</b>下，不建议使用此功能！",
 						normal: "通过浏览器直接访问下载地址来下载文件。<br/><br/>此方法无法向服务器提供正确的请求头！所以在服务器对请求头有限制的情况下可能会失败！<br/>点击后需等待浏览器弹出提示才可点击下个下载，否则只会下载后者。适用于支持 iframe 的浏览器",
+						ndm: "将下载地址、文件名及请求头发送到本机 Neat Download Manager。<br/><br/>请先启动 NDM，并开启浏览器集成。若连接被浏览器或网站策略阻止，可使用复制地址或直接下载配合 NDM 官方扩展。<br/><br/>发送完成后请在 NDM 中确认任务；实际下载仍受网盘权限和客户端支持的请求头限制。",
 						idm: "通过从 IDM 扩展的捕获方法，将下载地址“捕获”给 IDM 使其弹框；<br/><br/>此方法能够向服务器提供正确的请求头，可自动满足部分网盘的请求头要求，而无需手动设置；<br/>理论上仅适用于版本较新的 IDM，<b>使用前请确保您已经配置好 IDM 服务参数。<b>"
 					},
 					aria2: {
@@ -3955,7 +3956,7 @@ body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) ::-webkit-scrollbar
 	margin-top: 1.25em;
 	padding: 8px 6px
 }
-.${mount}.extra>.${mount}.btn[action="all"]:not([type*="idm"],[type*="bitcomet"]),
+.${mount}.extra>.${mount}.btn[action="all"]:not([type*="idm"],[type*="ndm"],[type*="bitcomet"]),
 .${mount}.extra>.${mount}.btn[action="copy"][type*="curl"],
 .${mount}.extra>.${mount}.btn[action="copy"][type*="bitcomet"] {
 	flex: 1
@@ -4863,7 +4864,7 @@ button.downloadSubtitle:disabled {
 						const $downing = () => $(`.${mount}.main .item[data-index="${index}"] .downing`);  // 通过 index 实时查找 downing 元素（兼容 DOM 重建后的异步回调）
 						temp.downing[index] = { status: "downloading", progress: 0, text: "正在加载..." };  // 记录下载状态，供 generateDOM 重建后恢复
 						// UI 初始化：隐藏按钮、显示进度条
-						item.find(`[action="download"][type="enhance"], [action="download"][type="normal"], [action="sendto"][type="idm"], [action="copy"]`).hide();
+						item.find(`[action="download"][type="enhance"], [action="download"][type="normal"], [action="sendto"][type="idm"], [action="sendto"][type="ndm"], [action="copy"]`).hide();
 						$downing().find('[type="stop"]').show();
 						$downing().show();
 						base.download(link, headers, {
@@ -4916,7 +4917,7 @@ button.downloadSubtitle:disabled {
 						item.find(`[action="download"][type="enhance"], [action="download"][type="normal"]`).show().removeData("state");
 						downing.hide();
 						downing.find('[type="stop"], [type="back"]').hide();
-						item.find(`[action="sendto"][type="idm"], [action="copy"]`).show();
+						item.find(`[action="sendto"][type="idm"], [action="sendto"][type="ndm"], [action="copy"]`).show();
 						break;
 					}
 					default: break;
@@ -4948,6 +4949,7 @@ button.downloadSubtitle:disabled {
 				try {
 					switch (type) {
 						case "idm": res = await download.tools.sendTo.idm(link, name, size, headers); break;
+						case "ndm": res = await download.tools.sendTo.ndm(link, name, size, headers); break;
 						case "aria2": res = await download.tools.sendTo.aria2(link, name, headers); break;
 						case "bitcomet": res = await download.tools.sendTo.bitcomet(link, name, headers); break;
 						case "abdm": res = await download.tools.sendTo.abdm(link, name, headers); break;
@@ -4960,10 +4962,12 @@ button.downloadSubtitle:disabled {
 					base.console.error(`【LinkSwift】Error\n${msg}\n堆栈：\n${consoleStack}`);
 					res = "fail";
 				}
-				if (res === "success") {
+				if (res === "sent") {
+					target.removeClass("danger success").addClass("success").text("已发送，请在 NDM 中确认").animate({ opacity: "0.5" }, "slow");
+				} else if (res === "success") {
 					target.removeClass("danger success").addClass("success").html(`<svg class="pl-icon"><use xlink:href="#pl-icon-fa-check"></use></svg> 发送成功啦~`).animate({ opacity: "0.5" }, "slow");
 				} else {
-					target.addClass("danger").text("发送失败！请检查网络及配置").animate({ opacity: "0.5" }, "slow");
+					target.addClass("danger").text(type === "ndm" ? "发送失败，请检查 NDM 是否启动、浏览器集成及连接权限" : "发送失败！请检查网络及配置").animate({ opacity: "0.5" }, "slow");
 				}
 				await base.sleep(3000);
 				target.removeClass("danger success").removeData("state").html(originalHtml).css("opacity", "");
@@ -5095,6 +5099,8 @@ button.downloadSubtitle:disabled {
 
 							<button action="sendto" type="idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 IDM (Beta)</span></button>
 
+							<button action="sendto" type="ndm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.ndm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg><span>推送至 NDM (Beta)</span></button>
+
 							<button action="copy" type="file.name" class="${mount} btn success mini tip" data-title="${config.base.dom.copy.name}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制名称</button>
 
 							<button action="copy" type="file.link" class="${mount} btn warning mini tip" data-title="${config.base.dom.copy.link}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制地址</button>
@@ -5157,7 +5163,9 @@ button.downloadSubtitle:disabled {
 				const rpc = base.getValue("setting_idm_rpc");
 				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="download.enhance" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载 (Beta)</button>
 				
-					<button action="all" type="sendto.idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 IDM (Beta)</button>`);
+					<button action="all" type="sendto.idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 IDM (Beta)</button>
+
+					<button action="all" type="sendto.ndm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.ndm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 NDM (Beta)</button>`);
 
 				content.find(`.${mount}.extra`).append(`<button action="settings" type="idm" class="${mount} btn warning mini tip" data-title="${rpc}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改 IDM 服务参数</button>`);
 
@@ -5212,7 +5220,7 @@ button.downloadSubtitle:disabled {
 			const restoreDowning = (idx, st) => {
 				const $item = content.find(`.item[data-index="${idx}"]`);
 				if (!$item.length) return;
-				$item.find(`[action="download"][type="enhance"], [action="download"][type="normal"], [action="sendto"][type="idm"], [action="copy"]`).hide();
+				$item.find(`[action="download"][type="enhance"], [action="download"][type="normal"], [action="sendto"][type="idm"], [action="sendto"][type="ndm"], [action="copy"]`).hide();
 				$item.find(".downing").show();
 				if (st.status === "downloading") {
 					$item.find('[type="stop"]').show();
@@ -5324,6 +5332,67 @@ button.downloadSubtitle:disabled {
 				},
 			},
 			sendTo: {
+				/**
+				 * 通过 NDM 官方扩展使用的本机 WebSocket 协议发送下载任务。
+				 * @author OpenAI Codex
+				 * @description 协议来源：NDM Firefox 扩展 1.9.9 的 bg.js；客户端不提供逐任务确认。
+				 * @param {String} link - 下载地址
+				 * @param {String} filename - 文件名
+				 * @param {Number} filesize - 文件大小
+				 * @param {Object} [headers] - 网盘要求的请求头
+				 * @returns {Promise<"sent">} 数据已发送，不表示任务已被客户端接受
+				 */
+				async ndm(link, filename, filesize, headers = {}) {
+					const send = async () => {
+						const clean = value => String(value ?? "").replace(/[\r\n\0]/g, " ");
+						const url = new URL(link);
+						if (!["http:", "https:"].includes(url.protocol)) throw new Error("NDM 仅支持 HTTP(S) 下载地址");
+						const name = clean(filename);
+						const normalized = base.standHeaders(headers);
+						const fields = ["1:GET", `2:${url.href}`, "6:normal", `4:${name}`, `5:${clean(location.href)}`,
+							`7:${Number.isFinite(Number(filesize)) && Number(filesize) >= 0 ? Number(filesize) : 0}`,
+							"8:application/octet-stream",
+							`Content-Disposition: attachment; filename="${name.replace(/["\\]/g, "_")}"; filename*=UTF-8''${encodeURIComponent(name).replace(/['()*]/g, c => "%" + c.charCodeAt(0).toString(16).toUpperCase())}`];
+						for (const [key, value] of Object.entries(normalized)) {
+							// 数字字段是 NDM 控制指令；不允许请求头覆盖协议元数据。
+							if (!/^[A-Za-z][A-Za-z0-9-]*$/.test(key) || /^(content-disposition|content-length|host|connection)$/i.test(key)) continue;
+							fields.push(`${key}: ${clean(Array.isArray(value) ? value.join(key.toLowerCase() === "cookie" ? "; " : ", ") : value)}`);
+						}
+						const data = fields.join("\r\n") + "\r\n";
+						if (data.length > 118784 || new Blob([data]).size > 118784) throw new Error("NDM 请求超过客户端长度限制");
+						return new Promise((resolve, reject) => {
+							let socket, timer, poll, settled = false;
+							const finish = error => {
+								if (settled) return;
+								settled = true;
+								clearTimeout(timer);
+								clearInterval(poll);
+								if (socket) {
+									socket.onopen = socket.onclose = socket.onerror = null;
+									try { socket.close(); } catch { }
+								}
+								error ? reject(error) : resolve("sent");
+							};
+							try {
+								socket = new window.WebSocket("ws://127.0.0.1:10007/download", "neatextension.v1");
+								timer = setTimeout(() => finish(new Error("NDM 连接或发送超时")), 15000);
+								socket.onerror = () => finish(new Error("无法连接 NDM，请检查客户端、浏览器集成及浏览器连接权限"));
+								socket.onclose = () => finish(new Error("NDM 在发送完成前关闭了连接"));
+								socket.onopen = () => {
+									try {
+										socket.send(data);
+										// 等待发送缓冲区排空；不将握手通知误当作任务确认。
+										poll = setInterval(() => { if (socket.bufferedAmount === 0) finish(); }, 50);
+									} catch (error) { finish(error); }
+								};
+							} catch (error) { finish(error); }
+						});
+					};
+					// 批量推送串行执行；前一个失败不会阻塞后续文件或重试。
+					const pending = (this.ndm.lock || Promise.resolve()).then(send);
+					this.ndm.lock = pending.catch(() => {});
+					return pending;
+				},
 				/**
 				 * 发送地址到 IDM 下载器
 				 * @author hmjz100
