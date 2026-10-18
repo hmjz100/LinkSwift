@@ -4759,6 +4759,7 @@ button.downloadSubtitle:disabled {
 		 * @param {String} footer - 对话框底部说明文字
 		 */
 		showMainDialog(title, html, footer) {
+			probe.log("dialog-render", `结果弹窗开始渲染，内容 ${String(html).length} 字符`);
 			Swal.fire({
 				...temp.swalDefault,
 				title,
@@ -4778,6 +4779,9 @@ button.downloadSubtitle:disabled {
 				allowOutsideClick: false,
 				allowEscapeKey: false,
 				allowEnterKey: false,
+				didOpen: () => {
+					probe.log("dialog-opened", `结果弹窗渲染完成`);
+				},
 				willClose: () => {
 					base._resetAllData();
 				},
@@ -5239,6 +5243,7 @@ button.downloadSubtitle:disabled {
 		 * @description 详见代码
 		 */
 		generateDOM(keepDowning = false) {
+			probe.log("dom-generate", `开始生成结果列表`);
 			const state = this.state(false);
 			if (!state) throw new Error("提示：<br/>配置解析失败~");
 			const { files, get, headers, dom } = state;
@@ -5320,8 +5325,13 @@ button.downloadSubtitle:disabled {
 					</div>`;
 				}
 				if (temp.mode === "bitcomet") {
-					const finalink = download.tools.convertTo.bitcomet(link, name, headers, null, mirrors ? String(mirrors).split("\n") : []);
+					// 迅雷等网盘的镜像列表可达数百条，全部塞进 href 会生成数十 KB 的 bc:// 地址，
+					// Via 等基于 WebView 的浏览器解析这种巨型自定义协议链接时会卡死整个浏览器（其余标签页全部无响应）
+					// 因此 href 只保留前 5 条镜像用于调起客户端，全量镜像仍可通过“复制”按钮获取
+					const hrefMirrors = mirrors ? String(mirrors).split("\n").slice(0, 5) : [];
+					const finalink = download.tools.convertTo.bitcomet(link, name, headers, null, hrefMirrors);
 					allLink.push(finalink);
+					probe.log("dom-bitcomet-row", `文件 ${i}：href ${finalink.length} 字符`);
 					return `<div class="item" data-index="${i}"${groupAttr}>
 						<div class="name ${mount} tip" data-size="${size}"><div class="name">${displayName}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
