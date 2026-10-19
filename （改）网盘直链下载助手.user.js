@@ -6167,28 +6167,30 @@ button.downloadSubtitle:disabled {
 
 				const res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
 
-				if (!res || res.errno !== 0 || !res.list) {
-					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
-					if (res.errno === 9019) {
+				if (!res || res.errno !== 0 || !Array.isArray(res.list)) {
+					if (res?.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
+					if (res?.errno === 9019) {
 						base.delValue("baidu_access_token");
 						throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
 					}
-					if (res.errno || res.errmsg) {
+					if (res?.errno || res?.errmsg) {
 						batch.forEach(item => item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`);
 					} else {
 						throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 					}
+				} else {
+					batch.forEach(_item => {
+						const item = res.list.find(li => li?.fs_id == _item.fs_id);
+						if (item?.dlink) {
+							Object.assign(_item, item);
+							temp.glinks.push({ id: _item.fs_id, expires: (Date.now() + 4 * 60 * 60 * 1000), data: item });
+						} else {
+							_item.dlink = "获取下载地址失败，服务器未返回此文件的下载地址，请重试。";
+						}
+					});
 				}
 
-				batch.forEach(_item => {
-					const item = res?.list?.find?.(li => li.fs_id == _item.fs_id);
-					if (item) {
-						Object.assign(_item, item);
-						temp.glinks.push({ id: _item.fs_id, expires: (Date.now() + 4 * 60 * 60 * 1000), data: item });
-					}
-				});
-
-				proc += res.list.length;
+				proc += batch.length;
 				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个地址`);
 
 				// 批次间休息
@@ -6769,21 +6771,21 @@ button.downloadSubtitle:disabled {
 					const res = await base.post(config.$aliyun.api.getLink, { drive_id: item.driveId, file_id: item.fileId }, { "Authorization": token, "X-Canary": "client=windows,app=adrive,version=v6.0.0" });
 
 					if (!res || !res.url || res.code) {
-						if (res.code == "AccessTokenInvalid") throw new Error("提示：<br/>访问令牌过期了，请刷新后重试~<br/>代码：" + res.code);
-						if (res.code) {
-							batch.forEach(item => item.dlink = `获取下载地址失败，服务器说：${res.code}，刷新后再试试吧~`);
+						if (res?.code == "AccessTokenInvalid") throw new Error("提示：<br/>访问令牌过期了，请刷新后重试~<br/>代码：" + res.code);
+						if (res?.code) {
+							item.url = `获取下载地址失败，服务器说：${res.code}，刷新后再试试吧~`;
 						} else {
 							throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 						}
-					};
-
-					batch.forEach(_item => {
-						Object.assign(_item, res);
-						temp.glinks.push({ id: _item.file_id, expires: (Date.now() + 5 * 60 * 1000), data: res });
-					});
+					} else {
+						// A concurrent response belongs only to the file that requested it.
+						const id = item.fileId;
+						Object.assign(item, res);
+						temp.glinks.push({ id, expires: (Date.now() + 5 * 60 * 1000), data: res });
+					}
 
 					proc++;
-					$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${pending.length} 个地址`);
+					$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个地址`);
 				}));
 
 				// 批次间休息
