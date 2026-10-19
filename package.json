@@ -4,7 +4,7 @@
 	"description": "一个基于 JavaScript 的网盘文件下载地址获取工具",
 	"main": "eslint.config.js",
 	"scripts": {
-		"test": "node --test test/123pan-headers.test.js",
+		"test": "node --test test/123pan-headers.test.js test/download-config-error.test.js",
 		"check": "eslint ."
 	},
 	"repository": {

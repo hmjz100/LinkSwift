@@ -5064,9 +5064,15 @@ button.downloadSubtitle:disabled {
 		 */
 		generateDOM(keepDowning = false) {
 			const state = this.state(false);
-			if (!state) throw new Error("提示：<br/>配置解析失败~");
+			if (!state) {
+				const configs = temp.files;
+				if (Array.isArray(configs) && Array.isArray(configs[0]) && configs[0].length === 0) {
+					throw new Error("提示：<br/>网盘接口没有返回可下载文件，请查看控制台中的请求错误信息~");
+				}
+				throw new Error("提示：<br/>下载配置无效，请刷新页面后重试~");
+			}
 			const { files, get, headers, dom } = state;
-			if (!files.length) throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
+			if (!files.length) throw new Error("提示：<br/>网盘接口没有返回可下载文件，请查看控制台中的请求错误信息~");
 			if (!keepDowning) base._resetAllData(true);
 
 			const content = $(`<div><div class="${mount} main"></div><div class="${mount} extra"></div></div>`);
