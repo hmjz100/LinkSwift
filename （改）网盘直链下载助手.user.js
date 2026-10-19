@@ -700,16 +700,15 @@
 		/**
 		 * 获取文件扩展名并转为大写
 		 * @author 油小猴
+		 * @author chyhtz
+		 * @description 仅识别最后一个点之后的扩展名；无扩展名、点文件及尾点返回空字符串
 		 * @param {String} name - 完整文件名
 		 * @returns {String} 大写的文件扩展名（如 `TXT`）
 		 */
 		getExtension(name) {
-			const reg = /(?!\.)\w+$/;
-			if (reg.test(name)) {
-				const match = name.match(reg);
-				return match[0].toUpperCase();
-			}
-			return "";
+			const dot = name.lastIndexOf(".");
+			const ext = dot > 0 ? name.slice(dot + 1) : "";
+			return /^\w+$/.test(ext) ? ext.toUpperCase() : "";
 		},
 
 		/**
