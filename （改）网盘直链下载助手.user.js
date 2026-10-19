@@ -4,10 +4,10 @@
 // @version           1.1.4
 // @author            Hmjz100、油小猴
 // @icon              data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8+PHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8+PHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=
-// @description       (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 九大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
-// @description:zh-CN (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 九大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
-// @description:zh-TW (｡>ᴗ•)✧《也許同類型中最好用？》系列 - 一個基於 JavaScript 的網盤檔案下載地址獲取工具✨，基於【網盤直鏈下載助手】改編 | 支援 百度網盤 / 阿里雲盤 / 中國移動雲盤 / 天翼雲盤 / 迅雷雲盤 / 光鴨雲盤 / 夸克網盤 / UC網盤 / 123雲盤 九大平台 | 開源・自用・除廣 | 改介面・擴功能・修Bug | 既超越原版，亦是同類中最好用版本！👋
-// @description:zh-HK (｡>ᴗ•)✧《也許同類型中最好用？》系列 - 一個基於 JavaScript 的網盤檔案下載地址獲取工具✨，基於【網盤直鏈下載助手】改編 | 支援 百度網盤 / 阿里雲盤 / 中國移動雲盤 / 天翼雲盤 / 迅雷雲盤 / 光鴨雲盤 / 夸克網盤 / UC網盤 / 123雲盤 九大平台 | 開源・自用・除廣 | 改介面・擴功能・修Bug | 既超越原版，亦是同類中最好用版本！👋
+// @description       (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 / PikPak 十大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
+// @description:zh-CN (｡>ᴗ•)✧《也许同类型中最好用？》系列 - 一个基于 JavaScript 的网盘文件下载地址获取工具✨，基于【网盘直链下载助手】修改 | 支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 光鸭云盘 / 夸克网盘 / UC网盘 / 123云盘 / PikPak 十大网盘 | 开源・自用・去广 | 改界面・添功能・修Bug | 既超越原版，亦是同类中最好用版本！👋
+// @description:zh-TW (｡>ᴗ•)✧《也許同類型中最好用？》系列 - 一個基於 JavaScript 的網盤檔案下載地址獲取工具✨，基於【網盤直鏈下載助手】改編 | 支援 百度網盤 / 阿里雲盤 / 中國移動雲盤 / 天翼雲盤 / 迅雷雲盤 / 光鴨雲盤 / 夸克網盤 / UC網盤 / 123雲盤 / PikPak 十大平台 | 開源・自用・除廣 | 改介面・擴功能・修Bug | 既超越原版，亦是同類中最好用版本！👋
+// @description:zh-HK (｡>ᴗ•)✧《也許同類型中最好用？》系列 - 一個基於 JavaScript 的網盤檔案下載地址獲取工具✨，基於【網盤直鏈下載助手】改編 | 支援 百度網盤 / 阿里雲盤 / 中國移動雲盤 / 天翼雲盤 / 迅雷雲盤 / 光鴨雲盤 / 夸克網盤 / UC網盤 / 123雲盤 / PikPak 十大平台 | 開源・自用・除廣 | 改介面・擴功能・修Bug | 既超越原版，亦是同類中最好用版本！👋
 // @copyright         © 2022 hmjz100
 // @license           AGPL-3.0-or-later
 // @source            https://github.com/hmjz100/LinkSwift/
@@ -52,6 +52,10 @@
 // @match             *://caiyun.139.com/*
 // @match             *://cloud.189.cn/web/*
 // @match             *://pan.xunlei.com/*
+// @match             https://mypikpak.com/drive/*
+// @match             https://mypikpak.net/drive/*
+// @match             https://mypikpak.com/s/*
+// @match             https://mypikpak.net/s/*
 // @match             *://www.guangyapan.com/*
 // @match             *://pan.quark.cn/*
 // @match             *://drive.uc.cn/*
@@ -74,6 +78,8 @@
 // @connect           cmecloud.cn
 // @connect           189.cn
 // @connect           xunlei.com
+// @connect           mypikpak.com
+// @connect           mypikpak.net
 // @connect           guangyapan.com
 // @connect           guangyacdn.com
 // @connect           quark.cn
@@ -440,6 +446,15 @@
 			dom: {
 				enhance: `+<br/>此方式可以自动设置用户代理(UA)，然后下载。<br/>此方式的下载请求<b>不会</b>被 IDM 捕获。`,
 				normal: `+<br/>此方式的下载请求<b>可能会</b>被 IDM 捕获。`
+			}
+		},
+		$pikpak: {
+			api: {
+				baseUrl: "https://api-drive.mypikpak.com/drive/v1"
+			},
+			mount: {
+				home: ".file-explorer-header .file-operations",
+				share: "body"
 			}
 		},
 		$123pan: {
@@ -9012,6 +9027,257 @@ button.downloadSubtitle:disabled {
 		},
 	};
 
+	/**
+	 * PikPak 网盘
+	 * @author YiXuanSee
+	 * @description 基于 JKat2 的 PikPak-Motrix-download 改编，感谢其贡献。
+	 * @see https://github.com/JKat2/PikPak-Motrix-download
+	 *
+	 * MIT License - Copyright (c) 2025 JT Yang
+	 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+	 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	 */
+	const $pikpak = {
+		captchaToken: "",
+		captureCaptcha() {
+			const provider = this;
+			const apiOrigin = new URL(config.$pikpak.api.baseUrl).origin;
+			const originalFetch = unsafeWindow.fetch;
+			unsafeWindow.fetch = function (...args) {
+				try {
+					const [input, options] = args;
+					const url = new URL(typeof input?.url === "string" ? input.url : input, location.href);
+					if (url.origin === apiOrigin) {
+						const headers = new unsafeWindow.Headers(options?.headers === undefined ? input.headers : options.headers);
+						const token = headers.get("x-captcha-token");
+						if (token) provider.captchaToken = token;
+					}
+				} catch { }
+				return originalFetch.apply(this, args);
+			};
+			const requests = new WeakMap();
+			const prototype = unsafeWindow.XMLHttpRequest.prototype;
+			const originalOpen = prototype.open;
+			const originalSetHeader = prototype.setRequestHeader;
+			prototype.open = function (...args) {
+				try { requests.set(this, new URL(args[1], location.href).origin === apiOrigin); } catch { requests.delete(this); }
+				return originalOpen.apply(this, args);
+			};
+			prototype.setRequestHeader = function (name, value) {
+				if (requests.get(this) && name.toLowerCase() === "x-captcha-token" && value) provider.captchaToken = value;
+				return originalSetHeader.call(this, name, value);
+			};
+		},
+		getHeaders() {
+			const credentialsKey = Object.keys(localStorage).find(key => key.startsWith("credentials_") && base.getStorage(key)?.access_token);
+			const credentials = credentialsKey ? base.getStorage(credentialsKey) : null;
+			if (!credentials?.access_token) throw new Error("提示：<br/>请先登录 PikPak 网盘，登录过期后请重新登录~");
+			let captchaToken = this.captchaToken;
+			if (!captchaToken) {
+				const captchaKey = Object.keys(localStorage).find(key => key.startsWith("captcha_") && base.getStorage(key)?.captcha_token);
+				if (captchaKey) captchaToken = base.getStorage(captchaKey).captcha_token;
+			}
+			return {
+				"Authorization": `Bearer ${credentials.access_token}`,
+				"X-Device-Id": localStorage.getItem("deviceid") ?? "",
+				"X-Captcha-Token": captchaToken
+			};
+		},
+		async request(path) {
+			const res = await base.get(config.$pikpak.api.baseUrl + path, this.getHeaders());
+			if (res?.error) {
+				if (typeof res.error === "string" && res.error.includes("captcha")) {
+					this.captchaToken = "";
+					throw new Error("提示：<br/>PikPak 需要重新验证，请先在网页使用一次官方下载，再重试~");
+				}
+				if (res.error === "unauthenticated") throw new Error("提示：<br/>PikPak 登录已过期，请重新登录后再试~");
+				if (typeof res.error === "string" && res.error.includes("pass_code")) throw new Error("提示：<br/>分享提取码错误或已过期，请检查提取码后重试~");
+				throw new Error("提示：<br/>PikPak 接口返回错误，请刷新页面后重试~");
+			}
+			if (!res || typeof res !== "object") throw new Error("提示：<br/>PikPak 接口返回了无效数据~");
+			return res;
+		},
+		async resolveShare(shareId, passCode) {
+			const params = new URLSearchParams({ share_id: shareId, pass_code: passCode });
+			const res = await this.request(`/share?${params}`);
+			if (["PASS_CODE_EMPTY", "PASS_CODE_ERROR"].includes(res.share_status)) throw new Error("提示：<br/>分享提取码错误或已过期，请检查提取码后重试~");
+			if (res.share_status !== "OK") throw new Error("提示：<br/>该分享已失效或暂时无法访问，请检查分享链接后重试~");
+			return { shareId, passToken: res.pass_code_token ?? "" };
+		},
+		async getFiles(parentId, share = null) {
+			const files = [];
+			const pageTokens = new Set();
+			let pageToken = "";
+			do {
+				const params = new URLSearchParams({ parent_id: parentId, limit: "1000", thumbnail_size: "SIZE_MEDIUM", with_audit: "true" });
+				if (share) {
+					params.delete("with_audit");
+					if (!parentId) params.delete("parent_id");
+					params.set("limit", "100");
+					params.set("share_id", share.shareId);
+					params.set("pass_code_token", share.passToken);
+				}
+				if (pageToken) params.set("page_token", pageToken);
+				const res = await this.request(`${share ? "/share/detail" : "/files"}?${params}`);
+				if (!Array.isArray(res.files)) throw new Error("提示：<br/>PikPak 未返回文件列表~");
+				files.push(...res.files);
+				pageToken = res.next_page_token ?? "";
+				if (pageToken && pageTokens.has(pageToken)) throw new Error("提示：<br/>PikPak 文件列表分页异常，请重试~");
+				pageTokens.add(pageToken);
+			} while (pageToken);
+			return files;
+		},
+		async collectFiles(selected, share = null) {
+			const queue = [...selected];
+			const visited = new Set();
+			const files = [];
+			for (let index = 0; index < queue.length; index++) {
+				const item = queue[index];
+				if (visited.has(item.id)) continue;
+				visited.add(item.id);
+				if (item.kind === "drive#folder") {
+					queue.push(...await this.getFiles(item.id, share));
+				} else if (item.kind === "drive#file") {
+					if (!share && files.length >= 5000) throw new Error("提示：<br/>一次最多获取 5000 个文件，请分批选择~");
+					files.push({ id: item.id, name: item.name, size: item.size });
+				}
+				$doc.find(".loading-popup .swal2-html-container").text(`已找到 ${files.length} 个文件~`);
+			}
+			return files;
+		},
+		async getFileUrl(item, share = null) {
+			let file;
+			if (share) {
+				const params = new URLSearchParams({ share_id: share.shareId, file_id: item.id, pass_code_token: share.passToken });
+				const res = await this.request(`/share/file_info?${params}`);
+				file = res.file_info;
+			} else {
+				file = await this.request(`/files/${encodeURIComponent(item.id)}?thumbnail_size=SIZE_MEDIUM`);
+			}
+			return { ...item, downloadUrl: file?.web_content_link ? file.web_content_link : "获取下载地址失败：PikPak 未返回文件直链，请确认该文件可在网页下载~" };
+		},
+		async getLink(share = null) {
+			if (!share && this.detectPage() === "share") {
+				const url = new URL(location.href);
+				const passCode = url.searchParams.get("s_code")?.trim();
+				if (!passCode) return this.showShareDialog(temp.mode);
+				share = await this.resolveShare(url.pathname.split("/")[2], passCode);
+			}
+			const selected = share ? await this.getFiles("", share) : this.getSelectedList();
+			if (!selected.length) throw new Error(share ? "提示：<br/>分享中没有可下载的文件~" : "提示：<br/>请先勾选要下载的文件哦~");
+			this.getHeaders();
+			const files = await this.collectFiles(selected, share);
+			if (!files.length) throw new Error("提示：<br/>所选文件夹中没有可下载的文件~");
+			const links = [];
+			for (let index = 0; index < files.length; index += 3) {
+				links.push(...await Promise.all(files.slice(index, index + 3).map(item => this.getFileUrl(item, share))));
+				$doc.find(".loading-popup .swal2-html-container").text(`已获取 ${links.length} / ${files.length} 个地址~`);
+			}
+			temp.files = [links, {
+				get: {
+					dir: () => false,
+					name: file => file.name,
+					size: file => file.size,
+					link: file => file.downloadUrl
+				},
+				headers: {},
+				convert: {},
+				dom: {}
+			}];
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
+		},
+		async showShareDialog(mode = "api") {
+			const dialog = await Swal.fire({
+				...temp.swalDefault,
+				title: "请输入分享提取码",
+				customClass: { popup: "pikpak-share-popup" },
+				text: "当前分享链接未包含提取码，请输入分享者提供的提取码。",
+				input: "text",
+				inputLabel: "提取码（必填）",
+				inputPlaceholder: "请输入分享提取码",
+				inputAttributes: { autocomplete: "off", autocapitalize: "off", spellcheck: "false", "aria-required": "true" },
+				confirmButtonText: "获取下载链接",
+				showCancelButton: true,
+				cancelButtonText: "取消",
+				showLoaderOnConfirm: true,
+				allowOutsideClick: () => !Swal.isLoading(),
+				allowEscapeKey: () => !Swal.isLoading(),
+				preConfirm: async passCode => {
+					passCode = passCode.trim();
+					if (!passCode) {
+						Swal.showValidationMessage("请输入分享提取码");
+						return false;
+					}
+					try {
+						return await this.resolveShare(location.pathname.split("/")[2], passCode);
+					} catch (error) {
+						Swal.showValidationMessage(error.message.replaceAll("提示：<br/>", ""));
+						return false;
+					}
+				}
+			});
+			if (!dialog.isConfirmed) return;
+			temp.mode = mode;
+			Swal.fire({ ...temp.swalDefault, title: "获取分享文件中", text: "文件夹较多时，请耐心等待。", showConfirmButton: false, allowOutsideClick: false, allowEscapeKey: false, customClass: { popup: "loading-popup" }, willOpen: () => Swal.showLoading() });
+			try { await this.getLink(dialog.value); } catch (error) { message.error(error.message); }
+		},
+		getSelectedList() {
+			const app = document.querySelector("#app")?.__vue_app__;
+			const store = app?.config.globalProperties.$pinia?._s.get("file");
+			if (!store) return [];
+			return store.getFilesByIds(store.selectedIds).map(file => ({ id: file.id, name: file.name, size: file.size, kind: file.kind }));
+		},
+		addButton() {
+			base.waitForKeyElements(`${config.$pikpak.mount.home}, ${config.$pikpak.mount.share}`, element => {
+				temp.page = this.detectPage();
+				const shareMount = element.is(config.$pikpak.mount.share);
+				if (shareMount && temp.page !== "share") element.children(".pikpak-share-button").remove();
+				if ((temp.page === "share") !== shareMount) return;
+				if (!temp.page || element.find(".pikpak-button").length) return;
+				element.append(`<div class="pikpak-button pl-button${shareMount ? " pikpak-share-button" : ""}">
+					<button type="button" class="${mount} btn default mini"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>下载助手</button>
+					<div class="pl-dropdown-menu">
+						<button type="button" class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>API 下载</button>
+						<button type="button" class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg>cURL 下载</button>
+						<button type="button" class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>Aria2 下载</button>
+						<button type="button" class="pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>彗星下载</button>
+						<button type="button" class="pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg>ABDM 下载</button>
+						<button type="button" class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>助手设置</button>
+						<button type="button" class="pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg>助手美化</button>
+						<button type="button" class="pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg>更新日志</button>
+					</div>
+				</div>`);
+			});
+		},
+		addInitButton() {
+			base.waitForKeyElements(`${config.$pikpak.mount.home}, ${config.$pikpak.mount.share}`, element => {
+				temp.page = this.detectPage();
+				const shareMount = element.is(config.$pikpak.mount.share);
+				if (shareMount && temp.page !== "share") element.children(".pikpak-share-button").remove();
+				if ((temp.page === "share") !== shareMount) return;
+				if (!temp.page || element.find(".pl-button-init").length) return;
+				const button = $(`<button type="button" class="${mount} btn default mini pl-button-init${shareMount ? " pikpak-share-button" : ""}">点我点亮</button>`);
+				button.click(base.showInitDialog);
+				element.append(button);
+			});
+		},
+		detectPage() {
+			if (/^\/s\/[A-Za-z0-9_-]+(\/|$)/.test(location.pathname)) return "share";
+			return /^\/drive\/(all|recent|star)(\/|$)/.test(location.pathname) ? "home" : "";
+		},
+		initPanLinker() {
+			this.captureCaptcha();
+			base.registerMenuCommand();
+			base.addStyle(`${mount}-pikpak`, "style", `.pikpak-button{margin-left:12px}.pikpak-button .pl-dropdown-menu{top:100%;left:0}.pikpak-button .pl-button-mode{width:100%;border:0;background:transparent;color:inherit;font:inherit;text-align:left}.pikpak-button:focus-within .pl-dropdown-menu{opacity:1;transform:scaleY(1);pointer-events:auto}.pikpak-share-button{position:fixed;right:24px;bottom:24px;z-index:9999}.pikpak-share-button .pl-dropdown-menu{top:auto;bottom:100%;left:auto;right:0;transform-origin:bottom;max-height:calc(100vh - 100% - 40px);overflow-y:auto}.pikpak-button button:focus-visible{outline:2px solid currentColor;outline-offset:2px}.pikpak-button .pl-button-mode,.pikpak-share-popup input{min-height:44px}@media(prefers-reduced-motion:reduce){.pikpak-button,.pikpak-button .pl-dropdown-menu{transition:none}}`);
+			if (config.base.num === base.getValue("setting_init").code || config.base.license === base.getValue("setting_init").license) {
+				this.addButton();
+			} else {
+				this.addInitButton();
+			}
+		}
+	};
+
 	// 主代码
 	const main = {
 		async init() {
@@ -9042,6 +9308,7 @@ button.downloadSubtitle:disabled {
 			else if (/(yun|caiyun).139.com/.test(location.host)) temp.main = $mcloud;
 			else if (/cloud.189.cn/.test(location.host)) temp.main = $tcloud;
 			else if (/pan.xunlei.com/.test(location.host)) temp.main = $xunlei;
+			else if (/^mypikpak\.(com|net)$/.test(location.host)) temp.main = $pikpak;
 			else if (/www.guangyapan.com/.test(location.host)) temp.main = $guangya;
 			else if (/pan.quark.cn/.test(location.host)) temp.main = $quark;
 			else if (/drive.uc.cn/.test(location.host)) temp.main = $uc;
