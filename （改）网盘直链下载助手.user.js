@@ -5361,7 +5361,7 @@ button.downloadSubtitle:disabled {
 						const data = fields.join("\r\n") + "\r\n";
 						if (data.length > 118784 || new Blob([data]).size > 118784) throw new Error("NDM 请求超过客户端长度限制");
 						return new Promise((resolve, reject) => {
-							let socket, timer, poll, settled = false;
+							let socket, timer, poll, settled = false, sent = false;
 							const finish = error => {
 								if (settled) return;
 								settled = true;
@@ -5377,10 +5377,12 @@ button.downloadSubtitle:disabled {
 								socket = new window.WebSocket("ws://127.0.0.1:10007/download", "neatextension.v1");
 								timer = setTimeout(() => finish(new Error("NDM 连接或发送超时")), 15000);
 								socket.onerror = () => finish(new Error("无法连接 NDM，请检查客户端、浏览器集成及浏览器连接权限"));
-								socket.onclose = () => finish(new Error("NDM 在发送完成前关闭了连接"));
+								// 客户端可能在首次轮询前关闭连接；缓冲区排空仅表示已发送。
+								socket.onclose = () => finish(sent && socket.bufferedAmount === 0 ? null : new Error("NDM 在发送完成前关闭了连接"));
 								socket.onopen = () => {
 									try {
 										socket.send(data);
+										sent = true;
 										// 等待发送缓冲区排空；不将握手通知误当作任务确认。
 										poll = setInterval(() => { if (socket.bufferedAmount === 0) finish(); }, 50);
 									} catch (error) { finish(error); }
