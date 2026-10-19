@@ -8874,12 +8874,12 @@ button.downloadSubtitle:disabled {
 			if (ShareKey) {
 				res = await base.post(config.$123pan.api.getShareLink,
 					{ "ShareKey": ShareKey, "FileID": item.FileId, "S3keyFlag": item.S3KeyFlag, "Size": item.Size, "Etag": item.Etag },
-					{ "Accept": "application/json, text/plain, */*", "Content-Type": "application/json; charset=UTF-8", "Authorization": `Bearer ${token}`, "User-Agent": config.$123pan.api.ua.main, "Sec-Ch-Ua": config.$123pan.api.ua.secCh, "Platform": "web", "Platform_os": config.$123pan.api.ua.os, "App-Version": config.$123pan.api.ua.version, "LoginUuid": uuid || "", "Devicename": "", "Mac-Addr": "" }
+					{ "Accept": "application/json, text/plain, */*", "Content-Type": "application/json; charset=UTF-8", "Authorization": token, "User-Agent": config.$123pan.api.ua.main, "Sec-Ch-Ua": config.$123pan.api.ua.secCh, "Platform": "web", "Platform_os": config.$123pan.api.ua.os, "App-Version": config.$123pan.api.ua.version, "LoginUuid": uuid || "", "Devicename": "", "Mac-Addr": "" }
 				);
 			} else {
 				res = await base.post(config.$123pan.api.getLink,
 					{ "driveId": 0, "etag": item.Etag, "fileId": item.FileId, "s3keyFlag": item.S3KeyFlag, "type": item.Type, "fileName": item.FileName, "size": item.Size },
-					{ "Accept": "application/json, text/plain, */*", "Content-Type": "application/json; charset=UTF-8", "Authorization": `Bearer ${token}`, "User-Agent": config.$123pan.api.ua.main, "Sec-Ch-Ua": config.$123pan.api.ua.secCh, "Platform": "web", "Platform_os": config.$123pan.api.ua.os, "App-Version": config.$123pan.api.ua.version, "LoginUuid": uuid || "", "Devicename": "", "Mac-Addr": "" }
+					{ "Accept": "application/json, text/plain, */*", "Content-Type": "application/json; charset=UTF-8", "Authorization": token, "User-Agent": config.$123pan.api.ua.main, "Sec-Ch-Ua": config.$123pan.api.ua.secCh, "Platform": "web", "Platform_os": config.$123pan.api.ua.os, "App-Version": config.$123pan.api.ua.version, "LoginUuid": uuid || "", "Devicename": "", "Mac-Addr": "" }
 				);
 			}
 			if (res.data?.dispatchList?.length > 0 && res.data?.downloadPath) {
