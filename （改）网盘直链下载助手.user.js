@@ -315,13 +315,17 @@
 				getLink: "https://pan.baidu.com/rest/2.0/xpan/multimedia?method=filemetas&dlink=1",
 				getFiles: "https://pan.baidu.com/rest/2.0/xpan/file?method=list&showempty=1",
 				getShareLink: "https://pan.baidu.com/api/sharedownload?channel=chunlei&clienttype=0&web=1&app_id=250528",
-				getShareSign: "https://pan.baidu.com/share/tplconfig?fields=sign,timestamp&channel=chunlei&web=1&app_id=250528&clienttype=0&view_mode=1"
+				getShareSign: "https://pan.baidu.com/share/tplconfig?fields=sign,timestamp&channel=chunlei&web=1&app_id=250528&clienttype=0&view_mode=1",
+				createFolder: "https://pan.baidu.com/api/create?a=commit&channel=chunlei&web=1&app_id=250528&clienttype=0",
+				transferShare: "https://pan.baidu.com/share/transfer?channel=chunlei&clienttype=0&web=1&app_id=250528",
+				transferTaskQuery: "https://pan.baidu.com/share/taskquery?channel=chunlei&clienttype=0&web=1&app_id=250528",
+				fileManagerDelete: "https://pan.baidu.com/api/filemanager?opera=delete&channel=chunlei&web=1&app_id=250528&clienttype=0"
 				// getShareFiles: "https://pan.baidu.com/rest/2.0/xpan/share?method=list&showempty=1"
 			},
 			mount: {
 				home: ".frame-main>div>div>div>div:has(.g-dropdown-button.g-new-create)",
 				main: ".wp-s-agile-tool-bar__header",
-				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more"
+				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more, .module-share-bottom-bar .x-button-box"
 			},
 			dom: {
 				enhance: `+<br/>此方式可以自动设置用户代理(UA)，然后下载。<br/>此方式的下载请求<b>可能会</b>被<b>旧版 IDM</b> 捕获。`,
@@ -5570,13 +5574,16 @@ button.downloadSubtitle:disabled {
 
 			// 参数们
 			const surl = url.pathname.split('/').pop().replace(/^1(.{22})$/, '$1');
-			const pwd = localStorage.getItem(`${surl}_pwd`) || url.searchParams.get('pwd');
+			const pwd = url.searchParams.get('pwd') || localStorage.getItem(`${surl}_pwd`) || localStorage.getItem(`1${surl}_pwd`) || "";
 			const baidu_id = document?.cookie?.split?.('BAIDUID=')?.[1]?.split?.(';')?.[0];
 			const share_uk = locals?.share_uk?.value;
 			const share_id = locals?.shareid?.value;
 			const bds_token = locals?.bdstoken?.value;
 			const js_token = unsafeWindow?.jsToken;
-			const se_key = unsafeWindow?.currentSekey || unsafeWindow?.cache?.list?.config?.params?.sekey;
+			const se_key = unsafeWindow?.currentSekey
+				|| (() => { try { return decodeURIComponent(localStorage.getItem(`1${surl}_bdclnd`) || ""); } catch (e) { return ""; } })()
+				|| (() => { const m = document.cookie.match(/(?:^|; )BDCLND=([^;]*)/); return m ? decodeURIComponent(m[1]) : ""; })()
+				|| unsafeWindow?.cache?.list?.config?.params?.sekey;
 
 			return {
 				share: {
@@ -6079,24 +6086,39 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button color-button" style="padding:0;">
-					<span class="g-button-right" style="padding-left:10px">
-						<em class="icon icon-download" style="color:#fff;line-height:27px"></em>
-						<span class="text" style="width:auto;">下载助手</span>
-					</span>
-					<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu" style="top:37px">
-						<li class="sub cursor-p pl-button-mode pl-button-save"><em class="icon noicon-zhuancun_bai" style="width:15px"></em><span>保存后下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
-						<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
-						<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
-						<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
-					</ul>
-				</a>`)
-				element.after($button);
+				const menuItems = `
+					<li class="sub cursor-p pl-button-mode pl-button-save"><em class="icon noicon-zhuancun_bai" style="width:15px"></em><span>保存后下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+					<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+					<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+					<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>`;
+				const isNewSharePage = element.hasClass("x-button-box");
+				if (isNewSharePage) {
+					const $button = $(`<div class="pl-button g-dropdown-button pl-share-button" style="position:relative;display:inline-flex;align-items:center;height:36px;margin-left:8px;">
+						<button type="button" class="wp-base-button wp-base-button--primary wp-base-button--middle color-button" style="height:36px;padding:0 16px;border-radius:8px;font-size:14px;font-weight:500;">
+						<span class="wp-base-button__content"><svg class="pl-icon" style="width:16px;height:16px;margin-right:4px;vertical-align:-2px;"><use xlink:href="#pl-icon-fa-downward"/></svg>下载助手</span>
+						</button>
+						<ul class="pl-dropdown-menu pl-share-dropdown" style="bottom:44px;top:auto;left:auto;right:0;transform:none;min-width:150px;padding:5px 0;margin:0;list-style:none;z-index:9999;">${menuItems}</ul>
+					</div>`);
+					base.addStyle(`${mount}-baiduShareButton`, "style", `
+					.module-share-bottom-bar .pl-share-button{position:relative;display:inline-flex;align-items:center;height:36px;margin-left:8px}
+					.module-share-bottom-bar .pl-share-button .pl-share-dropdown{position:absolute;bottom:44px;top:auto;left:auto;right:0;transform:none;z-index:9999}
+					`, `.${mount}`);
+					element.append($button);
+				} else {
+					const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button color-button" style="padding:0;">
+						<span class="g-button-right" style="padding-left:10px">
+							<em class="icon icon-download" style="color:#fff;line-height:27px"></em>
+							<span class="text" style="width:auto;">下载助手</span>
+						</span>
+						<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu" style="top:37px">${menuItems}</ul>
+					</a>`)
+					element.after($button);
+				}
 			});
 		},
 		addInitButton() {
@@ -6124,14 +6146,25 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button-init color-button" href="javascript:;">
-					<span class="g-button-right">
-						<em class="icon icon-download" style="color:#FFF;line-height:27px"></em>
-						<span class="text" style="width:auto;">点我点亮</span>
-					</span>
-				</a>`)
-				$button.click(base.showInitDialog);
-				element.after($button);
+				const isNewSharePage = element.hasClass("x-button-box");
+				if (isNewSharePage) {
+					const $button = $(`<div class="pl-button-init pl-share-button-init" style="position:relative;display:inline-flex;align-items:center;height:36px;margin-left:8px;opacity:.5;">
+						<button type="button" class="wp-base-button wp-base-button--primary wp-base-button--middle color-button" style="height:36px;padding:0 16px;border-radius:8px;font-size:14px;font-weight:500;">
+						<span class="wp-base-button__content">点我点亮</span>
+						</button>
+					</div>`);
+					$button.click(base.showInitDialog);
+					element.append($button);
+				} else {
+					const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button-init color-button" href="javascript:;">
+						<span class="g-button-right">
+							<em class="icon icon-download" style="color:#FFF;line-height:27px"></em>
+							<span class="text" style="width:auto;">点我点亮</span>
+						</span>
+					</a>`)
+					$button.click(base.showInitDialog);
+					element.after($button);
+				}
 			});
 		},
 		async getFilesUrl(items, token) {
@@ -6236,6 +6269,9 @@ button.downloadSubtitle:disabled {
 
 				const res = await base.post(url, data);
 
+				if (res && res.errno === 0 && typeof res.list === "string") return null;
+				if (res && (res.errno === 118 || res.errno === 113)) return null;
+
 				if (!res || res.errno !== 0 || !res.list) {
 					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
 					if (res.errno === 9019) {
@@ -6250,7 +6286,6 @@ button.downloadSubtitle:disabled {
 				}
 
 				if (base.isType(res.list) === "array") Object.assign(item, res.list[0]);
-				if (base.isType(res.list) === "string") item.dlink = `<span>获取下载地址失败，服务器说：此文件大小超过可获取限制，需要<b>保存到网盘</b>后于网盘中下载。</span>`;
 				temp.glinks.push({ "id": item.fs_id, "expires": (Date.now() + 4 * 60 * 60 * 1000), "data": res.list[0] });
 
 				proc++
@@ -6260,6 +6295,66 @@ button.downloadSubtitle:disabled {
 				if (proc < pending.length) await base.sleep(1000);
 			}
 			return base.clone(items);
+		},
+		async queryTransferTask(taskId, shareData) {
+			for (let attempt = 0; attempt < 30; attempt++) {
+				await base.sleep(attempt < 3 ? 1000 : 2000);
+				const res = await base.get(`${config.$baidu.api.transferTaskQuery}&taskid=${encodeURIComponent(String(taskId))}&shareid=${shareData.share.id}&from=${shareData.share.uk}&bdstoken=${encodeURIComponent(shareData.baidu.token)}`, { "Referer": location.href }).catch(() => null);
+				if (!res || res.errno || res.task_errno) return null;
+				if (res.status === "success") return Array.isArray(res.list) ? res.list : [];
+				if (res.status === "failed") return null;
+			}
+			return null;
+		},
+		async cleanupOldShareTempDirs(shareData) {
+			if (!shareData?.baidu?.token) return;
+			const url = `https://pan.baidu.com/api/list?dir=%2F&order=name&desc=0&showempty=0&web=1&page=1&num=1000&channel=chunlei&app_id=250528&clienttype=0&bdstoken=${encodeURIComponent(shareData.baidu.token)}`;
+			const res = await base.get(url, { "Referer": location.href }).catch(() => null);
+			if (!res || res.errno !== 0 || !Array.isArray(res.list)) return;
+			const expired = res.list.filter(item => item.isdir === 1 && /^LinkSwift_Temp_\d+$/.test(item.server_filename || "") && Number(item.server_mtime || 0) < Date.now() / 1000 - 12 * 60 * 60).map(item => item.path);
+			if (!expired.length) return;
+			await base.post(`${config.$baidu.api.fileManagerDelete}&bdstoken=${encodeURIComponent(shareData.baidu.token)}`, new URLSearchParams({ filelist: JSON.stringify(expired) }), { "Content-Type": "application/x-www-form-urlencoded", "Referer": location.href }).catch(() => { });
+		},
+		async getShareFilesUrlByTransfer(items, shareData, token) {
+			if (base.isType(items) !== "array" || !items.length) return [];
+			const headers = { "Content-Type": "application/x-www-form-urlencoded", "Referer": location.href };
+			temp.shareTempDir = "";
+			await this.cleanupOldShareTempDirs(shareData);
+			const dir = `/LinkSwift_Temp_${Date.now()}`;
+			const created = await base.post(`${config.$baidu.api.createFolder}&bdstoken=${encodeURIComponent(shareData.baidu.token)}`, new URLSearchParams({ path: dir, isdir: "1", block_list: "[]" }), headers).catch(() => null);
+			if (created?.errno && created.errno !== -8) return [];
+			temp.shareTempDir = dir;
+			let entries = [];
+			for (let i = 0; i < items.length; i += 50) {
+				const batch = items.slice(i, i + 50);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在临时转存文件 (${Math.min(i + 50, items.length)} / ${items.length})...</div>`);
+				const transfer = await base.post(`${config.$baidu.api.transferShare}&shareid=${shareData.share.id}&from=${shareData.share.uk}&bdstoken=${encodeURIComponent(shareData.baidu.token)}`, new URLSearchParams({ fsidlist: JSON.stringify(batch.map(item => item.fs_id)), path: dir, ondup: "newcopy" }), headers).catch(() => null);
+				if (!transfer) continue;
+				let batchEntries = transfer.extra?.list || [];
+				if (transfer.task_id && !batchEntries.length) {
+					batchEntries = await this.queryTransferTask(transfer.task_id, shareData) || [];
+				}
+				entries = entries.concat(batchEntries);
+				if (!batchEntries.length && transfer.errno) {
+					const innerErrno = transfer.info?.[0]?.errno;
+					if (innerErrno === -32) throw new Error("提示：<br/>网盘空间不足，无法临时转存文件哦~");
+				}
+			}
+			const idMap = new Map();
+			entries.forEach(entry => {
+				if (entry.from_fs_id != null && entry.to_fs_id != null) idMap.set(String(entry.from_fs_id), entry.to_fs_id);
+			});
+			const transferred = items.map(item => {
+				const toFsId = idMap.get(String(item.fs_id));
+				return toFsId ? { ...item, fs_id: toFsId } : null;
+			}).filter(Boolean);
+			if (!transferred.length) {
+				base.post(`${config.$baidu.api.fileManagerDelete}&bdstoken=${encodeURIComponent(shareData.baidu.token)}`, new URLSearchParams({ filelist: JSON.stringify([dir]) }), headers).catch(() => { });
+				temp.shareTempDir = "";
+				return [];
+			}
+			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件下载链接...</div>`);
+			return await this.getFilesUrl(transferred, token);
 		},
 		async getFilesList(dirs, accessToken, proc = 0) {
 			let cnt = 0;
@@ -6324,6 +6419,7 @@ button.downloadSubtitle:disabled {
 			$doc.find(".loading-popup .loading-title").html(`地址获取中`);
 			$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
 
+			let viaTransfer = false;
 			let files = selects.filter(f => !f.isdir);
 			const dirs = selects.filter(f => f.isdir);
 			if (temp.page === "home" || temp.page === "main") {
@@ -6338,18 +6434,32 @@ button.downloadSubtitle:disabled {
 					throw new Error(e?.message || e || "[百度网盘] 获取下载地址失败");
 				});
 			} else if (temp.page === "share") {
+				if (!files.length) throw new Error("提示：<br/>请勾选要下载的文件哦~");
 				const shareData = await this.getShareData();
+				temp.shareTempDir = "";
 
-				const sign = await base.get(`${config.$baidu.api.getShareSign}&surl=1${shareData.share.url}$bdstoken=${shareData.baidu.token}&logid=${base.encodeBase(shareData.baidu.id)}`);
-				if (sign?.data?.sign && sign?.data?.timestamp) {
-					shareData.sign = sign.data.sign;
-					shareData.timestamp = sign.data.timestamp;
+				const sign = await base.get(`${config.$baidu.api.getShareSign}&surl=1${shareData.share.url}&bdstoken=${shareData.baidu.token}&logid=${base.encodeBase(shareData.baidu.id)}`).catch(() => null);
+				const signData = sign?.data || sign;
+				if (signData?.sign && signData?.timestamp) {
+					shareData.sign = signData.sign;
+					shareData.timestamp = signData.timestamp;
 				}
 
-				files = await this.getShareFilesUrl(files, shareData, token).catch(e => {
-					if (e instanceof Error) throw e;
-					throw new Error(e?.message || e || "[百度网盘] 获取分享下载地址失败");
-				});
+				$doc.find(".loading-popup .loading-title").html(`地址获取中`);
+				$doc.find(".loading-popup .swal2-html-container").html(`<div>正在获取文件对应的下载地址~</div>`);
+				const directFiles = await this.getShareFilesUrl(files, shareData, token).catch(() => null);
+				if (base.isType(directFiles) === "array" && directFiles.length && directFiles.every(f => String(f.dlink || "").startsWith("http"))) {
+					files = directFiles;
+				} else {
+					viaTransfer = true;
+					files = await this.getShareFilesUrlByTransfer(files, shareData, token).catch(e => {
+						if (e instanceof Error) throw e;
+						throw new Error(e?.message || e || "[百度网盘] 获取分享下载地址失败");
+					});
+				}
+				if (base.isType(files) !== "array" || !files.length || !files.every(f => String(f.dlink || "").startsWith("http"))) {
+					throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
+				}
 			} else {
 				throw new Error("提示：<br/>页面错误~");
 			}
@@ -6379,7 +6489,8 @@ button.downloadSubtitle:disabled {
 					}
 				}
 			}];
-			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
+			const footer = config.base.dom.method[temp.mode].footer + (viaTransfer ? `<p>本次链接由“临时转存”获取，文件已临时保存到 我的网盘${temp.shareTempDir || ""}，下载完成后可自行删除；脚本会在下次使用时清理超过 12 小时的临时目录。</p>` : "");
+			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), footer);
 		},
 		getSelectedList() {
 			try {
@@ -6395,6 +6506,17 @@ button.downloadSubtitle:disabled {
 				// 1
 				const context = unsafeWindow.require?.("system-core:context/context.js");
 				if (context?.instanceForSystem?.list?.getSelected?.()?.[0]) list = context.instanceForSystem.list.getSelected();
+
+				const shareRows = unsafeWindow.document.querySelectorAll(".JS-list-view-item");
+				if (shareRows?.length) {
+					const checkedIds = Array.from(shareRows).filter(el => el.querySelector(".wp-checkbox--checked")).map(el => el.dataset.fileKey).filter(Boolean);
+					const shareFileList = unsafeWindow?.locals?.dump?.()?.file_list?.value || [];
+					if (checkedIds.length && shareFileList.length) {
+						const fileMap = new Map(shareFileList.map(file => [String(file.fs_id), file]));
+						const selected = checkedIds.map(id => fileMap.get(String(id))).filter(Boolean);
+						if (selected.length) list = selected;
+					}
+				}
 
 				return base.clone(list);
 			} catch (e) {
