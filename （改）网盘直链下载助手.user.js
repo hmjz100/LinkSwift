@@ -3655,6 +3655,8 @@
 				console.info(e, temp, base.isType(temp.main?.getLink));
 				if (!temp.mode) return;
 				if (!base.isType(temp.main?.getLink).includes("function")) return;
+				// TLS 检测未通过：拦截获取动作，避免云盘 Cookie/令牌经有缺陷的 TLS 栈发送
+				if (!await tlsGuard.enforce()) return;
 				probe.log("getlink-start", `mode=${temp.mode}`);
 				Swal.fire({
 					...temp.swalDefault,
@@ -9391,12 +9393,63 @@ button.downloadSubtitle:disabled {
 	};
 	try { unsafeWindow.LinkSwift_probe = probe; } catch { }
 
+	/**
+	 * TLS 交叉链安全检测（eMudhra 事件）
+	 * @author hmjz100
+	 * @description 2026-10 爆出的 eMudhra 中间 CA（EM DV/OV/EV TLS CA - G3B/G3C）交叉签名链被吊销事件：
+	 * Edge/Firefox/Chrome 已拒绝该链，未修复的 Via 等基于旧 WebView 的浏览器仍信任它。
+	 * 该校验发生在网络栈、早于任何页面 JS，脚本无法修复，但可以探测：若本浏览器仍能与
+	 * canary 域名完成 TLS 握手，即证明其 TLS 校验有缺陷，弹窗警告用户并停止脚本的网络请求，
+	 * 避免把云盘 Cookie/令牌经有缺陷的 TLS 栈发送。结果缓存 12 小时，避免每次刷新都探测。
+	 */
+	const tlsGuard = {
+		canary: "https://dv-g3b-aaa-emudhra.we-have-a-problem.com/favicon.ico",
+		cacheKey: "setting_tlsguard_result",
+		okResult: null,
+		async check() {
+			if (this.okResult !== null) return this.okResult;
+			try {
+				const cached = base.getValue(this.cacheKey);
+				// { vulnerable: Boolean, at: timestamp }；12 小时内有效
+				if (cached && typeof cached?.vulnerable === "boolean" && (Date.now() - cached.at) < 12 * 3600 * 1000) {
+					this.okResult = !cached.vulnerable;
+					return this.okResult;
+				}
+			} catch { }
+			const vulnerable = await new Promise((resolve) => {
+				let settled = false;
+				const finish = (v) => { if (!settled) { settled = true; resolve(v); } };
+				const timer = setTimeout(() => finish(false), 10 * 1000); // 超时视为网络不通，不算漏洞
+				try {
+					base.xmlHttpRequest({
+						method: "GET", url: this.canary, timeout: 8000,
+						onload: (res) => { clearTimeout(timer); finish(res.status >= 200 && res.status < 500); }, // 能收到任何 HTTP 响应 = 握手成功 = 有缺陷
+						onerror: () => { clearTimeout(timer); finish(false); }, // 已修复浏览器：握手直接失败
+						ontimeout: () => { clearTimeout(timer); finish(false); }
+					});
+				} catch { clearTimeout(timer); finish(false); }
+			});
+			this.okResult = !vulnerable;
+			try { base.setValue(this.cacheKey, { vulnerable, at: Date.now() }); } catch { }
+			if (vulnerable) probe.log("tlsguard-vulnerable", "本浏览器仍信任被吊销的 eMudhra 交叉链，TLS 校验存在缺陷");
+			return this.okResult;
+		},
+		async enforce() {
+			if (await this.check()) return true;
+			message.error(`安全警告：<br/>当前浏览器（${info.mhandler}）仍信任已被吊销的 eMudhra TLS 证书链，<b>TLS 校验存在缺陷</b>，脚本已停止网络请求以保护你的账号安全。<br/>请升级 <b>Android System WebView</b> 至正式版 145 以上（或改用 Chrome/Edge 打开网盘）。<br/>检测说明：脚本尝试访问了一个仅漏洞浏览器才能打开的测试域名并成功连接。`);
+			probe.log("tlsguard-block", "已阻止脚本网络请求");
+			return false;
+		}
+	};
+
 	// 主代码
 	const main = {
 		async init() {
 			// 启动探针心跳：每秒刷新页面时间戳，供重启后判断卡死时主线程是否被同步阻塞
 			probe.log("page-init", `handler=${info.mhandler} ${info.mversion} v${info.version}`);
 			probe.start();
+			// TLS 检测：后台静默探测一次，命中漏洞链时在用户点击获取链接前拦截
+			tlsGuard.check();
 			/**
 			 * 控制台输出
 			 * @author 油小猴
