@@ -6269,23 +6269,14 @@ button.downloadSubtitle:disabled {
 
 				const res = await base.post(url, data);
 
-				if (res && res.errno === 0 && typeof res.list === "string") return null;
-				if (res && (res.errno === 118 || res.errno === 113)) return null;
-
-				if (!res || res.errno !== 0 || !res.list) {
-					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
-					if (res.errno === 9019) {
-						base.delValue("baidu_access_token");
-						throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
-					}
-					if (res.errno || res.errmsg) {
-						item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`;
-					} else {
-						throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
-					}
+				if (res && res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
+				if (res && res.errno === 9019) {
+					base.delValue("baidu_access_token");
+					throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
 				}
+				if (!res || res.errno !== 0 || !Array.isArray(res.list) || !res.list.length) return null;
 
-				if (base.isType(res.list) === "array") Object.assign(item, res.list[0]);
+				Object.assign(item, res.list[0]);
 				temp.glinks.push({ "id": item.fs_id, "expires": (Date.now() + 4 * 60 * 60 * 1000), "data": res.list[0] });
 
 				proc++
