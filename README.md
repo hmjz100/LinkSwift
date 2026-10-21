@@ -48,6 +48,7 @@
 此版本可能不稳定，但有着最新的功能、修复等。
 
 - Github 国际: [hmjz100/LinkSwift/（改）网盘直链下载助手.user.js](https://github.com/hmjz100/LinkSwift/raw/dev/（改）网盘直链下载助手.user.js)
+- 若中文文件名无法通过脚本管理器安装，可使用 ASCII 文件名：[LinkSwift.user.js](https://github.com/hmjz100/LinkSwift/raw/dev/LinkSwift.user.js)
 
 ## 说明
 
