@@ -5350,7 +5350,9 @@ button.downloadSubtitle:disabled {
 							if (val === undefined || val === null) return "";
 							const strVal = String(val);
 							const len = new Blob([strVal]).size; // 坑2：使用 blob.size，而不是 length
-							return `${key}=${len}:${strVal}`;
+							let final = `${key}=${len}`;
+							if (len > 0) final += `:${strVal}`;
+							return final;
 						};
 						const fields = [
 							format(4, ext), // 4: 文件类型
