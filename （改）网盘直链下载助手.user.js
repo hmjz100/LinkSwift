@@ -6629,7 +6629,7 @@ button.downloadSubtitle:disabled {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
 				const $button = $(`<div class="ali-button pl-button">
-					<span data-role="icon" data-render-as="svg" class="icon">${temp.main.svg}下载助手</span>
+					<span data-role="icon" data-render-as="svg" class="icon" style="display:flex;align-items:center">${temp.main.svg}下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:30px; right:0;">
 						<li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
 						<li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
@@ -6647,7 +6647,7 @@ button.downloadSubtitle:disabled {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
 				const $button = $(`<div class="ali-button pl-button">
-					<span data-role="icon" data-render-as="svg" class="icon">${temp.main.svg}下载助手</span>
+					<span data-role="icon" data-render-as="svg" class="icon" style="display:flex;align-items:center">${temp.main.svg}下载助手</span>
 					<ul class="pl-dropdown-menu" style="top:30px; right:16px;">
 						<li class="pl-button-mode pl-button-save"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-drive"/></svg><span>保存后下载</span></li>
 						<li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
@@ -6660,7 +6660,7 @@ button.downloadSubtitle:disabled {
 			});
 		},
 		addInitButton() {
-			const $button = $(`<div class="ali-button pl-button-init"><span data-role="icon" data-render-as="svg" class="icon">${temp.main.svg}点我点亮</span></div>`);
+			const $button = $(`<div class="ali-button pl-button-init"><span data-role="icon" data-render-as="svg" class="icon" style="display:flex;align-items:center">${temp.main.svg}点我点亮</span></div>`);
 			$button.click(base.showInitDialog);
 			base.waitForKeyElements(config.$aliyun.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
