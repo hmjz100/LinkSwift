@@ -1,0 +1,11 @@
+# 默认按文本处理（CRLF），下面的二进制例外必须写在后面才能覆盖这一行。
+* text working-tree-encoding=UTF-8 eol=crlf tabwidth=4
+*.css text working-tree-encoding=UTF-8 eol=crlf tabwidth=4 linguist-generated=true
+*.jpg binary -working-tree-encoding -eol
+*.png binary -working-tree-encoding -eol
+*.gif binary -working-tree-encoding -eol
+*.ttf binary -working-tree-encoding -eol
+*.otf binary -working-tree-encoding -eol
+*.woff binary -working-tree-encoding -eol
+*.woff2 binary -working-tree-encoding -eol
+*.eot binary -working-tree-encoding -eol
