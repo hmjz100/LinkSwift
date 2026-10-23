@@ -4,7 +4,7 @@
 	"description": "一个基于 JavaScript 的网盘文件下载地址获取工具",
 	"main": "eslint.config.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "node --max-old-space-size=256 --test tests/*.test.cjs",
 		"check": "npx eslint . --fix"
 	},
 	"repository": {
