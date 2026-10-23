@@ -7391,6 +7391,19 @@ button.downloadSubtitle:disabled {
 			], "other");
 			base.addStyle(`${mount}-xunlei`, "style", `.web-header{background:linear-gradient(0deg,${temp.color}D0,${temp.color})}`);
 		},
+		addFallbackButton(initialized) {
+			base.waitForKeyElements("body", () => {
+				setTimeout(() => {
+					if ($(".pl-button, .pl-button-init").length > 0 || !temp.main.detectPage()) return;
+					const share = temp.main.detectPage() === "share";
+					const $button = share
+						? $(`<button class="td-button active color-button ${initialized ? "pl-button" : "pl-button-init"}" style="position:fixed;right:24px;bottom:24px;z-index:2147483647;border-radius:8px"><i class="xlpfont xlp-download"></i><span class="text">${initialized ? "下载助手" : "点我点亮"}</span>${initialized ? `<ul class="pl-dropdown-menu reverse" style="bottom:35px;"><li class="pl-button-mode pl-button-save"><i class="xlpfont xlp-file-upload" style="width:15px;height:15px;font-size:15px"></i><span>转存后下载</span></li><li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li></ul>` : ""}</button>`)
+						: $(`<div class="xunlei-button ${initialized ? "pl-button" : "pl-button-init"}" style="position:fixed;right:24px;bottom:24px;z-index:2147483647"><i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">${initialized ? "下载助手" : "点我点亮"}</span>${initialized ? `<ul class="pl-dropdown-menu" style="top:34px;"><li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li><li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li><li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li><li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li></ul>` : ""}</div>`);
+					if (!initialized) $button.on("click", base.showInitDialog);
+					$("body").append($button);
+				}, 1200);
+			}, true, undefined, `${mount}-xunlei-fallback`);
+		},
 		addButton() {
 			base.waitForKeyElements(config.$xunlei.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
@@ -7423,6 +7436,7 @@ button.downloadSubtitle:disabled {
 				</button>`);
 				element.append($button);
 			});
+			this.addFallbackButton(true);
 		},
 		addInitButton() {
 			base.waitForKeyElements(config.$xunlei.mount.home, (element) => {
@@ -7439,6 +7453,7 @@ button.downloadSubtitle:disabled {
 				$button.click(base.showInitDialog);
 				element.append($button);
 			});
+			this.addFallbackButton(false);
 		},
 		_getCaptchaSign(clientId, version, host, deviceId, timestamp) {
 			// 基础参数

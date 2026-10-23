@@ -21,3 +21,9 @@ test("repair build has a distinct version and redacted download-state diagnostic
 test("ASCII installation alias contains the same script", () => {
 	assert.equal(asciiAlias, script);
 });
+
+test("迅雷云盘 has a fallback button when dynamic selectors are unavailable", () => {
+	assert.match(script, /addFallbackButton\(initialized\)/);
+	assert.match(script, /this\.addFallbackButton\(true\)/);
+	assert.match(script, /this\.addFallbackButton\(false\)/);
+});
