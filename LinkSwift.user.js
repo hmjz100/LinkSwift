@@ -7393,25 +7393,27 @@ button.downloadSubtitle:disabled {
 		},
 		addFallbackButton(initialized) {
 			base.waitForKeyElements("body", () => {
-				setTimeout(() => {
-					if ($(".pl-button, .pl-button-init").length > 0 || !temp.main.detectPage()) return;
-					const share = temp.main.detectPage() === "share";
-					const $button = share
-						? $(`<button class="td-button active color-button g-dropdown-button ${initialized ? "pl-button" : "pl-button-init"}" style="position:fixed;right:24px;bottom:24px;z-index:2147483647;pointer-events:auto;border-radius:8px"><i class="xlpfont xlp-download"></i><span class="text">${initialized ? "下载助手" : "点我点亮"}</span>${initialized ? `<ul class="pl-dropdown-menu reverse" style="bottom:35px;"><li class="pl-button-mode pl-button-save"><i class="xlpfont xlp-file-upload" style="width:15px;height:15px;font-size:15px"></i><span>转存后下载</span></li><li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li></ul>` : ""}</button>`)
-						: $(`<div class="xunlei-button g-dropdown-button ${initialized ? "pl-button" : "pl-button-init"}" style="position:fixed;right:24px;bottom:24px;z-index:2147483647;pointer-events:auto"><i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">${initialized ? "下载助手" : "点我点亮"}</span>${initialized ? `<ul class="pl-dropdown-menu" style="top:34px;"><li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li><li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li><li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li><li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li></ul>` : ""}</div>`);
-					if (!initialized) {
-						$button.on("click", base.showInitDialog);
-					} else {
-						$button.on("click", (event) => {
-							if ($(event.target).closest(".pl-button-mode").length > 0) return;
-							event.preventDefault();
-							event.stopPropagation();
-							$button.toggleClass("button-open");
-							$button.find(".pl-dropdown-menu").toggle();
-						});
-					}
-					$("body").append($button);
-				}, 1200);
+				if ($(".linkswift-xunlei-fallback, .pl-button, .pl-button-init").length > 0 || !temp.main.detectPage()) return;
+				const share = temp.main.detectPage() === "share";
+				const $button = share
+					? $(`<button class="td-button active color-button linkswift-xunlei-fallback ${initialized ? "pl-button" : "pl-button-init"}" style="position:fixed;right:24px;bottom:24px;z-index:2147483647;pointer-events:auto;border-radius:8px"><i class="xlpfont xlp-download"></i><span class="text">${initialized ? "下载助手" : "点我点亮"}</span>${initialized ? `<ul class="pl-dropdown-menu reverse" style="display:none;bottom:35px;"><li class="pl-button-mode pl-button-save"><i class="xlpfont xlp-file-upload" style="width:15px;height:15px;font-size:15px"></i><span>转存后下载</span></li><li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li></ul>` : ""}</button>`)
+					: $(`<div class="xunlei-button linkswift-xunlei-fallback ${initialized ? "pl-button" : "pl-button-init"}" style="position:fixed;right:24px;bottom:24px;z-index:2147483647;pointer-events:auto"><i class="xlpfont xlp-download"></i><span style="font-size:13px;margin-left:6px;">${initialized ? "下载助手" : "点我点亮"}</span>${initialized ? `<ul class="pl-dropdown-menu" style="display:none;top:34px;"><li class="pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li><li class="pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li><li class="pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li><li class="pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li></ul>` : ""}</div>`);
+				if (!initialized) {
+					$button.on("click", base.showInitDialog);
+				} else {
+					$button.on("click", (event) => {
+						if ($(event.target).closest(".pl-button-mode").length > 0) return;
+						event.preventDefault();
+						event.stopPropagation();
+						$button.find(".pl-dropdown-menu").toggle();
+					});
+					$doc.on("click.linkswiftXunleiFallback", (event) => {
+						if ($(event.target).closest(".linkswift-xunlei-fallback").length === 0) {
+							$button.find(".pl-dropdown-menu").hide();
+						}
+					});
+				}
+				$("body").append($button);
 			}, true, undefined, `${mount}-xunlei-fallback`);
 		},
 		addButton() {

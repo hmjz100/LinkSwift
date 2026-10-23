@@ -26,7 +26,8 @@ test("迅雷云盘 has a fallback button when dynamic selectors are unavailable"
 	assert.match(script, /addFallbackButton\(initialized\)/);
 	assert.match(script, /this\.addFallbackButton\(true\)/);
 	assert.match(script, /this\.addFallbackButton\(false\)/);
-	assert.match(script, /g-dropdown-button/);
+	assert.match(script, /linkswift-xunlei-fallback/);
 	assert.match(script, /pointer-events:auto/);
-	assert.match(script, /toggleClass\("button-open"\)/);
+	assert.match(script, /\.toggle\(\)/);
+	assert.doesNotMatch(script, /setTimeout\(\(\) => \{[\s\S]{0,200}linkswift-xunlei-fallback/);
 });
