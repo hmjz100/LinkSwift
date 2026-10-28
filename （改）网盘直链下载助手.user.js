@@ -352,7 +352,7 @@
 				getLink: "https://api-pan.xunlei.com/drive/v1/files/"
 			},
 			mount: {
-				home: `[class^="FileMenu__menu--"]`,
+				home: `[class*="FileMenu__menus--"], [class*="FileMenu__menu--"]`,
 				share: `[class^="Share__batchActionBox--"]`
 			},
 			dom: {
