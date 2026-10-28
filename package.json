@@ -4,7 +4,9 @@
 	"description": "一个基于 JavaScript 的网盘文件下载地址获取工具",
 	"main": "eslint.config.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "node --test tests/*.test.js",
+		"test:smoke": "node scripts/refactor-smoke.js",
+		"check:refactor": "npm run test && npm run test:smoke",
 		"check": "npx eslint . --fix"
 	},
 	"repository": {
@@ -27,6 +29,7 @@
 		"url": "https://github.com/hmjz100/LinkSwift/issues"
 	},
 	"homepage": "https://github.com/hmjz100/LinkSwift#readme",
+	"engines": { "node": ">=20" },
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"eslint": "^10.6.0"

@@ -4806,6 +4806,27 @@ button.downloadSubtitle:disabled {
 			if (!files.length || !files?.[index]) return false;
 			return base.isType(configs[1]) === "object" ? { files, ...configs[1] } : {};
 		},
+		/** 将旧版 files/get 状态转换为兼容 DownloadTask 字段的任务。 */
+		task(index) {
+			index = Number(index);
+			const state = this.state(index);
+			if (!state) return false;
+			const { files, get, headers = {}, dom } = state;
+			const file = files?.[index];
+			if (!file || base.isType(get) !== "object" || base.isType(get.link) !== "function") return false;
+			const url = get.link(file);
+			if (!url) return false;
+			return {
+				index,
+				url,
+				filename: base.isType(get.name) === "function" ? get.name(file) : "",
+				size: base.isType(get.size) === "function" ? get.size(file) : null,
+				headers,
+				dom,
+				file,
+				state,
+			};
+		},
 		async copy(target, content) {
 			const originalHtml = target.html();
 			if (content) {
@@ -4836,13 +4857,10 @@ button.downloadSubtitle:disabled {
 						// 直接下载：通过隐形 iframe 访问下载链接
 						if (target.data("state") === "processing") return;
 						target.data("state", "processing");
-						const state = download.state(index);
-						if (!state) { target.removeData("state"); return; }
-						const { files, get } = state;
-						const link = get.link(files[index]);
-						if (!link) { target.removeData("state"); return; }
+						const task = download.task(index);
+						if (!task) { target.removeData("state"); return; }
 						// 在 ${mount}.${mount} 元素中追加隐形 iframe
-						const iframe = $("<iframe/>", { src: link, css: { display: "none" } });
+						const iframe = $("<iframe/>", { src: task.url, css: { display: "none" } });
 						temp.mount.append(iframe);
 						let cleaned = false;
 						const cleanup = () => { if (cleaned) return; cleaned = true; iframe.remove(); target.removeData("state"); };
@@ -4854,13 +4872,9 @@ button.downloadSubtitle:disabled {
 						// 增强下载：带进度跟踪的分块下载
 						if (target.data("state") === "processing") return;
 						target.data("state", "processing");
-						const state = download.state(index);
-						if (!state) { target.removeData("state"); return; }
-						const { files, get, headers, dom } = state;
-						const file = files[index];
-						const link = get.link(file);
-						const name = get.name(file);
-						const size = get.size(file);
+						const task = download.task(index);
+						if (!task) { target.removeData("state"); return; }
+						const { url: link, filename: name, size, headers, dom } = task;
 						base._resetData(index);
 						const $downing = () => $(`.${mount}.main .item[data-index="${index}"] .downing`);  // 通过 index 实时查找 downing 元素（兼容 DOM 重建后的异步回调）
 						temp.downing[index] = { status: "downloading", progress: 0, text: "正在加载..." };  // 记录下载状态，供 generateDOM 重建后恢复
@@ -4932,19 +4946,16 @@ button.downloadSubtitle:disabled {
 				const index = Number(item.data("index"));
 				const type = target.attr("type");
 				const originalHtml = target.html();
-				const state = download.state(index);
-				if (!state || target.data("state") === "processing") return;
+				if (target.data("state") === "processing") return;
+				const task = download.task(index);
+				if (!task) return;
 				target.data("state", "processing");
 
 				target.find(".pl-icon").remove();
 				target.find(".pl-loading").remove();
 				target.prepend(base.createLoading());
 
-				const { files, get, headers } = state;
-				const file = files[index];
-				const link = get.link(file);
-				const name = get.name(file);
-				const size = get.size(file);
+				const { url: link, filename: name, size, headers } = task;
 
 				let res = "fail";
 				try {
@@ -5025,7 +5036,7 @@ button.downloadSubtitle:disabled {
 				const state = download.state(isAll ? 0 : index);
 				if (!state || target.data("state") === "processing") return;
 				target.data("state", "processing");
-				const { files, get, headers } = state;
+				const { files, get } = state;
 
 				// 解析子类型，确定待处理的文件索引列表（all 时为全部非目录文件）
 				const subType = isAll ? _type.replace(/^all\.file\./, "") : _type.replace(/^file\./, "");
@@ -5034,9 +5045,9 @@ button.downloadSubtitle:disabled {
 				// 按子类型生成每行内容（每行一个）
 				const lines = [];
 				for (const i of indices) {
-					const file = files[i];
-					const link = get.link(file);
-					const name = get.name(file);
+					const task = download.task(i);
+					if (!task) continue;
+					const { url: link, filename: name, headers } = task;
 					let line = "";
 					switch (subType) {
 						case "link": line = link; break;
