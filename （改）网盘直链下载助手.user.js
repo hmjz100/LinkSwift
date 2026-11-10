@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name              LinkSwift
 // @namespace         github.com/hmjz100
 // @version           1.1.4
@@ -384,8 +384,8 @@
 				getCaptchaToken: "https://xluser-ssl.xunlei.com/v1/shield/captcha/init",
 			},
 			mount: {
-			    home: `[class*="FileMenu__menus--"], [class*="FileMenu__menu--"]`,
-			    share: `[class^="Share__batchActionBox--"]`
+				home: `[class*="FileMenu__menus--"], [class*="FileMenu__menu--"]`,
+				share: `[class^="Share__batchActionBox--"]`
 			},
 			dom: {
 				enhance: `+<br/>此方式可以自动设置文件名，然后下载。<br/>此方式的下载请求<b>不会</b>被 IDM 捕获。`,
@@ -5658,9 +5658,6 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(".wp-s-header__game-entry", (tag) => {
 				tag.fadeOut();
 			}, true)
-			base.waitForKeyElements(".bd-aside-ad", (tag) => {
-				tag.fadeOut();
-			}, true)
 			base.waitForKeyElements(".btn-img-tips", (tag) => {
 				tag.fadeOut();
 			}, true)
@@ -5727,6 +5724,12 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(`.wp-s-aside-nav__main-item.wp-s-aside-nav__nav-tooltip:has(img[src*="wAIUtHEN+698AAAAABJRU5ErkJggg=="])`, (tag) => {
 				tag.remove();
 			}, true)
+			base.waitForKeyElements(`.client-popover-anchor > .new-disk-call-client-img`, (tag) => {
+				tag.remove();
+			}, true)
+			base.waitForKeyElements(`.subscribe-guide-bubble__body > .subscribe-guide-bubble__close`, (tag) => {
+				tag.click();
+			}, true)
 
 			base.waitForKeyElements("a.tools__item", (tag) => {
 				if (tag.attr("linked")) return;
@@ -5783,37 +5786,15 @@ button.downloadSubtitle:disabled {
 					</div>
 				</div>`);
 			}, true)
-			// 美化分享页面
+			// 分享页
 			if (temp.page === "share") {
-				base.waitForKeyElements(`iframe[src^="/buy/ad"]`, (tag) => {
-					tag.fadeOut();
-				}, true)
+				base.waitForKeyElements(`iframe[src^="/buy/ad"]`, (tag) => tag.remove(), true);
 				// 一朵可爱捏
-				base.addStyle(`${mount}-baiduShare`, "style", `
-					body, .theme-white.init-new, #layoutApp{
-						background-color:#DCEFFE!important;
-						background:#DCEFFE url(https://nd-static.bdstatic.com/m-static/disk-share/widget/pageModule/init-new/image/init-bg_1708266.png) no-repeat center center;
-					}
-					#bd-main .bd-left{
-						background:#ffffffC0;
-						border-radius:10px;
-					}
-					iframe[src="/buy/ad/home"]{
-						display:none!important;
-					}
+				base.addStyle(`${mount}-share-greener`, "style", `
+					body,.theme-white.init-new,#layoutApp{background-color:#FFF!important;background:#FFF!important}
+					#bd-main:has(.bd-left){display:flex;flex:1;justify-content:center}
+					#bd-main > .bd-aside-ad{display:none!important}
 				`, `.${mount}`);
-				base.waitForKeyElements(`.KPDwCE`, (tag) => {
-					tag.css("background", "transparent");
-				}, true);
-				base.waitForKeyElements(".share-list .KPDwCE .AuPKyz", (tag) => {
-					tag.css("background", "transparent");
-				}, true);
-				base.waitForKeyElements(`#layoutMain`, (tag) => {
-					tag.css({ "border-radius": "24px" });
-				}, true)
-				base.waitForKeyElements(".frame-content", (tag) => {
-					tag.css({ "margin": "auto" });
-				}, true)
 			}
 		},
 		beautifyPage() {
@@ -5902,7 +5883,26 @@ button.downloadSubtitle:disabled {
 					["3,8,26,.6", base.hexToRgba(`${temp.color}D0`)],
 					["255,32,102,.4", base.hexToRgba(`${temp.color}66`)],
 					["72,166,248,.7", base.hexToRgba(`${temp.color}66`)],
+					// disk_share_v2 --share-color-brand hover active disabled
+					["#258aff", `${temp.color}`],
+					["#469cff", `${temp.color}90`],
+					["#1c68bf", `${temp.color}D0`],
+					["#a8d0ff", `${temp.color}10`],
+					["#e9f3ff", `${temp.color}20`], // --share-tonal-button-bg
+					// gr-doc-reader
+					["#e9f6fe", `${temp.color}20`], // .gr-icon-catalog.is-open-catalog
+					["#d7eefc", `${temp.color}30`], // .gr-icon-catalog.is-open-catalog
 				]);
+				// 一朵可爱捏
+				base.addStyle(`${mount}-share-theme`, "style", `
+					body,.theme-white.init-new,#layoutApp{background-color:#DCEFFE!important;background:#DCEFFE url(https://nd-static.bdstatic.com/m-static/disk-share/widget/pageModule/init-new/image/init-bg_1708266.png) no-repeat center center!important}
+					#bd-main:has(.bd-left){display:flex;flex:1;justify-content:center}
+					#bd-main > .bd-aside-ad{display:none!important}
+					#bd-main > .bd-left{background:#ffffffC0;backdrop-filter:blur(20px);margin:0;flex:1;padding-top:20px}
+					.module-share-bottom-bar,.share-list .module-list,.module-list-view .JS-list-view-item,.share-multi-list-toolbar-row>.share-list-toolbar{background:transparent}
+					.module-list-view .JS-list-view-item:hover, .module-list-view .hover-item,.module-list-view .JS-item-active{background:var(--pl-c-15,#ffffff15)}
+					iframe[src="/buy/ad/home"]{display:none!important}
+				`, `body`, "prepend");
 			};
 			base.addStyle(`${mount}-baidu`, "style", `
 				#layoutMain,.DxdbeCb{border-radius:10px;border-bottom-left-radius:0;border-bottom-right-radius:0;background:#ffffffA0!important}
@@ -5926,7 +5926,6 @@ button.downloadSubtitle:disabled {
 				.xtJbHcb .CDaavKb .KQcHyA{background:rgb(244,207,0)!important;padding:8px 15px}
 				.xtJbHcb .web-header-nav-new-version-inner{background:var(--pl-c)!important;padding:8px 15px;line-height:15px;width:auto;height:auto}
 				a{transition:all.2s!important}
-				#bd-main .bd-left{margin:auto!important}
 				.verify-input input{padding-left:0!important;text-align:center!important}
 				.verify-input input:focus{border:2px solid ${temp.color}!important}
 				[data-theme=light] .vp-video-page-card .vp-video-page-card__video-detail{color:#030b1a}
