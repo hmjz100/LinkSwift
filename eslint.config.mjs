@@ -41,5 +41,14 @@ export default [
 			"no-control-regex": "off",
 			"no-irregular-whitespace": "off"
 		}
+	},
+	{
+		files: ["test/**/*.js"],
+		languageOptions: {
+			globals: {
+				__dirname: "readonly",
+				require: "readonly"
+			}
+		}
 	}
 ];
