@@ -1582,7 +1582,7 @@
 		 * @returns {String} URL 编码格式字符串（如`key1=value1&key2=value2`）
 		 */
 		stringify(obj) {
-			let str;
+			let str = "";
 			for (const key in obj) {
 				if (obj.hasOwnProperty(key)) {
 					const value = obj[key];
