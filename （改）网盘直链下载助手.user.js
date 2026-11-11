@@ -321,7 +321,7 @@
 			mount: {
 				home: ".frame-main>div>div>div>div:has(.g-dropdown-button.g-new-create)",
 				main: ".wp-s-agile-tool-bar__header",
-				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more"
+				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more, .share-multi-list-toolbar-row .share-list-toolbar, .module-share-bottom-bar .x-button-box"
 			},
 			dom: {
 				enhance: `+<br/>此方式可以自动设置用户代理(UA)，然后下载。<br/>此方式的下载请求<b>可能会</b>被<b>旧版 IDM</b> 捕获。`,
@@ -5570,17 +5570,26 @@ button.downloadSubtitle:disabled {
 		async getShareData() {
 			// 前置
 			const url = new URL(location.href);
-			const locals = unsafeWindow?.locals?.dump?.();
+			const locals = unsafeWindow?.locals?.dump?.() || {};
+			const yunData = unsafeWindow?.yunData || {};
+			// 新版分享页（disk-share-v2）把页面变量放在 locals 中，旧版放在 yunData 中
+			const local = (key) => locals?.[key]?.value ?? unsafeWindow?.locals?.get?.(key) ?? yunData?.[key] ?? "";
+			const cookie = (name) => {
+				const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
+				if (!match) return "";
+				try { return decodeURIComponent(match[1]); } catch { return match[1]; }
+			};
 
 			// 参数们
 			const surl = url.pathname.split('/').pop().replace(/^1(.{22})$/, '$1');
-			const pwd = localStorage.getItem(`${surl}_pwd`) || url.searchParams.get('pwd');
-			const baidu_id = document?.cookie?.split?.('BAIDUID=')?.[1]?.split?.(';')?.[0];
-			const share_uk = locals?.share_uk?.value;
-			const share_id = locals?.shareid?.value;
-			const bds_token = locals?.bdstoken?.value;
-			const js_token = unsafeWindow?.jsToken;
-			const se_key = unsafeWindow?.currentSekey || unsafeWindow?.cache?.list?.config?.params?.sekey;
+			// 新版分享页的本地存储键名带前缀 1（例如 1xxxx_pwd）
+			const pwd = url.searchParams.get('pwd') || localStorage.getItem(`${surl}_pwd`) || localStorage.getItem(`1${surl}_pwd`) || "";
+			const baidu_id = cookie("BAIDUID");
+			const share_uk = local("share_uk");
+			const share_id = local("shareid");
+			const bds_token = local("bdstoken");
+			const js_token = unsafeWindow?.jsToken || local("jsToken");
+			const se_key = unsafeWindow?.currentSekey || local("currentSekey") || local("sekey") || cookie("BDCLND") || unsafeWindow?.cache?.list?.config?.params?.sekey || "";
 
 			return {
 				share: {
@@ -5594,7 +5603,10 @@ button.downloadSubtitle:disabled {
 					token: bds_token
 				},
 				jsToken: js_token,
-				sekey: se_key
+				sekey: se_key,
+				// 新版分享页直接提供签名，没有时再向服务器获取
+				sign: local("sign"),
+				timestamp: local("timestamp")
 			}
 		},
 		addPageListener() {
@@ -5617,7 +5629,9 @@ button.downloadSubtitle:disabled {
 				}
 				message.info("提示：<br/>因网盘限制，请保存到自己网盘后再去下载哦~");
 				await base.sleep(500);
-				document.querySelector(".tools-share-save-hb").click();
+				const save = document.querySelector(".tools-share-save-hb button, .tools-share-save-hb, .share-list-toolbar__pill-btn[title='保存至网盘']");
+				if (!save) return message.error("提示：<br/>没有找到网盘的“保存到网盘”按钮，请手动保存后再下载哦~");
+				save.click();
 			});
 		},
 		greenerPage() {
@@ -6082,25 +6096,72 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button color-button" style="padding:0;">
-					<span class="g-button-right" style="padding-left:10px">
-						<em class="icon icon-download" style="color:#fff;line-height:27px"></em>
-						<span class="text" style="width:auto;">下载助手</span>
-					</span>
-					<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu" style="top:37px">
-						<li class="sub cursor-p pl-button-mode pl-button-save"><em class="icon noicon-zhuancun_bai" style="width:15px"></em><span>保存后下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
-						<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
-						<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
-						<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
-						<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
-					</ul>
-				</a>`)
-				element.after($button);
+				const menu = `<li class="sub cursor-p pl-button-mode pl-button-save"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-drive"/></svg><span>保存后下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+					<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+					<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+					<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+					<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>`;
+				if (element.hasClass("share-list-toolbar")) {
+					// 新版分享页（disk-share-v2）多文件列表的顶部工具栏，仿照原生“下载 / 保存至网盘”胶囊按钮
+					const $button = this.createShareButton(element, "pill", `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>下载助手</span>`);
+					$button.addClass("pl-button").append(`<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu" style="top:100%;left:0;">${menu}</ul>`);
+					const $pill = element.find(".share-list-toolbar__pill").first();
+					$pill.length ? $pill.before($button) : element.prepend($button);
+				} else if (element.hasClass("x-button-box")) {
+					// 新版分享页底部操作栏（单文件分享页）
+					const $button = this.createShareButton(element, "bar", `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>下载助手</span>`);
+					$button.addClass("pl-button").append(`<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu reverse" style="bottom:100%;left:0;">${menu}</ul>`);
+					element.prepend($button);
+				} else {
+					// 旧版分享页
+					const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button color-button" style="padding:0;">
+						<span class="g-button-right" style="padding-left:10px">
+							<em class="icon icon-download" style="color:#fff;line-height:27px"></em>
+							<span class="text" style="width:auto;">下载助手</span>
+						</span>
+						<ul class="dropdown-list nd-common-float-menu pl-dropdown-menu" style="top:37px">${menu}</ul>
+					</a>`);
+					element.after($button);
+				}
 			});
+		},
+		/**
+		 * 为新版分享页（disk-share-v2）创建与原生样式一致的按钮
+		 * @description 复制原生按钮（含 Vue 的 data-v-* 作用域属性）以沿用网盘自身样式，找不到原生按钮时退回到脚本自带样式
+		 * @param {jQuery} element - 挂载点（顶部工具栏 .share-list-toolbar 或底部 .x-button-box）
+		 * @param {String} type - "pill" 顶部胶囊按钮，"bar" 底部操作栏按钮
+		 * @param {String} html - 按钮内容
+		 * @returns {jQuery} 按钮外层元素
+		 */
+		createShareButton(element, type, html) {
+			const scoped = (from, to) => {
+				if (!from?.length) return;
+				Array.from(from.get(0).attributes).filter(attr => attr.name.startsWith("data-v-")).forEach(attr => to.attr(attr.name, ""));
+			};
+			let $wrap, $btn;
+			if (type === "pill") {
+				const $nativePill = element.find(".share-list-toolbar__pill").first();
+				const $nativeBtn = $nativePill.find(".share-list-toolbar__pill-btn").first();
+				// 外层沿用原生胶囊容器样式并套用助手主题色，内层按钮文字改为白色以保证对比度
+				$wrap = $(`<div class="share-list-toolbar__pill pl-share-pill color-button"></div>`);
+				$btn = $(`<button class="share-list-toolbar__pill-btn" type="button" title="下载助手" style="color:#fff;">${html}</button>`);
+				scoped($nativePill, $wrap);
+				scoped($nativeBtn, $btn);
+			} else {
+				const $nativeBtn = element.find("button.wp-base-button").first();
+				// 沿用原生主按钮（保存到网盘）的样式并套用助手主题色
+				$wrap = $(`<div class="pl-share-bar"></div>`);
+				$btn = $(`<button class="wp-base-button wp-base-button--primary wp-base-button--middle color-button" type="button" title="下载助手" style="color:#fff;"><span class="wp-base-button__content">${html}</span></button>`);
+				scoped($nativeBtn, $btn);
+				scoped($nativeBtn.find(".wp-base-button__content"), $btn.find(".wp-base-button__content"));
+				if ($nativeBtn.attr("style")) $btn.attr("style", `${$nativeBtn.attr("style")};color:#fff;`);
+			}
+			$wrap.append($btn);
+			return $wrap;
 		},
 		addInitButton() {
 			base.waitForKeyElements(config.$baidu.mount.home, (element) => {
@@ -6127,14 +6188,26 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button-init color-button" href="javascript:;">
-					<span class="g-button-right">
-						<em class="icon icon-download" style="color:#FFF;line-height:27px"></em>
-						<span class="text" style="width:auto;">点我点亮</span>
-					</span>
-				</a>`)
-				$button.click(base.showInitDialog);
-				element.after($button);
+				let $button;
+				if (element.hasClass("share-list-toolbar")) {
+					$button = this.createShareButton(element, "pill", `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>点我点亮</span>`).addClass("pl-button-init");
+					$button.click(base.showInitDialog);
+					const $pill = element.find(".share-list-toolbar__pill").first();
+					$pill.length ? $pill.before($button) : element.prepend($button);
+				} else if (element.hasClass("x-button-box")) {
+					$button = this.createShareButton(element, "bar", `<svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>点我点亮</span>`).addClass("pl-button-init");
+					$button.click(base.showInitDialog);
+					element.prepend($button);
+				} else {
+					$button = $(`<a class="g-button tools-share-V20-btn save_btn pl-button-init color-button" href="javascript:;">
+						<span class="g-button-right">
+							<em class="icon icon-download" style="color:#FFF;line-height:27px"></em>
+							<span class="text" style="width:auto;">点我点亮</span>
+						</span>
+					</a>`);
+					$button.click(base.showInitDialog);
+					element.after($button);
+				}
 			});
 		},
 		async getFilesUrl(items, token) {
@@ -6171,11 +6244,13 @@ button.downloadSubtitle:disabled {
 				const res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
 
 				if (!res || res.errno !== 0 || !res.list) {
+					if (!res) throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
 					if (res.errno === 9019) {
 						base.delValue("baidu_access_token");
 						throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
 					}
+					if (res.errno === 9013) throw new Error("提示：<br/>当前账号已被服务器限制使用第三方工具（hit black uid），可尝试修改密码后重新登录~<br/>代码：" + res.errno);
 					if (res.errno || res.errmsg) {
 						batch.forEach(item => item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`);
 					} else {
@@ -6187,11 +6262,14 @@ button.downloadSubtitle:disabled {
 					const item = res?.list?.find?.(li => li.fs_id == _item.fs_id);
 					if (item) {
 						Object.assign(_item, item);
-						temp.glinks.push({ id: _item.fs_id, expires: (Date.now() + 4 * 60 * 60 * 1000), data: item });
+						if (item.dlink?.startsWith?.("http")) temp.glinks.push({ id: _item.fs_id, expires: (Date.now() + 4 * 60 * 60 * 1000), data: item });
+					} else if (!_item.dlink) {
+						// 服务器正常响应但没有返回此文件（账号受限或文件异常时会这样）
+						_item.dlink = "获取下载地址失败，服务器没有返回此文件的下载地址，可能是账号受限或文件异常，刷新网页后再试试吧~";
 					}
 				});
 
-				proc += res.list.length;
+				proc += batch.length;
 				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个地址`);
 
 				// 批次间休息
@@ -6226,7 +6304,7 @@ button.downloadSubtitle:disabled {
 				url.searchParams.set("timestamp", sData?.timestamp);
 				url.searchParams.set("bdstoken", sData.baidu.token);
 				url.searchParams.set("logid", base.encodeBase(sData.baidu.id));
-				url.searchParams.set("jsToken", sData.jsToken);
+				if (sData.jsToken) url.searchParams.set("jsToken", sData.jsToken);
 
 				const data = new URLSearchParams({
 					"encrypt": 0,
@@ -6240,21 +6318,31 @@ button.downloadSubtitle:disabled {
 				const res = await base.post(url, data);
 
 				if (!res || res.errno !== 0 || !res.list) {
+					if (!res) throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
 					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
 					if (res.errno === 9019) {
 						base.delValue("baidu_access_token");
 						throw new Error("提示：<br/>访问令牌已过期，再获取一次吧~<br/>代码：" + res.errno);
 					}
-					if (res.errno || res.errmsg) {
-						item.dlink = `获取下载地址失败，${(res.errno || res.errmsg) ? "服务器说：" + (res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)) + "。" : "刷新后再试试吧~"}`;
+					if (res.errno === -20) throw new Error("提示：<br/>服务器要求进行人机验证，请先在网页中保存或下载一次文件以完成验证，然后再试~<br/>代码：" + res.errno);
+					if (res.errno === 9013) throw new Error("提示：<br/>当前账号已被服务器限制使用第三方工具（hit black uid），可尝试修改密码后重新登录~<br/>代码：" + res.errno);
+					if (res.errno === 113 || res.errno === 118) {
+						item.dlink = `<span>获取下载地址失败，服务器说：此分享文件不允许直接获取下载地址（代码：${res.errno}），需要<b>保存到网盘</b>后于自己的网盘中下载。</span>`;
+					} else if (res.errno || res.errmsg) {
+						item.dlink = `获取下载地址失败，服务器说：${res.errno && res.errmsg ? res.errno + " - " + res.errmsg : (res.errmsg || res.errno)}。`;
 					} else {
-						throw new Error("提示：<br/>获取下载地址失败，刷新网页后再试试吧~");
+						item.dlink = "获取下载地址失败，服务器没有返回此文件的下载地址，刷新网页后再试试吧~";
 					}
+				} else if (base.isType(res.list) === "string") {
+					// 服务器返回了加密的下载信息（仅官方客户端能解密），网页端拿不到此文件的直链
+					item.dlink = `<span>获取下载地址失败，服务器只返回了加密的下载信息（仅供官方客户端使用），需要<b>保存到网盘</b>后于自己的网盘中下载。</span>`;
+				} else if (base.isType(res.list) === "array" && res.list[0]) {
+					Object.assign(item, res.list[0]);
+					// 只缓存成功获取到的地址
+					if (item.dlink?.startsWith?.("http")) temp.glinks.push({ "id": item.fs_id, "expires": (Date.now() + 4 * 60 * 60 * 1000), "data": res.list[0] });
+				} else {
+					item.dlink = "获取下载地址失败，服务器没有返回此文件的下载地址，刷新网页后再试试吧~";
 				}
-
-				if (base.isType(res.list) === "array") Object.assign(item, res.list[0]);
-				if (base.isType(res.list) === "string") item.dlink = `<span>获取下载地址失败，服务器说：此文件大小超过可获取限制，需要<b>保存到网盘</b>后于网盘中下载。</span>`;
-				temp.glinks.push({ "id": item.fs_id, "expires": (Date.now() + 4 * 60 * 60 * 1000), "data": res.list[0] });
 
 				proc++
 				$doc.find(".swal2-html-container").html(`已获取 ${proc} / ${items.length} 个地址`);
@@ -6296,7 +6384,9 @@ button.downloadSubtitle:disabled {
 		async getLink() {
 			let token = base.getValue("baidu_access_token") || await this.getToken().catch(e => {
 				if (e instanceof Error) throw e;
-				throw new Error(e?.message || e || "[百度网盘] 获取令牌失败");
+				// 请求失败时拿到的是响应/错误对象，整理成可读的提示而不是 [object Object]
+				const detail = (typeof e === "string" && e) || e?.message || e?.error || (e?.status ? `响应状态 ${e.status}${e.statusText ? " " + e.statusText : ""}${e.finalUrl ? "，地址 " + e.finalUrl : ""}` : "") || "";
+				throw new Error(`提示：<br/>获取授权令牌失败，请检查网络或脚本管理器是否允许访问 openapi.baidu.com~${detail ? `<br/>详情：${detail}` : ""}`);
 			});
 
 			// 回退授权
@@ -6341,13 +6431,20 @@ button.downloadSubtitle:disabled {
 					throw new Error(e?.message || e || "[百度网盘] 获取下载地址失败");
 				});
 			} else if (temp.page === "share") {
+				if (!files.length) throw new Error("提示：<br/>请勾选要下载的文件哦~<br/>分享页不支持直接获取文件夹，请进入文件夹后再勾选文件~");
 				const shareData = await this.getShareData();
+				if (!shareData.baidu.token) throw new Error("提示：<br/>没有获取到登录信息，请先登录百度网盘后再试~");
 
-				const sign = await base.get(`${config.$baidu.api.getShareSign}&surl=1${shareData.share.url}$bdstoken=${shareData.baidu.token}&logid=${base.encodeBase(shareData.baidu.id)}`);
-				if (sign?.data?.sign && sign?.data?.timestamp) {
-					shareData.sign = sign.data.sign;
-					shareData.timestamp = sign.data.timestamp;
+				// 新版分享页会直接提供签名，没有时再向服务器获取
+				if (!shareData.sign || !shareData.timestamp) {
+					const sign = await base.get(`${config.$baidu.api.getShareSign}&surl=1${shareData.share.url}&bdstoken=${shareData.baidu.token}&logid=${base.encodeBase(shareData.baidu.id)}`).catch(() => null);
+					const data = sign?.data || sign;
+					if (data?.sign && data?.timestamp) {
+						shareData.sign = data.sign;
+						shareData.timestamp = data.timestamp;
+					}
 				}
+				if (!shareData.sign || !shareData.timestamp) throw new Error("提示：<br/>获取分享签名失败，刷新网页后再试试吧~");
 
 				files = await this.getShareFilesUrl(files, shareData, token).catch(e => {
 					if (e instanceof Error) throw e;
@@ -6399,11 +6496,37 @@ button.downloadSubtitle:disabled {
 				const context = unsafeWindow.require?.("system-core:context/context.js");
 				if (context?.instanceForSystem?.list?.getSelected?.()?.[0]) list = context.instanceForSystem.list.getSelected();
 
+				// 0 新版分享页（disk-share-v2）
+				if (list.length === 0 && this.detectPage() === "share") list = this.getShareSelectedList();
+
 				return base.clone(list);
 			} catch (e) {
 				base.console.error(e);
 				return [];
 			}
+		},
+		/**
+		 * 获取新版分享页（disk-share-v2）中勾选的文件
+		 * @description 勾选状态来自列表行的复选框，文件信息来自页面提供的 locals.file_list（进入子文件夹后也会同步更新）；单文件分享页没有列表，直接返回页面中的文件
+		 * @returns {Array} 文件列表
+		 */
+		getShareSelectedList() {
+			const locals = unsafeWindow?.locals;
+			const files = locals?.dump?.()?.file_list?.value || locals?.get?.("file_list") || [];
+			const rows = Array.from(unsafeWindow.document.querySelectorAll(".JS-list-view-item[data-file-key]"));
+			if (rows.length === 0) {
+				const type = String(unsafeWindow?.SHAREPAGETYPE || locals?.dump?.()?.share_page_type?.value || "");
+				return /single/.test(type) && Array.isArray(files) ? files : [];
+			}
+			return rows.filter(row => row.querySelector(".wp-checkbox--checked, [aria-checked='true']")).map(row => {
+				const key = row.dataset.fileKey;
+				const file = Array.isArray(files) ? files.find(f => String(f.fs_id) === String(key)) : null;
+				if (file) return file;
+				// locals 中没有时，用列表行上的信息兜底
+				const link = row.querySelector(".filename");
+				const sizeText = row.querySelector(".file-size")?.textContent?.trim() || "";
+				return { fs_id: key, server_filename: link?.title || link?.textContent?.trim() || key, size: 0, isdir: /个(文件|项目)/.test(sizeText) ? 1 : 0 };
+			});
 		},
 		detectPage() {
 			const path = location.pathname;
