@@ -321,7 +321,8 @@
 			mount: {
 				home: ".frame-main>div>div>div>div:has(.g-dropdown-button.g-new-create)",
 				main: ".wp-s-agile-tool-bar__header",
-				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more"
+				share: ".module-share-top-bar .x-button-box .g-dropdown-button.tools-more",
+				share_v2: ".module-share-bottom-bar.share-bottom-btns > .bar > .x-button-box"
 			},
 			dom: {
 				enhance: `+<br/>此方式可以自动设置用户代理(UA)，然后下载。<br/>此方式的下载请求<b>可能会</b>被<b>旧版 IDM</b> 捕获。`,
@@ -1995,6 +1996,83 @@
 		},
 
 		/**
+		 * 查找 React 组件实例
+		 * @author hmjz100
+		 * @description 从指定根元素出发，收集所有 Vue 组件实例，支持 Vue3 / Vue2
+		 * @param {HTMLElement} rootElement - 起始 DOM 元素
+		 * @returns {Object[]} Vue 组件实例数组
+		 */
+		getVueComponents(rootElement) {
+			if (!rootElement) return [];
+
+			// ---------- Vue 3 ----------
+			const vueAppHost = rootElement.__vue_app__
+				? rootElement
+				: rootElement.querySelector?.('[data-v-app]');
+			const app = vueAppHost?.__vue_app__;
+			if (app) {
+				const rootVNode = app._container?._vnode || app._vnode;
+				const rootComponent = rootVNode?.component || app._instance;
+				const out = [];
+				const seen = new Set();
+				const walk = (vnode) => {
+					if (!vnode || typeof vnode !== 'object' || seen.has(vnode)) return;
+					seen.add(vnode);
+					if (vnode.component) {
+						out.push(vnode.component);
+						walk(vnode.component.subTree);
+					}
+					if (Array.isArray(vnode.children)) vnode.children.forEach(walk);
+					if (vnode.suspense) walk(vnode.suspense);
+					if (Array.isArray(vnode.dynamicChildren)) vnode.dynamicChildren.forEach(walk);
+				};
+				if (rootComponent) {
+					out.push(rootComponent);
+					walk(rootComponent.subTree);
+				} else if (rootVNode) {
+					walk(rootVNode);
+				}
+				return out;
+			}
+
+			// ---------- Vue 2 ----------
+			const rootVm = rootElement.__vue__;
+			if (rootVm) {
+				const out = [];
+				const walk = (vm) => {
+					if (!vm) return;
+					out.push(vm);
+					(vm.$children || []).forEach(walk);
+				};
+				walk(rootVm);
+				return out;
+			}
+
+			return [];
+		},
+
+		/**
+		 * 查找 React 组件实例
+		 * @author hmjz100
+		 * @description 查找指定 Vue 组件实例，按组件名匹配
+		 * @param {String|String[]} names - 组件名，支持传入 'Foo' 或 ['Foo', 'Bar']
+		 * @param {HTMLElement} rootElement - 起始 DOM 元素
+		 * @param {Boolean} multiple - 是否返回多个匹配，否则仅会返回第一个匹配到的组件
+		 * @returns {Object[]} Vue 组件实例数组
+		 */
+		findVueComponent(names, rootElement, multiple = false) {
+			const matched = this.getVueComponents(rootElement).filter((c) => {
+				const type = c.type;
+				const name =
+					(type && (type.name || type.__name)) ||
+					(c.$options && c.$options.name) ||
+					'';
+				return Array.isArray(names) ? names.includes(name) : name === names;
+			});
+			return multiple ? matched : matched[0];
+		},
+
+		/**
 		 * 深拷贝
 		 * @author hmjz100
 		 * @description 完全复制某个东西
@@ -2163,6 +2241,7 @@
 						{
 							domain: "http://localhost",
 							port: "15151",
+							key: "",
 							dir: "",
 							default: true
 						}
@@ -2319,7 +2398,7 @@
 					<div>客户端标识</div>
 					<input type="number" autocomplete="off" placeholder="用于标识 IDM 客户端扩展的标识" class="${mount} input swal2-input" data-type="idm.id" value="">
 				</label>
-				<p style="text-align:start">提示：Client ID（即客户端标识）是 IDM 客户端用于标识不同浏览器 IDM 捕获扩展的唯一 ID。<br/>如果您有多个浏览器，每个浏览器都需要配置不同的客户端标识。<br/>如果填写了错误的客户端标识，将会导致 “推送到 IDM” 功能无法正常推送。</p>
+				<p style="text-align:start">小提示：Client ID（即客户端标识）是 IDM 客户端用于标识不同浏览器 IDM 捕获扩展的唯一 ID。<br/>如果您有多个浏览器，每个浏览器都需要配置不同的客户端标识。<br/>如果填写了错误的客户端标识，将会导致 “推送到 IDM” 功能无法正常推送。</p>
 				<div style="margin-top:1em;text-align:start">
 					<p>Chromium 类浏览器标识请使用以下方法获取：</p>
 					<ol class="list">
@@ -2563,9 +2642,15 @@
 					<input type="text" autocomplete="off" placeholder="服务器端口号，一般为 15151" class="${mount} input swal2-input listener-rpc-input" data-type="abdm.port" value="">
 				</label>
 				<label class="${mount} setting-item">
+					<div>服务密钥</div>
+					<input type="text" autocomplete="off" placeholder="服务器密钥，需从客户端设置的 API Key 中获取" class="${mount} input swal2-input listener-rpc-input" data-type="abdm.key" value="">
+				</label>
+				<p style="text-align:start">小提示：ABDM 无头推送接口强制要求提供服务器密钥；该要求不受 “使用 API Key” 选项是否关闭的影响。</p>
+				<label class="${mount} setting-item">
 					<div>存储路径</div>
 					<input type="text" autocomplete="off" placeholder="文件下载后保存路径，例如 D:\\Downloads\\，留空则默认" class="${mount} input swal2-input listener-rpc-input" data-type="abdm.dir" value="">
-				</label>`;
+				</label>
+				<p style="margin-top:1em;text-align:start">小提示：将客户端的“显示下载进度对话框”与“显示下载完成对话框”设置项关闭后可实现与 Aria2 类似的无感下载。</p>`;
 			Swal.fire({
 				...temp.swalDefault,
 				title: "ABDM 服务设置",
@@ -2720,14 +2805,15 @@
 					</blockquote>
 					<div>
 						<p>1、新增 - 支持光鸭云盘；</p>
-						<p>2、适配 - 变来变去的 123 云盘；</p>
-						<p>3、优化 - 网络请求头标准化；</p>
-						<p>4、优化 - 调样式，改类名，优逻辑；</p>
-						<p>5、优化 - 使用 eslint 处理与检查脚本代码问题；</p>
-						<p>6、优化 - 夸克网盘 Cookie 传递；</p>
+						<p>2、适配 - 百度网盘新版分享页；</p>
+						<p>3、适配 - 变来变去的 123 云盘；</p>
+						<p>4、优化 - 网络请求头标准化；</p>
+						<p>5、优化 - 调样式，改类名，优逻辑；</p>
+						<p>6、优化 - 使用 eslint 处理与检查脚本代码问题；</p>
+						<p>7、优化 - 夸克网盘 Cookie 传递；</p>
 						<p style="margin-left:10px">（感谢 <a href="https://github.com/kwkvh" target="_blank">kwkvh</a> 提供的想法）</p>
-						<p>7、修复 - 迅雷云盘样式调整导致脚本弹窗异常变大；</p>
-						<p>8、修复 - 推送到 ABDM 下载器实际成功却显示失败。</p>
+						<p>8、修复 - 迅雷云盘样式调整导致脚本弹窗异常变大；</p>
+						<p>9、修复 - 推送到 ABDM 下载器实际成功却显示失败。</p>
 					</div>
 				</div>
 				<hr/>
@@ -5158,7 +5244,7 @@ button.downloadSubtitle:disabled {
 			if (temp.mode === "api") {
 				const rpc = base.getValue("setting_idm_rpc");
 				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="all" type="download.enhance" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.enhance}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg>全部增强下载 (Beta)</button>
-				
+
 					<button action="all" type="sendto.idm" class="${mount} btn default mini tip" data-title="${config.base.dom.method.api.idm}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-up"/></svg>全部推送至 IDM (Beta)</button>`);
 
 				content.find(`.${mount}.extra`).append(`<button action="settings" type="idm" class="${mount} btn warning mini tip" data-title="${rpc}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改 IDM 服务参数</button>`);
@@ -5496,6 +5582,7 @@ button.downloadSubtitle:disabled {
 						const rpc = {
 							domain: selected.domain,
 							port: selected.port,
+							key: selected.key ?? "",
 							dir: selected.dir
 						};
 						const url = `${rpc.domain}:${rpc.port}/start-headless-download`;
@@ -5506,11 +5593,12 @@ button.downloadSubtitle:disabled {
 								"link": link,
 								"headers": headers
 							},
-							"name": filename
+							"name": filename,
+							"startDownload": true
 						}
 						if (headers?.["Referer"]) data["downloadSource"]["downloadPage"] = headers["Referer"];
 						if (rpc.dir) data.folder = rpc.dir;
-						const res = await base.post(url, data, { "Content-Type": "text/plain;charset=UTF-8" }, "text", false);
+						const res = await base.post(url, data, { "Content-Type": "application/json;charset=UTF-8", "X-Api-Key": rpc.key }, "text", false);
 						if (res === "OK") return "success";
 						return "fail";
 					});
@@ -5574,7 +5662,7 @@ button.downloadSubtitle:disabled {
 
 			// 参数们
 			const surl = url.pathname.split('/').pop().replace(/^1(.{22})$/, '$1');
-			const pwd = localStorage.getItem(`${surl}_pwd`) || url.searchParams.get('pwd');
+			const pwd = localStorage.getItem(`${surl}_pwd`) || localStorage.getItem(`1${surl}_pwd`) || url.searchParams.get('pwd');
 			const baidu_id = document?.cookie?.split?.('BAIDUID=')?.[1]?.split?.(';')?.[0];
 			const share_uk = locals?.share_uk?.value;
 			const share_id = locals?.shareid?.value;
@@ -5617,7 +5705,7 @@ button.downloadSubtitle:disabled {
 				}
 				message.info("提示：<br/>因网盘限制，请保存到自己网盘后再去下载哦~");
 				await base.sleep(500);
-				document.querySelector(".tools-share-save-hb").click();
+				document.querySelector(".tools-share-save-hb, .bottom-save-path-wrap").click();
 			});
 		},
 		greenerPage() {
@@ -5685,9 +5773,7 @@ button.downloadSubtitle:disabled {
 			base.waitForKeyElements(".wp-s-header-user__drop-channel", (tag) => {
 				tag.fadeOut();
 			}, true);
-			base.waitForKeyElements(".app-download", (tag) => {
-				tag.fadeOut();
-			}, true);
+			// 旧版分享页-工具栏-在手机查看
 			base.waitForKeyElements(`.g-button[title*="手机"]`, (tag) => {
 				tag.fadeOut();
 			}, true)
@@ -5789,16 +5875,28 @@ button.downloadSubtitle:disabled {
 			// 分享页
 			if (temp.page === "share") {
 				base.waitForKeyElements(`iframe[src^="/buy/ad"]`, (tag) => tag.remove(), true);
-				// 一朵可爱捏
 				base.addStyle(`${mount}-share-greener`, "style", `
-					body,.theme-white.init-new,#layoutApp{background-color:#FFF!important;background:#FFF!important}
-					#bd-main:has(.bd-left){display:flex;flex:1;justify-content:center}
-					#bd-main > .bd-aside-ad{display:none!important}
+					body,#init-new.init-new,#layoutApp{background-color:#FFF!important;background:#FFF!important}
+					#app > #layoutApp #bd-main:has(.bd-left){display:flex;flex:1;justify-content:center}
+					#app > #layoutApp #bd-main > .bd-aside-ad{display:none!important}
+					iframe[src="/buy/ad/home"]{display:none!important}
 				`, `.${mount}`);
 			}
 		},
 		beautifyPage() {
 			if (base.getValue("setting_ui_theme").custom.$baidu !== true) return;
+			temp.page = temp.main.detectPage();
+			// 一朵可爱捏
+			if (temp.page === "share") base.addStyle(`${mount}-share-theme`, "style", `
+				body,#init-new.init-new,#layoutApp{background-color:#DCEFFE!important;background:#DCEFFE url(https://nd-static.bdstatic.com/m-static/disk-share/widget/pageModule/init-new/image/init-bg_1708266.png) no-repeat center center!important}
+				#init-new.init-new .init-new-content{display:block;background:#ffffff33;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-right: 1.5px solid #ffffff33;}
+				#app > #layoutApp #bd-main:has(.bd-left){display:flex;flex:1;justify-content:center}
+				#app > #layoutApp #bd-main > .bd-aside-ad{display:none!important}
+				#app > #layoutApp #bd-main > .bd-left{background:#ffffffC0;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);margin:0;flex:1;padding-top:20px}
+				.module-share-bottom-bar,.share-list .module-list,.module-list-view .JS-list-view-item,.share-list-header:hover,.share-multi-list-toolbar-row>.share-list-toolbar{background:transparent}
+				.module-list-view .JS-list-view-item:hover, .module-list-view .hover-item,.module-list-view .JS-item-active{background:var(--pl-c-15,#ffffff15)}
+			`, `body`, "prepend");
+			// 非旧版主页
 			if (temp.main.detectPage() !== "home") {
 				base.adaptiveThemeOverride([
 					["#717fff", temp.color],
@@ -5893,18 +5991,8 @@ button.downloadSubtitle:disabled {
 					["#e9f6fe", `${temp.color}20`], // .gr-icon-catalog.is-open-catalog
 					["#d7eefc", `${temp.color}30`], // .gr-icon-catalog.is-open-catalog
 				]);
-				// 一朵可爱捏
-				base.addStyle(`${mount}-share-theme`, "style", `
-					body,.theme-white.init-new,#layoutApp{background-color:#DCEFFE!important;background:#DCEFFE url(https://nd-static.bdstatic.com/m-static/disk-share/widget/pageModule/init-new/image/init-bg_1708266.png) no-repeat center center!important}
-					#bd-main:has(.bd-left){display:flex;flex:1;justify-content:center}
-					#bd-main > .bd-aside-ad{display:none!important}
-					#bd-main > .bd-left{background:#ffffffC0;backdrop-filter:blur(20px);margin:0;flex:1;padding-top:20px}
-					.module-share-bottom-bar,.share-list .module-list,.module-list-view .JS-list-view-item,.share-multi-list-toolbar-row>.share-list-toolbar{background:transparent}
-					.module-list-view .JS-list-view-item:hover, .module-list-view .hover-item,.module-list-view .JS-item-active{background:var(--pl-c-15,#ffffff15)}
-					iframe[src="/buy/ad/home"]{display:none!important}
-				`, `body`, "prepend");
 			};
-			base.addStyle(`${mount}-baidu`, "style", `
+			if (["home", "share"].includes(temp.main.detectPage())) base.addStyle(`${mount}-baidu`, "style", `
 				#layoutMain,.DxdbeCb{border-radius:10px;border-bottom-left-radius:0;border-bottom-right-radius:0;background:#ffffffA0!important}
 				.KPDwCE,
 				.DxdbeCb .OFaPaO .tanwePYr,
@@ -6020,6 +6108,7 @@ button.downloadSubtitle:disabled {
 			], "other");
 		},
 		addButton() {
+			// 旧版主页
 			base.waitForKeyElements(config.$baidu.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "home") return;
@@ -6038,6 +6127,7 @@ button.downloadSubtitle:disabled {
 				</div>`);
 				element.prepend($button);
 			});
+			// 新版主页
 			base.waitForKeyElements(config.$baidu.mount.main, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "main") return;
@@ -6061,6 +6151,7 @@ button.downloadSubtitle:disabled {
 				</div>`);
 				element.prepend($button);
 			});
+			// 青春版主页
 			base.waitForKeyElements(config.$baidu.mount.main, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "youth") return;
@@ -6079,6 +6170,7 @@ button.downloadSubtitle:disabled {
 				</div>`);
 				element.prepend($button);
 			});
+			// 旧版分享
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
@@ -6098,11 +6190,41 @@ button.downloadSubtitle:disabled {
 						<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
 						<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
 					</ul>
-				</a>`)
+				</a>`);
 				element.after($button);
+			});
+			// 新版分享
+			base.waitForKeyElements(config.$baidu.mount.share_v2, (element) => {
+				temp.page = temp.main.detectPage();
+				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
+				const $button = $(`<button class="wp-base-button wp-base-button--primary wp-base-button--middle pl-button color-button" style="width: 128px; min-width: 128px; height: 36px; padding: 0px; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 24px;">
+					<span class="wp-base-button__content" aria-hidden="true" style="width: 16px; height: 16px; font-size: 16px;"><svg aria-hidden="true"><use href="#wp-icon-download" xlink:href="#wp-icon-download"></use></svg></span>
+					<span class="wp-base-button__content">下载助手</span>
+					<ul class="pl-dropdown-menu reverse" style="bottom:34px">
+						<li class="sub cursor-p pl-button-mode pl-button-save"><svg class="pl-icon" aria-hidden="true"><use xlink:href="#wp-icon-save-disk"></use></svg><span>保存后下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="api"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-downward"/></svg><span>API 下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="curl"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-plug"/></svg><span>cURL 下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="aria2"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>Aria2 下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="bitcomet"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>彗星下载</span></li>
+						<li class="sub cursor-p pl-button-mode" data-mode="abdm"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-cloud-arrow-down"/></svg><span>ABDM 下载</span></li>
+						<li class="sub cursor-p pl-button-mode listener-open-setting"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg><span>助手设置</span></li>
+						<li class="sub cursor-p pl-button-mode listener-open-beautify"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-palette"/></svg><span>助手美化</span></li>
+						<li class="sub cursor-p pl-button-mode listener-open-updatelog"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-newspaper"/></svg><span>更新日志</span></li>
+					</ul>
+				</button>`);
+				base.waitForKeyElements(".wp-base-button.wp-base-button--primary.wp-base-button--middle", (element) => {
+					element[0].attributes.forEach(function (attr) {
+						if (attr?.name?.startsWith?.("data-v-")) $button.attr(attr.name, "");
+					});
+					element.find(".wp-base-button__content")?.[0].attributes.forEach(function (attr) {
+						if (attr?.name?.startsWith?.("data-v-")) $button.find(".wp-base-button__content").attr(attr.name, "");
+					});
+				}, true);
+				element.append($button);
 			});
 		},
 		addInitButton() {
+			// 旧版主页
 			base.waitForKeyElements(config.$baidu.mount.home, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "home") return;
@@ -6110,6 +6232,7 @@ button.downloadSubtitle:disabled {
 				$button.click(base.showInitDialog);
 				element.prepend($button);
 			});
+			// 新版主页
 			base.waitForKeyElements(config.$baidu.mount.main, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || (temp.page !== "main" && temp.page !== "youth")) return;
@@ -6124,6 +6247,7 @@ button.downloadSubtitle:disabled {
 				$button.click(base.showInitDialog);
 				element.prepend($button);
 			});
+			// 旧版分享
 			base.waitForKeyElements(config.$baidu.mount.share, (element) => {
 				temp.page = temp.main.detectPage();
 				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
@@ -6135,6 +6259,24 @@ button.downloadSubtitle:disabled {
 				</a>`)
 				$button.click(base.showInitDialog);
 				element.after($button);
+			});
+			// 新版分享
+			base.waitForKeyElements(config.$baidu.mount.share_v2, (element) => {
+				temp.page = temp.main.detectPage();
+				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
+				const $button = $(`<button class="wp-base-button wp-base-button--primary wp-base-button--middle pl-button color-button" style="width: 128px; min-width: 128px; height: 36px; padding: 0px; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 24px;">
+					<span class="wp-base-button__content" aria-hidden="true" style="width: 16px; height: 16px; font-size: 16px;"><svg aria-hidden="true"><use href="#wp-icon-download" xlink:href="#wp-icon-download"></use></svg></span>
+					<span class="wp-base-button__content">下载助手</span>
+				</button>`);
+				base.waitForKeyElements(".wp-base-button.wp-base-button--primary.wp-base-button--middle", (element) => {
+					element[0].attributes.forEach(function (attr) {
+						if (attr?.name?.startsWith?.("data-v-")) $button.attr(attr.name, "");
+					});
+					element.find(".wp-base-button__content")?.[0].attributes.forEach(function (attr) {
+						if (attr?.name?.startsWith?.("data-v-")) $button.find(".wp-base-button__content").attr(attr.name, "");
+					});
+				}, true);
+				element.append($button);
 			});
 		},
 		async getFilesUrl(items, token) {
@@ -6171,6 +6313,8 @@ button.downloadSubtitle:disabled {
 				const res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
 
 				if (!res || res.errno !== 0 || !res.list) {
+					// LATER: 错误码处理
+					// https://github.com/hmjz100/LinkSwift/pull/557
 					if (res.errno === 112) throw new Error("提示：<br/>页面已过期，请刷新后重试~<br/>代码：" + res.errno);
 					if (res.errno === 9019) {
 						base.delValue("baidu_access_token");
@@ -6341,14 +6485,13 @@ button.downloadSubtitle:disabled {
 					throw new Error(e?.message || e || "[百度网盘] 获取下载地址失败");
 				});
 			} else if (temp.page === "share") {
+				if (files.every(item => isdir === 1)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 				const shareData = await this.getShareData();
-
 				const sign = await base.get(`${config.$baidu.api.getShareSign}&surl=1${shareData.share.url}$bdstoken=${shareData.baidu.token}&logid=${base.encodeBase(shareData.baidu.id)}`);
 				if (sign?.data?.sign && sign?.data?.timestamp) {
 					shareData.sign = sign.data.sign;
 					shareData.timestamp = sign.data.timestamp;
 				}
-
 				files = await this.getShareFilesUrl(files, shareData, token).catch(e => {
 					if (e instanceof Error) throw e;
 					throw new Error(e?.message || e || "[百度网盘] 获取分享下载地址失败");
@@ -6399,7 +6542,50 @@ button.downloadSubtitle:disabled {
 				const context = unsafeWindow.require?.("system-core:context/context.js");
 				if (context?.instanceForSystem?.list?.getSelected?.()?.[0]) list = context.instanceForSystem.list.getSelected();
 
+				// 0
+				const share = this.getShareSelectedList();
+				if (share?.[0]) list = share;
+
 				return base.clone(list);
+			} catch (e) {
+				base.console.error(e);
+				return [];
+			}
+		},
+		getShareSelectedList() {
+			try {
+				const toArray = (x) => {
+					if (x && typeof x === 'object' && 'value' in x) x = x.value;
+					return x ? Array.from(x) : [];
+				};
+				const root = unsafeWindow.document.querySelector('#app');
+
+				// 有 ListView，多文件页
+				const listView = base.findVueComponent('ListView', root);
+				if (listView) {
+					const { files, isSelected } = listView.props;
+					return toArray(files).filter((f) => {
+						try {
+							return isSelected(f) || isSelected(String(f.fs_id)) || isSelected(f.fs_id);
+						} catch (e) {
+							return false;
+						}
+					});
+				}
+
+				// 无 ListView，单文件页；先看 ShareHeader 的 context
+				const shareHeader = base.findVueComponent('ShareHeader', root);
+				const context = shareHeader?.props?.context;
+				if (context?.pageKind === 'single') {
+					const file = toArray(context.files)[0];
+					if (file) return [file];
+				}
+
+				// 无 ListView，单文件页；兜底，从预览组件拿 props.file
+				const previewComp = base.findVueComponent(['DocViewer', 'FileInfoPreview', 'PicturePreview', 'AudioPreview', 'VideoPreview'], root);
+				if (previewComp?.props?.file) return [previewComp.props.file];
+
+				return [];
 			} catch (e) {
 				base.console.error(e);
 				return [];
@@ -9030,8 +9216,7 @@ button.downloadSubtitle:disabled {
 			const mountElem = $(`<${mount} class="${mount}" />`);
 			temp.mount = mountElem;
 
-			// unsafeWindow.temp = temp;
-			// unsafeWindow.base = base;
+			// unsafeWindow.LS = { temp, base };
 
 			base.waitForKeyElements(`html:not(:has(> .${mount})) head`, (element) => {
 				if ($(`.${mount}`).length > 0) return;

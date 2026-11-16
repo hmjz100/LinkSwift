@@ -71,10 +71,8 @@
 
 ## 来源
 
-本行为准则改编自 [贡献者公约][homepage] 2.0 版，可在 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html 获取。
+本行为准则改编自 [贡献者公约](https://www.contributor-covenant.org) 2.0 版，可在 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html 获取。
 
 社区影响指南受 [Mozilla 行为准则执行阶梯](https://github.com/mozilla/diversity) 的启发。
-
-[主页]: https://www.contributor-covenant.org
 
 关于本行为准则的常见问题解答，请参阅 https://www.contributor-covenant.org/faq。其他语言的翻译可在 https://www.contributor-covenant.org/translations 获取。
