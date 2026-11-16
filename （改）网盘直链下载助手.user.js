@@ -6485,7 +6485,7 @@ button.downloadSubtitle:disabled {
 					throw new Error(e?.message || e || "[百度网盘] 获取下载地址失败");
 				});
 			} else if (temp.page === "share") {
-				if (files.every(item => isdir === 1)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
+				if (files.every(item => item.isdir === 1)) throw new Error("提示：<br/>请打开文件夹后再勾选文件~");
 				const shareData = await this.getShareData();
 				const sign = await base.get(`${config.$baidu.api.getShareSign}&surl=1${shareData.share.url}$bdstoken=${shareData.baidu.token}&logid=${base.encodeBase(shareData.baidu.id)}`);
 				if (sign?.data?.sign && sign?.data?.timestamp) {
