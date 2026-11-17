@@ -6263,10 +6263,10 @@ button.downloadSubtitle:disabled {
 			// 新版分享
 			base.waitForKeyElements(config.$baidu.mount.share_v2, (element) => {
 				temp.page = temp.main.detectPage();
-				if ($(".pl-button").length > 0 || !temp.page || temp.page !== "share") return;
-				const $button = $(`<button class="wp-base-button wp-base-button--primary wp-base-button--middle pl-button color-button" style="width: 128px; min-width: 128px; height: 36px; padding: 0px; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 24px;">
+				if ($(".pl-button-init").length > 0 || !temp.page || temp.page !== "share") return;
+				const $button = $(`<button class="wp-base-button wp-base-button--primary wp-base-button--middle pl-button-init color-button" style="width: 128px; min-width: 128px; height: 36px; padding: 0px; border-radius: 8px; font-size: 14px; font-weight: 500; line-height: 24px;">
 					<span class="wp-base-button__content" aria-hidden="true" style="width: 16px; height: 16px; font-size: 16px;"><svg aria-hidden="true"><use href="#wp-icon-download" xlink:href="#wp-icon-download"></use></svg></span>
-					<span class="wp-base-button__content">下载助手</span>
+					<span class="wp-base-button__content">点我点亮</span>
 				</button>`);
 				base.waitForKeyElements(".wp-base-button.wp-base-button--primary.wp-base-button--middle", (element) => {
 					element[0].attributes.forEach(function (attr) {
@@ -6276,6 +6276,7 @@ button.downloadSubtitle:disabled {
 						if (attr?.name?.startsWith?.("data-v-")) $button.find(".wp-base-button__content").attr(attr.name, "");
 					});
 				}, true);
+				$button.click(base.showInitDialog);
 				element.append($button);
 			});
 		},
