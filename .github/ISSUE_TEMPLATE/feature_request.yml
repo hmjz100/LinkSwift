@@ -32,6 +32,13 @@ body:
         - label: 我已修改上方标题的 “请修改我为您的问题” 为自己的问题。
           required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        **注意：不符合上述条件的提交将被直接关闭或忽略，恕不逐一排查。**
+        如果您其实还不确定问题出在哪里，不了解计算机，建议先花点时间看看 [你缺失的那门计算机课（网页版）](https://www.criwits.top/missing/) 了解计算机基础，以及如何在搜索引擎中查找正确的信息。
+        若只是使用疑问、环境配置或求助，请不要直接开功能请求，而是[前往社区](https://github.com/hmjz100/LinkSwift/discussions)发帖交流。
+
   - type: textarea
     id: issue-today
     attributes:
