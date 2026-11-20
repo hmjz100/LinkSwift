@@ -3,6 +3,17 @@ import js from "@eslint/js";
 export default [
 	js.configs.recommended,
 	{
+		files: ["src/**/*.js", "tests/**/*.js", "scripts/**/*.js"],
+		languageOptions: {
+			sourceType: "commonjs",
+			globals: {
+				// 新增模块与测试在 Node 环境中执行。
+				require: "readonly", module: "readonly", __dirname: "readonly",
+				console: "readonly", URL: "readonly"
+			}
+		}
+	},
+	{
 		files: ["**/*.user.js"],
 		languageOptions: {
 			ecmaVersion: 2022,
