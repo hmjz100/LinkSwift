@@ -6466,7 +6466,7 @@ button.downloadSubtitle:disabled {
 			}
 
 			// 获取选择的文件列表
-			const selects = this.getSelectedList();
+			const selects = await this.getSelectedList();
 			if (selects.length === 0) throw new Error("提示：<br/>请先勾选要下载的文件哦~");
 
 			$doc.find(".loading-popup .loading-title").html(`地址获取中`);
@@ -6528,7 +6528,7 @@ button.downloadSubtitle:disabled {
 			}];
 			base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(), config.base.dom.method[temp.mode].footer);
 		},
-		getSelectedList() {
+		async getSelectedList() {
 			try {
 				let list = [];
 				// 3
@@ -6989,7 +6989,7 @@ button.downloadSubtitle:disabled {
 				const reactObj = base.findReact(reactDom, 1);
 				const props = reactObj.pendingProps;
 				if (props) {
-					const fileList = props.dataSource || [];
+					const fileList = props.dataSource;
 					const selectedKeys = props.selectedKeys.split(",");
 					fileList.forEach(val => {
 						if (selectedKeys.includes(val.fileId)) {
@@ -7293,8 +7293,9 @@ button.downloadSubtitle:disabled {
 		},
 		getSelectedList() {
 			try {
-				return document.querySelector(".main_file_list").__vue__.selectList.map(val => val.item);
-			} catch {
+				let selects1 = document.querySelector(".main_file_list")?.__vue__?.selectList?.map?.(val => val.item);
+				if (selects1?.length) return selects1;
+
 				const vueDom = document.querySelector(".home-page")?.__vue__;
 				const fileList = vueDom._computedWatchers.fileList.value;
 				const dirList = vueDom._computedWatchers.dirList.value;
@@ -7307,6 +7308,9 @@ button.downloadSubtitle:disabled {
 					return selectedDirIndex.includes(i);
 				});
 				return [...selectFileList, ...selectDirList];
+			} catch (e) {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[中国移动云盘] 获取已勾选文件列表失败");
 			}
 		},
 		detectPage() {
@@ -7512,9 +7516,13 @@ button.downloadSubtitle:disabled {
 		},
 		getSelectedList() {
 			try {
-				return document.querySelector(".c-file-list").__vue__.selectedList;
-			} catch {
-				return [document.querySelector(".info-detail").__vue__.fileDetail];
+				let selects1 = document.querySelector(".c-file-list")?.__vue__?.selectedList;
+				if (selects1?.length) return selects1;
+				let selects2 = document.querySelector(".info-detail")?.__vue__?.fileDetail;
+				if (selects2) return [selects2];
+			} catch (e) {
+				if (e instanceof Error) throw e;
+				throw new Error(e?.message || e || "[天翼云盘] 获取已勾选文件列表失败");
 			}
 		},
 		detectPage() {
