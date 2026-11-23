@@ -265,7 +265,7 @@
 					mirrors: "点击复制镜像地址",
 					all: {
 						link: "点击复制全部下载地址",
-						curl: "点击复制全部 cURL 命令行",
+						curl: "点击复制 cURL 批量下载命令",
 						aria2: "Aria2 没启用 RPC？点击复制全部 Aria2 命令行",
 						bitcomet: "点击复制全部 BC 地址，可粘贴到比特彗星中下载"
 					}
@@ -2339,6 +2339,7 @@
 		 * @see {@link https://www.youxiaohou.com/zh-cn/motrix.html#使用指南 RPC 配置说明}、 {@link https://www.youxiaohou.com/zh-cn/curl.html cURL 使用教程}
 		 */
 		showSetting(target) {
+			const backToDownloads = target?.data?.("back-to-downloads");
 			const setting = $(`<div>
 				<label class="${mount} setting-item tip idm" data-title="有关 IDM 服务的配置">
 					<div>IDM 服务器</div>
@@ -2358,7 +2359,7 @@
 				</label>
 				<label class="${mount} setting-item curl">
 					<div>终端类型</div>
-					<select name="terminal" class="${mount} input swal2-select">
+					<select name="terminal" class="${mount} input swal2-select listener-terminal">
 					${Object.keys(temp.terminalType).map(i => `<option value="${i}" ${base.getValue("setting_curl_terminal") === i ? "selected" : ""}>${temp.terminalType[i]}</option>`).join("")}
 					</select>
 				</label>
@@ -2376,12 +2377,13 @@
 				showConfirmButton: false,
 				footer: `<p><a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;&#47;&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;" target="_blank" class="pl-a"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-star"></use></svg>&#76;&#105;&#110;&#107;&#83;&#119;&#105;&#102;&#116;</a>&#32;&#30001;&#32;<a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#47;&#104;&#109;&#106;&#122;&#49;&#48;&#48;" target="_blank" class="pl-a">&#104;&#109;&#106;&#122;&#49;&#48;&#48;</a>&#32;&#21046;&#20316;</p><p>${config.base.dom.footer}</p>`,
 				didOpen: (toast) => {
+					if (!backToDownloads) return;
 					const element = $(toast);
-					if (target?.data?.().some(key => key.startsWith("backTo"))) element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
-					if (target?.data?.("back-to-downloads")) element.find(".aria2, .bitcomet, .abdm, .other").hide();
+					element.find(".swal2-close").addClass(`${mount} tip`).attr("data-title", "返回上页").css({ "left": "10px", "right": "auto" }).text("◃");
+					element.find(".aria2, .bitcomet, .abdm, .other").hide();
 				},
 				willClose: () => {
-					if (target?.data?.("back-to-downloads")) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
+					if (backToDownloads) base.showMainDialog(config.base.dom.method[temp.mode].title, download.generateDOM(true), config.base.dom.method[temp.mode].footer);
 				},
 			});
 		},
@@ -5117,8 +5119,8 @@ button.downloadSubtitle:disabled {
 				const subType = isAll ? _type.replace(/^all\.file\./, "") : _type.replace(/^file\./, "");
 				const indices = isAll ? files.map((v, i) => i).filter(i => !get.dir(files[i])) : [index];
 
-				// 按子类型生成每行内容（每行一个）
 				const lines = [];
+				const curlFiles = [];
 				for (const i of indices) {
 					const file = files[i];
 					const link = get.link(file);
@@ -5127,13 +5129,16 @@ button.downloadSubtitle:disabled {
 					switch (subType) {
 						case "link": line = link; break;
 						case "name": line = name; break;
-						case "cmd.curl": line = download.tools.convertTo.curl(link, name, headers); break;
+						case "cmd.curl":
+							if (/^https?:\/\//i.test(link)) curlFiles.push({ link, filename: name, directories: get.directories?.(file) });
+							break;
 						case "cmd.aria2": line = download.tools.convertTo.aira2(link, name, headers); break;
 						case "cmd.bitcomet": line = download.tools.convertTo.bitcomet(link, name, headers); break;
 						default: break;
 					}
 					if (line) lines.push(line);
 				}
+				if (curlFiles.length) lines.push(download.tools.convertTo.curl(curlFiles, headers));
 
 				if (lines.length) {
 					await base.setClipboard(lines.join("\r\n"));
@@ -5198,13 +5203,15 @@ button.downloadSubtitle:disabled {
 						</div>`);
 					}
 					if (temp.mode === "curl") {
-						const finalink = download.tools.convertTo.curl(link, name, headers);
+						const finalink = download.tools.convertTo.curl([{ link, filename: name, directories: get.directories?.(v) }], headers);
 						allLink.push(finalink);
-						content.find(`.${mount}.main`).append(`<div class="item" data-index="${i}">
+						const item = $(`<div class="item" data-index="${i}">
 							<div class="name ${mount} tip" data-size="${size}"><div class="name">${name}</div><div class="size">${base.sizeFormat(size)}</div></div>
 
-							<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}">${finalink}<br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${name} 下载命令行</a>
+							<a action="copy" type="file.cmd.curl" class="link ${mount} tip" data-title="${config.base.dom.copy.curl}"><br/><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制 ${name} 下载命令行</a>
 						</div>`);
+						item.find('[type="file.cmd.curl"]').prepend(document.createTextNode(finalink));
+						content.find(`.${mount}.main`).append(item);
 					}
 					if (temp.mode === "aria2") {
 						const finalink = download.tools.convertTo.aira2(link, name, headers);
@@ -5251,9 +5258,10 @@ button.downloadSubtitle:disabled {
 
 				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.link" class="${mount} btn warning mini api tip" data-title="${config.base.dom.copy.all.link}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部地址</button>`);
 			} else if (temp.mode === "curl") {
-				content.find(`.${mount}.extra`).append(`<button action="settings" type="curl" class="${mount} btn warning mini tip" data-title="${temp.terminalType[base.getValue("setting_curl_terminal")]}" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>修改终端类型</button>`);
+				const terminal = temp.terminalType[base.getValue("setting_curl_terminal")];
+				content.find(`.${mount}.extra`).append(`<button action="settings" type="curl" class="${mount} btn warning mini tip" data-title="修改终端类型" data-back-to-downloads="true"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-gear"/></svg>${terminal}</button>`);
 
-				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.cmd.curl" class="${mount} btn default mini curl tip" data-title="${config.base.dom.copy.all.curl}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制全部命令行</button>`);
+				if (files.length >= 2) content.find(`.${mount}.extra`).append(`<button action="copy" type="all.file.cmd.curl" class="${mount} btn default mini curl tip" data-title="${config.base.dom.copy.all.curl}"><svg class="pl-icon"><use xlink:href="#pl-icon-fa-copy"/></svg>复制批量下载命令</button>`);
 			} else if (temp.mode === "aria2") {
 				const rpc = base.getValue("setting_aria2_rpc").find(i => i.default);
 
@@ -5332,28 +5340,78 @@ button.downloadSubtitle:disabled {
 				 * @author 油小猴
 				 * @author hmjz100
 				 * @description 根据终端类型生成对应 curl 命令，支持断点续传，自动处理文件名特殊字符
-				 * @param {String} link - 下载地址
-				 * @param {String} filename - 文件名
+				 * @param {{link: String, filename: String, directories?: String[]}[]} files - 下载地址、文件名和相对于所选文件夹的目录
 				 * @param {Object} [headers] - 请求头对象（可选）
-				 * @returns {String} 编码后的 curl 命令字符串
+				 * @returns {String} curl 命令字符串
 				 */
-				curl(link, filename, headers) {
+				curl(files, headers) {
 					const terminal = base.getValue("setting_curl_terminal");
-					filename = base.fixFilename(filename);
+					const windows = terminal === "wc" || terminal === "wp";
 					headers = base.standHeaders(headers, true, false);
-					let headerStr = "";
-					if (headers && base.isType(headers) === "object") {
-						const parts = [];
-						for (const [key, value] of Object.entries(headers)) {
-							// 转义双引号以防止命令行注入/语法错误
-							const safeValue = String(value).replace(/"/g, '\\"');
-							parts.push(`-H "${key}: ${safeValue}"`);
+					const headerStr = Object.entries(headers).map(([key, value]) => {
+						const safeValue = String(value).replace(/"/g, '\\"');
+						return ` -H "${key}: ${safeValue}"`;
+					}).join("");
+
+					const transfers = files.map(({ link, filename, directories = [] }) => {
+						let prepareDirectory = "";
+						let output = base.fixFilename(filename);
+						if (directories.length) {
+							output = [...directories, filename].map(name => {
+								let component = base.fixFilename(name).replace(/[\x00-\x1F\x7F]/g, "_");
+								if (windows) {
+									component = component.replace(/[ .]+$/, "");
+									if (/^(?:CON|PRN|AUX|NUL|COM[1-9¹²³]|LPT[1-9¹²³]) *(?:\.|$)/i.test(component)) component = `_${component}`;
+								}
+								return !component || component === "." || component === ".." ? "_" : component;
+							}).join("/");
+							// Windows 自带的 curl 可能无法正确创建含非 ASCII 字符的目录。
+						switch (terminal) {
+							case "wc": {
+								output = output.replace(/%/g, "_");
+								const directory = output.slice(0, output.lastIndexOf("/")).replace(/\//g, "\\");
+									if (/[^\x20-\x7E]/.test(directory)) prepareDirectory = `(if not exist "${directory}\\" mkdir "${directory}")`;
+								break;
+							}
+							case "wp": {
+								output = output.replace(/[$\u201C-\u201F]/g, "`$&");
+								const directory = output.slice(0, output.lastIndexOf("/"));
+									if (/[^\x20-\x7E]/.test(directory)) prepareDirectory = `New-Item -ItemType Directory -Force -Path "${directory}" | Out-Null`;
+								break;
+							}
+							default:
+								output = output.replace(/\$/g, "\\$");
+							}
 						}
-						if (parts.length > 0) {
-							headerStr = " " + parts.join(" ");
+						const createDirs = directories.length && !prepareDirectory ? " --create-dirs" : "";
+						return { prepareDirectory, args: `-L -C - "${link}"${createDirs} -o "${output}"${headerStr}` };
+					});
+
+					const executable = windows ? "curl.exe" : "curl";
+					const separator = terminal === "wc" ? " & " : "; ";
+					const formatCommand = items => {
+						const directories = new Set(items.map(item => item.prepareDirectory).filter(Boolean));
+						// --next 会重置本次下载的选项，因此每个文件都带完整参数。
+						const args = items.map(item => item.args).join(" --next ");
+						return [...directories, `${executable} ${args}`].join(separator);
+					};
+					const combined = formatCommand(transfers);
+					// 超过 Windows 的命令行长度上限时，拆成尽可能少的命令。
+					const maxLength = terminal === "wc" ? 8191 : 32000;
+					if (windows && combined.length > maxLength) {
+						const commands = [];
+						let group = [];
+						for (const transfer of transfers) {
+							if (group.length && formatCommand([...group, transfer]).length > maxLength) {
+								commands.push(formatCommand(group));
+								group = [];
+							}
+							group.push(transfer);
 						}
+						commands.push(formatCommand(group));
+						return commands.join("\r\n");
 					}
-					return `${terminal !== "wp" ? "curl" : "curl.exe"} -L -C - "${link}" -o "${filename}"${headerStr}`;
+					return combined;
 				},
 				/**
 				 * 生成 Aria2 下载命令
@@ -6411,7 +6469,7 @@ button.downloadSubtitle:disabled {
 		},
 		async getFilesList(dirs, accessToken, proc = 0) {
 			let cnt = 0;
-			async function get(targets) {
+			async function get(targets, parents = []) {
 				let files = [];
 				for (const dir of targets) {
 					$doc.find(".loading-popup .loading-title").html(`文件获取中`);
@@ -6419,13 +6477,15 @@ button.downloadSubtitle:disabled {
 					const res = await base.get(url, { "User-Agent": config.$baidu.api.ua.downloadLink });
 					cnt++;
 					if (res.list?.length && (res.errno === 0 || res.errmsg === "succ")) {
+						const name = dir.server_filename || dir.filename || dir.path.split("/").pop();
+						const downloadDirectories = [...parents, name];
 						const subFiles = res.list.filter(f => !f.isdir);
 						proc += subFiles.length;
 						$doc.find(".loading-popup .swal2-html-container").html(`<div>已获取 ${proc} 个文件~</div><div>${dir.path}</div>`);
-						files = files.concat(subFiles);
+						files = files.concat(subFiles.map(file => ({ ...file, downloadDirectories })));
 						const subDirs = res.list.filter(f => f.isdir);
 						if (subDirs.length > 0) {
-							files = files.concat(await get(subDirs));
+							files = files.concat(await get(subDirs, downloadDirectories));
 						}
 					}
 					if (cnt >= 50) {
@@ -6505,6 +6565,7 @@ button.downloadSubtitle:disabled {
 				get: {
 					dir: v => v.isdir === 1,
 					name: v => (v.server_filename || v.filename),
+					directories: v => v.downloadDirectories,
 					size: v => v.size,
 					link: v => {
 						if (!v.dlink || !v.dlink.startsWith("http")) return v.dlink;
