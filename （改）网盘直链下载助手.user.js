@@ -8666,7 +8666,7 @@ button.downloadSubtitle:disabled {
 						size: v => v.size,
 						link: v => v.download_url,
 					},
-					headers: { "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh },
+					headers: { "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh },
 					convert: {},
 					dom: {
 						tooltip: config.$uc.dom,
@@ -8733,7 +8733,7 @@ button.downloadSubtitle:disabled {
 						size: v => v.size,
 						link: v => v.download_url,
 					},
-					headers: { "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh },
+					headers: { "Cookie": String(document.cookie), "User-Agent": config.$uc.api.ua.main, "Sec-Ch-Ua": config.$uc.api.ua.secCh },
 					convert: {},
 					dom: {
 						tooltip: config.$uc.dom,
